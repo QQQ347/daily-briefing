@@ -29,6 +29,8 @@ import argparse
 import datetime
 import smtplib
 import logging
+import json
+import re
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.header import Header
@@ -442,11 +444,330 @@ BRIEFING_HTML_TEMPLATE = """<!DOCTYPE html>
 
 
 # ============================================================
-# 点击查词 JavaScript
+# DeepSeek 翻译后处理 + 点击查词
 # ============================================================
 
+TRANSLATE_SYSTEM_PROMPT = """You are a professional bilingual translator specializing in science, technology, and finance news.
 
-def generate_briefing(news_text: str, config: dict, today_str: str) -> str:
+For each news item, output a JSON object with:
+- "en_title": Professional English translation of the Chinese title (news headline style, concise and impactful)
+- "en_summary": 2-3 sentence English summary capturing the key points (professional but accessible)
+- "vocab": Array of 3-5 key technical terms, each with "en" (English term) and "zh" (Chinese translation)
+- "dict": Object mapping lowercase English words/phrases from en_title and en_summary to their Chinese translations. Only include words that a Chinese reader learning English might not know. Skip basic words like "the", "is", "a", "in", "of", "and", "to", "for", "with", "on", "at", "by", "from", "as", "an", "be", "are", "was", "were", "has", "have", "had", "this", "that", "it", "not", "but", "or", "its", "can", "will", "may", "also", "into", "over", "than", "such", "through", "about", "between", "after", "before", "under", "during", "among", "both", "each", "other", "most", "more", "some", "any", "all", "no", "only", "own", "same", "so", "if", "we", "they", "he", "she", "what", "which", "who", "when", "where", "how", "up", "out", "just", "very", "even", "still", "already", "new", "first", "last", "long", "great", "little", "old", "big", "high", "small", "large", "next", "early", "young", "important", "few", "public", "bad", "same", "able".
+
+Output ONLY a valid JSON array (one object per item). No markdown fences, no explanation.
+Example: [{"en_title":"CRISPR Breakthrough","en_summary":"Researchers achieved...","vocab":[{"en":"gene editing","zh":"基因编辑"}],"dict":{"crispr":"规律间隔成簇短回文重复序列","breakthrough":"突破","gene editing":"基因编辑","off-target":"脱靶的"}}]"""
+
+
+CLICK_WORD_CSS = """
+/* 点击查词样式 */
+.click-word { border-bottom: 1px dashed #7986cb; cursor: pointer; transition: background 0.2s; }
+.click-word:hover { background: #e8eaf6; }
+.click-tooltip { position: fixed; z-index: 9999; background: linear-gradient(135deg, #263238, #37474f); color: #fff; padding: 8px 14px; border-radius: 8px; font-size: 13px; line-height: 1.6; max-width: 280px; box-shadow: 0 4px 16px rgba(0,0,0,0.25); pointer-events: none; opacity: 0; transition: opacity 0.2s; }
+.click-tooltip.show { opacity: 1; }
+.click-tooltip .tw { font-weight: 700; color: #82b1ff; font-size: 14px; margin-bottom: 2px; }
+.click-tooltip .tm { color: #b0bec5; font-size: 12px; }
+@media (max-width: 600px) {
+  .click-word { border-bottom-width: 0.5px; }
+  .click-tooltip { font-size: 12px; max-width: 220px; padding: 6px 10px; }
+  .click-tooltip .tw { font-size: 13px; }
+}
+"""
+
+CLICK_WORD_JS = """
+<script>
+(function(){
+  var D=__WORD_DICT__;
+  if(!D||!Object.keys(D).length) return;
+  /* 只扫描 .en-title 和 .en-summary 内的文本节点 */
+  var targets=document.querySelectorAll('.en-title,.en-summary');
+  targets.forEach(function(el){
+    wrapWords(el,D);
+  });
+  function wrapWords(el,D){
+    var walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null,false);
+    var nodes=[];
+    while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function(textNode){
+      var text=textNode.textContent;
+      /* 构建替换：匹配词典中的词（优先匹配长短语） */
+      var keys=Object.keys(D).sort(function(a,b){return b.length-a.length;});
+      var regex=new RegExp('\\\\b('+keys.map(function(k){return k.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\$&');}).join('|')+')\\\\b','gi');
+      var hasMatch=regex.test(text);
+      if(!hasMatch) return;
+      regex.lastIndex=0;
+      var frag=document.createDocumentFragment();
+      var lastIdx=0;
+      var m;
+      while((m=regex.exec(text))!==null){
+        if(m.index>lastIdx) frag.appendChild(document.createTextNode(text.slice(lastIdx,m.index)));
+        var span=document.createElement('span');
+        span.className='click-word';
+        span.textContent=m[0];
+        span.setAttribute('data-cn',D[m[1].toLowerCase()]||'');
+        frag.appendChild(span);
+        lastIdx=regex.lastIndex;
+      }
+      if(lastIdx<text.length) frag.appendChild(document.createTextNode(text.slice(lastIdx)));
+      textNode.parentNode.replaceChild(frag,textNode);
+    });
+  }
+  /* tooltip 逻辑 */
+  var tip=document.createElement('div');
+  tip.className='click-tooltip';
+  document.body.appendChild(tip);
+  var hideTimer;
+  document.addEventListener('click',function(e){
+    var w=e.target.closest('.click-word');
+    if(w){
+      e.preventDefault();
+      e.stopPropagation();
+      clearTimeout(hideTimer);
+      var cn=w.getAttribute('data-cn');
+      var en=w.textContent;
+      tip.innerHTML='<div class="tw">'+en+'</div><div class="tm">'+cn+'</div>';
+      var r=w.getBoundingClientRect();
+      var left=r.left+r.width/2;
+      var top=r.bottom+6;
+      if(left+150>window.innerWidth) left=window.innerWidth-150;
+      if(left<10) left=10;
+      if(top+60>window.innerHeight) top=r.top-60;
+      tip.style.left=left+'px';
+      tip.style.top=top+'px';
+      tip.classList.add('show');
+      hideTimer=setTimeout(function(){tip.classList.remove('show');},3000);
+    } else {
+      tip.classList.remove('show');
+    }
+  },true);
+})();
+</script>
+"""
+
+
+def _extract_items_needing_translation(html: str) -> list[dict]:
+    """从 HTML 中提取缺少 .bilingual 部分的新闻条目的中文标题和摘要。"""
+    results = []
+    item_starts = [m.start() for m in re.finditer(r'<div[^>]*class="item"[^>]*>', html)]
+
+    for idx, start in enumerate(item_starts):
+        end = item_starts[idx + 1] if idx + 1 < len(item_starts) else len(html)
+        chunk = html[start:end]
+
+        if 'class="bilingual"' in chunk:
+            continue
+
+        title_m = re.search(r'class="item-title"[^>]*>(.*?)</(?:p|div|span|h[1-6])', chunk, re.DOTALL)
+        title = re.sub(r'<[^>]+>', '', title_m.group(1)).strip() if title_m else ""
+
+        summary_m = re.search(r'class="item-summary"[^>]*>(.*?)</(?:p|div)', chunk, re.DOTALL)
+        summary = re.sub(r'<[^>]+>', '', summary_m.group(1)).strip() if summary_m else ""
+
+        if title:
+            results.append({"title": title, "summary": summary, "html_start": start, "html_end": end})
+
+    return results
+
+
+def _build_bilingual_html(translation: dict) -> str:
+    """将一条翻译结果构建为 bilingual HTML 片段。"""
+    vocab_lines = []
+    for v in translation.get("vocab", []):
+        vocab_lines.append(f'<span class="vocab-item"><b>{v["en"]}</b> {v["zh"]}</span>')
+    vocab_html = "\n      ".join(vocab_lines) if vocab_lines else ""
+
+    return (
+        '\n<div class="bilingual">\n'
+        f'  <p class="en-title">{translation.get("en_title", "")}</p>\n'
+        f'  <p class="en-summary">{translation.get("en_summary", "")}</p>\n'
+        '  <div class="vocab-card">\n'
+        '    <div class="vocab-title">📖 Key Vocabulary</div>\n'
+        '    <div class="vocab-list">\n'
+        f'      {vocab_html}\n'
+        '    </div>\n'
+        '  </div>\n'
+        '</div>'
+    )
+
+
+def ensure_bilingual_and_dict(html_content: str, config: dict) -> str:
+    """后处理：确保每条新闻都有双语内容，并收集词典用于点击查词。
+    1. 扫描缺少 .bilingual 的条目 → DeepSeek 翻译补全
+    2. 从所有 .bilingual 区域提取英文文本 → DeepSeek 生成词典
+    3. 注入点击查词 CSS + JS + 词典 JSON"""
+    ds_config = config["deepseek"]
+    client = OpenAI(api_key=ds_config["api_key"], base_url=ds_config["base_url"])
+
+    # --- 步骤1: 补全缺失的双语内容 ---
+    items = _extract_items_needing_translation(html_content)
+
+    if items:
+        log.info(f"📋 发现 {len(items)} 条新闻缺少双语内容，调用 DeepSeek 翻译...")
+        items_text = ""
+        for i, item in enumerate(items):
+            items_text += f"\n#{i+1}\n标题: {item['title']}\n摘要: {item['summary']}\n"
+
+        try:
+            response = client.chat.completions.create(
+                model=ds_config["model"],
+                messages=[
+                    {"role": "system", "content": TRANSLATE_SYSTEM_PROMPT},
+                    {"role": "user", "content": f"Translate these {len(items)} news items to English:\n{items_text}"},
+                ],
+                temperature=0.1,
+                max_tokens=4000,
+            )
+            result_text = response.choices[0].message.content.strip()
+            if result_text.startswith("```"):
+                lines = result_text.split("\n")
+                result_text = "\n".join(lines[1:])
+                if result_text.rstrip().endswith("```"):
+                    result_text = result_text.rstrip()[:-3].strip()
+            translations = json.loads(result_text)
+            if not isinstance(translations, list):
+                translations = [translations]
+            log.info(f"✅ DeepSeek 翻译完成: {len(translations)} 条")
+
+            # 从后向前注入
+            for i in range(min(len(items), len(translations)) - 1, -1, -1):
+                item = items[i]
+                trans = translations[i]
+                bilingual_html = _build_bilingual_html(trans)
+                chunk = html_content[item["html_start"]:item["html_end"]]
+                summary_end = re.search(
+                    r'(class="item-summary"[^>]*>.*?</(?:p|div)>)',
+                    chunk, re.DOTALL
+                )
+                if summary_end:
+                    insert_pos = item["html_start"] + summary_end.end()
+                    html_content = html_content[:insert_pos] + bilingual_html + html_content[insert_pos:]
+                else:
+                    header_end = re.search(
+                        r'(class="item-header"[^>]*>.*?</div>)',
+                        chunk, re.DOTALL
+                    )
+                    if header_end:
+                        insert_pos = item["html_start"] + header_end.end()
+                        html_content = html_content[:insert_pos] + bilingual_html + html_content[insert_pos:]
+            log.info("✅ 双语内容注入完成")
+        except Exception as e:
+            log.warning(f"⚠️ 翻译后处理失败: {e}")
+
+    # --- 步骤2: 从所有 .bilingual 区域提取英文文本，生成词典 ---
+    log.info("📖 生成点击查词词典...")
+    bilingual_blocks = re.findall(
+        r'class="bilingual"[^>]*>(.*?)</div>\s*</div>\s*</div>',
+        html_content, re.DOTALL
+    )
+    # 也尝试简单匹配
+    if not bilingual_blocks:
+        bilingual_blocks = re.findall(
+            r'class="bilingual"[^>]*>(.*?)(?=<div class="bilingual"|</div>\s*</div>\s*</div>)',
+            html_content, re.DOTALL
+        )
+
+    # 提取 en-title 和 en-summary 的纯文本
+    all_en_text = ""
+    for block in bilingual_blocks:
+        en_titles = re.findall(r'class="en-title"[^>]*>(.*?)</p>', block, re.DOTALL)
+        en_summaries = re.findall(r'class="en-summary"[^>]*>(.*?)</p>', block, re.DOTALL)
+        for t in en_titles:
+            all_en_text += re.sub(r'<[^>]+>', '', t).strip() + " "
+        for s in en_summaries:
+            all_en_text += re.sub(r'<[^>]+>', '', s).strip() + " "
+
+    # 同时从 vocab-card 提取已有词汇
+    existing_vocab = {}
+    vocab_items = re.findall(r'class="vocab-item"[^>]*><b>([^<]+)</b>\s*([^<]+)', html_content)
+    for en_word, zh_meaning in vocab_items:
+        existing_vocab[en_word.strip().lower()] = zh_meaning.strip()
+
+    word_dict = dict(existing_vocab)
+
+    # 如果有额外英文文本，调用 DeepSeek 补充词典
+    if all_en_text.strip():
+        # 提取英文单词（去重）
+        en_words = set(re.findall(r'[a-zA-Z][a-zA-Z\-]{3,}', all_en_text))
+        # 去掉已知的
+        en_words = {w.lower() for w in en_words} - set(word_dict.keys())
+        # 过滤常见虚词
+        stop_words = {
+            'that', 'this', 'with', 'from', 'have', 'been', 'were', 'will',
+            'which', 'their', 'about', 'would', 'could', 'other', 'more',
+            'than', 'also', 'into', 'over', 'such', 'through', 'after',
+            'before', 'between', 'under', 'during', 'among', 'both',
+            'each', 'most', 'some', 'very', 'even', 'still', 'already',
+            'first', 'last', 'long', 'great', 'little', 'many', 'much',
+            'only', 'just', 'like', 'well', 'back', 'then', 'there',
+            'these', 'those', 'being', 'having', 'doing', 'using', 'based',
+            'while', 'where', 'when', 'what', 'which', 'they', 'them',
+            'against', 'within', 'without', 'should', 'might', 'must',
+            'however', 'although', 'because', 'since', 'until', 'though',
+        }
+        en_words -= stop_words
+
+        if en_words:
+            words_list = sorted(en_words)[:80]  # 最多80个词
+            dict_prompt = f"""For these English words/phrases from a Chinese-English bilingual news briefing, provide concise Chinese translations.
+A Chinese reader is learning English from this briefing. Skip any word too basic for a high school student.
+
+Words: {', '.join(words_list)}
+
+Output ONLY a JSON object mapping each word to its Chinese translation. No markdown fences.
+Example: {{"semiconductor":"半导体","breakthrough":"突破"}}"""
+
+            try:
+                response = client.chat.completions.create(
+                    model=ds_config["model"],
+                    messages=[
+                        {"role": "system", "content": "You are a concise English-Chinese dictionary. Output only valid JSON."},
+                        {"role": "user", "content": dict_prompt},
+                    ],
+                    temperature=0.1,
+                    max_tokens=2000,
+                )
+                dict_text = response.choices[0].message.content.strip()
+                if dict_text.startswith("```"):
+                    lines = dict_text.split("\n")
+                    dict_text = "\n".join(lines[1:])
+                    if dict_text.rstrip().endswith("```"):
+                        dict_text = dict_text.rstrip()[:-3].strip()
+                extra_dict = json.loads(dict_text)
+                if isinstance(extra_dict, dict):
+                    word_dict.update(extra_dict)
+                    log.info(f"✅ DeepSeek 词典生成: {len(extra_dict)} 个新词")
+            except Exception as e:
+                log.warning(f"⚠️ 词典生成失败: {e}")
+
+    log.info(f"📖 最终词典: {len(word_dict)} 个词条")
+
+    # --- 步骤3: 注入点击查词功能 ---
+    if word_dict:
+        # 注入 CSS（在 </style> 前）
+        if '</style>' in html_content:
+            html_content = html_content.replace('</style>', CLICK_WORD_CSS + '\n</style>', 1)
+
+        # 注入 JS + 词典（在 </body> 前）
+        dict_json = json.dumps(word_dict, ensure_ascii=False)
+        js_code = CLICK_WORD_JS.replace('__WORD_DICT__', dict_json)
+        if '</body>' in html_content:
+            html_content = html_content.replace('</body>', js_code + '\n</body>', 1)
+        else:
+            html_content += js_code
+
+        log.info(f"✅ 点击查词功能注入完成 ({len(word_dict)} 词)")
+
+    # 统计
+    total_items = html_content.count('class="item"')
+    total_bilingual = html_content.count('class="bilingual"')
+    log.info(f"📊 双语覆盖率: {total_bilingual}/{total_items}")
+
+    return html_content
+
+
+# ============================================================
+# 生成阶段
+# ============================================================
     """调用 DeepSeek API 生成简报 HTML"""
     ds_config = config["deepseek"]
     client = OpenAI(api_key=ds_config["api_key"], base_url=ds_config["base_url"])
@@ -612,6 +933,10 @@ def main():
     # 阶段 2: 生成
     log.info("【阶段2】AI 生成简报...")
     html_content = generate_briefing(news_text, config, today_str)
+
+    # 阶段 2.5: 翻译后处理 + 点击查词
+    log.info("【阶段2.5】翻译保障 + 点击查词词典...")
+    html_content = ensure_bilingual_and_dict(html_content, config)
 
     # 阶段 3: 保存
     log.info("【阶段3】保存文件...")
