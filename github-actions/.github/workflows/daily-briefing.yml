@@ -1,0 +1,77 @@
+name: 每日全球动态简报
+
+on:
+  # 每天北京时间 08:00 自动触发 (UTC 00:00 = CST 08:00)
+  schedule:
+    - cron: "0 0 * * *"
+
+  # 允许手动触发 (在 GitHub 网页上点 Run workflow)
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "指定日期 (留空=今天), 格式 YYYY-MM-DD"
+        required: false
+        default: ""
+      no_email:
+        description: "不发送邮件 (仅生成文件)"
+        type: boolean
+        required: false
+        default: false
+
+jobs:
+  generate-briefing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      # 1. 检出代码
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. 安装 Python
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      # 3. 安装依赖
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # 4. 生成简报
+      - name: Generate briefing
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }}
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            ARGS="$ARGS --date ${{ github.event.inputs.date }}"
+          fi
+          if [ "${{ github.event.inputs.no_email }}" = "true" ]; then
+            ARGS="$ARGS --no-email"
+          fi
+          python daily_briefing.py $ARGS
+
+      # 5. 把生成的 HTML 作为 Artifact 上传 (可在 Actions 页面下载)
+      - name: Upload briefing as artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: briefing-${{ github.run_id }}
+          path: output/每日简报-*.html
+          retention-days: 30
+
+      # 6. 可选：把简报 commit 到仓库 (方便通过 GitHub Pages 访问)
+      - name: Commit briefing to repo
+        if: ${{ vars.COMMIT_TO_REPO == 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/
+          git diff --staged --quiet || git commit -m "chore: daily briefing $(date +%Y-%m-%d)"
+          git push
