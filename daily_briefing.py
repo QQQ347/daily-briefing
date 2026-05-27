@@ -253,6 +253,32 @@ BRIEFING_SYSTEM_PROMPT = """你是一位专业的全球动态分析师。你需�
 - 星级: ⭐⭐⭐⭐⭐(顶刊首发) / ⭐⭐⭐⭐(权威机构) / ⭐⭐⭐(一般可靠)
 - 每个板块后加 50-100 字趋势关联简评
 
+## 🌐 双语 + 英语学习要求（每条新闻必须包含）
+每条新闻**必须**包含英语学习元素，帮助读者在阅读新闻的同时积累专业英语词汇：
+
+1. **英文标题**（class="en-title"）：将中文新闻标题翻译为专业英文表述，用词准确、地道
+2. **English Summary**（class="en-summary"）：2-3 句精炼英文摘要，概括核心内容，使用专业但不过于晦涩的英语
+3. **Key Vocabulary**（class="vocab-card"）：提取 3-5 个核心术语，中英对照 + 简短释义
+
+### 示例：
+```html
+<div class="bilingual">
+  <p class="en-title">CRISPR Gene Editing Breakthrough: Guide Molecule Switches from RNA to DNA</p>
+  <p class="en-summary">University of Florida researchers achieved a breakthrough in CRISPR gene editing by replacing the traditional RNA guide with a more stable DNA guide, significantly improving editing precision and reducing off-target effects. The DNA-guided system demonstrated 100% accuracy in viral detection tests.</p>
+  <div class="vocab-card">
+    <div class="vocab-title">📖 Key Vocabulary</div>
+    <div class="vocab-list">
+      <span class="vocab-item"><b>gene editing</b> 基因编辑</span>
+      <span class="vocab-item"><b>guide RNA</b> 向导RNA</span>
+      <span class="vocab-item"><b>off-target effect</b> 脱靶效应</span>
+      <span class="vocab-item"><b>viral detection</b> 病毒检测</span>
+    </div>
+  </div>
+</div>
+```
+
+**每条新闻都必须包含这个双语模块！这是简报的英语学习功能。** 确保英文表述专业、地道，词汇选取有学习价值。
+
 ## 🔴 深度解读要求（每条新闻必须包含）
 每条新闻**必须**包含一个 `<details class="deepdive">` 折叠区域，内含三层深度解读：
 
@@ -273,6 +299,14 @@ BRIEFING_SYSTEM_PROMPT = """你是一位专业的全球动态分析师。你需�
 ```
 
 **每条新闻都必须有这个 deepdive 结构，不要省略！这是简报最有价值的部分。**
+
+## 每条新闻的完整结构
+每条新闻的 HTML 结构应为：
+1. `.item-header` — 中文标题 + 星级 + 风险标签
+2. `.item-summary` — 中文摘要
+3. `.bilingual` — 英文标题 + 英文摘要 + 词汇卡（英语学习模块）
+4. `.deepdive` — 📌是什么 + 📈前景 + 🔮畅想（深度解读模块）
+5. `.item-source` — 来源链接
 
 ## 输出格式
 直接输出完整 HTML，不要任何解释性文字，必须以 <!DOCTYPE html> 开头。
@@ -302,6 +336,14 @@ BRIEFING_HTML_TEMPLATE = """<!DOCTYPE html>
     .item-summary { font-size: 13.5px; color: #555; line-height: 1.7; margin-bottom: 8px; }
     .item-source { font-size: 12px; color: #888; }
     .item-source a { color: #4a90d9; text-decoration: none; }
+    .bilingual { margin: 8px 0; padding: 10px 14px; background: linear-gradient(135deg, #e3f2fd, #e8eaf6); border-radius: 8px; border: 1px solid #bbdefb; }
+    .en-title { font-size: 13.5px; color: #1565c0; font-weight: 600; margin: 0 0 6px 0; line-height: 1.5; font-style: italic; }
+    .en-summary { font-size: 12.5px; color: #37474f; line-height: 1.7; margin: 0 0 8px 0; }
+    .vocab-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 8px 12px; }
+    .vocab-title { font-size: 11.5px; color: #6a1b9a; font-weight: 700; margin-bottom: 6px; }
+    .vocab-list { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+    .vocab-item { font-size: 12px; color: #424242; line-height: 1.8; }
+    .vocab-item b { color: #1a237e; background: #e8eaf6; padding: 1px 5px; border-radius: 3px; font-size: 11.5px; }
     .deepdive { margin-top: 10px; }
     .deepdive summary { cursor: pointer; font-size: 12.5px; font-weight: 600; color: #1b5e20; padding: 6px 10px; background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border-radius: 6px; border: 1px solid #c8e6c9; user-select: none; }
     .deepdive-content { background: #f9fbf9; border: 1px solid #e0e8e0; border-radius: 0 0 6px 6px; padding: 12px 14px; margin-top: 2px; font-size: 12.5px; line-height: 1.75; color: #444; }
