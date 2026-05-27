@@ -310,6 +310,65 @@ BRIEFING_SYSTEM_PROMPT = """你是一位专业的全球动态分析师。你需�
 
 ## 输出格式
 直接输出完整 HTML，不要任何解释性文字，必须以 <!DOCTYPE html> 开头。
+
+## 🔴 CSS 样式规范（必须使用以下样式，不要自己写 CSS！）
+你必须在 `<style>` 中使用以下 CSS，可以微调颜色但**不要改变布局结构和移动端适配规则**：
+
+```css
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif; max-width: 940px; margin: 0 auto; padding: 16px; background: #f5f7fa; }
+header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: #fff; padding: 20px 22px; border-radius: 12px; margin-bottom: 20px; }
+header h1 { font-size: 20px; margin-bottom: 4px; }
+header p { font-size: 12px; opacity: 0.75; }
+h2 { font-size: 16px; color: #1a1a2e; margin: 22px 0 12px 0; padding-bottom: 6px; border-bottom: 2px solid #e8ecf0; display: flex; align-items: center; gap: 8px; }
+.item { background: #fff; border-left: 3px solid #4a90d9; border-radius: 0 8px 8px 0; padding: 12px 14px; margin-bottom: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.item-header { margin-bottom: 8px; }
+.item-title { font-size: 15px; font-weight: 600; color: #222; line-height: 1.5; margin-bottom: 6px; word-break: break-word; }
+.item-meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.star-rating { font-size: 12px; white-space: nowrap; color: #f5a623; background: #fffbf0; padding: 2px 8px; border-radius: 10px; border: 1px solid #f5d88a; }
+.risk-red { background: #ffebee; color: #c62828; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 700; }
+.risk-yellow { background: #fff8e1; color: #e65100; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+.item-summary { font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 8px; }
+.item-source { font-size: 12px; color: #999; margin-top: 8px; }
+.item-source a { color: #4a90d9; text-decoration: none; }
+.bilingual { margin: 8px 0; padding: 10px 12px; background: linear-gradient(135deg, #e3f2fd, #e8eaf6); border-radius: 8px; border: 1px solid #bbdefb; }
+.en-title { font-size: 13.5px; color: #1565c0; font-weight: 600; margin-bottom: 5px; line-height: 1.5; }
+.en-summary { font-size: 13px; color: #37474f; line-height: 1.7; margin-bottom: 8px; }
+.vocab-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 8px 12px; }
+.vocab-title { font-size: 12px; color: #6a1b9a; font-weight: 700; margin-bottom: 4px; }
+.vocab-list { display: flex; flex-wrap: wrap; gap: 4px 10px; }
+.vocab-item { font-size: 12px; color: #424242; line-height: 1.8; }
+.vocab-item b { color: #1a237e; background: #e8eaf6; padding: 1px 5px; border-radius: 3px; font-size: 11px; }
+.deepdive { margin-top: 8px; }
+.deepdive summary { cursor: pointer; font-size: 13px; font-weight: 600; color: #1b5e20; padding: 6px 10px; background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border-radius: 6px; border: 1px solid #c8e6c9; user-select: none; }
+.deepdive-content { background: #f9fbf9; border: 1px solid #e0e8e0; border-radius: 0 0 6px 6px; padding: 10px 12px; margin-top: 2px; font-size: 13px; line-height: 1.75; color: #444; }
+.deepdive-content .dl { margin: 5px 0; }
+.deepdive-content .dl-label { font-weight: 700; }
+.dl-what { color: #1565c0; }
+.dl-prospect { color: #e65100; }
+.dl-vision { color: #6a1b9a; }
+.trend-comment { background: linear-gradient(135deg, #f3e5f5, #e8eaf6); border-left: 3px solid #9575cd; border-radius: 0 6px 6px 0; padding: 10px 14px; margin: 10px 0 18px 0; font-size: 13px; color: #4a148c; font-style: italic; line-height: 1.7; }
+footer { text-align: center; color: #aaa; font-size: 11px; margin-top: 30px; padding: 12px; }
+@media (max-width: 600px) {
+  body { padding: 8px; }
+  header { padding: 16px; border-radius: 10px; }
+  header h1 { font-size: 17px; }
+  header p { font-size: 11px; }
+  h2 { font-size: 15px; margin: 18px 0 10px 0; }
+  .item { padding: 10px 12px; margin-bottom: 10px; border-radius: 0 6px 6px 0; }
+  .item-title { font-size: 14px; line-height: 1.6; }
+  .item-summary { font-size: 13px; }
+  .bilingual { padding: 8px 10px; }
+  .en-title { font-size: 13px; }
+  .en-summary { font-size: 12px; }
+  .vocab-list { gap: 3px 8px; }
+  .vocab-item { font-size: 11px; }
+  .vocab-item b { font-size: 10.5px; }
+  .deepdive summary { font-size: 12px; padding: 5px 8px; }
+  .deepdive-content { font-size: 12px; padding: 8px 10px; }
+  .trend-comment { font-size: 12px; padding: 8px 10px; }
+}
+```
 """
 
 BRIEFING_HTML_TEMPLATE = """<!DOCTYPE html>
@@ -319,44 +378,59 @@ BRIEFING_HTML_TEMPLATE = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>每日全球重要动态简报 - {DATE}</title>
   <style>
-    * { box-sizing: border-box; }
-    body { font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif; max-width: 940px; margin: 0 auto; padding: 20px; background: #f5f7fa; }
-    header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: #fff; padding: 28px 32px; border-radius: 12px 12px 0 0; margin-bottom: 24px; }
-    header h1 { margin: 0 0 6px 0; font-size: 22px; }
-    header p { margin: 0; opacity: 0.75; font-size: 13px; }
-    h2 { font-size: 17px; color: #1a1a2e; margin: 28px 0 14px 0; padding-bottom: 8px; border-bottom: 2px solid #e8ecf0; }
-    .item { background: #fff; border-left: 3px solid #4a90d9; border-radius: 0 8px 8px 0; padding: 14px 18px; margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
-    .item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; gap: 10px; flex-wrap: wrap; }
-    .item-title-wrap { flex: 1; min-width: 0; }
-    .item-title { font-size: 15px; font-weight: 600; color: #222; line-height: 1.5; }
-    .item-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-    .star-rating { font-size: 13px; white-space: nowrap; color: #f5a623; background: #fffbf0; padding: 2px 8px; border-radius: 10px; border: 1px solid #f5d88a; }
-    .risk-red { background: #ffebee; color: #c62828; font-size: 12px; padding: 2px 8px; border-radius: 10px; font-weight: 700; }
-    .risk-yellow { background: #fff8e1; color: #e65100; font-size: 12px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
-    .item-summary { font-size: 13.5px; color: #555; line-height: 1.7; margin-bottom: 8px; }
-    .item-source { font-size: 12px; color: #888; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif; max-width: 940px; margin: 0 auto; padding: 16px; background: #f5f7fa; }
+    header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: #fff; padding: 20px 22px; border-radius: 12px; margin-bottom: 20px; }
+    header h1 { font-size: 20px; margin-bottom: 4px; }
+    header p { font-size: 12px; opacity: 0.75; }
+    h2 { font-size: 16px; color: #1a1a2e; margin: 22px 0 12px 0; padding-bottom: 6px; border-bottom: 2px solid #e8ecf0; display: flex; align-items: center; gap: 8px; }
+    .item { background: #fff; border-left: 3px solid #4a90d9; border-radius: 0 8px 8px 0; padding: 12px 14px; margin-bottom: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+    .item-header { margin-bottom: 8px; }
+    .item-title { font-size: 15px; font-weight: 600; color: #222; line-height: 1.5; margin-bottom: 6px; word-break: break-word; }
+    .item-meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .star-rating { font-size: 12px; white-space: nowrap; color: #f5a623; background: #fffbf0; padding: 2px 8px; border-radius: 10px; border: 1px solid #f5d88a; }
+    .risk-red { background: #ffebee; color: #c62828; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 700; }
+    .risk-yellow { background: #fff8e1; color: #e65100; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+    .item-summary { font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 8px; }
+    .item-source { font-size: 12px; color: #999; margin-top: 8px; }
     .item-source a { color: #4a90d9; text-decoration: none; }
-    .bilingual { margin: 8px 0; padding: 10px 14px; background: linear-gradient(135deg, #e3f2fd, #e8eaf6); border-radius: 8px; border: 1px solid #bbdefb; }
-    .en-title { font-size: 13.5px; color: #1565c0; font-weight: 600; margin: 0 0 6px 0; line-height: 1.5; font-style: italic; }
-    .en-summary { font-size: 12.5px; color: #37474f; line-height: 1.7; margin: 0 0 8px 0; }
+    .bilingual { margin: 8px 0; padding: 10px 12px; background: linear-gradient(135deg, #e3f2fd, #e8eaf6); border-radius: 8px; border: 1px solid #bbdefb; }
+    .en-title { font-size: 13.5px; color: #1565c0; font-weight: 600; margin-bottom: 5px; line-height: 1.5; }
+    .en-summary { font-size: 13px; color: #37474f; line-height: 1.7; margin-bottom: 8px; }
     .vocab-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 8px 12px; }
-    .vocab-title { font-size: 11.5px; color: #6a1b9a; font-weight: 700; margin-bottom: 6px; }
-    .vocab-list { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+    .vocab-title { font-size: 12px; color: #6a1b9a; font-weight: 700; margin-bottom: 4px; }
+    .vocab-list { display: flex; flex-wrap: wrap; gap: 4px 10px; }
     .vocab-item { font-size: 12px; color: #424242; line-height: 1.8; }
-    .vocab-item b { color: #1a237e; background: #e8eaf6; padding: 1px 5px; border-radius: 3px; font-size: 11.5px; }
-    .deepdive { margin-top: 10px; }
-    .deepdive summary { cursor: pointer; font-size: 12.5px; font-weight: 600; color: #1b5e20; padding: 6px 10px; background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border-radius: 6px; border: 1px solid #c8e6c9; user-select: none; }
-    .deepdive-content { background: #f9fbf9; border: 1px solid #e0e8e0; border-radius: 0 0 6px 6px; padding: 12px 14px; margin-top: 2px; font-size: 12.5px; line-height: 1.75; color: #444; }
-    .deepdive-content .dl { margin: 6px 0; }
+    .vocab-item b { color: #1a237e; background: #e8eaf6; padding: 1px 5px; border-radius: 3px; font-size: 11px; }
+    .deepdive { margin-top: 8px; }
+    .deepdive summary { cursor: pointer; font-size: 13px; font-weight: 600; color: #1b5e20; padding: 6px 10px; background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border-radius: 6px; border: 1px solid #c8e6c9; user-select: none; }
+    .deepdive-content { background: #f9fbf9; border: 1px solid #e0e8e0; border-radius: 0 0 6px 6px; padding: 10px 12px; margin-top: 2px; font-size: 13px; line-height: 1.75; color: #444; }
+    .deepdive-content .dl { margin: 5px 0; }
     .deepdive-content .dl-label { font-weight: 700; }
     .dl-what { color: #1565c0; }
     .dl-prospect { color: #e65100; }
     .dl-vision { color: #6a1b9a; }
-    .trend-comment { background: linear-gradient(135deg, #f3e5f5, #e8eaf6); border-left: 3px solid #9575cd; border-radius: 0 6px 6px 0; padding: 10px 16px; margin: 10px 0 20px 0; font-size: 13px; color: #4a148c; font-style: italic; line-height: 1.7; }
-    .summary-stats { background: #fff; border-radius: 8px; padding: 16px 20px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); display: flex; gap: 24px; flex-wrap: wrap; }
-    .stat-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #555; }
-    .stat-item .stat-num { font-size: 22px; font-weight: 700; color: #1a1a2e; }
-    footer { text-align: center; color: #aaa; font-size: 12px; margin-top: 40px; padding: 16px; }
+    .trend-comment { background: linear-gradient(135deg, #f3e5f5, #e8eaf6); border-left: 3px solid #9575cd; border-radius: 0 6px 6px 0; padding: 10px 14px; margin: 10px 0 18px 0; font-size: 13px; color: #4a148c; font-style: italic; line-height: 1.7; }
+    footer { text-align: center; color: #aaa; font-size: 11px; margin-top: 30px; padding: 12px; }
+    @media (max-width: 600px) {
+      body { padding: 8px; }
+      header { padding: 16px; border-radius: 10px; }
+      header h1 { font-size: 17px; }
+      header p { font-size: 11px; }
+      h2 { font-size: 15px; margin: 18px 0 10px 0; }
+      .item { padding: 10px 12px; margin-bottom: 10px; border-radius: 0 6px 6px 0; }
+      .item-title { font-size: 14px; line-height: 1.6; }
+      .item-summary { font-size: 13px; }
+      .bilingual { padding: 8px 10px; }
+      .en-title { font-size: 13px; }
+      .en-summary { font-size: 12px; }
+      .vocab-list { gap: 3px 8px; }
+      .vocab-item { font-size: 11px; }
+      .vocab-item b { font-size: 10.5px; }
+      .deepdive summary { font-size: 12px; padding: 5px 8px; }
+      .deepdive-content { font-size: 12px; padding: 8px 10px; }
+      .trend-comment { font-size: 12px; padding: 8px 10px; }
+    }
   </style>
 </head>
 <body>
