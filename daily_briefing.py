@@ -677,13 +677,28 @@ def generate_briefing(news_text: str, config: dict, today_str: str) -> str:
         header = BRIEFING_HTML_TEMPLATE.replace("{DATE}", today_str)
         html_content = header + html_content + "\n</body>\n</html>"
 
+    # 修复 AI 输出截断问题：如果缺少 </body>，说明 HTML 被截断
+    if "</body>" not in html_content:
+        log.warning("AI 输出被截断（缺少 </body>），尝试修复...")
+        import re as _re
+        # 找到最后一个完整闭合标签，截断后面不完整的 HTML
+        last_complete = 0
+        for tag in ['</div>', '</p>', '</details>', '</section>', '</span>']:
+            idx = html_content.rfind(tag)
+            if idx + len(tag) > last_complete:
+                last_complete = idx + len(tag)
+        if last_complete > 0 and last_complete < len(html_content):
+            trimmed = html_content[last_complete:].strip()
+            if trimmed:
+                log.info(f"  截去末尾 {len(html_content) - last_complete} 字符不完整 HTML")
+                html_content = html_content[:last_complete]
+        # 添加 footer 和闭合标签
+        html_content += "\n<footer><p>每日全球重要动态简报 · 自动生成</p></footer>\n</body>\n</html>"
+        log.info("  已补全 </body></html> 闭合标签")
+
     # 注入点击查词 JavaScript（在 </body> 前）
-    if "</body>" in html_content:
-        html_content = html_content.replace("</body>", DICT_SCRIPT + "\n</body>", 1)
-        log.info("已注入点击查词 JavaScript")
-    else:
-        html_content += DICT_SCRIPT
-        log.info("已追加点击查词 JavaScript (无 </body> 标签)")
+    html_content = html_content.replace("</body>", DICT_SCRIPT + "\n</body>", 1)
+    log.info("已注入点击查词 JavaScript")
 
     log.info(f"简报生成完成: {len(html_content):,} 字符")
     return html_content
