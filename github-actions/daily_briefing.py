@@ -29,8 +29,6 @@ import argparse
 import datetime
 import smtplib
 import logging
-import json
-import re
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.header import Header
@@ -444,154 +442,7 @@ BRIEFING_HTML_TEMPLATE = """<!DOCTYPE html>
 
 
 # ============================================================
-# DeepSeek 翻译后处理（双语保障）
-# ============================================================
-
-# 翻译后处理模块使用的 json/re 已在文件顶部导入
-
-TRANSLATE_SYSTEM_PROMPT = """You are a professional bilingual translator specializing in science, technology, and finance news.
-
-For each news item, output a JSON object with:
-- "en_title": Professional English translation of the Chinese title (news headline style, concise and impactful)
-- "en_summary": 2-3 sentence English summary capturing the key points (professional but accessible)
-- "vocab": Array of 3-5 key technical terms, each with "en" (English term) and "zh" (Chinese translation)
-
-Output ONLY a valid JSON array (one object per item). No markdown fences, no explanation.
-Example: [{"en_title":"CRISPR Breakthrough","en_summary":"Researchers achieved...","vocab":[{"en":"gene editing","zh":"基因编辑"}]}]"""
-
-
-def _extract_items_needing_translation(html: str) -> list[dict]:
-    """从 HTML 中提取缺少 .bilingual 部分的新闻条目的中文标题和摘要。"""
-    results = []
-    # 找到所有 .item div
-    item_starts = [m.start() for m in re.finditer(r'<div[^>]*class="item"[^>]*>', html)]
-
-    for idx, start in enumerate(item_starts):
-        end = item_starts[idx + 1] if idx + 1 < len(item_starts) else len(html)
-        chunk = html[start:end]
-
-        # 已有双语内容则跳过
-        if 'class="bilingual"' in chunk:
-            continue
-
-        # 提取中文标题（去除 HTML 标签）
-        title_m = re.search(r'class="item-title"[^>]*>(.*?)</(?:p|div|span|h[1-6])', chunk, re.DOTALL)
-        title = re.sub(r'<[^>]+>', '', title_m.group(1)).strip() if title_m else ""
-
-        # 提取中文摘要
-        summary_m = re.search(r'class="item-summary"[^>]*>(.*?)</(?:p|div)', chunk, re.DOTALL)
-        summary = re.sub(r'<[^>]+>', '', summary_m.group(1)).strip() if summary_m else ""
-
-        if title:
-            results.append({"title": title, "summary": summary, "html_start": start, "html_end": end})
-
-    return results
-
-
-def _build_bilingual_html(translation: dict) -> str:
-    """将一条翻译结果构建为 bilingual HTML 片段。"""
-    vocab_lines = []
-    for v in translation.get("vocab", []):
-        vocab_lines.append(f'<span class="vocab-item"><b>{v["en"]}</b> {v["zh"]}</span>')
-    vocab_html = "\n      ".join(vocab_lines) if vocab_lines else ""
-
-    return (
-        '\n<div class="bilingual">\n'
-        f'  <p class="en-title">{translation.get("en_title", "")}</p>\n'
-        f'  <p class="en-summary">{translation.get("en_summary", "")}</p>\n'
-        '  <div class="vocab-card">\n'
-        '    <div class="vocab-title">📖 Key Vocabulary</div>\n'
-        '    <div class="vocab-list">\n'
-        f'      {vocab_html}\n'
-        '    </div>\n'
-        '  </div>\n'
-        '</div>'
-    )
-
-
-def ensure_bilingual_sections(html_content: str, config: dict) -> str:
-    """后处理：确保每条新闻都有双语内容。
-    检查生成结果中缺少 .bilingual 的条目，用 DeepSeek 补充翻译。"""
-    items = _extract_items_needing_translation(html_content)
-
-    if not items:
-        total_items = html_content.count('class="item"')
-        total_bilingual = html_content.count('class="bilingual"')
-        log.info(f"✅ 双语检查通过: {total_bilingual}/{total_items} 条新闻含双语内容")
-        return html_content
-
-    log.info(f"📋 发现 {len(items)} 条新闻缺少双语内容，调用 DeepSeek 翻译...")
-
-    ds_config = config["deepseek"]
-    client = OpenAI(api_key=ds_config["api_key"], base_url=ds_config["base_url"])
-
-    # 构建批量翻译请求
-    items_text = ""
-    for i, item in enumerate(items):
-        items_text += f"\n#{i+1}\n标题: {item['title']}\n摘要: {item['summary']}\n"
-
-    try:
-        response = client.chat.completions.create(
-            model=ds_config["model"],
-            messages=[
-                {"role": "system", "content": TRANSLATE_SYSTEM_PROMPT},
-                {"role": "user", "content": f"Translate these {len(items)} news items to English:\n{items_text}"},
-            ],
-            temperature=0.1,
-            max_tokens=4000,
-        )
-
-        result_text = response.choices[0].message.content.strip()
-
-        # 清理 markdown 代码块包裹
-        if result_text.startswith("```"):
-            lines = result_text.split("\n")
-            result_text = "\n".join(lines[1:])
-            if result_text.rstrip().endswith("```"):
-                result_text = result_text.rstrip()[:-3].strip()
-
-        translations = json.loads(result_text)
-        if not isinstance(translations, list):
-            translations = [translations]
-
-        log.info(f"✅ DeepSeek 翻译完成: {len(translations)} 条")
-
-        # 从后向前注入双语内容（避免偏移量错乱）
-        for i in range(min(len(items), len(translations)) - 1, -1, -1):
-            item = items[i]
-            trans = translations[i]
-            bilingual_html = _build_bilingual_html(trans)
-
-            chunk = html_content[item["html_start"]:item["html_end"]]
-
-            # 在 .item-summary 结束标签后插入
-            summary_end = re.search(
-                r'(class="item-summary"[^>]*>.*?</(?:p|div)>)',
-                chunk, re.DOTALL
-            )
-            if summary_end:
-                insert_pos = item["html_start"] + summary_end.end()
-                html_content = html_content[:insert_pos] + bilingual_html + html_content[insert_pos:]
-            else:
-                # 找不到 item-summary，在 .item-header 结束后插入
-                header_end = re.search(
-                    r'(class="item-header"[^>]*>.*?</div>)',
-                    chunk, re.DOTALL
-                )
-                if header_end:
-                    insert_pos = item["html_start"] + header_end.end()
-                    html_content = html_content[:insert_pos] + bilingual_html + html_content[insert_pos:]
-
-        log.info("✅ 双语内容注入完成")
-
-    except Exception as e:
-        log.warning(f"⚠️ 翻译后处理失败: {e}，保持原文不变")
-
-    return html_content
-
-
-# ============================================================
-# 生成阶段
+# 点击查词 JavaScript
 # ============================================================
 
 
@@ -761,10 +612,6 @@ def main():
     # 阶段 2: 生成
     log.info("【阶段2】AI 生成简报...")
     html_content = generate_briefing(news_text, config, today_str)
-
-    # 阶段 2.5: 翻译后处理（确保每条新闻都有双语内容）
-    log.info("【阶段2.5】翻译保障：检查并补充双语内容...")
-    html_content = ensure_bilingual_sections(html_content, config)
 
     # 阶段 3: 保存
     log.info("【阶段3】保存文件...")
