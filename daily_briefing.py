@@ -458,7 +458,7 @@ BRIEFING_HTML_TEMPLATE = """<!DOCTYPE html>
 <body>
 <header>
   <h1>每日全球重要动态简报</h1>
-  <p>生成时间: {DATE} 08:00 CST | 数据来源: Tavily Search + DeepSeek AI 综合整理 | 💡 点击英文单词查看中文释义</p>
+  <p>生成时间: {DATE} 08:00 CST | 数据来源: Tavily Search + DeepSeek AI 综合整理 | 💡 点击任意英文单词 → 中文释义</p>
 </header>
 """
 
@@ -469,11 +469,11 @@ BRIEFING_HTML_TEMPLATE = """<!DOCTYPE html>
 
 DICT_SCRIPT = r"""
 <script>
-// 📖 点击英文单词显示中文释义 - Click-to-translate dictionary
+// 📖 全文点击查词 - Click ANY English word to see Chinese translation
 (function(){
   'use strict';
 
-  // 1. Build dictionary from vocab-card items
+  // ========== 1. Build local dictionary from vocab-card items ==========
   var dict = {};
   document.querySelectorAll('.vocab-item').forEach(function(el){
     var b = el.querySelector('b');
@@ -484,13 +484,12 @@ DICT_SCRIPT = r"""
     var cn = rest.substring(idx + en.length).trim();
     if(en && cn) dict[en.toLowerCase()] = {en:en, cn:cn};
   });
-  if(!Object.keys(dict).length) return;
 
-  // 2. Escape helpers
+  // ========== 2. Escape helpers ==========
   function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
   function escRe(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
 
-  // 3. Highlight vocab words in en-title and en-summary
+  // ========== 3. Highlight vocab words in en-title and en-summary ==========
   var keys = Object.keys(dict).sort(function(a,b){return b.length-a.length;});
   document.querySelectorAll('.en-title, .en-summary').forEach(function(el){
     var html = el.innerHTML;
@@ -502,7 +501,33 @@ DICT_SCRIPT = r"""
     el.innerHTML = html;
   });
 
-  // 4. Make vocab-card bold words tappable too
+  // ========== 4. Wrap ALL remaining bare English words (NEW) ==========
+  document.querySelectorAll('.en-title, .en-summary').forEach(function(el){
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [];
+    while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function(textNode){
+      var text = textNode.textContent;
+      if(!/[a-zA-Z]{2,}/.test(text)) return;
+      var frag = document.createDocumentFragment();
+      var lastIdx = 0;
+      var re = /\b([a-zA-Z]{2,})\b/g;
+      var m;
+      while((m = re.exec(text)) !== null){
+        if(m.index > lastIdx) frag.appendChild(document.createTextNode(text.substring(lastIdx, m.index)));
+        var span = document.createElement('span');
+        span.className = 'dict-word';
+        span.textContent = m[1];
+        span.setAttribute('data-en', m[1]);
+        frag.appendChild(span);
+        lastIdx = re.lastIndex;
+      }
+      if(lastIdx < text.length) frag.appendChild(document.createTextNode(text.substring(lastIdx)));
+      if(frag.childNodes.length > 0) textNode.parentNode.replaceChild(frag, textNode);
+    });
+  });
+
+  // ========== 5. Make vocab-card bold words tappable too ==========
   document.querySelectorAll('.vocab-item b').forEach(function(b){
     var p = b.parentElement;
     var en = b.textContent.trim();
@@ -513,23 +538,17 @@ DICT_SCRIPT = r"""
     if(cn){b.setAttribute('data-cn',cn);b.setAttribute('data-en',en);}
   });
 
-  // 5. Create tooltip
+  // ========== 6. Create tooltip ==========
   var tip = document.createElement('div');
   tip.className = 'dict-tooltip';
   tip.innerHTML = '<div class="dict-tip-en"></div><div class="dict-tip-cn"></div>';
   document.body.appendChild(tip);
   var hideTimer;
+  var apiCache = {};
 
-  // 6. Show / hide tooltip
-  function show(el){
-    var cn = el.getAttribute('data-cn');
-    var en = el.getAttribute('data-en') || el.textContent.trim();
-    if(!cn) return;
-    tip.querySelector('.dict-tip-en').textContent = en;
-    tip.querySelector('.dict-tip-cn').textContent = cn;
-    tip.classList.add('show');
-    // Position
-    var r = el.getBoundingClientRect();
+  // ========== 7. Position & show tooltip ==========
+  function positionTip(refEl){
+    var r = refEl.getBoundingClientRect();
     tip.style.visibility = 'hidden';
     tip.style.display = 'block';
     var tw = tip.offsetWidth, th = tip.offsetHeight;
@@ -541,14 +560,73 @@ DICT_SCRIPT = r"""
     tip.style.left = l+'px';
     tip.style.top = t+'px';
     tip.style.visibility = 'visible';
+  }
+
+  function showTip(en, cn, refEl){
+    tip.querySelector('.dict-tip-en').textContent = en;
+    tip.querySelector('.dict-tip-cn').textContent = cn;
+    tip.classList.add('show');
+    positionTip(refEl);
     clearTimeout(hideTimer);
     hideTimer = setTimeout(function(){tip.classList.remove('show');}, 4000);
   }
 
+  // ========== 8. Youdao JSONP lookup for unknown words ==========
+  function youdaoLookup(word, callback){
+    var lower = word.toLowerCase();
+    if(apiCache[lower]){callback(apiCache[lower]);return;}
+    var cbName = '_yd_'+Date.now()+'_'+Math.random().toString(36).substr(2,5);
+    window[cbName] = function(data){
+      delete window[cbName];
+      var result = null;
+      if(data.data && data.data.entries && data.data.entries.length>0){
+        var entry = data.data.entries[0];
+        if(entry.explain && entry.explain.trim()) result = entry.explain.trim();
+      }
+      if(result) apiCache[lower] = result;
+      callback(result);
+    };
+    var script = document.createElement('script');
+    script.src = 'https://dict.youdao.com/suggest?num=1&doctype=jsonp&callback='+cbName+'&q='+encodeURIComponent(word);
+    script.onerror = function(){delete window[cbName];callback(null);};
+    document.head.appendChild(script);
+    setTimeout(function(){if(window[cbName]){delete window[cbName];callback(null);}},5000);
+  }
+
+  // ========== 9. Click handler ==========
   document.addEventListener('click', function(e){
     var w = e.target.closest('.dict-word, .dict-word-vocab');
-    if(w){e.preventDefault();e.stopPropagation();show(w);}
-    else if(!e.target.closest('.dict-tooltip')){tip.classList.remove('show');clearTimeout(hideTimer);}
+    if(w){
+      e.preventDefault();
+      e.stopPropagation();
+      var cn = w.getAttribute('data-cn');
+      var en = w.getAttribute('data-en') || w.textContent.trim();
+      if(cn){
+        // Known word from vocab - show instantly
+        showTip(en, cn, w);
+      } else {
+        // Unknown word - online lookup via Youdao
+        tip.querySelector('.dict-tip-en').textContent = en;
+        tip.querySelector('.dict-tip-cn').textContent = '⏳ 查询中...';
+        tip.classList.add('show');
+        positionTip(w);
+        youdaoLookup(en, function(result){
+          if(result){
+            tip.querySelector('.dict-tip-cn').textContent = result;
+            w.setAttribute('data-cn', result);
+          } else {
+            tip.querySelector('.dict-tip-cn').textContent = '暂无释义';
+          }
+          positionTip(w);
+          clearTimeout(hideTimer);
+          hideTimer = setTimeout(function(){tip.classList.remove('show');}, 4000);
+        });
+      }
+    }
+    else if(!e.target.closest('.dict-tooltip')){
+      tip.classList.remove('show');
+      clearTimeout(hideTimer);
+    }
   });
 })();
 </script>
