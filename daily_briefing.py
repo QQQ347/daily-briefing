@@ -348,6 +348,14 @@ h2 { font-size: 16px; color: #1a1a2e; margin: 22px 0 12px 0; padding-bottom: 6px
 .dl-prospect { color: #e65100; }
 .dl-vision { color: #6a1b9a; }
 .trend-comment { background: linear-gradient(135deg, #f3e5f5, #e8eaf6); border-left: 3px solid #9575cd; border-radius: 0 6px 6px 0; padding: 10px 14px; margin: 10px 0 18px 0; font-size: 13px; color: #4a148c; font-style: italic; line-height: 1.7; }
+.dict-word { border-bottom: 1px dashed #1565c0; cursor: pointer; transition: background 0.15s; border-radius: 2px; }
+.dict-word:hover, .dict-word:active { background: rgba(21,101,192,0.12); }
+.dict-word-vocab { cursor: pointer; transition: background 0.15s; }
+.dict-word-vocab:hover, .dict-word-vocab:active { background: rgba(26,35,126,0.15) !important; }
+.dict-tooltip { position: fixed; background: linear-gradient(135deg, #1a1a2e, #16213e); color: #fff; padding: 8px 14px; border-radius: 8px; font-size: 14px; z-index: 9999; pointer-events: none; opacity: 0; transform: translateY(4px); transition: opacity 0.2s, transform 0.2s; box-shadow: 0 4px 16px rgba(0,0,0,0.25); max-width: 280px; }
+.dict-tooltip.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.dict-tip-en { font-size: 12px; color: #90caf9; margin-bottom: 2px; }
+.dict-tip-cn { font-size: 15px; font-weight: 600; color: #fff; }
 footer { text-align: center; color: #aaa; font-size: 11px; margin-top: 30px; padding: 12px; }
 @media (max-width: 600px) {
   body { padding: 8px; }
@@ -367,6 +375,9 @@ footer { text-align: center; color: #aaa; font-size: 11px; margin-top: 30px; pad
   .deepdive summary { font-size: 12px; padding: 5px 8px; }
   .deepdive-content { font-size: 12px; padding: 8px 10px; }
   .trend-comment { font-size: 12px; padding: 8px 10px; }
+  .dict-tooltip { padding: 6px 10px; font-size: 13px; max-width: 240px; }
+  .dict-tip-en { font-size: 11px; }
+  .dict-tip-cn { font-size: 14px; }
 }
 ```
 """
@@ -411,6 +422,14 @@ BRIEFING_HTML_TEMPLATE = """<!DOCTYPE html>
     .dl-prospect { color: #e65100; }
     .dl-vision { color: #6a1b9a; }
     .trend-comment { background: linear-gradient(135deg, #f3e5f5, #e8eaf6); border-left: 3px solid #9575cd; border-radius: 0 6px 6px 0; padding: 10px 14px; margin: 10px 0 18px 0; font-size: 13px; color: #4a148c; font-style: italic; line-height: 1.7; }
+    .dict-word { border-bottom: 1px dashed #1565c0; cursor: pointer; transition: background 0.15s; border-radius: 2px; }
+    .dict-word:hover, .dict-word:active { background: rgba(21,101,192,0.12); }
+    .dict-word-vocab { cursor: pointer; transition: background 0.15s; }
+    .dict-word-vocab:hover, .dict-word-vocab:active { background: rgba(26,35,126,0.15) !important; }
+    .dict-tooltip { position: fixed; background: linear-gradient(135deg, #1a1a2e, #16213e); color: #fff; padding: 8px 14px; border-radius: 8px; font-size: 14px; z-index: 9999; pointer-events: none; opacity: 0; transform: translateY(4px); transition: opacity 0.2s, transform 0.2s; box-shadow: 0 4px 16px rgba(0,0,0,0.25); max-width: 280px; }
+    .dict-tooltip.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .dict-tip-en { font-size: 12px; color: #90caf9; margin-bottom: 2px; }
+    .dict-tip-cn { font-size: 15px; font-weight: 600; color: #fff; }
     footer { text-align: center; color: #aaa; font-size: 11px; margin-top: 30px; padding: 12px; }
     @media (max-width: 600px) {
       body { padding: 8px; }
@@ -430,14 +449,109 @@ BRIEFING_HTML_TEMPLATE = """<!DOCTYPE html>
       .deepdive summary { font-size: 12px; padding: 5px 8px; }
       .deepdive-content { font-size: 12px; padding: 8px 10px; }
       .trend-comment { font-size: 12px; padding: 8px 10px; }
+      .dict-tooltip { padding: 6px 10px; font-size: 13px; max-width: 240px; }
+      .dict-tip-en { font-size: 11px; }
+      .dict-tip-cn { font-size: 14px; }
     }
   </style>
 </head>
 <body>
 <header>
   <h1>每日全球重要动态简报</h1>
-  <p>生成时间: {DATE} 08:00 CST | 数据来源: Tavily Search + DeepSeek AI 综合整理</p>
+  <p>生成时间: {DATE} 08:00 CST | 数据来源: Tavily Search + DeepSeek AI 综合整理 | 💡 点击英文单词查看中文释义</p>
 </header>
+"""
+
+
+# ============================================================
+# 点击查词 JavaScript
+# ============================================================
+
+DICT_SCRIPT = r"""
+<script>
+// 📖 点击英文单词显示中文释义 - Click-to-translate dictionary
+(function(){
+  'use strict';
+
+  // 1. Build dictionary from vocab-card items
+  var dict = {};
+  document.querySelectorAll('.vocab-item').forEach(function(el){
+    var b = el.querySelector('b');
+    if(!b) return;
+    var en = b.textContent.trim();
+    var rest = el.textContent.trim();
+    var idx = rest.indexOf(en);
+    var cn = rest.substring(idx + en.length).trim();
+    if(en && cn) dict[en.toLowerCase()] = {en:en, cn:cn};
+  });
+  if(!Object.keys(dict).length) return;
+
+  // 2. Escape helpers
+  function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function escRe(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+
+  // 3. Highlight vocab words in en-title and en-summary
+  var keys = Object.keys(dict).sort(function(a,b){return b.length-a.length;});
+  document.querySelectorAll('.en-title, .en-summary').forEach(function(el){
+    var html = el.innerHTML;
+    keys.forEach(function(k){
+      var item = dict[k];
+      var re = new RegExp('\\b('+escRe(item.en)+')\\b','gi');
+      html = html.replace(re, '<span class="dict-word" data-cn="'+escHtml(item.cn)+'" data-en="'+escHtml(item.en)+'">$1</span>');
+    });
+    el.innerHTML = html;
+  });
+
+  // 4. Make vocab-card bold words tappable too
+  document.querySelectorAll('.vocab-item b').forEach(function(b){
+    var p = b.parentElement;
+    var en = b.textContent.trim();
+    var rest = p.textContent.trim();
+    var idx = rest.indexOf(en);
+    var cn = rest.substring(idx+en.length).trim();
+    b.classList.add('dict-word-vocab');
+    if(cn){b.setAttribute('data-cn',cn);b.setAttribute('data-en',en);}
+  });
+
+  // 5. Create tooltip
+  var tip = document.createElement('div');
+  tip.className = 'dict-tooltip';
+  tip.innerHTML = '<div class="dict-tip-en"></div><div class="dict-tip-cn"></div>';
+  document.body.appendChild(tip);
+  var hideTimer;
+
+  // 6. Show / hide tooltip
+  function show(el){
+    var cn = el.getAttribute('data-cn');
+    var en = el.getAttribute('data-en') || el.textContent.trim();
+    if(!cn) return;
+    tip.querySelector('.dict-tip-en').textContent = en;
+    tip.querySelector('.dict-tip-cn').textContent = cn;
+    tip.classList.add('show');
+    // Position
+    var r = el.getBoundingClientRect();
+    tip.style.visibility = 'hidden';
+    tip.style.display = 'block';
+    var tw = tip.offsetWidth, th = tip.offsetHeight;
+    var l = r.left + r.width/2 - tw/2;
+    var t = r.top - th - 8;
+    if(l<8) l=8;
+    if(l+tw>window.innerWidth-8) l=window.innerWidth-tw-8;
+    if(t<8) t = r.bottom + 8;
+    tip.style.left = l+'px';
+    tip.style.top = t+'px';
+    tip.style.visibility = 'visible';
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(function(){tip.classList.remove('show');}, 4000);
+  }
+
+  document.addEventListener('click', function(e){
+    var w = e.target.closest('.dict-word, .dict-word-vocab');
+    if(w){e.preventDefault();e.stopPropagation();show(w);}
+    else if(!e.target.closest('.dict-tooltip')){tip.classList.remove('show');clearTimeout(hideTimer);}
+  });
+})();
+</script>
 """
 
 
@@ -484,6 +598,14 @@ def generate_briefing(news_text: str, config: dict, today_str: str) -> str:
         log.warning("AI 输出未包含完整 HTML 结构，尝试补充 header")
         header = BRIEFING_HTML_TEMPLATE.replace("{DATE}", today_str)
         html_content = header + html_content + "\n</body>\n</html>"
+
+    # 注入点击查词 JavaScript（在 </body> 前）
+    if "</body>" in html_content:
+        html_content = html_content.replace("</body>", DICT_SCRIPT + "\n</body>", 1)
+        log.info("已注入点击查词 JavaScript")
+    else:
+        html_content += DICT_SCRIPT
+        log.info("已追加点击查词 JavaScript (无 </body> 标签)")
 
     log.info(f"简报生成完成: {len(html_content):,} 字符")
     return html_content
