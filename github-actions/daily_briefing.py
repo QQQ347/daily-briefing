@@ -463,12 +463,16 @@ CLICK_WORD_CSS = """
 /* 点击查词样式 */
 .click-word { border-bottom: 1px dashed #7986cb; cursor: pointer; transition: background 0.2s; }
 .click-word:hover { background: #e8eaf6; }
+.click-word-no-dict { cursor: pointer; transition: background 0.2s; border-bottom: none; }
+.click-word-no-dict:hover { background: #f5f5f5; }
 .click-tooltip { position: fixed; z-index: 9999; background: linear-gradient(135deg, #263238, #37474f); color: #fff; padding: 8px 14px; border-radius: 8px; font-size: 13px; line-height: 1.6; max-width: 280px; box-shadow: 0 4px 16px rgba(0,0,0,0.25); pointer-events: none; opacity: 0; transition: opacity 0.2s; }
 .click-tooltip.show { opacity: 1; }
 .click-tooltip .tw { font-weight: 700; color: #82b1ff; font-size: 14px; margin-bottom: 2px; }
 .click-tooltip .tm { color: #b0bec5; font-size: 12px; }
+.click-tooltip .tm-hint { color: #78909c; font-size: 11px; font-style: italic; }
 @media (max-width: 600px) {
   .click-word { border-bottom-width: 0.5px; }
+  .click-word-no-dict:hover { background: #fafafa; }
   .click-tooltip { font-size: 12px; max-width: 220px; padding: 6px 10px; }
   .click-tooltip .tw { font-size: 13px; }
 }
@@ -478,37 +482,74 @@ CLICK_WORD_JS = """
 <script>
 (function(){
   var D=__WORD_DICT__;
-  if(!D||!Object.keys(D).length) return;
-  /* 只扫描 .en-title 和 .en-summary 内的文本节点 */
+  if(!D) D={};
+  /* 拆出长短语(含空格)和单词 */
+  var phrases=[],words=[];
+  Object.keys(D).forEach(function(k){
+    if(k.indexOf(' ')>=0||k.indexOf('-')>=0) phrases.push(k); else words.push(k);
+  });
+  /* 长短语按长度降序 */
+  phrases.sort(function(a,b){return b.length-a.length;});
   var targets=document.querySelectorAll('.en-title,.en-summary');
   targets.forEach(function(el){
-    wrapWords(el,D);
+    /* 第一轮：匹配长短语 → 包裹为 .click-word */
+    if(phrases.length) wrapPhrases(el,D,phrases);
+    /* 第二轮：对剩余文本节点，逐词包裹 */
+    wrapSingleWords(el,D);
   });
-  function wrapWords(el,D){
+  function escRe(s){return s.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\$&');}
+  function wrapPhrases(el,D,phrases){
+    var re=new RegExp('\\\\b('+phrases.map(escRe).join('|')+')\\\\b','gi');
     var walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null,false);
     var nodes=[];
     while(walker.nextNode()) nodes.push(walker.currentNode);
     nodes.forEach(function(textNode){
       var text=textNode.textContent;
-      /* 构建替换：匹配词典中的词（优先匹配长短语） */
-      var keys=Object.keys(D).sort(function(a,b){return b.length-a.length;});
-      var regex=new RegExp('\\\\b('+keys.map(function(k){return k.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\$&');}).join('|')+')\\\\b','gi');
-      var hasMatch=regex.test(text);
-      if(!hasMatch) return;
-      regex.lastIndex=0;
+      if(!re.test(text)) return;
+      re.lastIndex=0;
       var frag=document.createDocumentFragment();
-      var lastIdx=0;
-      var m;
-      while((m=regex.exec(text))!==null){
-        if(m.index>lastIdx) frag.appendChild(document.createTextNode(text.slice(lastIdx,m.index)));
+      var last=0,m;
+      while((m=re.exec(text))!==null){
+        if(m.index>last) frag.appendChild(document.createTextNode(text.slice(last,m.index)));
         var span=document.createElement('span');
         span.className='click-word';
-        span.textContent=m[0];
         span.setAttribute('data-cn',D[m[1].toLowerCase()]||'');
+        span.textContent=m[0];
         frag.appendChild(span);
-        lastIdx=regex.lastIndex;
+        last=re.lastIndex;
       }
-      if(lastIdx<text.length) frag.appendChild(document.createTextNode(text.slice(lastIdx)));
+      if(last<text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+      textNode.parentNode.replaceChild(frag,textNode);
+    });
+  }
+  function wrapSingleWords(el,D){
+    var walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null,false);
+    var nodes=[];
+    while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function(textNode){
+      var text=textNode.textContent;
+      var wordRe=/[a-zA-Z][a-zA-Z'\\-]*/g;
+      if(!wordRe.test(text)) return;
+      wordRe.lastIndex=0;
+      var frag=document.createDocumentFragment();
+      var last=0,m;
+      while((m=wordRe.exec(text))!==null){
+        if(m.index>last) frag.appendChild(document.createTextNode(text.slice(last,m.index)));
+        var word=m[0];
+        var lower=word.toLowerCase();
+        var span=document.createElement('span');
+        if(D[lower]!==undefined){
+          span.className='click-word';
+          span.setAttribute('data-cn',D[lower]);
+        } else {
+          span.className='click-word-no-dict';
+          span.setAttribute('data-cn','');
+        }
+        span.textContent=word;
+        frag.appendChild(span);
+        last=wordRe.lastIndex;
+      }
+      if(last<text.length) frag.appendChild(document.createTextNode(text.slice(last)));
       textNode.parentNode.replaceChild(frag,textNode);
     });
   }
@@ -518,14 +559,18 @@ CLICK_WORD_JS = """
   document.body.appendChild(tip);
   var hideTimer;
   document.addEventListener('click',function(e){
-    var w=e.target.closest('.click-word');
+    var w=e.target.closest('.click-word,.click-word-no-dict');
     if(w){
       e.preventDefault();
       e.stopPropagation();
       clearTimeout(hideTimer);
       var cn=w.getAttribute('data-cn');
       var en=w.textContent;
-      tip.innerHTML='<div class="tw">'+en+'</div><div class="tm">'+cn+'</div>';
+      if(cn){
+        tip.innerHTML='<div class="tw">'+en+'</div><div class="tm">'+cn+'</div>';
+      } else {
+        tip.innerHTML='<div class="tw">'+en+'</div><div class="tm-hint">点击可查词 · 词典未收录</div>';
+      }
       var r=w.getBoundingClientRect();
       var left=r.left+r.width/2;
       var top=r.bottom+6;
