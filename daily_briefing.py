@@ -348,14 +348,6 @@ h2 { font-size: 16px; color: #1a1a2e; margin: 22px 0 12px 0; padding-bottom: 6px
 .dl-prospect { color: #e65100; }
 .dl-vision { color: #6a1b9a; }
 .trend-comment { background: linear-gradient(135deg, #f3e5f5, #e8eaf6); border-left: 3px solid #9575cd; border-radius: 0 6px 6px 0; padding: 10px 14px; margin: 10px 0 18px 0; font-size: 13px; color: #4a148c; font-style: italic; line-height: 1.7; }
-.dict-word { border-bottom: 1px dashed #1565c0; cursor: pointer; transition: background 0.15s; border-radius: 2px; }
-.dict-word:hover, .dict-word:active { background: rgba(21,101,192,0.12); }
-.dict-word-vocab { cursor: pointer; transition: background 0.15s; }
-.dict-word-vocab:hover, .dict-word-vocab:active { background: rgba(26,35,126,0.15) !important; }
-.dict-tooltip { position: fixed; background: linear-gradient(135deg, #1a1a2e, #16213e); color: #fff; padding: 8px 14px; border-radius: 8px; font-size: 14px; z-index: 9999; pointer-events: none; opacity: 0; transform: translateY(4px); transition: opacity 0.2s, transform 0.2s; box-shadow: 0 4px 16px rgba(0,0,0,0.25); max-width: 280px; }
-.dict-tooltip.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
-.dict-tip-en { font-size: 12px; color: #90caf9; margin-bottom: 2px; }
-.dict-tip-cn { font-size: 15px; font-weight: 600; color: #fff; }
 footer { text-align: center; color: #aaa; font-size: 11px; margin-top: 30px; padding: 12px; }
 @media (max-width: 600px) {
   body { padding: 8px; }
@@ -375,9 +367,6 @@ footer { text-align: center; color: #aaa; font-size: 11px; margin-top: 30px; pad
   .deepdive summary { font-size: 12px; padding: 5px 8px; }
   .deepdive-content { font-size: 12px; padding: 8px 10px; }
   .trend-comment { font-size: 12px; padding: 8px 10px; }
-  .dict-tooltip { padding: 6px 10px; font-size: 13px; max-width: 240px; }
-  .dict-tip-en { font-size: 11px; }
-  .dict-tip-cn { font-size: 14px; }
 }
 ```
 """
@@ -422,14 +411,6 @@ BRIEFING_HTML_TEMPLATE = """<!DOCTYPE html>
     .dl-prospect { color: #e65100; }
     .dl-vision { color: #6a1b9a; }
     .trend-comment { background: linear-gradient(135deg, #f3e5f5, #e8eaf6); border-left: 3px solid #9575cd; border-radius: 0 6px 6px 0; padding: 10px 14px; margin: 10px 0 18px 0; font-size: 13px; color: #4a148c; font-style: italic; line-height: 1.7; }
-    .dict-word { border-bottom: 1px dashed #1565c0; cursor: pointer; transition: background 0.15s; border-radius: 2px; }
-    .dict-word:hover, .dict-word:active { background: rgba(21,101,192,0.12); }
-    .dict-word-vocab { cursor: pointer; transition: background 0.15s; }
-    .dict-word-vocab:hover, .dict-word-vocab:active { background: rgba(26,35,126,0.15) !important; }
-    .dict-tooltip { position: fixed; background: linear-gradient(135deg, #1a1a2e, #16213e); color: #fff; padding: 8px 14px; border-radius: 8px; font-size: 14px; z-index: 9999; pointer-events: none; opacity: 0; transform: translateY(4px); transition: opacity 0.2s, transform 0.2s; box-shadow: 0 4px 16px rgba(0,0,0,0.25); max-width: 280px; }
-    .dict-tooltip.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
-    .dict-tip-en { font-size: 12px; color: #90caf9; margin-bottom: 2px; }
-    .dict-tip-cn { font-size: 15px; font-weight: 600; color: #fff; }
     footer { text-align: center; color: #aaa; font-size: 11px; margin-top: 30px; padding: 12px; }
     @media (max-width: 600px) {
       body { padding: 8px; }
@@ -449,9 +430,6 @@ BRIEFING_HTML_TEMPLATE = """<!DOCTYPE html>
       .deepdive summary { font-size: 12px; padding: 5px 8px; }
       .deepdive-content { font-size: 12px; padding: 8px 10px; }
       .trend-comment { font-size: 12px; padding: 8px 10px; }
-      .dict-tooltip { padding: 6px 10px; font-size: 13px; max-width: 240px; }
-      .dict-tip-en { font-size: 11px; }
-      .dict-tip-cn { font-size: 14px; }
     }
   </style>
 </head>
@@ -466,253 +444,6 @@ BRIEFING_HTML_TEMPLATE = """<!DOCTYPE html>
 # ============================================================
 # 点击查词 JavaScript
 # ============================================================
-
-def build_word_dict(html_content: str) -> dict:
-    """从 HTML 中提取所有英文单词，调有道 /jsonapi 查中文释义，返回 {word: translation}"""
-    import re as _re
-    # 提取 HTML 纯文本中的所有英文单词（2字母以上）
-    text = _re.sub(r'<[^>]+>', ' ', html_content)  # 去标签
-    words = set(w.lower() for w in _re.findall(r'\b([a-zA-Z]{2,})\b', text))
-
-    # 过滤常见虚词/功能词，减少无意义的 API 调用
-    STOP_WORDS = {
-        'the', 'a', 'an', 'is', 'are', 'was', 'were', 'be', 'been', 'being',
-        'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could',
-        'should', 'may', 'might', 'shall', 'can', 'need', 'must', 'ought',
-        'to', 'of', 'in', 'for', 'on', 'with', 'at', 'by', 'from', 'as',
-        'into', 'through', 'during', 'before', 'after', 'above', 'below',
-        'between', 'out', 'off', 'over', 'under', 'again', 'further', 'then',
-        'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'each',
-        'every', 'both', 'few', 'more', 'most', 'other', 'some', 'such', 'no',
-        'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 'just',
-        'because', 'but', 'and', 'or', 'if', 'while', 'about', 'up', 'its',
-        'it', 'he', 'she', 'they', 'we', 'you', 'who', 'which', 'that', 'this',
-        'these', 'those', 'am', 'me', 'my', 'your', 'his', 'her', 'our', 'their',
-        'what', 'also', 'new', 'like', 'get', 'make', 'go', 'know', 'take',
-        'see', 'come', 'think', 'look', 'want', 'give', 'use', 'find', 'tell',
-        'ask', 'work', 'seem', 'feel', 'try', 'leave', 'call', 'keep', 'let',
-        'begin', 'show', 'hear', 'play', 'run', 'move', 'live', 'believe',
-        'hold', 'bring', 'happen', 'write', 'provide', 'sit', 'stand', 'lose',
-        'pay', 'meet', 'include', 'continue', 'set', 'learn', 'change', 'lead',
-        'understand', 'watch', 'follow', 'stop', 'create', 'speak', 'read',
-        'allow', 'add', 'spend', 'grow', 'open', 'walk', 'win', 'offer',
-        'remember', 'love', 'consider', 'appear', 'buy', 'wait', 'serve',
-        'die', 'send', 'expect', 'build', 'stay', 'fall', 'cut', 'reach',
-        'kill', 'remain', 'suggest', 'raise', 'pass', 'sell', 'require',
-        'report', 'decide', 'pull', 'develop', 'eat', 'per', 'etc', 'vs',
-        're', 'de', 'la', 'el', 'en', 'le', 'al', 'et',
-    }
-    words -= STOP_WORDS
-
-    # 先从 vocab-card 提取已知释义
-    vocab_dict = {}
-    for m in _re.finditer(r'<span class="vocab-item"><b>([^<]+)</b>\s*([^<]+)</span>', html_content):
-        en = m.group(1).strip().lower()
-        cn = m.group(2).strip()
-        if en and cn:
-            vocab_dict[en] = cn
-
-    # 对不在 vocab 中的单词，调有道 API 查询
-    youdao_dict = {}
-    words_to_query = [w for w in sorted(words) if w not in vocab_dict]
-    log.info(f"需要查询有道释义的单词数: {len(words_to_query)}")
-
-    for i, word in enumerate(words_to_query):
-        try:
-            resp = requests.get(
-                f"https://dict.youdao.com/jsonapi?q={word}",
-                timeout=5,
-                headers={"User-Agent": "Mozilla/5.0 (briefing-bot)"}
-            )
-            if resp.status_code != 200:
-                continue
-            data = resp.json()
-            cn = None
-
-            # 优先从 ec (英中词典) 取
-            if "ec" in data and data["ec"].get("word"):
-                ec_word = data["ec"]["word"]
-                if isinstance(ec_word, list):
-                    ec_word = ec_word[0]
-                trs = ec_word.get("trs", [])
-                if trs:
-                    first_tr = trs[0]
-                    if isinstance(first_tr, dict) and "tr" in first_tr:
-                        tr_list = first_tr["tr"]
-                        if tr_list:
-                            l_obj = tr_list[0].get("l", {})
-                            i_list = l_obj.get("i", [])
-                            if i_list:
-                                raw = i_list[0] if isinstance(i_list, list) else str(i_list)
-                                # 去掉词性标注如 "adj. " 前缀，只取中文
-                                cn = _re.sub(r'^[a-z]+\.\s*', '', raw).strip()
-                                # 多个释义取第一个分号前的
-                                if '；' in cn:
-                                    cn = cn.split('；')[0].strip()
-                                elif ';' in cn:
-                                    cn = cn.split(';')[0].strip()
-
-            # 兜底从 web_trans 取
-            if not cn and "web_trans" in data and data["web_trans"].get("web-translation"):
-                wt = data["web_trans"]["web-translation"]
-                if isinstance(wt, list) and wt:
-                    trans_list = wt[0].get("trans", [])
-                    if trans_list:
-                        val = trans_list[0].get("value", "")
-                        if val:
-                            cn = val.strip()
-                            if '；' in cn:
-                                cn = cn.split('；')[0].strip()
-
-            if cn:
-                youdao_dict[word] = cn
-
-        except Exception:
-            pass
-
-        # 每30个词打印进度
-        if (i + 1) % 30 == 0:
-            log.info(f"  已查询 {i+1}/{len(words_to_query)} 个单词")
-
-    # 合并：vocab 优先（可能包含多词短语），youdao 补充
-    result = {}
-    result.update(youdao_dict)
-    result.update(vocab_dict)  # vocab 覆盖 youdao（短语更准确）
-
-    log.info(f"单词释义构建完成: vocab={len(vocab_dict)}, youdao={len(youdao_dict)}, 合并={len(result)}")
-    return result
-
-
-DICT_SCRIPT_TEMPLATE = r"""
-<script>
-// 📖 全文点击查词 v5 - 所有释义由服务端预查，点击即显
-(function(){
-  'use strict';
-
-  // ========== 1. Pre-built dictionary (injected by Python) ==========
-  var dict = {DICT_DATA};
-
-  // ========== 2. Merge vocab-card items (phrase-level, higher priority) ==========
-  document.querySelectorAll('.vocab-item').forEach(function(el){
-    var b = el.querySelector('b');
-    if(!b) return;
-    var en = b.textContent.trim();
-    var rest = el.textContent.trim();
-    var idx = rest.indexOf(en);
-    var cn = rest.substring(idx + en.length).trim();
-    if(en && cn) dict[en.toLowerCase()] = {en:en, cn:cn};
-  });
-
-  // ========== 3. Escape helpers ==========
-  function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
-  function escRe(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
-
-  // ========== 4. Highlight ALL known words in en-title and en-summary ==========
-  var keys = Object.keys(dict).sort(function(a,b){return b.length-a.length;});
-  document.querySelectorAll('.en-title, .en-summary').forEach(function(el){
-    var html = el.innerHTML;
-    keys.forEach(function(k){
-      var item = dict[k];
-      var re = new RegExp('\\b('+escRe(item.en)+')\\b','gi');
-      html = html.replace(re, '<span class="dict-word" data-cn="'+escHtml(item.cn)+'" data-en="'+escHtml(item.en)+'">$1</span>');
-    });
-    el.innerHTML = html;
-  });
-
-  // ========== 5. Wrap remaining bare English words ==========
-  document.querySelectorAll('.en-title, .en-summary').forEach(function(el){
-    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
-    var nodes = [];
-    while(walker.nextNode()) nodes.push(walker.currentNode);
-    nodes.forEach(function(textNode){
-      var text = textNode.textContent;
-      if(!/[a-zA-Z]{2,}/.test(text)) return;
-      var frag = document.createDocumentFragment();
-      var lastIdx = 0;
-      var re = /\b([a-zA-Z]{2,})\b/g;
-      var m;
-      while((m = re.exec(text)) !== null){
-        if(m.index > lastIdx) frag.appendChild(document.createTextNode(text.substring(lastIdx, m.index)));
-        var span = document.createElement('span');
-        span.className = 'dict-word';
-        span.textContent = m[1];
-        span.setAttribute('data-en', m[1]);
-        // 如果预查词典中有，直接写入 data-cn
-        var lower = m[1].toLowerCase();
-        if(dict[lower]) span.setAttribute('data-cn', dict[lower].cn);
-        frag.appendChild(span);
-        lastIdx = re.lastIndex;
-      }
-      if(lastIdx < text.length) frag.appendChild(document.createTextNode(text.substring(lastIdx)));
-      if(frag.childNodes.length > 0) textNode.parentNode.replaceChild(frag, textNode);
-    });
-  });
-
-  // ========== 6. Make vocab-card bold words tappable too ==========
-  document.querySelectorAll('.vocab-item b').forEach(function(b){
-    var p = b.parentElement;
-    var en = b.textContent.trim();
-    var rest = p.textContent.trim();
-    var idx = rest.indexOf(en);
-    var cn = rest.substring(idx+en.length).trim();
-    b.classList.add('dict-word-vocab');
-    if(cn){b.setAttribute('data-cn',cn);b.setAttribute('data-en',en);}
-  });
-
-  // ========== 7. Create tooltip ==========
-  var tip = document.createElement('div');
-  tip.className = 'dict-tooltip';
-  tip.innerHTML = '<div class="dict-tip-en"></div><div class="dict-tip-cn"></div>';
-  document.body.appendChild(tip);
-  var hideTimer;
-
-  // ========== 8. Position & show tooltip ==========
-  function positionTip(refEl){
-    var r = refEl.getBoundingClientRect();
-    tip.style.visibility = 'hidden';
-    tip.style.display = 'block';
-    var tw = tip.offsetWidth, th = tip.offsetHeight;
-    var l = r.left + r.width/2 - tw/2;
-    var t = r.top - th - 8;
-    if(l<8) l=8;
-    if(l+tw>window.innerWidth-8) l=window.innerWidth-tw-8;
-    if(t<8) t = r.bottom + 8;
-    tip.style.left = l+'px';
-    tip.style.top = t+'px';
-    tip.style.visibility = 'visible';
-  }
-
-  function showTip(en, cn, refEl){
-    tip.querySelector('.dict-tip-en').textContent = en;
-    tip.querySelector('.dict-tip-cn').textContent = cn;
-    tip.classList.add('show');
-    positionTip(refEl);
-    clearTimeout(hideTimer);
-    hideTimer = setTimeout(function(){tip.classList.remove('show');}, 4000);
-  }
-
-  // ========== 9. Click handler - all from pre-built dict, instant! ==========
-  document.addEventListener('click', function(e){
-    var w = e.target.closest('.dict-word, .dict-word-vocab');
-    if(w){
-      e.preventDefault();
-      e.stopPropagation();
-      var cn = w.getAttribute('data-cn');
-      var en = w.getAttribute('data-en') || w.textContent.trim();
-      if(cn){
-        showTip(en, cn, w);
-      } else {
-        showTip(en, '暂无释义', w);
-      }
-    }
-    else if(!e.target.closest('.dict-tooltip')){
-      tip.classList.remove('show');
-      clearTimeout(hideTimer);
-    }
-  });
-})();
-</script>
-"""
 
 
 def generate_briefing(news_text: str, config: dict, today_str: str) -> str:
@@ -777,24 +508,6 @@ def generate_briefing(news_text: str, config: dict, today_str: str) -> str:
         # 添加 footer 和闭合标签
         html_content += "\n<footer><p>每日全球重要动态简报 · 自动生成</p></footer>\n</body>\n</html>"
         log.info("  已补全 </body></html> 闭合标签")
-
-    # 构建单词释义字典（服务端预查有道词典）
-    word_dict = build_word_dict(html_content)
-    import json as _json
-    # 构建 JS dict 字符串: {"word": {en:"word", cn:"翻译"}, ...}
-    js_dict_items = []
-    for w, cn in sorted(word_dict.items()):
-        # 转义 JS 字符串中的特殊字符
-        en_escaped = w.replace('\\', '\\\\').replace('"', '\\"').replace("'", "\\'")
-        cn_escaped = cn.replace('\\', '\\\\').replace('"', '\\"').replace("'", "\\'")
-        js_dict_items.append(f'"{en_escaped}":{{en:"{en_escaped}",cn:"{cn_escaped}"}}')
-    js_dict_str = '{' + ','.join(js_dict_items) + '}'
-    dict_script = DICT_SCRIPT_TEMPLATE.replace('{DICT_DATA}', js_dict_str)
-    log.info(f"预查词典: {len(word_dict)} 个单词释义已嵌入")
-
-    # 注入点击查词 JavaScript（在 </body> 前）
-    html_content = html_content.replace("</body>", dict_script + "\n</body>", 1)
-    log.info("已注入点击查词 JavaScript v5 (服务端预查)")
 
     log.info(f"简报生成完成: {len(html_content):,} 字符")
     return html_content
