@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球动态日报 | 2026-05-29</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+            color: #1a1a1a;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            color: #0b1e33;
+            border-bottom: 3px solid #2563eb;
+            display: inline-block;
+            padding-bottom: 6px;
+        }
+        .date {
+            font-size: 15px;
+            color: #64748b;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        /* overview */
+        .overview {
+            background: #eef2ff;
+            border-left: 5px solid #2563eb;
+            padding: 16px 20px;
+            margin-bottom: 28px;
+            border-radius: 8px;
+        }
+        .overview h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #1e293b;
+        }
+        .overview p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0 0 12px 0;
+            color: #334155;
+        }
+        .overview-tags {
+            display: block;
+        }
+        .overview-tag {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-right: 8px;
+            margin-bottom: 4px;
+        }
+        /* sections */
+        .section {
+            margin-bottom: 32px;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0 0 14px 0;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .item {
+            background: #f8fafc;
+            padding: 16px 18px;
+            margin-bottom: 18px;
+            border-radius: 10px;
+            border: 1px solid #e9edf2;
+        }
+        .item-header {
+            margin-bottom: 10px;
+        }
+        .item-header .title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-right: 8px;
+        }
+        .item-header .stars {
+            font-size: 14px;
+            color: #eab308;
+            letter-spacing: 1px;
+        }
+        .impact {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+        .impact-high {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+        .impact-med {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .impact-low {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+        .risk-red {
+            display: inline-block;
+            background: #fce4ec;
+            color: #b71c1c;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+        .risk-yellow {
+            display: inline-block;
+            background: #fff8e1;
+            color: #b76e00;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+        .item-summary {
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 8px 0;
+            color: #1e293b;
+        }
+        .num-up {
+            background: #dcfce7;
+            color: #166534;
+            font-weight: 600;
+            padding: 1px 5px;
+            border-radius: 4px;
+        }
+        .num-down {
+            background: #fee2e2;
+            color: #991b1b;
+            font-weight: 600;
+            padding: 1px 5px;
+            border-radius: 4px;
+        }
+        .num-key {
+            background: #e0e7ff;
+            color: #3730a3;
+            font-weight: 600;
+            padding: 1px 5px;
+            border-radius: 4px;
+        }
+        .bilingual {
+            background: #f1f5f9;
+            padding: 12px 14px;
+            border-radius: 8px;
+            margin: 12px 0;
+            border-left: 3px solid #94a3b8;
+        }
+        .en-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0 0 4px 0;
+        }
+        .en-summary {
+            font-size: 14px;
+            color: #334155;
+            margin: 4px 0;
+            line-height: 1.5;
+        }
+        .vocab-card {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed #cbd5e1;
+        }
+        .vocab-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 4px;
+        }
+        .vocab-list {
+            display: block;
+        }
+        .vocab-item {
+            display: inline-block;
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 14px;
+            padding: 2px 10px;
+            font-size: 12px;
+            margin-right: 6px;
+            margin-bottom: 4px;
+            color: #1e293b;
+        }
+        .compare-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin: 16px 0;
+            display: block;
+        }
+        .compare-side {
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+            font-size: 14px;
+            line-height: 1.5;
+            padding: 6px 10px;
+        }
+        .compare-bull {
+            background: #e6f7e6;
+            border-radius: 6px;
+        }
+        .compare-bear {
+            background: #fde8e8;
+            border-radius: 6px;
+            margin-left: 6%;
+        }
+        .compare-label {
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        .deepdive {
+            margin: 12px 0 6px 0;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 2px 12px 8px 12px;
+        }
+        .deepdive summary {
+            font-weight: 600;
+            font-size: 14px;
+            color: #2563eb;
+            cursor: pointer;
+            padding: 6px 0;
+        }
+        .deepdive-content {
+            padding: 8px 0 4px 0;
+        }
+        .dl {
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 6px 0;
+            color: #1e293b;
+        }
+        .dl-label {
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .item-source {
+            font-size: 12px;
+            color: #64748b;
+            margin: 8px 0 0 0;
+        }
+        .item-source a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .item-source a:hover {
+            text-decoration: underline;
+        }
+        .trend-comment {
+            background: #f1f5f9;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #1e293b;
+            margin-top: 6px;
+            border-left: 4px solid #64748b;
+            font-weight: 500;
+        }
+        .timeline {
+            background: #fef9e7;
+            border: 1px solid #fde68a;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 24px 0;
+        }
+        .timeline h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: #92400e;
+        }
+        .timeline-item {
+            font-size: 14px;
+            margin: 6px 0;
+            color: #334155;
+        }
+        .timeline-date {
+            background: #fde68a;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-right: 8px;
+            color: #78350f;
+        }
+        .footer {
+            margin-top: 28px;
+            padding-top: 12px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 13px;
+            color: #64748b;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>全球动态日报</h1>
+<div class="date">2026年5月29日 · 星期五</div>
+
+<!-- 第一步：综述模块 -->
+<div class="overview">
+  <h3>🧠 今日综述</h3>
+  <p>今日简报呈现三条主线：生命科学领域CRISPR基因编辑疗法获批临床，中国碱基编辑实现治愈级突破；半导体产业2nm制程三强争霸进入白热化，华为另辟蹊径提出“韬定律”颠覆传统缩放；地缘经济对抗成为全球头号风险，美国借“洛比托走廊”在非洲与中国展开资源博弈。整体风向：科技端多点突破，金融端谨慎宽松，地缘风险显著上升。</p>
+  <div class="overview-tags">
+    <span class="overview-tag">🧬 CRISPR临床化</span>
+    <span class="overview-tag">⚛️ 2nm制程竞赛</span>
+    <span class="overview-tag">🔬 华为韬定律</span>
+    <span class="overview-tag">🌍 地缘经济对抗</span>
+    <span class="overview-tag">🔋 磷酸铁锂五代量产</span>
+  </div>
+</div>
+
+<!-- ===== 板块1: 生命科学 ===== -->
+<div class="section">
+  <div class="section-title">🧬 生命科学 / 医学</div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">CRISPR临床试验2026：镰状细胞病基因编辑疗法获批，多项III期研究推进中</span>
+      <span class="stars">⭐⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      CRISPR基因编辑疗法已正式获批用于镰状细胞病，多项III期研究进入关键阶段。中国团队在碱基编辑领域实现全球首例治愈级突破，无需DNA双链断裂即可完成精准修复，安全性大幅提升。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">CRISPR Clinical Trials 2026: Sickle Cell Gene Therapy Approved, Phase 3 Studies Underway</p>
+      <p class="en-summary">CRISPR-based therapies have received FDA approval for sickle cell disease, with multiple Phase 3 trials progressing. Chinese researchers achieved a world-first curative-level base editing breakthrough, enabling precise repair without double-strand breaks and significantly reducing off-target effects.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>base editing</b> 碱基编辑</span>
+          <span class="vocab-item"><b>off-target effect</b> 脱靶效应</span>
+          <span class="vocab-item"><b>sickle cell disease</b> 镰状细胞病</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>CRISPR技术从“剪断DNA”升级到“单碱基修改”，好比从用剪刀编辑文章变成用修正液单个字母修改，大幅降低错误风险。中国团队实现全球首例治愈级应用，标志着基因治疗从概念验证走向临床普及。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）将覆盖更多单基因遗传病如地中海贫血、囊性纤维化；中期（3-7年）可拓展至复杂疾病如部分癌症免疫治疗。成本有望从百万美元级降至数万美元。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来“基因门诊”可能成为常规医疗，新生儿可一次性修复致病突变，人类有望消灭数百种遗传病，但基因增强引发的伦理争议也将随之而来。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.fbae.org/blog/crispr-clinical-trials-2026/" target="_blank">FBAE</a> · <a href="https://xueqiu.com/8354121288/384097244" target="_blank">雪球</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">2026科学突破奖：基因治疗先驱与CRISPR创新者获300万美元大奖</span>
+      <span class="stars">⭐⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      被誉为"科学界奥斯卡"的突破奖授予7位学者，表彰其在AAV基因疗法（恢复盲人视力超十年）、CRISPR基因编辑及渐冻症基因发现方面的开创性工作。单项奖金<span class="num-key">300万美元</span>。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">2026 Breakthrough Prize: Gene Therapy Pioneers and CRISPR Innovators Awarded $3 Million</p>
+      <p class="en-summary">The Breakthrough Prize Foundation awarded seven scientists for pioneering AAV gene therapy restoring vision for over a decade, CRISPR gene editing, and ALS gene discovery. Each prize is valued at $3 million.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>breakthrough prize</b> 突破奖</span>
+          <span class="vocab-item"><b>AAV vector</b> 腺相关病毒载体</span>
+          <span class="vocab-item"><b>ALS</b> 渐冻症</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>科学突破奖是硅谷富豪设立的最高科学奖项之一，今年聚焦基因治疗。获奖者开发的AAV疗法让先天性失明患者恢复视力超过10年，证明了基因疗法的持久性，这是里程碑式的临床证据。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将加速基因治疗领域的资本涌入和监管审批；中长期，AAV载体技术可能成为多种遗传性眼病、神经肌肉疾病的标准治疗方案。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当基因修复成为常规手段，“失明可逆”将不再遥远。未来眼科或率先实现“一次治疗，终生受益”的基因医学范式。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.the-scientist.com/gene-therapy-pioneers-win-2026-breakthrough-prize-74376" target="_blank">The Scientist</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">ASGCT 2026：基因与细胞治疗走向精准化，中国多项研究亮相</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      第29届美国基因与细胞治疗学会年会披露，Q1 2026虽审批数量减少，但监管风险降低，交易活跃度上升。哈尔滨血液病研究所马军教授带队参会，多项中国研究展示碱基编辑与CAR-T新突破。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">ASGCT 2026: Precision Gene Therapy Advances, Chinese Studies Highlighted</p>
+      <p class="en-summary">The 29th ASGCT annual meeting reported fewer Q1 approvals but increased regulatory de-risking and dealmaking. Chinese teams presented breakthroughs in base editing and CAR-T therapies, signaling rapid progress in the precision gene therapy field.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>regulatory de-risking</b> 监管风险降低</span>
+          <span class="vocab-item"><b>dealmaking</b> 交易活动</span>
+          <span class="vocab-item"><b>CAR-T</b> 嵌合抗原受体T细胞</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>ASGCT是全球基因治疗领域最高规格学术会议。今年信号明确——行业从“抢批文”进入“精耕细作”阶段，碱基编辑和植入式基因疗法成为新焦点。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，基因治疗赛道将加速洗牌，具备精准编辑能力的公司估值上升；中长期，中国在碱基编辑领域的先发优势可能重塑全球CGT产业格局。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来基因治疗可能像疫苗一样普及，针对特定基因突变定制个性化疗法，癌症、遗传病治疗进入“一次编辑、终身治愈”时代。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.asgct.org/news-publications/landscape-report" target="_blank">ASGCT</a> · <a href="https://www.sohu.com/a/1024190081_121119268" target="_blank">搜狐</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：基因治疗从"概念验证"全面进入"临床兑现"阶段。CRISPR获批、碱基编辑治愈级突破、科学突破奖加持，三重利好叠加。中国在碱基编辑领域的领跑值得重点关注，但长期安全性和可及性仍是核心变量。</div>
+</div>
+
+<!-- ===== 板块2: 经济/金融 ===== -->
+<div class="section">
+  <div class="section-title">💰 经济 / 金融</div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">央行2026年一季度货币政策报告：精准宽松赋能经济，结构性红利引领A股</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+    </div>
+    <div class="item-summary">
+      央行Q1报告定调"灵活高效"降准降息，强调精准宽松。分析师解读为流动性"定心丸"，A股市场获产业升级信号。报告明确加大对"五篇大文章"（科技、绿色、普惠、养老、数字）金融支持。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">PBOC Q1 2026 Monetary Policy Report: Targeted Easing to Boost Economy, Structural Dividends for A-shares</p>
+      <p class="en-summary">The People's Bank of China's Q1 report signals flexible and efficient reserve requirement ratio and interest rate cuts, emphasizing precision easing. Analysts interpret this as a liquidity reassurance for A-shares, with a clear focus on five key financing areas: tech, green, inclusive, elderly care, and digital.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>targeted easing</b> 精准宽松</span>
+          <span class="vocab-item"><b>reserve requirement ratio</b> 存款准备金率</span>
+          <span class="vocab-item"><b>structural dividend</b> 结构性红利</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>央行一季度报告释放明确宽松信号，但并非"大水漫灌"，而是精准滴灌五大重点领域。这相当于给市场一个定向流动性管道，既托底经济又引导结构转型。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期利好A股科技和绿色板块，流动性改善叠加产业政策双轮驱动；中期看，若降准降息落地，实体经济融资成本将进一步下降，但需警惕通胀预期抬头。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当货币政策与产业政策深度耦合，中国可能走出一条"有管理的结构性宽松"新范式，既避免过度刺激又精准支持新质生产力，成为全球央行政策创新的参考样本。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://cif.mofcom.gov.cn/cif/html/upload/20260518085642746_中国货币政策执行报告+2026年第一季度.pdf" target="_blank">央行报告</a> · <a href="https://xueqiu.com/6417584981/388273688" target="_blank">雪球解读</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">中国银行研究院发布《2026年经济金融展望报告》</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      报告展望2026年中国GDP增速目标维持在<span class="num-key">5%</span>左右，强调内需扩张与科技创新双轮驱动。但外部地缘风险和全球贸易碎片化被视为主要下行压力。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Bank of China Research Institute Releases 2026 Economic and Financial Outlook Report</p>
+      <p class="en-summary">The report projects China's GDP growth target around 5% in 2026, driven by domestic demand expansion and technological innovation. External geopolitical risks and global trade fragmentation are identified as major headwinds.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>GDP growth target</b> GDP增长目标</span>
+          <span class="vocab-item"><b>domestic demand</b> 内需</span>
+          <span class="vocab-item"><b>trade fragmentation</b> 贸易碎片化</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国银行作为国有大行，其年度展望报告是观察政策意图的重要窗口。5%目标体现"稳中求进"总基调，科技创新被提到核心驱动力的高度。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期消费复苏和基建投资仍是托底主力；中长期，半导体、新能源、AI等硬科技领域的资本开支将成为增长新引擎。房地产风险出清进度仍需观察。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中国能顺利从"房地产+出口"模式切换到"科技+内需"模式，将完成一次历史性的经济转型，为全球提供第二个增长极。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.boc.cn/fimarkets/summarize/202601/t20260105_25638427.html" target="_blank">中国银行</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：中国货币政策明确走向"精准宽松"，流动性环境对A股形成支撑，但全球贸易摩擦和地缘风险仍是最大外生变量。科技与绿色结构性红利确定性较高，金融板块整体偏向防御性配置。</div>
+</div>
+
+<!-- ===== 板块3: 人工智能 ===== -->
+<div class="section">
+  <div class="section-title">🤖 人工智能</div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">OpenAI模型推翻离散几何核心猜想，AI数学推理能力再突破</span>
+      <span class="stars">⭐⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+    </div>
+    <div class="item-summary">
+      OpenAI于5月20日宣布，其AI模型成功推翻了一个困扰数学界数十年的离散几何核心猜想。这标志着AI从"工具"向"科学发现者"的角色跃迁，数学推理能力达到新高度。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">OpenAI Model Disproves Central Conjecture in Discrete Geometry</p>
+      <p class="en-summary">On May 20, 2026, OpenAI announced that its AI model has disproved a central conjecture in discrete geometry that had puzzled mathematicians for decades. This marks a significant leap in AI's mathematical reasoning capability, transitioning from a tool to a scientific discoverer.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>discrete geometry</b> 离散几何</span>
+          <span class="vocab-item"><b>conjecture</b> 猜想</span>
+          <span class="vocab-item"><b>mathematical reasoning</b> 数学推理</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>OpenAI模型证明了某个长期未被证伪的几何猜想是错误的。这就像AI在数学家们认为"可能正确"的地方找到了反例，本质上是在进行原创性数学研究，而非简单的计算或模式匹配。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将极大推动AI for Science浪潮，数学、物理、化学等基础科学领域可能出现更多AI驱动的发现；中长期，AI可能成为与人类数学家并肩的"研究伙伴"，加速科学理论迭代速度。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来数学研究可能变成"人类提出猜想，AI验证或推翻"的协作模式。AI不仅能证明定理，还能创造新数学概念，数学的发展速度将指数级提升。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://openai.com/" target="_blank">OpenAI官网</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：AI正从"应用层"向"科学发现层"深度渗透。OpenAI的数学突破是标志性事件，预示着AI在基础科学领域的价值将被重新定价。但模型的可解释性和验证机制仍是关键挑战。</div>
+</div>
+
+<!-- ===== 板块4: 科技/硬科技 ===== -->
+<div class="section">
+  <div class="section-title">💻 科技 / 硬科技</div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">2nm制程三强争霸：台积电领先，三星加倍产能追赶，Intel 18A面临挑战</span>
+      <span class="stars">⭐⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+    </div>
+    <div class="item-summary">
+      2026年成为2nm制程量产元年。台积电N2工艺良率领先，分析师预计将继续领先数年；三星将德州工厂转为2nm专用，产能翻倍至<span class="num-key">5万片/月</span>，Exynos 2600已出货；Intel 18A采用PowerVia技术，但良率爬坡缓慢。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">2nm Tripartite War: TSMC Leads, Samsung Doubles Capacity, Intel 18A Struggles</p>
+      <p class="en-summary">2026 marks the era of 2nm mass production. TSMC's N2 process leads in yield; analysts predict it will maintain leadership for years. Samsung converts its Texas fab to 2nm-only, doubling output to 50,000 wafers/month, with Exynos 2600 already shipping. Intel's 18A with PowerVia faces slow yield ramp-up.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>mass production</b> 量产</span>
+          <span class="vocab-item"><b>yield</b> 良率</span>
+          <span class="vocab-item"><b>wafer</b> 晶圆</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>2nm是当前半导体工艺的物理极限节点之一，台积电、三星、Intel三家的竞争格局直接决定未来3-5年全球芯片供应链的走向。台积电凭借稳定的良率保持领先，三星激进扩产试图弯道超车，Intel则押注背面供电技术PowerVia。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）台积电仍将主导高端芯片代工，苹果、英伟达、AMD是其核心客户；中期三星若良率突破，可能争取到高通等订单；Intel若18A成功，将重新进入代工市场。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>2nm之后，半导体工艺将逼近硅基物理极限，未来可能转向量子计算、光子芯片或新材料体系。当前三强争霸可能是"摩尔定律时代"的最后一战。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://250mm.co.kr/en/tech/2nm-semiconductor-war-tsmc-intel-samsung" target="_blank">250mm</a> · <a href="https://www.eetimes.com/tsmc-to-lead-rivals-at-2-nm-node-analysts-say/" target="_blank">EE Times</a></p>
+  </div>
+
+  <div class="compare-box">
+    <div class="compare-side compare-bull">
+      <div class="compare-label">📈 乐观方</div>
+      分析师认为台积电2nm良率领先将持续数年，技术护城河稳固，先进制程代工格局不变。
+    </div>
+    <div class="compare-side compare-bear">
+      <div class="compare-label">📉 悲观方</div>
+      三星激进扩产和华为另辟蹊径可能打破现有格局，地缘政治风险可能导致供应链被迫重组。
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">华为发布"韬（τ）定律"：逻辑折叠技术突破，晶体管密度与系统性能实现新飞跃</span>
+      <span class="stars">⭐⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-red">🔴 重大风险</span>
+    </div>
+    <div class="item-summary">
+      华为在2026国际电路与系统研讨会上正式发表"韬定律"，通过逻辑折叠和双层堆叠垂直互连技术，在不依赖极致先进制程的情况下大幅提升晶体管密度与系统性能。A股芯片产业链闻讯大涨。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Huawei Unveils "Tau Scaling Law": Logic Folding Breakthrough Boosts Transistor Density</p>
+      <p class="en-summary">At the 2026 IEEE ISCAS conference, Huawei announced the Tau Scaling Law, a novel approach using logic folding and 3D vertical interconnection to significantly improve transistor density and system performance without relying on extreme advanced process nodes. Chinese chip stocks surged on the news.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>logic folding</b> 逻辑折叠</span>
+          <span class="vocab-item"><b>vertical interconnection</b> 垂直互连</span>
+          <span class="vocab-item"><b>transistor density</b> 晶体管密度</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>华为的"韬定律"本质上是一种架构创新——通过将电路在垂直空间上折叠堆叠，类似将一维街道变成三维立体城市，在不缩小晶体管尺寸的前提下提升集成度。这绕开了对EUV光刻机等先进设备的依赖，是应对美国芯片封锁的关键技术路径。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将直接提振中国芯片产业链信心，中芯国际、华虹等代工厂可能受益于新架构设计需求；中长期若该技术实现产业化，可能改变全球半导体技术路线，降低对先进制程的依赖度。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>华为"韬定律"可能开启"后摩尔时代"的新范式——不再追求线宽缩小，而是通过架构创新实现性能跃升。这或许是中国半导体实现"换道超车"的历史性机遇，但也可能加剧中美科技脱钩。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.huawei.com/cn/news/2026/5/ieee-iscas-tau-scaling" target="_blank">华为官方</a> · <a href="https://www.guancha.cn/economy/2026_05_25_818257.shtml" target="_blank">观察者网</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">宁德时代、比亚迪、国轩高科联手：五代磷酸铁锂全面量产，能量密度再上台阶</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      宁德时代Q1国内市占率突破<span class="num-up">50%</span>，比亚迪创五年新高。三巨头联合宣布五代磷酸铁锂全面量产，能量密度提升至<span class="num-key">350Wh/kg</span>，宁德时代凝聚态电池同步推进。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">CATL, BYD, Gotion High-Tech Jointly Launch 5th-Gen LFP Mass Production</p>
+      <p class="en-summary">CATL's domestic market share surpassed 50% in Q1 2026, while BYD hit a five-year high. The three battery giants jointly announced mass production of 5th-generation lithium iron phosphate (LFP) batteries, achieving an energy density of 350Wh/kg. CATL's condensed matter battery is also progressing.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>LFP battery</b> 磷酸铁锂电池</span>
+          <span class="vocab-item"><b>energy density</b> 能量密度</span>
+          <span class="vocab-item"><b>condensed matter battery</b> 凝聚态电池</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>五代磷酸铁锂是当前动力电池技术的重要迭代，能量密度接近三元锂电池水平，但成本更低、安全性更好。三巨头联手量产意味着中国在动力电池领域的统治地位进一步巩固。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将加速电动车渗透率提升，尤其在中低端车型市场；中长期，高能量密度LFP电池可能替代部分三元电池，储能市场也将受益于成本下降。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当磷酸铁锂能量密度突破400Wh/kg，电动车续航突破1000公里将成为标配，燃油车彻底失去竞争力。中国动力电池产业链将成为全球能源转型的核心基础设施。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://finance.sina.com.cn/roll/2026-05-20/doc-inhyptam6917037.shtml" target="_blank">新浪财经</a> · <a href="https://www.163.com/dy/article/KP9GT4KP05568W0A.html" target="_blank">网易</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：硬科技呈现"双轨并行"格局——传统制程竞赛（2nm）与架构创新（华为韬定律）同步推进，动力电池领域中国三巨头主导技术迭代。半导体去A化和新能源自主化是两大确定性主线，但地缘政治风险始终悬顶。</div>
+</div>
+
+<!-- ===== 板块5: 材料科学 ===== -->
+<div class="section">
+  <div class="section-title">🔬 材料科学</div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">钙钛矿太阳能电池效率再破纪录：26.61%认证效率，界面工程取得关键突破</span>
+      <span class="stars">⭐⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+    </div>
+    <div class="item-summary">
+      Nature Materials发表研究，通过体相纳米异质界面实现钙钛矿太阳能电池分子级接触优化，认证效率达到<span class="num-up">26.61%</span>。同时，铯掺杂技术进一步提升了器件稳定性，解决了钙钛矿商业化最核心的寿命问题。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Perovskite Solar Cells Hit 26.61% Certified Efficiency with Interfacial Breakthrough</p>
+      <p class="en-summary">A study published in Nature Materials demonstrates a bulk nano-heterointerface that secures molecular contacts in inverted perovskite solar cells, achieving a certified power conversion efficiency of 26.61%. Cesium doping further enhances stability, addressing the key commercialization challenge of longevity.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>perovskite</b> 钙钛矿</span>
+          <span class="vocab-item"><b>power conversion efficiency</b> 光电转换效率</span>
+          <span class="vocab-item"><b>cesium doping</b> 铯掺杂</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>钙钛矿太阳能电池被视为下一代光伏技术的核心候选，效率已逼近晶硅电池，且制造成本更低、可柔性化。本次突破同时解决了效率和稳定性两大瓶颈，界面工程使载流子传输更高效，铯掺杂抑制了材料降解。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）钙钛矿-晶硅叠层电池有望率先进入示范电站；中期（3-5年）纯钙钛矿组件可能实现量产，度电成本低于传统晶硅。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当钙钛矿太阳能电池成本降至晶硅的一半，且寿命达到25年以上，全球屋顶光伏、建筑一体化光伏（BIPV）将迎来爆发式增长，分布式能源革命真正落地。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.nature.com/articles/s41563-026-02546-1" target="_blank">Nature Materials</a> · <a href="https://techxplore.com/news/2026-04-perovskite-solar-cells-certified-efficiency.html" target="_blank">TechXplore</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">AI加速材料发现：量子计算实现3000倍加速，新能源材料筛选进入新纪元</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      最新研究显示，量子计算与AI结合将材料发现速度提升<span class="num-up">3000倍</span>，可快速筛选碳捕集催化剂、轻质高强度合金等新能源材料。全球材料基因组计划加速推进。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">AI-Accelerated Material Discovery: Quantum Computing Achieves 3000x Speedup</p>
+      <p class="en-summary">Recent breakthroughs show that combining quantum computing with AI accelerates materials discovery by 3000x, enabling rapid screening of carbon capture catalysts and lightweight high-strength alloys. Global materials genome initiatives are accelerating.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>quantum computing</b> 量子计算</span>
+          <span class="vocab-item"><b>catalyst</b> 催化剂</span>
+          <span class="vocab-item"><b>materials genome</b> 材料基因组</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传统材料研发靠"试错法"，一种新材料从发现到商用平均需要10-20年。AI+量子计算可以在虚拟空间中模拟数百万种材料组合，将筛选周期缩短到数月。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将加速电池材料、催化剂、半导体材料的迭代；中长期可能催生"按需设计材料"的新范式，即根据特定性能需求反向设计材料结构。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来材料科学将像软件开发一样——人类定义需求，AI生成候选材料，实验室验证后直接量产。从发现到商用可能缩短至1年以内，人类将进入"材料设计自由"时代。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://bophin.com/article/quantum-computing-breakthrough-3000x-faster-materials-discovery-for-energy" target="_blank">Bophin</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：材料科学进入"AI+量子计算"双轮驱动的新阶段，钙钛矿光伏效率突破与AI加速发现形成技术共振。新能源材料（光伏、电池、催化）是当前最活跃的细分赛道，商业化时间线正在前移。</div>
+</div>
+
+<!-- ===== 板块6: 中国政策与监管 ===== -->
+<div class="section">
+  <div class="section-title">🇨🇳 中国政策与监管</div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">央行定调2026货币政策：降准降息"灵活高效"，聚焦五篇大文章</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+    </div>
+    <div class="item-summary">
+      新华社报道，央行明确2026年货币政策将"灵活高效"运用降准降息工具，围绕科技金融、绿色金融、普惠金融、养老金融、数字金融"五篇大文章"精准发力。东方金诚首席分析师王青认为，结构性宽松是全年主基调。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">PBOC Sets 2026 Monetary Policy: Flexible and Efficient RRR and Rate Cuts, Focus on Five Key Areas</p>
+      <p class="en-summary">Xinhua reports that the PBOC will flexibly and efficiently use reserve requirement ratio and interest rate cuts in 2026, targeting five key financing areas: technology, green, inclusive, elderly care, and digital finance. Chief analyst Wang Qing expects structural easing to be the annual theme.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>structural easing</b> 结构性宽松</span>
+          <span class="vocab-item"><b>targeted lending</b> 定向信贷</span>
+          <span class="vocab-item"><b>five key areas</b> 五篇大文章</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>央行将"五篇大文章"作为结构性宽松的锚点，意味着降准降息释放的流动性不会均匀流向所有行业，而是精准注入科技、绿色等战略领域。这既是稳增长手段，也是产业政策工具。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期利好A股科技和新能源板块；中期若执行到位，可有效降低战略性新兴产业的融资成本，加速国产替代和技术升级。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当货币政策与产业政策深度融合，央行可能从"总量调控者"转型为"结构引导者"，这一模式若成功，将为全球央行提供新的政策范式。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.news.cn/20260107/063a6c0ac7fb4b42bf1f2a9ff7cbd5ae/c.html" target="_blank">新华网</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">A股重大政策全景：降准降息、创业板改革、中长期资金入市</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      2026年A股政策主线包括降准降息落地、创业板注册制深化改革、引导中长期资金入市。分析师认为，科技成长和高端制造板块将最为受益于政策红利。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">A-Share Policy Panorama 2026: RRR Cuts, ChiNext Reform, Long-Term Capital Inflows</p>
+      <p class="en-summary">Key A-share policies in 2026 include implementation of RRR and interest rate cuts, deepening ChiNext board registration-based reform, and channeling long-term capital into the market. Analysts expect tech and high-end manufacturing sectors to benefit most.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>ChiNext</b> 创业板</span>
+          <span class="vocab-item"><b>registration-based reform</b> 注册制改革</span>
+          <span class="vocab-item"><b>long-term capital</b> 中长期资金</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>三箭齐发——降准降息提供流动性，创业板改革提升市场效率，中长期资金入市改善投资者结构。这是2026年A股最核心的政策组合拳。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期市场风险偏好有望提升，科技板块估值中枢上移；中长期，注册制改革将加速优胜劣汰，优质科技公司获得更高融资效率。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若政策执行到位，A股可能从"政策市"逐步转向"制度市"，成为真正支持科技创新的资本枢纽，吸引全球资金重新配置中国资产。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://zhuanlan.zhihu.com/p/2033486224963392013" target="_blank">知乎</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：中国政策端呈现"货币宽松+资本市场改革+产业扶持"三重叠加态势，意图明确——引导资源向科技创新和高端制造集中。但外部地缘压力和内部房地产风险出清仍是制约因素，政策传导效率有待观察。</div>
+</div>
+
+<!-- ===== 板块7: 地缘政治 ===== -->
+<div class="section">
+  <div class="section-title">🌍 地缘政治与国际关系</div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">WEF全球风险报告2026：地缘经济对抗超越疫情成为头号短期风险</span>
+      <span class="stars">⭐⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-red">🔴 重大风险</span>
+    </div>
+    <div class="item-summary">
+      世界经济论坛《全球风险报告2026》将地缘经济对抗列为短期头号风险，关税和供应链武器化程度超越疫情时期。报告警告贸易碎片化可能导致全球GDP损失<span class="num-key">1.5%</span>，新兴市场受冲击最大。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">WEF Global Risks Report 2026: Geoeconomic Confrontation Tops Short-Term Risks</p>
+      <p class="en-summary">The World Economic Forum's Global Risks Report 2026 ranks geoeconomic confrontation as the top short-term risk, surpassing pandemics. Tariffs and supply chain weaponization have intensified. The report warns that trade fragmentation could cost 1.5% of global GDP, with emerging markets hit hardest.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>geoeconomic confrontation</b> 地缘经济对抗</span>
+          <span class="vocab-item"><b>trade fragmentation</b> 贸易碎片化</span>
+          <span class="vocab-item"><b>supply chain weaponization</b> 供应链武器化</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>WEF报告将地缘经济对抗列为头号风险，反映全球从"效率优先"转向"安全优先"的深层变化。关税、出口管制、技术封锁成为大国博弈的主要工具，全球供应链从"长链"变成"多链"。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期企业将加速"中国+1"供应链布局，东南亚、墨西哥、印度受益；中长期，全球可能形成"中美两大技术阵营"，半导体、AI、新能源等关键领域出现标准分裂。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果地缘经济对抗持续升级，世界可能重回"半球化"格局——技术标准、金融体系、供应链各自为政，全球化红利消失，全球经济增长中枢永久性下移。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://informedclearly.com/en/geopolitics/51661/geoeconomic-confrontation-global-risks-2026" target="_blank">Informed Clearly</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">美国推进"洛比托走廊"拆解中国在非洲布局，关键矿产争夺白热化</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-red">🔴 重大风险</span>
+    </div>
+    <div class="item-summary">
+      美国加速推进"洛比托走廊"铁路项目，旨在连接刚果（金）和赞比亚的铜钴矿带至安哥拉港口，与中国在非洲关键矿产供应链形成直接竞争。中国企业在刚果（金）马诺诺锂矿项目控制权争夺中面临压力。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">US Pushes "Lobito Corridor" to Counter China's Africa Influence, Critical Mineral Competition Heats Up</p>
+      <p class="en-summary">The US is accelerating the Lobito Corridor railway project to link the DRC and Zambia's copper-cobalt belt to Angolan ports, directly competing with China's critical mineral supply chain in Africa. Chinese firms face pressure in the Manono lithium project control dispute in the DRC.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>critical minerals</b> 关键矿产</span>
+          <span class="vocab-item"><b>supply chain competition</b> 供应链竞争</span>
+          <span class="vocab-item"><b>lithium project</b> 锂矿项目</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>洛比托走廊是美国在非洲最重要的基础设施项目之一，旨在打破中国在刚果（金）钴矿和赞比亚铜矿的供应链主导地位。这本质上是中美在新能源关键原材料上的"资源战争"。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期刚果（金）和赞比亚将成为中美博弈前沿，矿产定价权和基础设施控制权是核心；中长期，若美国成功打通洛比托走廊，中国在非洲的矿产供应链优势将被削弱。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来全球关键矿产供应链可能形成"中美双轨制"——中国主导非洲东部和南部，美国主导非洲西部和南部，新能源产业链的成本和安全性将发生根本性变化。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.epochtimes.com/gb/26/5/26/n14774871.htm" target="_blank">大纪元</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">中国与"一带一路"国家产供链韧性持续显现，双边机制深化</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      报告显示，2025年以来中国与越南、印尼等国签署多项产业链供应链合作备忘录，双边机制推动产供链韧性持续增强。在美欧推动"去风险"背景下，中国通过"一带一路"深化与新兴市场的经济绑定。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">China-Belt and Road Supply Chain Resilience Strengthens, Bilateral Mechanisms Deepen</p>
+      <p class="en-summary">Reports show that since 2025, China has signed multiple supply chain cooperation MOUs with Vietnam, Indonesia, and other countries, enhancing supply chain resilience. Amid US-EU de-risking efforts, China deepens economic ties with emerging markets through the Belt and Road Initiative.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>supply chain resilience</b> 供应链韧性</span>
+          <span class="vocab-item"><b>de-risking</b> 去风险</span>
+          <span class="vocab-item"><b>Belt and Road Initiative</b> 一带一路</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>在美国推动"友岸外包"和"去风险"的同时，中国通过"一带一路"与东南亚、南亚、非洲国家签署产业链合作协议，形成对冲性的供应链网络。这不是简单的贸易往来，而是深度的产能合作和标准输出。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期中国与东南亚的供应链绑定将进一步加强，形成"中国设计+东南亚制造"的协作模式；中长期，若一带一路供应链网络成熟，可能形成独立于美欧体系的"全球南方供应链"。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来全球可能出现三大供应链圈——北美圈、欧洲圈、亚洲圈。中国主导的亚洲圈若成功整合东南亚、南亚和中亚，将覆盖全球60%的人口和40%的GDP，重塑全球经济版图。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.yidaiyilu.gov.cn/p/06PKIGS0.html" target="_blank">一带一路官网</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：地缘政治风险持续升温，WEF报告确认"地缘经济对抗"为头号风险。中美在非洲关键矿产的争夺进入白热化，而中国通过"一带一路"深化与新兴市场绑定形成对冲。全球供应链正在经历"分裂-重组"的深层重构，企业需同时关注风险敞口和替代方案。</div>
+</div>
+
+<!-- 第三步：时间提醒模块（条件触发） -->
+<div class="timeline">
+  <h4>⏰ 近期关键时间节点</h4>
+  <div class="timeline-item">
+    <span class="timeline-date">2026-06-15</span>
+    <span>美联储议息会议，市场预期维持利率不变，关注点阵图变化</span>
+  </div>
+  <div class="timeline-item">
+    <span class="timeline-date">2026-06-30</span>
+    <span>美对华半导体出口新规可能进一步升级，华为"韬定律"或成制裁焦点</span>
+  </div>
+  <div class="timeline-item">
+    <span class="timeline-date">2026-07-15</span>
+    <span>ASGCT年会后续基因治疗临床数据集中披露期</span>
+  </div>
+</div>
+
+<div class="footer">
+  全球动态日报 · 2026年5月29日 · 数据来源涵盖顶级期刊、权威机构与主流媒体
+</div>
+
+</div>
+</body>
+</html>
