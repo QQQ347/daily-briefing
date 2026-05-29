@@ -54,16 +54,16 @@ jobs:
           BING_API_KEY: ${{ secrets.BING_API_KEY }}
           WECOM_BOT_WEBHOOK: ${{ secrets.WECOM_BOT_WEBHOOK }}
         run: |
-          set -x
-          ARGS=""
-          if [ -n "${{ github.event.inputs.date }}" ]; then
-            ARGS="$ARGS --date ${{ github.event.inputs.date }}"
-          fi
-          if [ "${{ github.event.inputs.no_email }}" = "true" ]; then
-            ARGS="$ARGS --no-email"
-          fi
-            python daily_briefing.py $ARGS 2>&1
-
+          echo "===== Test 1: Python version ====="
+          python --version
+          echo "===== Test 2: Import duckduckgo ====="
+          python -c "from duckduckgo_search import DDGS; print('DDGS OK')"
+          echo "===== Test 3: Import requests ====="
+          python -c "import requests; print('requests OK')"
+          echo "===== Test 4: Import openai ====="
+          python -c "import openai; print('openai OK')"
+          echo "===== Test 5: Run daily_briefing ====="
+          python daily_briefing.py 2>&1
       # 5. 把生成的 HTML 作为 Artifact 上传 (可在 Actions 页面下载)
       - name: Upload briefing as artifact
         uses: actions/upload-artifact@v4
