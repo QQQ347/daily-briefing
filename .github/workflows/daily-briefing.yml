@@ -62,7 +62,7 @@ jobs:
           if [ "${{ github.event.inputs.no_email }}" = "true" ]; then
             ARGS="$ARGS --no-email"
           fi
-          python daily_briefing.py $ARGS
+            python daily_briefing.py $ARGS 2>&1
 
       # 5. 把生成的 HTML 作为 Artifact 上传 (可在 Actions 页面下载)
       - name: Upload briefing as artifact
