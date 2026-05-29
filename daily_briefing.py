@@ -593,7 +593,38 @@ def save_briefing(html_content: str, config: dict, today_str: str) -> str:
 # ============================================================
 # 邮件发送
 # ============================================================
+# ============================================================
+# 邮件专用简化 HTML（兼容邮件客户端）
+# ============================================================
 
+def email_html(full_html: str, date_str: str) -> str:
+    import re
+    """从完整简报 HTML 中提取正文，包裹邮件兼容的简化样式"""
+    # 提取 body 内容
+    body_match = re.search(r'<body>(.*?)</body>', full_html, re.DOTALL)
+    body = body_match.group(1) if body_match else full_html
+
+    # 移除 <details> 折叠区域（邮件里点不开），只保留纯文本
+    body = re.sub(r'<details.*?</details>', '', body, flags=re.DOTALL)
+    # 移除复杂的 bilingual 样式块（保留文本内容，但邮件里大概率显示不好，先去掉）
+    body = re.sub(r'<div class="bilingual">.*?</div>', '', body, flags=re.DOTALL)
+
+    # 添加内联样式，同时清理残留的类名样式（邮件客户端不支持 <style>）
+    # 这里简单包裹一个干净的容器
+    return f"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"></head>
+<body style="margin:0;padding:0;background:#f5f5f5;font-family:Arial,'Microsoft YaHei',sans-serif;">
+<div style="max-width:600px;margin:20px auto;background:#fff;border-radius:8px;padding:20px;">
+  <h2 style="color:#1a1a2e;border-bottom:2px solid #eee;padding-bottom:8px;">📡 每日全球重要动态简报</h2>
+  <p style="color:#999;font-size:12px;">{date_str}</p>
+  <hr style="border:0;border-top:1px solid #eee;margin:12px 0;">
+  {body}
+  <hr style="border:0;border-top:1px solid #eee;margin:16px 0;">
+  <p style="color:#bbb;font-size:11px;text-align:center;">由 DeepSeek AI 自动生成 · 每日早 8 点发送</p>
+</div>
+</body>
+</html>"""
 def send_email(html_content: str, filepath: str, config: dict, today_str: str):
     email_config = config.get("email", {})
 
@@ -618,7 +649,7 @@ def send_email(html_content: str, filepath: str, config: dict, today_str: str):
                     "from": f"每日简报 <onboarding@resend.dev>",
                     "to": [receiver],
                     "subject": f"📡 每日全球重要动态简报 - {today_str}",
-                    "html": html_content,
+                    "html": email_html(html_content, today_str),
                 },
                 timeout=30,
             )
