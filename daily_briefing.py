@@ -18,7 +18,7 @@
   python daily_briefing.py --no-email
   python daily_briefing.py --date 2026-05-27 --no-email
 """
-
+print("DEBUG: Script started")
 import os
 import sys
 import argparse
