@@ -598,25 +598,38 @@ def save_briefing(html_content: str, config: dict, today_str: str) -> str:
 # ============================================================
 
 def email_html(full_html: str, date_str: str) -> str:
+    """将完整简报转为邮件兼容的简化版，保留英文学习+深度解读"""
     import re
-    """从完整简报 HTML 中提取正文，包裹邮件兼容的简化样式"""
+
     # 提取 body 内容
     body_match = re.search(r'<body>(.*?)</body>', full_html, re.DOTALL)
     body = body_match.group(1) if body_match else full_html
 
-    # 移除 <details> 折叠区域（邮件里点不开），只保留纯文本
-    body = re.sub(r'<details.*?</details>', '', body, flags=re.DOTALL)
-    # 移除复杂的 bilingual 样式块（保留文本内容，但邮件里大概率显示不好，先去掉）
-    body = re.sub(r'<div class="bilingual">.*?</div>', '', body, flags=re.DOTALL)
+    # 1. 把 <details> 折叠区改成普通展开（邮件不支持折叠）
+    body = re.sub(r'<details\b[^>]*>', '<div style="margin-top:8px;border:1px solid #c8e6c9;border-radius:6px;padding:8px;background:#f9fbf9;">', body)
+    body = re.sub(r'</details>', '</div>', body)
+    # 把 <summary> 改成加粗标题
+    body = re.sub(r'<summary[^>]*>(.*?)</summary>', r'<p style="font-weight:bold;color:#1b5e20;margin-bottom:6px;">📖 \1</p>', body, flags=re.DOTALL)
 
-    # 添加内联样式，同时清理残留的类名样式（邮件客户端不支持 <style>）
-    # 这里简单包裹一个干净的容器
+    # 2. 保留 bilingual 模块，但简化背景和边距
+    body = re.sub(r'<div class="bilingual"[^>]*>', '<div style="margin:10px 0;padding:8px;border:1px solid #bbdefb;background:#f5f8ff;">', body)
+    # 保留内部结构不变，但移除可能的复杂样式（邮件里 class 不起作用，保留标签即可）
+
+    # 3. 移除 <style> 块（邮件不支持），但保留其他标签
+    body = re.sub(r'<style[^>]*>.*?</style>', '', body, flags=re.DOTALL)
+
+    # 4. 全局限制字体大小，防止手机端过大
+    body = re.sub(r'(<p\b)', r'\1 style="font-size:15px;line-height:1.6;color:#333;"', body)
+    body = re.sub(r'(<h2\b)', r'\1 style="font-size:18px;color:#1a1a2e;margin-top:20px;"', body)
+    body = re.sub(r'(<h3\b)', r'\1 style="font-size:16px;color:#333;"', body)
+
+    # 包裹到邮件容器
     return f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head><meta charset="UTF-8"></head>
 <body style="margin:0;padding:0;background:#f5f5f5;font-family:Arial,'Microsoft YaHei',sans-serif;">
 <div style="max-width:600px;margin:20px auto;background:#fff;border-radius:8px;padding:20px;">
-  <h2 style="color:#1a1a2e;border-bottom:2px solid #eee;padding-bottom:8px;">📡 每日全球重要动态简报</h2>
+  <h2 style="color:#1a1a2e;border-bottom:2px solid #eee;padding-bottom:8px;font-size:20px;">📡 每日全球重要动态简报</h2>
   <p style="color:#999;font-size:12px;">{date_str}</p>
   <hr style="border:0;border-top:1px solid #eee;margin:12px 0;">
   {body}
