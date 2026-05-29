@@ -639,15 +639,27 @@ def send_email(html_content: str, filepath: str, config: dict, today_str: str):
 
     try:
         log.info(f"发送邮件 → {receiver}...")
-        server = smtplib.SMTP("smtp.qq.com", 587, timeout=30)
-        server.starttls()
+        # QQ 邮箱推荐 SSL 465（587 STARTTLS 在 GitHub Actions 上常被封）
+        server = smtplib.SMTP_SSL("smtp.qq.com", 465, timeout=30)
         server.login(sender, password)
         server.sendmail(sender, [receiver], msg.as_string())
         server.quit()
         log.info("邮件发送成功!")
     except Exception as e:
-        log.error(f"邮件发送失败: {e}")
-        log.info(f"简报文件已保存: {filepath}")
+        log.error(f"邮件发送失败 (SSL 465): {e}")
+        # 备用：尝试 587 STARTTLS
+        try:
+            log.info("尝试备用端口 587 STARTTLS...")
+            server2 = smtplib.SMTP("smtp.qq.com", 587, timeout=30)
+            server2.ehlo()
+            server2.starttls()
+            server2.login(sender, password)
+            server2.sendmail(sender, [receiver], msg.as_string())
+            server2.quit()
+            log.info("邮件发送成功 (587 STARTTLS)!")
+        except Exception as e2:
+            log.error(f"邮件发送失败 (587): {e2}")
+            log.info(f"简报文件已保存: {filepath}")
 
 
 # ============================================================
