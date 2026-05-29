@@ -91,9 +91,7 @@ def get_config() -> dict:
 
     if not deepseek_key:
         errors.append("DEEPSEEK_API_KEY 未设置")
-    if not tavily_key:
-        errors.append("TAVILY_API_KEY 未设置")
-
+   
     if errors:
         log.error("缺少必要的环境变量:")
         for e in errors:
