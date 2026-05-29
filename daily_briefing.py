@@ -376,116 +376,82 @@ BRIEFING_HTML_TEMPLATE = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>每日全球重要动态简报 - {DATE}</title>
   <style>
-    * {{ box-sizing: border-box; margin: 0; padding: 0; }}
-    body {{ font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif; max-width: 960px; margin: 0 auto; padding: 16px; background: #f0f2f5; }}
-
-    /* ── 页头 ── */
-    header {{ background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1f2937 100%); color: #fff; padding: 22px 24px; border-radius: 14px; margin-bottom: 18px; box-shadow: 0 4px 20px rgba(0,0,0,0.18); }}
-    header h1 {{ font-size: 21px; margin-bottom: 5px; letter-spacing: 0.5px; }}
-    header p {{ font-size: 12px; opacity: 0.6; line-height: 1.6; }}
-
-    /* ── 今日综述 ── */
-    .overview {{ background: linear-gradient(135deg, #1a237e 0%, #283593 60%, #1565c0 100%); color: #fff; border-radius: 12px; padding: 18px 22px; margin-bottom: 20px; box-shadow: 0 3px 14px rgba(21,101,192,0.25); }}
-    .overview h3 {{ font-size: 12px; opacity: 0.75; margin-bottom: 10px; letter-spacing: 1.5px; text-transform: uppercase; }}
-    .overview p {{ font-size: 14.5px; line-height: 1.9; opacity: 0.95; }}
-    .overview-tags {{ display: flex; flex-wrap: wrap; gap: 6px; margin-top: 13px; }}
-    .overview-tag {{ background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.22); font-size: 12px; padding: 4px 13px; border-radius: 20px; cursor: default; transition: background 0.2s; }}
-    .overview-tag:hover {{ background: rgba(255,255,255,0.25); }}
-
-    /* ── 板块标题 ── */
-    h2 {{ font-size: 16px; color: #1a1a2e; margin: 26px 0 13px 0; padding-bottom: 7px; border-bottom: 2px solid #dde3ea; display: flex; align-items: center; gap: 8px; }}
-
-    /* ── 新闻卡片 ── */
-    .item {{ background: #fff; border-left: 3px solid #4a90d9; border-radius: 0 10px 10px 0; padding: 14px 16px; margin-bottom: 13px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); transition: box-shadow 0.2s; }}
-    .item:hover {{ box-shadow: 0 4px 16px rgba(0,0,0,0.11); }}
-    .item-header {{ margin-bottom: 9px; }}
-    .item-title {{ font-size: 15px; font-weight: 700; color: #1a1a2e; line-height: 1.55; margin-bottom: 7px; word-break: break-word; }}
-    .item-meta {{ display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }}
-    .star-rating {{ font-size: 12px; white-space: nowrap; color: #f5a623; background: #fffbf0; padding: 2px 9px; border-radius: 10px; border: 1px solid #f5d88a; }}
-    .risk-red {{ background: #ffebee; color: #c62828; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 700; }}
-    .risk-yellow {{ background: #fff8e1; color: #e65100; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }}
-
-    /* ── 冲击指数 ── */
-    .impact {{ font-size: 11px; padding: 2px 9px; border-radius: 10px; font-weight: 700; letter-spacing: 0.3px; }}
-    .impact-high {{ background: #fce4ec; color: #880e4f; border: 1px solid #f8bbd0; }}
-    .impact-med  {{ background: #fff3e0; color: #bf360c; border: 1px solid #ffe0b2; }}
-    .impact-low  {{ background: #f3e5f5; color: #6a1b9a; border: 1px solid #e1bee7; }}
-
-    .item-summary {{ font-size: 14px; color: #444; line-height: 1.78; margin-bottom: 9px; }}
-
-    /* ── 关键数字高亮 ── */
-    .num-up   {{ color: #1b5e20; font-weight: 700; background: #e8f5e9; padding: 1px 5px; border-radius: 4px; font-size: 0.94em; }}
-    .num-down {{ color: #b71c1c; font-weight: 700; background: #ffebee; padding: 1px 5px; border-radius: 4px; font-size: 0.94em; }}
-    .num-key  {{ color: #0d47a1; font-weight: 700; background: #e3f2fd; padding: 1px 5px; border-radius: 4px; font-size: 0.94em; }}
-
-    .item-source {{ font-size: 12px; color: #bbb; margin-top: 9px; }}
-    .item-source a {{ color: #4a90d9; text-decoration: none; }}
-    .item-source a:hover {{ text-decoration: underline; }}
-
-    /* ── 英语学习模块 ── */
-    .bilingual {{ margin: 10px 0; padding: 12px 14px; background: linear-gradient(135deg, #e8f4fd, #ede7f6); border-radius: 9px; border: 1px solid #c5d8f0; }}
-    .en-title {{ font-size: 13.5px; color: #1565c0; font-weight: 700; margin-bottom: 5px; line-height: 1.5; }}
-    .en-summary {{ font-size: 13px; color: #37474f; line-height: 1.75; margin-bottom: 9px; }}
-    .vocab-card {{ background: rgba(255,255,255,0.82); border: 1px solid #dde6f0; border-radius: 7px; padding: 8px 12px; }}
-    .vocab-title {{ font-size: 12px; color: #6a1b9a; font-weight: 700; margin-bottom: 5px; }}
-    .vocab-list {{ display: flex; flex-wrap: wrap; gap: 4px 12px; }}
-    .vocab-item {{ font-size: 12px; color: #424242; line-height: 1.9; }}
-    .vocab-item b {{ color: #1a237e; background: #e8eaf6; padding: 1px 5px; border-radius: 3px; font-size: 11px; }}
-
-    /* ── 观点对比框 ── */
-    .compare-box {{ display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }}
-    .compare-side {{ padding: 11px 13px; border-radius: 9px; font-size: 13px; line-height: 1.72; }}
-    .compare-bull {{ background: #e8f5e9; border-left: 3px solid #2e7d32; }}
-    .compare-bear {{ background: #ffebee; border-left: 3px solid #c62828; }}
-    .compare-label {{ font-weight: 700; font-size: 11px; margin-bottom: 5px; opacity: 0.8; }}
-
-    /* ── 深度解读 ── */
-    .deepdive {{ margin-top: 9px; }}
-    .deepdive summary {{ cursor: pointer; font-size: 13px; font-weight: 600; color: #1b5e20; padding: 6px 11px; background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border-radius: 7px; border: 1px solid #c8e6c9; user-select: none; transition: background 0.15s; }}
-    .deepdive summary:hover {{ background: linear-gradient(135deg, #dcedc8, #e8f5e9); }}
-    .deepdive-content {{ background: #fafcfa; border: 1px solid #dde8dd; border-radius: 0 0 7px 7px; padding: 11px 14px; margin-top: 2px; font-size: 13px; line-height: 1.82; color: #444; }}
-    .deepdive-content .dl {{ margin: 6px 0; }}
-    .deepdive-content .dl-label {{ font-weight: 700; }}
-    .dl-what {{ color: #1565c0; }}
-    .dl-prospect {{ color: #e65100; }}
-    .dl-vision {{ color: #6a1b9a; }}
-
-    /* ── 板块趋势评论 ── */
-    .trend-comment {{ background: linear-gradient(135deg, #f3e5f5, #ede7f6); border-left: 3px solid #9575cd; border-radius: 0 8px 8px 0; padding: 11px 15px; margin: 11px 0 20px 0; font-size: 13px; color: #4a148c; font-style: italic; line-height: 1.78; }}
-
-    /* ── 时间提醒 ── */
-    .timeline {{ background: #fff; border: 1px solid #ffd54f; border-radius: 10px; padding: 14px 18px; margin: 20px 0; box-shadow: 0 2px 10px rgba(255,193,7,0.13); }}
-    .timeline h4 {{ font-size: 13px; color: #e65100; font-weight: 700; margin-bottom: 10px; }}
-    .timeline-item {{ font-size: 13px; color: #4e342e; padding: 6px 0; display: flex; gap: 10px; align-items: flex-start; border-bottom: 1px solid #fff8e1; }}
-    .timeline-item:last-child {{ border-bottom: none; padding-bottom: 0; }}
-    .timeline-date {{ background: #fff9c4; border: 1px solid #ffd54f; color: #5d4037; font-weight: 700; padding: 2px 9px; border-radius: 5px; white-space: nowrap; font-size: 11.5px; flex-shrink: 0; margin-top: 1px; }}
-
-    /* ── 页脚 ── */
-    footer {{ text-align: center; color: #bbb; font-size: 11.5px; margin-top: 32px; padding: 14px; line-height: 1.8; }}
-
-    /* ── 移动端 ── */
-    @media (max-width: 640px) {{
-      body {{ padding: 8px; }}
-      header {{ padding: 16px; border-radius: 11px; }}
-      header h1 {{ font-size: 18px; }}
-      h2 {{ font-size: 15px; margin: 20px 0 11px 0; }}
-      .overview {{ padding: 14px 15px; border-radius: 10px; }}
-      .overview p {{ font-size: 13.5px; }}
-      .item {{ padding: 11px 12px; margin-bottom: 11px; border-radius: 0 8px 8px 0; }}
-      .item-title {{ font-size: 14px; }}
-      .item-summary {{ font-size: 13px; }}
-      .compare-box {{ grid-template-columns: 1fr; gap: 8px; }}
-      .bilingual {{ padding: 9px 11px; }}
-      .en-title {{ font-size: 13px; }}
-      .en-summary {{ font-size: 12px; }}
-      .vocab-item {{ font-size: 11px; }}
-      .vocab-item b {{ font-size: 10.5px; }}
-      .deepdive summary {{ font-size: 12px; padding: 5px 9px; }}
-      .deepdive-content {{ font-size: 12px; padding: 9px 11px; }}
-      .trend-comment {{ font-size: 12px; padding: 9px 11px; }}
-      .timeline {{ padding: 11px 12px; }}
-      .timeline-item {{ font-size: 12px; flex-direction: column; gap: 4px; }}
-    }}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif; max-width: 600px; margin: 0 auto; padding: 16px; background: #f0f2f5; word-break: break-word; overflow-x: hidden; }
+    header { background: #1a1a2e; color: #fff; padding: 22px 24px; border-radius: 14px; margin-bottom: 18px; }
+    header h1 { font-size: 21px; margin-bottom: 5px; }
+    header p { font-size: 12px; opacity: 0.6; line-height: 1.6; }
+    .overview { background: #1a237e; color: #fff; border-radius: 12px; padding: 18px 22px; margin-bottom: 20px; }
+    .overview h3 { font-size: 12px; opacity: 0.75; margin-bottom: 10px; }
+    .overview p { font-size: 14.5px; line-height: 1.9; opacity: 0.95; }
+    .overview-tags { display: inline-block; margin-top: 13px; }
+    .overview-tag { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.22); font-size: 12px; padding: 4px 13px; border-radius: 20px; margin-right: 6px; margin-bottom: 6px; display: inline-block; }
+    h2 { font-size: 16px; color: #1a1a2e; margin: 26px 0 13px 0; padding-bottom: 7px; border-bottom: 2px solid #dde3ea; }
+    .item { background: #fff; border-left: 3px solid #4a90d9; border-radius: 0 10px 10px 0; padding: 14px 16px; margin-bottom: 18px; }
+    .item-header { margin-bottom: 9px; }
+    .item-title { font-size: 15px; font-weight: 700; color: #1a1a2e; line-height: 1.55; margin-bottom: 7px; word-break: break-word; }
+    .item-meta { display: inline-block; margin-bottom: 8px; }
+    .star-rating { font-size: 12px; color: #f5a623; background: #fffbf0; padding: 2px 9px; border-radius: 10px; border: 1px solid #f5d88a; margin-right: 6px; display: inline-block; }
+    .risk-red { background: #ffebee; color: #c62828; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 700; margin-right: 6px; display: inline-block; }
+    .risk-yellow { background: #fff8e1; color: #e65100; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; margin-right: 6px; display: inline-block; }
+    .impact { font-size: 11px; padding: 2px 9px; border-radius: 10px; font-weight: 700; margin-right: 6px; display: inline-block; }
+    .impact-high { background: #fce4ec; color: #880e4f; border: 1px solid #f8bbd0; }
+    .impact-med  { background: #fff3e0; color: #bf360c; border: 1px solid #ffe0b2; }
+    .impact-low  { background: #f3e5f5; color: #6a1b9a; border: 1px solid #e1bee7; }
+    .item-summary { font-size: 14px; color: #444; line-height: 1.78; margin-bottom: 9px; }
+    .num-up   { color: #1b5e20; font-weight: 700; background: #e8f5e9; padding: 1px 5px; border-radius: 4px; }
+    .num-down { color: #b71c1c; font-weight: 700; background: #ffebee; padding: 1px 5px; border-radius: 4px; }
+    .num-key  { color: #0d47a1; font-weight: 700; background: #e3f2fd; padding: 1px 5px; border-radius: 4px; }
+    .item-source { font-size: 12px; color: #bbb; margin-top: 9px; }
+    .item-source a { color: #4a90d9; text-decoration: none; }
+    .bilingual { margin: 12px 0; padding: 12px 14px; background: #e8f4fd; border-radius: 9px; border: 1px solid #c5d8f0; }
+    .en-title { font-size: 13.5px; color: #1565c0; font-weight: 700; margin-bottom: 5px; line-height: 1.5; }
+    .en-summary { font-size: 13px; color: #37474f; line-height: 1.75; margin-bottom: 9px; }
+    .vocab-card { background: #fff; border: 1px solid #dde6f0; border-radius: 7px; padding: 8px 12px; }
+    .vocab-title { font-size: 12px; color: #6a1b9a; font-weight: 700; margin-bottom: 5px; }
+    .vocab-item { font-size: 12px; color: #424242; line-height: 1.9; margin-right: 12px; display: inline-block; }
+    .vocab-item b { color: #1a237e; background: #e8eaf6; padding: 1px 5px; border-radius: 3px; font-size: 11px; }
+    .compare-box { margin: 12px 0; }
+    .compare-side { padding: 11px 13px; border-radius: 9px; font-size: 13px; line-height: 1.72; margin-bottom: 10px; }
+    .compare-bull { background: #e8f5e9; border-left: 3px solid #2e7d32; }
+    .compare-bear { background: #ffebee; border-left: 3px solid #c62828; }
+    .compare-label { font-weight: 700; font-size: 11px; margin-bottom: 5px; }
+    .deepdive { margin-top: 9px; }
+    .deepdive summary { font-size: 13px; font-weight: 600; color: #1b5e20; padding: 6px 11px; background: #e8f5e9; border-radius: 7px; border: 1px solid #c8e6c9; }
+    .deepdive-content { background: #fafcfa; border: 1px solid #dde8dd; border-radius: 7px; padding: 11px 14px; margin-top: 2px; font-size: 13px; line-height: 1.82; color: #444; }
+    .deepdive-content .dl { margin: 6px 0; }
+    .deepdive-content .dl-label { font-weight: 700; }
+    .dl-what { color: #1565c0; }
+    .dl-prospect { color: #e65100; }
+    .dl-vision { color: #6a1b9a; }
+    .trend-comment { background: #f3e5f5; border-left: 3px solid #9575cd; border-radius: 0 8px 8px 0; padding: 11px 15px; margin: 11px 0 20px 0; font-size: 13px; color: #4a148c; font-style: italic; line-height: 1.78; }
+    .timeline { background: #fff; border: 1px solid #ffd54f; border-radius: 10px; padding: 14px 18px; margin: 20px 0; }
+    .timeline h4 { font-size: 13px; color: #e65100; font-weight: 700; margin-bottom: 10px; }
+    .timeline-item { font-size: 13px; color: #4e342e; padding: 6px 0; border-bottom: 1px solid #fff8e1; }
+    .timeline-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .timeline-date { background: #fff9c4; border: 1px solid #ffd54f; color: #5d4037; font-weight: 700; padding: 2px 9px; border-radius: 5px; white-space: nowrap; font-size: 11.5px; margin-right: 10px; display: inline-block; }
+    footer { text-align: center; color: #bbb; font-size: 11.5px; margin-top: 32px; padding: 14px; line-height: 1.8; }
+    @media (max-width: 640px) {
+      body { padding: 8px; }
+      header { padding: 16px; border-radius: 11px; }
+      header h1 { font-size: 18px; }
+      h2 { font-size: 15px; margin: 20px 0 11px 0; }
+      .overview { padding: 14px 15px; border-radius: 10px; }
+      .overview p { font-size: 13.5px; }
+      .item { padding: 11px 12px; margin-bottom: 11px; border-radius: 0 8px 8px 0; }
+      .item-title { font-size: 14px; }
+      .item-summary { font-size: 13px; }
+      .bilingual { padding: 9px 11px; }
+      .en-title { font-size: 13px; }
+      .en-summary { font-size: 12px; }
+      .vocab-item { font-size: 11px; }
+      .vocab-item b { font-size: 10.5px; }
+      .deepdive summary { font-size: 12px; padding: 5px 9px; }
+      .deepdive-content { font-size: 12px; padding: 9px 11px; }
+      .trend-comment { font-size: 12px; padding: 9px 11px; }
+      .timeline { padding: 11px 12px; }
+      .timeline-item { font-size: 12px; }
+    }
   </style>
 </head>
 <body>
