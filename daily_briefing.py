@@ -126,21 +126,22 @@ def get_config() -> dict:
 
 
 # ============================================================
-# 网页搜索 (Tavily)
-# ============================================================
-log.warning("DEBUG: 已加载 Google 版 search_tavily")
+# 网页搜索 (DuckDuckGo - 免费，无需 API Key)
+from duckduckgo_search import DDGS
+
 def search_tavily(query: str, api_key: str = "", max_results: int = 5) -> list[dict]:
-    """使用 Google 搜索（免费，无需 API Key）替代 Tavily"""
+    """使用 DuckDuckGo 搜索替代 Tavily/Google"""
     results = []
     try:
-        for url in google_search(query, num_results=max_results, lang="zh", sleep_interval=1):
-            results.append({
-                "title": "",
-                "url": url,
-                "content": "",
-            })
+        with DDGS() as ddgs:
+            for r in ddgs.text(query, max_results=max_results):
+                results.append({
+                    "title": r.get("title", ""),
+                    "url": r.get("href", ""),
+                    "content": r.get("body", "")[:300],
+                })
     except Exception as e:
-        log.warning(f"Google 搜索失败 [{query[:40]}]: {e}")
+        log.warning(f"DuckDuckGo 搜索失败 [{query[:40]}]: {e}")
     return results
 
 # ============================================================
@@ -695,7 +696,7 @@ def main():
         return
 
     if not news_text.strip():
-        log.error("未搜索到任何新闻，请检查 TAVILY_API_KEY 是否正确")
+        log.error("未搜索到任何新闻，请检查网络连接或搜索服务是否正常")
         sys.exit(1)
 
     # 阶段 2: 生成
