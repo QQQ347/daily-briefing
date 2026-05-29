@@ -1,5 +1,6 @@
 name: 每日全球动态简报
-
+permissions:
+  contents: write
 on:
   # 每天北京时间 08:00 自动触发 (UTC 00:00 = CST 08:00)
   schedule:
@@ -48,6 +49,10 @@ jobs:
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
           EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+          WEATHER_LOCATION_ID: ${{ secrets.WEATHER_LOCATION_ID }}
+          BING_API_KEY: ${{ secrets.BING_API_KEY }}
+          WECOM_BOT_WEBHOOK: ${{ secrets.WECOM_BOT_WEBHOOK }}
         run: |
           ARGS=""
           if [ -n "${{ github.event.inputs.date }}" ]; then
@@ -68,11 +73,4 @@ jobs:
           retention-days: 30
 
       # 6. 可选：把简报 commit 到仓库 (方便通过 GitHub Pages 访问)
-      - name: Commit briefing to repo
-        if: ${{ vars.COMMIT_TO_REPO == 'true' }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/
-          git diff --staged --quiet || git commit -m "chore: daily briefing $(date +%Y-%m-%d)"
-          git push
+  
