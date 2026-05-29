@@ -233,8 +233,7 @@ def collect_news(config: dict) -> str:
 
     for i, (section, lang, query) in enumerate(queries):
         log.info(f"  [{i+1}/{len(queries)}] [{section}/{lang}] {query[:55]}...")
-        domains = AUTHORITATIVE_DOMAINS_EN if lang == "en" else AUTHORITATIVE_DOMAINS_ZH
-        results = search_tavily(query, api_key, max_results=5, include_domains=domains)
+        results = search_tavily(query, api_key, max_results=5)
 
         for r in results:
             url = r["url"]
