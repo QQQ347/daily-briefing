@@ -367,6 +367,7 @@ BRIEFING_SYSTEM_PROMPT = """你是一位顶级全球动态分析师，专注将�
 - 直接输出完整 HTML，以 <!DOCTYPE html> 开头，禁止任何 markdown 包裹
 - 每个板块中国动态必须覆盖，不能把中国内容只局限于政策板块
 - 优先选择顶级期刊/权威来源（Nature/Science/NEJM/新华社等）
+- 禁止在 HTML 中使用 flex、gap、linear-gradient、transition 等 CSS3 属性，布局只用 inline-block，背景只用纯色，font-weight 只用 400/600/700
 """
 
 BRIEFING_HTML_TEMPLATE = """<!DOCTYPE html>
@@ -376,7 +377,7 @@ BRIEFING_HTML_TEMPLATE = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>每日全球重要动态简报 - {DATE}</title>
   <style>
-       * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif;
       max-width: 660px;
