@@ -619,47 +619,71 @@ def send_email(html_content: str, filepath: str, config: dict, today_str: str):
         log.info("邮件未配置或已禁用，跳过发送")
         return
 
-    sender = email_config["sender"]
-    password = email_config["password"]
     receiver = email_config["receiver"]
+    resend_key = os.environ.get("RESEND_API_KEY", "").strip()
+
+    # ── 方式1: Resend HTTPS API（GitHub Actions 推荐，不受 SMTP 封锁影响）──
+    if resend_key:
+        try:
+            log.info(f"发送邮件 (Resend API) → {receiver}...")
+            resp = requests.post(
+                "https://api.resend.com/emails",
+                headers={
+                    "Authorization": f"Bearer {resend_key}",
+                    "Content-Type": "application/json",
+                },
+                json={
+                    "from": f"每日简报 <onboarding@resend.dev>",
+                    "to": [receiver],
+                    "subject": f"📡 每日全球重要动态简报 - {today_str}",
+                    "html": html_content,
+                },
+                timeout=30,
+            )
+            if resp.status_code in (200, 201):
+                log.info(f"邮件发送成功 (Resend)! ID: {resp.json().get('id', '?')}")
+                return
+            else:
+                log.error(f"Resend 发送失败: {resp.status_code} {resp.text[:200]}")
+        except Exception as e:
+            log.error(f"Resend 请求异常: {e}")
+
+    # ── 方式2: SMTP 备用（本地测试可用，GitHub Actions 上 SMTP 端口被封）──
+    sender = email_config.get("sender", "")
+    password = email_config.get("password", "")
+    if not sender or not password:
+        log.error("SMTP 未配置 sender/password，跳过备用发送")
+        return
 
     msg = MIMEMultipart("alternative")
     msg["From"] = sender
     msg["To"] = receiver
     msg["Subject"] = Header(f"📡 每日全球重要动态简报 - {today_str}", "utf-8")
-
-    text_part = MIMEText(
+    msg.attach(MIMEText(
         f"今日简报已生成。\n\n日期: {today_str}\n文件: {filepath}\n\n本邮件包含 HTML 版本，请直接查看。",
-        "plain",
-        "utf-8",
-    )
-    html_part = MIMEText(html_content, "html", "utf-8")
-    msg.attach(text_part)
-    msg.attach(html_part)
+        "plain", "utf-8",
+    ))
+    msg.attach(MIMEText(html_content, "html", "utf-8"))
 
-    try:
-        log.info(f"发送邮件 → {receiver}...")
-        # QQ 邮箱推荐 SSL 465（587 STARTTLS 在 GitHub Actions 上常被封）
-        server = smtplib.SMTP_SSL("smtp.qq.com", 465, timeout=30)
-        server.login(sender, password)
-        server.sendmail(sender, [receiver], msg.as_string())
-        server.quit()
-        log.info("邮件发送成功!")
-    except Exception as e:
-        log.error(f"邮件发送失败 (SSL 465): {e}")
-        # 备用：尝试 587 STARTTLS
+    for host, port, use_ssl in [("smtp.qq.com", 465, True), ("smtp.qq.com", 587, False)]:
         try:
-            log.info("尝试备用端口 587 STARTTLS...")
-            server2 = smtplib.SMTP("smtp.qq.com", 587, timeout=30)
-            server2.ehlo()
-            server2.starttls()
-            server2.login(sender, password)
-            server2.sendmail(sender, [receiver], msg.as_string())
-            server2.quit()
-            log.info("邮件发送成功 (587 STARTTLS)!")
-        except Exception as e2:
-            log.error(f"邮件发送失败 (587): {e2}")
-            log.info(f"简报文件已保存: {filepath}")
+            log.info(f"SMTP 尝试 {host}:{port} ({'SSL' if use_ssl else 'STARTTLS'})...")
+            if use_ssl:
+                server = smtplib.SMTP_SSL(host, port, timeout=30)
+            else:
+                server = smtplib.SMTP(host, port, timeout=30)
+                server.ehlo()
+                server.starttls()
+            server.login(sender, password)
+            server.sendmail(sender, [receiver], msg.as_string())
+            server.quit()
+            log.info(f"邮件发送成功 (SMTP {port})!")
+            return
+        except Exception as e:
+            log.error(f"SMTP {port} 失败: {e}")
+
+    log.error("所有邮件发送方式均失败，简报已保存至本地文件")
+    log.info(f"简报文件: {filepath}")
 
 
 # ============================================================
