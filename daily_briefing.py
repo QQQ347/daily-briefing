@@ -376,7 +376,7 @@ BRIEFING_HTML_TEMPLATE = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>每日全球重要动态简报 - {DATE}</title>
   <style>
-      * { box-sizing: border-box; margin: 0; padding: 0; }
+       * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif;
       max-width: 660px;
@@ -396,7 +396,6 @@ BRIEFING_HTML_TEMPLATE = """<!DOCTYPE html>
     header h1 { font-size: 21px; margin-bottom: 6px; }
     header p { font-size: 12px; opacity: 0.65; line-height: 1.6; }
 
-    /* 今日综述 */
     .overview {
       background: #1a237e;
       color: #fff;
