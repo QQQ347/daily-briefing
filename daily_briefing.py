@@ -885,6 +885,7 @@ def send_email(html_content: str, filepath: str, config: dict, today_str: str):
 # ============================================================
 
 def main():
+    print("Entered main()", flush=True)
     parser = argparse.ArgumentParser(description="每日全球重要动态简报生成器 v2")
     parser.add_argument("--date", type=str, help="指定日期 YYYY-MM-DD，默认今天")
     parser.add_argument("--no-email", action="store_true", help="不发送邮件")
@@ -942,3 +943,16 @@ def main():
 
     log.info("===== 完成! =====")
     log.info(f"文件: {filepath}")
+if __name__ == "__main__":
+    try:
+        print("Calling main() now...", flush=True)
+        main()
+        print("main() finished successfully.", flush=True)
+    except SystemExit as e:
+        print(f"SystemExit with code: {e.code}", flush=True)
+        sys.exit(e.code)
+    except Exception as e:
+        import traceback
+        print("FATAL ERROR:", str(e), flush=True)
+        traceback.print_exc()
+        sys.exit(1)
