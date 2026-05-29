@@ -128,7 +128,7 @@ def get_config() -> dict:
 # ============================================================
 # 网页搜索 (Tavily)
 # ============================================================
-
+log.warning("DEBUG: 已加载 Google 版 search_tavily")
 def search_tavily(query: str, api_key: str = "", max_results: int = 5) -> list[dict]:
     """使用 Google 搜索（免费，无需 API Key）替代 Tavily"""
     results = []
