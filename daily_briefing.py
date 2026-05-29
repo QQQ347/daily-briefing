@@ -31,6 +31,7 @@ from email.header import Header
 from pathlib import Path
 
 import requests
+from googlesearch import search as google_search
 from openai import OpenAI
 
 # ============================================================
@@ -130,36 +131,19 @@ def get_config() -> dict:
 # 网页搜索 (Tavily)
 # ============================================================
 
-def search_tavily(
-    query: str,
-    api_key: str,
-    max_results: int = 5,
-    include_domains: list[str] | None = None,
-) -> list[dict]:
-    url = "https://api.tavily.com/search"
-    payload: dict = {
-        "api_key": api_key,
-        "query": query,
-        "search_depth": "advanced",
-        "max_results": max_results,
-        "include_answer": False,
-        "include_raw_content": False,
-    }
-    if include_domains:
-        payload["include_domains"] = include_domains
+def search_tavily(query: str, api_key: str = "", max_results: int = 5) -> list[dict]:
+    """使用 Google 搜索（免费，无需 API Key）替代 Tavily"""
+    results = []
     try:
-        resp = requests.post(url, json=payload, timeout=30)
-        resp.raise_for_status()
-        data = resp.json()
-        results = data.get("results", [])
-        return [
-            {"title": r.get("title", ""), "url": r.get("url", ""), "content": r.get("content", "")}
-            for r in results
-        ]
+        for url in google_search(query, num_results=max_results, lang="zh", sleep_interval=1):
+            results.append({
+                "title": "",
+                "url": url,
+                "content": "",
+            })
     except Exception as e:
-        log.warning(f"Tavily 搜索失败 [{query[:40]}]: {e}")
-        return []
-
+        log.warning(f"Google 搜索失败 [{query[:40]}]: {e}")
+    return results
 
 # ============================================================
 # 搜索关键词矩阵（双语）
