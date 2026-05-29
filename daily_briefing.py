@@ -379,9 +379,9 @@ BRIEFING_HTML_TEMPLATE = """<!DOCTYPE html>
       * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif;
-      max-width: 680px;                 /* 稍微加宽 */
+      max-width: 660px;
       margin: 0 auto;
-      padding: 28px 20px;              /* 左右加大留白 */
+      padding: 24px 20px;
       background: #f0f2f5;
       word-break: break-word;
       overflow-x: hidden;
@@ -389,67 +389,65 @@ BRIEFING_HTML_TEMPLATE = """<!DOCTYPE html>
     header {
       background: #1a1a2e;
       color: #fff;
-      padding: 28px 28px;
-      border-radius: 16px;
-      margin-bottom: 28px;
+      padding: 26px 24px;
+      border-radius: 14px;
+      margin-bottom: 24px;
     }
-    header h1 { font-size: 22px; margin-bottom: 8px; }
-    header p { font-size: 13px; opacity: 0.65; line-height: 1.6; }
+    header h1 { font-size: 21px; margin-bottom: 6px; }
+    header p { font-size: 12px; opacity: 0.65; line-height: 1.6; }
 
     /* 今日综述 */
     .overview {
       background: #1a237e;
       color: #fff;
-      border-radius: 14px;
-      padding: 24px 26px;
-      margin-bottom: 30px;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
     }
-    .overview h3 { font-size: 13px; opacity: 0.7; margin-bottom: 12px; }
-    .overview p { font-size: 15px; line-height: 1.9; opacity: 0.95; }
-    .overview-tags { margin-top: 16px; }
+    .overview h3 { font-size: 12px; opacity: 0.7; margin-bottom: 12px; }
+    .overview p { font-size: 14px; line-height: 1.9; opacity: 0.95; }
+    .overview-tags { margin-top: 14px; }
     .overview-tag {
       background: rgba(255,255,255,0.12);
       border: 1px solid rgba(255,255,255,0.18);
-      font-size: 13px;
-      padding: 5px 16px;
-      border-radius: 20px;
-      margin-right: 10px;
+      font-size: 12px;
+      padding: 4px 14px;
+      border-radius: 16px;
+      margin-right: 8px;
       margin-bottom: 8px;
       display: inline-block;
     }
 
-    /* 板块标题 */
     h2 {
-      font-size: 18px;
+      font-size: 17px;
       color: #1a1a2e;
-      margin: 36px 0 18px 0;
-      padding-bottom: 9px;
+      margin: 30px 0 14px 0;
+      padding-bottom: 7px;
       border-bottom: 2px solid #dde3ea;
     }
 
-    /* 新闻卡片 */
     .item {
       background: #fff;
-      border-left: 4px solid #4a90d9;
-      border-radius: 0 12px 12px 0;
-      padding: 18px 20px;
-      margin-bottom: 22px;
+      border-left: 3px solid #4a90d9;
+      border-radius: 0 10px 10px 0;
+      padding: 16px 18px;
+      margin-bottom: 18px;
     }
-    .item-header { margin-bottom: 10px; }
+    .item-header { margin-bottom: 8px; }
     .item-title {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       color: #1a1a2e;
-      line-height: 1.55;
-      margin-bottom: 10px;
+      line-height: 1.5;
+      margin-bottom: 8px;
     }
-    .item-meta { margin-bottom: 12px; }
+    .item-meta { margin-bottom: 10px; }
     .star-rating, .risk-red, .risk-yellow, .impact {
-      font-size: 12px;
-      padding: 3px 10px;
-      border-radius: 12px;
-      margin-right: 8px;
-      margin-bottom: 6px;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-right: 6px;
+      margin-bottom: 4px;
       display: inline-block;
       font-weight: 600;
     }
@@ -462,126 +460,125 @@ BRIEFING_HTML_TEMPLATE = """<!DOCTYPE html>
     .impact-low  { background: #f3e5f5; color: #6a1b9a; }
 
     .item-summary {
-      font-size: 15px;
+      font-size: 14px;
       color: #444;
-      line-height: 1.85;
-      margin-bottom: 14px;
+      line-height: 1.8;
+      margin-bottom: 12px;
     }
 
-    /* 关键数字 */
     .num-up, .num-down, .num-key {
       font-weight: 700;
-      padding: 1px 6px;
+      padding: 1px 5px;
       border-radius: 4px;
     }
     .num-up   { color: #1b5e20; background: #e8f5e9; }
     .num-down { color: #b71c1c; background: #ffebee; }
     .num-key  { color: #0d47a1; background: #e3f2fd; }
 
-    .item-source { font-size: 12px; color: #bbb; margin-top: 12px; }
+    .item-source { font-size: 11px; color: #bbb; margin-top: 10px; }
     .item-source a { color: #4a90d9; text-decoration: none; }
 
-    /* 英语学习模块 */
     .bilingual {
-      margin: 16px 0;
-      padding: 14px 16px;
+      margin: 14px 0;
+      padding: 12px 14px;
       background: #f0f7ff;
-      border-radius: 10px;
+      border-radius: 9px;
       border: 1px solid #bbdefb;
     }
-    .en-title { font-size: 14px; color: #1565c0; font-weight: 700; margin-bottom: 8px; }
-    .en-summary { font-size: 14px; color: #37474f; line-height: 1.75; margin-bottom: 12px; }
-    .vocab-card { background: #fff; border: 1px solid #dde6f0; border-radius: 8px; padding: 10px 14px; }
-    .vocab-title { font-size: 13px; color: #6a1b9a; font-weight: 700; margin-bottom: 6px; }
-    .vocab-item { font-size: 13px; color: #424242; line-height: 2.0; margin-right: 14px; display: inline-block; }
-    .vocab-item b { color: #1a237e; background: #e8eaf6; padding: 1px 5px; border-radius: 3px; }
+    .en-title { font-size: 13px; color: #1565c0; font-weight: 700; margin-bottom: 6px; }
+    .en-summary { font-size: 13px; color: #37474f; line-height: 1.7; margin-bottom: 10px; }
+    .vocab-card { background: #fff; border: 1px solid #dde6f0; border-radius: 7px; padding: 8px 12px; }
+    .vocab-title { font-size: 12px; color: #6a1b9a; font-weight: 700; margin-bottom: 5px; }
+    .vocab-item { font-size: 12px; color: #424242; line-height: 1.9; margin-right: 12px; display: inline-block; }
+    .vocab-item b { color: #1a237e; background: #e8eaf6; padding: 1px 4px; border-radius: 3px; }
 
-    /* 观点对比框 */
-    .compare-box { margin: 18px 0; }
-    .compare-side { padding: 14px 16px; border-radius: 10px; font-size: 14px; line-height: 1.75; margin-bottom: 12px; }
-    .compare-bull { background: #e8f5e9; border-left: 4px solid #2e7d32; }
-    .compare-bear { background: #ffebee; border-left: 4px solid #c62828; }
-    .compare-label { font-weight: 700; font-size: 12px; margin-bottom: 6px; }
+    .compare-box { margin: 16px 0; }
+    .compare-side {
+      padding: 12px 14px;
+      border-radius: 9px;
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    .compare-bull { background: #e8f5e9; border-left: 3px solid #2e7d32; }
+    .compare-bear { background: #ffebee; border-left: 3px solid #c62828; }
+    .compare-label { font-weight: 700; font-size: 11px; margin-bottom: 5px; }
 
-    /* 深度解读 */
-    .deepdive { margin-top: 12px; }
+    .deepdive { margin-top: 10px; }
     .deepdive summary {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       color: #1b5e20;
-      padding: 8px 12px;
+      padding: 7px 10px;
       background: #e8f5e9;
-      border-radius: 8px;
+      border-radius: 7px;
       border: 1px solid #c8e6c9;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
     .deepdive-content {
       background: #fafcfa;
       border: 1px solid #dde8dd;
-      border-radius: 8px;
-      padding: 14px 16px;
+      border-radius: 7px;
+      padding: 12px 14px;
       margin-top: 2px;
-      font-size: 14px;
-      line-height: 1.85;
+      font-size: 13px;
+      line-height: 1.8;
       color: #444;
     }
-    .deepdive-content .dl { margin: 8px 0; }
+    .deepdive-content .dl { margin: 6px 0; }
     .deepdive-content .dl-label { font-weight: 700; }
     .dl-what { color: #1565c0; }
     .dl-prospect { color: #e65100; }
     .dl-vision { color: #6a1b9a; }
 
-    /* 板块趋势评论 */
     .trend-comment {
       background: #f3e5f5;
-      border-left: 4px solid #9575cd;
-      border-radius: 0 10px 10px 0;
-      padding: 14px 18px;
-      margin: 16px 0 28px 0;
-      font-size: 14px;
+      border-left: 3px solid #9575cd;
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      margin: 14px 0 24px 0;
+      font-size: 13px;
       color: #4a148c;
       font-style: italic;
       line-height: 1.8;
     }
 
-    /* 时间提醒 */
     .timeline {
       background: #fff;
       border: 1px solid #ffd54f;
-      border-radius: 12px;
-      padding: 18px 22px;
-      margin: 24px 0;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 22px 0;
     }
-    .timeline h4 { font-size: 14px; color: #e65100; font-weight: 700; margin-bottom: 14px; }
-    .timeline-item { font-size: 14px; color: #4e342e; padding: 8px 0; border-bottom: 1px solid #fff8e1; }
+    .timeline h4 { font-size: 13px; color: #e65100; font-weight: 700; margin-bottom: 12px; }
+    .timeline-item { font-size: 13px; color: #4e342e; padding: 7px 0; border-bottom: 1px solid #fff8e1; }
     .timeline-item:last-child { border-bottom: none; }
     .timeline-date {
       background: #fff9c4;
       border: 1px solid #ffd54f;
       color: #5d4037;
       font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 6px;
-      font-size: 12px;
-      margin-right: 12px;
+      padding: 2px 8px;
+      border-radius: 5px;
+      font-size: 11px;
+      margin-right: 10px;
       display: inline-block;
     }
 
     footer {
       text-align: center;
       color: #aaa;
-      font-size: 12px;
-      margin-top: 40px;
-      padding: 16px;
+      font-size: 11px;
+      margin-top: 36px;
+      padding: 14px;
       line-height: 1.8;
     }
 
-    /* 移动端微调 */
     @media (max-width: 600px) {
       body { padding: 16px 12px; }
-      header { padding: 20px 18px; }
-      .item { padding: 16px 14px; }
-      .overview { padding: 18px 16px; }
+      header { padding: 20px 16px; }
+      .item { padding: 14px 14px; }
+      .overview { padding: 16px 16px; }
     }
   </style>
 </head>
