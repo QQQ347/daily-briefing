@@ -31,8 +31,6 @@ from email.header import Header
 from pathlib import Path
 
 import requests
-from premailer import transform as premailer_transform
-from googlesearch import search as google_search
 from openai import OpenAI
 
 # ============================================================
@@ -131,20 +129,47 @@ def get_config() -> dict:
 from duckduckgo_search import DDGS
 
 def search_tavily(query: str, api_key: str = "", max_results: int = 5) -> list[dict]:
-    """使用 DuckDuckGo 搜索替代 Tavily/Google"""
+    """使用 DuckDuckGo 搜索，失败时自动重试，都失败则用 Bing 备用"""
+    import time
     results = []
-    try:
-        with DDGS() as ddgs:
-            for r in ddgs.text(query, max_results=max_results):
-                results.append({
-                    "title": r.get("title", ""),
-                    "url": r.get("href", ""),
-                    "content": r.get("body", "")[:300],
-                })
-    except Exception as e:
-        log.warning(f"DuckDuckGo 搜索失败 [{query[:40]}]: {e}")
-    return results
 
+    # 主搜索：DuckDuckGo（重试 2 次）
+    for attempt in range(1, 3):
+        try:
+            with DDGS() as ddgs:
+                for r in ddgs.text(query, max_results=max_results):
+                    results.append({
+                        "title": r.get("title", ""),
+                        "url": r.get("href", ""),
+                        "content": r.get("body", "")[:300],
+                    })
+            if results:
+                return results
+        except Exception as e:
+            log.warning(f"DuckDuckGo 搜索尝试 {attempt}/2 失败: {e}")
+            time.sleep(2)
+
+    # 备用搜索：Bing API
+    bing_key = os.environ.get("BING_API_KEY", "").strip()
+    if bing_key:
+        try:
+            resp = requests.get(
+                "https://api.bing.microsoft.com/v7.0/search",
+                headers={"Ocp-Apim-Subscription-Key": bing_key},
+                params={"q": query, "count": max_results, "mkt": "zh-CN"},
+                timeout=15
+            )
+            data = resp.json()
+            for r in data.get("webPages", {}).get("value", []):
+                results.append({
+                    "title": r.get("name", ""),
+                    "url": r.get("url", ""),
+                    "content": r.get("snippet", "")[:300],
+                })
+        except Exception as e:
+            log.warning(f"Bing 备用搜索也失败: {e}")
+
+    return results
 # ============================================================
 # 搜索关键词矩阵（双语）
 # ============================================================
@@ -202,7 +227,54 @@ def get_search_queries() -> list[tuple[str, str, str]]:
         ("补充扫描", "zh", f"中国科学家 首次 发现 发明 2026"),
     ]
 
+# ============================================================
+# 天气模块（和风天气免费 API）
+# ============================================================
+def get_weather() -> str:
+    """获取漳州今日天气，返回 HTML 片段，失败返回空字符串"""
+    api_key = os.environ.get("WEATHER_API_KEY", "").strip()
+    location_id = os.environ.get("WEATHER_LOCATION_ID", "101230501")  # 默认漳州
+    if not api_key:
+        log.warning("WEATHER_API_KEY 未设置，跳过天气")
+        return ""
 
+    try:
+        # 获取实时天气
+        now_resp = requests.get(
+            "https://devapi.qweather.com/v7/weather/now",
+            params={"location": location_id, "key": api_key},
+            timeout=10
+        )
+        now_data = now_resp.json()
+        if now_data.get("code") != "200":
+            log.warning(f"天气API错误: {now_data.get('code')}")
+            return ""
+
+        now = now_data["now"]
+
+        # 获取 3 天预报
+        forecast_resp = requests.get(
+            "https://devapi.qweather.com/v7/weather/3d",
+            params={"location": location_id, "key": api_key},
+            timeout=10
+        )
+        forecast_data = forecast_resp.json()
+        today_forecast = None
+        if forecast_data.get("code") == "200":
+            today_forecast = forecast_data["daily"][0] if forecast_data.get("daily") else None
+
+        # 生成 HTML
+        weather_html = '<div class="weather-box" style="background:#e3f2fd;border:1px solid #90caf9;border-radius:10px;padding:14px 18px;margin-bottom:20px;">'
+        weather_html += f'<p style="font-size:14px;margin:0 0 8px 0;">🌤 <b>今日天气 · 漳州</b></p>'
+        weather_html += f'<p style="font-size:13px;margin:4px 0;">当前：{now.get("temp","?")}°C，{now.get("text","?")}，湿度{now.get("humidity","?")}%</p>'
+        if today_forecast:
+            weather_html += f'<p style="font-size:13px;margin:4px 0;">今日预报：{today_forecast.get("textDay","?")}，{today_forecast.get("tempMin","?")}~{today_forecast.get("tempMax","?")}°C</p>'
+        weather_html += '</div>'
+        return weather_html
+
+    except Exception as e:
+        log.warning(f"天气获取失败: {e}")
+        return ""
 # ============================================================
 # 搜索阶段
 # ============================================================
@@ -683,7 +755,37 @@ def save_briefing(html_content: str, config: dict, today_str: str) -> str:
 
     log.info(f"简报已保存: {filepath} ({filepath.stat().st_size // 1024} KB)")
     return str(filepath)
+# ============================================================
+# 企业微信机器人推送
+# ============================================================
+def send_wechat_bot(today_str: str, page_url: str):
+    """通过企业微信机器人 Webhook 推送简报链接"""
+    webhook_url = os.environ.get("WECOM_BOT_WEBHOOK", "").strip()
+    if not webhook_url:
+        log.info("WECOM_BOT_WEBHOOK 未设置，跳过微信推送")
+        return
 
+    try:
+        import json as json_lib
+        payload = {
+            "msgtype": "markdown",
+            "markdown": {
+                "content": f"""📡 **每日全球重要动态简报已生成**
+> 日期：{today_str}
+> 状态：已生成并保存
+
+[在浏览器中查看完整简报]({page_url})
+
+<font color=\"#999\">由 DeepSeek AI 自动生成 · 每日早 8 点</font>"""
+            }
+        }
+        resp = requests.post(webhook_url, json=payload, timeout=10)
+        if resp.status_code == 200:
+            log.info("微信推送成功!")
+        else:
+            log.warning(f"微信推送失败: {resp.status_code} {resp.text}")
+    except Exception as e:
+        log.warning(f"微信推送异常: {e}")
 
 # ============================================================
 # 邮件发送
@@ -692,48 +794,8 @@ def save_briefing(html_content: str, config: dict, today_str: str) -> str:
 # 邮件专用简化 HTML（兼容邮件客户端）
 # ============================================================
 
-def email_html(full_html: str, date_str: str) -> str:
-    """将完整简报转为邮件兼容的简化版，保留英文学习+深度解读"""
-    import re
-
-    # 提取 body 内容
-    body_match = re.search(r'<body>(.*?)</body>', full_html, re.DOTALL)
-    body = body_match.group(1) if body_match else full_html
-
-    # 1. 把 <details> 折叠区改成普通展开（邮件不支持折叠）
-    body = re.sub(r'<details\b[^>]*>', '<div style="margin-top:8px;border:1px solid #c8e6c9;border-radius:6px;padding:8px;background:#f9fbf9;">', body)
-    body = re.sub(r'</details>', '</div>', body)
-    # 把 <summary> 改成加粗标题
-    body = re.sub(r'<summary[^>]*>(.*?)</summary>', r'<p style="font-weight:bold;color:#1b5e20;margin-bottom:6px;">📖 \1</p>', body, flags=re.DOTALL)
-
-    # 2. 保留 bilingual 模块，但简化背景和边距
-    body = re.sub(r'<div class="bilingual"[^>]*>', '<div style="margin:10px 0;padding:8px;border:1px solid #bbdefb;background:#f5f8ff;">', body)
-    # 保留内部结构不变，但移除可能的复杂样式（邮件里 class 不起作用，保留标签即可）
-
-    # 3. 移除 <style> 块（邮件不支持），但保留其他标签
-    body = re.sub(r'<style[^>]*>.*?</style>', '', body, flags=re.DOTALL)
-
-    # 4. 全局限制字体大小，防止手机端过大
-    body = re.sub(r'(<p\b)', r'\1 style="font-size:15px;line-height:1.6;color:#333;"', body)
-    body = re.sub(r'(<h2\b)', r'\1 style="font-size:18px;color:#1a1a2e;margin-top:20px;"', body)
-    body = re.sub(r'(<h3\b)', r'\1 style="font-size:16px;color:#333;"', body)
-
-    # 包裹到邮件容器
-    return f"""<!DOCTYPE html>
-<html lang="zh-CN">
-<head><meta charset="UTF-8"></head>
-<body style="margin:0;padding:0;background:#f5f5f5;font-family:Arial,'Microsoft YaHei',sans-serif;">
-<div style="max-width:600px;margin:20px auto;background:#fff;border-radius:8px;padding:20px;">
-  <h2 style="color:#1a1a2e;border-bottom:2px solid #eee;padding-bottom:8px;font-size:20px;">📡 每日全球重要动态简报</h2>
-  <p style="color:#999;font-size:12px;">{date_str}</p>
-  <hr style="border:0;border-top:1px solid #eee;margin:12px 0;">
-  {body}
-  <hr style="border:0;border-top:1px solid #eee;margin:16px 0;">
-  <p style="color:#bbb;font-size:11px;text-align:center;">由 DeepSeek AI 自动生成 · 每日早 8 点发送</p>
-</div>
-</body>
-</html>"""
 def send_email(html_content: str, filepath: str, config: dict, today_str: str):
+    page_url = f"https://QQQ347.github.io/daily-briefing/每日简报-{today_str}.html"
     email_config = config.get("email", {})
 
     if not email_config.get("enabled", False):
@@ -748,18 +810,6 @@ def send_email(html_content: str, filepath: str, config: dict, today_str: str):
         try:
             log.info(f"发送邮件 (Resend API) → {receiver}...")
 
-            # 使用 premailer 将外部 CSS 转为内联样式
-            html_to_send = premailer_transform(html_content)
-
-            # 添加宽度限制，防止手机端溢出
-            import re
-            html_to_send = re.sub(
-                r'<body([^>]*)>',
-                r'<body\1 style="max-width:600px;word-break:break-word;overflow-x:hidden;">',
-                html_to_send,
-                count=1
-            )
-
             resp = requests.post(
                 "https://api.resend.com/emails",
                 headers={
@@ -770,7 +820,17 @@ def send_email(html_content: str, filepath: str, config: dict, today_str: str):
                     "from": "每日简报 <onboarding@resend.dev>",
                     "to": [receiver],
                     "subject": f"📡 每日全球重要动态简报 - {today_str}",
-                    "html": html_to_send,
+                    "html": f"""
+                    <div style="max-width:560px;margin:0 auto;font-family:'Microsoft YaHei',sans-serif;padding:24px;background:#f5f5f5;border-radius:10px;">
+                      <h2 style="color:#1a1a2e;margin:0 0 12px 0;">📡 每日全球重要动态简报</h2>
+                      <p style="color:#666;font-size:14px;">{today_str} 的简报已生成。</p>
+                      <p style="margin:28px 0;">
+                        <a href="{page_url}" style="background:#1a237e;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-size:16px;display:inline-block;">🔗 在浏览器中查看完整简报</a>
+                      </p>
+                      <p style="color:#999;font-size:12px;margin-top:20px;">或复制链接：<br><a href="{page_url}" style="color:#4a90d9;">{page_url}</a></p>
+                      <p style="color:#bbb;font-size:11px;margin-top:24px;">由 DeepSeek AI 自动生成 · 每日早 8 点</p>
+                    </div>
+                    """,
                 },
                 timeout=30,
             )
@@ -839,6 +899,9 @@ def main():
 
     config = get_config()
 
+    # 天气
+    weather_html = get_weather()
+
     # 阶段 1: 搜索
     log.info("【阶段1】搜索新闻...")
     news_text = collect_news(config)
@@ -847,9 +910,18 @@ def main():
         print(news_text)
         return
 
+    # 如果搜索失败，发兜底通知
     if not news_text.strip():
-        log.error("未搜索到任何新闻，请检查网络连接或搜索服务是否正常")
+        log.error("未搜索到任何新闻")
+        if not args.no_email:
+            send_email("<p>今日简报生成失败：未搜索到新闻。请检查搜索服务。</p>",
+                       "", config, today_str)
+            send_wechat_bot(today_str, "https://QQQ347.github.io/daily-briefing/")
         sys.exit(1)
+
+    # 把天气插入到 news_text 前面
+    if weather_html:
+        news_text = weather_html + "\n" + news_text
 
     # 阶段 2: 生成
     log.info("【阶段2】AI 生成简报...")
@@ -859,14 +931,14 @@ def main():
     log.info("【阶段3】保存文件...")
     filepath = save_briefing(html_content, config, today_str)
 
-    # 阶段 4: 邮件
+    # 阶段 4: 邮件 + 微信推送
     if not args.no_email:
-        log.info("【阶段4】发送邮件...")
+        log.info("【阶段4】发送通知...")
+        page_url = f"https://QQQ347.github.io/daily-briefing/每日简报-{today_str}.html"
         send_email(html_content, filepath, config, today_str)
+        send_wechat_bot(today_str, page_url)
+    else:
+        log.info("跳过邮件和微信推送 (--no-email)")
 
     log.info("===== 完成! =====")
     log.info(f"文件: {filepath}")
-
-
-if __name__ == "__main__":
-    main()
