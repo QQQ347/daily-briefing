@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球动态简报 | 2026-05-31</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #1a1a2e;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    font-size: 15px;
+  }
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    padding: 24px 28px;
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f3460;
+    margin-top: 0;
+    margin-bottom: 6px;
+    border-left: 5px solid #e94560;
+    padding-left: 14px;
+  }
+  .date {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 12px;
+  }
+  /* overview */
+  .overview {
+    background-color: #eef2ff;
+    border-left: 4px solid #3b82f6;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    border-radius: 4px;
+  }
+  .overview h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: #1e3a5f;
+  }
+  .overview p {
+    margin: 0 0 12px 0;
+    font-size: 15px;
+    color: #1f2937;
+  }
+  .overview-tags {
+    display: block;
+  }
+  .overview-tag {
+    display: inline-block;
+    background-color: #dbeafe;
+    color: #1e40af;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-right: 8px;
+    margin-bottom: 4px;
+  }
+  /* section */
+  .section {
+    margin-bottom: 32px;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f3460;
+    border-bottom: 2px solid #e0e7ff;
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+  }
+  .item {
+    background-color: #fafbfc;
+    border: 1px solid #e9edf2;
+    border-radius: 6px;
+    padding: 16px 18px;
+    margin-bottom: 16px;
+  }
+  .item-header {
+    display: block;
+    margin-bottom: 8px;
+  }
+  .item-header .title {
+    font-size: 17px;
+    font-weight: 600;
+    color: #0b1d3a;
+    display: inline;
+  }
+  .badge-group {
+    display: inline;
+    margin-left: 8px;
+  }
+  .badge-group span {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  .star {
+    background-color: #fbbf24;
+    color: #1e293b;
+  }
+  .impact {
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .impact-high {
+    background-color: #fee2e2;
+    color: #b91c1c;
+  }
+  .impact-med {
+    background-color: #fef3c7;
+    color: #92400e;
+  }
+  .impact-low {
+    background-color: #e0e7ff;
+    color: #3730a3;
+  }
+  .risk-red {
+    background-color: #fecaca;
+    color: #991b1b;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .risk-yellow {
+    background-color: #fde68a;
+    color: #854d0e;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .item-summary {
+    margin: 10px 0 8px 0;
+    font-size: 15px;
+    color: #1e293b;
+  }
+  .num-up {
+    background-color: #d1fae5;
+    color: #065f46;
+    font-weight: 600;
+    padding: 0 4px;
+    border-radius: 3px;
+  }
+  .num-down {
+    background-color: #fee2e2;
+    color: #991b1b;
+    font-weight: 600;
+    padding: 0 4px;
+    border-radius: 3px;
+  }
+  .num-key {
+    background-color: #e0e7ff;
+    color: #3730a3;
+    font-weight: 600;
+    padding: 0 4px;
+    border-radius: 3px;
+  }
+  .bilingual {
+    background-color: #f1f5f9;
+    border-left: 3px solid #94a3b8;
+    padding: 10px 14px;
+    margin: 10px 0;
+    border-radius: 4px;
+  }
+  .bilingual .en-title {
+    font-weight: 600;
+    font-size: 15px;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+  }
+  .bilingual .en-summary {
+    font-size: 14px;
+    color: #334155;
+    margin: 0 0 8px 0;
+  }
+  .vocab-card {
+    background-color: #e2e8f0;
+    padding: 8px 12px;
+    border-radius: 4px;
+  }
+  .vocab-title {
+    font-weight: 600;
+    font-size: 13px;
+    color: #1e293b;
+    margin-bottom: 4px;
+  }
+  .vocab-list {
+    display: block;
+  }
+  .vocab-item {
+    display: inline-block;
+    background-color: #f8fafc;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+    border: 1px solid #cbd5e1;
+  }
+  .vocab-item b {
+    font-weight: 600;
+    margin-right: 4px;
+  }
+  .compare-box {
+    display: block;
+    background-color: #fef9c3;
+    border: 1px solid #eab308;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 14px 0;
+  }
+  .compare-side {
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  .compare-bull {
+    background-color: #ecfdf5;
+    border-right: 2px solid #10b981;
+    margin-right: 4%;
+  }
+  .compare-bear {
+    background-color: #fef2f2;
+    border-left: 2px solid #ef4444;
+  }
+  .compare-label {
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .deepdive {
+    margin: 10px 0 6px 0;
+    background-color: #f8fafc;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 6px 12px;
+  }
+  .deepdive summary {
+    font-weight: 600;
+    color: #1e3a5f;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .deepdive-content {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #e5e7eb;
+  }
+  .dl {
+    margin: 4px 0;
+    font-size: 14px;
+  }
+  .dl-label {
+    font-weight: 600;
+    color: #0f172a;
+  }
+  .item-source {
+    font-size: 13px;
+    color: #64748b;
+    margin: 6px 0 0 0;
+  }
+  .item-source a {
+    color: #2563eb;
+    text-decoration: none;
+  }
+  .item-source a:hover {
+    text-decoration: underline;
+  }
+  .trend-comment {
+    background-color: #f1f5f9;
+    border-left: 4px solid #64748b;
+    padding: 10px 16px;
+    font-size: 14px;
+    color: #1e293b;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  .timeline {
+    background-color: #fefce8;
+    border: 1px solid #eab308;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 24px 0 16px 0;
+  }
+  .timeline h4 {
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    color: #713f12;
+  }
+  .timeline-item {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+  .timeline-date {
+    display: inline-block;
+    background-color: #fde68a;
+    padding: 2px 10px;
+    border-radius: 16px;
+    font-weight: 600;
+    color: #78350f;
+    margin-right: 10px;
+    font-size: 13px;
+  }
+  .footer {
+    margin-top: 30px;
+    padding-top: 12px;
+    border-top: 1px solid #d1d5db;
+    font-size: 13px;
+    color: #6b7280;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>📡 全球动态简报</h1>
+<div class="date">2026年5月31日 · 星期日</div>
+
+<!-- 第一步：综述模块 -->
+<div class="overview">
+  <h3>🧠 今日宏观综述</h3>
+  <p>今日简报信息密度较低，以科普与机构介绍为主。生命科学领域聚焦基础定义，无重大突破；人工智能方面DeepSeek持续更新版本，但缺乏具体性能数据；地缘政治板块出现关于“一带一路”的政策回顾及新型阿片类药物研究进展。整体信号：技术迭代平稳，政策面以回顾为主，风险事件较少。</p>
+  <div class="overview-tags">
+    <span class="overview-tag">🧬 基因科普</span>
+    <span class="overview-tag">🤖 DeepSeek V4</span>
+    <span class="overview-tag">💊 新型阿片</span>
+    <span class="overview-tag">🌏 一带一路回顾</span>
+  </div>
+</div>
+
+<!-- 板块1：生命科学/医学 -->
+<div class="section">
+  <div class="section-title">🧬 生命科学/医学</div>
+  
+  <!-- 新闻1 -->
+  <div class="item">
+    <div class="item-header">
+      <span class="title">基因定义：从DNA序列到功能单元</span>
+      <span class="badge-group">
+        <span class="star">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </span>
+    </div>
+    <div class="item-summary">
+      维基百科与克利夫兰诊所共同更新了基因的基本定义：基因是DNA中转录的序列，不仅编码蛋白质，也包括非编码RNA。强调基因是遗传信息的基本物理和功能单位，位于染色体特定座位。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Gene Definition: From DNA Sequence to Functional Unit</p>
+      <p class="en-summary">Wikipedia and Cleveland Clinic updated the fundamental definition of a gene: a DNA sequence that is transcribed, including non-coding RNA. Genes are the basic physical and functional units of heredity, located at specific loci on chromosomes.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>gene</b> 基因</span>
+          <span class="vocab-item"><b>transcription</b> 转录</span>
+          <span class="vocab-item"><b>locus</b> 座位</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>基因的传统定义是“编码蛋白质的DNA片段”，但现代分子生物学发现大量DNA转录为非编码RNA（如rRNA、tRNA、调控RNA），因此当前定义更广泛：任何被转录的DNA序列。这就像重新定义“图书馆的书”——不仅包含小说（蛋白质），也包括地图册和说明书（非编码RNA）。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期内，此定义影响教科书和基础教学；中长期来看，更精确的基因定义有助于基因编辑（如CRISPR）靶向设计，以及理解非编码区在疾病中的角色。例如，某些癌症与长链非编码RNA突变有关。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果完全实现“全转录组”视角，未来疾病诊断将不再只关注蛋白质编码基因，而是分析整个转录组，实现更全面的个性化医疗。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://en.m.wikipedia.org/wiki/Gene" target="_blank">Wikipedia - Gene</a> · <a href="https://my.clevelandclinic.org/health/body/gene" target="_blank">Cleveland Clinic</a></p>
+  </div>
+
+  <!-- 新闻2：新型阿片类药物（从地缘政治中抽出，归入医学） -->
+  <div class="item">
+    <div class="item-header">
+      <span class="title">新型阿片类药物：或实现镇痛无成瘾</span>
+      <span class="badge-group">
+        <span class="star">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </span>
+    </div>
+    <div class="item-summary">
+      《纽约邮报》与《Live Science》报道，一种新型阿片类药物在啮齿动物实验中表现出强效镇痛且成瘾风险显著低于吗啡。该药物通过优化分子结构，避免激活与成瘾相关的特定受体通路，同时保留镇痛效果。若人体试验成功，将改变疼痛管理格局。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Novel Opioid Provides Pain Relief Without Addiction Risk</p>
+      <p class="en-summary">A new opioid tested in rodents shows potent analgesic effects with significantly lower addiction liability than morphine. By selectively targeting pain pathways while avoiding reward circuitry, it represents a potential breakthrough in pain management if confirmed in human trials.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>opioid</b> 阿片类药物</span>
+          <span class="vocab-item"><b>analgesic</b> 镇痛剂</span>
+          <span class="vocab-item"><b>addiction liability</b> 成瘾倾向</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传统阿片类药物（如吗啡、芬太尼）通过激活μ-阿片受体产生镇痛，但同时激活中脑边缘奖赏通路导致成瘾。新药通过结构修饰，偏向激活镇痛相关信号而减少β-arrestin-2招募，降低成瘾性。好比一把钥匙能开门（镇痛），但不会触发屋内的警报（成瘾）。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）需完成人体I/II期临床试验，验证安全性与有效性。若成功，中长期（3-5年）有望替代现有阿片类药物用于术后镇痛、慢性疼痛管理，大幅降低阿片危机风险。但需警惕滥用潜力。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果该药物广泛应用，阿片类药物成瘾危机将得到根本缓解，疼痛患者可以安全用药，社会医疗成本降低，但需建立严格的处方监控体系。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://nypost.com/2026/04/01/health/powerful-new-opioid-could-relieve-pain-without-addiction-risks/" target="_blank">New York Post</a> · <a href="https://www.livescience.com/health/medicine-drugs/new-pain-relief-opioid-could-be-much-less-addictive-than-morphine-rodent-study-finds" target="_blank">Live Science</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：生命科学领域今日以基础科普和早期研究为主。新型阿片类药物是明显的亮点，但距离临床尚远。基因定义的更新反映了分子生物学认知的深化，短期内对科研和教学有指导意义。</div>
+</div>
+
+<!-- 板块2：经济/金融（今日无相关新闻，跳过） -->
+
+<!-- 板块3：人工智能 -->
+<div class="section">
+  <div class="section-title">🤖 人工智能</div>
+  
+  <div class="item">
+    <div class="item-header">
+      <span class="title">DeepSeek V4：强化学习驱动的推理引擎</span>
+      <span class="badge-group">
+        <span class="star">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </span>
+    </div>
+    <div class="item-summary">
+      DeepSeek V4 被描述为“强化学习赋能的推理引擎”，宣称具备自主多步逻辑推导能力，告别“鹦鹉学舌”。基于自研训练框架与万卡算力，仅用半年即发布百亿参数级模型。但官方未公布具体基准测试成绩，实际性能有待验证。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">DeepSeek V4: Reinforcement Learning-Powered Reasoning Engine</p>
+      <p class="en-summary">DeepSeek V4 claims to be a reasoning engine enhanced by reinforcement learning, capable of autonomous multi-step logical deduction. Developed in just six months with proprietary training frameworks and thousand-GPU clusters, its actual performance awaits independent benchmarks.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>reinforcement learning</b> 强化学习</span>
+          <span class="vocab-item"><b>reasoning engine</b> 推理引擎</span>
+          <span class="vocab-item"><b>multi-step deduction</b> 多步推导</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传统大语言模型（如GPT-4）主要依赖自回归预测下一个词，而DeepSeek V4引入强化学习（RL）来训练模型进行推理决策。类似于AlphaGo下棋，模型在推理过程中通过奖励信号学习如何选择正确的推导步骤，而非简单模仿训练数据。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1年内）若证实其推理能力显著优于纯自回归模型，将在数学、编程、科学推理等任务上取得突破。中长期（3-5年）可能推动AI从“语言模型”向“思维模型”演进，应用于自动化研究、法律分析等复杂场景。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果RL推理成为主流，AI将不再只是生成文本，而是能够像人类一样“思考”和“论证”，甚至提出原创科学假说，加速科研进程。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://deepseekv4.wiki/" target="_blank">DeepSeek V4 Wiki</a> · <a href="https://www.deepseek.com/" target="_blank">DeepSeek 官网</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：DeepSeek V4 是今日AI板块唯一动态，强调推理能力升级，但缺乏第三方验证。整体AI领域今日无重大突破或行业新闻，市场处于观察期。</div>
+</div>
+
+<!-- 板块4：科技/硬科技（今日无相关新闻，跳过） -->
+
+<!-- 板块5：材料科学（今日无相关新闻，跳过） -->
+
+<!-- 板块6：中国政策与监管 -->
+<div class="section">
+  <div class="section-title">🇨🇳 中国政策与监管</div>
+  
+  <div class="item">
+    <div class="item-header">
+      <span class="title">“一带一路”高质量发展：构建共赢新空间</span>
+      <span class="badge-group">
+        <span class="star">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </span>
+    </div>
+    <div class="item-summary">
+      国家发改委于2025年12月发文，强调以习近平新时代中国特色社会主义思想为指导，推动“一带一路”共建进入高质量发展新阶段。文章提出拓展共赢发展新空间，聚焦基础设施互联互通、贸易畅通、资金融通和民心相通。政策信号明确：继续深化国际合作，但注重质量与可持续性。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Belt and Road High-Quality Development: Expanding Win-Win Space</p>
+      <p class="en-summary">China's National Development and Reform Commission emphasized advancing the Belt and Road Initiative (BRI) to a new stage of high-quality development, focusing on infrastructure connectivity, trade, financing, and people-to-people bonds. The policy signals a shift towards sustainable and mutually beneficial cooperation.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>Belt and Road Initiative</b> 一带一路倡议</span>
+          <span class="vocab-item"><b>high-quality development</b> 高质量发展</span>
+          <span class="vocab-item"><b>connectivity</b> 互联互通</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“一带一路”自2013年提出以来，从“大写意”进入“工笔画”阶段。此次发改委发文强调“高质量”和“共赢”，意味着未来项目将更注重债务可持续性、环境标准和社会效益，而非单纯追求规模。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）内，中国将推动一批绿色基建、数字丝绸之路项目落地。中长期（3-5年）可能形成以中国标准为核心的全球基础设施网络，但需应对地缘政治竞争和部分国家的债务问题。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果高质量共建完全实现，全球基础设施将更加互联互通，发展中国家获得发展机遇，但同时也需建立多边治理框架以平衡各方利益。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.ndrc.gov.cn/xwdt/dt/sjdt/202512/t20251223_1402545.html" target="_blank">国家发改委</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：中国政策层面继续强调“一带一路”的高质量转型，信号明确但无新突破。整体监管环境稳定，聚焦国际合作与可持续发展。</div>
+</div>
+
+<!-- 板块7：地缘政治与国际关系 -->
+<div class="section">
+  <div class="section-title">🌍 地缘政治与国际关系</div>
+  
+  <div class="item">
+    <div class="item-header">
+      <span class="title">地缘政治学：权力与空间的相互作用</span>
+      <span class="badge-group">
+        <span class="star">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </span>
+    </div>
+    <div class="item-summary">
+      维基百科与《经济学人》等来源更新了地缘政治学定义：研究政治权力与地理空间（领土、水域、资源）之间的关联。强调地缘政治不仅关乎国家博弈，也涉及外交史、自然资源竞争及全球秩序演变。当前重点：中美竞争、能源安全与区域冲突。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Geopolitics: The Interplay of Power and Space</p>
+      <p class="en-summary">Geopolitics focuses on the relationship between political power and geographic space, including territorial waters, land, and natural resources. It encompasses diplomatic history, international relations, and contemporary issues such as US-China competition and energy security.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>geopolitics</b> 地缘政治学</span>
+          <span class="vocab-item"><b>territorial waters</b> 领海</span>
+          <span class="vocab-item"><b>natural resources</b> 自然资源</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>地缘政治学分析地理如何影响国家行为。例如，马汉的“海权论”、麦金德的“心脏地带”理论。现代地缘政治更关注网络空间、太空和供应链安全。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）内，中美在科技、贸易和南海的竞争将持续。中长期（3-5年）可能形成多极化格局，区域强国（如印度、巴西）影响力上升。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果地缘政治从零和博弈转向合作治理，全球可能建立更稳定的多边机制，但当前趋势仍以竞争为主。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://en.m.wikipedia.org/wiki/Geopolitics" target="_blank">Wikipedia - Geopolitics</a> · <a href="https://www.economist.com/topics/geopolitics" target="_blank">The Economist</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：地缘政治板块今日以基础概念回顾为主，无突发重大事件。但《经济学人》等媒体持续关注中美竞争与核不扩散议题，表明长期紧张格局未变。</div>
+</div>
+
+<!-- 时间提醒模块（条件触发：无具体未来时间节点，省略） -->
+
+<div class="footer">
+  全球动态简报 · 2026-05-31 · 数据来源包括维基百科、DeepSeek、国家发改委等
+</div>
+
+</div>
+</body>
+</html>
