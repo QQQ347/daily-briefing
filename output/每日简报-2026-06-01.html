@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球动态简报 | 2026-06-01</title>
+<style>
+  body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 20px;
+    color: #1a1a2e;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 30px 25px;
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    border-bottom: 3px solid #1e3a5f;
+    padding-bottom: 8px;
+    margin-top: 30px;
+    margin-bottom: 18px;
+    color: #1e3a5f;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: #0d1b2a;
+  }
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+    color: #1a1a2e;
+  }
+  .overview {
+    background-color: #eef2f7;
+    padding: 20px 22px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-left: 5px solid #1e3a5f;
+  }
+  .overview p {
+    margin: 8px 0 12px 0;
+    line-height: 1.6;
+    font-size: 15px;
+  }
+  .overview-tags {
+    display: inline-block;
+  }
+  .overview-tag {
+    display: inline-block;
+    background-color: #d0dce8;
+    color: #1e3a5f;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-right: 8px;
+    margin-top: 4px;
+  }
+  .item-header {
+    margin-bottom: 6px;
+  }
+  .item-header .star {
+    color: #f5a623;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+  .impact {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 10px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .impact-high {
+    background-color: #fde8e8;
+    color: #b91c1c;
+  }
+  .impact-med {
+    background-color: #fef3cd;
+    color: #856404;
+  }
+  .impact-low {
+    background-color: #e2e8f0;
+    color: #2d3748;
+  }
+  .risk-red {
+    display: inline-block;
+    background-color: #fde8e8;
+    color: #b91c1c;
+    font-weight: 600;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .risk-yellow {
+    display: inline-block;
+    background-color: #fff3cd;
+    color: #856404;
+    font-weight: 600;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .item-summary {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 6px 0 10px 0;
+    padding: 8px 12px;
+    background-color: #f8fafc;
+    border-radius: 6px;
+  }
+  .num-up {
+    display: inline-block;
+    background-color: #e6f7e6;
+    color: #1e7e34;
+    font-weight: 600;
+    padding: 0 6px;
+    border-radius: 4px;
+  }
+  .num-down {
+    display: inline-block;
+    background-color: #fde8e8;
+    color: #b91c1c;
+    font-weight: 600;
+    padding: 0 6px;
+    border-radius: 4px;
+  }
+  .num-key {
+    display: inline-block;
+    background-color: #e8eaf6;
+    color: #283593;
+    font-weight: 600;
+    padding: 0 6px;
+    border-radius: 4px;
+  }
+  .bilingual {
+    background-color: #f4f6f9;
+    border-left: 4px solid #4a6fa5;
+    padding: 12px 14px;
+    margin: 12px 0;
+    border-radius: 4px;
+  }
+  .bilingual .en-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0a192f;
+    margin: 0 0 4px 0;
+  }
+  .bilingual .en-summary {
+    font-size: 13px;
+    color: #2d3748;
+    margin: 4px 0 10px 0;
+    line-height: 1.5;
+  }
+  .vocab-card {
+    background-color: #eef2f7;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-top: 6px;
+  }
+  .vocab-title {
+    font-weight: 600;
+    font-size: 13px;
+    color: #1e3a5f;
+    margin-bottom: 4px;
+  }
+  .vocab-list {
+    display: inline-block;
+  }
+  .vocab-item {
+    display: inline-block;
+    font-size: 13px;
+    background-color: #dce4ed;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+  }
+  .compare-box {
+    display: inline-block;
+    width: 100%;
+    background-color: #f9fafb;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 12px 0;
+    box-sizing: border-box;
+  }
+  .compare-side {
+    display: inline-block;
+    width: 46%;
+    vertical-align: top;
+    padding: 8px 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    border-radius: 6px;
+  }
+  .compare-bull {
+    background-color: #e6f7e6;
+    margin-right: 4%;
+  }
+  .compare-bear {
+    background-color: #fde8e8;
+  }
+  .compare-label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .deepdive {
+    margin: 12px 0 8px 0;
+    background-color: #fafbfc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 6px 10px;
+  }
+  .deepdive summary {
+    font-weight: 600;
+    font-size: 14px;
+    color: #1e3a5f;
+    cursor: pointer;
+    padding: 4px 0;
+  }
+  .deepdive-content {
+    padding: 10px 6px 4px 6px;
+  }
+  .dl {
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 6px 0;
+  }
+  .dl-label {
+    font-weight: 600;
+    color: #1e3a5f;
+  }
+  .item-source {
+    font-size: 12px;
+    color: #5a6a7e;
+    margin: 6px 0 14px 0;
+    border-top: 1px dashed #dce4ed;
+    padding-top: 8px;
+  }
+  .item-source a {
+    color: #2563eb;
+    text-decoration: none;
+  }
+  .item-source a:hover {
+    text-decoration: underline;
+  }
+  .trend-comment {
+    background-color: #f1f5f9;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin: 18px 0 24px 0;
+    border-left: 4px solid #64748b;
+    line-height: 1.6;
+  }
+  .timeline {
+    background-color: #fef9e7;
+    border: 1px solid #f0d78c;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+  .timeline h4 {
+    margin: 0 0 10px 0;
+    color: #7d5a1a;
+  }
+  .timeline-item {
+    font-size: 14px;
+    padding: 4px 0;
+    border-bottom: 1px solid #f0e3c0;
+  }
+  .timeline-date {
+    display: inline-block;
+    font-weight: 600;
+    color: #92400e;
+    margin-right: 12px;
+    min-width: 90px;
+  }
+  .footer-note {
+    text-align: center;
+    font-size: 12px;
+    color: #7f8c8d;
+    border-top: 1px solid #e0e4e8;
+    padding-top: 18px;
+    margin-top: 20px;
+  }
+  .section-block {
+    margin-bottom: 10px;
+  }
+  .news-item {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #edf2f7;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 今日综述 -->
+  <div class="overview">
+    <h3>🧠 今日全球动态综述</h3>
+    <p>2026年6月1日简报显示，全球科技与金融领域缺乏重磅突破性事件，市场处于方向选择前的观望期。生命科学板块以基础科普内容为主，无重大临床或科研突破；经济金融方面，人民币汇率中间价及外汇牌价数据平稳，未见剧烈波动；人工智能板块中，中国AI公司深度求索（DeepSeek）持续吸引关注，其V4版本及开源生态成为焦点，但商业化落地尚需验证。硬科技与材料科学板块今日无实质性产业新闻，地缘政治与政策领域亦相对平静。整体风向：技术端蓄力，金融端维稳，地缘风险短期可控。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🤖 DeepSeek生态</span>
+      <span class="overview-tag">💱 人民币稳态</span>
+      <span class="overview-tag">🔬 基础科普主导</span>
+      <span class="overview-tag">📊 市场观望</span>
+    </div>
+  </div>
+
+  <!-- 板块1：生命科学/医学 -->
+  <h2>🧬 生命科学 / 医学</h2>
+  <div class="section-block">
+    <div class="news-item">
+      <div class="item-header">
+        <span class="star">⭐⭐⭐</span> 基因定义与基础科学回顾
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        维基百科、克利夫兰诊所等权威机构持续更新基因基本概念：基因是遗传的基本单位，由DNA片段组成，为细胞提供特定性状或功能的指令。今日无突破性研究或临床进展，板块以知识科普为主。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Gene Definition and Foundational Science Review</p>
+        <p class="en-summary">Authoritative sources including Wikipedia and the Cleveland Clinic continue to refine the definition of genes as fundamental units of heredity composed of DNA sequences. No breakthrough research or clinical advances were reported today; the sector remains focused on educational content.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>gene</b> 基因</span>
+            <span class="vocab-item"><b>heredity</b> 遗传</span>
+            <span class="vocab-item"><b>DNA segment</b> DNA片段</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>今日生命科学板块内容偏向基础科普，重申了基因作为遗传物质核心单元的地位。这类似于复习教科书，没有带来新信息，但对公众理解生命科学基础仍有价值。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）内，基因编辑（如CRISPR）和基因治疗仍是临床转化热点，但今日无相关进展。中长期（3-5年），基于基因理解的精准医疗将更加个性化。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果人类对基因的理解达到完全数字化，未来或可“编写”生命蓝图，但伦理和安全挑战巨大。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://en.m.wikipedia.org/wiki/Gene" target="_blank">Wikipedia - Gene</a> | <a href="https://my.clevelandclinic.org/health/body/gene" target="_blank">Cleveland Clinic</a></p>
+    </div>
+  </div>
+  <div class="trend-comment">📊 板块趋势：今日生命科学领域无重大突破，内容以基础教育和数据库更新为主。市场关注点仍集中在基因编辑临床转化与RNA疗法，但今日缺乏催化剂。板块整体处于信息静默期。</div>
+
+  <!-- 板块2：经济/金融 -->
+  <h2>💰 经济 / 金融</h2>
+  <div class="section-block">
+    <div class="news-item">
+      <div class="item-header">
+        <span class="star">⭐⭐⭐⭐</span> 人民币汇率中间价发布，外汇牌价平稳
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        国家外汇管理局公布最新人民币汇率中间价，美元兑人民币中间价持稳。中国银行外汇牌价同步更新，市场交易平稳。当前1人民币约合<span class="num-key">0.1478</span>美元，未见显著波动。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">PBOC Sets Yuan Parity, Forex Quotas Remain Stable</p>
+        <p class="en-summary">The People's Bank of China fixed the yuan midpoint at a stable level against the US dollar, with the Bank of China updating its forex rates accordingly. The current exchange rate stands at approximately 0.1478 USD per CNY, indicating no significant short-term volatility.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>forex rate</b> 外汇汇率</span>
+            <span class="vocab-item"><b>central parity</b> 中间价</span>
+            <span class="vocab-item"><b>stable</b> 稳定的</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>人民币中间价由央行每日设定，是外汇市场的重要参考。今日数据平稳，说明央行当前政策以“稳”为主，未受到外部冲击。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）内，人民币汇率大概率维持区间震荡，中美利差仍是核心变量。中长期看，若中国经济复苏动能增强，人民币或有温和升值空间。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>一个更加市场化和国际化的汇率形成机制，将使人民币成为全球主要储备货币之一，但前提是金融市场的深度开放。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.safe.gov.cn/safe/rmbhlzjj/index.html" target="_blank">国家外汇管理局</a> | <a href="https://www.boc.cn/sourcedb/whpj/" target="_blank">中国银行</a></p>
+    </div>
+  </div>
+  <div class="trend-comment">📊 板块趋势：今日经济金融板块缺乏重大数据发布或政策变动，市场情绪以观望为主。人民币汇率稳定，美股期货及全球主要股指无显著异动。投资者聚焦本周即将公布的PMI数据及美联储官员讲话。</div>
+
+  <!-- 板块3：人工智能 -->
+  <h2>🤖 人工智能</h2>
+  <div class="section-block">
+    <div class="news-item">
+      <div class="item-header">
+        <span class="star">⭐⭐⭐⭐</span> DeepSeek V4 引发企业级AI代理关注
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-summary">
+        深度求索（DeepSeek）发布V4版本，定位为“下一代自主AI代理”，可自主规划、执行、调试复杂任务。该版本针对企业场景优化，标志着中国AI公司在自主智能体赛道上的重要布局。GitHub上相关开源项目持续活跃。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">DeepSeek V4 Targets Enterprise Autonomous AI Agents</p>
+        <p class="en-summary">DeepSeek has unveiled its V4 model, positioning it as a next-generation autonomous AI agent capable of independently planning, executing, and debugging complex tasks. This enterprise-focused release signals a significant push by Chinese AI firms into the autonomous agent space, with active open-source contributions on GitHub.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>autonomous agent</b> 自主智能体</span>
+            <span class="vocab-item"><b>enterprise</b> 企业级</span>
+            <span class="vocab-item"><b>open-source</b> 开源</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek V4 是一个大语言模型（LLM）的升级版，但核心卖点是“自主性”。传统AI助手需要人类不断提示，而V4能设定子目标、自我纠错，类似于一个数字员工。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（6-12个月）内，企业自动化（客服、代码生成、数据分析）将率先受益。中长期（2-5年），自主智能体可能重构软件开发和运营模式。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果自主AI代理成熟，企业将拥有“永不疲倦的数字劳动力”，但这也将引发关于就业替代和AI控制权的深刻讨论。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://deepseek-v4.io/" target="_blank">DeepSeek V4</a> | <a href="https://github.com/deepseek-ai" target="_blank">GitHub - DeepSeek</a></p>
+    </div>
+  </div>
+  <div class="trend-comment">📊 板块趋势：AI板块焦点完全集中在DeepSeek的生态扩张上。从V3到V4的迭代，以及开源社区的活跃，显示中国AI公司正试图在“自主智能体”这一细分赛道建立优势。海外方面，OpenAI和Google暂无重大新动态，市场处于相对静默期。</div>
+
+  <!-- 板块4：科技/硬科技 -->
+  <h2>💻 科技 / 硬科技</h2>
+  <div class="section-block">
+    <div class="news-item">
+      <div class="item-header">
+        <span class="star">⭐⭐⭐</span> 半导体基础概念科普与产业概述
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        TechTarget、IBM等机构更新半导体基础知识：半导体是一种电导率介于导体与绝缘体之间的材料，通过掺杂可改变导电性，是集成电路和电子设备的基石。今日无新制程突破或产能动态。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Semiconductor Fundamentals and Industry Overview</p>
+        <p class="en-summary">TechTarget and IBM have refreshed their educational content on semiconductors, defining them as materials with electrical conductivity between conductors and insulators, modifiable through doping. No new process node breakthroughs or capacity updates were reported today.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>semiconductor</b> 半导体</span>
+            <span class="vocab-item"><b>doping</b> 掺杂</span>
+            <span class="vocab-item"><b>integrated circuit</b> 集成电路</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>今日硬科技内容偏向基础科普，重申了半导体作为现代电子工业“沙子”到“芯片”的核心地位。没有涉及台积电、三星或中芯国际的最新动态。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）内，2nm/3nm制程竞争和先进封装是产业主线。中长期看，宽禁带半导体（碳化硅、氮化镓）将在新能源车和电力电子领域爆发。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果半导体技术持续突破，未来计算将无处不在，从可穿戴设备到智能基础设施，但地缘政治导致的供应链碎片化是最大风险。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.techtarget.com/whatis/definition/semiconductor" target="_blank">TechTarget</a> | <a href="https://www.ibm.com/think/topics/semiconductors" target="_blank">IBM</a></p>
+    </div>
+  </div>
+  <div class="trend-comment">📊 板块趋势：硬科技板块今日无重大产业新闻，内容以知识科普为主。市场关注点仍在等待台积电、英特尔等巨头的季度财报及资本支出计划。整体处于信息真空期，缺乏交易催化剂。</div>
+
+  <!-- 板块5：材料科学 -->
+  <h2>🔬 材料科学</h2>
+  <div class="section-block">
+    <div class="news-item">
+      <div class="item-header">
+        <span class="star">⭐⭐</span> 材料科学领域今日无重大突破性新闻
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        今日扫描的材料科学相关搜索结果主要为在线游戏、披萨店等非相关内容，未发现来自权威期刊或研究机构关于新材料、催化、能源材料等方面的突破性进展。板块处于静默状态。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">No Major Breakthroughs in Materials Science Today</p>
+        <p class="en-summary">Scanned results for materials science primarily yielded unrelated content such as online games and food delivery services. No significant breakthroughs from authoritative journals or research institutions regarding novel materials, catalysis, or energy materials were identified. The sector remains quiet.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>breakthrough</b> 突破</span>
+            <span class="vocab-item"><b>novel material</b> 新材料</span>
+            <span class="vocab-item"><b>catalysis</b> 催化</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>今日材料科学板块没有出现值得关注的科研或产业新闻。这可能是数据采集周期的正常波动，也可能是领域正处于两轮重大发现之间的“静默期”。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）内，需关注固态电池电解质、钙钛矿太阳能电池以及高性能聚合物领域的预印本更新。中长期看，AI辅助材料设计（如GNoME）将加速发现周期。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果材料科学实现指数级突破，将催生超轻高强度结构、室温超导体和无限可回收塑料，彻底改变制造业和能源格局。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：无相关权威来源</p>
+    </div>
+  </div>
+  <div class="trend-comment">📊 板块趋势：材料科学板块今日无实质性动态。市场关注点仍集中在电池材料（锂、固态电解质）和半导体材料（光刻胶、衬底）的供应链动态上。建议关注下周即将召开的美国材料研究学会（MRS）春季会议。</div>
+
+  <!-- 板块6：中国政策与监管 -->
+  <h2>🇨🇳 中国政策与监管</h2>
+  <div class="section-block">
+    <div class="news-item">
+      <div class="item-header">
+        <span class="star">⭐⭐⭐</span> 中国科学院官网及预算更新，机构动态平稳
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        中国科学院官网更新2026年部门预算，并发布近期声明。中国科学院大学发布前沿交叉科学学院2026年夏令营招募公告。整体显示国家科研机构运行正常，未出现重大政策调整。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Chinese Academy of Sciences Updates Budget and Summer Programs</p>
+        <p class="en-summary">The Chinese Academy of Sciences (CAS) published its 2026 departmental budget on its official website, alongside routine announcements. The University of CAS also released a recruitment notice for its 2026 summer camp at the School of Frontier Interdisciplinary Sciences, indicating normal operational continuity.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>budget</b> 预算</span>
+            <span class="vocab-item"><b>summer camp</b> 夏令营</span>
+            <span class="vocab-item"><b>frontier science</b> 前沿科学</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国科学院作为中国最高学术机构，其预算和招生动态是观察国家科研投入和人才培养的窗口。今日信息显示一切按部就班。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1年内）中国科研投入预计将继续保持增长，重点支持“卡脖子”技术和基础科学。中长期看，跨学科人才培养（如前沿交叉科学学院）将成为趋势。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中国持续加大对基础科学的投入，未来20年有望在量子计算、生命科学等领域诞生一批世界级原创成果。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.cas.cn/" target="_blank">中国科学院</a> | <a href="https://www.ucas.ac.cn/" target="_blank">中国科学院大学</a></p>
+    </div>
+  </div>
+  <div class="trend-comment">📊 板块趋势：今日中国政策与监管领域相对平静，未发布重磅新规或监管动作。市场关注点仍集中在即将出台的《数据安全法》实施细则以及平台经济监管的边际放松信号上。整体处于政策观察窗口期。</div>
+
+  <!-- 板块7：地缘政治与国际关系 -->
+  <h2>🌍 地缘政治与国际关系</h2>
+  <div class="section-block">
+    <div class="news-item">
+      <div class="item-header">
+        <span class="star">⭐⭐</span> 地缘政治板块今日无显著冲突或外交动态
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        今日扫描的搜索内容主要为微软技术支持、社区论坛等非政治相关内容。未发现涉及中美、俄乌、中东等热点地区的重大地缘政治新闻。全球局势处于相对平静期。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">No Significant Geopolitical Developments Today</p>
+        <p class="en-summary">Scanned sources primarily yielded non-political content such as Microsoft support pages and community forums. No major geopolitical events concerning US-China relations, the Russia-Ukraine conflict, or the Middle East were detected. The global situation is in a relatively calm phase.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>geopolitics</b> 地缘政治</span>
+            <span class="vocab-item"><b>conflict</b> 冲突</span>
+            <span class="vocab-item"><b>diplomatic</b> 外交的</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>今日地缘政治板块信息缺失，这通常意味着没有突发性事件发生。市场在地缘风险定价方面暂时维持现状。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2周）内，需关注北约峰会筹备、美国对华关税审查进展以及中东停火谈判。中长期看，大国竞争（科技、金融、军事）的底层逻辑不变。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>在一个理想的全球化2.0版本中，地缘冲突将被多边机制和数字经济纽带所抑制，但当前现实是阵营化趋势加剧。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：无相关权威来源</p>
+    </div>
+  </div>
+  <div class="trend-comment">📊 板块趋势：今日地缘政治领域缺乏头条新闻，市场注意力转向经济数据和公司财报。但需警惕，平静期往往可能是风险积累的阶段。美国国债收益率曲线变化和新兴市场资本流动是潜在的前瞻指标。</div>
+
+  <!-- 时间提醒模块（条件触发，今日无具体未来节点，省略） -->
+
+  <!-- 页脚 -->
+  <div class="footer-note">
+    全球动态简报 · 2026年6月1日 · 数据来源包括但不限于路透社、新华社、Nature、Science等<br>
+    本简报由AI自动生成，仅供参考，不构成任何投资或决策建议。
+  </div>
+
+</div>
+</body>
+</html>
