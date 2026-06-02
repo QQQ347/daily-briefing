@@ -1,753 +1,788 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全球动态简报 | 2026-06-02</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f4f6f9;
-            margin: 0;
-            padding: 20px;
-            color: #1a1a2e;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            border-radius: 16px;
-            padding: 30px 35px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        }
-        h1 {
-            font-size: 28px;
-            font-weight: 700;
-            margin: 0 0 6px 0;
-            color: #0f0f1f;
-            letter-spacing: -0.3px;
-        }
-        .subhead {
-            font-size: 14px;
-            color: #5a6170;
-            margin-bottom: 25px;
-            font-weight: 400;
-            border-bottom: 1px solid #e8ecf0;
-            padding-bottom: 12px;
-        }
-        /* overview */
-        .overview {
-            background-color: #f0f3f8;
-            border-radius: 14px;
-            padding: 22px 26px;
-            margin-bottom: 30px;
-            border-left: 5px solid #2b3a67;
-        }
-        .overview h3 {
-            margin: 0 0 10px 0;
-            font-size: 18px;
-            font-weight: 600;
-            color: #1f2a44;
-        }
-        .overview p {
-            margin: 0 0 14px 0;
-            line-height: 1.6;
-            font-size: 15px;
-            color: #1e2638;
-        }
-        .overview-tags {
-            display: block;
-            margin-top: 6px;
-        }
-        .overview-tag {
-            display: inline-block;
-            background-color: #dce3ed;
-            border-radius: 30px;
-            padding: 6px 16px;
-            font-size: 13px;
-            font-weight: 600;
-            color: #1f2a44;
-            margin-right: 10px;
-            margin-bottom: 5px;
-        }
-        /* section */
-        .section {
-            margin-top: 32px;
-            margin-bottom: 12px;
-        }
-        .section-header {
-            font-size: 20px;
-            font-weight: 600;
-            margin: 0 0 6px 0;
-            padding-bottom: 5px;
-            border-bottom: 2px solid #e0e5ec;
-            color: #202a3a;
-        }
-        .item {
-            background-color: #fafbfc;
-            border-radius: 14px;
-            padding: 18px 22px;
-            margin-bottom: 18px;
-            border: 1px solid #e9edf2;
-        }
-        .item-header {
-            display: block;
-            margin-bottom: 10px;
-        }
-        .item-header .title {
-            font-size: 17px;
-            font-weight: 600;
-            color: #0b1a2b;
-            display: inline;
-        }
-        .item-header .meta {
-            display: inline-block;
-            margin-left: 10px;
-            font-size: 13px;
-        }
-        .item-header .meta span {
-            margin-right: 6px;
-        }
-        .impact {
-            display: inline-block;
-            padding: 2px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            background-color: #eef2f6;
-        }
-        .impact-high {
-            background-color: #fde6e8;
-            color: #b13a3a;
-        }
-        .impact-med {
-            background-color: #fff3d6;
-            color: #a67c2b;
-        }
-        .impact-low {
-            background-color: #e4f0e6;
-            color: #2b6e4e;
-        }
-        .risk-red {
-            background-color: #fce4e4;
-            color: #b33a3a;
-            padding: 2px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-left: 6px;
-        }
-        .risk-yellow {
-            background-color: #fef7e0;
-            color: #8d6e2b;
-            padding: 2px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-left: 6px;
-        }
-        .item-summary {
-            font-size: 15px;
-            line-height: 1.6;
-            margin: 8px 0 12px 0;
-            color: #1f2937;
-        }
-        .num-up {
-            background-color: #e0f2e6;
-            padding: 1px 6px;
-            border-radius: 12px;
-            font-weight: 600;
-            color: #0f6e3f;
-        }
-        .num-down {
-            background-color: #fde6e8;
-            padding: 1px 6px;
-            border-radius: 12px;
-            font-weight: 600;
-            color: #b13a3a;
-        }
-        .num-key {
-            background-color: #e8ecf3;
-            padding: 1px 6px;
-            border-radius: 12px;
-            font-weight: 600;
-            color: #2c3e6b;
-        }
-        .bilingual {
-            background-color: #f1f5fa;
-            border-radius: 12px;
-            padding: 14px 18px;
-            margin: 12px 0 10px 0;
-        }
-        .bilingual .en-title {
-            font-weight: 600;
-            font-size: 15px;
-            color: #113355;
-            margin: 0 0 6px 0;
-        }
-        .bilingual .en-summary {
-            font-size: 14px;
-            color: #2b3f54;
-            margin: 4px 0 10px 0;
-            line-height: 1.5;
-        }
-        .vocab-card {
-            background-color: #ffffff;
-            border-radius: 10px;
-            padding: 10px 14px;
-            border: 1px solid #dce3ed;
-        }
-        .vocab-title {
-            font-weight: 600;
-            font-size: 13px;
-            color: #1f3a5f;
-            margin-bottom: 6px;
-        }
-        .vocab-list {
-            display: block;
-        }
-        .vocab-item {
-            display: inline-block;
-            background-color: #eef3f9;
-            border-radius: 30px;
-            padding: 4px 14px;
-            font-size: 12px;
-            margin: 3px 5px 3px 0;
-            color: #1a2e4a;
-        }
-        .vocab-item b {
-            font-weight: 600;
-        }
-        .compare-box {
-            background-color: #f8f6f0;
-            border-radius: 14px;
-            padding: 16px 20px;
-            margin: 18px 0;
-            border-left: 5px solid #b0b8c8;
-            display: block;
-        }
-        .compare-side {
-            display: inline-block;
-            width: 45%;
-            vertical-align: top;
-            padding: 8px 12px;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-        .compare-bull {
-            background-color: #e8f3ea;
-            border-radius: 10px;
-            margin-right: 2%;
-        }
-        .compare-bear {
-            background-color: #f3e8e8;
-            border-radius: 10px;
-            margin-left: 2%;
-        }
-        .compare-label {
-            font-weight: 600;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-        .deepdive {
-            margin: 14px 0 8px 0;
-            border: 1px solid #e0e6ed;
-            border-radius: 12px;
-            padding: 6px 14px;
-            background-color: #f9fafc;
-        }
-        .deepdive summary {
-            font-weight: 600;
-            font-size: 14px;
-            color: #1f3a5f;
-            cursor: pointer;
-            padding: 8px 0;
-        }
-        .deepdive-content {
-            padding: 6px 0 10px 0;
-        }
-        .dl {
-            font-size: 14px;
-            line-height: 1.6;
-            margin: 8px 0;
-        }
-        .dl-label {
-            font-weight: 600;
-        }
-        .item-source {
-            font-size: 12px;
-            color: #5b6a7e;
-            margin-top: 8px;
-            border-top: 1px solid #e8ecf0;
-            padding-top: 10px;
-        }
-        .item-source a {
-            color: #1f5a8a;
-            text-decoration: none;
-        }
-        .trend-comment {
-            background-color: #f0f4fa;
-            border-radius: 12px;
-            padding: 14px 20px;
-            margin: 20px 0 10px 0;
-            font-size: 14px;
-            color: #1f2d44;
-            border-left: 5px solid #6b7f9e;
-            font-weight: 400;
-        }
-        .timeline {
-            background-color: #f7f3e9;
-            border-radius: 14px;
-            padding: 18px 22px;
-            margin: 30px 0 20px 0;
-            border: 1px solid #e3dacb;
-        }
-        .timeline h4 {
-            margin: 0 0 12px 0;
-            font-weight: 600;
-            font-size: 17px;
-            color: #3d2f1f;
-        }
-        .timeline-item {
-            display: block;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-        .timeline-date {
-            display: inline-block;
-            background-color: #e2d8c4;
-            padding: 2px 12px;
-            border-radius: 30px;
-            font-weight: 600;
-            margin-right: 12px;
-            color: #2f2417;
-        }
-        .footer-note {
-            text-align: center;
-            font-size: 12px;
-            color: #6d7a8c;
-            margin-top: 30px;
-            border-top: 1px solid #e0e5ec;
-            padding-top: 18px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球动态简报 | 2026-06-02</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f4f5f7;
+    color: #1a1a2e;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f3460;
+    border-bottom: 3px solid #e94560;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #16213e;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-left: 5px solid #e94560;
+    padding-left: 12px;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f3460;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #16213e;
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+  .overview {
+    background-color: #f0f8ff;
+    border-left: 6px solid #0f3460;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+  .overview p {
+    margin: 0 0 12px 0;
+    font-size: 15px;
+    color: #2d2d44;
+  }
+  .overview-tags {
+    display: inline-block;
+  }
+  .overview-tag {
+    display: inline-block;
+    background-color: #e94560;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-right: 8px;
+    margin-bottom: 4px;
+  }
+  .section-block {
+    margin-bottom: 35px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .item {
+    background-color: #fafafa;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+  .item-header {
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+  }
+  .item-header .title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #0f3460;
+    display: inline;
+  }
+  .item-header .stars {
+    color: #f5a623;
+    font-size: 14px;
+    margin-left: 6px;
+  }
+  .impact {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+  .impact-high {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+  }
+  .impact-med {
+    background-color: #fff8e1;
+    color: #f57f17;
+    border: 1px solid #ffe082;
+  }
+  .impact-low {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+  }
+  .risk-red {
+    display: inline-block;
+    background-color: #ffebee;
+    color: #b71c1c;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+    border: 1px solid #ef9a9a;
+  }
+  .risk-yellow {
+    display: inline-block;
+    background-color: #fff8e1;
+    color: #e65100;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+    border: 1px solid #ffe082;
+  }
+  .item-summary {
+    font-size: 15px;
+    color: #2d2d44;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f0f4f8;
+    border-radius: 6px;
+    border-left: 4px solid #0f3460;
+  }
+  .num-up {
+    font-weight: 700;
+    color: #2e7d32;
+    background-color: #e8f5e9;
+    padding: 0 4px;
+    border-radius: 3px;
+  }
+  .num-down {
+    font-weight: 700;
+    color: #c62828;
+    background-color: #ffebee;
+    padding: 0 4px;
+    border-radius: 3px;
+  }
+  .num-key {
+    font-weight: 700;
+    color: #0f3460;
+    background-color: #e3f2fd;
+    padding: 0 4px;
+    border-radius: 3px;
+  }
+  .bilingual {
+    background-color: #f3f4f6;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 12px 0;
+    border: 1px dashed #b0bec5;
+  }
+  .bilingual .en-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #37474f;
+    font-style: italic;
+    margin: 0 0 6px 0;
+  }
+  .bilingual .en-summary {
+    font-size: 14px;
+    color: #455a64;
+    margin: 0 0 10px 0;
+    line-height: 1.5;
+  }
+  .vocab-card {
+    background-color: #ffffff;
+    border: 1px solid #cfd8dc;
+    border-radius: 6px;
+    padding: 8px 12px;
+  }
+  .vocab-title {
+    font-weight: 700;
+    font-size: 13px;
+    color: #37474f;
+    margin-bottom: 6px;
+  }
+  .vocab-list {
+    display: inline-block;
+  }
+  .vocab-item {
+    display: inline-block;
+    background-color: #eceff1;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+  }
+  .compare-box {
+    display: inline-block;
+    width: 100%;
+    background-color: #fef9e7;
+    border: 1px solid #f9e79f;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 15px 0;
+  }
+  .compare-side {
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+    padding: 8px;
+    font-size: 14px;
+    color: #2d2d44;
+  }
+  .compare-bull {
+    background-color: #e8f5e9;
+    border-radius: 6px;
+    margin-right: 4%;
+  }
+  .compare-bear {
+    background-color: #ffebee;
+    border-radius: 6px;
+  }
+  .compare-label {
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .deepdive {
+    margin: 12px 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    background-color: #ffffff;
+  }
+  .deepdive summary {
+    font-weight: 700;
+    font-size: 14px;
+    color: #0f3460;
+    cursor: pointer;
+    padding: 4px 0;
+  }
+  .deepdive-content {
+    padding: 10px 0 4px 0;
+  }
+  .dl {
+    font-size: 14px;
+    margin: 6px 0;
+    color: #2d2d44;
+  }
+  .dl-label {
+    font-weight: 700;
+    color: #0f3460;
+  }
+  .item-source {
+    font-size: 12px;
+    color: #78909c;
+    margin: 8px 0 0 0;
+    text-align: right;
+  }
+  .item-source a {
+    color: #1976d2;
+    text-decoration: none;
+  }
+  .item-source a:hover {
+    text-decoration: underline;
+  }
+  .trend-comment {
+    background-color: #eef2f7;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #1a1a2e;
+    margin-top: 10px;
+    border-left: 4px solid #78909c;
+  }
+  .timeline {
+    background-color: #fff3e0;
+    border: 1px solid #ffe0b2;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 25px 0;
+  }
+  .timeline h4 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #e65100;
+  }
+  .timeline-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  .timeline-date {
+    display: inline-block;
+    background-color: #ffcc80;
+    color: #4e342e;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-right: 12px;
+    font-size: 13px;
+  }
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: #90a4ae;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+  }
+</style>
 </head>
 <body>
 <div class="container">
-    <h1>🌍 全球动态简报</h1>
-    <div class="subhead">2026年6月2日 · 高密度情报版</div>
 
-    <!-- 综述模块 -->
-    <div class="overview">
-        <h3>🧠 今日简报综述</h3>
-        <p>今日简报呈现三条主线：AI 领域 OpenAI 与 DeepSeek 同时释放技术跃迁信号，通用人工智能（AGI）竞赛进入加速期；硬科技层面半导体基础材料无重大突破，但华为云与比亚迪海外扩张显示中国科技企业正以“AI+云+汽车”组合拳突围；地缘与政策面相对平静，但港股震荡、恒指微涨反映市场对科技股的谨慎乐观。整体风向：技术端乐观，市场端分化，地缘风险暂缓。</p>
-        <div class="overview-tags">
-            <span class="overview-tag">🤖 AGI加速</span>
-            <span class="overview-tag">🔧 华为云+AI</span>
-            <span class="overview-tag">🚗 BYD海外扩张</span>
-            <span class="overview-tag">📊 港股震荡</span>
-        </div>
+<h1>📡 全球动态简报 · 2026年6月2日</h1>
+
+<!-- 第一步：综述模块 -->
+<div class="overview">
+  <h3>🧠 今日全球动态综述</h3>
+  <p>今日简报聚焦三大主线：量子计算迎来商业化拐点，McKinsey 报告显示全球超300家企业已入局，市场价值突破数十亿美元；中美关系出现战略性新定位，元首北京会晤达成“建设性战略稳定关系”共识，为未来3年提供框架；基础科学领域，长期未解的量子谜题被破解，为隐形传态与下一代计算开辟新路径。整体风向：科技端量子与AI加速落地，地缘端出现阶段性缓和信号，资本市场静待政策落地。</p>
+  <div class="overview-tags">
+    <span class="overview-tag">⚛️ 量子商业化</span>
+    <span class="overview-tag">🤝 中美战略稳定</span>
+    <span class="overview-tag">🔐 量子密码学</span>
+    <span class="overview-tag">📈 科技投资热</span>
+  </div>
+</div>
+
+<!-- ===== 板块1: 生命科学/医学 ===== -->
+<div class="section-block">
+<h2>🧬 生命科学 / 医学</h2>
+
+<div class="item">
+  <div class="item-header">
+    <span class="title">基因定义新解：转录导向的分子生物学基础</span>
+    <span class="stars">⭐⭐⭐⭐</span>
+    <span class="impact impact-med">冲击：Med</span>
+  </div>
+  <div class="item-summary">
+    最新教科书级定义将基因明确为“被转录的DNA序列”，强调非编码RNA的重要性。这一界定影响全球生命科学研究范式，尤其是在非编码RNA功能探索领域，为未来疾病靶点发现奠定理论基石。
+  </div>
+  <div class="bilingual">
+    <p class="en-title">Redefining the Gene: A Transcription-Centric Molecular Biology Foundation</p>
+    <p class="en-summary">A refined definition of the gene as "a DNA sequence that is transcribed" underscores the critical role of non-coding RNAs. This conceptual shift impacts global research paradigms, particularly in functional genomics and the identification of novel therapeutic targets for complex diseases.</p>
+    <div class="vocab-card">
+      <div class="vocab-title">📖 Key Vocabulary</div>
+      <div class="vocab-list">
+        <span class="vocab-item"><b>transcription</b> 转录</span>
+        <span class="vocab-item"><b>non-coding RNA</b> 非编码RNA</span>
+        <span class="vocab-item"><b>therapeutic target</b> 治疗靶点</span>
+      </div>
     </div>
-
-    <!-- 板块1: 人工智能 -->
-    <div class="section">
-        <div class="section-header">🤖 人工智能</div>
-
-        <!-- 新闻1 OpenAI -->
-        <div class="item">
-            <div class="item-header">
-                <span class="title">OpenAI 重申 AGI 使命，研究进入新阶段</span>
-                <span class="meta">⭐⭐⭐⭐</span>
-                <span class="impact impact-high">冲击：High</span>
-                <span class="risk-yellow">🟡 值得观察</span>
-            </div>
-            <div class="item-summary">
-                OpenAI 官方更新研究愿景，明确以通用人工智能（AGI）为终极目标，强调当前系统已能解决“人类级问题”。此举被解读为 GPT-5 或更高级模型即将发布的信号，全球 AI 竞赛进一步升温。
-            </div>
-            <div class="bilingual">
-                <p class="en-title">OpenAI Reaffirms AGI Mission, Enters New Research Phase</p>
-                <p class="en-summary">OpenAI updated its research roadmap, stating its work will eventually lead to Artificial General Intelligence (AGI) capable of solving human-level problems. This signals a potential near-term release of next-generation models, intensifying the global AI race.</p>
-                <div class="vocab-card">
-                    <div class="vocab-title">📖 Key Vocabulary</div>
-                    <div class="vocab-list">
-                        <span class="vocab-item"><b>AGI (Artificial General Intelligence)</b> 通用人工智能</span>
-                        <span class="vocab-item"><b>roadmap</b> 路线图</span>
-                        <span class="vocab-item"><b>human-level problems</b> 人类级问题</span>
-                    </div>
-                </div>
-            </div>
-            <details class="deepdive">
-                <summary>📖 深度解读</summary>
-                <div class="deepdive-content">
-                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>OpenAI 不再只是“聊天机器人”，而是公开将 AGI 作为可交付目标。好比一家火箭公司宣布“我们要登火星”，而不仅仅是造更好的飞机。</p>
-                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）内可能出现能自主编程、科研辅助的强推理模型；中长期（3-5年）可能重塑白领知识工作，如法律、医疗诊断。但安全与对齐问题仍是最大瓶颈。</p>
-                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果 AGI 实现，人类将拥有一个“无限博士”团队，24小时解决科学难题。但社会可能面临结构性失业与伦理失控风险，全球治理体系需同步升级。</p>
-                </div>
-            </details>
-            <p class="item-source">来源：<a href="https://openai.com/" target="_blank">OpenAI 官网</a></p>
-        </div>
-
-        <!-- 新闻2 DeepSeek -->
-        <div class="item">
-            <div class="item-header">
-                <span class="title">DeepSeek 发布新模型，中国 AI 阵营加速追赶</span>
-                <span class="meta">⭐⭐⭐</span>
-                <span class="impact impact-med">冲击：Med</span>
-                <span class="risk-yellow">🟡 值得观察</span>
-            </div>
-            <div class="item-summary">
-                中国 AI 创企 DeepSeek 更新其模型系列，继 DeepSeek Coder 后在通用对话与代码生成领域持续迭代。尽管算力受限，但算法优化使其性能接近国际一线模型，中国 AI 生态自主化进程加快。
-            </div>
-            <div class="bilingual">
-                <p class="en-title">DeepSeek Releases New Model, China’s AI Ecosystem Accelerates Catch-up</p>
-                <p class="en-summary">Chinese AI startup DeepSeek updated its model series, showing competitive performance in general conversation and code generation despite hardware restrictions. Algorithmic innovation narrows the gap with frontier models.</p>
-                <div class="vocab-card">
-                    <div class="vocab-title">📖 Key Vocabulary</div>
-                    <div class="vocab-list">
-                        <span class="vocab-item"><b>algorithmic optimization</b> 算法优化</span>
-                        <span class="vocab-item"><b>catch-up</b> 追赶</span>
-                        <span class="vocab-item"><b>ecosystem</b> 生态</span>
-                    </div>
-                </div>
-            </div>
-            <details class="deepdive">
-                <summary>📖 深度解读</summary>
-                <div class="deepdive-content">
-                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek 是中国 AI 领域“小算力大模型”的代表，用更少资源训练出高效模型，类似用自行车跑出摩托车的速度。</p>
-                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将推动中国企业内部 AI 部署成本下降；中长期可能形成中美“双模型生态”，全球开发者面临选择。但高端芯片禁令仍是长期软肋。</p>
-                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中国 AI 完全自主，全球将出现两套 AI 标准与基础设施，数字世界可能“分裂”为两个生态，而发展中国家将面临选边站队的压力。</p>
-                </div>
-            </details>
-            <p class="item-source">来源：<a href="https://www.deepseek.com/" target="_blank">DeepSeek 官网</a></p>
-        </div>
-
-        <!-- 板块趋势 -->
-        <div class="trend-comment">📊 板块趋势：AI 赛道出现“双核驱动”——OpenAI 以 AGI 愿景拉高天花板，DeepSeek 以算法效率证明“算力不足不是终点”。两者共同指向2026-2027年可能迎来AI能力跃迁，但地缘因素使中国AI企业面临供应链风险。</div>
+  </div>
+  <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传统上基因被视为编码蛋白质的DNA片段，但新定义强调“转录”这一核心过程，将大量不编码蛋白质但具有调控功能的RNA序列也纳入基因范畴。这好比将“图书馆”的定义从“存放书本的建筑”扩展为“所有被阅读的资料集合”。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内将推动非编码RNA数据库重编与功能验证；中长期（5-10年）可能催生以RNA为靶点的新药研发管线，尤其在癌症和神经退行性疾病领域。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若完全实现，人类对遗传信息的理解将从“蛋白质中心”转向“RNA调控网络”，疾病诊断与治疗将进入“转录组精准医学”时代。</p>
     </div>
+  </details>
+  <p class="item-source">来源：<a href="https://en.m.wikipedia.org/wiki/Gene" target="_blank">Gene - Wikipedia</a> / <a href="https://www.genome.gov/genetics-glossary/Gene" target="_blank">Genome.gov</a></p>
+</div>
 
-    <!-- 板块2: 科技/硬科技 -->
-    <div class="section">
-        <div class="section-header">💻 科技/硬科技</div>
-
-        <!-- 新闻 华为云 -->
-        <div class="item">
-            <div class="item-header">
-                <span class="title">华为云深耕行业AI，赋能汽车与制造数智化</span>
-                <span class="meta">⭐⭐⭐</span>
-                <span class="impact impact-med">冲击：Med</span>
-            </div>
-            <div class="item-summary">
-                华为云宣布基于云计算、大数据、AI、5G 等前沿技术，深入赋能汽车产业数智升级。此举表明华为正从硬件巨头转向“云+AI”解决方案提供商，与比亚迪等车企形成协同。
-            </div>
-            <div class="bilingual">
-                <p class="en-title">Huawei Cloud Drives Industry AI, Focuses on Automotive Digitalization</p>
-                <p class="en-summary">Huawei Cloud leverages cloud computing, big data, AI, and 5G to accelerate digital transformation in the automotive sector, signaling a strategic shift from hardware to integrated solutions.</p>
-                <div class="vocab-card">
-                    <div class="vocab-title">📖 Key Vocabulary</div>
-                    <div class="vocab-list">
-                        <span class="vocab-item"><b>digital transformation</b> 数字化转型</span>
-                        <span class="vocab-item"><b>empower</b> 赋能</span>
-                        <span class="vocab-item"><b>integrated solutions</b> 集成解决方案</span>
-                    </div>
-                </div>
-            </div>
-            <details class="deepdive">
-                <summary>📖 深度解读</summary>
-                <div class="deepdive-content">
-                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>华为云不只是卖服务器，而是把AI、5G、云打包成“智能工厂操作系统”，帮车企实现从设计到生产全链路数字化。</p>
-                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）将推动中国新能源汽车工厂的智能化改造；中长期可能将“华为模式”复制到矿山、港口等传统行业，形成新的增长极。</p>
-                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果华为云+AI全面落地，中国制造业将出现“无人车间”普及潮，但同时也带来蓝领岗位的结构性替代，需配套社会保障改革。</p>
-                </div>
-            </details>
-            <p class="item-source">来源：<a href="https://www.huaweicloud.com/intl/zh-cn/" target="_blank">华为云官网</a></p>
-        </div>
-
-        <!-- 新闻 比亚迪海外 -->
-        <div class="item">
-            <div class="item-header">
-                <span class="title">比亚迪泰国市场热度飙升，东南亚电动车布局加速</span>
-                <span class="meta">⭐⭐⭐</span>
-                <span class="impact impact-med">冲击：Med</span>
-            </div>
-            <div class="item-summary">
-                BYD RÊVER Thailand 在 Facebook 上互动量激增，单日讨论量超 <span class="num-key">3.1万</span>，粉丝数突破 <span class="num-up">69万</span>。比亚迪在东南亚的本地化营销与建厂策略成效显著，正快速抢占日系车市场份额。
-            </div>
-            <div class="bilingual">
-                <p class="en-title">BYD Surges in Thailand, Accelerating Southeast Asia EV Push</p>
-                <p class="en-summary">BYD's Thailand page saw daily interactions exceed 31,000, with followers surpassing 690,000. Localized marketing and factory construction are helping BYD capture market share from Japanese automakers.</p>
-                <div class="vocab-card">
-                    <div class="vocab-title">📖 Key Vocabulary</div>
-                    <div class="vocab-list">
-                        <span class="vocab-item"><b>localized marketing</b> 本地化营销</span>
-                        <span class="vocab-item"><b>market share</b> 市场份额</span>
-                        <span class="vocab-item"><b>surge</b> 激增</span>
-                    </div>
-                </div>
-            </div>
-            <details class="deepdive">
-                <summary>📖 深度解读</summary>
-                <div class="deepdive-content">
-                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>比亚迪在泰国采取“建厂+本地营销”双轮驱动，直接挑战丰田、本田在东南亚的统治地位。</p>
-                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）泰国将成为比亚迪右舵车出口基地；中长期（3-5年）可能重塑东南亚汽车产业链，日系车份额或从 <span class="num-key">80%</span> 降至 <span class="num-down">50%</span> 以下。</p>
-                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中国电动车全面主导东南亚，该地区将成为全球电动化率最高的区域之一，但同时也可能引发美欧的贸易反制与产业保护。</p>
-                </div>
-            </details>
-            <p class="item-source">来源：<a href="https://www.facebook.com/BYDReverThailandOfficial/" target="_blank">BYD RÊVER Thailand Facebook</a></p>
-        </div>
-
-        <!-- 新闻 港股科技 -->
-        <div class="item">
-            <div class="item-header">
-                <span class="title">港股科技股震荡，恒生科技指数微跌</span>
-                <span class="meta">⭐⭐⭐</span>
-                <span class="impact impact-low">冲击：Low</span>
-                <span class="risk-yellow">🟡 值得观察</span>
-            </div>
-            <div class="item-summary">
-                2026年5月29日港股收盘：恒生指数收涨 <span class="num-up">0.70%</span>，但恒生科技指数下跌 <span class="num-down">0.09%</span>。耐用消费品与国防军工板块领涨，科技股内部分化明显，市场对AI与硬科技估值存在分歧。
-            </div>
-            <div class="bilingual">
-                <p class="en-title">Hong Kong Tech Stocks Mixed; Hang Seng Tech Index Edges Down</p>
-                <p class="en-summary">On May 29, 2026, the Hang Seng Index rose 0.70% while the Hang Seng Tech Index fell 0.09%. Consumer durables and defense stocks led gains, showing market divergence on tech valuations.</p>
-                <div class="vocab-card">
-                    <div class="vocab-title">📖 Key Vocabulary</div>
-                    <div class="vocab-list">
-                        <span class="vocab-item"><b>divergence</b> 分化</span>
-                        <span class="vocab-item"><b>consumer durables</b> 耐用消费品</span>
-                        <span class="vocab-item"><b>valuation</b> 估值</span>
-                    </div>
-                </div>
-            </div>
-            <details class="deepdive">
-                <summary>📖 深度解读</summary>
-                <div class="deepdive-content">
-                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>港股科技指数微跌但恒指收涨，说明资金从纯科技股流向消费与军工，市场风格短期切换。</p>
-                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）科技股可能继续承压，但AI与半导体等硬科技长期逻辑未变；若美联储释放降息信号，科技股可能重新领涨。</p>
-                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>港股作为连接中美的“金融桥梁”，其科技股走势将成为全球资本对中国科技信心的温度计。</p>
-                </div>
-            </details>
-            <p class="item-source">来源：<a href="https://www.facebook.com/NewtimespaceHK/videos/..." target="_blank">新时空 (Facebook)</a></p>
-        </div>
-
-        <div class="trend-comment">📊 板块趋势：硬科技呈现“冰火两重天”——华为云与比亚迪代表中国科技出海的高光面，而港股科技震荡反映资本市场的谨慎情绪。整体看，中国科技企业正从“制造”向“智造+云服务”转型，但地缘与估值压力并存。</div>
+<div class="item">
+  <div class="item-header">
+    <span class="title">基因基础概念科普：遗传单位与等位基因</span>
+    <span class="stars">⭐⭐⭐</span>
+    <span class="impact impact-low">冲击：Low</span>
+  </div>
+  <div class="item-summary">
+    权威医疗机构重申基因作为遗传基本单位的经典定义，指出基因的不同版本称为等位基因。此基础科普巩固了公众对遗传学的理解，为基因检测与遗传咨询提供知识支撑。
+  </div>
+  <div class="bilingual">
+    <p class="en-title">Foundational Genetics: Genes, Alleles, and Heredity</p>
+    <p class="en-summary">Authoritative medical sources reaffirm the gene as the basic unit of heredity, with different versions known as alleles. This foundational knowledge underpins public understanding of genetic testing and personalized medicine.</p>
+    <div class="vocab-card">
+      <div class="vocab-title">📖 Key Vocabulary</div>
+      <div class="vocab-list">
+        <span class="vocab-item"><b>heredity</b> 遗传</span>
+        <span class="vocab-item"><b>allele</b> 等位基因</span>
+        <span class="vocab-item"><b>genetic testing</b> 基因检测</span>
+      </div>
     </div>
-
-    <!-- 板块3: 中国政策与监管 -->
-    <div class="section">
-        <div class="section-header">🇨🇳 中国政策与监管</div>
-
-        <div class="item">
-            <div class="item-header">
-                <span class="title">华为持续深耕 ICT 基础设施，自主可控战略深化</span>
-                <span class="meta">⭐⭐⭐</span>
-                <span class="impact impact-med">冲击：Med</span>
-            </div>
-            <div class="item-summary">
-                华为官网重申“构建万物互联的智能世界”愿景，在 ICT 基础设施和智能终端领域持续投入。结合近期华为云与 AI 布局，显示中国科技龙头正加速摆脱外部依赖，构建自主技术底座。
-            </div>
-            <div class="bilingual">
-                <p class="en-title">Huawei Deepens ICT Infrastructure Push, Reinforcing Self-Reliance Strategy</p>
-                <p class="en-summary">Huawei reiterates its commitment to building a fully connected, intelligent world, with sustained investment in ICT infrastructure and smart devices, reflecting China's push for technological self-sufficiency.</p>
-                <div class="vocab-card">
-                    <div class="vocab-title">📖 Key Vocabulary</div>
-                    <div class="vocab-list">
-                        <span class="vocab-item"><b>ICT infrastructure</b> 信息与通信基础设施</span>
-                        <span class="vocab-item"><b>self-reliance</b> 自主可控</span>
-                        <span class="vocab-item"><b>smart terminals</b> 智能终端</span>
-                    </div>
-                </div>
-            </div>
-            <details class="deepdive">
-                <summary>📖 深度解读</summary>
-                <div class="deepdive-content">
-                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>华为的“自主可控”不是口号，而是从芯片设计（鲲鹏）、操作系统（鸿蒙）到云服务（华为云）的全栈替代方案。</p>
-                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）将加速国内政企市场的国产化替代；中长期（3-5年）可能形成与 AWS/Azure 并列的“第三朵云”，但海外市场拓展仍受地缘政治限制。</p>
-                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果华为全栈自主成功，中国将拥有全球第二套完整数字基础设施，数字世界的“北约”与“华约”格局将正式成型。</p>
-                </div>
-            </details>
-            <p class="item-source">来源：<a href="https://www.huawei.com/cn/" target="_blank">华为官网</a></p>
-        </div>
-
-        <div class="trend-comment">📊 板块趋势：中国政策主线仍是“科技自主”，华为、比亚迪等企业成为政策落地的核心载体。预计下半年将有更多配套产业基金与税收优惠出台，但外部制裁风险仍是最大变量。</div>
+  </div>
+  <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>基因是遗传信息的物理载体，等位基因则是同一基因的不同序列变体。例如决定眼睛颜色的基因有“蓝色”和“棕色”两种等位基因。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内，等位基因数据库将进一步完善，推动罕见病诊断准确率提升；中长期（5-10年）等位基因与药物代谢关联研究将进入临床用药指导。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当每个人都清楚自己的等位基因构成，医疗将从“一刀切”转向“千人千药”的极致个性化时代。</p>
     </div>
+  </details>
+  <p class="item-source">来源：<a href="https://my.clevelandclinic.org/health/body/gene" target="_blank">Cleveland Clinic</a></p>
+</div>
 
-    <!-- 板块4: 经济/金融 -->
-    <div class="section">
-        <div class="section-header">💰 经济/金融</div>
+<div class="trend-comment">📊 板块趋势：生命科学领域今日以基础理论更新和科普为主，虽无重大临床突破，但基因定义的扩展正在重塑研究框架，预示未来非编码RNA领域将成为新药发现的核心战场。</div>
+</div>
 
-        <div class="item">
-            <div class="item-header">
-                <span class="title">港股收盘：恒指收涨，科技板块分化</span>
-                <span class="meta">⭐⭐⭐</span>
-                <span class="impact impact-low">冲击：Low</span>
-            </div>
-            <div class="item-summary">
-                2026年5月29日，恒生指数收涨 <span class="num-up">0.70%</span>，恒生科技指数下跌 <span class="num-down">0.09%</span>，耐用消费品与国防军工涨幅居前。市场呈现“防御+消费”偏好，科技股短期承压。
-            </div>
-            <div class="bilingual">
-                <p class="en-title">Hong Kong Market: Hang Seng Rises, Tech Sector Under Pressure</p>
-                <p class="en-summary">The Hang Seng Index gained 0.70% on May 29, while the Tech Index slipped 0.09%. Consumer durables and defense outperformed, signaling a defensive shift in market sentiment.</p>
-                <div class="vocab-card">
-                    <div class="vocab-title">📖 Key Vocabulary</div>
-                    <div class="vocab-list">
-                        <span class="vocab-item"><b>defensive shift</b> 防御性切换</span>
-                        <span class="vocab-item"><b>outperform</b> 表现优于</span>
-                        <span class="vocab-item"><b>market sentiment</b> 市场情绪</span>
-                    </div>
-                </div>
-            </div>
-            <details class="deepdive">
-                <summary>📖 深度解读</summary>
-                <div class="deepdive-content">
-                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>资金从高估值科技股流向消费与军工板块，反映市场短期风险偏好下降。</p>
-                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>若美联储6月议息会议释放鸽派信号，科技股可能反弹；反之，防御行情或延续至三季度。</p>
-                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>港股的板块轮动往往是全球资金流向的缩影，若科技股持续回调，可能引发一级市场估值调整，影响AI等领域的融资节奏。</p>
-                </div>
-            </details>
-            <p class="item-source">来源：<a href="https://www.facebook.com/NewtimespaceHK/videos/..." target="_blank">新时空 (Facebook)</a></p>
-        </div>
+<!-- ===== 板块2: 经济/金融 ===== -->
+<div class="section-block">
+<h2>💰 经济 / 金融</h2>
 
-        <div class="trend-comment">📊 板块趋势：全球宏观面处于“降息预期”与“通胀黏性”的拉锯战，港股短期震荡格局难破。投资者需关注6月中旬美联储议息会议，以及中国是否会出台新一轮财政刺激。</div>
+<div class="item">
+  <div class="item-header">
+    <span class="title">人民币兑美元汇率实时：1人民币=0.1478美元</span>
+    <span class="stars">⭐⭐⭐</span>
+    <span class="impact impact-med">冲击：Med</span>
+    <span class="risk-yellow">🟡 值得观察</span>
+  </div>
+  <div class="item-summary">
+    截至6月2日，人民币兑美元中间价报 <span class="num-key">7.1085</span>，离岸汇率在 <span class="num-key">7.25</span> 附近波动。在岸市场日间交易平稳，但市场对中美利差扩大及出口压力保持警惕。
+  </div>
+  <div class="bilingual">
+    <p class="en-title">CNY/USD Exchange Rate: 1 CNY = 0.1478 USD</p>
+    <p class="en-summary">As of June 2, the onshore RMB midpoint rate is set at 7.1085 per dollar, with offshore rates hovering around 7.25. Market participants remain cautious amid widening interest rate differentials and export headwinds.</p>
+    <div class="vocab-card">
+      <div class="vocab-title">📖 Key Vocabulary</div>
+      <div class="vocab-list">
+        <span class="vocab-item"><b>midpoint rate</b> 中间价</span>
+        <span class="vocab-item"><b>offshore market</b> 离岸市场</span>
+        <span class="vocab-item"><b>interest rate differential</b> 利差</span>
+      </div>
     </div>
-
-    <!-- 板块5: 地缘政治与国际关系 -->
-    <div class="section">
-        <div class="section-header">🌍 地缘政治与国际关系</div>
-
-        <div class="item">
-            <div class="item-header">
-                <span class="title">中泰经贸升温，比亚迪泰国现象折射区域格局变化</span>
-                <span class="meta">⭐⭐⭐</span>
-                <span class="impact impact-med">冲击：Med</span>
-                <span class="risk-yellow">🟡 值得观察</span>
-            </div>
-            <div class="item-summary">
-                比亚迪在泰国市场的爆发式增长（单日讨论超 <span class="num-key">3.1万</span>）不仅是商业成功，更折射出中国在东南亚的经济影响力正从贸易向产业链投资升级。日系车在泰国的传统优势面临挑战。
-            </div>
-            <div class="bilingual">
-                <p class="en-title">China-Thailand Economic Ties Heat Up; BYD Success Reflects Regional Shift</p>
-                <p class="en-summary">BYD's explosive growth in Thailand (over 31,000 daily interactions) signals China's deepening economic influence in Southeast Asia, shifting from trade to industrial chain investment, challenging Japanese auto dominance.</p>
-                <div class="vocab-card">
-                    <div class="vocab-title">📖 Key Vocabulary</div>
-                    <div class="vocab-list">
-                        <span class="vocab-item"><b>economic influence</b> 经济影响力</span>
-                        <span class="vocab-item"><b>industrial chain</b> 产业链</span>
-                        <span class="vocab-item"><b>dominance</b> 主导地位</span>
-                    </div>
-                </div>
-            </div>
-            <details class="deepdive">
-                <summary>📖 深度解读</summary>
-                <div class="deepdive-content">
-                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国在东南亚的角色从“世界工厂”升级为“产业链投资者”，比亚迪泰国工厂是缩影。</p>
-                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）中国电动车品牌在东南亚市占率将快速提升；中长期（3-5年）可能引发美欧在东南亚的“供应链反制”，如推出“印太经济框架”电动车补贴。</p>
-                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果东南亚成为中国主导的“电动车后院”，全球汽车产业版图将彻底改写，日本经济可能因此遭受结构性冲击。</p>
-                </div>
-            </details>
-            <p class="item-source">来源：<a href="https://www.facebook.com/BYDReverThailandOfficial/" target="_blank">BYD RÊVER Thailand</a></p>
-        </div>
-
-        <div class="trend-comment">📊 板块趋势：今日地缘新闻相对平静，但中泰经贸升温与比亚迪现象值得警惕——经济影响力正在转化为地缘影响力。美国可能在2026年下半年加强对东南亚的拉拢，形成“中美双供应链”格局。</div>
+  </div>
+  <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>人民币汇率中间价是中国央行每日公布的官方指导价，离岸汇率则由国际市场供需决定。当前在岸与离岸价差约 <span class="num-key">0.14</span> 元，反映一定的贬值预期。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）内，若中美关系缓和信号持续，人民币有望企稳；但美联储维持高利率背景下，中长期（6-12个月）仍面临贬值压力。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若人民币国际化进程加速，汇率形成机制将更市场化，中国进出口企业将面临更灵活的定价环境。</p>
     </div>
+  </details>
+  <p class="item-source">来源：<a href="https://www.shishihuilv.com/CNY-USD.html" target="_blank">实时汇率网</a> / <a href="https://www.safe.gov.cn/safe/rmbhlzjj/index.html" target="_blank">国家外汇管理局</a></p>
+</div>
 
-    <!-- 板块6: 材料科学 -->
-    <div class="section">
-        <div class="section-header">🔬 材料科学</div>
+<div class="trend-comment">📊 板块趋势：今日经济金融领域信息有限，人民币汇率整体平稳但暗流涌动，市场焦点转向下周美联储议息会议及中美贸易数据。短期波动风险可控，但需关注地缘政治变量。</div>
+</div>
 
-        <div class="item">
-            <div class="item-header">
-                <span class="title">半导体基础材料科普热度上升，硅基材料仍是绝对主流</span>
-                <span class="meta">⭐⭐⭐</span>
-                <span class="impact impact-low">冲击：Low</span>
-            </div>
-            <div class="item-summary">
-                多家科技媒体（TechTarget、IBM、Britannica）集中发布半导体科普内容，强调硅（Si）作为基础材料的核心地位。尽管碳化硅（SiC）、氮化镓（GaN）等第三代半导体受关注，但短期内硅基材料仍占 <span class="num-key">95%</span> 以上市场份额。
-            </div>
-            <div class="bilingual">
-                <p class="en-title">Silicon Remains Dominant in Semiconductors, Despite SiC/GaN Hype</p>
-                <p class="en-summary">Multiple tech outlets published primers on semiconductors, reaffirming silicon's dominance (>95% market share) despite growing interest in wide-bandgap materials like SiC and GaN for power electronics.</p>
-                <div class="vocab-card">
-                    <div class="vocab-title">📖 Key Vocabulary</div>
-                    <div class="vocab-list">
-                        <span class="vocab-item"><b>wide-bandgap</b> 宽禁带</span>
-                        <span class="vocab-item"><b>silicon carbide (SiC)</b> 碳化硅</span>
-                        <span class="vocab-item"><b>gallium nitride (GaN)</b> 氮化镓</span>
-                    </div>
-                </div>
-            </div>
-            <details class="deepdive">
-                <summary>📖 深度解读</summary>
-                <div class="deepdive-content">
-                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>半导体材料科普热潮背后是市场对“后摩尔时代”材料的焦虑，但现实是硅基工艺在成本与成熟度上仍无可替代。</p>
-                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）SiC 在电动汽车逆变器领域渗透率将提升至 <span class="num-key">20%</span>；但逻辑芯片领域，硅基 FinFET 仍将延续至 <span class="num-key">2nm</span> 节点。</p>
-                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果未来十年出现“硅基+量子”混合计算架构，材料科学将迎来新一轮革命，但在此之前，硅依然是半导体世界的“石油”。</p>
-                </div>
-            </details>
-            <p class="item-source">来源：<a href="https://www.ibm.com/think/topics/semiconductors" target="_blank">IBM / TechTarget / Britannica</a></p>
-        </div>
+<!-- ===== 板块3: 人工智能 ===== -->
+<div class="section-block">
+<h2>🤖 人工智能</h2>
 
-        <div class="trend-comment">📊 板块趋势：材料科学领域今日无重大突破性新闻，但科普热度的上升侧面反映市场对半导体供应链安全的关注。第三代半导体（SiC/GaN）仍是中长期投资热点，但短期需警惕估值泡沫。</div>
+<div class="item">
+  <div class="item-header">
+    <span class="title">DeepSeek：中国AI新势力崛起，聚焦通用人工智能底层模型</span>
+    <span class="stars">⭐⭐⭐⭐</span>
+    <span class="impact impact-high">冲击：High</span>
+  </div>
+  <div class="item-summary">
+    深度求索（DeepSeek）成立于 <span class="num-key">2023年</span>，专注于通用人工智能（AGI）底层模型研发。公司自研训练框架、自建万卡算力集群，仅用半年时间推出多款大模型，引发全球AI界关注。其模型在代码生成与推理任务上表现突出。
+  </div>
+  <div class="bilingual">
+    <p class="en-title">DeepSeek: A Rising Chinese AI Powerhouse in AGI Foundational Models</p>
+    <p class="en-summary">Founded in 2023, DeepSeek focuses on developing foundational models for Artificial General Intelligence (AGI). Leveraging proprietary training frameworks and a 10,000-GPU cluster, the company has rapidly released models that excel in code generation and reasoning tasks, drawing global attention.</p>
+    <div class="vocab-card">
+      <div class="vocab-title">📖 Key Vocabulary</div>
+      <div class="vocab-list">
+        <span class="vocab-item"><b>AGI</b> 通用人工智能</span>
+        <span class="vocab-item"><b>foundational model</b> 基础模型</span>
+        <span class="vocab-item"><b>training framework</b> 训练框架</span>
+      </div>
     </div>
-
-    <!-- 板块7: 生命科学/医学 -->
-    <div class="section">
-        <div class="section-header">🧬 生命科学/医学</div>
-
-        <div class="item">
-            <div class="item-header">
-                <span class="title">澳大利亚关节炎研究取得进展，新型疗法进入临床前最后阶段</span>
-                <span class="meta">⭐⭐⭐</span>
-                <span class="impact impact-med">冲击：Med</span>
-            </div>
-            <div class="item-summary">
-                Arthritis Australia 宣布类风湿关节炎（RA）新型疗法已进入“高级开发阶段”，虽未完全进入临床，但进展“持续快速”。该疗法可能通过重置免疫系统实现长期缓解，影响全球 <span class="num-key">1800万</span> RA 患者。
-            </div>
-            <div class="bilingual">
-                <p class="en-title">Australian Arthritis Research Advances; Novel Therapy in Late-Stage Development</p>
-                <p class="en-summary">Arthritis Australia reports a pioneering treatment for rheumatoid arthritis (RA) has entered advanced development, offering potential for long-term remission by resetting the immune system. The therapy could impact 18 million RA patients globally.</p>
-                <div class="vocab-card">
-                    <div class="vocab-title">📖 Key Vocabulary</div>
-                    <div class="vocab-list">
-                        <span class="vocab-item"><b>rheumatoid arthritis (RA)</b> 类风湿关节炎</span>
-                        <span class="vocab-item"><b>remission</b> 缓解</span>
-                        <span class="vocab-item"><b>immune system reset</b> 免疫系统重置</span>
-                    </div>
-                </div>
-            </div>
-            <details class="deepdive">
-                <summary>📖 深度解读</summary>
-                <div class="deepdive-content">
-                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>类风湿关节炎是自身免疫疾病，传统治疗只能控制症状。新疗法旨在“教会”免疫系统不再攻击自身关节，类似给免疫系统做一次“系统重置”。</p>
-                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）若临床试验成功，将成为自身免疫疾病治疗的范式突破；中长期（5-10年）可能推广至红斑狼疮、克罗恩病等其他自身免疫病。</p>
-                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果免疫重置技术成熟，自身免疫疾病将像“杀毒软件一键修复”一样被治愈，数亿患者将摆脱终身用药的负担，医疗体系也将从“慢性病管理”转向“一次性治愈”。</p>
-                </div>
-            </details>
-            <p class="item-source">来源：<a href="https://arthritisaustralia.com.au/reset-ra/" target="_blank">Arthritis Australia</a></p>
-        </div>
-
-        <div class="trend-comment">📊 板块趋势：生命科学领域今日亮点在自身免疫疾病治疗，澳大利亚的 RA 新疗法代表“免疫重置”概念从理论走向临床。同时，中国在 CAR-T、基因编辑等领域的进展也值得持续关注。</div>
+  </div>
+  <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek是一家中国AI初创公司，其核心策略是自研训练框架并大规模部署算力（万卡集群），以极快速度迭代大语言模型。其模型在编程和逻辑推理能力上已接近国际一流水平。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）内，DeepSeek有望在开源社区和开发者工具领域建立影响力；中长期（3-5年）可能成为中国AI自主可控的重要力量，挑战OpenAI等头部玩家。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当AGI底层模型由多个国家/公司共同构建，AI发展将从“单极主导”转向“多极生态”，全球AI治理将面临更复杂的协调挑战。</p>
     </div>
+  </details>
+  <p class="item-source">来源：<a href="https://www.deepseek.com/" target="_blank">DeepSeek 官网</a> / <a href="https://en.wikipedia.org/wiki/DeepSeek" target="_blank">Wikipedia</a></p>
+</div>
 
-    <!-- 时间提醒模块 -->
-    <div class="timeline">
-        <h4>⏰ 近期关键时间节点</h4>
-        <div class="timeline-item">
-            <span class="timeline-date">2026-06-10</span>
-            <span>港股科技股季度调整生效，关注恒生科技指数成分变动</span>
-        </div>
-        <div class="timeline-item">
-            <span class="timeline-date">2026-06-15</span>
-            <span>美联储议息会议，市场预期维持利率不变，关注点阵图指引</span>
-        </div>
-        <div class="timeline-item">
-            <span class="timeline-date">2026-06-30</span>
-            <span>美对华半导体出口新规可能进一步更新，供应链风险窗口</span>
-        </div>
-    </div>
+<div class="trend-comment">📊 板块趋势：AI领域今日以中国新势力DeepSeek的崛起为亮点，反映出全球AI竞争格局正从“美国独大”向“中美双引擎”演变。算力基础设施和模型自研能力成为核心竞争力，开源生态的重要性持续上升。</div>
+</div>
 
-    <div class="footer-note">
-        全球动态简报 · 基于原始新闻的智能分析生成 · 2026-06-02
+<!-- ===== 板块4: 科技/硬科技 ===== -->
+<div class="section-block">
+<h2>💻 科技 / 硬科技</h2>
+
+<div class="item">
+  <div class="item-header">
+    <span class="title">量子计算突破：长期未解谜题被破解，隐形传态技术迎来新曙光</span>
+    <span class="stars">⭐⭐⭐⭐⭐</span>
+    <span class="impact impact-high">冲击：High</span>
+  </div>
+  <div class="item-summary">
+    2026年5月13日，科研团队宣布攻克一项长期悬而未决的量子谜题，为量子隐形传态和下一代量子计算开辟全新可能。该成果直接推动量子通信安全性和量子网络构建的理论基础。
+  </div>
+  <div class="bilingual">
+    <p class="en-title">Quantum Breakthrough: Long-Standing Puzzle Solved, Paving Way for Teleportation and Next-Gen Computing</p>
+    <p class="en-summary">On May 13, 2026, a research team announced the resolution of a long-unsolved quantum puzzle, unlocking new possibilities for quantum teleportation-like technologies and next-generation quantum computing. The breakthrough strengthens the theoretical foundation for secure quantum communication networks.</p>
+    <div class="vocab-card">
+      <div class="vocab-title">📖 Key Vocabulary</div>
+      <div class="vocab-list">
+        <span class="vocab-item"><b>quantum teleportation</b> 量子隐形传态</span>
+        <span class="vocab-item"><b>quantum puzzle</b> 量子谜题</span>
+        <span class="vocab-item"><b>quantum network</b> 量子网络</span>
+      </div>
     </div>
+  </div>
+  <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>量子隐形传态是利用量子纠缠将量子态信息从一个位置瞬间传输到另一个位置的技术，不传输物质本身。此次解决的谜题涉及纠缠态的稳定性和远距离传输效率。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内将推动量子中继器和城域量子网络实验；中长期（5-10年）有望实现跨洲量子密钥分发，构建不可破解的通信网络。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当量子隐形传态技术成熟，信息传输将不再受限于物理距离，全球通信将进入“零延迟”时代，金融交易、医疗手术和国防指挥将发生根本性变革。</p>
+    </div>
+  </details>
+  <p class="item-source">来源：<a href="https://www.sciencedaily.com/releases/2026/05/260513034640.htm" target="_blank">ScienceDaily</a></p>
+</div>
+
+<div class="item">
+  <div class="item-header">
+    <span class="title">McKinsey量子技术监测2026：商业化临界点已至，超300家企业入局</span>
+    <span class="stars">⭐⭐⭐⭐⭐</span>
+    <span class="impact impact-high">冲击：High</span>
+  </div>
+  <div class="item-summary">
+    McKinsey发布2026年量子技术监测报告，显示全球已有 <span class="num-up">超过300家</span> 企业采用量子计算技术，市场价值已达数十亿美元规模。报告指出量子计算正从实验室走向商业应用，金融、制药和材料科学领域率先受益。
+  </div>
+  <div class="bilingual">
+    <p class="en-title">McKinsey Quantum Technology Monitor 2026: A Commercial Tipping Point</p>
+    <p class="en-summary">McKinsey's latest report reveals that over 300 global companies are now adopting quantum computing, fueling a multi-billion-dollar market. The technology is transitioning from lab research to commercial applications, with finance, pharma, and materials science leading the way.</p>
+    <div class="vocab-card">
+      <div class="vocab-title">📖 Key Vocabulary</div>
+      <div class="vocab-list">
+        <span class="vocab-item"><b>commercial tipping point</b> 商业化临界点</span>
+        <span class="vocab-item"><b>multi-billion-dollar market</b> 数十亿美元市场</span>
+        <span class="vocab-item"><b>adoption</b> 采用/应用</span>
+      </div>
+    </div>
+  </div>
+  <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>McKinsey的监测报告是行业风向标。300+企业入局意味着量子计算已不再是学术概念，而是开始产生实际商业价值的工具。典型应用包括投资组合优化、新药分子模拟和材料设计。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）内，量子计算云服务将普及，中小企业也能按需调用量子算力；中长期（3-7年）量子-经典混合计算架构将成为主流。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当量子计算成为像云计算一样的基础设施，人类将能解决当前无法企及的复杂问题，如精确气候建模、全新催化剂设计和通用人工智能加速。</p>
+    </div>
+  </details>
+  <p class="item-source">来源：<a href="https://www.mckinsey.com/capabilities/mckinsey-technology/our-insights/mckinsey-quantum-technology-monitor-2026-a-commercial-tipping-point" target="_blank">McKinsey & Company</a></p>
+</div>
+
+<div class="item">
+  <div class="item-header">
+    <span class="title">量子计算2026格局：IBM部署433量子比特Condor，谷歌实现1000量子比特Willow</span>
+    <span class="stars">⭐⭐⭐⭐</span>
+    <span class="impact impact-high">冲击：High</span>
+  </div>
+  <div class="item-summary">
+    2026年量子计算竞争白热化：IBM已部署 <span class="num-key">433量子比特</span> Condor处理器，谷歌实现 <span class="num-key">1000量子比特</span> Willow系统，Atom Computing也在加速。硬件规模竞赛推动量子纠错和实用化进程提速。
+  </div>
+  <div class="bilingual">
+    <p class="en-title">2026 Quantum Computing Landscape: IBM's 433-Qubit Condor vs. Google's 1000-Qubit Willow</p>
+    <p class="en-summary">The quantum computing race intensifies in 2026. IBM has deployed its 433-qubit Condor processor, while Google has achieved a 1000-qubit Willow system. This hardware scaling race is accelerating progress in quantum error correction and practical applications.</p>
+    <div class="vocab-card">
+      <div class="vocab-title">📖 Key Vocabulary</div>
+      <div class="vocab-list">
+        <span class="vocab-item"><b>qubit</b> 量子比特</span>
+        <span class="vocab-item"><b>quantum error correction</b> 量子纠错</span>
+        <span class="vocab-item"><b>hardware scaling</b> 硬件规模扩展</span>
+      </div>
+    </div>
+  </div>
+  <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>量子比特是量子计算的基本单元，数量越多代表计算能力越强。IBM的433量子比特和谷歌的1000量子比特标志着量子处理器正式进入“千量子比特时代”。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）内，1000量子比特级别处理器将用于量子化学模拟和优化问题；中长期（3-5年）若量子纠错取得突破，通用量子计算机有望实现。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当量子比特数量达到百万级别，量子计算机将能破解现有加密体系，同时也能催生全新的加密技术，重塑网络安全格局。</p>
+    </div>
+  </details>
+  <p class="item-source">来源：<a href="https://www.programming-helper.com/tech/quantum-computing-breakthrough-2026-ibm-google-qubit-race" target="_blank">Programming Helper</a></p>
+</div>
+
+<div class="trend-comment">📊 板块趋势：硬科技领域今日以量子计算为主旋律，从基础理论突破（隐形传态）到商业化报告（McKinsey）再到硬件竞赛（IBM vs. Google），三条线索共同指向一个结论：2026年已成为量子计算的商业化元年，投资和应用落地将进入快车道。</div>
+</div>
+
+<!-- ===== 板块5: 材料科学 ===== -->
+<div class="section-block">
+<h2>🔬 材料科学</h2>
+
+<div class="item">
+  <div class="item-header">
+    <span class="title">Nature期刊聚焦：非共价催化剂实现对映选择性氢原子中继</span>
+    <span class="stars">⭐⭐⭐⭐⭐</span>
+    <span class="impact impact-med">冲击：Med</span>
+  </div>
+  <div class="item-summary">
+    Nature最新研究报道了一种通过非共价催化剂实现的对映选择性氢原子中继方法。该技术在手性分子合成领域具有突破性意义，有望降低药物中间体生产成本并提升纯度。
+  </div>
+  <div class="bilingual">
+    <p class="en-title">Enantioselective Hydrogen Atom Relay via Non-Covalent Catalyst</p>
+    <p class="en-summary">A recent Nature publication details a method for enantioselective hydrogen atom relay using non-covalent catalysts. This breakthrough in chiral molecule synthesis could significantly reduce the cost and improve the purity of pharmaceutical intermediates.</p>
+    <div class="vocab-card">
+      <div class="vocab-title">📖 Key Vocabulary</div>
+      <div class="vocab-list">
+        <span class="vocab-item"><b>enantioselective</b> 对映选择性</span>
+        <span class="vocab-item"><b>non-covalent catalyst</b> 非共价催化剂</span>
+        <span class="vocab-item"><b>chiral molecule</b> 手性分子</span>
+      </div>
+    </div>
+  </div>
+  <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>对映选择性是指化学反应优先产生某一种手性分子（镜像异构体）的能力。氢原子中继是一种新型反应机制，非共价催化剂则利用分子间弱相互作用力驱动反应，更加环保高效。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内将首先应用于高附加值手性药物中间体的合成；中长期（5-10年）可能替代部分传统金属催化工艺，降低重金属污染。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当非共价催化成为主流，药物合成将进入“绿色精准”时代，大幅减少有害溶剂和副产物，推动化学制药行业可持续发展。</p>
+    </div>
+  </details>
+  <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature Research Articles</a></p>
+</div>
+
+<div class="trend-comment">📊 板块趋势：材料科学领域今日以Nature发表的高水平催化方法研究为代表，显示出绿色化学和精准合成是当前热点。非共价催化策略为药物合成提供了更可持续的路径，预计将吸引更多产业资本关注。</div>
+</div>
+
+<!-- ===== 板块6: 中国政策与监管 ===== -->
+<div class="section-block">
+<h2>🇨🇳 中国政策与监管</h2>
+
+<div class="item">
+  <div class="item-header">
+    <span class="title">中美元首北京会晤：构建“中美建设性战略稳定关系”</span>
+    <span class="stars">⭐⭐⭐⭐⭐</span>
+    <span class="impact impact-high">冲击：High</span>
+  </div>
+  <div class="item-summary">
+    2026年5月14日，中美元首在北京会晤，同意将构建“中美建设性战略稳定关系”作为双边关系新定位。该框架为未来 <span class="num-key">3年</span> 乃至更长时间提供战略指引，涵盖经贸、科技、地缘等核心领域，为世界注入稳定性预期。
+  </div>
+  <div class="bilingual">
+    <p class="en-title">China-US Beijing Summit: Forging a "Constructive Strategic Stability Relationship"</p>
+    <p class="en-summary">On May 14, 2026, the leaders of China and the US met in Beijing, agreeing to establish a "China-US constructive strategic stability relationship" as the new bilateral framework. This provides strategic guidance for the next three years and beyond, covering trade, technology, and geopolitics, injecting stability into global expectations.</p>
+    <div class="vocab-card">
+      <div class="vocab-title">📖 Key Vocabulary</div>
+      <div class="vocab-list">
+        <span class="vocab-item"><b>strategic stability</b> 战略稳定</span>
+        <span class="vocab-item"><b>bilateral framework</b> 双边框架</span>
+        <span class="vocab-item"><b>summit meeting</b> 峰会/会晤</span>
+      </div>
+    </div>
+  </div>
+  <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“建设性战略稳定关系”是一个全新提法，旨在通过定期对话和危机管控机制，减少误判和冲突风险。该框架不寻求解决所有分歧，而是建立“护栏”确保竞争不失控。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）内，双方可能在关税、科技出口管制等领域释放缓和信号；中长期（3-5年）若机制运行良好，有望推动新一轮双边投资协定谈判。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果“战略稳定”模式成功，可能成为大国竞争的新范式——从零和博弈转向“管控竞争、有限合作”，为全球治理提供中国方案。</p>
+    </div>
+  </details>
+  <p class="item-source">来源：<a href="https://news.cctv.com/2026/05/14/ARTIyjulsWnzXsCXs5rIbbQO260514.shtml" target="_blank">央视新闻</a> / <a href="https://www.mfa.gov.cn/zyxw/202605/t20260514_11910264.shtml" target="_blank">外交部</a></p>
+</div>
+
+<div class="item">
+  <div class="item-header">
+    <span class="title">“一带一路”倡议持续深化：国家级顶层合作框架最新进展</span>
+    <span class="stars">⭐⭐⭐⭐</span>
+    <span class="impact impact-med">冲击：Med</span>
+  </div>
+  <div class="item-summary">
+    中国“一带一路”官方网站持续更新合作动态，倡议已覆盖全球多个国家和地区。最新进展显示，数字丝绸之路和绿色丝绸之路成为新的合作增长点，推动基础设施互联互通向高质量转型。
+  </div>
+  <div class="bilingual">
+    <p class="en-title">Belt and Road Initiative (BRI) Deepens: Latest Developments in Top-Level Cooperation Framework</p>
+    <p class="en-summary">China's official Belt and Road website continues to update cooperation dynamics, with the initiative now spanning numerous countries and regions. Recent progress highlights the Digital Silk Road and Green Silk Road as new growth areas, driving high-quality infrastructure connectivity.</p>
+    <div class="vocab-card">
+      <div class="vocab-title">📖 Key Vocabulary</div>
+      <div class="vocab-list">
+        <span class="vocab-item"><b>Belt and Road Initiative</b> 一带一路倡议</span>
+        <span class="vocab-item"><b>Digital Silk Road</b> 数字丝绸之路</span>
+        <span class="vocab-item"><b>infrastructure connectivity</b> 基础设施互联互通</span>
+      </div>
+    </div>
+  </div>
+  <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“一带一路”是中国提出的跨区域经济合作倡议，涵盖基础设施、贸易、金融、人文等多领域。最新转向数字和绿色领域，反映全球科技和气候议程的优先级提升。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内，数字丝绸之路将推动5G和云计算在沿线国家部署；中长期（5-10年）绿色能源项目将成为共建国家合作重点。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当数字与绿色成为“一带一路”新标签，全球南方国家将获得跨越式发展机遇，形成以中国为核心的新一代全球化网络。</p>
+    </div>
+  </details>
+  <p class="item-source">来源：<a href="https://www.yidaiyilu.gov.cn/" target="_blank">中国一带一路网</a></p>
+</div>
+
+<div class="trend-comment">📊 板块趋势：中国政策与监管今日核心是外交战略层面的重大进展。中美元首新定位框架为科技和贸易领域带来短期缓和预期，而“一带一路”向数字化和绿色化转型则显示中国对外合作策略的升级。</div>
+</div>
+
+<!-- ===== 板块7: 地缘政治与国际关系 ===== -->
+<div class="section-block">
+<h2>🌍 地缘政治与国际关系</h2>
+
+<div class="item">
+  <div class="item-header">
+    <span class="title">中美关系新定位：从竞争对抗转向建设性战略稳定</span>
+    <span class="stars">⭐⭐⭐⭐⭐</span>
+    <span class="impact impact-high">冲击：High</span>
+  </div>
+  <div class="item-summary">
+    继5月14日北京会晤后，中美双方开始落实“建设性战略稳定关系”框架。分析人士认为，此举标志着全球最大两个经济体从全面竞争转向“管控型竞争”，在气候变化、公共卫生等议题上可能重启合作。
+  </div>
+  <div class="bilingual">
+    <p class="en-title">New China-US Orientation: From Confrontation to Constructive Strategic Stability</p>
+    <p class="en-summary">Following the May 14 Beijing summit, both sides begin implementing the "constructive strategic stability" framework. Analysts see this as a shift from all-out competition to "managed competition," potentially reopening cooperation on climate change and public health.</p>
+    <div class="vocab-card">
+      <div class="vocab-title">📖 Key Vocabulary</div>
+      <div class="vocab-list">
+        <span class="vocab-item"><b>managed competition</b> 管控型竞争</span>
+        <span class="vocab-item"><b>strategic stability</b> 战略稳定</span>
+        <span class="vocab-item"><b>implementation</b> 落实/执行</span>
+      </div>
+    </div>
+  </div>
+  <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“建设性战略稳定”意味着双方同意在核心利益问题上保持克制，建立危机沟通机制，并在共同利益领域开展合作。这不同于过去的“战略竞争”或“脱钩”叙事。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（6-12个月）内，双方可能在关税减免和科技人员交流上释放善意；中长期（2-3年）若框架稳固，有望重启中美战略与经济对话。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若“战略稳定”模式成功推广，可能为其他大国关系（如美俄、中印）提供模板，推动全球从“新冷战”边缘回归多边合作轨道。</p>
+    </div>
+  </details>
+  <p class="item-source">来源：<a href="https://www.bbc.com/zhongwen/topics/c5835q058y1t/simp" target="_blank">BBC News 中文</a> / <a href="https://news.cctv.com/2026/05/14/ARTIyjulsWnzXsCXs5rIbbQO260514.shtml" target="_blank">央视新闻</a></p>
+</div>
+
+<div class="trend-comment">📊 板块趋势：地缘政治今日焦点完全集中在中美关系新框架上。这一重大转向将重新定义全球科技供应链、金融流动和安全格局。短期信号偏积极，但需警惕框架落实过程中的摩擦与反复。</div>
+</div>
+
+<!-- ===== 时间提醒模块 ===== -->
+<div class="timeline">
+  <h4>⏰ 近期关键时间节点</h4>
+  <div class="timeline-item">
+    <span class="timeline-date">2026-06-15</span>
+    <span>美联储议息会议，市场预期维持利率不变，关注点阵图指引</span>
+  </div>
+  <div class="timeline-item">
+    <span class="timeline-date">2026-06-30</span>
+    <span>中美“建设性战略稳定关系”框架首轮工作层面对话预计启动</span>
+  </div>
+  <div class="timeline-item">
+    <span class="timeline-date">2026-07-01</span>
+    <span>McKinsey量子技术监测报告后续行业应用案例集中发布期</span>
+  </div>
+</div>
+
+<div class="footer">
+  <p>全球动态分析师 · 每日简报 | 数据截至 2026-06-02 | 仅供研究参考</p>
+</div>
+
 </div>
 </body>
 </html>
