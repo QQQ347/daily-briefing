@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球动态简报 | 2026-06-02</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+            color: #1a1a2e;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 30px 35px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 6px 0;
+            color: #0f0f1f;
+            letter-spacing: -0.3px;
+        }
+        .subhead {
+            font-size: 14px;
+            color: #5a6170;
+            margin-bottom: 25px;
+            font-weight: 400;
+            border-bottom: 1px solid #e8ecf0;
+            padding-bottom: 12px;
+        }
+        /* overview */
+        .overview {
+            background-color: #f0f3f8;
+            border-radius: 14px;
+            padding: 22px 26px;
+            margin-bottom: 30px;
+            border-left: 5px solid #2b3a67;
+        }
+        .overview h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2a44;
+        }
+        .overview p {
+            margin: 0 0 14px 0;
+            line-height: 1.6;
+            font-size: 15px;
+            color: #1e2638;
+        }
+        .overview-tags {
+            display: block;
+            margin-top: 6px;
+        }
+        .overview-tag {
+            display: inline-block;
+            background-color: #dce3ed;
+            border-radius: 30px;
+            padding: 6px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #1f2a44;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+        /* section */
+        .section {
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+        .section-header {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0 0 6px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #e0e5ec;
+            color: #202a3a;
+        }
+        .item {
+            background-color: #fafbfc;
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin-bottom: 18px;
+            border: 1px solid #e9edf2;
+        }
+        .item-header {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .item-header .title {
+            font-size: 17px;
+            font-weight: 600;
+            color: #0b1a2b;
+            display: inline;
+        }
+        .item-header .meta {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 13px;
+        }
+        .item-header .meta span {
+            margin-right: 6px;
+        }
+        .impact {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            background-color: #eef2f6;
+        }
+        .impact-high {
+            background-color: #fde6e8;
+            color: #b13a3a;
+        }
+        .impact-med {
+            background-color: #fff3d6;
+            color: #a67c2b;
+        }
+        .impact-low {
+            background-color: #e4f0e6;
+            color: #2b6e4e;
+        }
+        .risk-red {
+            background-color: #fce4e4;
+            color: #b33a3a;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+        .risk-yellow {
+            background-color: #fef7e0;
+            color: #8d6e2b;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+        .item-summary {
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 8px 0 12px 0;
+            color: #1f2937;
+        }
+        .num-up {
+            background-color: #e0f2e6;
+            padding: 1px 6px;
+            border-radius: 12px;
+            font-weight: 600;
+            color: #0f6e3f;
+        }
+        .num-down {
+            background-color: #fde6e8;
+            padding: 1px 6px;
+            border-radius: 12px;
+            font-weight: 600;
+            color: #b13a3a;
+        }
+        .num-key {
+            background-color: #e8ecf3;
+            padding: 1px 6px;
+            border-radius: 12px;
+            font-weight: 600;
+            color: #2c3e6b;
+        }
+        .bilingual {
+            background-color: #f1f5fa;
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 12px 0 10px 0;
+        }
+        .bilingual .en-title {
+            font-weight: 600;
+            font-size: 15px;
+            color: #113355;
+            margin: 0 0 6px 0;
+        }
+        .bilingual .en-summary {
+            font-size: 14px;
+            color: #2b3f54;
+            margin: 4px 0 10px 0;
+            line-height: 1.5;
+        }
+        .vocab-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 10px 14px;
+            border: 1px solid #dce3ed;
+        }
+        .vocab-title {
+            font-weight: 600;
+            font-size: 13px;
+            color: #1f3a5f;
+            margin-bottom: 6px;
+        }
+        .vocab-list {
+            display: block;
+        }
+        .vocab-item {
+            display: inline-block;
+            background-color: #eef3f9;
+            border-radius: 30px;
+            padding: 4px 14px;
+            font-size: 12px;
+            margin: 3px 5px 3px 0;
+            color: #1a2e4a;
+        }
+        .vocab-item b {
+            font-weight: 600;
+        }
+        .compare-box {
+            background-color: #f8f6f0;
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin: 18px 0;
+            border-left: 5px solid #b0b8c8;
+            display: block;
+        }
+        .compare-side {
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+            padding: 8px 12px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .compare-bull {
+            background-color: #e8f3ea;
+            border-radius: 10px;
+            margin-right: 2%;
+        }
+        .compare-bear {
+            background-color: #f3e8e8;
+            border-radius: 10px;
+            margin-left: 2%;
+        }
+        .compare-label {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .deepdive {
+            margin: 14px 0 8px 0;
+            border: 1px solid #e0e6ed;
+            border-radius: 12px;
+            padding: 6px 14px;
+            background-color: #f9fafc;
+        }
+        .deepdive summary {
+            font-weight: 600;
+            font-size: 14px;
+            color: #1f3a5f;
+            cursor: pointer;
+            padding: 8px 0;
+        }
+        .deepdive-content {
+            padding: 6px 0 10px 0;
+        }
+        .dl {
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 8px 0;
+        }
+        .dl-label {
+            font-weight: 600;
+        }
+        .item-source {
+            font-size: 12px;
+            color: #5b6a7e;
+            margin-top: 8px;
+            border-top: 1px solid #e8ecf0;
+            padding-top: 10px;
+        }
+        .item-source a {
+            color: #1f5a8a;
+            text-decoration: none;
+        }
+        .trend-comment {
+            background-color: #f0f4fa;
+            border-radius: 12px;
+            padding: 14px 20px;
+            margin: 20px 0 10px 0;
+            font-size: 14px;
+            color: #1f2d44;
+            border-left: 5px solid #6b7f9e;
+            font-weight: 400;
+        }
+        .timeline {
+            background-color: #f7f3e9;
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin: 30px 0 20px 0;
+            border: 1px solid #e3dacb;
+        }
+        .timeline h4 {
+            margin: 0 0 12px 0;
+            font-weight: 600;
+            font-size: 17px;
+            color: #3d2f1f;
+        }
+        .timeline-item {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .timeline-date {
+            display: inline-block;
+            background-color: #e2d8c4;
+            padding: 2px 12px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-right: 12px;
+            color: #2f2417;
+        }
+        .footer-note {
+            text-align: center;
+            font-size: 12px;
+            color: #6d7a8c;
+            margin-top: 30px;
+            border-top: 1px solid #e0e5ec;
+            padding-top: 18px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🌍 全球动态简报</h1>
+    <div class="subhead">2026年6月2日 · 高密度情报版</div>
+
+    <!-- 综述模块 -->
+    <div class="overview">
+        <h3>🧠 今日简报综述</h3>
+        <p>今日简报呈现三条主线：AI 领域 OpenAI 与 DeepSeek 同时释放技术跃迁信号，通用人工智能（AGI）竞赛进入加速期；硬科技层面半导体基础材料无重大突破，但华为云与比亚迪海外扩张显示中国科技企业正以“AI+云+汽车”组合拳突围；地缘与政策面相对平静，但港股震荡、恒指微涨反映市场对科技股的谨慎乐观。整体风向：技术端乐观，市场端分化，地缘风险暂缓。</p>
+        <div class="overview-tags">
+            <span class="overview-tag">🤖 AGI加速</span>
+            <span class="overview-tag">🔧 华为云+AI</span>
+            <span class="overview-tag">🚗 BYD海外扩张</span>
+            <span class="overview-tag">📊 港股震荡</span>
+        </div>
+    </div>
+
+    <!-- 板块1: 人工智能 -->
+    <div class="section">
+        <div class="section-header">🤖 人工智能</div>
+
+        <!-- 新闻1 OpenAI -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">OpenAI 重申 AGI 使命，研究进入新阶段</span>
+                <span class="meta">⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+            <div class="item-summary">
+                OpenAI 官方更新研究愿景，明确以通用人工智能（AGI）为终极目标，强调当前系统已能解决“人类级问题”。此举被解读为 GPT-5 或更高级模型即将发布的信号，全球 AI 竞赛进一步升温。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">OpenAI Reaffirms AGI Mission, Enters New Research Phase</p>
+                <p class="en-summary">OpenAI updated its research roadmap, stating its work will eventually lead to Artificial General Intelligence (AGI) capable of solving human-level problems. This signals a potential near-term release of next-generation models, intensifying the global AI race.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>AGI (Artificial General Intelligence)</b> 通用人工智能</span>
+                        <span class="vocab-item"><b>roadmap</b> 路线图</span>
+                        <span class="vocab-item"><b>human-level problems</b> 人类级问题</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>OpenAI 不再只是“聊天机器人”，而是公开将 AGI 作为可交付目标。好比一家火箭公司宣布“我们要登火星”，而不仅仅是造更好的飞机。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）内可能出现能自主编程、科研辅助的强推理模型；中长期（3-5年）可能重塑白领知识工作，如法律、医疗诊断。但安全与对齐问题仍是最大瓶颈。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果 AGI 实现，人类将拥有一个“无限博士”团队，24小时解决科学难题。但社会可能面临结构性失业与伦理失控风险，全球治理体系需同步升级。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://openai.com/" target="_blank">OpenAI 官网</a></p>
+        </div>
+
+        <!-- 新闻2 DeepSeek -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">DeepSeek 发布新模型，中国 AI 阵营加速追赶</span>
+                <span class="meta">⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+            <div class="item-summary">
+                中国 AI 创企 DeepSeek 更新其模型系列，继 DeepSeek Coder 后在通用对话与代码生成领域持续迭代。尽管算力受限，但算法优化使其性能接近国际一线模型，中国 AI 生态自主化进程加快。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">DeepSeek Releases New Model, China’s AI Ecosystem Accelerates Catch-up</p>
+                <p class="en-summary">Chinese AI startup DeepSeek updated its model series, showing competitive performance in general conversation and code generation despite hardware restrictions. Algorithmic innovation narrows the gap with frontier models.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>algorithmic optimization</b> 算法优化</span>
+                        <span class="vocab-item"><b>catch-up</b> 追赶</span>
+                        <span class="vocab-item"><b>ecosystem</b> 生态</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek 是中国 AI 领域“小算力大模型”的代表，用更少资源训练出高效模型，类似用自行车跑出摩托车的速度。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将推动中国企业内部 AI 部署成本下降；中长期可能形成中美“双模型生态”，全球开发者面临选择。但高端芯片禁令仍是长期软肋。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中国 AI 完全自主，全球将出现两套 AI 标准与基础设施，数字世界可能“分裂”为两个生态，而发展中国家将面临选边站队的压力。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.deepseek.com/" target="_blank">DeepSeek 官网</a></p>
+        </div>
+
+        <!-- 板块趋势 -->
+        <div class="trend-comment">📊 板块趋势：AI 赛道出现“双核驱动”——OpenAI 以 AGI 愿景拉高天花板，DeepSeek 以算法效率证明“算力不足不是终点”。两者共同指向2026-2027年可能迎来AI能力跃迁，但地缘因素使中国AI企业面临供应链风险。</div>
+    </div>
+
+    <!-- 板块2: 科技/硬科技 -->
+    <div class="section">
+        <div class="section-header">💻 科技/硬科技</div>
+
+        <!-- 新闻 华为云 -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">华为云深耕行业AI，赋能汽车与制造数智化</span>
+                <span class="meta">⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                华为云宣布基于云计算、大数据、AI、5G 等前沿技术，深入赋能汽车产业数智升级。此举表明华为正从硬件巨头转向“云+AI”解决方案提供商，与比亚迪等车企形成协同。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Huawei Cloud Drives Industry AI, Focuses on Automotive Digitalization</p>
+                <p class="en-summary">Huawei Cloud leverages cloud computing, big data, AI, and 5G to accelerate digital transformation in the automotive sector, signaling a strategic shift from hardware to integrated solutions.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>digital transformation</b> 数字化转型</span>
+                        <span class="vocab-item"><b>empower</b> 赋能</span>
+                        <span class="vocab-item"><b>integrated solutions</b> 集成解决方案</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>华为云不只是卖服务器，而是把AI、5G、云打包成“智能工厂操作系统”，帮车企实现从设计到生产全链路数字化。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）将推动中国新能源汽车工厂的智能化改造；中长期可能将“华为模式”复制到矿山、港口等传统行业，形成新的增长极。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果华为云+AI全面落地，中国制造业将出现“无人车间”普及潮，但同时也带来蓝领岗位的结构性替代，需配套社会保障改革。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.huaweicloud.com/intl/zh-cn/" target="_blank">华为云官网</a></p>
+        </div>
+
+        <!-- 新闻 比亚迪海外 -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">比亚迪泰国市场热度飙升，东南亚电动车布局加速</span>
+                <span class="meta">⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                BYD RÊVER Thailand 在 Facebook 上互动量激增，单日讨论量超 <span class="num-key">3.1万</span>，粉丝数突破 <span class="num-up">69万</span>。比亚迪在东南亚的本地化营销与建厂策略成效显著，正快速抢占日系车市场份额。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">BYD Surges in Thailand, Accelerating Southeast Asia EV Push</p>
+                <p class="en-summary">BYD's Thailand page saw daily interactions exceed 31,000, with followers surpassing 690,000. Localized marketing and factory construction are helping BYD capture market share from Japanese automakers.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>localized marketing</b> 本地化营销</span>
+                        <span class="vocab-item"><b>market share</b> 市场份额</span>
+                        <span class="vocab-item"><b>surge</b> 激增</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>比亚迪在泰国采取“建厂+本地营销”双轮驱动，直接挑战丰田、本田在东南亚的统治地位。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）泰国将成为比亚迪右舵车出口基地；中长期（3-5年）可能重塑东南亚汽车产业链，日系车份额或从 <span class="num-key">80%</span> 降至 <span class="num-down">50%</span> 以下。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中国电动车全面主导东南亚，该地区将成为全球电动化率最高的区域之一，但同时也可能引发美欧的贸易反制与产业保护。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.facebook.com/BYDReverThailandOfficial/" target="_blank">BYD RÊVER Thailand Facebook</a></p>
+        </div>
+
+        <!-- 新闻 港股科技 -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">港股科技股震荡，恒生科技指数微跌</span>
+                <span class="meta">⭐⭐⭐</span>
+                <span class="impact impact-low">冲击：Low</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+            <div class="item-summary">
+                2026年5月29日港股收盘：恒生指数收涨 <span class="num-up">0.70%</span>，但恒生科技指数下跌 <span class="num-down">0.09%</span>。耐用消费品与国防军工板块领涨，科技股内部分化明显，市场对AI与硬科技估值存在分歧。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Hong Kong Tech Stocks Mixed; Hang Seng Tech Index Edges Down</p>
+                <p class="en-summary">On May 29, 2026, the Hang Seng Index rose 0.70% while the Hang Seng Tech Index fell 0.09%. Consumer durables and defense stocks led gains, showing market divergence on tech valuations.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>divergence</b> 分化</span>
+                        <span class="vocab-item"><b>consumer durables</b> 耐用消费品</span>
+                        <span class="vocab-item"><b>valuation</b> 估值</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>港股科技指数微跌但恒指收涨，说明资金从纯科技股流向消费与军工，市场风格短期切换。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）科技股可能继续承压，但AI与半导体等硬科技长期逻辑未变；若美联储释放降息信号，科技股可能重新领涨。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>港股作为连接中美的“金融桥梁”，其科技股走势将成为全球资本对中国科技信心的温度计。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.facebook.com/NewtimespaceHK/videos/..." target="_blank">新时空 (Facebook)</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：硬科技呈现“冰火两重天”——华为云与比亚迪代表中国科技出海的高光面，而港股科技震荡反映资本市场的谨慎情绪。整体看，中国科技企业正从“制造”向“智造+云服务”转型，但地缘与估值压力并存。</div>
+    </div>
+
+    <!-- 板块3: 中国政策与监管 -->
+    <div class="section">
+        <div class="section-header">🇨🇳 中国政策与监管</div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="title">华为持续深耕 ICT 基础设施，自主可控战略深化</span>
+                <span class="meta">⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                华为官网重申“构建万物互联的智能世界”愿景，在 ICT 基础设施和智能终端领域持续投入。结合近期华为云与 AI 布局，显示中国科技龙头正加速摆脱外部依赖，构建自主技术底座。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Huawei Deepens ICT Infrastructure Push, Reinforcing Self-Reliance Strategy</p>
+                <p class="en-summary">Huawei reiterates its commitment to building a fully connected, intelligent world, with sustained investment in ICT infrastructure and smart devices, reflecting China's push for technological self-sufficiency.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>ICT infrastructure</b> 信息与通信基础设施</span>
+                        <span class="vocab-item"><b>self-reliance</b> 自主可控</span>
+                        <span class="vocab-item"><b>smart terminals</b> 智能终端</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>华为的“自主可控”不是口号，而是从芯片设计（鲲鹏）、操作系统（鸿蒙）到云服务（华为云）的全栈替代方案。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）将加速国内政企市场的国产化替代；中长期（3-5年）可能形成与 AWS/Azure 并列的“第三朵云”，但海外市场拓展仍受地缘政治限制。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果华为全栈自主成功，中国将拥有全球第二套完整数字基础设施，数字世界的“北约”与“华约”格局将正式成型。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.huawei.com/cn/" target="_blank">华为官网</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：中国政策主线仍是“科技自主”，华为、比亚迪等企业成为政策落地的核心载体。预计下半年将有更多配套产业基金与税收优惠出台，但外部制裁风险仍是最大变量。</div>
+    </div>
+
+    <!-- 板块4: 经济/金融 -->
+    <div class="section">
+        <div class="section-header">💰 经济/金融</div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="title">港股收盘：恒指收涨，科技板块分化</span>
+                <span class="meta">⭐⭐⭐</span>
+                <span class="impact impact-low">冲击：Low</span>
+            </div>
+            <div class="item-summary">
+                2026年5月29日，恒生指数收涨 <span class="num-up">0.70%</span>，恒生科技指数下跌 <span class="num-down">0.09%</span>，耐用消费品与国防军工涨幅居前。市场呈现“防御+消费”偏好，科技股短期承压。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Hong Kong Market: Hang Seng Rises, Tech Sector Under Pressure</p>
+                <p class="en-summary">The Hang Seng Index gained 0.70% on May 29, while the Tech Index slipped 0.09%. Consumer durables and defense outperformed, signaling a defensive shift in market sentiment.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>defensive shift</b> 防御性切换</span>
+                        <span class="vocab-item"><b>outperform</b> 表现优于</span>
+                        <span class="vocab-item"><b>market sentiment</b> 市场情绪</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>资金从高估值科技股流向消费与军工板块，反映市场短期风险偏好下降。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>若美联储6月议息会议释放鸽派信号，科技股可能反弹；反之，防御行情或延续至三季度。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>港股的板块轮动往往是全球资金流向的缩影，若科技股持续回调，可能引发一级市场估值调整，影响AI等领域的融资节奏。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.facebook.com/NewtimespaceHK/videos/..." target="_blank">新时空 (Facebook)</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：全球宏观面处于“降息预期”与“通胀黏性”的拉锯战，港股短期震荡格局难破。投资者需关注6月中旬美联储议息会议，以及中国是否会出台新一轮财政刺激。</div>
+    </div>
+
+    <!-- 板块5: 地缘政治与国际关系 -->
+    <div class="section">
+        <div class="section-header">🌍 地缘政治与国际关系</div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="title">中泰经贸升温，比亚迪泰国现象折射区域格局变化</span>
+                <span class="meta">⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+            <div class="item-summary">
+                比亚迪在泰国市场的爆发式增长（单日讨论超 <span class="num-key">3.1万</span>）不仅是商业成功，更折射出中国在东南亚的经济影响力正从贸易向产业链投资升级。日系车在泰国的传统优势面临挑战。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">China-Thailand Economic Ties Heat Up; BYD Success Reflects Regional Shift</p>
+                <p class="en-summary">BYD's explosive growth in Thailand (over 31,000 daily interactions) signals China's deepening economic influence in Southeast Asia, shifting from trade to industrial chain investment, challenging Japanese auto dominance.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>economic influence</b> 经济影响力</span>
+                        <span class="vocab-item"><b>industrial chain</b> 产业链</span>
+                        <span class="vocab-item"><b>dominance</b> 主导地位</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国在东南亚的角色从“世界工厂”升级为“产业链投资者”，比亚迪泰国工厂是缩影。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）中国电动车品牌在东南亚市占率将快速提升；中长期（3-5年）可能引发美欧在东南亚的“供应链反制”，如推出“印太经济框架”电动车补贴。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果东南亚成为中国主导的“电动车后院”，全球汽车产业版图将彻底改写，日本经济可能因此遭受结构性冲击。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.facebook.com/BYDReverThailandOfficial/" target="_blank">BYD RÊVER Thailand</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：今日地缘新闻相对平静，但中泰经贸升温与比亚迪现象值得警惕——经济影响力正在转化为地缘影响力。美国可能在2026年下半年加强对东南亚的拉拢，形成“中美双供应链”格局。</div>
+    </div>
+
+    <!-- 板块6: 材料科学 -->
+    <div class="section">
+        <div class="section-header">🔬 材料科学</div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="title">半导体基础材料科普热度上升，硅基材料仍是绝对主流</span>
+                <span class="meta">⭐⭐⭐</span>
+                <span class="impact impact-low">冲击：Low</span>
+            </div>
+            <div class="item-summary">
+                多家科技媒体（TechTarget、IBM、Britannica）集中发布半导体科普内容，强调硅（Si）作为基础材料的核心地位。尽管碳化硅（SiC）、氮化镓（GaN）等第三代半导体受关注，但短期内硅基材料仍占 <span class="num-key">95%</span> 以上市场份额。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Silicon Remains Dominant in Semiconductors, Despite SiC/GaN Hype</p>
+                <p class="en-summary">Multiple tech outlets published primers on semiconductors, reaffirming silicon's dominance (>95% market share) despite growing interest in wide-bandgap materials like SiC and GaN for power electronics.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>wide-bandgap</b> 宽禁带</span>
+                        <span class="vocab-item"><b>silicon carbide (SiC)</b> 碳化硅</span>
+                        <span class="vocab-item"><b>gallium nitride (GaN)</b> 氮化镓</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>半导体材料科普热潮背后是市场对“后摩尔时代”材料的焦虑，但现实是硅基工艺在成本与成熟度上仍无可替代。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）SiC 在电动汽车逆变器领域渗透率将提升至 <span class="num-key">20%</span>；但逻辑芯片领域，硅基 FinFET 仍将延续至 <span class="num-key">2nm</span> 节点。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果未来十年出现“硅基+量子”混合计算架构，材料科学将迎来新一轮革命，但在此之前，硅依然是半导体世界的“石油”。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.ibm.com/think/topics/semiconductors" target="_blank">IBM / TechTarget / Britannica</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：材料科学领域今日无重大突破性新闻，但科普热度的上升侧面反映市场对半导体供应链安全的关注。第三代半导体（SiC/GaN）仍是中长期投资热点，但短期需警惕估值泡沫。</div>
+    </div>
+
+    <!-- 板块7: 生命科学/医学 -->
+    <div class="section">
+        <div class="section-header">🧬 生命科学/医学</div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="title">澳大利亚关节炎研究取得进展，新型疗法进入临床前最后阶段</span>
+                <span class="meta">⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                Arthritis Australia 宣布类风湿关节炎（RA）新型疗法已进入“高级开发阶段”，虽未完全进入临床，但进展“持续快速”。该疗法可能通过重置免疫系统实现长期缓解，影响全球 <span class="num-key">1800万</span> RA 患者。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Australian Arthritis Research Advances; Novel Therapy in Late-Stage Development</p>
+                <p class="en-summary">Arthritis Australia reports a pioneering treatment for rheumatoid arthritis (RA) has entered advanced development, offering potential for long-term remission by resetting the immune system. The therapy could impact 18 million RA patients globally.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>rheumatoid arthritis (RA)</b> 类风湿关节炎</span>
+                        <span class="vocab-item"><b>remission</b> 缓解</span>
+                        <span class="vocab-item"><b>immune system reset</b> 免疫系统重置</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>类风湿关节炎是自身免疫疾病，传统治疗只能控制症状。新疗法旨在“教会”免疫系统不再攻击自身关节，类似给免疫系统做一次“系统重置”。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）若临床试验成功，将成为自身免疫疾病治疗的范式突破；中长期（5-10年）可能推广至红斑狼疮、克罗恩病等其他自身免疫病。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果免疫重置技术成熟，自身免疫疾病将像“杀毒软件一键修复”一样被治愈，数亿患者将摆脱终身用药的负担，医疗体系也将从“慢性病管理”转向“一次性治愈”。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://arthritisaustralia.com.au/reset-ra/" target="_blank">Arthritis Australia</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：生命科学领域今日亮点在自身免疫疾病治疗，澳大利亚的 RA 新疗法代表“免疫重置”概念从理论走向临床。同时，中国在 CAR-T、基因编辑等领域的进展也值得持续关注。</div>
+    </div>
+
+    <!-- 时间提醒模块 -->
+    <div class="timeline">
+        <h4>⏰ 近期关键时间节点</h4>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-06-10</span>
+            <span>港股科技股季度调整生效，关注恒生科技指数成分变动</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-06-15</span>
+            <span>美联储议息会议，市场预期维持利率不变，关注点阵图指引</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-06-30</span>
+            <span>美对华半导体出口新规可能进一步更新，供应链风险窗口</span>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        全球动态简报 · 基于原始新闻的智能分析生成 · 2026-06-02
+    </div>
+</div>
+</body>
+</html>
