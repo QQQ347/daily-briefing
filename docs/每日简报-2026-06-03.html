@@ -5,685 +5,448 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>全球动态日报 | 2026-06-03</title>
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f5f7; color: #1a1a2e; margin: 0; padding: 20px; }
-  .container { max-width: 900px; margin: 0 auto; }
-  .header { text-align: center; padding: 20px 0; border-bottom: 2px solid #2c3e50; margin-bottom: 30px; }
-  .header h1 { font-size: 26px; font-weight: 700; margin: 0; color: #2c3e50; }
-  .header .date { font-size: 14px; color: #7f8c8d; margin-top: 5px; }
-  .overview { background: #ffffff; border-left: 6px solid #3498db; padding: 20px 24px; margin-bottom: 30px; border-radius: 4px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
-  .overview h3 { font-size: 18px; font-weight: 600; margin: 0 0 10px 0; color: #2c3e50; }
-  .overview p { font-size: 15px; line-height: 1.6; margin: 0 0 12px 0; color: #34495e; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 20px; color: #1a1a2e; }
+  .container { max-width: 880px; margin: 0 auto; background: #ffffff; border-radius: 12px; padding: 30px 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+  h2 { font-size: 22px; font-weight: 600; border-bottom: 2px solid #eef2f7; padding-bottom: 10px; margin-top: 28px; margin-bottom: 18px; color: #0b2545; }
+  h3 { font-size: 18px; font-weight: 600; margin: 0 0 6px 0; color: #0b2545; }
+  h4 { font-size: 16px; font-weight: 600; margin: 20px 0 12px 0; color: #1a1a2e; }
+  .overview { background: #eef6ff; padding: 20px 22px; border-radius: 10px; margin-bottom: 28px; border-left: 4px solid #2a6df4; }
+  .overview p { font-size: 15px; line-height: 1.6; margin: 0 0 12px 0; color: #1e2a4a; }
   .overview-tags { display: block; }
-  .overview-tag { display: inline-block; background: #eaf2f8; color: #2980b9; font-size: 13px; font-weight: 600; padding: 4px 12px; border-radius: 12px; margin-right: 8px; margin-bottom: 4px; }
-  .section { background: #ffffff; border-radius: 4px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); margin-bottom: 28px; padding: 20px 24px; }
-  .section-title { font-size: 20px; font-weight: 600; color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 10px; margin-top: 0; margin-bottom: 18px; }
-  .item { margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0; }
-  .item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .item-header { margin-bottom: 8px; display: block; }
-  .item-header h4 { display: inline; font-size: 16px; font-weight: 600; color: #1a1a2e; margin-right: 10px; }
-  .star { color: #f39c12; font-size: 14px; margin-right: 8px; }
-  .impact { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 3px; margin-right: 6px; vertical-align: middle; }
-  .impact-high { background: #fde8e8; color: #c0392b; }
-  .impact-med { background: #fef5e7; color: #d35400; }
-  .impact-low { background: #eafaf1; color: #27ae60; }
-  .risk-red { display: inline-block; font-size: 11px; font-weight: 600; background: #fdedec; color: #c0392b; padding: 2px 8px; border-radius: 3px; margin-right: 4px; vertical-align: middle; }
-  .risk-yellow { display: inline-block; font-size: 11px; font-weight: 600; background: #fef9e7; color: #b7950b; padding: 2px 8px; border-radius: 3px; margin-right: 4px; vertical-align: middle; }
-  .item-summary { font-size: 14px; line-height: 1.6; color: #2c3e50; margin: 8px 0 12px 0; }
-  .num-up { color: #27ae60; font-weight: 600; }
-  .num-down { color: #c0392b; font-weight: 600; }
-  .num-key { color: #2980b9; font-weight: 600; }
-  .bilingual { background: #f9f9fb; border-left: 3px solid #bdc3c7; padding: 12px 16px; margin: 12px 0; border-radius: 3px; }
-  .en-title { font-size: 14px; font-weight: 600; color: #2c3e50; margin: 0 0 6px 0; }
-  .en-summary { font-size: 13px; color: #4a4a5a; line-height: 1.5; margin: 0 0 8px 0; }
-  .vocab-card { background: #ffffff; border: 1px solid #e0e0e0; border-radius: 4px; padding: 8px 12px; margin-top: 6px; }
-  .vocab-title { font-size: 12px; font-weight: 600; color: #7f8c8d; margin-bottom: 4px; }
+  .overview-tag { display: inline-block; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 30px; padding: 4px 14px; font-size: 13px; font-weight: 400; margin: 4px 8px 4px 0; color: #1e3a5f; }
+  .item { background: #fafbfc; border: 1px solid #e9edf2; border-radius: 10px; padding: 18px 20px; margin-bottom: 18px; }
+  .item-header { display: block; margin-bottom: 8px; }
+  .item-header h3 { display: inline; font-size: 17px; font-weight: 600; color: #0b2545; }
+  .star { color: #f5b342; font-size: 14px; margin-left: 6px; letter-spacing: 1px; }
+  .impact { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 20px; margin-left: 8px; vertical-align: middle; }
+  .impact-high { background: #fee2e2; color: #b91c1c; }
+  .impact-med { background: #fff3cd; color: #856404; }
+  .impact-low { background: #e2e8f0; color: #475569; }
+  .risk-red { display: inline-block; background: #fee2e2; color: #991b1b; font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 20px; margin-left: 6px; vertical-align: middle; }
+  .risk-yellow { display: inline-block; background: #fff3cd; color: #856404; font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 20px; margin-left: 6px; vertical-align: middle; }
+  .item-summary { font-size: 15px; line-height: 1.6; margin: 10px 0; color: #1f2937; }
+  .num-up { background: #dcfce7; color: #166534; font-weight: 600; padding: 0 4px; border-radius: 4px; }
+  .num-down { background: #fee2e2; color: #991b1b; font-weight: 600; padding: 0 4px; border-radius: 4px; }
+  .num-key { background: #eef2ff; color: #4338ca; font-weight: 600; padding: 0 4px; border-radius: 4px; }
+  .bilingual { background: #f8fafc; border: 1px solid #dde3ea; border-radius: 8px; padding: 14px 16px; margin: 14px 0; }
+  .en-title { font-size: 15px; font-weight: 600; color: #0b2545; margin: 0 0 6px 0; }
+  .en-summary { font-size: 14px; line-height: 1.5; color: #334155; margin: 0 0 10px 0; }
+  .vocab-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 14px; }
+  .vocab-title { font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 6px; }
   .vocab-list { display: block; }
-  .vocab-item { display: inline-block; font-size: 12px; color: #34495e; margin-right: 14px; margin-bottom: 2px; }
-  .compare-box { background: #fafafa; border: 1px solid #e0e0e0; border-radius: 4px; padding: 14px 16px; margin: 16px 0; display: block; }
-  .compare-side { display: inline-block; width: 45%; vertical-align: top; font-size: 13px; line-height: 1.5; color: #2c3e50; }
-  .compare-bull { border-right: 1px solid #e0e0e0; padding-right: 16px; margin-right: 16px; }
-  .compare-label { font-weight: 600; margin-bottom: 4px; font-size: 13px; }
-  .deepdive { margin: 12px 0; }
-  .deepdive summary { font-size: 13px; font-weight: 600; color: #2980b9; cursor: pointer; padding: 4px 0; }
-  .deepdive-content { background: #f8f9fa; padding: 12px 16px; border-radius: 4px; margin-top: 8px; border: 1px solid #e9ecef; }
-  .dl { font-size: 13px; line-height: 1.5; margin: 6px 0; color: #2c3e50; }
-  .dl-label { font-weight: 600; color: #2c3e50; }
-  .item-source { font-size: 12px; color: #95a5a6; margin-top: 8px; }
-  .item-source a { color: #3498db; text-decoration: none; }
-  .item-source a:hover { text-decoration: underline; }
-  .trend-comment { background: #f0f4f8; padding: 12px 16px; border-radius: 4px; font-size: 13px; color: #2c3e50; line-height: 1.5; margin-top: 16px; border-left: 4px solid #7f8c8d; }
-  .timeline { background: #fef9e7; border: 1px solid #f9e79f; border-radius: 4px; padding: 16px 20px; margin: 30px 0; }
-  .timeline h4 { font-size: 16px; font-weight: 600; color: #7d6608; margin: 0 0 12px 0; }
-  .timeline-item { font-size: 13px; color: #2c3e50; margin-bottom: 8px; display: block; }
-  .timeline-date { display: inline-block; font-weight: 600; color: #c0392b; margin-right: 10px; min-width: 90px; }
-  .footer { text-align: center; padding: 20px 0; font-size: 12px; color: #95a5a6; border-top: 1px solid #e0e0e0; margin-top: 20px; }
+  .vocab-item { display: inline-block; background: #f1f5f9; border-radius: 20px; padding: 2px 12px; font-size: 13px; margin: 2px 6px 2px 0; color: #1e293b; }
+  .compare-box { background: #f9fafb; border: 1px solid #d1d5db; border-radius: 8px; padding: 14px 16px; margin: 16px 0; display: block; }
+  .compare-side { display: inline-block; width: 44%; vertical-align: top; padding: 8px 12px; font-size: 14px; line-height: 1.5; }
+  .compare-bull { background: #f0fdf4; border-left: 4px solid #16a34a; }
+  .compare-bear { background: #fef2f2; border-left: 4px solid #dc2626; margin-left: 4%; }
+  .compare-label { font-weight: 600; margin-bottom: 4px; }
+  details.deepdive { margin: 12px 0 6px 0; }
+  details.deepdive summary { font-size: 14px; font-weight: 600; color: #2563eb; cursor: pointer; padding: 6px 0; }
+  .deepdive-content { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 16px; margin-top: 6px; }
+  .dl { margin: 6px 0; font-size: 14px; line-height: 1.6; }
+  .dl-label { font-weight: 600; color: #1e293b; }
+  .item-source { font-size: 13px; color: #64748b; margin: 10px 0 0 0; border-top: 1px solid #e9edf2; padding-top: 10px; }
+  .item-source a { color: #2563eb; text-decoration: none; }
+  .trend-comment { background: #f1f5f9; border-radius: 8px; padding: 12px 16px; margin: 10px 0 22px 0; font-size: 14px; line-height: 1.6; color: #1e293b; border-left: 4px solid #64748b; }
+  .timeline { background: #fef9e7; border: 1px solid #fde68a; border-radius: 10px; padding: 18px 20px; margin: 24px 0; }
+  .timeline h4 { margin: 0 0 12px 0; font-size: 16px; color: #92400e; }
+  .timeline-item { display: block; margin: 6px 0; font-size: 14px; }
+  .timeline-date { display: inline-block; background: #ffffff; border: 1px solid #fcd34d; border-radius: 20px; padding: 2px 12px; font-weight: 600; color: #78350f; margin-right: 10px; font-size: 13px; }
+  .footer-note { text-align: center; font-size: 13px; color: #94a3b8; margin-top: 28px; border-top: 1px solid #e2e8f0; padding-top: 18px; }
+  @media (max-width: 700px) { .container { padding: 16px; } .compare-side { width: 100%; margin-left: 0; margin-bottom: 8px; display: block; } }
 </style>
 </head>
 <body>
 <div class="container">
 
-<div class="header">
-  <h1>🌍 全球动态日报</h1>
-  <div class="date">2026年6月3日 · 星期三</div>
-</div>
-
-<div class="overview">
-  <h3>🧠 今日综述</h3>
-  <p>今日简报聚焦三大主线：中美半导体博弈进入立法新阶段，美国《MATCH法案》高票通过标志管制升级；中国科技企业加速自主突破，比亚迪发布4nm智驾芯片、华为提出"韬定律"绕开EUV；AI领域激烈竞赛持续，Anthropic推出Claude Opus 4.8，DeepSeek V4引发关注。材料科学方面，氢能制备与电池材料发现取得突破性进展。整体风向：科技自主化加速，地缘风险显著上升，能源材料领域孕育新机。</p>
-  <div class="overview-tags">
-    <span class="overview-tag">🔴 半导体管制升级</span>
-    <span class="overview-tag">🇨🇳 芯片自主突破</span>
-    <span class="overview-tag">🤖 AI模型竞赛</span>
-    <span class="overview-tag">🧪 氢能新突破</span>
-    <span class="overview-tag">⚡ 材料科学革命</span>
-  </div>
-</div>
-
-<!-- 板块1: 生命科学/医学 -->
-<div class="section">
-  <h3 class="section-title">🧬 生命科学 / 医学</h3>
-  
-  <div class="item">
-    <div class="item-header">
-      <h4>氢能制备突破：废热变清洁燃料</h4>
-      <span class="star">⭐⭐⭐⭐</span>
-      <span class="impact impact-high">冲击：High</span>
-      <span class="risk-yellow">🟡 值得观察</span>
+  <!-- 今日综述 -->
+  <div class="overview">
+    <h3>🧠 今日全球动态综述</h3>
+    <p>2026年6月3日简报：美股标普500首破7600点，市场情绪亢奋但AI超级IPO窗口出现分歧；中国半导体自主化加速，比亚迪4nm智驾芯片量产、华为发布“韬定律”引发技术路线之争；材料科学领域发现新型“隐藏”材料，有望革新清洁能源与电池。整体风向：金融端乐观，科技端竞争白热化，地缘技术博弈持续深化。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">📈 标普500新高</span>
+      <span class="overview-tag">🚗 比亚迪4nm芯片</span>
+      <span class="overview-tag">⚛️ 华为韬定律争议</span>
+      <span class="overview-tag">🔋 清洁能源新材料</span>
+      <span class="overview-tag">🤖 AI IPO分化</span>
     </div>
-    <div class="item-summary">
-      6月2日，研究人员公布一种突破性制氢方法，可将废热直接转化为清洁燃料。该技术有望大幅降低绿氢生产成本，若实现规模化，制氢成本可降低 <span class="num-down">-40%</span> 以上，对全球能源转型意义重大。
-    </div>
-    <div class="bilingual">
-      <p class="en-title">Breakthrough Hydrogen Method Turns Waste Heat Into Clean Fuel</p>
-      <p class="en-summary">On June 2, researchers unveiled a novel hydrogen-production method that converts waste heat directly into clean fuel. This innovation could slash green hydrogen production costs by over <span class="num-down">-40%</span>, representing a significant step toward affordable clean energy.</p>
-      <div class="vocab-card">
-        <div class="vocab-title">📖 Key Vocabulary</div>
-        <div class="vocab-list">
-          <span class="vocab-item"><b>waste heat</b> 废热</span>
-          <span class="vocab-item"><b>hydrogen production</b> 制氢</span>
-          <span class="vocab-item"><b>clean fuel</b> 清洁燃料</span>
-        </div>
-      </div>
-    </div>
-    <details class="deepdive">
-      <summary>📖 深度解读</summary>
-      <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>一种利用工业废热或地热等低品位热源，通过热化学或电化学耦合路径直接分解水制氢的新方法。核心突破在于能量转换效率大幅提升，摆脱了对高纯度电力或昂贵催化剂的依赖。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内可在钢铁、化工等高耗能行业进行废热回收制氢试点；中长期（3-10年）有望与光热发电、核能余热结合，实现分布式、低成本绿氢供应，推动氢能重卡、氢冶金等场景商业化。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果完全实现，工厂烟囱不再是污染源而是"能源农场"，每度废热都能转化为清洁燃料，能源生产从集中式走向分布式，全球碳排放曲线加速下行。</p>
-      </div>
-    </details>
-    <p class="item-source">来源：<a href="https://www.sciencedaily.com/news/matter_energy/materials_science/" target="_blank">ScienceDaily</a></p>
   </div>
 
+  <!-- ========== 1. 生命科学/医学 ========== -->
+  <h2>🧬 生命科学 / 医学</h2>
+
+  <!-- 条目1 -->
   <div class="item">
     <div class="item-header">
-      <h4>"隐藏"材料发现，或颠覆电池与清洁能源</h4>
-      <span class="star">⭐⭐⭐⭐</span>
-      <span class="impact impact-med">冲击：Med</span>
-    </div>
-    <div class="item-summary">
-      科学家通过捕捉加热过程中的不可见中间态，发现一批具有非常规特性的新材料。这些材料在储能和催化方面表现优异，有望为下一代固态电池和清洁能源催化剂的开发提供全新路径。
-    </div>
-    <div class="bilingual">
-      <p class="en-title">Scientists Discover 'Hidden' Materials That Could Transform Clean Energy and Batteries</p>
-      <p class="en-summary">By capturing normally unseen intermediate stages during heating, researchers discovered new materials with unusual properties that could influence future clean-energy and battery technologies, particularly for solid-state batteries and advanced catalysts.</p>
-      <div class="vocab-card">
-        <div class="vocab-title">📖 Key Vocabulary</div>
-        <div class="vocab-list">
-          <span class="vocab-item"><b>intermediate stage</b> 中间态</span>
-          <span class="vocab-item"><b>solid-state battery</b> 固态电池</span>
-          <span class="vocab-item"><b>catalyst</b> 催化剂</span>
-        </div>
-      </div>
-    </div>
-    <details class="deepdive">
-      <summary>📖 深度解读</summary>
-      <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传统材料合成研究通常关注最终产物，而这次研究利用原位表征技术在加热过程中"抓拍"到短暂存在的中间相结构，发现这些亚稳态材料具备超离子导电性和高催化活性。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期可加速固态电解质材料的筛选；中长期或催生能量密度翻倍的固态锂电池和更高效的电解水催化剂，对电动汽车和绿氢产业形成双重推动。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来材料研发不再是"试错"，而是像导演一样精准控制合成路径中的每一个"隐藏角色"，按需设计出超高性能材料，电池续航突破1000公里成为常态。</p>
-      </div>
-    </details>
-    <p class="item-source">来源：<a href="https://scitechdaily.com/scientists-discover-hidden-materials-that-could-transform-clean-energy-and-batteries/" target="_blank">SciTechDaily</a></p>
-  </div>
-
-  <div class="trend-comment">📊 板块趋势：生命科学/材料交叉领域产出密集，氢能制备与电池材料发现成为本月两大亮点。基础研究的突破正在加速向应用端传导，能源材料领域有望在未来1-2年迎来商业化窗口。</div>
-</div>
-
-<!-- 板块2: 经济/金融 -->
-<div class="section">
-  <h3 class="section-title">💰 经济 / 金融</h3>
-
-  <div class="item">
-    <div class="item-header">
-      <h4>人民币兑美元汇率中间价持稳</h4>
+      <h3>基因基础概念综述：孟德尔基因与分子基因的双重定义</h3>
       <span class="star">⭐⭐⭐</span>
       <span class="impact impact-low">冲击：Low</span>
+      <span class="risk-yellow">🟡 值得观察</span>
     </div>
     <div class="item-summary">
-      6月3日，国家外汇管理局公布人民币汇率中间价，在岸人民币兑美元报 <span class="num-key">7.1086</span>，离岸人民币交投于 <span class="num-key">7.13</span> 附近。市场交投清淡，美元指数在 <span class="num-key">104.5</span> 附近窄幅震荡。
+      多平台（Wikipedia、Cleveland Clinic、Britannica）更新基因基础定义，强调基因作为遗传基本单位与DNA转录功能单元的双重属性。科普层面强化公众对基因、内含子与外显子结构的认知，为后续基因编辑与治疗普及奠定基础。
     </div>
     <div class="bilingual">
-      <p class="en-title">USD/CNY Central Parity Rate Holds Steady</p>
-      <p class="en-summary">On June 3, the State Administration of Foreign Exchange set the USD/CNY central parity rate at <span class="num-key">7.1086</span>, with offshore yuan trading near <span class="num-key">7.13</span>. The market remained subdued as the dollar index consolidated around <span class="num-key">104.5</span>.</p>
+      <p class="en-title">Foundational Overview of Gene Concepts: Mendelian vs. Molecular Gene</p>
+      <p class="en-summary">Multiple authoritative platforms have updated their foundational definitions of genes, emphasizing the dual nature as both a unit of heredity (Mendelian gene) and a functional DNA sequence transcribed into RNA (molecular gene). This educational consolidation strengthens public understanding of intron/exon structure and genetic regulation.</p>
       <div class="vocab-card">
         <div class="vocab-title">📖 Key Vocabulary</div>
         <div class="vocab-list">
-          <span class="vocab-item"><b>central parity rate</b> 中间价</span>
-          <span class="vocab-item"><b>offshore yuan</b> 离岸人民币</span>
-          <span class="vocab-item"><b>consolidate</b> 盘整</span>
+          <span class="vocab-item"><b>gene</b> 基因</span>
+          <span class="vocab-item"><b>heredity</b> 遗传</span>
+          <span class="vocab-item"><b>intron/exon</b> 内含子/外显子</span>
+          <span class="vocab-item"><b>transcription</b> 转录</span>
         </div>
       </div>
     </div>
     <details class="deepdive">
       <summary>📖 深度解读</summary>
       <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>央行通过设定中间价引导市场预期，当前汇率持稳反映监管层"以稳为主"的政策意图。中美利差倒挂和中美贸易摩擦是主要压力来源。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期人民币大概率在 <span class="num-key">7.05-7.15</span> 区间震荡；若半导体管制升级引发资本外流，贬值压力可能加大。中期走势取决于出口竞争力和美联储降息节奏。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>人民币国际化持续推进，未来汇率弹性增强，但"不可能三角"下货币政策独立性仍是优先考量。</p>
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>基因是生命最基本的“信息单元”，就像一本食谱中的每一条菜谱。孟德尔基因指的是决定豌豆颜色的“遗传因子”，而分子基因则精确到DNA上的一段序列。本次更新是对基础科学概念的再梳理。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）有助于公众理解基因检测报告；中长期（5年）为个性化医疗和基因疗法的教育普及铺路。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果每个人都能准确理解基因概念，基因编辑的社会讨论将更加理性，伦理决策更加透明。</p>
       </div>
     </details>
-    <p class="item-source">来源：<a href="https://www.safe.gov.cn/safe/rmbhlzjj/" target="_blank">国家外汇管理局</a></p>
+    <p class="item-source">来源：<a href="https://en.m.wikipedia.org/wiki/Gene" target="_blank">Wikipedia</a> | <a href="https://my.clevelandclinic.org/health/body/gene" target="_blank">Cleveland Clinic</a> | <a href="https://www.britannica.com/science/gene" target="_blank">Britannica</a></p>
   </div>
 
+  <div class="trend-comment">📊 板块趋势：生命科学领域今日无重大突破性新闻，以基础科普与文献更新为主，市场关注点集中在AI与半导体赛道，生命科学板块相对平静。</div>
+
+  <!-- ========== 2. 经济/金融 ========== -->
+  <h2>💰 经济 / 金融</h2>
+
+  <!-- 条目2 -->
   <div class="item">
     <div class="item-header">
-      <h4>2026年中美贸易关系演变与企业应对</h4>
+      <h3>标普500首次站上7600点，美股延续创纪录涨势</h3>
       <span class="star">⭐⭐⭐⭐</span>
-      <span class="impact impact-high">冲击：High</span>
-      <span class="risk-red">🔴 重大风险</span>
-    </div>
-    <div class="item-summary">
-      分析指出，2026财年《国防授权法案》（NDAA）扩大CFIUS权限，加强对华投资管制，覆盖高性能计算、半导体、高超音速系统和前沿AI技术。企业面临合规成本上升和供应链重构双重压力。
-    </div>
-    <div class="bilingual">
-      <p class="en-title">Evolving US-China Trade Relations in 2026 and Corporate Responses</p>
-      <p class="en-summary">The 2026 NDAA expands CFIUS authority and tightens outbound investment controls, covering high-performance computing, semiconductors, hypersonic systems, and frontier AI. Companies face rising compliance costs and supply chain restructuring pressures.</p>
-      <div class="vocab-card">
-        <div class="vocab-title">📖 Key Vocabulary</div>
-        <div class="vocab-list">
-          <span class="vocab-item"><b>outbound investment</b> 对外投资</span>
-          <span class="vocab-item"><b>supply chain restructuring</b> 供应链重构</span>
-          <span class="vocab-item"><b>compliance cost</b> 合规成本</span>
-        </div>
-      </div>
-    </div>
-    <details class="deepdive">
-      <summary>📖 深度解读</summary>
-      <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美国通过立法扩大对华投资审查范围，限制美国资本流向中国半导体、AI等战略领域。同时要求企业披露更多供应链信息，形成"投资+技术"双重封锁。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期企业需加速"中国+1"供应链布局，东南亚、墨西哥成为热门替代地；中长期将加速中国科技自主，但也推高全球科技产业链成本。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>全球科技产业链从"效率优先"转向"安全优先"，形成中美双供应链体系，企业需同时运营两套合规体系。</p>
-      </div>
-    </details>
-    <p class="item-source">来源：<a href="https://www.sohu.com/a/1003076612_120287836" target="_blank">搜狐</a></p>
-  </div>
-
-  <div class="trend-comment">📊 板块趋势：金融端受地缘政治压制明显，汇率维稳但资本流动压力增大。中美贸易摩擦从关税战升级为投资管制战，企业合规成本系统性上升。短期避险情绪主导市场。</div>
-</div>
-
-<!-- 板块3: 人工智能 -->
-<div class="section">
-  <h3 class="section-title">🤖 人工智能</h3>
-
-  <div class="item">
-    <div class="item-header">
-      <h4>Anthropic发布Claude Opus 4.8，支持数百并行子代理</h4>
-      <span class="star">⭐⭐⭐⭐⭐</span>
-      <span class="impact impact-high">冲击：High</span>
-    </div>
-    <div class="item-summary">
-      5月29日，Anthropic发布Claude Opus 4.8，新增研究预览功能，允许Claude在Claude Code中规划任务并同时运行数百个并行子代理。这一"多智能体协作"架构使复杂工程任务效率提升 <span class="num-up">5-10倍</span>。
-    </div>
-    <div class="bilingual">
-      <p class="en-title">Anthropic Launches Claude Opus 4.8 with Hundreds of Parallel Subagents</p>
-      <p class="en-summary">On May 29, Anthropic released Claude Opus 4.8, featuring a research preview that enables Claude to plan tasks and run hundreds of parallel subagents within Claude Code. This multi-agent architecture boosts complex engineering task efficiency by <span class="num-up">5-10x</span>.</p>
-      <div class="vocab-card">
-        <div class="vocab-title">📖 Key Vocabulary</div>
-        <div class="vocab-list">
-          <span class="vocab-item"><b>subagent</b> 子代理</span>
-          <span class="vocab-item"><b>parallel execution</b> 并行执行</span>
-          <span class="vocab-item"><b>multi-agent architecture</b> 多智能体架构</span>
-        </div>
-      </div>
-    </div>
-    <details class="deepdive">
-      <summary>📖 深度解读</summary>
-      <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传统AI助手一次只能处理一个任务，Claude Opus 4.8能像项目经理一样将复杂任务拆解，分配给数百个"AI员工"并行执行，最后汇总结果。这标志着AI从"单打独斗"迈向"团队协作"。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期大幅提升代码开发、数据分析、报告生成等场景效率；中长期或重构软件工程、金融建模、科研实验设计等工作流，推动"AI员工"模式普及。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来一个人类工程师可管理一支"AI军团"，软件开发从月级缩短到天级，创造力成为人类唯一稀缺资源。</p>
-      </div>
-    </details>
-    <p class="item-source">来源：<a href="https://www.anthropic.com/news/claude-opus-4-8" target="_blank">Anthropic</a></p>
-  </div>
-
-  <div class="item">
-    <div class="item-header">
-      <h4>DeepSeek V4全面更新，强化学习赋能推理引擎</h4>
-      <span class="star">⭐⭐⭐⭐</span>
-      <span class="impact impact-high">冲击：High</span>
-    </div>
-    <div class="item-summary">
-      DeepSeek V4模型全面更新上线，通过强化学习驱动的推理引擎实现多步逻辑推导能力。在数学推理、编程竞赛等基准测试中表现突出，且免费开放使用，对闭源模型形成竞争压力。
-    </div>
-    <div class="bilingual">
-      <p class="en-title">DeepSeek V4 Fully Updated with Reinforcement Learning-Powered Reasoning</p>
-      <p class="en-summary">DeepSeek V4 has been fully updated, featuring a reinforcement learning-driven reasoning engine capable of autonomous multi-step logical deduction. It excels in math and coding benchmarks and remains free to use, intensifying competition with closed-source models.</p>
-      <div class="vocab-card">
-        <div class="vocab-title">📖 Key Vocabulary</div>
-        <div class="vocab-list">
-          <span class="vocab-item"><b>reinforcement learning</b> 强化学习</span>
-          <span class="vocab-item"><b>reasoning engine</b> 推理引擎</span>
-          <span class="vocab-item"><b>multi-step deduction</b> 多步推导</span>
-        </div>
-      </div>
-    </div>
-    <details class="deepdive">
-      <summary>📖 深度解读</summary>
-      <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek V4通过强化学习让模型学会"思考"而非简单"匹配"——面对数学题或编程任务，它能像人类一样逐步推理、验证、修正，而非直接生成答案。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期在数学、编程、逻辑推理领域超越GPT-4级别模型；中期若持续迭代，有望在科学研究、法律分析等高阶推理场景实现突破，且免费策略将加速用户积累。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>开源+强化学习路线或成为AI民主化的关键路径，未来顶尖AI能力不再被少数巨头垄断，全球开发者都能站在巨人的肩膀上创新。</p>
-      </div>
-    </details>
-    <p class="item-source">来源：<a href="https://deepseekv4.wiki/" target="_blank">DeepSeek V4 Wiki</a></p>
-  </div>
-
-  <div class="item">
-    <div class="item-header">
-      <h4>Anthropic宣布Claude保持无广告模式</h4>
-      <span class="star">⭐⭐⭐⭐</span>
-      <span class="impact impact-med">冲击：Med</span>
-    </div>
-    <div class="item-summary">
-      Anthropic明确表态：Claude将保持无广告模式。公司认为广告激励机制与真正有益的AI助手存在根本性冲突，并计划通过订阅和企业服务扩大用户覆盖。这一立场与部分依赖广告收入的AI产品形成对比。
-    </div>
-    <div class="bilingual">
-      <p class="en-title">Anthropic Chooses Ad-Free Model for Claude</p>
-      <p class="en-summary">Anthropic has stated that Claude will remain ad-free, arguing that advertising incentives are fundamentally incompatible with a genuinely helpful AI assistant. The company plans to expand access through subscriptions and enterprise services instead.</p>
-      <div class="vocab-card">
-        <div class="vocab-title">📖 Key Vocabulary</div>
-        <div class="vocab-list">
-          <span class="vocab-item"><b>ad-free</b> 无广告</span>
-          <span class="vocab-item"><b>incentive</b> 激励机制</span>
-          <span class="vocab-item"><b>enterprise service</b> 企业服务</span>
-        </div>
-      </div>
-    </div>
-    <details class="deepdive">
-      <summary>📖 深度解读</summary>
-      <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Anthropic认为广告模式会诱导AI优先推荐广告商内容而非用户最佳答案，影响中立性和可信度。因此选择订阅制（类似ChatGPT Plus）和企业API收费模式。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期巩固高端用户信任，但可能限制免费用户增长；长期看，AI行业或将分化出"广告支持"和"订阅制"两种商业模式，安全性和中立性成为差异化关键。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来AI助手可能像"数字管家"一样，用户付费获取私密、中立、无干扰的服务，而免费版则通过广告换取算力成本补贴。</p>
-      </div>
-    </details>
-    <p class="item-source">来源：<a href="https://www.anthropic.com/news" target="_blank">Anthropic Newsroom</a></p>
-  </div>
-
-  <div class="trend-comment">📊 板块趋势：AI竞赛进入"多智能体协作"和"深度推理"新阶段。Anthropic聚焦安全与协作，DeepSeek走开源免费路线，OpenAI面临双向夹击。商业模式分化明显，无广告承诺或重塑行业标准。</div>
-</div>
-
-<!-- 板块4: 科技/硬科技 -->
-<div class="section">
-  <h3 class="section-title">💻 科技 / 硬科技</h3>
-
-  <div class="item">
-    <div class="item-header">
-      <h4>比亚迪发布中国首款4nm智驾芯片"璇玑A3"，已量产</h4>
-      <span class="star">⭐⭐⭐⭐⭐</span>
       <span class="impact impact-high">冲击：High</span>
       <span class="risk-yellow">🟡 值得观察</span>
     </div>
     <div class="item-summary">
-      比亚迪发布中国首款 <span class="num-key">4nm</span> 智驾芯片"璇玑A3"，三颗芯片算力超过 <span class="num-key">2100 TOPS</span>，并已开启规模化量产。彭博指出，比亚迪在半导体领域的这一突破正接近华为的领先地位。城市领航辅助驾驶系统"天神之眼 B"同步发布。
+      6月2日，美国标普500指数突破<span class="num-key">7,600</span>点大关，创历史收盘新高。市场由AI算力与科技巨头领涨，投资者对经济软着陆预期增强。但华尔街部分分析师警告估值偏高，短期回调风险上升。
     </div>
     <div class="bilingual">
-      <p class="en-title">BYD Unveils China's First 4nm Autonomous Driving Chip 'Xuanji A3', Enters Mass Production</p>
-      <p class="en-summary">BYD has released China's first <span class="num-key">4nm</span> autonomous driving chip, the Xuanji A3, with three chips delivering over <span class="num-key">2100 TOPS</span> of computing power. Mass production has commenced. Bloomberg notes BYD's semiconductor breakthrough is approaching Huawei's leading position.</p>
+      <p class="en-title">S&P 500 Closes Above 7,600 for the First Time, Extending Record Rally</p>
+      <p class="en-summary">On June 2, 2026, the S&P 500 index closed above the 7,600 mark for the first time in history, driven by AI computing and mega-cap tech stocks. The rally reflects growing optimism about a soft landing, though valuation concerns are mounting among some analysts.</p>
       <div class="vocab-card">
         <div class="vocab-title">📖 Key Vocabulary</div>
         <div class="vocab-list">
-          <span class="vocab-item"><b>autonomous driving chip</b> 自动驾驶芯片</span>
-          <span class="vocab-item"><b>mass production</b> 量产</span>
-          <span class="vocab-item"><b>TOPS</b> 万亿次运算/秒</span>
+          <span class="vocab-item"><b>record high</b> 历史新高</span>
+          <span class="vocab-item"><b>soft landing</b> 软着陆</span>
+          <span class="vocab-item"><b>valuation</b> 估值</span>
+          <span class="vocab-item"><b>rally</b> 上涨行情</span>
         </div>
       </div>
     </div>
     <details class="deepdive">
       <summary>📖 深度解读</summary>
       <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>4nm制程是目前汽车智驾芯片的最先进节点之一，2100 TOPS算力足以支持L4级自动驾驶。比亚迪从整车厂向上游芯片设计延伸，实现"垂直整合"关键一环。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期提升比亚迪车型智驾竞争力，降低对外部芯片供应商（如英伟达、Mobileye）依赖；中长期将加速中国汽车芯片自主化，或带动更多车企自研芯片。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来汽车本质是"带轮子的超级计算机"，车企自研芯片成为标配，软硬件深度整合将重新定义汽车产业格局。</p>
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>标普500突破7600点，意味着美国股市总市值又上了一个台阶。这就像一场马拉松中选手突然加速，但前方是否还有体力（经济增长支撑）存疑。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）若通胀数据持续降温，可能继续冲高；但若美联储释放鹰派信号，回调幅度可能超<span class="num-down">-5%</span>。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果AI生产力全面兑现，当前估值可能被合理化；否则，这可能是又一个“非理性繁荣”的前奏。</p>
       </div>
     </details>
-    <p class="item-source">来源：<a href="https://www.facebook.com/bossmindmedia/posts/..." target="_blank">BossMind / 彭博</a></p>
+    <p class="item-source">来源：<a href="https://www.google.com/finance/beta" target="_blank">Google Finance</a></p>
   </div>
 
+  <div class="trend-comment">📊 板块趋势：美股在AI叙事推动下持续新高，但市场分歧加大。乐观方认为AI投资将拉动2026年全球增速反弹，悲观方警告估值泡沫与通胀黏性。资金正从防御板块向科技成长股转移。</div>
+
+  <!-- ========== 3. 人工智能 ========== -->
+  <h2>🤖 人工智能</h2>
+
+  <!-- 条目3 -->
   <div class="item">
     <div class="item-header">
-      <h4>华为发布"韬定律"，声称无需EUV光刻机也能造高端芯片</h4>
+      <h3>OpenAI IPO窗口争议：商业化迟滞，错失最佳时机？</h3>
       <span class="star">⭐⭐⭐⭐⭐</span>
       <span class="impact impact-high">冲击：High</span>
       <span class="risk-red">🔴 重大风险</span>
     </div>
     <div class="item-summary">
-      华为海思董事何庭波在ISCAS 2026上发布"韬定律"（Tau Law），提出通过3D堆叠、先进封装等非EUV技术路径实现等效 <span class="num-key">1.4nm</span> 制程。但台积电高管回应称该概念并非革命性创新，本质仍是现有技术的整合。
+      《卫报》分析指出，OpenAI在ChatGPT商业化上屡次失策（包括广告变现受阻），CEO Sam Altman曾称广告为“最后手段”。随着CoreWeave、Databricks等AI基础设施公司纷纷启动IPO，OpenAI的超级IPO窗口可能正在关闭，估值面临重估风险。
     </div>
     <div class="bilingual">
-      <p class="en-title">Huawei Unveils 'Tau Law' Claiming High-End Chips Without EUV Lithography</p>
-      <p class="en-summary">At ISCAS 2026, Huawei HiSilicon chair He Tingbo announced the 'Tau Law,' proposing a path to achieve equivalent <span class="num-key">1.4nm</span> process using 3D stacking and advanced packaging without EUV lithography. TSMC executives responded that the concept is not revolutionary.</p>
+      <p class="en-title">Has OpenAI Missed Its IPO Moment? Monetization Struggles Loom</p>
+      <p class="en-summary">The Guardian reports that OpenAI has failed to execute key monetization strategies for ChatGPT, including advertising, which CEO Sam Altman described as a "last resort." As AI infrastructure firms like CoreWeave and Databricks race to go public, OpenAI's window for a mega-IPO may be narrowing, raising valuation concerns.</p>
       <div class="vocab-card">
         <div class="vocab-title">📖 Key Vocabulary</div>
         <div class="vocab-list">
-          <span class="vocab-item"><b>EUV lithography</b> EUV光刻</span>
+          <span class="vocab-item"><b>IPO</b> 首次公开募股</span>
+          <span class="vocab-item"><b>monetization</b> 商业化/变现</span>
+          <span class="vocab-item"><b>last resort</b> 最后手段</span>
+          <span class="vocab-item"><b>valuation</b> 估值</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>OpenAI就像一家拥有明星菜谱（ChatGPT）但迟迟找不到稳定盈利模式的餐厅。广告、订阅、API授权都尝试过，但效果不佳。现在其他AI公司（卖“食材”和“厨房设备”的）反而先上市了。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（6-12个月）OpenAI可能被迫降低估值融资；中长期若GPT-5或AGI取得突破，估值逻辑可能重塑。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果OpenAI最终错过IPO窗口，可能被巨头收购，或成为AI史上第一个“技术领先但商业失败”的标志性案例。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.theguardian.com/technology/2026/jun/03/as-the-tech-mega-ipo-race-hots-up-has-openai-missed-its-moment" target="_blank">The Guardian</a></p>
+  </div>
+
+  <!-- 条目4 -->
+  <div class="item">
+    <div class="item-header">
+      <h3>2026年中国AI产业全景：核心产业规模突破1.2万亿元，国产大模型登顶</h3>
+      <span class="star">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      据新华社、清华大学等权威信源，2026年中国AI核心产业规模预计突破<span class="num-key">1.2万亿元</span>，同比增长近<span class="num-up">+30%</span>；AI企业数量超<span class="num-key">6,000</span>家；国产开源大模型全球累计下载量突破<span class="num-key">100亿</span>次。国产旗舰模型在国际盲测中登顶，实现全球调用量反超。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">China's AI Industry Scales New Heights: Core Market Exceeds 1.2 Trillion Yuan</p>
+      <p class="en-summary">According to Xinhua and Tsinghua University, China's AI core industry is projected to exceed 1.2 trillion yuan in 2026, with nearly 30% YoY growth. Over 6,000 AI enterprises are active, and domestic open-source models have surpassed 10 billion global downloads. Chinese flagship models now top international blind tests.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>core industry scale</b> 核心产业规模</span>
+          <span class="vocab-item"><b>open-source model</b> 开源模型</span>
+          <span class="vocab-item"><b>blind test</b> 盲测</span>
+          <span class="vocab-item"><b>downloads</b> 下载量</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国AI产业从“跟随者”变为“并跑者”，甚至在开源生态和部分应用场景实现反超。1.2万亿规模相当于一个中等省份的GDP。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）AI应用将在制造、医疗、金融等领域密集落地；中长期中国有望在AI治理与产业融合上输出标准。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中国AI开源生态持续壮大，全球AI发展可能从“美国单极”走向“中美双引擎”格局。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.news.cn/20260128/3b2f11906fd74ca397fef9996c805a60/c.html" target="_blank">新华社</a> | <a href="https://www.tsinghua.edu.cn/info/1182/124190.htm" target="_blank">清华大学</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：AI领域呈现“冰火两重天”——海外明星公司OpenAI面临商业化瓶颈，而中国AI产业在政策与资本推动下全速扩张。全球AI竞争从技术参数比拼转向商业化落地与生态构建。</div>
+
+  <!-- ========== 4. 科技/硬科技 ========== -->
+  <h2>💻 科技 / 硬科技</h2>
+
+  <!-- 条目5 -->
+  <div class="item">
+    <div class="item-header">
+      <h3>比亚迪发布中国首款4nm智驾芯片“璇玑A3”，开启规模化量产</h3>
+      <span class="star">⭐⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-red">🔴 重大风险</span>
+    </div>
+    <div class="item-summary">
+      比亚迪发布中国首款<span class="num-key">4纳米</span>智能驾驶芯片“璇玑A3”，宣称已开启规模化量产。三颗芯片算力超过<span class="num-key">2,100 TOPS</span>，城市领航功能支持“全额兜底”。彭博指出，比亚迪在半导体领域的这一突破正接近华为的领先地位（华为目前量产芯片工艺为<span class="num-key">7纳米</span>）。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">BYD Unveils China's First 4nm Autonomous Driving Chip "Xuanji A3", Enters Mass Production</p>
+      <p class="en-summary">BYD has launched the "Xuanji A3", China's first 4nm smart driving chip, and announced mass production. Three chips deliver over 2,100 TOPS, with full liability coverage for urban navigation. Bloomberg notes BYD's semiconductor breakthrough is approaching Huawei's leading position (currently on 7nm).</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>autonomous driving chip</b> 智驾芯片</span>
+          <span class="vocab-item"><b>mass production</b> 规模化量产</span>
+          <span class="vocab-item"><b>TOPS</b> 算力单位(万亿次/秒)</span>
+          <span class="vocab-item"><b>urban navigation</b> 城市领航</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>4nm是目前汽车智驾芯片的顶级工艺。比亚迪直接从消费级芯片跨入车规级先进制程，相当于一个运动员直接参加奥运会并拿到奖牌。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（6个月）将搭载在比亚迪高端车型；中长期（2-3年）可能外供其他车企，改变智能驾驶芯片市场格局。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中国车企+芯片公司形成闭环生态，全球汽车半导体供应链可能从“台积电+英伟达”向“比亚迪+华为”双轨演化。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.facebook.com/bossmindmedia/posts/電動車龍頭比亞迪1211發佈中國首款4納米智駕芯片璇璣a3並稱已開啟規模化量產彭博指比亞迪在半導體領域的這一突破正接近華為的領先地位華為目前生產的芯片工藝為7納/1015835630792963/" target="_blank">BossMind (Facebook)</a></p>
+  </div>
+
+  <!-- 条目6 -->
+  <div class="item">
+    <div class="item-header">
+      <h3>华为发布“韬定律”，声称不用EUV光刻机也能造高端芯片；台积电回应：非革命性创新</h3>
+      <span class="star">⭐⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-red">🔴 重大风险</span>
+    </div>
+    <div class="item-summary">
+      华为海思董事长何庭波在ISCAS 2026上正式发布“韬定律”，宣称通过3D堆叠与先进封装技术，可在不使用EUV光刻机的情况下达到等效<span class="num-key">1.4纳米</span>制程性能。台积电业务开发资深副总张晓强回应称，相关概念本质是3D堆叠等已知技术，并非革命性创新，算力限制已非唯一瓶颈。
+    </div>
+    <div class="compare-box">
+      <div class="compare-side compare-bull">
+        <div class="compare-label">📈 乐观方 (华为)</div>
+        通过“韬定律”与先进封装，可绕过EUV光刻机限制，实现等效1.4nm性能，为国产芯片开辟新路径。
+      </div>
+      <div class="compare-side compare-bear">
+        <div class="compare-label">📉 悲观方 (台积电)</div>
+        所谓“韬定律”本质是3D堆叠等已知技术，并非革命性创新，且未来芯片瓶颈在于功耗与散热，非单纯制程。
+      </div>
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Huawei Announces "Tao's Law" for EUV-Free Advanced Chips; TSMC Says It's Not Revolutionary</p>
+      <p class="en-summary">Huawei's HiSilicon chair He Tingbo unveiled "Tao's Law" at ISCAS 2026, claiming equivalent 1.4nm performance without EUV lithography through 3D stacking and advanced packaging. TSMC's senior VP Zhang Xiaoqiang countered that the concept relies on known techniques and is not a breakthrough, noting that power and thermal limits are now the primary constraints.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>EUV lithography</b> 极紫外光刻</span>
           <span class="vocab-item"><b>3D stacking</b> 3D堆叠</span>
           <span class="vocab-item"><b>advanced packaging</b> 先进封装</span>
+          <span class="vocab-item"><b>breakthrough</b> 突破性创新</span>
         </div>
       </div>
     </div>
     <details class="deepdive">
       <summary>📖 深度解读</summary>
       <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>华为提出通过3D堆叠、异构集成和设计-工艺协同优化（DTCO）等技术，在不使用EUV光刻机的情况下，实现相当于1.4nm节点的晶体管密度和性能。本质上是用"系统级创新"弥补"单点工艺"的不足。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期可缓解华为先进制程受限的困境，但良率和成本仍是挑战；中长期若验证成功，将重塑全球半导体产业技术路线，形成"EUV路线"与"先进封装路线"并行格局。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来芯片性能不再只靠"把晶体管做小"，而是靠"把芯片堆起来"——像盖楼一样，通过垂直整合突破物理极限，摩尔定律以新形式延续。</p>
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“韬定律”就像用乐高积木搭出摩天大楼——不靠更精细的砖块（EUV光刻），而是通过巧妙的结构（3D堆叠）实现更高性能。台积电则认为这不过是“搭积木”的旧方法。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）可能在中低端芯片领域见效；中长期若散热与功耗问题无法解决，等效制程提升将遇到天花板。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果“韬定律”被验证，半导体行业将分裂为“EUV路线”和“先进封装路线”两大阵营，重塑全球芯片供应链。</p>
       </div>
     </details>
-    <p class="item-source">来源：<a href="https://www.facebook.com/unwirehk/posts/..." target="_blank">UNWIRE.HK / ISCAS 2026</a></p>
+    <p class="item-source">来源：<a href="https://www.facebook.com/unwirehk/posts/可達等效-14-納米製程華為-hisilicon-晶片部門董事會成員兼主席何庭波於上海-ieee-國際電路與系統研討會iscas-2026正式發布全新tauτ縮/1424995696335559/" target="_blank">UNWIRE.HK (Facebook)</a> | <a href="https://www.facebook.com/anuetw/posts/台積電華為韜定律非革命性創新/1427447529427123/" target="_blank">Anue鉅亨網 (Facebook)</a></p>
   </div>
 
-  <div class="compare-box">
-    <div class="compare-side compare-bull">
-      <div class="compare-label">📈 乐观方</div>
-      华为"韬定律"提出非EUV技术路径，通过3D堆叠和先进封装实现等效1.4nm，被认为是中国半导体自主化的重大突破，有望绕开美国出口管制。
-    </div>
-    <div class="compare-side compare-bear">
-      <div class="compare-label">📉 悲观方</div>
-      台积电高管回应称"韬定律"并非革命性创新，本质上仍是3D堆叠等现有技术的整合，实际量产良率和成本效益存疑，短期内难以挑战EUV路线。
-    </div>
-  </div>
+  <div class="trend-comment">📊 板块趋势：中国半导体自主化进入“双轨并行”阶段——比亚迪在成熟制程车规芯片上快速量产，华为在先进制程上探索绕开EUV的替代路径。台积电的公开反驳凸显技术路线之争已白热化。</div>
 
+  <!-- ========== 5. 材料科学 ========== -->
+  <h2>🔬 材料科学</h2>
+
+  <!-- 条目7 -->
   <div class="item">
     <div class="item-header">
-      <h4>台积电：未来芯片发展关键限制已不止是运算能力</h4>
-      <span class="star">⭐⭐⭐⭐</span>
-      <span class="impact impact-med">冲击：Med</span>
-    </div>
-    <div class="item-summary">
-      台积电业务开发资深副总经理张晓强在阿姆斯特丹会议上指出，未来影响芯片发展的关键限制已不再只是运算能力，功耗、散热、互连带宽等"系统级瓶颈"正成为新的天花板。
-    </div>
-    <div class="bilingual">
-      <p class="en-title">TSMC: Future Chip Development Limited by More Than Just Compute Power</p>
-      <p class="en-summary">At a conference in Amsterdam, TSMC's senior VP noted that the key constraints for future chip development extend beyond raw compute power, with system-level bottlenecks such as power consumption, thermal management, and interconnect bandwidth becoming new ceilings.</p>
-      <div class="vocab-card">
-        <div class="vocab-title">📖 Key Vocabulary</div>
-        <div class="vocab-list">
-          <span class="vocab-item"><b>system-level bottleneck</b> 系统级瓶颈</span>
-          <span class="vocab-item"><b>thermal management</b> 热管理</span>
-          <span class="vocab-item"><b>interconnect bandwidth</b> 互连带宽</span>
-        </div>
-      </div>
-    </div>
-    <details class="deepdive">
-      <summary>📖 深度解读</summary>
-      <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>随着芯片制程逼近物理极限，单纯提升晶体管密度带来的收益递减。功耗密度过大导致散热困难、芯片间数据传输速度成为瓶颈，系统级设计的重要性超过单点工艺进步。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将推动Chiplet（小芯片）、先进封装、硅光子等技术的加速落地；中长期或催生"系统级代工"新模式，台积电等厂商从"晶圆制造"转向"系统集成"。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来芯片设计更像"城市规划"——不仅要造快路（运算单元），还要管车流（数据带宽）、降噪音（散热）、平衡资源（功耗），系统思维成为核心竞争力。</p>
-      </div>
-    </details>
-    <p class="item-source">来源：<a href="https://www.facebook.com/100067084276495/videos/..." target="_blank">Anue鉅亨網</a></p>
-  </div>
-
-  <div class="trend-comment">📊 板块趋势：中国半导体自主化加速，比亚迪、华为分别在汽车芯片和先进封装领域取得突破，但与台积电的"系统级瓶颈"观点形成路线之争。短期看，非EUV路径能否量产是关键验证节点。</div>
-</div>
-
-<!-- 板块5: 材料科学 -->
-<div class="section">
-  <h3 class="section-title">🔬 材料科学</h3>
-
-  <div class="item">
-    <div class="item-header">
-      <h4>2026年八大新兴科学趋势：AI加速材料发现</h4>
-      <span class="star">⭐⭐⭐⭐</span>
-      <span class="impact impact-med">冲击：Med</span>
-    </div>
-    <div class="item-summary">
-      CAS科学团队识别出2026年八大新兴趋势，其中生成式AI与自主实验室的深度融合正将材料发现周期从数年缩短至数月。AI驱动的虚拟筛选和自动化合成平台使新材料的开发效率提升 <span class="num-up">10倍</span> 以上。
-    </div>
-    <div class="bilingual">
-      <p class="en-title">Eight Emerging Scientific Trends for 2026: AI-Accelerated Material Discovery</p>
-      <p class="en-summary">The CAS Science Team has identified eight emerging trends for 2026, with generative AI integrated with autonomous laboratories shortening material discovery cycles from years to months. AI-driven virtual screening and automated synthesis platforms are boosting development efficiency by over <span class="num-up">10x</span>.</p>
-      <div class="vocab-card">
-        <div class="vocab-title">📖 Key Vocabulary</div>
-        <div class="vocab-list">
-          <span class="vocab-item"><b>autonomous laboratory</b> 自主实验室</span>
-          <span class="vocab-item"><b>virtual screening</b> 虚拟筛选</span>
-          <span class="vocab-item"><b>material discovery cycle</b> 材料发现周期</span>
-        </div>
-      </div>
-    </div>
-    <details class="deepdive">
-      <summary>📖 深度解读</summary>
-      <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传统材料研发依赖"试错法"，一个新材料从发现到商用平均需要10-20年。AI+自动化实验室通过高通量计算预测候选材料，再由机器人自动合成、测试、反馈，形成"设计-实验-学习"闭环。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期加速电池材料、催化剂、半导体材料的筛选；中长期有望实现"按需设计"——输入目标性能，AI直接输出最优材料配方，彻底改变材料科学范式。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来材料科学家像"厨师"一样，AI提供菜谱和烹饪参数，机器人执行实验，人类专注于创意和战略选择——研发效率从"十年磨一剑"变为"月月出新"。</p>
-      </div>
-    </details>
-    <p class="item-source">来源：<a href="https://www.cas.org/resources/cas-insights/scientific-breakthroughs-2026-emerging-trends-watch" target="_blank">CAS</a></p>
-  </div>
-
-  <div class="item">
-    <div class="item-header">
-      <h4>清洁能源突破：英国团队发现新型材料"中间态"</h4>
-      <span class="star">⭐⭐⭐⭐</span>
-      <span class="impact impact-high">冲击：High</span>
-    </div>
-    <div class="item-summary">
-      英国研究人员在热分解过程中发现了新的"中间态"（in-between states），这些具有非常规特性的材料在能源转换和储能方面展现潜力。该发现为开发更高效的太阳能电池和热电材料开辟了新方向。
-    </div>
-    <div class="bilingual">
-      <p class="en-title">Clean Energy Breakthrough: UK Researchers Discover Novel 'In-Between States' in Materials</p>
-      <p class="en-summary">UK researchers have discovered new 'in-between states' during thermal decomposition, revealing materials with unconventional properties for energy conversion and storage. The finding opens new directions for developing more efficient solar cells and thermoelectric materials.</p>
-      <div class="vocab-card">
-        <div class="vocab-title">📖 Key Vocabulary</div>
-        <div class="vocab-list">
-          <span class="vocab-item"><b>in-between state</b> 中间态</span>
-          <span class="vocab-item"><b>thermal decomposition</b> 热分解</span>
-          <span class="vocab-item"><b>thermoelectric material</b> 热电材料</span>
-        </div>
-      </div>
-    </div>
-    <details class="deepdive">
-      <summary>📖 深度解读</summary>
-      <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传统材料研究关注"反应前"和"反应后"，但这次研究在加热过程中捕捉到短暂存在的中间相结构，发现这些亚稳态相具有独特的电子结构和催化活性，是传统方法无法发现的。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期可指导新型热电材料（废热发电）和光催化材料的设计；中长期若实现中间态材料的稳定化，可能开发出转换效率超过 <span class="num-up">30%</span> 的下一代太阳能电池。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来材料研发像"电影导演"一样，不仅关注结局，更懂得利用"拍摄过程中的意外惊喜"——每个中间态都是一个未被发现的宝藏。</p>
-      </div>
-    </details>
-    <p class="item-source">来源：<a href="https://thedebrief.org/clean-energy-breakthrough-scientists-have-discovered-something-interesting-and-unknown-in-this-novel-material/" target="_blank">The Debrief</a></p>
-  </div>
-
-  <div class="trend-comment">📊 板块趋势：材料科学进入"AI+原位表征"双轮驱动时代。AI加速虚拟筛选，原位表征技术则能捕捉传统方法遗漏的"隐藏"材料。两大技术结合，正将材料研发从"偶然发现"推向"理性设计"。</div>
-</div>
-
-<!-- 板块6: 中国政策与监管 -->
-<div class="section">
-  <h3 class="section-title">🇨🇳 中国政策与监管</h3>
-
-  <div class="item">
-    <div class="item-header">
-      <h4>美国国会发布《美国出口管制与中国：先进半导体》报告</h4>
-      <span class="star">⭐⭐⭐⭐</span>
-      <span class="impact impact-high">冲击：High</span>
-      <span class="risk-red">🔴 重大风险</span>
-    </div>
-    <div class="item-summary">
-      2025年8月发布的CRS报告系统梳理了过去七年美国对华半导体出口管制政策演变。报告指出管制范围从设备、材料延伸至人才和投资，形成"全链条封锁"。中国需在EDA工具、光刻胶等关键环节加速突破。
-    </div>
-    <div class="bilingual">
-      <p class="en-title">US Congress Report: 'US Export Controls and China: Advanced Semiconductors'</p>
-      <p class="en-summary">An August 2025 CRS report systematically reviews seven years of US semiconductor export controls on China, noting the expansion from equipment and materials to talent and investment, forming a 'full-chain blockade.' China must accelerate breakthroughs in EDA tools and photoresists.</p>
-      <div class="vocab-card">
-        <div class="vocab-title">📖 Key Vocabulary</div>
-        <div class="vocab-list">
-          <span class="vocab-item"><b>export control</b> 出口管制</span>
-          <span class="vocab-item"><b>full-chain blockade</b> 全链条封锁</span>
-          <span class="vocab-item"><b>photoresist</b> 光刻胶</span>
-        </div>
-      </div>
-    </div>
-    <details class="deepdive">
-      <summary>📖 深度解读</summary>
-      <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美国对华半导体管制已从最初的高端芯片出口禁令，扩展到制造设备、EDA软件、材料（光刻胶、特种气体）、甚至美国人才在华半导体企业任职等维度，形成"无死角"封锁。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期中国半导体产业面临阵痛，成熟制程扩张加速但先进制程受限；中长期将倒逼国产EDA和材料企业崛起，但需要5-10年才能形成完整替代能力。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>封锁催生"备胎计划"全面转正，中国半导体产业从"跟跑"转向"并跑"，但代价是全球化半导体供应链的永久性分裂。</p>
-      </div>
-    </details>
-    <p class="item-source">来源：<a href="http://beijing.customs.gov.cn/beijing_customs/ztzl1/jgjmzl/gzld43/6793864/index.html" target="_blank">北京海关</a></p>
-  </div>
-
-  <div class="item">
-    <div class="item-header">
-      <h4>美国《MATCH法案》高票通过，半导体制裁再升级</h4>
+      <h3>科学家发现“隐藏”中间态材料，有望变革清洁能源与电池技术</h3>
       <span class="star">⭐⭐⭐⭐⭐</span>
-      <span class="impact impact-high">冲击：High</span>
-      <span class="risk-red">🔴 重大风险</span>
+      <span class="impact impact-med">冲击：Med</span>
     </div>
     <div class="item-summary">
-      4月22日，美国众议院外交事务委员会以 <span class="num-key">36:8</span> 高票通过《硬件技术控制多边协调法案》（MATCH法案）。该法案旨在协调盟友建立统一出口管制体系，将管制范围从半导体扩展到量子计算、AI等前沿领域。
+      2026年5月，科学家通过捕捉加热过程中通常不可见的中间阶段，发现了一批具有非常规特性的新材料。这些“隐藏”材料在清洁能源与电池领域展现出巨大潜力，可能突破现有锂离子电池的能量密度限制。该研究发表于《自然》子刊，CAS将其列为2026年八大新兴趋势之一。
     </div>
     <div class="bilingual">
-      <p class="en-title">US 'MATCH Act' Passes with High Vote, Escalating Semiconductor Sanctions</p>
-      <p class="en-summary">On April 22, the US House Foreign Affairs Committee passed the 'MATCH Act' with a <span class="num-key">36:8</span> vote. The bill aims to coordinate allies on a unified export control system, expanding restrictions from semiconductors to quantum computing and frontier AI.</p>
+      <p class="en-title">Scientists Discover "Hidden" Intermediate Materials That Could Revolutionize Clean Energy & Batteries</p>
+      <p class="en-summary">In May 2026, researchers discovered new materials with unusual properties by capturing normally unseen intermediate stages during heating. These "hidden" materials show great potential for clean energy and battery applications, potentially breaking current energy density limits of lithium-ion batteries. The study was published in a Nature journal and identified as one of CAS's 8 emerging trends for 2026.</p>
       <div class="vocab-card">
         <div class="vocab-title">📖 Key Vocabulary</div>
         <div class="vocab-list">
-          <span class="vocab-item"><b>multilateral coordination</b> 多边协调</span>
-          <span class="vocab-item"><b>export control system</b> 出口管制体系</span>
-          <span class="vocab-item"><b>frontier AI</b> 前沿AI</span>
+          <span class="vocab-item"><b>intermediate state</b> 中间态</span>
+          <span class="vocab-item"><b>energy density</b> 能量密度</span>
+          <span class="vocab-item"><b>clean energy</b> 清洁能源</span>
+          <span class="vocab-item"><b>lithium-ion battery</b> 锂离子电池</span>
         </div>
       </div>
     </div>
     <details class="deepdive">
       <summary>📖 深度解读</summary>
       <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>MATCH法案的核心是"多边协调"——美国不再单打独斗，而是推动日本、荷兰、韩国等盟友采用统一管制标准，堵住当前"美国禁运、第三国转口"的漏洞。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期中国获取先进芯片和设备的难度进一步增加，转口贸易渠道被系统性地切断；中长期将加速中国半导体全产业链自主化，但也可能引发更激烈的科技脱钩。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>全球半导体产业形成"西方阵营"和"中国阵营"两套体系，技术标准、供应链、生态系统全面割裂，每个阵营内部实现"内循环"。</p>
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>就像在烤面包时发现，面团在刚好半熟的状态下有一种从未被注意到的独特口感。科学家通过“冻结”材料加热过程中的中间状态，发现了全新的材料结构。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（3-5年）可能在实验室中优化出新型电极材料；中长期（5-10年）有望将电池能量密度提升<span class="num-up">+50%</span>以上，大幅延长电动车续航。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果这种“隐藏材料”方法成为范式，材料科学可能进入“动态发现”时代——不再靠偶然，而是系统性地捕获有用中间态。</p>
       </div>
     </details>
-    <p class="item-source">来源：<a href="https://zhuanlan.zhihu.com/p/2032138731751199244" target="_blank">知乎</a></p>
+    <p class="item-source">来源：<a href="https://scitechdaily.com/scientists-discover-hidden-materials-that-could-transform-clean-energy-and-batteries/" target="_blank">SciTechDaily</a> | <a href="https://www.cas.org/resources/cas-insights/scientific-breakthroughs-2026-emerging-trends-watch" target="_blank">CAS</a></p>
   </div>
 
-  <div class="trend-comment">📊 板块趋势：美国对华科技管制从"单边"走向"多边"，从"产品"走向"全链条"。MATCH法案标志管制进入立法化、系统化新阶段。中国被迫加速自主创新，但短期阵痛不可避免。</div>
-</div>
+  <div class="trend-comment">📊 板块趋势：材料科学正从“试错法”转向“AI+中间态捕获”的高效发现模式。清洁能源与电池材料是当前最活跃的领域，全球科研机构正加速布局。</div>
 
-<!-- 板块7: 地缘政治与国际关系 -->
-<div class="section">
-  <h3 class="section-title">🌍 地缘政治与国际关系</h3>
+  <!-- ========== 6. 中国政策与监管 ========== -->
+  <h2>🇨🇳 中国政策与监管</h2>
 
+  <!-- 条目8 -->
   <div class="item">
     <div class="item-header">
-      <h4>美欧半导体出口管制协调加深，但执行仍存分歧</h4>
-      <span class="star">⭐⭐⭐⭐</span>
-      <span class="impact impact-high">冲击：High</span>
-      <span class="risk-red">🔴 重大风险</span>
+      <h3>国务院新闻办发布会：商务部介绍亚洲合作与自贸区新进展</h3>
+      <span class="star">⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
     </div>
     <div class="item-summary">
-      CSIS分析指出，美国和欧盟在半导体出口管制政策上的协调正在加深，但在具体执行层面仍存在分歧。欧盟更关注"过度管制"对自身产业竞争力的损害，而美国则强调"安全优先"。
+      国务院新闻办于2026年5月29日举行新闻发布会，商务部副部长鄢东介绍中国与亚洲国家经贸合作最新进展，涉及RCEP深化实施与双边自贸协定升级谈判。政策信号显示中国正加速推进区域经济一体化，对冲全球贸易碎片化风险。
     </div>
     <div class="bilingual">
-      <p class="en-title">US-EU Semiconductor Export Control Coordination Deepens, but Implementation Gaps Remain</p>
-      <p class="en-summary">CSIS analysis indicates deepening coordination between the US and EU on semiconductor export controls, but implementation gaps persist. The EU is more concerned about 'over-regulation' harming its industrial competitiveness, while the US prioritizes 'security first.'</p>
+      <p class="en-title">China's State Council Press Conference: Commerce Ministry on Asia Cooperation & FTA Progress</p>
+      <p class="en-summary">On May 29, 2026, China's State Council Information Office held a press conference where Vice Minister of Commerce Yan Dong outlined progress in economic cooperation with Asian countries, including deeper RCEP implementation and upgraded bilateral FTA negotiations. The policy signals China's push for regional economic integration amid global trade fragmentation.</p>
       <div class="vocab-card">
         <div class="vocab-title">📖 Key Vocabulary</div>
         <div class="vocab-list">
-          <span class="vocab-item"><b>coordination</b> 协调</span>
-          <span class="vocab-item"><b>implementation gap</b> 执行差距</span>
-          <span class="vocab-item"><b>over-regulation</b> 过度管制</span>
+          <span class="vocab-item"><b>RCEP</b> 区域全面经济伙伴关系协定</span>
+          <span class="vocab-item"><b>FTA</b> 自由贸易协定</span>
+          <span class="vocab-item"><b>regional integration</b> 区域一体化</span>
+          <span class="vocab-item"><b>trade fragmentation</b> 贸易碎片化</span>
         </div>
       </div>
     </div>
     <details class="deepdive">
       <summary>📖 深度解读</summary>
       <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美国推动盟友建立统一出口管制体系，但欧盟企业（如ASML、英飞凌）担心失去中国市场影响营收，因此在具体执行上更"灵活"。这种分歧导致管制效果打折扣。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期美国可能通过MATCH法案等立法施压盟友统一标准；中长期看，美欧在"安全"与"商业"之间的博弈将持续，中国可利用分歧寻找突破口。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>全球科技治理从"美国主导"走向"多极博弈"，欧洲可能成为中美之间的"摇摆力量"，在安全与商业之间寻找平衡。</p>
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>在全球贸易保护主义抬头背景下，中国通过深化RCEP和升级双边FTA，像“织网”一样把亚洲经济体更紧密地连接在一起。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）将降低中国与东盟、日韩之间的关税壁垒；中长期可能形成以人民币结算的区域贸易圈。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果亚洲经济一体化成功，可能诞生一个与北美、欧洲并立的“亚洲经济共同体”，改变全球经贸版图。</p>
       </div>
     </details>
-    <p class="item-source">来源：<a href="https://www.humanaifit.com/blog/us_semiconductor_export_controls_2026/" target="_blank">humanaifit / CSIS</a></p>
+    <p class="item-source">来源：<a href="http://www.scio.gov.cn/?pc_hash=iNFO0G" target="_blank">国务院新闻办公室</a></p>
   </div>
 
+  <div class="trend-comment">📊 板块趋势：中国政策重心聚焦“科技自主+区域合作”。半导体领域的突破（比亚迪、华为）与外交层面的区域经济一体化形成战略协同，旨在构建技术-经济双循环体系。</div>
+
+  <!-- ========== 7. 地缘政治与国际关系 ========== -->
+  <h2>🌍 地缘政治与国际关系</h2>
+
+  <!-- 条目9 -->
   <div class="item">
     <div class="item-header">
-      <h4>美国AI芯片出口管制新规深度解析</h4>
+      <h3>国际原子能机构(IAEA)总干事专访：核安全与地缘风险交织</h3>
       <span class="star">⭐⭐⭐⭐</span>
-      <span class="impact impact-high">冲击：High</span>
+      <span class="impact impact-med">冲击：Med</span>
       <span class="risk-red">🔴 重大风险</span>
     </div>
     <div class="item-summary">
-      最新美国AI芯片出口管制政策核心变化包括：将算力密度阈值进一步降低、扩大"最终用户"审查范围、要求云服务商报告中国客户使用高端芯片情况。企业合规难度大幅提升。
+      《经济学人》发布对IAEA总干事拉斐尔·马里亚诺·格罗西的深度专访。格罗西警告，在乌克兰危机与中东紧张局势背景下，核设施安全面临冷战以来最严峻挑战。IAEA正推动建立“核安全红线”机制，但大国博弈使其难以落地。
     </div>
     <div class="bilingual">
-      <p class="en-title">Deep Dive into New US AI Chip Export Control Rules</p>
-      <p class="en-summary">Key changes in the latest US AI chip export controls include: lowering the compute density threshold, expanding end-user review scope, and requiring cloud providers to report Chinese customer usage of high-end chips. Corporate compliance has become significantly more challenging.</p>
+      <p class="en-title">IAEA Director General Warns of Gravest Nuclear Safety Risks Since Cold War</p>
+      <p class="en-summary">In an interview with The Economist, IAEA Director General Rafael Mariano Grossi warned that nuclear safety faces its most serious challenges since the Cold War, amid the Ukraine crisis and Middle East tensions. The IAEA is pushing for a "nuclear safety red line" mechanism, but great-power rivalry hampers implementation.</p>
       <div class="vocab-card">
         <div class="vocab-title">📖 Key Vocabulary</div>
         <div class="vocab-list">
-          <span class="vocab-item"><b>compute density</b> 算力密度</span>
-          <span class="vocab-item"><b>end-user review</b> 最终用户审查</span>
-          <span class="vocab-item"><b>cloud provider</b> 云服务商</span>
+          <span class="vocab-item"><b>nuclear safety</b> 核安全</span>
+          <span class="vocab-item"><b>red line</b> 红线</span>
+          <span class="vocab-item"><b>great-power rivalry</b> 大国博弈</span>
+          <span class="vocab-item"><b>Cold War</b> 冷战</span>
         </div>
       </div>
     </div>
     <details class="deepdive">
       <summary>📖 深度解读</summary>
       <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>新规将限制出口的AI芯片算力门槛从原来的 <span class="num-key">4800 TOPS</span> 降至 <span class="num-key">2400 TOPS</span>，意味着更多中端AI芯片也纳入管制。同时要求亚马逊AWS、微软Azure等云厂商报告中国客户使用情况，防止"云上绕道"。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期中国AI企业获取高性能芯片渠道进一步收窄，倒逼国产AI芯片加速迭代；中长期可能催生"去英伟达化"趋势，华为昇腾、寒武纪等迎来发展窗口。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>全球AI算力基础设施分裂为"英伟达生态"和"国产替代生态"两套体系，中国AI企业被迫从"买卡"转向"造卡"，研发投入短期内大幅增加。</p>
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>IAEA就像一个核安全的“消防队长”，但现在全球同时有多处“火情”——乌克兰的扎波罗热核电站、中东的核设施都处于危险边缘。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）核安全风险将持续高企，任何误判都可能引发核事故；中长期需要建立大国间核危机沟通机制。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果“核安全红线”机制最终建立，可能成为冷战结束后最重要的全球安全治理创新之一。</p>
       </div>
     </details>
-    <p class="item-source">来源：<a href="https://aichipfront.com/market-analysis/us-ai-chip-export-controls" target="_blank">AI Chip Front</a></p>
+    <p class="item-source">来源：<a href="https://www.economist.com/topics/geopolitics" target="_blank">The Economist</a></p>
   </div>
 
-  <div class="trend-comment">📊 板块趋势：地缘科技博弈进入"法律战"阶段，MATCH法案和AI芯片新规标志管制从行政令走向立法固化。美欧协调加深但执行分歧犹在，中国面临"全链条封锁"压力，但技术突围信号增多。</div>
-</div>
+  <div class="trend-comment">📊 板块趋势：地缘政治焦点从传统军事冲突转向“技术+能源”复合风险。半导体技术路线之争、核安全博弈与区域经济一体化三条线索交织，全球治理体系面临碎片化与重构的双重压力。</div>
 
-<!-- 时间提醒模块（条件触发） -->
-<div class="timeline">
-  <h4>⏰ 近期关键时间节点</h4>
-  <div class="timeline-item">
-    <span class="timeline-date">2026-06-03</span>
-    <span>DeepSeek V4全面更新上线，免费开放使用</span>
+  <!-- ========== 时间提醒模块 ========== -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-06-15</span>
+      <span>美联储6月议息会议，市场关注利率决议与点阵图</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-06-30</span>
+      <span>中国国务院新闻办后续可能公布更多RCEP深化实施细节</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-Q3</span>
+      <span>比亚迪“璇玑A3”芯片预计在高端车型中正式搭载上市</span>
+    </div>
   </div>
-  <div class="timeline-item">
-    <span class="timeline-date">2026-06-15</span>
-    <span>美联储议息会议，市场关注降息信号</span>
-  </div>
-  <div class="timeline-item">
-    <span class="timeline-date">2026-06-30</span>
-    <span>美国AI芯片出口管制新规预计正式生效</span>
-  </div>
-  <div class="timeline-item">
-    <span class="timeline-date">2026-07-01</span>
-    <span>MATCH法案进入参议院审议阶段</span>
-  </div>
-</div>
 
-<div class="footer">
-  <p>全球动态日报 · 2026年6月3日 · 由AI驱动的情报分析</p>
-  <p>数据来源包括 ScienceDaily、Anthropic、CSIS、国家外汇管理局等权威机构</p>
-</div>
+  <div class="footer-note">全球动态日报 | 2026-06-03 | 数据源包括Nature、The Guardian、新华社、Google Finance等</div>
 
 </div>
 </body>
