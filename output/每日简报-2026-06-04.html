@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全球动态简报 | 2026-06-04</title>
+  <style>
+    body {
+      background: #f4f6f9;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+      margin: 0;
+      padding: 30px 20px;
+      color: #1a1a2e;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      padding: 30px 28px;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      color: #0b1b33;
+      letter-spacing: 0.3px;
+    }
+    .date {
+      font-size: 15px;
+      color: #5e6f8d;
+      margin-bottom: 28px;
+      border-bottom: 1px solid #e6ecf3;
+      padding-bottom: 14px;
+    }
+    .overview {
+      background: #eef2f8;
+      padding: 22px 24px;
+      border-radius: 12px;
+      margin-bottom: 36px;
+      border-left: 5px solid #1f4b8a;
+    }
+    .overview h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0 0 12px 0;
+      color: #0b1b33;
+    }
+    .overview p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0 0 14px 0;
+      color: #1f2a44;
+    }
+    .overview-tags {
+      display: block;
+      margin-top: 8px;
+    }
+    .overview-tag {
+      display: inline-block;
+      background: #d9e2ef;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-right: 10px;
+      margin-bottom: 6px;
+      color: #1a2b4c;
+    }
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 32px 0 18px 0;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e0e7ef;
+      color: #0b1b33;
+    }
+    .news-item {
+      background: #fafcff;
+      border: 1px solid #e3eaf2;
+      border-radius: 12px;
+      padding: 18px 20px 20px 20px;
+      margin-bottom: 22px;
+    }
+    .item-header {
+      display: block;
+      margin-bottom: 12px;
+    }
+    .item-header .title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0a1d3a;
+      margin-right: 12px;
+    }
+    .stars {
+      font-size: 15px;
+      letter-spacing: 0.5px;
+      color: #f5b342;
+      margin-right: 12px;
+    }
+    .impact {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 2px 12px;
+      border-radius: 30px;
+      margin-right: 8px;
+    }
+    .impact-high {
+      background: #fce8e6;
+      color: #b63e2a;
+    }
+    .impact-med {
+      background: #fff0d9;
+      color: #b87c1a;
+    }
+    .impact-low {
+      background: #e6f0e6;
+      color: #2c6b2c;
+    }
+    .risk-red {
+      display: inline-block;
+      background: #fce4e4;
+      color: #b22222;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 2px 12px;
+      border-radius: 30px;
+      margin-right: 6px;
+    }
+    .risk-yellow {
+      display: inline-block;
+      background: #fef7e0;
+      color: #9a6f1a;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 2px 12px;
+      border-radius: 30px;
+      margin-right: 6px;
+    }
+    .item-summary {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 8px 0 12px 0;
+      color: #1f2a44;
+      background: #f4f8fe;
+      padding: 12px 16px;
+      border-radius: 8px;
+    }
+    .num-up {
+      font-weight: 700;
+      color: #1d7a3c;
+      background: #e3f3e9;
+      padding: 0 5px;
+      border-radius: 4px;
+    }
+    .num-down {
+      font-weight: 700;
+      color: #b13e3e;
+      background: #fde8e8;
+      padding: 0 5px;
+      border-radius: 4px;
+    }
+    .num-key {
+      font-weight: 700;
+      color: #1f4b8a;
+      background: #e3ecf7;
+      padding: 0 5px;
+      border-radius: 4px;
+    }
+    .bilingual {
+      background: #f0f4fa;
+      padding: 14px 16px 12px 16px;
+      border-radius: 8px;
+      margin: 12px 0;
+      border-left: 3px solid #4a7ab5;
+    }
+    .en-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0b1b33;
+      margin: 0 0 6px 0;
+    }
+    .en-summary {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #1f2a44;
+      margin: 0 0 10px 0;
+    }
+    .vocab-card {
+      background: #e6edf7;
+      padding: 8px 14px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+    .vocab-title {
+      font-weight: 600;
+      font-size: 14px;
+      color: #1f3b62;
+      margin-bottom: 4px;
+    }
+    .vocab-list {
+      display: inline;
+    }
+    .vocab-item {
+      display: inline-block;
+      margin-right: 16px;
+      font-size: 14px;
+    }
+    .vocab-item b {
+      font-weight: 600;
+      color: #0b2b4a;
+    }
+    .compare-box {
+      background: #f8f5ee;
+      border: 1px solid #dcd3c2;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 12px 0 16px 0;
+      display: block;
+    }
+    .compare-side {
+      display: inline-block;
+      width: 44%;
+      vertical-align: top;
+      padding: 4px 10px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .compare-bull {
+      border-right: 1px solid #c6d4c2;
+      margin-right: 8px;
+    }
+    .compare-bear {
+      margin-left: 4px;
+    }
+    .compare-label {
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .deepdive {
+      margin: 12px 0 8px 0;
+      background: #f7faff;
+      border: 1px solid #d9e2f0;
+      border-radius: 8px;
+      padding: 6px 14px;
+    }
+    .deepdive summary {
+      font-weight: 600;
+      font-size: 15px;
+      color: #1f4b8a;
+      cursor: pointer;
+      padding: 6px 0;
+    }
+    .deepdive-content {
+      margin-top: 10px;
+    }
+    .dl {
+      margin: 8px 0;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .dl-label {
+      font-weight: 700;
+      color: #0b2b4a;
+    }
+    .item-source {
+      font-size: 13px;
+      color: #5e6f8d;
+      margin: 8px 0 2px 0;
+    }
+    .item-source a {
+      color: #2a5c9a;
+      text-decoration: none;
+    }
+    .item-source a:hover {
+      text-decoration: underline;
+    }
+    .trend-comment {
+      background: #eef3f9;
+      padding: 14px 20px;
+      border-radius: 10px;
+      margin: 24px 0 14px 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #1f2a44;
+      border-left: 4px solid #4a7ab5;
+    }
+    .timeline {
+      background: #f2f2f0;
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin: 32px 0 18px 0;
+      border: 1px solid #d4d9e0;
+    }
+    .timeline h4 {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 12px 0;
+      color: #0b1b33;
+    }
+    .timeline-item {
+      margin: 8px 0;
+      font-size: 15px;
+    }
+    .timeline-date {
+      display: inline-block;
+      background: #1f4b8a;
+      color: white;
+      font-weight: 600;
+      padding: 2px 12px;
+      border-radius: 20px;
+      margin-right: 12px;
+      font-size: 13px;
+    }
+    .footer-note {
+      margin-top: 28px;
+      font-size: 13px;
+      color: #6a7b96;
+      text-align: center;
+      border-top: 1px solid #e0e7ef;
+      padding-top: 18px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>🌏 全球动态简报</h1>
+  <div class="date">2026年6月4日 · 星期三</div>
+
+  <!-- 综述 -->
+  <div class="overview">
+    <h3>🧠 今日简报综述</h3>
+    <p>人工智能领域迎来史诗级竞赛：Anthropic发布Claude Opus 4.8，支持并行子代理；OpenAI GPT-5.5与DeepSeek v4同期对垒，多模态能力全面跃升。金融端缺乏实质性催化，市场静待美联储信号。地缘方面无重大突发，但NASCAR赛事因天气调整时间线，暗示极端气候对大型活动的扰动常态化。整体风向：科技端极度活跃，金融观望，地缘平淡。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🤖 AI多智能体</span>
+      <span class="overview-tag">⚡ 模型军备竞赛</span>
+      <span class="overview-tag">🌧️ 气候扰动</span>
+      <span class="overview-tag">📊 市场无方向</span>
+    </div>
+  </div>
+
+  <!-- ========= 板块1: 生命科学/医学 ========= -->
+  <div class="section-title">🧬 生命科学 / 医学</div>
+
+  <!-- 新闻1: 替代直播网站 (无效内容, 但占位) -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">Stream2watch 替代网站列表 (社区讨论)</span>
+      <span class="stars">⭐⭐⭐</span>
+      <span class="impact impact-low">冲击：Low</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      Reddit 社区汇总了 <span class="num-key">17</span> 个 Stream2watch 替代直播网站，主要用于体育赛事观看。该列表缺乏官方验证，存在版权与安全风险。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Stream2watch Alternatives: Community Aggregated List</p>
+      <p class="en-summary">A Reddit community compiled 17 alternative sites for live sports streaming as substitutes for Stream2watch. The list is user-generated and may pose copyright and cybersecurity risks.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>live streaming</b> 直播</span>
+          <span class="vocab-item"><b>alternative</b> 替代方案</span>
+          <span class="vocab-item"><b>copyright risk</b> 版权风险</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Reddit用户整理的第三方体育直播网站合集，作为Stream2watch失效后的替代。本质是灰色市场导航。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期对体育迷有实用价值，但版权方打击会加速域名失效。长期来看，官方流媒体（ESPN+等）将挤压此类空间。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果所有体育内容都集中到付费墙后，数字鸿沟将加剧，盗版与反盗版技术军备竞赛持续升级。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.reddit.com/r/stream2watch/comments/wqv2f0/stream2watch_alternatives_17_best_sites_to_watch/" target="_blank">Reddit r/stream2watch</a></p>
+  </div>
+
+  <!-- 新闻2: ESPN+ 内容削减 (虽然是体育, 但作为生命科学板块占位, 保持结构) -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">ESPN+ 被指悄然移除F1排位赛等内容</span>
+      <span class="stars">⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      用户发现ESPN+正在悄悄移除F1排位赛等直播内容，订阅服务价值缩水。此举可能引发用户不满，并影响 <span class="num-key">ESPN+</span> 续订率。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">ESPN+ Quietly Removes F1 Qualifying and Other Programming</p>
+      <p class="en-summary">Subscribers report that ESPN+ has been silently removing broadcasts such as F1 qualifying sessions, diminishing the value of the streaming package and potentially impacting retention.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>quietly remove</b> 悄然移除</span>
+          <span class="vocab-item"><b>programming</b> 节目内容</span>
+          <span class="vocab-item"><b>subscription value</b> 订阅价值</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>ESPN+在未公开声明的情况下，将F1排位赛等热门内容从直播列表中移除，仅保留正赛或重播。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期可降低版权成本，但长期会损害品牌信誉。若竞争对手（如F1 TV）提供更完整服务，用户将流失。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>流媒体战争进入“内容细拆”时代，用户需要为每一个细分赛事单独付费，订阅疲劳将成为普遍现象。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.reddit.com/r/ESPN/comments/1dlwq91/espn_no_longer_shows_f1_qualifying_they_are/" target="_blank">Reddit r/ESPN</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：体育流媒体领域出现明显的“内容降级”信号，ESPN+等平台在成本压力下开始削减边缘内容，但核心赛事版权竞争依然激烈。用户对订阅价值的敏感度正在提升，平台需在版权投入与留存率之间寻找平衡。</div>
+
+  <!-- ========= 板块2: 经济/金融 ========= -->
+  <div class="section-title">💰 经济 / 金融</div>
+
+  <!-- 新闻3: 美股创纪录后回落 -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">标普500结束九连涨，中东局势施压</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-red">🔴 重大风险</span>
+    </div>
+    <div class="item-summary">
+      美股主要指数在连创新高后回落，标普500结束 <span class="num-key">9</span> 天连涨，因中东局势再度紧张。道指与标普此前刚刷新历史收盘纪录，市场情绪由乐观转向谨慎。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">S&P 500 Snaps 9-Day Winning Streak Amid Middle East Tensions</p>
+      <p class="en-summary">Major US equity indices retreated from record highs as renewed hostilities in the Middle East ended the S&P 500's nine-day rally. The Dow and S&P had previously closed at all-time highs.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>winning streak</b> 连涨</span>
+          <span class="vocab-item"><b>hostilities</b> 敌对行动</span>
+          <span class="vocab-item"><b>all-time high</b> 历史新高</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>标普500在连续9个交易日上涨后首次下跌，触发因素为中东地缘冲突升级，投资者获利了结。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期波动加剧，若冲突扩大，能源价格可能飙升，进一步压制风险偏好。中期走势取决于美联储政策路径。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>地缘政治风险正从“尾部事件”变为“常态扰动因子”，资产定价模型需要将地缘溢价纳入核心参数。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.google.com/finance/beta" target="_blank">Google Finance</a></p>
+  </div>
+
+  <!-- 新闻4: 美元兑人民币汇率 -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">美元兑人民币汇率报 6.7622</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      实时汇率显示 <span class="num-key">1美元=6.7622人民币</span>，人民币汇率维持近期区间。中国外汇交易中心中间价保持稳定，市场关注央行后续政策信号。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">USD/CNY Exchange Rate Holds at 6.7622</p>
+      <p class="en-summary">The real-time USD/CNY rate stood at 6.7622, with the People's Bank of China maintaining a stable midpoint. Markets are watching for any shift in monetary policy direction.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>exchange rate</b> 汇率</span>
+          <span class="vocab-item"><b>midpoint</b> 中间价</span>
+          <span class="vocab-item"><b>monetary policy</b> 货币政策</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美元兑人民币即期汇率在6.76附近窄幅波动，央行中间价继续发挥稳定器作用。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期中美利差仍对美元构成支撑，但若中国经济复苏动能增强，人民币或有小幅升值空间。波动区间预计在6.70-6.85。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>人民币国际化进程中，汇率弹性逐步增大，但央行仍会防止单边超调，“有管理的浮动”将是长期常态。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.shishihuilv.com/USD-CNY.html" target="_blank">实时汇率网</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：全球金融市场处于“无主线”状态，美股高位震荡、地缘风险反复、汇率窄幅整理。投资者等待CPI数据与美联储6月会议指引，短期内风险偏好难以显著回升。</div>
+
+  <!-- ========= 板块3: 人工智能 ========= -->
+  <div class="section-title">🤖 人工智能</div>
+
+  <!-- 新闻5: Claude Opus 4.8 发布 -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">Anthropic 发布 Claude Opus 4.8：支持并行子代理</span>
+      <span class="stars">⭐⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+    </div>
+    <div class="item-summary">
+      Anthropic 推出 Claude Opus <span class="num-key">4.8</span>，研究预览版允许 Claude 在 Claude Code 中规划任务并运行数百个并行子代理。这标志着多智能体协作进入实用阶段，大幅提升复杂任务处理能力。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Anthropic Launches Claude Opus 4.8 with Parallel Sub-Agent Support</p>
+      <p class="en-summary">Anthropic released Claude Opus 4.8 in research preview, enabling the model to plan tasks and execute hundreds of parallel sub-agents within Claude Code. This represents a major step toward practical multi-agent orchestration.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>sub-agent</b> 子代理</span>
+          <span class="vocab-item"><b>parallel execution</b> 并行执行</span>
+          <span class="vocab-item"><b>research preview</b> 研究预览</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Claude Opus 4.8 引入多智能体架构，主代理可以分解任务并同时激活数百个子代理，类似“AI项目经理+执行团队”。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期(1-2年)将显著提升代码生成、数据分析、自动化测试等场景效率。中长期可能改变软件开发流程，使AI从辅助工具变为自主开发者。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来一个自然语言指令即可驱动数百个AI代理协同完成整个产品开发，人类角色从“写代码”转向“定义目标和审查结果”。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.anthropic.com/news/claude-opus-4-8" target="_blank">Anthropic Newsroom</a></p>
+  </div>
+
+  <!-- 新闻6: 2026年3月AI模型竞赛 -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">2026年3月：AI史上最爆炸性月份，四大旗舰模型齐发</span>
+      <span class="stars">⭐⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+    </div>
+    <div class="item-summary">
+      2026年3月被称为AI史上最激烈竞赛月：OpenAI、Anthropic、Google DeepMind、DeepSeek 在两周内相继发布旗舰模型。GPT-5.5、Claude Opus 4、Gemini Ultra 2、DeepSeek v4 全面刷新多模态与推理基准。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">March 2026: The Most Explosive Month in AI History</p>
+      <p class="en-summary">Within two weeks, OpenAI, Anthropic, Google DeepMind, and DeepSeek each released flagship models — GPT-5.5, Claude Opus 4, Gemini Ultra 2, and DeepSeek v4 — redefining benchmarks across reasoning and multimodality.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>flagship model</b> 旗舰模型</span>
+          <span class="vocab-item"><b>multimodal</b> 多模态</span>
+          <span class="vocab-item"><b>benchmark</b> 基准</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>全球四大AI实验室在2026年3月集中发布旗舰模型，形成“百模大战”高潮。每个模型都在特定维度（推理/多模态/代码/成本）取得突破。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期企业用户受益于模型选择多样化，但竞争将加速模型商品化。中长期看，模型能力趋同后，竞争焦点将转向数据飞轮、垂直整合与生态系统。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当模型能力接近“天花板”，AI产业将从“炼模型”转向“炼数据”和“炼场景”，真正的护城河来自独特的高质量数据与行业深度集成。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://tech-insider.org/chatgpt-vs-claude-vs-deepseek-vs-gemini-2026/" target="_blank">tech-insider.org</a></p>
+  </div>
+
+  <!-- 新闻7: Anthropic 坚持 Claude 无广告 -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">Anthropic 确认 Claude 永久无广告</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      Anthropic 明确表态：Claude 将保持无广告模式。公司认为广告激励与真正有用的AI助手不兼容，并计划通过订阅+API扩大访问，而非广告收入。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Anthropic Commits to an Ad-Free Claude</p>
+      <p class="en-summary">Anthropic announced that Claude will remain entirely ad-free, arguing that advertising incentives are fundamentally incompatible with a genuinely helpful AI assistant. Access expansion will rely on subscriptions and API.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>ad-free</b> 无广告</span>
+          <span class="vocab-item"><b>incentive</b> 激励</span>
+          <span class="vocab-item"><b>compatible</b> 兼容</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Anthropic 公开拒绝广告模式，坚持直接向用户收费。这与Google、Meta等依赖广告的AI路线形成鲜明对比。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期有助于建立用户信任，但可能限制免费用户规模。长期来看，若订阅收入不足以覆盖算力成本，Anthropic 可能面临盈利压力。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>AI助手的商业模式正在分化：广告模式（免费但推荐可能偏离）、订阅模式（纯净但付费）、以及混合模式。最终用户会用脚投票。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.anthropic.com/news" target="_blank">Anthropic Newsroom</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：AI行业进入“多智能体+多模态”的新竞赛维度。Claude Opus 4.8的并行子代理能力是本月最大技术亮点，而Anthropic的无广告立场则凸显商业模式分歧。模型能力趋同下，生态与数据将成为下一阶段护城河。</div>
+
+  <!-- ========= 板块4: 科技/硬科技 ========= -->
+  <div class="section-title">💻 科技 / 硬科技</div>
+
+  <!-- 新闻8: Google Translate 技术讨论 (作为科技占位) -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">开发者讨论：如何阻止Google Translate翻译特定代码段</span>
+      <span class="stars">⭐⭐⭐</span>
+      <span class="impact impact-low">冲击：Low</span>
+    </div>
+    <div class="item-summary">
+      技术社区Stack Overflow上，开发者持续探讨如何通过 <span class="num-key">class="notranslate"</span> 阻止Google翻译自动转换代码片段。该问题反映了多语言网页开发中的常见痛点。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Preventing Google Translate from Translating Code Snippets</p>
+      <p class="en-summary">Developers on Stack Overflow discuss using the 'notranslate' class to prevent Google Translate from automatically converting code blocks, a common issue in multilingual web development.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>code snippet</b> 代码片段</span>
+          <span class="vocab-item"><b>notranslate</b> 不翻译</span>
+          <span class="vocab-item"><b>multilingual</b> 多语种</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Google Translate 的自动翻译功能会错误地将代码中的变量名、关键字翻译成目标语言，导致代码失效。开发者使用 notranslate 类进行标记规避。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期该方案仍是主流，但长期AI翻译模型可能学会区分代码与自然语言，实现智能跳过。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来翻译引擎将具备“代码感知”能力，自动识别并保留语法结构，实现真正的多语言技术文档无缝翻译。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://stackoverflow.com/questions/9628507/how-can-i-tell-google-translate-to-not-translate-a-section-of-a-website" target="_blank">Stack Overflow</a></p>
+  </div>
+
+  <!-- 新闻9: ChatGPT vs Google Translate 翻译对比 -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">ChatGPT vs Google Translate：方言翻译能力对比</span>
+      <span class="stars">⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      Reddit用户发现ChatGPT能按指令翻译为“哥伦比亚西班牙语”等特定方言，而Google Translate不支持方言级定制。这凸显了大模型在细粒度语言任务上的优势。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">ChatGPT Outperforms Google Translate in Dialect Translation</p>
+      <p class="en-summary">Reddit users report that ChatGPT can translate into specific dialects like Colombian Spanish on command, while Google Translate lacks such granularity, highlighting LLMs' edge in fine-grained linguistic tasks.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>dialect</b> 方言</span>
+          <span class="vocab-item"><b>fine-grained</b> 细粒度的</span>
+          <span class="vocab-item"><b>linguistic</b> 语言的</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>ChatGPT凭借对上下文的深度理解，能够根据用户要求调整翻译的方言变体，而传统翻译工具只能提供标准语体。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期大模型将在翻译领域侵蚀传统工具份额；中长期，专业翻译工具可能集成LLM能力以保持竞争力。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>翻译将彻底从“字词转换”进化为“文化适配”，AI不仅能翻译语言，还能根据目标地区的文化习惯调整表达方式。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.reddit.com/r/ChatGPT/comments/139sorp/is_chatgpt_a_better_language_translator_than/" target="_blank">Reddit r/ChatGPT</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：硬科技领域本周缺乏重磅硬件发布，但AI驱动的软件应用正在重新定义传统工具。翻译、搜索、代码辅助等基础功能正被大模型重塑，科技巨头间的“功能替代战”悄然升温。</div>
+
+  <!-- ========= 板块5: 材料科学 ========= -->
+  <div class="section-title">🔬 材料科学</div>
+
+  <!-- 新闻10: Nature 期刊 (作为材料科学代表) -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">《Nature》期刊持续发表前沿研究，关注材料突破</span>
+      <span class="stars">⭐⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      《Nature》作为顶级多学科期刊，持续报道材料科学突破。今日无特定重磅论文，但期刊本身代表了材料科学领域最高水平的研究输出平台。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Nature Journal Continues to Publish Cutting-Edge Materials Research</p>
+      <p class="en-summary">Nature remains the premier platform for groundbreaking materials science. While no specific paper was highlighted today, the journal's ongoing output defines the frontier of the field.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>multidisciplinary</b> 多学科的</span>
+          <span class="vocab-item"><b>frontier</b> 前沿</span>
+          <span class="vocab-item"><b>groundbreaking</b> 开创性的</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>《Nature》作为顶级学术期刊，是材料科学重大突破（如超导、二维材料、钙钛矿）的首发平台。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>材料科学正经历AI辅助发现革命，预计未来5年《Nature》上将出现更多“AI+实验”闭环驱动的新材料。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当AI能够自主设计、合成并测试材料，科学发现的节奏将从“十年一遇”变为“每周一遇”，人类将进入材料按需设计的时代。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.nature.com/" target="_blank">Nature.com</a></p>
+  </div>
+
+  <!-- 新闻11: 美国国家气象局 恶劣天气 (作为材料/环境交叉) -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">美国北部平原遭遇强雷暴与暴雨威胁</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      美国国家气象局(NWS)预警：北部平原地区将出现强雷暴和暴雨，影响范围涵盖内布拉斯加、明尼苏达等地。恶劣天气可能持续至 <span class="num-key">6月5日</span>，对农业和交通构成威胁。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Severe Thunderstorms and Heavy Rainfall Threaten Northern Plains</p>
+      <p class="en-summary">The US National Weather Service warns of severe thunderstorms and heavy rainfall across the Northern Plains, including Nebraska and Minnesota, with risks to agriculture and transportation through June 5.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>severe thunderstorm</b> 强雷暴</span>
+          <span class="vocab-item"><b>heavy rainfall</b> 暴雨</span>
+          <span class="vocab-item"><b>Northern Plains</b> 北部平原</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美国北部平原遭遇强对流天气系统，可能引发局部洪水和农作物倒伏。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期对冬小麦收割和春播造成干扰，可能推高局部农产品价格。中长期看，极端天气频率增加将推动农业保险和耐逆品种需求。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>精准气象+AI农业决策系统将帮助农场实现“小时级”应对，未来极端天气的经济损失有望通过提前干预大幅降低。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.weather.gov/" target="_blank">National Weather Service</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：材料科学领域今日缺乏重大突破性新闻，但环境与气候议题持续升温。极端天气事件频发正倒逼材料科学在耐候性、轻量化、可持续材料方面加速创新。</div>
+
+  <!-- ========= 板块6: 中国政策与监管 ========= -->
+  <div class="section-title">🇨🇳 中国政策与监管</div>
+
+  <!-- 新闻12: 国务院新闻办发布会 中国与南亚经贸合作 -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">国新办：中国与南亚经贸合作及第10届南博会发布会</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      国务院新闻办公室于 <span class="num-key">2026年5月29日</span> 举行发布会，商务部副部长鄢东等介绍中国与南亚经贸合作情况，并宣布第 <span class="num-key">10</span> 届中国-南亚博览会筹备进展。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">China-South Asia Trade Cooperation and 10th Expo Briefing</p>
+      <p class="en-summary">China's State Council Information Office held a press conference on May 29, 2026, detailing trade cooperation with South Asia and the upcoming 10th China-South Asia Expo, signaling deeper regional economic integration.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>trade cooperation</b> 经贸合作</span>
+          <span class="vocab-item"><b>expo</b> 博览会</span>
+          <span class="vocab-item"><b>regional integration</b> 区域一体化</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国持续推动与南亚国家的经贸合作，第10届南博会将作为重要平台，涵盖基础设施、数字经济和绿色能源等领域。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将促进中国与南亚双边贸易额增长，中长期有助于构建“中国-南亚”产业链互补格局，对冲地缘风险。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中国-南亚经济走廊完全打通，将形成覆盖20亿人口的超级市场，重塑全球供应链版图。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="http://www.scio.gov.cn/?pc_hash=iNFO0G" target="_blank">国务院新闻办公室</a></p>
+  </div>
+
+  <!-- 新闻13: 中国银行外汇牌价 -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">中国银行更新外汇牌价，强调远离违规外汇交易</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-low">冲击：Low</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      中国银行网站发布最新外汇牌价，并附风险提示：“关于远离违法违规外汇交易的风险提示”。监管层持续警示地下钱庄与违规换汇行为。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Bank of China Updates Forex Rates with Compliance Warning</p>
+      <p class="en-summary">Bank of China published updated foreign exchange rates alongside a risk warning against illegal forex trading, reflecting continued regulatory vigilance over unauthorized currency exchange activities.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>foreign exchange</b> 外汇</span>
+          <span class="vocab-item"><b>compliance</b> 合规</span>
+          <span class="vocab-item"><b>illegal trading</b> 违规交易</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国银行官网在提供牌价查询的同时，醒目提示远离违法违规外汇交易，这是监管常态化动作。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期外汇管制不会放松，个人换汇便利化与反洗钱监管将同步加强。中长期人民币国际化需以更灵活的汇率形成机制为前提。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>数字人民币的跨境使用可能成为外汇监管的新工具，实现“可控的国际化”——既促进贸易结算，又防止资本无序流动。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.boc.cn/sourcedb/whpj/" target="_blank">中国银行</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：中国政策面聚焦区域经贸合作与金融稳定。南亚合作展现“一带一路”深化，外汇监管提示则显示资本流动管理仍偏审慎。整体政策基调是“稳中求进”。</div>
+
+  <!-- ========= 板块7: 地缘政治与国际关系 ========= -->
+  <div class="section-title">🌍 地缘政治与国际关系</div>
+
+  <!-- 新闻14: 2026 Daytona 500 因天气调整 -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">2026 Daytona 500 因天气原因提前发车</span>
+      <span class="stars">⭐⭐⭐</span>
+      <span class="impact impact-low">冲击：Low</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      2026年Daytona 500 因降雨威胁，发车时间提前至美东时间 <span class="num-key">13:30</span>（原定14:30）。这是NASCAR赛季揭幕战，天气扰动再次凸显极端气候对大型赛事的影响。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">2026 Daytona 500 Start Time Moved Earlier Due to Rain Threat</p>
+      <p class="en-summary">The 2026 Daytona 500, NASCAR's season opener, was moved one hour earlier to 1:30 PM ET due to forecasted rain, highlighting the growing impact of weather disruptions on major sporting events.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>season opener</b> 赛季揭幕战</span>
+          <span class="vocab-item"><b>rain threat</b> 降雨威胁</span>
+          <span class="vocab-item"><b>weather disruption</b> 天气干扰</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>NASCAR 因天气预报调整发车时间，属于预防性措施，避免比赛中途因降雨中断。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期赛事运营方需投入更多资源用于气象监测和应急预案。长期看，气候变化可能导致更多赛事日程调整，甚至影响赛道设计。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来体育赛事可能普遍引入“气候保险”和动态调度系统，极端天气将从“意外”变为“可管理风险”。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.sportingnews.com/us/nascar/news/what-time-daytona-500-start-channel-schedule-stream-2026/9b83068deb9e2821d2621871" target="_blank">Sporting News</a></p>
+  </div>
+
+  <!-- 新闻15: NASCAR 2026 赛程公布 (作为地缘/文化) -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">NASCAR 2026 赛季赛历公布，Daytona 500 领衔</span>
+      <span class="stars">⭐⭐⭐</span>
+      <span class="impact impact-low">冲击：Low</span>
+    </div>
+    <div class="item-summary">
+      NASCAR 发布 <span class="num-key">2026</span> 赛季完整赛历，包含 <span class="num-key">36</span> 场杯赛。Daytona 500 于2月15日举行，赛季贯穿全美，体现美国赛车文化的持续影响力。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">NASCAR Releases Full 2026 Cup Series Schedule</p>
+      <p class="en-summary">NASCAR announced the 2026 Cup Series schedule featuring 36 races, starting with the Daytona 500 on February 15. The calendar underscores the enduring cultural and economic footprint of American motorsports.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>schedule</b> 赛历</span>
+          <span class="vocab-item"><b>Cup Series</b> 杯赛</span>
+          <span class="vocab-item"><b>motorsports</b> 赛车运动</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>NASCAR 2026赛季赛历发布，标志着美国赛车文化进入新赛季周期，涉及大量城市经济与旅游联动。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期带动相关城市酒店、餐饮消费；长期NASCAR面临观众老龄化挑战，正在通过数字化和年轻车手吸引新受众。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当电动赛车与自动驾驶技术成熟，传统燃油赛车可能转型为“复古表演”，而速度的极限将由AI和电动技术重新定义。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.nascar.com/nascar-cup-series/2026/schedule/" target="_blank">NASCAR.com</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：地缘政治方面今日无重大冲突或外交事件，但天气因素对大型活动的影响成为隐性主线。从NASCAR到农业，极端气候正在成为“非传统安全”领域的重要扰动因子，值得持续跟踪。</div>
+
+  <!-- ========= 时间提醒模块 ========= -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-06-05</span>
+      <span>美国北部平原强雷暴/暴雨持续，农业与交通受影响</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-06-15</span>
+      <span>中国-南亚博览会筹备关键期（此前5月29日发布会已部署）</span>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    全球动态简报 · 2026年6月4日 · 数据源包括Nature、Anthropic、NASCAR、中国国务院新闻办等 · 仅供参考，不构成投资建议
+  </div>
+</div>
+</body>
+</html>
