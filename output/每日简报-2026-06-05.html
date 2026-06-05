@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球动态简报 | 2026-06-05</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #222;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 30px 35px;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            border-bottom: 3px solid #1a73e8;
+            padding-bottom: 12px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #111;
+        }
+        .header-date {
+            font-size: 14px;
+            color: #666;
+            margin-top: -10px;
+            margin-bottom: 25px;
+        }
+        /* 综述模块 */
+        .overview {
+            background-color: #eef3fc;
+            border-left: 5px solid #1a73e8;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+        }
+        .overview h3 {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a3a6b;
+        }
+        .overview p {
+            margin: 0 0 12px 0;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #222;
+        }
+        .overview-tags {
+            margin-top: 5px;
+        }
+        .overview-tag {
+            display: inline-block;
+            background-color: #1a73e8;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 12px;
+            margin-right: 8px;
+            margin-bottom: 4px;
+            border-radius: 4px;
+        }
+        /* 板块标题 */
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 35px;
+            margin-bottom: 18px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #ddd;
+            color: #111;
+        }
+        /* 新闻卡片 */
+        .news-item {
+            background: #f9fafb;
+            border: 1px solid #e8e8e8;
+            padding: 18px 20px;
+            margin-bottom: 20px;
+        }
+        .item-header {
+            margin-bottom: 12px;
+        }
+        .item-header h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 6px 0;
+            color: #111;
+        }
+        .meta-row {
+            font-size: 13px;
+            margin-top: 4px;
+        }
+        .meta-row span {
+            margin-right: 10px;
+        }
+        .impact {
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        .impact-high {
+            background-color: #fce4e4;
+            color: #b71c1c;
+        }
+        .impact-med {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        .impact-low {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        .risk-red {
+            background-color: #ffcccc;
+            color: #a00;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        .risk-yellow {
+            background-color: #fff3cd;
+            color: #856404;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        /* 摘要 */
+        .item-summary {
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 12px 0;
+            color: #333;
+        }
+        .num-up {
+            font-weight: 700;
+            color: #1b7a2b;
+            background-color: #e6f4ea;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+        .num-down {
+            font-weight: 700;
+            color: #b71c1c;
+            background-color: #fce4e4;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+        .num-key {
+            font-weight: 700;
+            color: #1a3a6b;
+            background-color: #e8f0fe;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+        /* 英语模块 */
+        .bilingual {
+            background-color: #f0f4f8;
+            border: 1px solid #d0dae5;
+            padding: 12px 15px;
+            margin: 12px 0;
+        }
+        .en-title {
+            font-weight: 600;
+            font-size: 15px;
+            color: #1a3a6b;
+            margin: 0 0 5px 0;
+        }
+        .en-summary {
+            font-size: 14px;
+            color: #333;
+            margin: 5px 0;
+        }
+        .vocab-card {
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            margin-top: 8px;
+        }
+        .vocab-title {
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+        .vocab-list {
+            font-size: 13px;
+        }
+        .vocab-item {
+            display: inline-block;
+            margin-right: 15px;
+            margin-bottom: 3px;
+        }
+        .vocab-item b {
+            font-weight: 600;
+        }
+        /* compare-box */
+        .compare-box {
+            background-color: #fafafa;
+            border: 1px solid #ccc;
+            padding: 12px 15px;
+            margin: 15px 0;
+            display: block;
+        }
+        .compare-side {
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+            padding: 8px 10px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .compare-bull {
+            background-color: #e6f4ea;
+            border-left: 4px solid #1b7a2b;
+        }
+        .compare-bear {
+            background-color: #fce4e4;
+            border-left: 4px solid #b71c1c;
+        }
+        .compare-label {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        /* deepdive */
+        .deepdive {
+            margin: 12px 0;
+        }
+        .deepdive summary {
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            color: #1a3a6b;
+            background-color: #eef3fc;
+            padding: 6px 12px;
+            border: 1px solid #d0dae5;
+        }
+        .deepdive-content {
+            background-color: #f9fafb;
+            border: 1px solid #e0e0e0;
+            border-top: none;
+            padding: 12px 15px;
+        }
+        .dl {
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 6px 0;
+        }
+        .dl-label {
+            font-weight: 600;
+        }
+        .item-source {
+            font-size: 13px;
+            color: #666;
+            margin-top: 8px;
+        }
+        .item-source a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        .item-source a:hover {
+            text-decoration: underline;
+        }
+        /* 趋势评论 */
+        .trend-comment {
+            background-color: #f9f9f9;
+            border-left: 4px solid #888;
+            padding: 10px 15px;
+            margin: 20px 0 30px 0;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #333;
+        }
+        /* 时间线 */
+        .timeline {
+            background-color: #fef9e7;
+            border: 1px solid #f0d060;
+            padding: 15px 20px;
+            margin: 30px 0;
+        }
+        .timeline h4 {
+            margin: 0 0 10px 0;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .timeline-item {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .timeline-date {
+            font-weight: 600;
+            color: #1a3a6b;
+            margin-right: 10px;
+        }
+        footer {
+            margin-top: 35px;
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🌍 全球动态简报</h1>
+    <div class="header-date">📅 2026年6月5日 | 星期五</div>
+
+    <!-- 综述模块 -->
+    <div class="overview">
+        <h3>🧠 今日宏观综述</h3>
+        <p>今日简报聚焦中国动力电池双雄格局剧变：宁德时代市占率突破<span class="num-up">50%</span>，比亚迪则跌至五年新低；同时，第五代磷酸铁锂电池全面量产，标志着成本与能量密度的双重突破。基因治疗领域持续积累临床转化经验，但伦理与安全性挑战仍存。整体风向：新能源赛道加速洗牌，生命科学稳步推进，地缘与技术路线分化加剧。</p>
+        <div class="overview-tags">
+            <span class="overview-tag">🔋 电池双雄分化</span>
+            <span class="overview-tag">⚡ 五代铁锂量产</span>
+            <span class="overview-tag">🧬 基因治疗临床化</span>
+            <span class="overview-tag">📉 比亚迪承压</span>
+        </div>
+    </div>
+
+    <!-- ========== 板块1：生命科学/医学 ========== -->
+    <div class="section-title">🧬 生命科学 / 医学</div>
+
+    <!-- 新闻1：基因治疗原理 -->
+    <div class="news-item">
+        <div class="item-header">
+            <h2>基因治疗：原理、挑战与临床应用全解析</h2>
+            <div class="meta-row">
+                <span class="impact impact-med">冲击：Med</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+        </div>
+        <div class="item-summary">
+            基因治疗通过导入外源正常基因纠正缺陷基因，已在血友病、脊髓性肌萎缩症等领域取得进展。但免疫反应、插入突变等安全性挑战依然存在，体内基因治疗因操作简便成为研究热点，临床转化时间线前移。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Gene Therapy: Principles, Challenges, and Clinical Applications</p>
+            <p class="en-summary">Gene therapy introduces functional genes to correct genetic disorders, showing progress in hemophilia and spinal muscular atrophy. However, immune responses and insertional mutagenesis remain key safety hurdles. In vivo gene therapy is gaining traction for its operational simplicity, accelerating clinical translation timelines.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>gene therapy</b> 基因治疗</span>
+                    <span class="vocab-item"><b>insertional mutagenesis</b> 插入突变</span>
+                    <span class="vocab-item"><b>clinical translation</b> 临床转化</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>基因治疗好比给细胞的“说明书”进行修正——将正确的基因版本导入细胞，让细胞自己生产所需的蛋白质。突破点在于载体的改进（如AAV）和基因编辑工具（CRISPR）的出现。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内，针对单基因遗传病（如镰刀型贫血症）的治疗将加速获批；中长期（3-10年），有望拓展至癌症免疫治疗和部分慢性病。但成本控制和长期安全性仍需验证。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果基因治疗成为常规手段，许多遗传病将不再是终身负担，人类可能迎来“定制健康”时代，但同时也面临基因隐私和伦理公平的深刻挑战。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.sohu.com/a/899032972_121124565" target="_blank">搜狐/知乎综合</a></p>
+    </div>
+
+    <!-- 新闻2：体内基因治疗进展 -->
+    <div class="news-item">
+        <div class="item-header">
+            <h2>体内基因治疗最新研究进展及挑战</h2>
+            <div class="meta-row">
+                <span class="impact impact-med">冲击：Med</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+        </div>
+        <div class="item-summary">
+            体内基因治疗因无需体外培养细胞，操作更简便，成为近年研究热点。Casgevy等获批产品验证了临床可行性，但递送效率、靶向特异性及免疫原性仍是主要瓶颈，未来需在载体工程和剂量控制上持续突破。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Latest Advances and Challenges in In Vivo Gene Therapy</p>
+            <p class="en-summary">In vivo gene therapy, which delivers therapeutic genes directly into the body, is gaining momentum due to its simplified procedure. Approved products like Casgevy demonstrate clinical feasibility, but challenges remain in delivery efficiency, targeting specificity, and immunogenicity, requiring continued innovation in vector engineering and dosage control.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>in vivo</b> 体内</span>
+                    <span class="vocab-item"><b>vector engineering</b> 载体工程</span>
+                    <span class="vocab-item"><b>immunogenicity</b> 免疫原性</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>体内基因治疗相当于“快递直接送到家”，将治疗基因装入载体（如病毒）后直接注射到患者体内。突破点是Casgevy的获批，证明了体内编辑的临床价值。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内，肝脏和眼部疾病的体内基因治疗将率先扩大适应症；中长期（3-10年），可能攻克部分神经退行性疾病。但递送效率是核心瓶颈。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若体内基因治疗成熟，许多复杂疾病可在门诊一次性治疗，医疗模式从“长期服药”转向“一次性治愈”，但高昂的费用可能加剧医疗不平等。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.sohu.com/a/953359048_121123705" target="_blank">搜狐</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：基因治疗领域正从概念验证迈向临床规模化，体内治疗路径因操作便捷性受到更多关注。但安全性数据积累仍需时间，监管端对长期随访要求趋严。整体处于“技术乐观、商业化谨慎”的爬坡阶段。</div>
+
+    <!-- ========== 板块2：经济/金融 ========== -->
+    <div class="section-title">💰 经济 / 金融</div>
+
+    <!-- 新闻：宁德时代 vs 比亚迪 -->
+    <div class="news-item">
+        <div class="item-header">
+            <h2>宁德时代重返巅峰，2026一季度市占率破50%；比亚迪创五年新低</h2>
+            <div class="meta-row">
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-red">🔴 重大风险</span>
+            </div>
+        </div>
+        <div class="item-summary">
+            2026年第一季度，宁德时代全球市占率突破<span class="num-up">50%</span>，同比大幅增长；比亚迪市占率则下滑至<span class="num-down">17.5%</span>，同比下降<span class="num-down">4.3%</span>，创五年新低。磷酸铁锂市场内部竞争白热化，比亚迪在细分领域仍保持优势。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">CATL Regains Dominance with 50%+ Market Share in Q1 2026; BYD Hits 5-Year Low</p>
+            <p class="en-summary">In Q1 2026, CATL's global market share surged past 50%, marking a strong rebound, while BYD's share dropped to 17.5%, down 4.3% year-on-year, its lowest in five years. Competition in the LFP battery sector is intensifying, though BYD retains strengths in specific segments.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>market share</b> 市场占有率</span>
+                    <span class="vocab-item"><b>LFP battery</b> 磷酸铁锂电池</span>
+                    <span class="vocab-item"><b>rebound</b> 反弹</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>宁德时代凭借技术广度和客户多元化（覆盖全球主流车企）重新夺回绝对主导地位；比亚迪因整车业务调整和外部供应策略变化，电池外供比例承压。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内，宁德时代有望继续巩固龙头地位，比亚迪需加速外供战略以扭转份额下滑；中长期（3-10年），固态电池商业化将重塑竞争格局。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若宁德时代持续领先，全球动力电池供应链将更加集中，带来效率但也增加地缘风险；比亚迪若成功转型，可能形成“整车+电池”双轮驱动的独特生态。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.163.com/dy/article/KP9GT4KP05568W0A.html" target="_blank">网易</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：动力电池行业进入“强者恒强”阶段，头部集中度提升。宁德时代与比亚迪的此消彼长反映技术路线与商业策略的分化，磷酸铁锂仍是短期主流，但固态电池的研发竞赛已在暗中加速。</div>
+
+    <!-- ========== 板块3：人工智能 ========== -->
+    <div class="section-title">🤖 人工智能</div>
+
+    <div class="news-item">
+        <div class="item-header">
+            <h2>DeepSeek 深度求索：半年内发布多个百亿级参数开源大模型</h2>
+            <div class="meta-row">
+                <span class="impact impact-med">冲击：Med</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+        </div>
+        <div class="item-summary">
+            中国AI创业公司深度求索（DeepSeek）基于自研训练框架和万卡算力，在半年内发布并开源多个百亿级参数大模型。其最新DeepSeek-V3模型全面升级，提供免费对话服务，持续冲击开源AI生态。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">DeepSeek Releases Multiple Open-Source Large Models with Billions of Parameters</p>
+            <p class="en-summary">Chinese AI startup DeepSeek, leveraging its proprietary training framework and massive compute clusters, has open-sourced several billion-parameter models within six months. The latest DeepSeek-V3 upgrade offers free conversational AI, challenging the open-source AI ecosystem.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>open-source</b> 开源</span>
+                    <span class="vocab-item"><b>proprietary framework</b> 自研框架</span>
+                    <span class="vocab-item"><b>compute cluster</b> 算力集群</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek是2023年成立的AI公司，专注于通用人工智能底层模型研发。其特点是以相对低的成本训练出高性能模型，并全面开源，降低行业使用门槛。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内，DeepSeek有望成为开源大模型领域的重要力量，吸引开发者和企业用户；中长期（3-10年），若持续迭代，可能挑战闭源模型的商业地位。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果开源模型性能接近闭源水平，AI应用将加速普及，小型企业和个人开发者也能构建智能应用，但同时也需防范模型滥用风险。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.deepseek.com/" target="_blank">DeepSeek官网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI领域继续呈现“闭源巨头 vs 开源社区”的双轨演进。DeepSeek代表中国开源力量的崛起，以高效训练和免费策略抢占市场，全球AI竞争从技术参数转向生态与成本效率。</div>
+
+    <!-- ========== 板块4：科技/硬科技 ========== -->
+    <div class="section-title">💻 科技 / 硬科技</div>
+
+    <!-- 新闻：五代磷酸铁锂量产 -->
+    <div class="news-item">
+        <div class="item-header">
+            <h2>宁德时代、比亚迪、国轩高科联手发布第五代磷酸铁锂电池，全面量产</h2>
+            <div class="meta-row">
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+        </div>
+        <div class="item-summary">
+            2026年5月，宁德时代、比亚迪、国轩高科三大巨头同步官宣第五代磷酸铁锂电池实现规模化量产。新一代电池在能量密度、安全性和成本上均取得突破，有望将续航里程推升至<span class="num-key">1000公里</span>级别，加速电动车普及。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">CATL, BYD, and Gotion High-Tech Mass-Produce Fifth-Generation LFP Batteries</p>
+            <p class="en-summary">In May 2026, three Chinese battery giants jointly announced the mass production of fifth-generation lithium iron phosphate (LFP) batteries. The new generation offers improvements in energy density, safety, and cost, potentially enabling EV ranges of up to 1,000 km, accelerating global EV adoption.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>mass production</b> 规模化量产</span>
+                    <span class="vocab-item"><b>energy density</b> 能量密度</span>
+                    <span class="vocab-item"><b>EV range</b> 电动车续航</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>第五代磷酸铁锂电池通过材料改性（如掺杂、包覆）和结构创新（如CTP/CTC技术），在不使用稀有金属的情况下，将能量密度提升至接近三元锂电池水平，同时保持高安全性和低成本。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内，续航<span class="num-key">1000公里</span>的电动车将成为现实，极大缓解里程焦虑；中长期（3-10年），磷酸铁锂将与固态电池形成互补，覆盖不同市场需求。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果磷酸铁锂电池实现1000公里续航且成本低于燃油车，电动车将真正取代燃油车成为主流，全球能源转型步伐将大幅提速。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://finance.sina.com.cn/roll/2026-05-20/doc-inhyptam6917037.shtml" target="_blank">新浪财经</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技领域，中国动力电池产业链集体突破，五代铁锂量产标志着“后补贴时代”的技术自驱力。续航1000公里成为新基准，将深刻影响汽车设计、充电基础设施和能源政策。</div>
+
+    <!-- ========== 板块5：材料科学 ========== -->
+    <div class="section-title">🔬 材料科学</div>
+
+    <!-- 新闻：全固态电池仍需时日 -->
+    <div class="news-item">
+        <div class="item-header">
+            <h2>全固态电池上车仍需时日，2026年比亚迪、宁德时代以磷酸铁锂+固态化破局</h2>
+            <div class="meta-row">
+                <span class="impact impact-med">冲击：Med</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+        </div>
+        <div class="item-summary">
+            全固态电池商业化时间线仍在延后，2026年比亚迪和宁德时代选择“磷酸铁锂+固态化”的过渡路径：即在现有磷酸铁锂体系中引入固态电解质技术，兼顾安全与能量密度，预计<span class="num-key">2028-2030年</span>实现全固态量产。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">All-Solid-State Batteries Still Years Away; CATL and BYD Adopt Hybrid LFP-Solid State Path</p>
+            <p class="en-summary">The commercial timeline for all-solid-state batteries continues to be pushed back. In 2026, CATL and BYD are pursuing a hybrid approach that integrates solid-state electrolytes into existing LFP systems, balancing safety and energy density, with full solid-state mass production expected around 2028-2030.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>solid-state battery</b> 固态电池</span>
+                    <span class="vocab-item"><b>hybrid approach</b> 混合路径</span>
+                    <span class="vocab-item"><b>commercial timeline</b> 商业化时间线</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>全固态电池用固态电解质替代液态电解液，理论上能大幅提升能量密度和安全性。但界面阻抗、制造成本和循环寿命等工程难题尚未完全解决，导致商业化一再推迟。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内，半固态/混合固态电池将率先上车；中长期（3-10年），全固态电池有望在高端车型和航空领域取得突破，但成本仍是最大挑战。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>全固态电池若成功，电动车续航将突破<span class="num-key">1500公里</span>，充电时间缩短至10分钟以内，彻底改变出行方式和能源存储格局。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://zhuanlan.zhihu.com/p/2010978285933332028" target="_blank">知乎</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学领域，电池技术路线出现“务实转向”——企业不再盲目追求全固态的激进目标，而是通过半固态、磷酸铁锂改良等过渡方案，在安全、成本和性能之间寻找最优解。这种“渐进式创新”有望更快落地。</div>
+
+    <!-- ========== 板块6：中国政策与监管 ========== -->
+    <div class="section-title">🇨🇳 中国政策与监管</div>
+
+    <!-- 新闻：动力电池产业政策 -->
+    <div class="news-item">
+        <div class="item-header">
+            <h2>中国动力电池产业格局重塑：头部集中度提升，监管关注产能过剩</h2>
+            <div class="meta-row">
+                <span class="impact impact-med">冲击：Med</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+        </div>
+        <div class="item-summary">
+            随着宁德时代市占率突破<span class="num-up">50%</span>，中国动力电池行业集中度持续提升。监管层开始关注产能过剩与低效扩张风险，可能出台引导性政策，鼓励技术差异化与海外布局，避免恶性价格战。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">China's EV Battery Industry Faces Reshaping: Rising Concentration and Regulatory Scrutiny</p>
+            <p class="en-summary">As CATL's market share surpasses 50%, China's battery industry concentration is increasing. Regulators are monitoring overcapacity risks and may introduce policies to encourage technological differentiation and overseas expansion, aiming to prevent destructive price wars.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>market concentration</b> 市场集中度</span>
+                    <span class="vocab-item"><b>overcapacity</b> 产能过剩</span>
+                    <span class="vocab-item"><b>price war</b> 价格战</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>宁德时代一家独大的局面引发监管对“大而不倒”和产能过剩的担忧。此前光伏、钢铁行业曾因过度扩张导致全行业亏损，监管希望电池行业避免重蹈覆辙。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内，政策可能鼓励二三线企业合并或被收购，同时支持龙头出海；中长期（3-10年），行业将形成“2-3家全球龙头+若干细分领域专家”的格局。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果政策引导得当，中国动力电池产业将从“规模扩张”转向“质量竞争”，在全球供应链中占据更核心的位置，同时避免内耗式竞争。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.163.com/dy/article/KP9GT4KP05568W0A.html" target="_blank">网易/新浪财经综合</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国产业政策正从“大力扶持”转向“精细调控”，在新能源等优势领域，监管更关注可持续发展和全球竞争力，而非单纯规模增长。企业需在技术创新和合规之间找到平衡。</div>
+
+    <!-- ========== 板块7：地缘政治与国际关系 ========== -->
+    <div class="section-title">🌍 地缘政治与国际关系</div>
+
+    <!-- 新闻：中美科技竞争 -->
+    <div class="news-item">
+        <div class="item-header">
+            <h2>中美科技竞争持续：中国电池企业全球扩张面临审查</h2>
+            <div class="meta-row">
+                <span class="impact impact-med">冲击：Med</span>
+                <span class="risk-red">🔴 重大风险</span>
+            </div>
+        </div>
+        <div class="item-summary">
+            随着中国动力电池企业全球市占率突破<span class="num-key">50%</span>，欧美监管机构加强审查，涉及供应链安全、数据合规及技术转让风险。宁德时代、比亚迪的海外建厂计划面临更严格的审批流程。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">US-China Tech Competition Intensifies: Chinese Battery Giants Face Global Scrutiny</p>
+            <p class="en-summary">As Chinese battery makers surpass 50% global market share, regulators in the US and Europe are tightening scrutiny on supply chain security, data compliance, and technology transfer risks. Overseas factory plans by CATL and BYD face more stringent approval processes.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>supply chain security</b> 供应链安全</span>
+                    <span class="vocab-item"><b>technology transfer</b> 技术转让</span>
+                    <span class="vocab-item"><b>stringent approval</b> 严格审批</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国电池企业的全球主导地位引发西方国家“过度依赖”担忧。欧美正通过《通胀削减法案》(IRA)本地化补贴、技术审查和关税壁垒等手段，试图重建本土电池供应链。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内，中国电池企业海外扩张速度可能放缓，但技术成本优势仍难以被替代；中长期（3-10年），全球可能形成“中国+区域”的双轨供应链格局。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果地缘对抗加剧，动力电池可能成为继半导体之后的又一战略物资，全球供应链将经历“去风险化”重构，但效率损失可能推高电动车价格。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.reuters.com/world/china/" target="_blank">Reuters/综合新闻</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘政治风险从半导体领域向新能源产业链扩散，动力电池成为新的战略焦点。中国企业的全球化面临“市场机遇”与“政治阻力”的双重考验，合规能力和本地化布局成为关键竞争力。</div>
+
+    <!-- 时间线模块（条件触发） -->
+    <div class="timeline">
+        <h4>⏰ 近期关键时间节点</h4>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-06-05</span>
+            <span>本周：Stop & Shop 等零售企业新一周促销周期启动（6/5-6/11）</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-06-30</span>
+            <span>Q2 结束，多家企业将发布季度业绩报告，关注宁德时代、比亚迪电池出货量数据</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-07-15</span>
+            <span>预计欧美监管机构将公布针对中国电池企业海外投资的新审查指南</span>
+        </div>
+    </div>
+
+    <footer>
+        全球动态简报 · 2026年6月5日 · 数据来源包括公开新闻报道与权威分析
+    </footer>
+</div>
+</body>
+</html>
