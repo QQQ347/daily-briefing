@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球动态每日简报 | 2026-06-06</title>
+<style>
+  body {
+    background: #f5f6fa;
+    font-family: 'Segoe UI', 'PingFang SC', Roboto, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #1e2a3a;
+    line-height: 1.5;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 28px 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    border-left: 5px solid #2a6df4;
+    padding-left: 12px;
+    margin: 28px 0 14px 0;
+    color: #0b1b33;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: #1f2a44;
+  }
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+  }
+  /* overview */
+  .overview {
+    background: #eef2ff;
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 24px;
+  }
+  .overview p {
+    margin: 6px 0 12px 0;
+    font-size: 15px;
+  }
+  .overview-tags {
+    display: inline-block;
+  }
+  .overview-tag {
+    display: inline-block;
+    background: #d4defa;
+    color: #1f3a8c;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin: 4px 8px 4px 0;
+  }
+  /* item block */
+  .news-item {
+    background: #fafbfc;
+    border: 1px solid #e6e9f0;
+    border-radius: 12px;
+    padding: 18px 18px 14px 18px;
+    margin-bottom: 22px;
+  }
+  .item-header {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  .item-header .title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #0b1b33;
+    margin-right: 10px;
+  }
+  .badge-star {
+    display: inline-block;
+    background: #f5b342;
+    color: #1e2a3a;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 0 8px;
+    border-radius: 14px;
+    margin-right: 6px;
+  }
+  .impact {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 1px 10px;
+    border-radius: 30px;
+    margin: 0 6px 0 0;
+  }
+  .impact-high {
+    background: #fce4e4;
+    color: #b00020;
+  }
+  .impact-med {
+    background: #fff3cd;
+    color: #856404;
+  }
+  .impact-low {
+    background: #e2f0e2;
+    color: #2e7d32;
+  }
+  .risk-red {
+    display: inline-block;
+    background: #ffd9d9;
+    color: #a51b1b;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 1px 12px;
+    border-radius: 30px;
+    margin: 0 4px;
+  }
+  .risk-yellow {
+    display: inline-block;
+    background: #fff3cd;
+    color: #7a6500;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 1px 12px;
+    border-radius: 30px;
+    margin: 0 4px;
+  }
+  .item-summary {
+    background: #f0f3f9;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin: 8px 0 10px 0;
+    font-size: 15px;
+  }
+  .num-up {
+    background: #dcedc8;
+    font-weight: 600;
+    padding: 0 4px;
+    border-radius: 4px;
+    color: #1e5a1e;
+  }
+  .num-down {
+    background: #ffcdd2;
+    font-weight: 600;
+    padding: 0 4px;
+    border-radius: 4px;
+    color: #a52a2a;
+  }
+  .num-key {
+    background: #e3e8f0;
+    font-weight: 600;
+    padding: 0 4px;
+    border-radius: 4px;
+    color: #004d73;
+  }
+  /* bilingual */
+  .bilingual {
+    background: #f9f9fe;
+    border-left: 4px solid #6c8cff;
+    padding: 10px 14px 8px 14px;
+    margin: 12px 0;
+    border-radius: 6px;
+  }
+  .en-title {
+    font-weight: 700;
+    font-size: 15px;
+    color: #0b2b50;
+    margin: 0 0 4px 0;
+  }
+  .en-summary {
+    font-size: 14px;
+    color: #2c3e50;
+    margin: 2px 0 8px 0;
+    font-style: italic;
+  }
+  .vocab-card {
+    background: #eef1f8;
+    padding: 6px 10px;
+    border-radius: 6px;
+    display: inline-block;
+    width: 100%;
+  }
+  .vocab-title {
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 4px;
+    color: #1a2b4c;
+  }
+  .vocab-list {
+    display: inline-block;
+  }
+  .vocab-item {
+    display: inline-block;
+    background: #ffffff;
+    border: 1px solid #ccd7ed;
+    border-radius: 30px;
+    padding: 2px 12px;
+    font-size: 12px;
+    margin: 2px 6px 2px 0;
+  }
+  .vocab-item b {
+    font-weight: 600;
+    margin-right: 4px;
+  }
+  /* compare */
+  .compare-box {
+    background: #f8faff;
+    border: 1px dashed #7f9cf0;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin: 14px 0;
+    display: inline-block;
+    width: 100%;
+  }
+  .compare-side {
+    display: inline-block;
+    width: 44%;
+    vertical-align: top;
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+  .compare-bull {
+    background: #e8f5e9;
+    border-radius: 8px;
+    margin-right: 6%;
+  }
+  .compare-bear {
+    background: #fbe9e7;
+    border-radius: 8px;
+  }
+  .compare-label {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  /* deepdive */
+  .deepdive {
+    margin: 10px 0 4px 0;
+    background: #f4f7fd;
+    border-radius: 8px;
+    padding: 6px 12px;
+    border: 1px solid #dee5f2;
+  }
+  .deepdive summary {
+    font-weight: 600;
+    color: #1f3a7a;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 4px 0;
+  }
+  .deepdive-content {
+    padding: 4px 0 8px 0;
+  }
+  .dl {
+    margin: 6px 0;
+    font-size: 14px;
+  }
+  .dl-label {
+    font-weight: 700;
+    color: #1f3a7a;
+  }
+  .item-source {
+    font-size: 13px;
+    color: #5e6f8d;
+    margin: 10px 0 0 0;
+    border-top: 1px solid #e6eaf0;
+    padding-top: 6px;
+  }
+  .item-source a {
+    color: #2a6df4;
+    text-decoration: none;
+  }
+  .trend-comment {
+    background: #eef3fa;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 10px 0 20px 0;
+    font-size: 14px;
+    border-left: 4px solid #5b7fc7;
+    font-weight: 500;
+  }
+  .timeline {
+    background: #fefce8;
+    border: 1px solid #e6dba0;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 28px 0 20px 0;
+  }
+  .timeline-item {
+    display: inline-block;
+    width: 100%;
+    margin: 6px 0;
+  }
+  .timeline-date {
+    display: inline-block;
+    background: #2a4b7a;
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 0 12px;
+    border-radius: 20px;
+    margin-right: 12px;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #dce2ed;
+    margin: 28px 0 10px 0;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- 综述模块 -->
+<div class="overview">
+  <h3>🧠 今日 AI 综述</h3>
+  <p>今日简报聚焦三大主线：中国央行明确2026年“适度宽松”货币政策，精准降准降息信号强烈，A股结构性红利显现；国产大模型集体爆发，海外Token调用量反超美国，全球AI格局加速多极化；非洲可再生能源投资突破瓶颈，新增装机容量同比增长<span class="num-up">+28%</span>，成为全球绿色转型新引擎。整体风向：政策端偏积极，科技端竞争白热化，地缘风险暂时平稳。</p>
+  <div class="overview-tags">
+    <span class="overview-tag">🏦 精准宽松</span>
+    <span class="overview-tag">🇨🇳 国产大模型崛起</span>
+    <span class="overview-tag">🌍 非洲绿电爆发</span>
+    <span class="overview-tag">🤖 多极AI格局</span>
+  </div>
+</div>
+
+<!-- ===== 板块 1：经济/金融 ===== -->
+<h2>💰 经济/金融</h2>
+
+<div class="news-item">
+  <div class="item-header">
+    <span class="title">央行2026年一季度货币政策报告：精准宽松，结构红利引领A股</span>
+    <span class="badge-star">⭐⭐⭐⭐</span>
+    <span class="impact impact-high">冲击：High</span>
+    <span class="risk-yellow">🟡 值得观察</span>
+  </div>
+  <div class="item-summary">
+    央行一季度报告明确实施适度宽松货币政策，强调“促进经济稳定增长、物价合理回升”。报告通过万亿级结构性工具释放利好，推动A股形成“总量托底、结构先行”格局。降准降息空间打开，专家预计工具额度将呈现<span class="num-up">“加量降价”</span>态势。
+  </div>
+  <div class="bilingual">
+    <p class="en-title">PBOC Q1 2026 Monetary Policy Report: Precision Easing, Structural Dividends for A-Shares</p>
+    <p class="en-summary">The People's Bank of China reaffirmed a moderately accommodative stance, deploying trillion-level structural tools to support growth and price recovery. Analysts expect further RRR and interest rate cuts, with a focus on directing credit toward technology and green sectors.</p>
+    <div class="vocab-card">
+      <div class="vocab-title">📖 Key Vocabulary</div>
+      <div class="vocab-list">
+        <span class="vocab-item"><b>accommodative policy</b> 宽松政策</span>
+        <span class="vocab-item"><b>structural tools</b> 结构性工具</span>
+        <span class="vocab-item"><b>RRR cut</b> 降准</span>
+      </div>
+    </div>
+  </div>
+  <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>央行不再“大水漫灌”，而是像精准灌溉系统一样，通过定向再贷款、碳减排支持工具等，把钱引向科技、绿色、普惠等“五篇大文章”。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内A股科技板块和新能源将获得流动性溢价；中长期（3-5年）若传导顺畅，有望推动全要素生产率提升。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果成功，中国将率先实现“信用扩张+产业升级”的良性循环，告别房地产依赖，开启高质量增长新模式。</p>
+    </div>
+  </details>
+  <p class="item-source">来源：<a href="https://xueqiu.com/6417584981/388273688" target="_blank">雪球深度解读</a> · <a href="https://cif.mofcom.gov.cn/cif/html/upload/20260518085642746_中国货币政策执行报告+2026年第一季度.pdf" target="_blank">央行原报告</a></p>
+</div>
+
+<div class="news-item">
+  <div class="item-header">
+    <span class="title">央行定调2026：降准降息“灵活高效”，汇率约束减弱</span>
+    <span class="badge-star">⭐⭐⭐⭐</span>
+    <span class="impact impact-high">冲击：High</span>
+  </div>
+  <div class="item-summary">
+    新华网报道，央行明确2026年货币政策方向，强调降准降息将“灵活高效”。东方金诚首席分析师王青指出，结构性工具将呈现“加量降价”趋势。同时人民币汇率稳定、美元处于降息通道，外部汇率约束显著减弱，为宽松提供空间。
+  </div>
+  <div class="bilingual">
+    <p class="en-title">PBOC 2026 Policy Direction: Flexible & Efficient RRR/Interest Rate Cuts, Weaker FX Constraint</p>
+    <p class="en-summary">The central bank signaled a flexible approach to monetary easing in 2026, with structural tools expanding in volume while lowering costs. A stable RMB and the Fed's easing cycle reduce external constraints, enabling more aggressive domestic stimulus.</p>
+    <div class="vocab-card">
+      <div class="vocab-title">📖 Key Vocabulary</div>
+      <div class="vocab-list">
+        <span class="vocab-item"><b>monetary easing</b> 货币宽松</span>
+        <span class="vocab-item"><b>FX constraint</b> 汇率约束</span>
+        <span class="vocab-item"><b>structural tools</b> 结构性工具</span>
+      </div>
+    </div>
+  </div>
+  <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>央行工具箱里不仅有“降准降息”这种大招，还有“结构性工具”这种手术刀。现在外部压力小了（美元走弱），可以更大胆使用大招。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>2026年下半年大概率迎来一次降准，LPR有望下调<span class="num-key">10-20bp</span>，企业融资成本进一步降低。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若配合财政发力，中国可能在全球衰退周期中走出独立行情，成为全球资本避风港。</p>
+    </div>
+  </details>
+  <p class="item-source">来源：<a href="https://www.xinhuanet.com/20260107/8d1538b762f44b269f2a7cbe13ce10c6/c.html" target="_blank">新华网</a></p>
+</div>
+
+<div class="trend-comment">📊 板块趋势：中国货币政策正式进入“精准宽松”周期，降准降息预期升温，A股结构性机会凸显。外部美元走弱为国内宽松打开窗口，但需警惕通胀反弹与资产泡沫风险。</div>
+
+<!-- ===== 板块 2：人工智能 ===== -->
+<h2>🤖 人工智能</h2>
+
+<div class="news-item">
+  <div class="item-header">
+    <span class="title">国产大模型“集体”更新：性能跃升，海外Token调用量超越美国</span>
+    <span class="badge-star">⭐⭐⭐⭐</span>
+    <span class="impact impact-high">冲击：High</span>
+    <span class="risk-yellow">🟡 值得观察</span>
+  </div>
+  <div class="item-summary">
+    2026年5月，国产大模型迎来密集更新。DeepSeek、GLM、Qwen等模型在视觉感知、复杂推理方面达到国际一流水平。更关键的是，在海外开发者平台，国产模型Token调用量已超过美国模型，标志着中国AI从“追赶”进入“并跑”阶段。
+  </div>
+  <div class="bilingual">
+    <p class="en-title">Chinese LLMs Surge: Overseas Token Calls Surpass US Models</p>
+    <p class="en-summary">In May 2026, Chinese large language models (DeepSeek, GLM, Qwen) achieved significant upgrades in vision, reasoning, and alignment. For the first time, token calls from Chinese models on overseas developer platforms exceeded those from US models, signaling a shift from catch-up to head-to-head competition.</p>
+    <div class="vocab-card">
+      <div class="vocab-title">📖 Key Vocabulary</div>
+      <div class="vocab-list">
+        <span class="vocab-item"><b>token calls</b> Token调用量</span>
+        <span class="vocab-item"><b>vision perception</b> 视觉感知</span>
+        <span class="vocab-item"><b>human alignment</b> 人类对齐</span>
+      </div>
+    </div>
+  </div>
+  <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>国产大模型不再只是“参数大”，而是在实际使用量上赢了。Token调用量就像搜索引擎的点击量，是真实市场需求的风向标。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1年内）国产模型将在代码助手、内容生成领域快速渗透；中长期（3-5年）有望在AI Agent、多模态应用上建立生态优势。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来全球AI市场可能形成“中美双极”格局，中国在制造、医疗、教育等场景的AI应用将反哺全球。</p>
+    </div>
+  </details>
+  <p class="item-source">来源：<a href="http://www.ce.cn/xwzx/gnsz/gdxw/202605/t20260518_2972486.shtml" target="_blank">中国经济网</a> · <a href="https://zhuanlan.zhihu.com/p/670574382" target="_blank">知乎模型盘点</a></p>
+</div>
+
+<div class="news-item">
+  <div class="item-header">
+    <span class="title">2026年5月大模型选型指南：国际闭源旗舰 vs 国产双强 vs 欧美开源</span>
+    <span class="badge-star">⭐⭐⭐⭐</span>
+    <span class="impact impact-med">冲击：Med</span>
+  </div>
+  <div class="item-summary">
+    截至2026年5月，全球大模型格局已演变为“国际闭源旗舰（GPT-5.5、Claude Opus 4.7、Gemini 3.1 Pro）+ 国产双强（DeepSeek V4、GLM-5）+ 欧美开源生力军”的多极格局。评测显示，DeepSeek V4在代码和推理方面已接近GPT-5.5水平。
+  </div>
+  <div class="bilingual">
+    <p class="en-title">LLM Landscape May 2026: Multi-Polar Competition Heats Up</p>
+    <p class="en-summary">The global LLM landscape has evolved into a multi-polar structure: closed-source flagships (GPT-5.5, Claude Opus 4.7, Gemini 3.1 Pro), Chinese contenders (DeepSeek V4, GLM-5), and open-source forces. DeepSeek V4 approaches GPT-5.5 in coding and reasoning benchmarks.</p>
+    <div class="vocab-card">
+      <div class="vocab-title">📖 Key Vocabulary</div>
+      <div class="vocab-list">
+        <span class="vocab-item"><b>multi-polar</b> 多极的</span>
+        <span class="vocab-item"><b>closed-source flagship</b> 闭源旗舰</span>
+        <span class="vocab-item"><b>reasoning benchmark</b> 推理基准</span>
+      </div>
+    </div>
+  </div>
+  <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>以前只有OpenAI和Google两家独大，现在中国DeepSeek、欧美开源社区（如Llama）都成了重要玩家，形成“三极+开源”格局。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）模型能力趋同，竞争焦点转向应用生态和成本；中长期（3-5年）Agent和端侧模型将成新战场。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>AI将像电力一样普及，每个企业都拥有自己的“AI员工”，人机协作成为常态。</p>
+    </div>
+  </details>
+  <p class="item-source">来源：<a href="https://jishuzhan.net/article/2060536648215113730" target="_blank">技术栈评测</a></p>
+</div>
+
+<div class="trend-comment">📊 板块趋势：国产大模型在性能和实际调用量上实现双重突破，全球AI格局从“一超多强”演变为“中美双极+开源生态”。短期关注DeepSeek V4的Agent能力，长期看生态建设与商业化落地。</div>
+
+<!-- ===== 板块 3：硬科技 ===== -->
+<h2>💻 科技/硬科技</h2>
+
+<div class="news-item">
+  <div class="item-header">
+    <span class="title">华为云：AI解行业难题，TCO降低40%</span>
+    <span class="badge-star">⭐⭐⭐⭐</span>
+    <span class="impact impact-med">冲击：Med</span>
+  </div>
+  <div class="item-summary">
+    华为云发布最新案例，通过可扩展、智能的云服务，帮助IOT Technology将总拥有成本（TCO）降低<span class="num-down">-40%</span>，网络时延从<span class="num-key">100ms</span>降低到<span class="num-key">40ms</span>以内。华为云正加速从“基础设施”向“AI解决方案”转型。
+  </div>
+  <div class="bilingual">
+    <p class="en-title">Huawei Cloud: AI Reduces TCO by 40%, Latency Drops to Sub-40ms</p>
+    <p class="en-summary">Huawei Cloud's intelligent solutions helped IOT Technology slash total cost of ownership by 40% and reduce network latency from 100ms to under 40ms, showcasing the shift from cloud infrastructure to AI-powered business outcomes.</p>
+    <div class="vocab-card">
+      <div class="vocab-title">📖 Key Vocabulary</div>
+      <div class="vocab-list">
+        <span class="vocab-item"><b>TCO</b> 总拥有成本</span>
+        <span class="vocab-item"><b>latency</b> 时延</span>
+        <span class="vocab-item"><b>AI-powered</b> AI驱动的</span>
+      </div>
+    </div>
+  </div>
+  <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>华为云不只是卖服务器，而是把AI能力嵌入到企业的生产流程中，像“医生”一样诊断问题并开出AI药方。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）制造业、物流业将率先受益于AI云服务；中长期（3-5年）AI云将成为企业数字化转型的标准配置。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来企业不再需要自建IT团队，只需像用电一样按需调用AI云服务，实现“零门槛”智能化。</p>
+    </div>
+  </details>
+  <p class="item-source">来源：<a href="https://www.huaweicloud.com/intl/zh-cn/" target="_blank">华为云官网</a></p>
+</div>
+
+<div class="trend-comment">📊 板块趋势：硬科技领域，华为云为代表的“AI+云”融合趋势加速，企业级AI应用从概念走向降本增效的实际落地。半导体基础内容未提供有效新闻，但华为的案例表明中国科技企业正从硬件制造向软件+服务生态延伸。</div>
+
+<!-- ===== 板块 4：生命科学/医学 ===== -->
+<h2>🧬 生命科学/医学</h2>
+
+<div class="news-item">
+  <div class="item-header">
+    <span class="title">基因定义再更新：转录DNA序列成为新共识</span>
+    <span class="badge-star">⭐⭐⭐</span>
+    <span class="impact impact-low">冲击：Low</span>
+  </div>
+  <div class="item-summary">
+    维基百科及多个权威机构近期更新了“基因”定义，强调基因是“被转录的DNA序列”，包括非编码RNA基因。这一更精确的定义有助于统一科研语言，对基因治疗和合成生物学领域具有基础性指导意义。
+  </div>
+  <div class="bilingual">
+    <p class="en-title">Gene Definition Refined: Focus on Transcribed DNA Sequences</p>
+    <p class="en-summary">Leading sources now define a gene as any DNA sequence that is transcribed, encompassing non-coding RNA genes. This refined definition standardizes research terminology and impacts gene therapy and synthetic biology frameworks.</p>
+    <div class="vocab-card">
+      <div class="vocab-title">📖 Key Vocabulary</div>
+      <div class="vocab-list">
+        <span class="vocab-item"><b>transcribed</b> 被转录的</span>
+        <span class="vocab-item"><b>non-coding RNA</b> 非编码RNA</span>
+        <span class="vocab-item"><b>synthetic biology</b> 合成生物学</span>
+      </div>
+    </div>
+  </div>
+  <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>以前我们认为基因就是“制造蛋白质的蓝图”，现在发现很多基因只转录成RNA但不制造蛋白质，它们同样重要。这个定义更新就像把“员工”的定义从“只做产品的人”扩大到“所有做贡献的人”。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）将影响基因编辑的靶点设计；中长期（3-5年）可能催生基于非编码RNA的新疗法。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来我们可能通过调控非编码RNA来“微调”基因表达，治疗复杂疾病如癌症、神经退行性疾病。</p>
+    </div>
+  </details>
+  <p class="item-source">来源：<a href="https://en.m.wikipedia.org/wiki/Gene" target="_blank">Wikipedia</a> · <a href="https://my.clevelandclinic.org/health/body/gene" target="_blank">Cleveland Clinic</a></p>
+</div>
+
+<div class="trend-comment">📊 板块趋势：今日生命科学板块基础理论更新为主，基因定义的精确化将间接推动基因治疗与合成生物学标准化。未见重大临床突破，但基础定义的统一是领域成熟的重要标志。</div>
+
+<!-- ===== 板块 5：材料科学 ===== -->
+<h2>🔬 材料科学</h2>
+
+<div class="news-item">
+  <div class="item-header">
+    <span class="title">非洲可再生能源投资激增：新增装机同比增长28%</span>
+    <span class="badge-star">⭐⭐⭐⭐</span>
+    <span class="impact impact-high">冲击：High</span>
+  </div>
+  <div class="item-summary">
+    多份报告显示，非洲可再生能源市场正加速发展。2025年非洲可再生能源新增装机容量同比增长<span class="num-up">+28%</span>，太阳能和风能项目首次超过传统化石能源投资。肯尼亚、南非、埃塞俄比亚成为增长主力，中国企业在供应链中扮演关键角色。
+  </div>
+  <div class="bilingual">
+    <p class="en-title">Africa Renewable Energy Boom: New Capacity Up 28% YoY</p>
+    <p class="en-summary">Africa's renewable energy sector saw a 28% year-on-year increase in new installed capacity in 2025, with solar and wind investments surpassing fossil fuels for the first time. Kenya, South Africa, and Ethiopia lead the growth, with Chinese firms playing a key supply-chain role.</p>
+    <div class="vocab-card">
+      <div class="vocab-title">📖 Key Vocabulary</div>
+      <div class="vocab-list">
+        <span class="vocab-item"><b>installed capacity</b> 装机容量</span>
+        <span class="vocab-item"><b>fossil fuels</b> 化石能源</span>
+        <span class="vocab-item"><b>supply chain</b> 供应链</span>
+      </div>
+    </div>
+  </div>
+  <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>非洲终于开始“用阳光换发展”。撒哈拉以南非洲拥有全球最好的日照条件，但长期缺乏投资。现在成本下降和政策支持让太阳能比柴油更便宜。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）离网太阳能将在农村地区快速普及；中长期（5-10年）非洲有望成为全球绿色氢能出口中心。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果非洲能跳过化石能源时代直接进入可再生能源时代，将避免碳排放陷阱，同时为10亿人口提供廉价电力，释放巨大经济潜力。</p>
+    </div>
+  </details>
+  <p class="item-source">来源：<a href="https://www.sciencedirect.com/science/article/pii/S2211467X2500063X" target="_blank">ScienceDirect</a> · <a href="https://www.independent.co.uk/news/south-africa-kenya-nairobi-ethiopia-china-b2984085.html" target="_blank">Independent</a></p>
+</div>
+
+<div class="trend-comment">📊 板块趋势：非洲可再生能源正从“概念”走向“规模”，太阳能和风能成本优势凸显。中国光伏企业和基建公司深度参与，既是商业机会也是地缘影响力的延伸。材料科学维度上，钙钛矿等新型光伏材料的成本突破是关键催化剂。</div>
+
+<!-- ===== 板块 6：中国政策与监管 ===== -->
+<h2>🇨🇳 中国政策与监管</h2>
+
+<div class="news-item">
+  <div class="item-header">
+    <span class="title">国务院新闻办发布会：商务部推动亚洲经贸合作新举措</span>
+    <span class="badge-star">⭐⭐⭐⭐</span>
+    <span class="impact impact-med">冲击：Med</span>
+  </div>
+  <div class="item-summary">
+    国务院新闻办公室于2026年5月29日举行新闻发布会，商务部副部长鄢东介绍深化与亚洲国家经贸合作的新政策，涉及数字贸易、产业链供应链合作等领域。此举旨在应对全球贸易碎片化，强化中国在区域经济中的枢纽地位。
+  </div>
+  <div class="bilingual">
+    <p class="en-title">China Unveils New Asia Trade Cooperation Measures</p>
+    <p class="en-summary">China's Ministry of Commerce announced new policies to deepen economic and trade ties with Asian countries, focusing on digital trade and supply chain resilience. The move aims to counter global trade fragmentation and reinforce China's regional economic hub role.</p>
+    <div class="vocab-card">
+      <div class="vocab-title">📖 Key Vocabulary</div>
+      <div class="vocab-list">
+        <span class="vocab-item"><b>trade fragmentation</b> 贸易碎片化</span>
+        <span class="vocab-item"><b>supply chain resilience</b> 供应链韧性</span>
+        <span class="vocab-item"><b>digital trade</b> 数字贸易</span>
+      </div>
+    </div>
+  </div>
+  <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>在欧美推动“去风险化”的背景下，中国加速与亚洲邻居“绑定”——通过降低关税、共建数字贸易规则、强化产业链合作，打造一个以中国为中心的亚洲经济圈。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）RCEP框架下的贸易便利化将深化；中长期（3-5年）数字贸易规则可能形成“亚洲标准”。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来亚洲可能成为全球最大的单一数字贸易市场，中国在其中扮演“规则制定者”和“基础设施提供者”双重角色。</p>
+    </div>
+  </details>
+  <p class="item-source">来源：<a href="http://www.scio.gov.cn/?pc_hash=iNFO0G" target="_blank">国务院新闻办公室</a></p>
+</div>
+
+<div class="trend-comment">📊 板块趋势：中国政策主线清晰——对内精准宽松稳增长，对外深化亚洲经贸合作应对地缘风险。货币政策与产业政策协同发力，科技与绿色是两大核心方向。</div>
+
+<!-- ===== 板块 7：地缘政治与国际关系 ===== -->
+<h2>🌍 地缘政治与国际关系</h2>
+
+<div class="news-item">
+  <div class="item-header">
+    <span class="title">非洲可再生能源：中国供应链角色引关注</span>
+    <span class="badge-star">⭐⭐⭐⭐</span>
+    <span class="impact impact-med">冲击：Med</span>
+    <span class="risk-yellow">🟡 值得观察</span>
+  </div>
+  <div class="item-summary">
+    在非洲可再生能源投资热潮中，中国企业提供从光伏板到电网设备的全链条供应。但西方媒体和部分非洲国家担忧“债务陷阱”和供应链依赖。肯尼亚和埃塞俄比亚的项目中，中资占比超过<span class="num-key">60%</span>，引发地缘经济讨论。
+  </div>
+  <div class="bilingual">
+    <p class="en-title">China's Dominant Role in Africa's Green Energy Supply Chain Under Scrutiny</p>
+    <p class="en-summary">Chinese firms supply over 60% of solar panels and grid equipment for Africa's renewable boom. While accelerating energy access, this dominance raises concerns about debt dependency and supply chain vulnerability, echoing earlier infrastructure debates.</p>
+    <div class="vocab-card">
+      <div class="vocab-title">📖 Key Vocabulary</div>
+      <div class="vocab-list">
+        <span class="vocab-item"><b>supply chain dominance</b> 供应链主导</span>
+        <span class="vocab-item"><b>debt dependency</b> 债务依赖</span>
+        <span class="vocab-item"><b>energy access</b> 能源获取</span>
+      </div>
+    </div>
+  </div>
+  <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国在非洲绿色能源领域的参与，从“修路盖楼”升级到“铺光伏板、建电网”。这既是商业机会，也是地缘影响力工具，但引发了与当年“一带一路”类似的争议。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）中国仍将是非洲绿色能源的主要合作伙伴；中长期（3-5年）若非洲本土制造业崛起，可能寻求供应链多元化。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>理想情况下，中国帮助非洲建立完整的绿色工业体系，非洲成为全球绿色能源基地，双方实现共赢；风险是若管理不善，可能重演资源诅咒。</p>
+    </div>
+  </details>
+  <p class="item-source">来源：<a href="https://www.independent.co.uk/news/south-africa-kenya-nairobi-ethiopia-china-b2984085.html" target="_blank">The Independent</a> · <a href="https://link.springer.com/article/10.1007/s44274-026-00716-1" target="_blank">Springer Review</a></p>
+</div>
+
+<div class="trend-comment">📊 板块趋势：地缘层面，中美竞争从半导体、AI延伸到绿色能源供应链。非洲成为新的角力场，中国凭借成本优势和基建经验占据先机，但需警惕“债务陷阱”叙事带来的政策风险。</div>
+
+<!-- 时间线模块（条件触发） -->
+<div class="timeline">
+  <h4>⏰ 近期关键时间节点</h4>
+  <div class="timeline-item">
+    <span class="timeline-date">2026-06-15</span>
+    <span>美联储议息会议，市场预期维持利率不变，关注点阵图变化</span>
+  </div>
+  <div class="timeline-item">
+    <span class="timeline-date">2026-06-30</span>
+    <span>中国央行二季度货币政策委员会例会，或释放进一步降准信号</span>
+  </div>
+  <div class="timeline-item">
+    <span class="timeline-date">2026-07-01</span>
+    <span>商务部亚洲经贸合作新政策细则预计公布</span>
+  </div>
+</div>
+
+<hr>
+<p style="text-align:right; color:#6f7d9a; font-size:13px;">全球动态每日简报 · 2026年6月6日 · 自动生成</p>
+</div>
+</body>
+</html>
