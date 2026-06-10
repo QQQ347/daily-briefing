@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 简报 | 2026-06-10</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 20px;
+    color: #1a1a2e;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 24px 28px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    color: #0f3460;
+  }
+  .date {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 12px;
+  }
+  .overview {
+    background: #eef2ff;
+    padding: 18px 20px;
+    border-radius: 10px;
+    margin-bottom: 28px;
+    border-left: 4px solid #3b82f6;
+  }
+  .overview h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: #1e3a5f;
+  }
+  .overview p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0 0 12px 0;
+    color: #1a1a2e;
+  }
+  .overview-tags {
+    display: block;
+    margin-top: 6px;
+  }
+  .overview-tag {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1e40af;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin: 4px 8px 4px 0;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 32px 0 16px 0;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #e2e8f0;
+    color: #0f3460;
+  }
+  .item {
+    background: #fafbfc;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+  }
+  .item-header {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .item-header h4 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+    color: #0f3460;
+  }
+  .item-meta {
+    display: block;
+    margin: 4px 0;
+  }
+  .item-meta span {
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 13px;
+  }
+  .impact {
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+  .impact-high {
+    background: #fee2e2;
+    color: #b91c1c;
+  }
+  .impact-med {
+    background: #fef3c7;
+    color: #92400e;
+  }
+  .impact-low {
+    background: #e0e7ff;
+    color: #3730a3;
+  }
+  .risk-red {
+    display: inline-block;
+    background: #fecaca;
+    color: #991b1b;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 4px;
+  }
+  .risk-yellow {
+    display: inline-block;
+    background: #fde68a;
+    color: #92400e;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 4px;
+  }
+  .item-summary {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 10px 0;
+    color: #1f2937;
+  }
+  .num-up {
+    background: #dcfce7;
+    color: #166534;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+  .num-down {
+    background: #fee2e2;
+    color: #991b1b;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+  .num-key {
+    background: #e0e7ff;
+    color: #3730a3;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+  .bilingual {
+    background: #f1f5f9;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 12px 0;
+    border-left: 3px solid #64748b;
+  }
+  .en-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 4px 0;
+  }
+  .en-summary {
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.5;
+    margin: 0 0 8px 0;
+  }
+  .vocab-card {
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-top: 6px;
+  }
+  .vocab-title {
+    font-weight: 600;
+    font-size: 13px;
+    color: #475569;
+    margin-bottom: 4px;
+  }
+  .vocab-list {
+    display: block;
+  }
+  .vocab-item {
+    display: inline-block;
+    background: #e2e8f0;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin: 2px 6px 2px 0;
+    color: #1e293b;
+  }
+  .compare-box {
+    display: block;
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+    margin: 16px 0;
+    overflow: hidden;
+  }
+  .compare-side {
+    display: inline-block;
+    width: 48%;
+    padding: 12px 14px;
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 1.5;
+    box-sizing: border-box;
+  }
+  .compare-bull {
+    background: #ecfdf5;
+    border-right: 1px solid #d1d5db;
+  }
+  .compare-bear {
+    background: #fef2f2;
+  }
+  .compare-label {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+  .deepdive {
+    margin: 12px 0;
+    background: #f8fafc;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 0 12px;
+  }
+  .deepdive summary {
+    font-weight: 600;
+    font-size: 14px;
+    color: #1e40af;
+    cursor: pointer;
+    padding: 8px 0;
+  }
+  .deepdive-content {
+    padding: 8px 0 12px 0;
+  }
+  .dl {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 6px 0;
+  }
+  .dl-label {
+    font-weight: 600;
+    color: #0f3460;
+  }
+  .item-source {
+    font-size: 12px;
+    color: #6b7280;
+    margin: 8px 0 0 0;
+  }
+  .item-source a {
+    color: #3b82f6;
+    text-decoration: none;
+  }
+  .trend-comment {
+    background: #f1f5f9;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 16px 0 24px 0;
+    font-size: 14px;
+    color: #1e293b;
+    border-left: 4px solid #64748b;
+  }
+  .timeline {
+    background: #fefce8;
+    border: 1px solid #eab308;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 28px 0 20px 0;
+  }
+  .timeline h4 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    color: #854d0e;
+  }
+  .timeline-item {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .timeline-date {
+    display: inline-block;
+    background: #fef9c3;
+    color: #854d0e;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 13px;
+  }
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
+  }
+  @media (max-width: 640px) {
+    .container { padding: 16px; }
+    .compare-side { width: 100%; display: block; border-right: none; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🌍 全球动态每日简报</h1>
+  <div class="date">2026年6月10日 · 星期三</div>
+
+  <!-- 综述模块 -->
+  <div class="overview">
+    <h3>🧠 今日综述</h3>
+    <p>今日简报聚焦三条主线：中国AI芯片市场获政策强力驱动，工信部白皮书剑指两千亿规模，但美股芯片板块因地缘风险单日蒸发万亿；存储芯片出口“量价齐升”成为硬科技亮点；同时美国扩大“中国军事企业”名单，比亚迪、阿里、百度上榜，地缘博弈升温。整体风向：科技端政策利好与市场恐慌并存，金融端波动加剧，地缘风险持续积累。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🇨🇳 AI芯片两千亿</span>
+      <span class="overview-tag">📉 芯片股暴跌</span>
+      <span class="overview-tag">🔴 军事企业名单</span>
+      <span class="overview-tag">📦 存储芯片出口</span>
+      <span class="overview-tag">💱 人民币汇率6.77</span>
+    </div>
+  </div>
+
+  <!-- ==================== 板块1: 生命科学/医学 ==================== -->
+  <h2 class="section-title">🧬 生命科学 / 医学</h2>
+
+  <!-- 新闻1: 基因定义更新 (约2条) -->
+  <div class="item">
+    <div class="item-header">
+      <h4>基因定义再引热议：最新综述强调“转录单元”核心地位</h4>
+      <div class="item-meta">
+        <span>⭐⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+    </div>
+    <div class="item-summary">
+      多篇权威来源（Wikipedia、Britannica、Cleveland Clinic）重申基因作为“DNA转录单元”的经典定义。尽管无突破性发现，但该话题在学术界持续引发讨论，尤其针对非编码RNA基因的界定。
+    </div>
+    <!-- bilingual -->
+    <div class="bilingual">
+      <p class="en-title">Gene Definition Revisited: The 'Transcribed DNA Sequence' Paradigm</p>
+      <p class="en-summary">A wave of authoritative sources including Wikipedia, Britannica, and Cleveland Clinic reaffirm the classical definition of a gene as a DNA sequence that is transcribed. The discussion highlights ongoing debates around non-coding RNA genes and the evolving boundaries of genetic units.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>transcribed</b> 转录的</span>
+          <span class="vocab-item"><b>non-coding RNA</b> 非编码RNA</span>
+          <span class="vocab-item"><b>locus</b> 基因座</span>
+        </div>
+      </div>
+    </div>
+    <!-- deepdive -->
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>基因的经典定义是“可被转录的DNA序列”。当前争议焦点在于，大量非编码RNA（如lncRNA）是否应被归为基因，这影响基因组注释和疾病靶点筛选。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期影响学术分类体系；中长期可能推动更精准的基因编辑靶向设计，尤其在癌症和遗传病领域。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果基因定义完全统一，基因组数据库将更加标准化，加速个性化医疗中“致病基因”的识别效率。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://en.wikipedia.org/wiki/Gene" target="_blank">Wikipedia - Gene</a> · <a href="https://www.britannica.com/science/gene" target="_blank">Britannica</a></p>
+  </div>
+
+  <!-- 新闻2: Gene期刊动态 -->
+  <div class="item">
+    <div class="item-header">
+      <h4>Elsevier旗下《Gene》期刊持续聚焦基因调控与表达新进展</h4>
+      <div class="item-meta">
+        <span>⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+    </div>
+    <div class="item-summary">
+      ScienceDirect上《Gene》期刊更新了关于基因调控、表达及基因组学的最新研究，强调对基础遗传学机制的持续探索，为后续应用研究提供理论支撑。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Gene Journal Highlights Advances in Gene Regulation and Expression</p>
+      <p class="en-summary">The journal Gene, published by Elsevier on ScienceDirect, continues to feature cutting-edge research on gene regulation, expression, and genomics, providing foundational insights for translational medicine.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>gene regulation</b> 基因调控</span>
+          <span class="vocab-item"><b>genomics</b> 基因组学</span>
+          <span class="vocab-item"><b>expression</b> 表达</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>《Gene》期刊是遗传学领域的经典平台，本次更新反映了学界对基础机制（如启动子、增强子）的持续深耕。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期为实验室研究提供理论框架；中长期助力合成生物学和基因治疗中的精准调控设计。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若基因调控网络被完全解析，人类或能“编程”细胞行为，用于再生医学或抗衰老。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.sciencedirect.com/journal/gene" target="_blank">ScienceDirect - Gene</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：生命科学领域今日无重磅突破，但基因定义和基础调控的讨论为后续基因编辑、RNA疗法等方向提供理论锚点，整体处于知识沉淀期。</div>
+
+  <!-- ==================== 板块2: 经济/金融 ==================== -->
+  <h2 class="section-title">💰 经济 / 金融</h2>
+
+  <!-- 新闻1: 美股芯片暴跌 -->
+  <div class="item">
+    <div class="item-header">
+      <h4>美股芯片板块崩盘：英伟达单日暴跌12%，市值蒸发超3000亿美元</h4>
+      <div class="item-meta">
+        <span>⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+    </div>
+    <div class="item-summary">
+      受地缘政治因素（中国对镓/锗出口管制升级）影响，费城半导体指数暴跌。英伟达单日跌<span class="num-down">12%</span>，市值蒸发超<span class="num-down">3000亿美元</span>；美光科技跌幅超<span class="num-down">8%</span>。市场恐慌情绪蔓延，芯片股总市值单日蒸发逾<span class="num-down">1万亿美元</span>。
+    </div>
+    <!-- bilingual -->
+    <div class="bilingual">
+      <p class="en-title">US Chip Stocks Crash: Nvidia Plunges 12%, $1 Trillion Wiped Off</p>
+      <p class="en-summary">The Philadelphia Semiconductor Index collapsed as China tightened export controls on gallium and germanium. Nvidia lost 12% in a single day, erasing over $300 billion in market cap, while Micron fell more than 8%. Total losses exceeded $1 trillion.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>plunge</b> 暴跌</span>
+          <span class="vocab-item"><b>market cap</b> 市值</span>
+          <span class="vocab-item"><b>export controls</b> 出口管制</span>
+        </div>
+      </div>
+    </div>
+    <!-- deepdive -->
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国对镓、锗等关键半导体材料实施出口管制，直接冲击全球芯片供应链。英伟达、美光等巨头因高度依赖中国原材料和市场，成为重灾区。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）芯片股将继续承压，供应链重组加速；中长期（1-2年）美国或推动本土材料替代，但成本将上升。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若材料脱钩成为常态，全球芯片产业将分裂为“中国标准”和“西方标准”两套体系，技术迭代速度可能放缓。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.sohu.com/a/1034431073_122541357" target="_blank">搜狐财经</a></p>
+  </div>
+
+  <!-- 新闻2: 人民币汇率 -->
+  <div class="item">
+    <div class="item-header">
+      <h4>人民币兑美元汇率跌破6.78，创年内新低</h4>
+      <div class="item-meta">
+        <span>⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+    </div>
+    <div class="item-summary">
+      实时汇率网显示，美元兑人民币汇率升至<span class="num-key">6.7722</span>，人民币贬值压力加大。中国银行外汇牌价同步更新，中间价走弱。分析认为，中美利差扩大及出口放缓是主因。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">CNY Weakens Past 6.78 per USD, Hitting 2026 Low</p>
+      <p class="en-summary">The onshore yuan fell past 6.78 against the U.S. dollar, marking a new low for the year. The Bank of China's fixing rate also weakened, driven by widening interest rate differentials and slowing export momentum.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>exchange rate</b> 汇率</span>
+          <span class="vocab-item"><b>depreciation</b> 贬值</span>
+          <span class="vocab-item"><b>interest rate differential</b> 利差</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>人民币汇率跌破6.78，反映资本外流压力和出口竞争力下降。中国央行可能通过中间价调控或外汇储备干预来稳定预期。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期人民币或继续测试6.80关口；中长期取决于美联储降息节奏和中国经济复苏力度。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若人民币持续贬值，可能引发亚洲货币竞争性贬值，全球贸易格局面临重塑。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.shishihuilv.com/USD-CNY.html" target="_blank">实时汇率网</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：金融市场今日受地缘冲击剧烈波动，芯片股暴跌与人民币贬值形成共振，避险情绪升温。关注后续美联储表态及中国央行干预措施。</div>
+
+  <!-- ==================== 板块3: 人工智能 ==================== -->
+  <h2 class="section-title">🤖 人工智能</h2>
+
+  <!-- 新闻1: 工信部AI芯片蓝图 -->
+  <div class="item">
+    <div class="item-header">
+      <h4>工信部白皮书：2026年中国AI芯片市场剑指2000亿元，边缘计算成破局关键</h4>
+      <div class="item-meta">
+        <span>⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+      </div>
+    </div>
+    <div class="item-summary">
+      工信部发布《2026年人工智能芯片产业发展白皮书》，明确提出2026年AI芯片市场规模剑指<span class="num-up">2000亿元</span>，边缘侧（Edge AI）被列为战略破局方向。政策将重点支持国产替代和RISC-V架构生态。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">China's MIIT Blueprint: AI Chip Market Targets 200 Billion RMB in 2026</p>
+      <p class="en-summary">China's Ministry of Industry and Information Technology released a white paper targeting a 200 billion RMB AI chip market by 2026, with edge computing identified as a key breakthrough area. The policy prioritizes domestic substitution and RISC-V ecosystem development.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>white paper</b> 白皮书</span>
+          <span class="vocab-item"><b>edge computing</b> 边缘计算</span>
+          <span class="vocab-item"><b>domestic substitution</b> 国产替代</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>工信部首次以白皮书形式为AI芯片产业设定量化目标（2000亿元），并明确边缘AI为差异化赛道，意在绕过先进制程封锁，从应用端切入。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期利好国产AI芯片设计公司（如寒武纪、地平线）；中长期若RISC-V生态成熟，中国可能在IoT和自动驾驶芯片领域建立优势。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若边缘AI全面落地，未来工厂、家庭、城市中的数十亿设备都将具备本地推理能力，数据隐私和实时性将大幅提升。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://raybyte.cn/news/2026-06-10-2026-ai" target="_blank">RayByte</a></p>
+  </div>
+
+  <!-- 新闻2: DeepSeek 与 Azure AI -->
+  <div class="item">
+    <div class="item-header">
+      <h4>DeepSeek 持续扩张，Azure AI Foundry 集成多模型生态</h4>
+      <div class="item-meta">
+        <span>⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+    </div>
+    <div class="item-summary">
+      中国AI公司DeepSeek（深度求索）官网活跃度提升，提供免费AI助手服务。同时，微软Azure AI Foundry 目录已集成包括DeepSeek、OpenAI、Anthropic Claude在内的<span class="num-key">11,000+</span>模型，企业级AI应用进入“模型超市”时代。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">DeepSeek Expands as Azure AI Foundry Hosts 11,000+ Models</p>
+      <p class="en-summary">Chinese AI startup DeepSeek continues to grow its free AI assistant platform. Meanwhile, Microsoft Azure AI Foundry now hosts over 11,000 models including DeepSeek, OpenAI, and Anthropic Claude, marking the era of 'model marketplace' for enterprise AI.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>model marketplace</b> 模型市场</span>
+          <span class="vocab-item"><b>enterprise AI</b> 企业AI</span>
+          <span class="vocab-item"><b>fine-tuning</b> 微调</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Azure AI Foundry 聚合超11000个模型，企业可像逛超市一样选择、微调、部署AI模型。DeepSeek作为中国代表，跻身全球主流平台。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期降低企业AI应用门槛；中长期模型同质化竞争加剧，垂直领域小模型可能胜出。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当AI模型像水电一样即开即用，中小企业也能拥有媲美巨头的AI能力，创新将爆发式增长。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://azure.microsoft.com/zh-cn/products/ai-foundry/models/" target="_blank">Microsoft Azure</a> · <a href="https://www.deepseek.com/" target="_blank">DeepSeek</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：AI领域政策驱动与平台生态建设并行，中国市场侧重硬件自主（AI芯片），全球市场侧重模型聚合与易用性。DeepSeek等中国模型正加速全球化布局。</div>
+
+  <!-- ==================== 板块4: 科技/硬科技 ==================== -->
+  <h2 class="section-title">💻 科技 / 硬科技</h2>
+
+  <!-- 新闻1: 中国集成电路出口量价齐升 -->
+  <div class="item">
+    <div class="item-header">
+      <h4>中国集成电路出口“量价齐升”，2026年出口额有望突破3000亿美元</h4>
+      <div class="item-meta">
+        <span>⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+      </div>
+    </div>
+    <div class="item-summary">
+      受全球AI算力竞赛和欧美数据中心需求拉动，中国存储芯片、AI加速芯片出口激增。机构预测，2026年中国集成电路出口额有望突破<span class="num-up">3000亿美元</span>，同比增长超<span class="num-up">50%</span>，存储芯片领衔。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">China's IC Exports Surge: On Track to Exceed $300 Billion in 2026</p>
+      <p class="en-summary">Driven by global AI compute demand and data center buildouts, China's integrated circuit exports are projected to surpass $300 billion in 2026, up more than 50% year-on-year. Memory chips and AI accelerators lead the growth.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>integrated circuit</b> 集成电路</span>
+          <span class="vocab-item"><b>memory chip</b> 存储芯片</span>
+          <span class="vocab-item"><b>AI accelerator</b> AI加速器</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国集成电路出口在2026年呈现“量价齐升”态势，存储芯片（如NAND、DRAM）和AI加速芯片（如寒武纪、海思）是主要增长极。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期中国芯片出口将继续受益于全球AI投资热潮；中长期面临美国技术封锁和供应链去风险化压力。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若中国在存储芯片领域实现全自主可控，全球数据中心成本将大幅下降，AI应用普及速度加快。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://xueqiu.com/7712363857/393846640" target="_blank">雪球</a></p>
+  </div>
+
+  <!-- 新闻2: 美股芯片崩盘（硬科技视角） -->
+  <div class="item">
+    <div class="item-header">
+      <h4>美股芯片崩盘：英伟达跌12%，美光跌8%，费城半导体指数创年内最大跌幅</h4>
+      <div class="item-meta">
+        <span>⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+    </div>
+    <div class="item-summary">
+      费城半导体指数单日暴跌，英伟达市值蒸发超<span class="num-down">3000亿美元</span>，美光科技跌超<span class="num-down">8%</span>。中国对镓、锗出口管制升级被指为直接导火索，市场担忧全球半导体供应链断裂风险。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Philadelphia Semi Index Crashes: Nvidia Loses $300B in Single Day</p>
+      <p class="en-summary">The Philadelphia Semiconductor Index suffered its worst single-day drop of the year. Nvidia lost 12%, erasing over $300 billion in market value, while Micron fell 8%. China's tightened export controls on gallium and germanium were cited as the trigger.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>semiconductor index</b> 半导体指数</span>
+          <span class="vocab-item"><b>export controls</b> 出口管制</span>
+          <span class="vocab-item"><b>supply chain risk</b> 供应链风险</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国对镓、锗实施出口管制，这两种材料是制造高端芯片和光电器件的关键原材料。美国芯片企业短期内难以找到替代来源。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）芯片板块波动剧烈；中长期（6-12个月）美国可能启动《国防生产法》加速本土材料产能建设。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若材料断供持续，全球芯片产业可能被迫重构物理供应链，甚至催生“无镓”芯片设计革命。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.sohu.com/a/1034431073_122541357" target="_blank">搜狐财经</a></p>
+  </div>
+
+  <!-- 新闻3: 德氪微毫米波无线隔离方案 -->
+  <div class="item">
+    <div class="item-header">
+      <h4>德氪微在SNEC 2026展示毫米波无线隔离方案，瞄准光储高压系统</h4>
+      <div class="item-meta">
+        <span>⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+    </div>
+    <div class="item-summary">
+      在SNEC 2026光伏展上，德氪微电子展示了用于光储高压电力电子系统的毫米波无线隔离方案，旨在替代传统光耦隔离，提升系统可靠性和功率密度。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">DeKrypton Showcases mmWave Wireless Isolation for Solar+Storage at SNEC 2026</p>
+      <p class="en-summary">At SNEC 2026, DeKrypton Microelectronics demonstrated a millimeter-wave wireless isolation solution for high-voltage power electronics in solar and storage systems, aiming to replace traditional optocouplers for improved reliability and power density.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>wireless isolation</b> 无线隔离</span>
+          <span class="vocab-item"><b>millimeter-wave</b> 毫米波</span>
+          <span class="vocab-item"><b>power density</b> 功率密度</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>毫米波无线隔离技术利用高频电磁波在芯片间传输信号，无需物理连接，可避免高压击穿和电磁干扰问题。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期用于光伏逆变器、储能变流器；中长期可扩展至电动汽车电驱系统和工业电机驱动。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若无线隔离成为标准，高压电子系统将更紧凑、更安全，光伏和电动汽车的可靠性将大幅提升。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.163.com/dy/media/T1483516375236.html" target="_blank">网易·半导体行业观察</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：硬科技今日呈现“冰火两重天”——中国芯片出口高歌猛进，但美股芯片板块因原材料管制暴跌；国产替代和新兴技术（毫米波隔离）成为市场焦点。</div>
+
+  <!-- ==================== 板块5: 材料科学 ==================== -->
+  <h2 class="section-title">🔬 材料科学</h2>
+
+  <!-- 新闻1: 镓/锗出口管制 -->
+  <div class="item">
+    <div class="item-header">
+      <h4>中国升级镓、锗出口管制，全球半导体材料供应链告急</h4>
+      <div class="item-meta">
+        <span>⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+    </div>
+    <div class="item-summary">
+      中国进一步收紧对镓、锗等关键半导体材料的出口管制。镓是制造氮化镓（GaN）芯片和相控阵雷达的核心原料，中国占全球镓产量的<span class="num-key">90%</span>以上。此举直接冲击全球芯片制造和军工供应链。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">China Tightens Gallium and Germanium Export Controls, Threatening Global Chip Supply Chain</p>
+      <p class="en-summary">China has further tightened export controls on gallium and germanium, critical materials for semiconductor manufacturing. China supplies over 90% of global gallium, essential for GaN chips and phased-array radar. The move directly threatens global chip and defense supply chains.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>gallium</b> 镓</span>
+          <span class="vocab-item"><b>germanium</b> 锗</span>
+          <span class="vocab-item"><b>export controls</b> 出口管制</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>镓和锗是半导体、红外光学和新能源领域的关键原材料。中国掌握全球绝大部分产能，此次管制升级意味着西方芯片企业面临“断供”风险。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）美国、欧洲将加速寻找替代供应商（如加拿大、澳大利亚）；中长期（1-2年）可能催生“城市采矿”（从电子垃圾中回收）技术突破。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若材料完全脱钩，全球可能形成“中国供应中国，西方回收+替代”的双轨体系，材料价格将长期高企。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.sohu.com/a/1034431073_122541357" target="_blank">搜狐财经</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：材料科学今日核心议题是地缘政治驱动的供应链武器化。镓、锗管制不仅冲击芯片业，更影响军工和新能源产业，材料自主可控成为各国战略焦点。</div>
+
+  <!-- ==================== 板块6: 中国政策与监管 ==================== -->
+  <h2 class="section-title">🇨🇳 中国政策与监管</h2>
+
+  <!-- 新闻1: 工信部AI芯片白皮书 -->
+  <div class="item">
+    <div class="item-header">
+      <h4>工信部发布AI芯片白皮书：2026年市场目标2000亿元，边缘AI成战略重点</h4>
+      <div class="item-meta">
+        <span>⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+      </div>
+    </div>
+    <div class="item-summary">
+      工信部正式发布《2026年人工智能芯片产业发展白皮书》，明确2026年AI芯片市场规模目标<span class="num-up">2000亿元</span>，将边缘计算、RISC-V架构列为战略突破口，并鼓励国产EDA工具和先进封装技术研发。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">MIIT White Paper: 200B RMB AI Chip Market by 2026, Edge AI as Strategic Priority</p>
+      <p class="en-summary">China's Ministry of Industry and Information Technology released a white paper setting a 200 billion RMB AI chip market target for 2026, with edge computing and RISC-V architecture as strategic priorities. Domestic EDA tools and advanced packaging are also encouraged.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>strategic priority</b> 战略优先</span>
+          <span class="vocab-item"><b>RISC-V</b> 开源指令集架构</span>
+          <span class="vocab-item"><b>advanced packaging</b> 先进封装</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是工信部首次为AI芯片设定具体量化目标，标志着AI芯片上升为国家战略产业。边缘AI被寄予厚望，意在绕开先进制程瓶颈，从场景落地反哺技术。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期利好国产AI芯片设计公司（地平线、寒武纪）和RISC-V生态企业；中长期中国有望在物联网、自动驾驶芯片领域形成差异化优势。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若边缘AI全面铺开，未来中国每台家电、每辆汽车都将具备本地AI能力，形成全球最大的智能终端网络。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://raybyte.cn/news/2026-06-10-2026-ai" target="_blank">RayByte</a></p>
+  </div>
+
+  <!-- 新闻2: 美国扩大中国军事企业名单 -->
+  <div class="item">
+    <div class="item-header">
+      <h4>美国扩大“中国军事企业”名单：比亚迪、阿里、百度上榜</h4>
+      <div class="item-meta">
+        <span>⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+    </div>
+    <div class="item-summary">
+      美国国防部更新“中国军事企业”名单，新增比亚迪、阿里巴巴、百度等多家中国科技巨头。此举将限制这些企业与美国国防部的业务往来，并可能引发资本市场进一步波动。比亚迪在马来西亚的新车发布计划或受间接影响。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">US Expands 'Chinese Military Companies' List: BYD, Alibaba, Baidu Added</p>
+      <p class="en-summary">The U.S. Department of Defense updated its list of 'Chinese military companies,' adding BYD, Alibaba, and Baidu. The designation restricts these firms from doing business with the U.S. Department of Defense and may trigger further capital market volatility.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>military company</b> 军工企业</span>
+          <span class="vocab-item"><b>restricted entity</b> 受限实体</span>
+          <span class="vocab-item"><b>capital market</b> 资本市场</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美国国防部将比亚迪、阿里、百度列入“中国军事企业”名单，意味着这些企业被认定为与中国军方有关联，面临投资和合作限制。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期比亚迪海外扩张（如马来西亚）可能遇阻，阿里、百度股价承压；中长期中国企业将加速去美国化，强化本土生态。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若中美科技脱钩持续，全球互联网和汽车产业可能分裂为“中美双生态”，消费者面临两个不兼容的数字世界。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.facebook.com/groups/868811481864011/" target="_blank">Facebook · 八度空间</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：中国政策今日呈现“硬支持+硬对抗”双轨——对内强力扶持AI芯片产业，对外面临美国制裁升级。企业需在“自主可控”与“全球化”之间寻找平衡。</div>
+
+  <!-- ==================== 板块7: 地缘政治与国际关系 ==================== -->
+  <h2 class="section-title">🌍 地缘政治与国际关系</h2>
+
+  <!-- 新闻1: 美国扩大中国军事企业名单 -->
+  <div class="item">
+    <div class="item-header">
+      <h4>美国扩大“中国军事企业”名单，地缘科技博弈白热化</h4>
+      <div class="item-meta">
+        <span>⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+    </div>
+    <div class="item-summary">
+      美国国防部新增比亚迪、阿里巴巴、百度等多家中国科技企业至“中国军事企业”名单。此举是拜登政府加强对华科技限制的最新动作，预计将引发中方反制，中美科技脱钩进一步加速。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">US-China Tech Decoupling Accelerates: Pentagon Adds BYD, Alibaba, Baidu to Military List</p>
+      <p class="en-summary">The U.S. Department of Defense added BYD, Alibaba, and Baidu to its list of 'Chinese military companies,' marking the latest escalation in tech decoupling. Retaliatory measures from Beijing are expected, further fragmenting global technology supply chains.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>decoupling</b> 脱钩</span>
+          <span class="vocab-item"><b>retaliatory measures</b> 反制措施</span>
+          <span class="vocab-item"><b>supply chain fragmentation</b> 供应链碎片化</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美国不断扩大“中国军事企业”名单，此次纳入比亚迪（电动汽车）、阿里（云计算/电商）、百度（自动驾驶/AI），覆盖面从国防向民用科技延伸。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期相关企业海外业务（尤其对美）将受限；中长期中国将加速构建“去美国化”的技术和金融体系。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若全球形成“中美两大技术阵营”，发展中国家将被迫选边站，数字世界的“柏林墙”将真正竖起。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.facebook.com/groups/868811481864011/" target="_blank">Facebook · 八度空间</a></p>
+  </div>
+
+  <!-- 新闻2: 美国对伊朗军事打击 -->
+  <div class="item">
+    <div class="item-header">
+      <h4>美国对伊朗发动新一轮军事打击，中东局势骤然紧张</h4>
+      <div class="item-meta">
+        <span>⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+    </div>
+    <div class="item-summary">
+      美国对伊朗目标发动新一轮军事打击，标普500和纳斯达克100指数期货应声下跌。地缘冲突升级推高油价预期，全球金融市场避险情绪急剧升温。中国外交部呼吁各方保持克制。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">US Launches New Military Strikes Against Iran, Global Markets Tumble</p>
+      <p class="en-summary">The United States launched fresh military strikes against Iranian targets, sending S&P 500 and Nasdaq-100 futures lower. The escalation in the Middle East stoked oil price fears and triggered a flight to safe-haven assets. China's foreign ministry called for restraint.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>military strikes</b> 军事打击</span>
+          <span class="vocab-item"><b>safe-haven assets</b> 避险资产</span>
+          <span class="vocab-item"><b>escalation</b> 升级</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美国对伊朗实施新一轮打击，可能针对伊朗核设施或代理人武装。霍尔木兹海峡是全球石油运输要道，冲突升级直接威胁能源供应。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期油价可能突破<span class="num-key">100美元/桶</span>，全球通胀压力上升；中长期伊朗可能加速核武研发，中东陷入更广泛冲突。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若中东爆发全面战争，全球能源格局将彻底改写，新能源转型可能被迫“急刹车”或“猛加速”。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.google.com/finance/beta" target="_blank">Google Finance</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：地缘政治今日成为市场最大变量。美国对华科技名单扩大与对伊朗军事打击双重冲击，全球避险情绪飙升。投资者需警惕“黑天鹅”事件连锁反应。</div>
+
+  <!-- ==================== 时间提醒模块 ==================== -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-06-15</span>
+      <span>美联储议息会议，市场预期维持利率不变，关注点阵图</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-06-30</span>
+      <span>美对华半导体出口新规正式生效，中国镓/锗管制同步执行</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-Q3</span>
+      <span>中国AI芯片白皮书相关扶持政策细则预计出台</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    全球动态每日简报 · 2026年6月10日 · 数据来源：公开信息聚合 · 仅供参考
+  </div>
+</div>
+</body>
+</html>
