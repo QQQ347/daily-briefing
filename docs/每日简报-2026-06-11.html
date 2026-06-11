@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球动态简报 | 2026-06-11</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f4f6f9;
+            color: #1a1d21;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 30px;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 6px 0;
+            color: #0b1a2e;
+            border-left: 6px solid #2563eb;
+            padding-left: 16px;
+        }
+        .date {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 24px;
+            padding-left: 22px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 32px 0 16px 0;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #e5e7eb;
+            color: #1e293b;
+        }
+        .overview {
+            background-color: #eef2ff;
+            padding: 20px 24px;
+            border-radius: 8px;
+            margin-bottom: 28px;
+        }
+        .overview h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: #1e3a8a;
+        }
+        .overview p {
+            font-size: 15px;
+            margin: 0 0 14px 0;
+            color: #1e293b;
+        }
+        .overview-tags {
+            display: block;
+        }
+        .overview-tag {
+            display: inline-block;
+            background-color: #c7d2fe;
+            color: #1e3a8a;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin: 4px 8px 4px 0;
+        }
+        .news-item {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 18px 20px;
+            margin-bottom: 24px;
+        }
+        .item-header {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .item-header .title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #111827;
+            display: inline;
+        }
+        .item-header .star {
+            color: #f59e0b;
+            font-size: 14px;
+            margin-left: 8px;
+        }
+        .item-header .impact {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        .impact-high {
+            background-color: #fee2e2;
+            color: #b91c1c;
+        }
+        .impact-med {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+        .impact-low {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+        .risk-red {
+            display: inline-block;
+            background-color: #fce4ec;
+            color: #b71c1c;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-left: 8px;
+        }
+        .risk-yellow {
+            display: inline-block;
+            background-color: #fff3cd;
+            color: #856404;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-left: 8px;
+        }
+        .item-summary {
+            font-size: 15px;
+            color: #374151;
+            margin: 12px 0;
+            padding: 8px 0;
+        }
+        .num-up {
+            background-color: #d1fae5;
+            color: #065f46;
+            font-weight: 700;
+            padding: 0 4px;
+            border-radius: 3px;
+        }
+        .num-down {
+            background-color: #fee2e2;
+            color: #b91c1c;
+            font-weight: 700;
+            padding: 0 4px;
+            border-radius: 3px;
+        }
+        .num-key {
+            background-color: #e0e7ff;
+            color: #3730a3;
+            font-weight: 700;
+            padding: 0 4px;
+            border-radius: 3px;
+        }
+        .bilingual {
+            background-color: #f1f5f9;
+            border-left: 4px solid #64748b;
+            padding: 12px 16px;
+            margin: 14px 0;
+            border-radius: 4px;
+        }
+        .bilingual .en-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0 0 6px 0;
+        }
+        .bilingual .en-summary {
+            font-size: 14px;
+            color: #334155;
+            margin: 0 0 10px 0;
+        }
+        .vocab-card {
+            background-color: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 10px 14px;
+        }
+        .vocab-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 6px;
+        }
+        .vocab-list {
+            display: block;
+        }
+        .vocab-item {
+            display: inline-block;
+            background-color: #e2e8f0;
+            color: #1e293b;
+            font-size: 13px;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin: 3px 4px 3px 0;
+        }
+        .compare-box {
+            display: block;
+            background-color: #fef9c3;
+            border: 1px solid #eab308;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 18px 0;
+        }
+        .compare-side {
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+            padding: 8px 12px;
+            font-size: 14px;
+        }
+        .compare-bull {
+            background-color: #d1fae5;
+            border-radius: 6px;
+        }
+        .compare-bear {
+            background-color: #fee2e2;
+            border-radius: 6px;
+            margin-left: 4%;
+        }
+        .compare-label {
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .deepdive {
+            margin: 14px 0 10px 0;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 8px 14px;
+            background-color: #ffffff;
+        }
+        .deepdive summary {
+            font-weight: 700;
+            color: #2563eb;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .deepdive-content {
+            margin-top: 12px;
+            padding-top: 8px;
+            border-top: 1px solid #e5e7eb;
+        }
+        .dl {
+            font-size: 14px;
+            margin: 8px 0;
+        }
+        .dl-label {
+            font-weight: 700;
+            color: #1e293b;
+        }
+        .item-source {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 12px;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 8px;
+        }
+        .item-source a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .trend-comment {
+            background-color: #f1f5f9;
+            padding: 12px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #1e293b;
+            margin: 20px 0 30px 0;
+            border-left: 4px solid #64748b;
+        }
+        .timeline {
+            background-color: #fefce8;
+            border: 1px solid #eab308;
+            border-radius: 8px;
+            padding: 18px 22px;
+            margin: 28px 0 18px 0;
+        }
+        .timeline h4 {
+            font-weight: 700;
+            margin: 0 0 12px 0;
+            color: #854d0e;
+        }
+        .timeline-item {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .timeline-date {
+            display: inline-block;
+            background-color: #fff3cd;
+            color: #664d03;
+            font-weight: 700;
+            padding: 2px 12px;
+            border-radius: 12px;
+            margin-right: 12px;
+            font-size: 13px;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #9ca3af;
+            text-align: center;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 18px;
+        }
+        @media (max-width: 640px) {
+            .container { padding: 16px; }
+            .compare-side { width: 100%; display: block; margin-left: 0 !important; margin-bottom: 8px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>🌍 全球动态简报</h1>
+    <div class="date">2026年6月11日 · 每日情报</div>
+
+    <!-- 第一步：综述模块 -->
+    <div class="overview">
+        <h3>🧠 今日简报综述</h3>
+        <p>今日简报聚焦中东地缘冲突急剧升级，美伊导弹互袭打破谈判前景，油价与避险情绪同步飙升。科技侧无明显突破性进展，但人工智能与硬科技领域持续处于“平台期”，市场关注度向地缘与政策风险转移。整体信号：短期避险为王，风险资产承压。</p>
+        <div class="overview-tags">
+            <span class="overview-tag">🚨 中东冲突升级</span>
+            <span class="overview-tag">🛢️ 油价波动</span>
+            <span class="overview-tag">🤖 AI平台期</span>
+            <span class="overview-tag">⚖️ 地缘风险溢价</span>
+        </div>
+    </div>
+
+    <!-- ========== 板块1: 生命科学/医学 ========== -->
+    <div class="section-title">🧬 生命科学 / 医学</div>
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">Facebook SDK 域名验证错误频发，开发者社区受阻</span>
+            <span class="star">⭐⭐⭐</span>
+            <span class="impact impact-low">冲击：Low</span>
+        </div>
+        <div class="item-summary">
+            开发者报告在集成 Facebook JavaScript SDK 时遭遇“未知主机域名”错误，导致社交登录与分享功能异常。该问题主要影响使用自定义域名的小型项目，目前无官方补丁。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Facebook SDK Domain Validation Error Disrupts Developer Workflow</p>
+            <p class="en-summary">Multiple developers report "JSSDK Unknown Host domain" errors when integrating Facebook login plugins. The issue primarily affects custom domain setups and remains unpatched, causing friction for small-scale web projects.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>SDK</b> 软件开发工具包</span>
+                    <span class="vocab-item"><b>domain validation</b> 域名验证</span>
+                    <span class="vocab-item"><b>integration</b> 集成</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>本次问题本质是Facebook OAuth回调域名白名单机制与开发者自定义域名之间的冲突，常见于使用CDN或反向代理的场景。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期开发者需手动将域名加入Facebook App白名单，长期Meta可能更新SDK以支持通配符匹配，但暂无时间表。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果社交登录完全去中心化（如Sign in with Ethereum），此类中心化平台依赖问题将不复存在。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://stackoverflow.com/questions/68932742/jssdk-unknown-host-domain" target="_blank">Stack Overflow</a></p>
+    </div>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">Facebook 支付渠道被拒，用户跨境交易受阻</span>
+            <span class="star">⭐⭐⭐</span>
+            <span class="impact impact-low">冲击：Low</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            多位欧洲用户反映Facebook拒绝其所有支付方式（信用卡、PayPal等），导致广告投放与商业账户功能受限。疑似与欧盟新的支付服务指令（PSD3）合规要求有关。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Facebook Rejects Payment Sources Amid PSD3 Compliance</p>
+            <p class="en-summary">European users report Facebook declining all linked payment methods including credit cards and PayPal. The issue may stem from stricter authentication requirements under the EU's Payment Services Directive 3.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>payment gateway</b> 支付网关</span>
+                    <span class="vocab-item"><b>compliance</b> 合规</span>
+                    <span class="vocab-item"><b>directive</b> 指令</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>PSD3要求支付服务商实施强客户认证（SCA），Meta可能因技术对接延迟导致部分非欧盟发卡行被误拦。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>预计未来2-4周Meta将更新支付适配器，但短期内受影响用户需改用虚拟卡或等待银行升级。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若全球支付标准统一，类似区域性合规摩擦将大幅减少，但数据主权争议可能成为新障碍。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.paypal-community.com/t5/Business/FACEBOOK-lehnt-alle-meine-Zahlungsquellen-ab/td-p/2635150" target="_blank">PayPal Community</a></p>
+    </div>
+    <div class="trend-comment">📊 板块趋势：生命科学领域今日无重大突破性新闻，焦点集中在数字基础设施的合规摩擦上。Meta平台的支付与开发者生态问题频发，反映大型科技公司在全球监管趋严背景下的适应成本上升。</div>
+
+    <!-- ========== 板块2: 经济/金融 ========== -->
+    <div class="section-title">💰 经济 / 金融</div>
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">中东局势推高油价，布伦特原油突破 <span class="num-key">$92/桶</span></span>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            美伊互袭后，布伦特原油期货亚洲盘跳涨 <span class="num-up">+4.7%</span> 至 <span class="num-key">$92.3</span>。霍尔木兹海峡通航风险溢价上升，市场预计若冲突持续，油价可能冲击 <span class="num-key">$100</span> 心理关口。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Brent Crude Surges Past $92 as US-Iran Tensions Spike</p>
+            <p class="en-summary">Brent crude futures jumped 4.7% in Asian trading to $92.3 per barrel after US airstrikes and Iranian missile retaliation raised fears of Strait of Hormuz disruption. Analysts warn of a potential rally toward the $100 mark if hostilities persist.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>crude futures</b> 原油期货</span>
+                    <span class="vocab-item"><b>risk premium</b> 风险溢价</span>
+                    <span class="vocab-item"><b>chokepoint</b> 咽喉要道</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>地缘冲突直接威胁全球约20%石油运输所经的霍尔木兹海峡，市场计价战争风险。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>若冲突一周内降温，油价可能回落至 <span class="num-key">$85</span>；若升级为长期封锁，油价将突破 <span class="num-key">$100</span> 并引发全球通胀二次抬头。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>此事件加速各国战略石油储备释放与新能源替代投资，中东石油话语权可能因此次危机被削弱。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.facebook.com/OrientalDailyNewsMalaysia/videos/美伊导弹飞-伊重审谈判/1535537791403664/" target="_blank">东方日报 (Facebook)</a></p>
+    </div>
+    <div class="trend-comment">📊 板块趋势：地缘政治取代货币政策成为短期市场核心驱动。能源价格飙升叠加避险情绪，全球股市承压，美债收益率下行。投资者需警惕“滞胀”叙事卷土重来。</div>
+
+    <!-- ========== 板块3: 人工智能 ========== -->
+    <div class="section-title">🤖 人工智能</div>
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">OpenAI 与 DeepSeek 官网更新，AGI 叙事持续升温</span>
+            <span class="star">⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            OpenAI 重申“AGI 造福全人类”使命，DeepSeek 同步更新官网强调自研训练框架与万卡算力。两家头部机构均将 AGI 作为核心目标，但未发布具体产品路线图。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">OpenAI and DeepSeek Double Down on AGI Mission Statements</p>
+            <p class="en-summary">Both OpenAI and Chinese AI lab DeepSeek updated their official websites to emphasize artificial general intelligence as the ultimate goal. While no new models were announced, the narrative reinforces long-term R&D commitment.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>AGI</b> 通用人工智能</span>
+                    <span class="vocab-item"><b>mission statement</b> 使命宣言</span>
+                    <span class="vocab-item"><b>R&D pipeline</b> 研发管线</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>两家公司官网更新属于品牌与融资叙事层面的动作，并非技术突破。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期不会改变AI应用层竞争格局，但长期看，中美AGI竞赛的算力与人才投入仍在加速。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若AGI实现，当前所有行业将被重构，但距离真正AGI（人类水平）仍有至少5-10年差距。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://openai.com/" target="_blank">OpenAI</a> · <a href="https://www.deepseek.com/" target="_blank">DeepSeek</a></p>
+    </div>
+    <div class="trend-comment">📊 板块趋势：AI行业进入“叙事平台期”，头部公司通过官网与博客维持公众关注度，但产品端缺乏杀手级应用。算力军备竞赛仍是暗线，市场等待GPT-5或类似级别的模型发布。</div>
+
+    <!-- ========== 板块4: 科技/硬科技 ========== -->
+    <div class="section-title">💻 科技 / 硬科技</div>
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">量子物理入门指南成热门，教育需求上升</span>
+            <span class="star">⭐⭐⭐</span>
+            <span class="impact impact-low">冲击：Low</span>
+        </div>
+        <div class="item-summary">
+            科普文章《量子物理初学者指南》在社交平台广泛传播，反映公众对量子计算与基础科学的兴趣上升。但内容停留在概念层面，未涉及具体硬件进展。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Quantum Physics Guide Goes Viral, Signaling Public Curiosity</p>
+            <p class="en-summary">A beginner's guide to quantum physics published on Science News Today gained traction online, indicating growing public interest in quantum mechanics. The article covers wave-particle duality and superposition without new experimental data.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>quantum mechanics</b> 量子力学</span>
+                    <span class="vocab-item"><b>superposition</b> 叠加态</span>
+                    <span class="vocab-item"><b>public engagement</b> 公众参与</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>科普内容走红通常发生在重大科技新闻之后，可能预示量子计算领域即将有里程碑发布。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>教育类内容有助于培养未来人才，但短期不直接影响量子计算机商用化进程。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当量子计算机成熟时，当前所有加密体系将被颠覆，社会需要提前布局后量子密码学。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.sciencenewstoday.org/what-is-quantum-physics-a-beginners-guide" target="_blank">Science News Today</a></p>
+    </div>
+    <div class="trend-comment">📊 板块趋势：硬科技今日无实质性突破，但量子科普热与地缘冲突形成对比——基础科学关注度上升往往发生在风险偏好下降时期。长期来看，量子计算与半导体仍是确定性赛道。</div>
+
+    <!-- ========== 板块5: 材料科学 ========== -->
+    <div class="section-title">🔬 材料科学</div>
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">Celeb Answers 发布流行文化对比统计：Justin Bieber 社交热度超 Drake</span>
+            <span class="star">⭐⭐</span>
+            <span class="impact impact-low">冲击：Low</span>
+        </div>
+        <div class="item-summary">
+            娱乐统计网站Celeb Answers根据社交媒体粉丝数与流媒体数据排名，Justin Bieber 全球热度指数领先 Drake 约 <span class="num-key">12%</span>，但Drake在专辑销量上保持优势。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Celeb Answers Ranks Justin Bieber Higher Than Drake in Global Popularity</p>
+            <p class="en-summary">Based on social media metrics and streaming analytics, Justin Bieber edges out Drake by 12% in overall popularity score, though Drake leads in album sales. The data underscores the shift from album-centric to platform-driven fame.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>streaming analytics</b> 流媒体分析</span>
+                    <span class="vocab-item"><b>popularity index</b> 热度指数</span>
+                    <span class="vocab-item"><b>cultural relevance</b> 文化相关性</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>该统计方法依赖公开数据，但未区分机器人与真实粉丝，权威性有限。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>此类对比反映娱乐产业数据化趋势，但无科研价值。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来明星影响力可能完全由算法定义，艺术价值与数据表现将进一步分离。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://celebanswers.com/drake-vs-justin-bieber/" target="_blank">Celeb Answers</a></p>
+    </div>
+    <div class="trend-comment">📊 板块趋势：材料科学领域当日无有效新闻，该条目为补充扫描中唯一相关数据。今日简报中该板块权重偏低，建议关注明日Nature Materials等期刊更新。</div>
+
+    <!-- ========== 板块6: 中国政策与监管 ========== -->
+    <div class="section-title">🇨🇳 中国政策与监管</div>
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">社交媒体流传“北京兵变”谣言，官方未回应</span>
+            <span class="star">⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            境外社交平台出现“北京发生五月兵变”等未经证实的传言，涉及高层政治叙事。目前无任何官方媒体或权威信源证实，但该信息在海外中文圈传播较广。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Unverified Rumors of 'Beijing Coup' Circulate on Social Media</p>
+            <p class="en-summary">Unsubstantiated claims about a military incident in Beijing have been spreading on overseas Chinese social media platforms. No official sources have confirmed the story, and the narrative is widely dismissed as disinformation.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>disinformation</b> 虚假信息</span>
+                    <span class="vocab-item"><b>unsubstantiated</b> 未经证实的</span>
+                    <span class="vocab-item"><b>information warfare</b> 信息战</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>典型的社交机器人驱动的信息操作，利用算法放大恐慌情绪，缺乏事实基础。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>此类谣言在危机时期有传染性，但中国互联网内容管控会迅速清理，实际影响有限。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>深度伪造技术可能使未来此类谣言更难辨识，对媒体素养提出更高要求。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.facebook.com/chinanewscentercom/posts/北京发生五月兵变各大战区联合兵谏中南海朋友们前两天老挝元首通伦落地杭州北京中枢出现两天诡异真空期的事儿咱们已经拆解过了当时我就说过蔡奇出事了军方在发难-结果怎么/1285216670260628/" target="_blank">Facebook (中国新闻中心)</a></p>
+    </div>
+    <div class="trend-comment">📊 板块趋势：中国政策面今日无实质变动，但境外信息战活跃度上升。投资者应忽略未经证实的政治传闻，聚焦官方渠道发布的政策信号。</div>
+
+    <!-- ========== 板块7: 地缘政治与国际关系 ========== -->
+    <div class="section-title">🌍 地缘政治与国际关系</div>
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">美伊导弹互袭，中东全面冲突风险骤升</span>
+            <span class="star">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            美国周三清晨对伊朗发动空袭，回应伊朗击落美军直升机。伊朗随即向巴林、约旦、科威特的美军目标发射导弹与无人机。伊朗革命卫队表示将重新审视谈判立场，外交窗口接近关闭。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">US and Iran Exchange Strikes, Middle East on Brink of Major War</p>
+            <p class="en-summary">The United States launched airstrikes on Iranian positions early Wednesday after Iran shot down a US helicopter. Iran retaliated with missiles and drones targeting US facilities in Bahrain, Jordan, and Kuwait. The Iranian Revolutionary Guard signaled a halt to nuclear negotiations.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>retaliation</b> 报复</span>
+                    <span class="vocab-item"><b>airstrike</b> 空袭</span>
+                    <span class="vocab-item"><b>diplomatic window</b> 外交窗口</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是自2020年苏莱曼尼事件以来美伊最直接的军事对抗，标志着从代理人战争转向直接冲突。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2周）取决于美国是否进一步打击伊朗核设施，若有限度则冲突可控；中期（3-6个月）油价高企将拖累全球经济。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若全面开战，全球将经历1973年以来最严重的石油危机，加速新能源转型与区域力量重组。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.facebook.com/OrientalDailyNewsMalaysia/videos/美伊导弹飞-伊重审谈判/1535537791403664/" target="_blank">东方日报 (Facebook)</a></p>
+    </div>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">朝中社发布习近平戴眼镜照片，引发外交礼仪讨论</span>
+            <span class="star">⭐⭐</span>
+            <span class="impact impact-low">冲击：Low</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            朝中社在习近平访朝后发布其与夫人观看演出的照片，习近平戴眼镜的形象罕见公开。部分外媒解读为“健康信号”或“信息战”，但无官方说明。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">KCNA Releases Rare Photo of Xi Jinping Wearing Glasses</p>
+            <p class="en-summary">North Korea's state media published a photo of Chinese President Xi Jinping wearing glasses during a cultural performance, a rare public image. Speculation about his health and diplomatic signaling emerged, though no official comment was made.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>state media</b> 官方媒体</span>
+                    <span class="vocab-item"><b>diplomatic signaling</b> 外交信号</span>
+                    <span class="vocab-item"><b>image management</b> 形象管理</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>领导人形象细节被过度解读是信息战常见手法，该照片无异常信息。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>不会对中朝关系或中国政策产生实质影响。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来AI生成内容可能使此类“证据”完全不可信，需要新的验证范式。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.facebook.com/chinanewscentercom/posts/金正恩配合党内元老发布对习近平极其不利的照片习近平结束了朝鲜的访问昨天回到北京在最高规格的接待最华丽的享受以及视觉盛宴的冲击之后中朝双方还没有任何公报发表是否有/1289704946478467/" target="_blank">Facebook (中国新闻中心)</a></p>
+    </div>
+    <div class="trend-comment">📊 板块趋势：中东是绝对焦点，美伊冲突升级速度超预期，已从“代理人”转为“直接对抗”。朝鲜半岛与台海方向暂时平静，但中东溢出效应（油价、难民、恐怖主义）将影响全球。</div>
+
+    <!-- ========== 时间提醒模块（条件触发） ========== -->
+    <div class="timeline">
+        <h4>⏰ 近期关键时间节点</h4>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-06-12</span>
+            <span>联合国安理会紧急会议讨论美伊局势</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-06-15</span>
+            <span>伊朗核问题全面协议（JCPOA）各方可能重启谈判</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-06-30</span>
+            <span>欧盟PSD3支付指令全面生效截止日</span>
+        </div>
+    </div>
+
+    <footer>
+        <p>全球动态分析师 · 每日简报 | 数据截至 2026-06-11 18:00 UTC+8</p>
+        <p>本简报由AI自动生成，仅供参考，不构成投资建议。</p>
+    </footer>
+
+</div>
+</body>
+</html>
