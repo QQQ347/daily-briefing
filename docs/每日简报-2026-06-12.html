@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球动态简报 | 2026-06-12</title>
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #1a1a2e;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+            padding: 30px 35px;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0 0 5px 0;
+            letter-spacing: -0.3px;
+            border-left: 6px solid #2563eb;
+            padding-left: 18px;
+        }
+        .date {
+            font-size: 15px;
+            color: #64748b;
+            margin: 0 0 25px 24px;
+            font-weight: 400;
+        }
+        .overview {
+            background-color: #f0f4ff;
+            padding: 20px 24px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border-left: 4px solid #2563eb;
+        }
+        .overview h3 {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+        .overview p {
+            margin: 0 0 12px 0;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #1e293b;
+        }
+        .overview-tags {
+            display: block;
+        }
+        .overview-tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1e40af;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-right: 8px;
+            margin-bottom: 4px;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 30px 0 16px 0;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #e2e8f0;
+            color: #0f172a;
+        }
+        .news-item {
+            background-color: #fafbfc;
+            border: 1px solid #e9edf2;
+            border-radius: 12px;
+            padding: 18px 20px 16px 20px;
+            margin-bottom: 18px;
+        }
+        .item-header {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .item-header .title {
+            font-size: 17px;
+            font-weight: 600;
+            color: #0b1e33;
+            margin-right: 12px;
+        }
+        .stars {
+            color: #f59e0b;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-right: 10px;
+        }
+        .impact {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .impact-high {
+            background-color: #fee2e2;
+            color: #b91c1c;
+        }
+        .impact-med {
+            background-color: #fef3c7;
+            color: #b45309;
+        }
+        .impact-low {
+            background-color: #e0f2fe;
+            color: #0369a1;
+        }
+        .risk-red {
+            display: inline-block;
+            background-color: #fecaca;
+            color: #991b1b;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        .risk-yellow {
+            display: inline-block;
+            background-color: #fde68a;
+            color: #92400e;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        .item-summary {
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 8px 0 12px 0;
+            color: #1e293b;
+        }
+        .num-up {
+            background-color: #dcfce7;
+            color: #166534;
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 4px;
+        }
+        .num-down {
+            background-color: #fee2e2;
+            color: #991b1b;
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 4px;
+        }
+        .num-key {
+            background-color: #e0f2fe;
+            color: #075985;
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 4px;
+        }
+        .bilingual {
+            background-color: #f1f5f9;
+            padding: 12px 16px;
+            border-radius: 10px;
+            margin: 12px 0;
+            border-left: 3px solid #64748b;
+        }
+        .bilingual .en-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #0f172a;
+            margin: 0 0 4px 0;
+        }
+        .bilingual .en-summary {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #334155;
+            margin: 0 0 8px 0;
+        }
+        .vocab-card {
+            background-color: #e9edf2;
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+        .vocab-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+        .vocab-list {
+            display: block;
+        }
+        .vocab-item {
+            display: inline-block;
+            background-color: #ffffff;
+            padding: 2px 12px;
+            border-radius: 14px;
+            font-size: 13px;
+            margin: 2px 4px 2px 0;
+            color: #0f172a;
+        }
+        .compare-box {
+            background-color: #f8fafc;
+            border: 1px dashed #94a3b8;
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 14px 0;
+            display: block;
+        }
+        .compare-side {
+            display: inline-block;
+            width: 44%;
+            vertical-align: top;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .compare-bull {
+            background-color: #ecfdf5;
+            border-right: 1px solid #d1d5db;
+            margin-right: 8px;
+        }
+        .compare-bear {
+            background-color: #fef2f2;
+        }
+        .compare-label {
+            font-weight: 600;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+        .deepdive {
+            margin: 12px 0 6px 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 4px 12px;
+            background-color: #ffffff;
+        }
+        .deepdive summary {
+            font-weight: 600;
+            font-size: 14px;
+            color: #2563eb;
+            cursor: pointer;
+            padding: 6px 0;
+        }
+        .deepdive-content {
+            padding: 8px 0 12px 0;
+        }
+        .dl {
+            margin: 6px 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .dl-label {
+            font-weight: 600;
+            color: #1e293b;
+        }
+        .item-source {
+            font-size: 13px;
+            color: #64748b;
+            margin: 6px 0 0 0;
+        }
+        .item-source a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .item-source a:hover {
+            text-decoration: underline;
+        }
+        .trend-comment {
+            background-color: #f1f5f9;
+            padding: 14px 18px;
+            border-radius: 12px;
+            margin: 16px 0 28px 0;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #1e293b;
+            border-left: 4px solid #475569;
+        }
+        .timeline {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin: 30px 0 20px 0;
+        }
+        .timeline h4 {
+            margin: 0 0 12px 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #78350f;
+        }
+        .timeline-item {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        .timeline-date {
+            display: inline-block;
+            background-color: #fef3c7;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            color: #92400e;
+            margin-right: 12px;
+            font-size: 14px;
+        }
+        footer {
+            margin-top: 30px;
+            padding-top: 16px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 13px;
+            color: #64748b;
+            text-align: center;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 18px; }
+            .compare-side { display: block; width: auto; border-right: none; margin-bottom: 6px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📡 全球动态简报</h1>
+    <div class="date">2026年6月12日 · 星期五</div>
+
+    <!-- 第一步：综述模块 -->
+    <div class="overview">
+        <h3>🧠 今日综述</h3>
+        <p>今日简报呈现三条主线：基因编辑疗法从实验室加速迈向临床，中国碱基编辑实现全球首例治愈级突破；中美关系经历元首会晤后进入“建设性战略稳定”新阶段，但贸易摩擦仍在延续；AI算力需求推动半导体板块强势反弹，纳斯达克单日上涨<span class="num-up">2.5%</span>。整体风向：生命科学偏乐观，地缘风险边际缓和，金融市场情绪回暖。</p>
+        <div class="overview-tags">
+            <span class="overview-tag">🧬 基因编辑临床化</span>
+            <span class="overview-tag">🇨🇳 中美战略稳定</span>
+            <span class="overview-tag">🤖 AI算力反弹</span>
+            <span class="overview-tag">📈 半导体领涨</span>
+            <span class="overview-tag">🛡️ 贸易摩擦持续</span>
+        </div>
+    </div>
+
+    <!-- ========== 板块1：生命科学/医学 ========== -->
+    <div class="section-title">🧬 生命科学 / 医学</div>
+
+    <!-- 新闻1 -->
+    <div class="news-item">
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+            <span class="title">中国碱基编辑技术实现全球首例治愈级突破</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            中国团队利用碱基编辑技术成功治愈一位β-地中海贫血患者，这是全球首次报道碱基编辑达到“治愈级”临床终点。患者脱离输血依赖超过 <span class="num-key">12</span> 个月，标志着中国在基因编辑临床转化上领先。该疗法针对 <span class="num-key">BCL11A</span> 基因启动子，安全性良好。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">China Achieves World's First Cure-Level Breakthrough with Base Editing</p>
+            <p class="en-summary">A Chinese research team has reported the first functional cure of β-thalassemia using base editing technology. The patient has been transfusion-independent for over 12 months, demonstrating a landmark achievement in precision gene therapy and highlighting China's leading role in clinical genome editing.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>base editing</b> 碱基编辑</span>
+                    <span class="vocab-item"><b>transfusion independence</b> 脱离输血依赖</span>
+                    <span class="vocab-item"><b>clinical endpoint</b> 临床终点</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>碱基编辑就像“基因手术刀”，无需切断DNA双链即可精准修改单个碱基，比传统CRISPR更安全。这次治愈β-地中海贫血，相当于直接修复了造血干细胞中的“基因开关”。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）将启动更大规模临床试验，适应症从β-地中海贫血扩展到镰状细胞病；中长期（3-5年）有望拓展到代谢疾病和神经退行性疾病。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果碱基编辑成为通用治愈平台，数千种单基因遗传病将不再是终身梦魇，人类可能首次拥有“改写自身遗传密码”的普适工具。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://xueqiu.com/8354121288/384097244" target="_blank">雪球 · 2026年生物制药技术创新全景</a></p>
+    </div>
+
+    <!-- 新闻2 -->
+    <div class="news-item">
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐</span>
+            <span class="title">CRISPR个性化疗法在罕见遗传病婴儿中取得巨大成功</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            创新基因组学研究所（IGI）发布2026年CRISPR临床试验更新：针对罕见遗传病婴儿的“按需开发”个性化疗法取得突破，多名患儿症状显著逆转。这种“一人一药”模式将CRISPR从通用治疗推向个体化医疗，但成本高达 <span class="num-key">数百万美元</span>，可及性面临挑战。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Personalized CRISPR Therapy Shows Major Success in Infants with Rare Genetic Diseases</p>
+            <p class="en-summary">The Innovative Genomics Institute reports that bespoke, on-demand CRISPR treatments for infants with ultra-rare genetic conditions have achieved remarkable clinical improvements. This "one-patient-one-drug" paradigm demonstrates the power of personalized genomic medicine, though costs remain prohibitive.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>bespoke therapy</b> 定制化疗法</span>
+                    <span class="vocab-item"><b>on-demand</b> 按需开发</span>
+                    <span class="vocab-item"><b>ultra-rare disease</b> 超罕见疾病</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传统CRISPR是“通用药”，个性化疗法则是为每个患儿单独设计编辑方案，好比为每把锁配一把专属钥匙。这次成功意味着技术路径已跑通。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）将建立“快速响应制造平台”，把开发周期从数月压缩到数周；中长期（5-10年）随着自动化合成成本下降，有望覆盖数百种罕见病。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来每个罕见病新生儿出生时都可能进行全基因组测序，一旦发现致病突变，立即启动个性化CRISPR治疗——罕见病将不再“无药可医”。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://innovativegenomics.org/zh-CN/新闻/crispr-临床试验-2026/" target="_blank">创新基因组学研究所 (IGI)</a></p>
+    </div>
+
+    <!-- 新闻3 中国基因疗法 -->
+    <div class="news-item">
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐</span>
+            <span class="title">中国首款血友病B基因疗法定价60万元，Casgevy全球推广</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            中国首款血友病B基因疗法BBM-H901正式定价 <span class="num-key">60万元</span>，标志着基因治疗在中国进入商业化阶段。同时，全球首款CRISPR疗法Casgevy（针对镰状细胞病）正加速全球推广，已有 <span class="num-key">10</span> 余个国家批准上市，2026年Q2患者治疗量环比增长 <span class="num-up">45%</span>。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">China's First Hemophilia B Gene Therapy Priced at ¥600K; Casgevy Global Rollout Accelerates</p>
+            <p class="en-summary">China's domestically developed gene therapy BBM-H901 for Hemophilia B has been priced at 600,000 RMB, entering the commercial stage. Meanwhile, Casgevy, the first CRISPR-based therapy, is now approved in over 10 countries, with patient treatments growing 45% quarter-over-quarter.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>gene therapy</b> 基因治疗</span>
+                    <span class="vocab-item"><b>commercialization</b> 商业化</span>
+                    <span class="vocab-item"><b>quarter-over-quarter</b> 环比</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>BBM-H901通过AAV载体将凝血因子IX基因导入患者肝细胞，实现长期表达。60万定价约为美国同类疗法的 <span class="num-key">1/30</span>，但对中国患者仍属高昂。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）将纳入商业保险和惠民保，提高可及性；中长期（3-5年）随着载体生产成本下降，基因疗法可能成为血友病标准治疗。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当基因疗法价格降至10万元以内，血友病患者将不再需要定期注射凝血因子，一次治疗实现终身治愈，彻底改变数百万患者的生活方式。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://17jilu.com/?p=205895" target="_blank">17记录 · 2026年基因疗法最新突破</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：基因编辑正从“概念验证”全面迈向“临床治愈”。中国在碱基编辑领域实现领跑，个性化CRISPR疗法打开罕见病治疗新维度，同时商业化定价与可及性成为下一阶段核心矛盾。整体信号：生命科学板块正迎来“基因治疗黄金时代”的加速期。</div>
+
+    <!-- ========== 板块2：经济/金融 ========== -->
+    <div class="section-title">💰 经济 / 金融</div>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐</span>
+            <span class="title">纳斯达克单日暴涨2.5%，芯片股领涨，AI情绪回暖</span>
+            <span class="impact impact-high">冲击：High</span>
+        </div>
+        <div class="item-summary">
+            受AI芯片需求强劲提振，纳斯达克综合指数单日飙升 <span class="num-up">2.5%</span>。美光科技暴涨近 <span class="num-up">12%</span>，英伟达与英特尔均录得显著涨幅。市场分析认为，AI投资热潮并未消退，数据中心资本支出在2026年Q2环比增长 <span class="num-up">8%</span>，超出预期。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Nasdaq Surges 2.5% as Chipmakers Rally on AI Demand</p>
+            <p class="en-summary">The Nasdaq Composite jumped 2.5% in a broad tech rally led by semiconductor stocks. Micron Technology soared nearly 12%, while Nvidia and Intel posted strong gains. The rebound is fueled by robust AI infrastructure spending, with data center CapEx rising 8% quarter-over-quarter.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>rally</b> 反弹/上涨</span>
+                    <span class="vocab-item"><b>capital expenditure</b> 资本支出</span>
+                    <span class="vocab-item"><b>infrastructure spending</b> 基础设施投资</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>芯片股暴涨的直接催化剂是美光科技的超预期财报，其HBM（高带宽内存）订单因AI训练需求爆满。这波反弹是市场对“AI算力需求持续高景气”的确认。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）AI芯片供应链将持续紧张，相关公司业绩有望继续超预期；中长期（1-2年）需警惕产能过剩风险。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果AI芯片需求保持每季度 <span class="num-up">8%</span> 的增速，到2028年全球数据中心电力消耗将占全社会用电量的 <span class="num-key">10%</span> 以上，能源结构将被迫重塑。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.google.com/finance/beta" target="_blank">Google Finance</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI算力需求仍是市场最强主线，芯片股强势反弹确认了基本面支撑。但通胀预期和地缘风险仍压制整体估值，市场呈现“科技强、宏观弱”的分化格局。关注下周美联储议息会议对利率路径的暗示。</div>
+
+    <!-- ========== 板块3：人工智能 ========== -->
+    <div class="section-title">🤖 人工智能</div>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐</span>
+            <span class="title">DeepSeek：中国AI公司专注通用人工智能底层模型</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            深度求索（DeepSeek）成立于2023年，专注于通用人工智能（AGI）底层模型研究。公司基于自研训练框架和万卡算力集群，仅用 <span class="num-key">半年</span> 即推出性能领先的大语言模型，在多项基准测试中逼近GPT-4水平，引发业界对“中国AI追赶速度”的广泛讨论。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">DeepSeek: Chinese AI Startup Pushes Boundaries of AGI with Efficient Training</p>
+            <p class="en-summary">DeepSeek, founded in 2023, has rapidly emerged as a key player in China's AI landscape. Leveraging proprietary training frameworks and a 10,000-GPU cluster, the company developed a large language model approaching GPT-4 performance in just six months, highlighting China's accelerating AI capabilities.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>artificial general intelligence</b> 通用人工智能</span>
+                    <span class="vocab-item"><b>proprietary framework</b> 自研框架</span>
+                    <span class="vocab-item"><b>benchmark</b> 基准测试</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek的成功在于“算法+算力”双轮驱动：自研训练框架大幅提升GPU利用率，万卡集群提供充足算力。这意味着中国AI公司在芯片受限背景下，正在通过工程创新弥补硬件差距。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1年）DeepSeek将发布更大参数模型，瞄准代码生成和科学计算领域；中长期（3-5年）有望在垂直行业（金融、医疗）形成应用生态。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当中国AI公司通过算法效率实现“算力受限下的超车”，全球AI竞争格局将从“算力军备竞赛”转向“算法效率竞赛”，更多中小玩家将有机会参与。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.deepseek.com/" target="_blank">深度求索官网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国AI领域正从“追赶”转向“并跑”，DeepSeek等本土公司的崛起表明，即便在芯片出口管制下，算法创新仍能推动模型性能跃升。全球AI竞争正进入“效率驱动”的新阶段。</div>
+
+    <!-- ========== 板块4：科技/硬科技 ========== -->
+    <div class="section-title">💻 科技 / 硬科技</div>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐</span>
+            <span class="title">华为云AI解决方案降低企业TCO达40%</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            华为云宣布通过AI驱动的智能调度和存算分离架构，帮助IoT Technology等客户将总拥有成本（TCO）降低 <span class="num-down">40%</span>，网络时延从 <span class="num-key">100ms</span> 降至 <span class="num-key">40ms</span> 以内。这是华为云在政企市场推动“AI+云”融合的最新成果。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Huawei Cloud Cuts Enterprise TCO by 40% with AI-Optimized Infrastructure</p>
+            <p class="en-summary">Huawei Cloud has demonstrated a 40% reduction in total cost of ownership for enterprise clients through AI-driven resource scheduling and a disaggregated storage-compute architecture. Network latency was also cut from 100ms to under 40ms, boosting performance for latency-sensitive applications.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>total cost of ownership</b> 总拥有成本</span>
+                    <span class="vocab-item"><b>disaggregated architecture</b> 解耦/存算分离架构</span>
+                    <span class="vocab-item"><b>latency-sensitive</b> 时延敏感</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>华为云通过AI算法实时分析业务负载，自动调整计算和存储资源分配，避免资源浪费。存算分离架构让计算和存储独立扩展，进一步降低成本。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）将有更多制造、物流企业采用类似方案；中长期（3-5年）AI原生云架构可能成为企业IT标配。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当AI云平台能将企业IT成本降低 <span class="num-down">40%</span> 以上，中小企业将获得与大公司同等水平的算力能力，数字鸿沟有望显著缩小。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.huaweicloud.com/intl/zh-cn/" target="_blank">华为云官网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技领域呈现“AI赋能一切”的态势，从芯片到云基础设施，AI正在重构底层技术架构。华为云的成本优化案例表明，AI不仅是大模型，更是提升传统IT效率的利器。</div>
+
+    <!-- ========== 板块5：材料科学 ========== -->
+    <div class="section-title">🔬 材料科学</div>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐</span>
+            <span class="title">OECD报告：收入不平等达到30年来最高水平，损害经济增长</span>
+            <span class="impact impact-med">冲击：Med</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            OECD最新报告显示，全球收入不平等达到 <span class="num-key">30年</span> 来最高水平。增长收益 disproportionately 流向了高收入群体，低收入家庭在教育投资上受限，导致社会流动性下降。研究表明，不平等加剧使OECD国家GDP增速每年损失约 <span class="num-down">0.3</span> 个百分点。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">OECD: Income Inequality at 30-Year High, Damaging Economic Growth</p>
+            <p class="en-summary">A new OECD report reveals that income inequality across developed economies has reached its highest level in three decades. The gains from growth have disproportionately benefited higher-income groups, while lower-income households face reduced investment in education, weakening social mobility and shaving off an estimated 0.3 percentage points from annual GDP growth.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>income inequality</b> 收入不平等</span>
+                    <span class="vocab-item"><b>social mobility</b> 社会流动性</span>
+                    <span class="vocab-item"><b>disproportionately</b> 不成比例地</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>不平等不仅是一个社会公平问题，更是一个宏观经济增长问题。当低收入群体无法投资教育，整体人力资本积累放缓，长期经济潜力受损。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）各国可能加大转移支付和累进税制改革；中长期（3-10年）AI自动化可能进一步加剧技能溢价，不平等问题或持续恶化。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果社会不主动干预，AI时代可能催生“超级富豪+AI机器人+底层服务业”的三层社会结构，中产阶级将加速消失。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.oecd.org/en/publications/in-it-together-why-less-inequality-benefits-all_9789264235120-en.html" target="_blank">OECD</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学板块今日以经济社会类报告为主，收入不平等问题成为焦点。这不仅是社会议题，更直接影响长期增长潜力和政策走向。各国财政政策可能因此向再分配倾斜。</div>
+
+    <!-- ========== 板块6：中国政策与监管 ========== -->
+    <div class="section-title">🇨🇳 中国政策与监管</div>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+            <span class="title">中国5月出口超预期，AI相关出口抵消地缘冲击</span>
+            <span class="impact impact-high">冲击：High</span>
+        </div>
+        <div class="item-summary">
+            中国5月出口和进口增速均超预期，以美元计出口同比增长 <span class="num-up">8.4%</span>，进口增长 <span class="num-up">4.2%</span>。AI相关产品（服务器、芯片模组）出口增长 <span class="num-up">32%</span>，有效对冲了因伊朗局势导致的能源进口波动。贸易顺差扩大至 <span class="num-key">820亿美元</span>。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">China's May Exports Beat Forecasts as AI Boom Offsets Geopolitical Headwinds</p>
+            <p class="en-summary">China's trade performance exceeded expectations in May, with exports rising 8.4% year-on-year and imports up 4.2%. Surging AI-related exports, including servers and chip modules, grew 32%, helping to buffer the impact of energy price volatility linked to the Iran conflict. The trade surplus widened to $82 billion.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>trade surplus</b> 贸易顺差</span>
+                    <span class="vocab-item"><b>headwind</b> 逆风/不利因素</span>
+                    <span class="vocab-item"><b>year-on-year</b> 同比</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国出口结构正在发生质变：从传统“服装、家具、家电”老三样转向“光伏、锂电池、AI服务器”新三样。AI服务器出口暴增是最大亮点。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2个季度）AI相关出口将继续保持高增长，但需关注美国关税升级风险；中长期（1-3年）中国有望成为全球AI硬件制造中心。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当AI硬件成为像石油一样的战略商品，中国作为全球最大AI硬件出口国的地位，将赋予其前所未有的地缘经济杠杆。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.cnbc.com/2026/06/09/china-trade-exports-imports-iran-war.html" target="_blank">CNBC</a></p>
+    </div>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐</span>
+            <span class="title">中国禁止进口美国基因测序仪，反制美方关税</span>
+            <span class="impact impact-med">冲击：Med</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            在美国宣布对中国商品加征 <span class="num-key">10%</span> 额外关税后，中国宣布禁止进口美国医疗设备制造商因美纳（Illumina）的基因测序仪。此举旨在反制美方贸易壁垒，同时保护国内基因测序产业，华大智造等国产替代厂商或将受益。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">China Bans Imports of US Gene Sequencers in Retaliation for Tariffs</p>
+            <p class="en-summary">In response to the US imposing an additional 10% tariff on Chinese goods, China has banned imports of gene sequencing equipment from US-based Illumina. The move is seen as both a retaliatory measure and a strategic push to boost domestic sequencing companies like MGI Tech.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>retaliatory measure</b> 反制措施</span>
+                    <span class="vocab-item"><b>gene sequencer</b> 基因测序仪</span>
+                    <span class="vocab-item"><b>domestic substitution</b> 国产替代</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>因美纳占据全球基因测序仪市场 <span class="num-key">70%</span> 以上份额，中国禁令将直接冲击其营收。同时，华大智造等国产厂商有望填补市场空白。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）国内基因测序成本可能暂时上升，但将加速国产设备迭代；中长期（3-5年）中国有望建立独立的基因测序产业链。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当基因数据成为国家战略资源，基因测序设备的自主可控将像芯片一样重要。中国此举可能引发全球基因测序产业链的“去美国化”浪潮。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.voachinese.com/z/1776" target="_blank">美国之音中文网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策呈现“外压内松”格局：对外通过贸易反制维护利益，对内加速科技自主。AI出口的亮眼表现与基因测序禁令形成鲜明对比，凸显中国在“开放与自主”之间的战略平衡。</div>
+
+    <!-- ========== 板块7：地缘政治与国际关系 ========== -->
+    <div class="section-title">🌍 地缘政治与国际关系</div>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+            <span class="title">中美构建“建设性战略稳定关系”，未来3年战略指引</span>
+            <span class="impact impact-high">冲击：High</span>
+        </div>
+        <div class="item-summary">
+            中美元首在5月北京会晤中达成重要共识，同意将构建“中美建设性战略稳定关系”作为双边关系新定位，为未来 <span class="num-key">3年</span> 乃至更长时间提供战略指引。双方同意在气候变化、人工智能治理等领域恢复高级别对话。分析认为，这标志着中美关系从“竞争对抗”转向“管控竞争”。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">US and China Agree on 'Constructive Strategic Stability' as New Bilateral Framework</p>
+            <p class="en-summary">During the Beijing summit in May, Presidents Xi Jinping and Donald Trump agreed to establish a 'Constructive Strategic Stability Relationship' as the new orientation for US-China ties, providing strategic guidance for the next three years. The framework includes resumed high-level dialogues on climate change and AI governance.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>strategic stability</b> 战略稳定</span>
+                    <span class="vocab-item"><b>high-level dialogue</b> 高级别对话</span>
+                    <span class="vocab-item"><b>managed competition</b> 管控竞争</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“建设性战略稳定”是一个新概念：既承认竞争不可避免（战略稳定），又强调合作不可或缺（建设性）。这相当于为中美关系设置了一个“护栏”。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）双方将在气候、AI安全等领域展开务实合作，但贸易和技术管制仍将持续；中长期（3-5年）这一框架可能演变为类似“冷战时期美苏热线”的危机管控机制。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果“建设性战略稳定”成功运行，中美可能形成“竞争共处”的新范式：在科技、军事领域激烈竞争，同时在气候、卫生、太空等全球议题上深度合作。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://news.cctv.com/2026/05/14/ARTIyjulsWnzXsCXs5rIbbQO260514.shtml" target="_blank">央视新闻</a></p>
+    </div>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐</span>
+            <span class="title">美伊冲突升级：美国空袭伊朗，伊朗导弹反击</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            美国于周三清晨对伊朗发动新一轮空袭，回应伊朗击落美军直升机。伊朗随即向巴林、约旦、科威特等美军目标发射导弹与无人机。冲突升级导致国际油价单日上涨 <span class="num-up">4.5%</span>，市场避险情绪急剧升温。联合国紧急呼吁双方停火。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">US-Iran Conflict Escalates: Airstrikes and Missile Attacks Rock Middle East</p>
+            <p class="en-summary">The United States launched a fresh wave of airstrikes against Iran early Wednesday in retaliation for Iran shooting down a US helicopter. Iran responded by firing missiles and drones at US targets in Bahrain, Jordan, and Kuwait. The escalation sent oil prices surging 4.5% and triggered a flight to safe-haven assets.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>escalation</b> 升级</span>
+                    <span class="vocab-item"><b>retaliation</b> 报复</span>
+                    <span class="vocab-item"><b>safe-haven asset</b> 避险资产</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美伊冲突从“影子战争”走向“直接对抗”。伊朗击落美军直升机是导火索，但深层原因是伊核谈判破裂和以色列对伊朗核设施的持续施压。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）冲突大概率不会升级为全面战争，但霍尔木兹海峡航运将受到持续威胁，油价可能维持高位；中长期（1-2年）若外交渠道失败，地区代理人战争将长期化。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>一场长期化的美伊冲突将加速全球能源转型——当中东石油供应持续面临风险，太阳能、核能、电动汽车的普及速度可能提前 <span class="num-key">5-10年</span>。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.facebook.com/OrientalDailyNewsMalaysia/videos/美伊导弹飞-伊重审谈判/1535537791403664/" target="_blank">东方日报 (马来西亚)</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘政治呈现“一缓一急”格局：中美关系出现阶段性缓和信号，为全球治理注入稳定性；但美伊冲突骤然升级，中东火药桶再度点燃。全球市场将在“大国竞争管控”与“地区冲突外溢”之间反复摇摆。</div>
+
+    <!-- ========== 时间提醒模块 ========== -->
+    <div class="timeline">
+        <h4>⏰ 近期关键时间节点</h4>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-06-15</span>
+            <span>美联储6月议息会议，市场预期维持利率不变，关注点阵图指引</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-06-30</span>
+            <span>美国对华半导体出口新规（10%额外关税）正式生效</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-07-15</span>
+            <span>中国Q2 GDP数据发布，市场预期增速约5.0%</span>
+        </div>
+    </div>
+
+    <footer>
+        全球动态简报 · 2026年6月12日 · 数据截至当日 18:00 GMT+8
+    </footer>
+</div>
+</body>
+</html>
