@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球动态简报 | 2026-06-14</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+            color: #1a1a2e;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a2e;
+            border-bottom: 3px solid #e94560;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .date {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .overview {
+            background-color: #eef2ff;
+            border-left: 5px solid #4f46e5;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        .overview h3 {
+            margin-top: 0;
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+        .overview p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .overview-tags {
+            margin-top: 12px;
+        }
+        .overview-tag {
+            display: inline-block;
+            background-color: #ffffff;
+            border: 1px solid #4f46e5;
+            color: #4f46e5;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 4px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a1a2e;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+        .item {
+            background-color: #fafbfc;
+            border: 1px solid #e8e8e8;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .item-header {
+            display: block;
+            margin-bottom: 12px;
+        }
+        .item-header strong {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+        .stars {
+            color: #f59e0b;
+            font-size: 14px;
+            margin-left: 8px;
+        }
+        .impact {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 8px;
+        }
+        .impact-high {
+            background-color: #fee2e2;
+            color: #b91c1c;
+        }
+        .impact-med {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+        .impact-low {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+        .risk-red {
+            display: inline-block;
+            background-color: #fce4ec;
+            color: #c62828;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 8px;
+        }
+        .risk-yellow {
+            display: inline-block;
+            background-color: #fff8e1;
+            color: #f57f17;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 8px;
+        }
+        .item-summary {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .num-up {
+            font-weight: 700;
+            color: #16a34a;
+        }
+        .num-down {
+            font-weight: 700;
+            color: #dc2626;
+        }
+        .num-key {
+            font-weight: 700;
+            color: #2563eb;
+        }
+        .bilingual {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .en-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+            font-style: italic;
+        }
+        .en-summary {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        .vocab-card {
+            background-color: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 10px;
+        }
+        .vocab-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+        }
+        .vocab-list {
+            display: block;
+        }
+        .vocab-item {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: #0369a1;
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-right: 6px;
+            margin-bottom: 4px;
+        }
+        .compare-box {
+            display: block;
+            border: 2px solid #d1d5db;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+        }
+        .compare-side {
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+            padding: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333;
+        }
+        .compare-bull {
+            background-color: #f0fdf4;
+            border-right: 1px solid #e0e0e0;
+        }
+        .compare-bear {
+            background-color: #fef2f2;
+        }
+        .compare-label {
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+        .deepdive {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .deepdive summary {
+            font-size: 14px;
+            font-weight: 600;
+            color: #4f46e5;
+            cursor: pointer;
+            padding: 6px 0;
+        }
+        .deepdive-content {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 8px;
+        }
+        .dl {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .dl-label {
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+        .item-source {
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+        }
+        .item-source a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .item-source a:hover {
+            text-decoration: underline;
+        }
+        .trend-comment {
+            background-color: #f1f5f9;
+            border-left: 4px solid #64748b;
+            padding: 12px 16px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .timeline {
+            background-color: #fff7ed;
+            border: 1px solid #fed7aa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .timeline h4 {
+            margin-top: 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+        .timeline-item {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #333;
+        }
+        .timeline-date {
+            display: inline-block;
+            background-color: #ffffff;
+            border: 1px solid #d1d5db;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #b45309;
+            margin-right: 10px;
+            font-size: 12px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .compare-side { width: 100%; display: block; border-right: none; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🌍 全球动态简报</h1>
+    <div class="date">📅 2026年6月14日 星期日</div>
+
+    <!-- 第一步：今日综述 -->
+    <div class="overview">
+        <h3>🧠 今日 AI 综述</h3>
+        <p>今日简报呈现三条主线：生命科学领域迎来中国在碱基编辑技术上的全球首例治愈级突破，临床转化加速；AI 领域，OpenAI 正式启动 IPO 进程，同时美国政府罕见动用行政命令强制 Anthropic 下架模型，AI 安全治理进入强监管时代；地缘方面，中美关系在“建设性战略稳定”框架下维持微妙平衡，但芯片供应链受日本停产事件冲击，供给缺口达 <span class="num-key">25%</span>。整体风向：科技端乐观与监管阴影并存，地缘风险结构性累积。</p>
+        <div class="overview-tags">
+            <span class="overview-tag">🧬 基因编辑临床化</span>
+            <span class="overview-tag">🤖 OpenAI IPO</span>
+            <span class="overview-tag">🔴 AI 强制监管</span>
+            <span class="overview-tag">💾 芯片供给危机</span>
+            <span class="overview-tag">🌐 中美战略稳定</span>
+        </div>
+    </div>
+
+    <!-- 板块 1: 生命科学/医学 -->
+    <div class="section">
+        <div class="section-title">🧬 生命科学 / 医学</div>
+
+        <!-- 新闻 1 -->
+        <div class="item">
+            <div class="item-header">
+                <strong>中国碱基编辑技术实现全球首例治愈级突破</strong>
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+            <div class="item-summary">
+                据雪球报道，2026年生物制药技术创新全景显示，中国在碱基编辑技术上实现全球首例治愈级突破，针对遗传性血液疾病的临床试验取得完全缓解。这一成果将基因编辑的临床转化时间线大幅前移，预计今年将有更多干细胞药物提交临床申请。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">China Achieves World's First Cure-Level Breakthrough in Base Editing</p>
+                <p class="en-summary">China has achieved a world-first cure-level breakthrough in base editing technology, with clinical trials for hereditary blood diseases showing complete remission. This milestone significantly accelerates the clinical translation timeline for gene editing, with more stem cell therapies expected to file for clinical trials this year.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>base editing</b> 碱基编辑</span>
+                        <span class="vocab-item"><b>complete remission</b> 完全缓解</span>
+                        <span class="vocab-item"><b>clinical translation</b> 临床转化</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>碱基编辑技术好比“基因手术刀”，能精准修改单个碱基而不切断DNA双链，相比传统CRISPR-Cas9更安全。中国团队此次在β-地中海贫血等疾病上实现治愈，意味着患者可能只需一次治疗即可终身受益。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内，针对镰刀型细胞贫血症、遗传性失明等疾病的临床试验将密集启动；中长期（3-10年），碱基编辑有望扩展到心血管疾病、代谢疾病等复杂病症，但递送系统和脱靶效应仍是主要瓶颈。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若完全实现，遗传病将从“不治之症”变为“一次性治愈”，基因编辑门诊或成常规医疗，但随之而来的伦理争议（如胚胎编辑、基因增强）将引发全球性监管辩论。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://xueqiu.com/8354121288/384097244" target="_blank">雪球 - 2026年生物制药技术创新全景</a></p>
+        </div>
+
+        <!-- 新闻 2 -->
+        <div class="item">
+            <div class="item-header">
+                <strong>CRISPR 个性化疗法在罕见遗传病婴儿中取得巨大成功</strong>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                创新基因组学研究所（IGI）2026年更新显示，CRISPR临床试验持续进展，针对罕见遗传病婴儿按需开发的个性化疗法取得巨大成功。该疗法为每位患者量身定制，从诊断到治疗仅需 <span class="num-key">6-8周</span>，为“N-of-1”精准医疗树立新标杆。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Personalized CRISPR Therapy Shows Remarkable Success in Infants with Rare Genetic Diseases</p>
+                <p class="en-summary">The Innovative Genomics Institute reports that personalized CRISPR therapies developed on-demand for infants with rare genetic diseases have achieved remarkable success. The custom treatment, designed for each patient, takes only 6-8 weeks from diagnosis to therapy, setting a new benchmark for N-of-1 precision medicine.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>personalized therapy</b> 个性化疗法</span>
+                        <span class="vocab-item"><b>N-of-1</b> 单患者试验</span>
+                        <span class="vocab-item"><b>precision medicine</b> 精准医疗</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“N-of-1”疗法意为“为一人设计”，针对极罕见基因突变，传统药物研发模式失效。CRISPR技术使科学家能快速设计并制造针对特定突变的编辑工具，实现“即诊即治”。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将推动更多罕见病基金会与基因编辑公司合作建立“快速响应平台”；中长期可能催生“基因编辑急救”新业态，但高昂成本（单次治疗超 <span class="num-key">50万美元</span>）和医保覆盖将是主要挑战。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来每个新生儿或可进行全基因组测序，一旦发现致病突变，立即启动个性化治疗，罕见遗传病将不再是“绝症”，而是“可编程”的疾病。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://innovativegenomics.org/zh-CN/新闻/crispr-临床试验-2026/" target="_blank">创新基因组学研究所 (IGI)</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：基因编辑领域呈现“双轮驱动”——中国在碱基编辑上实现治愈级突破，美国在个性化CRISPR疗法上领跑。临床转化速度超出预期，但监管框架和伦理标准尚未跟上技术迭代，预计2026下半年将迎来密集的政策讨论。</div>
+    </div>
+
+    <!-- 板块 2: 经济/金融 -->
+    <div class="section">
+        <div class="section-title">💰 经济 / 金融</div>
+
+        <!-- 新闻 3 -->
+        <div class="item">
+            <div class="item-header">
+                <strong>台湾主计总处预估2026年GDP增长9.64%，创16年新高</strong>
+                <span class="stars">⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+            <div class="item-summary">
+                据台湾财政委员会消息，受AI需求与出口动能带动，主计总处预估2026年GDP增长高达 <span class="num-up">9.64%</span>，创 <span class="num-key">16年</span> 新高。但民众对物价上涨与收入分配不均的“体感负担”引发关注，央行后续货币政策面临两难。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Taiwan's GDP Forecast to Hit 9.64% in 2026, a 16-Year High</p>
+                <p class="en-summary">Driven by AI demand and export momentum, Taiwan's Directorate-General of Budget, Accounting and Statistics estimates GDP growth of 9.64% for 2026, the highest in 16 years. However, public concern over inflation and income inequality remains, posing a dilemma for the central bank's monetary policy.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>GDP growth</b> GDP增长</span>
+                        <span class="vocab-item"><b>export momentum</b> 出口动能</span>
+                        <span class="vocab-item"><b>income inequality</b> 收入不平等</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>台湾经济高度依赖半导体出口，AI服务器、HBM存储芯片需求爆发式增长，直接拉动GDP。但高增长并未普惠全民，科技业与服务业薪资差距拉大，核心CPI仍维持在 <span class="num-key">2.5%</span> 以上。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，AI资本开支周期仍在上升，出口将继续支撑经济；但中长期面临结构性风险：过度依赖单一产业、地缘政治紧张、以及美联储利率政策的不确定性。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若台湾能利用此轮增长红利推动产业多元化与社会福利改革，或可跨越“中等收入陷阱”；反之，高增长下的分配不均可能引发社会矛盾。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.facebook.com/kuanheng99/posts/..." target="_blank">颜宽恒 Facebook - 财政委员会</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：全球经济呈现“K型复苏”——AI相关产业高歌猛进，传统制造业与服务业复苏乏力。市场对通胀黏性和央行政策转向的博弈加剧，投资者需警惕高增长数据背后的结构性风险。</div>
+    </div>
+
+    <!-- 板块 3: 人工智能 -->
+    <div class="section">
+        <div class="section-title">🤖 人工智能</div>
+
+        <!-- 新闻 4 -->
+        <div class="item">
+            <div class="item-header">
+                <strong>OpenAI 提交机密文件，正式启动华尔街上市进程</strong>
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+            <div class="item-summary">
+                美联社报道，OpenAI 已向美国证券交易委员会（SEC）提交机密文件，启动首次公开募股（IPO）程序。此举标志着这家AI巨头从非营利组织向上市公司的转型进入实质性阶段，市场估值预计超过 <span class="num-key">3000亿美元</span>，将成为2026年全球最受瞩目的IPO之一。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">OpenAI Files Confidential Paperwork for Wall Street Debut</p>
+                <p class="en-summary">OpenAI has submitted confidential documents to the U.S. Securities and Exchange Commission, initiating the IPO process. This marks a significant step in the company's transition from a non-profit to a publicly traded entity, with a projected valuation exceeding $300 billion, making it one of the most anticipated IPOs of 2026.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>IPO</b> 首次公开募股</span>
+                        <span class="vocab-item"><b>confidential filing</b> 机密文件提交</span>
+                        <span class="vocab-item"><b>valuation</b> 估值</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>OpenAI 最初为非营利组织，后转为“有限盈利”结构。此次IPO是将其商业化推向极致，让公众投资者参与AI巨头成长。但这也意味着公司需平衡股东利益与“AI造福全人类”的使命。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将引发AI板块估值重估，竞争对手如Anthropic、Cohere可能加速上市；中长期看，OpenAI上市后需满足季度财报压力，可能更倾向于短期商业化而非长期安全研究，引发AI安全界的担忧。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果OpenAI成功上市，AI行业将正式从“实验室竞赛”进入“资本竞赛”时代，未来AI公司的核心竞争力可能从技术突破转向盈利能力。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://apnews.com/article/openai-ipo-chatgpt-c7583994426b1b097120786d6a0b8308" target="_blank">AP News</a></p>
+        </div>
+
+        <!-- 新闻 5 -->
+        <div class="item">
+            <div class="item-header">
+                <strong>美国政府下令 Anthropic 下架 Fable 和 Mythos 模型，AI安全监管升级</strong>
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-red">🔴 重大风险</span>
+            </div>
+            <div class="item-summary">
+                据多家媒体报道，美国政府以“可信合作伙伴报告 jailbreak 漏洞”为由，强制 Anthropic 下架其最新发布的 Fable 和 Mythos 5 模型。白宫AI负责人 David Sacks 公开批评 Anthropic CEO Dario Amodei 拒绝修复漏洞。这是美国政府首次直接动用行政命令干预AI模型部署，引发业界对AI治理走向“强监管”的担忧。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">U.S. Government Orders Anthropic to Pull Fable and Mythos Models Amid Safety Concerns</p>
+                <p class="en-summary">The U.S. government has ordered Anthropic to withdraw its latest Fable and Mythos 5 models, citing a jailbreak vulnerability reported by a trusted partner. White House AI chief David Sacks publicly criticized CEO Dario Amodei for refusing to address the flaw, marking the first time the government has directly intervened in model deployment, signaling a shift toward stricter AI regulation.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>jailbreak</b> 越狱/破解</span>
+                        <span class="vocab-item"><b>regulatory intervention</b> 监管干预</span>
+                        <span class="vocab-item"><b>model deployment</b> 模型部署</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“Jailbreak”指用户通过特殊提示词绕过AI安全限制，让模型生成有害内容。此次漏洞由Anthropic的“可信合作伙伴”发现，但公司未及时修复。政府直接下令下架，意味着AI企业自监管时代结束，外部强制合规时代开启。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将引发AI行业对模型安全审核流程的全面自查，Anthropic可能面临罚款或更严格的部署许可要求；中长期看，美国可能加速推进《AI责任法案》，要求所有高风险AI系统在部署前获得政府批准。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来AI发布可能类似“药品审批”——需要经过临床试验般的安全验证才能上市。这虽然增加企业成本，但可能从根本上减少AI滥用风险，建立公众信任。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.americanbanker.com/news/anthropic-shuts-down-mythos-5-fable-5-due-to-government-order" target="_blank">American Banker</a> / <a href="https://www.yahoo.com/news/politics/articles/us-government-orders-anthropic-pull-192334499.html" target="_blank">Yahoo News</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：AI行业呈现“冰火两重天”——OpenAI IPO 标志商业化加速，而 Anthropic 被强制下架则暴露安全治理真空。资本市场对AI热情不减，但监管风险正从“远期假设”变为“即时现实”。未来AI公司的合规能力将成为与技术创新同等重要的核心竞争力。</div>
+    </div>
+
+    <!-- 板块 4: 科技/硬科技 -->
+    <div class="section">
+        <div class="section-title">💻 科技 / 硬科技</div>
+
+        <!-- 新闻 6 -->
+        <div class="item">
+            <div class="item-header">
+                <strong>日本六氟化钨永久停产，全球芯片供应链遭遇25%供给缺口</strong>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-red">🔴 重大风险</span>
+            </div>
+            <div class="item-summary">
+                据Facebook芯片讨论组信息，日本关东电化、中央硝子两大巨头永久停产六氟化钨（WF6），直接抽走全球 <span class="num-down">25%</span> 产能。高端市场出现 <span class="num-key">2200吨</span> 刚性缺口，6N级高纯产品价格暴涨 <span class="num-up">5倍</span>。三星、SK海力士等存储芯片厂商受到直接冲击，全球芯片供应再添变数。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Japan's Permanent Halt of WF6 Production Creates 25% Global Supply Gap</p>
+                <p class="en-summary">Japan's permanent cessation of tungsten hexafluoride (WF6) production by Kanto Denka and Central Glass has removed 25% of global capacity, creating a 2,200-ton supply gap in the high-end market. Prices for 6N-grade WF6 have surged 5x, directly impacting memory chip giants like Samsung and SK Hynix, adding new uncertainty to the global chip supply chain.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>tungsten hexafluoride (WF6)</b> 六氟化钨</span>
+                        <span class="vocab-item"><b>supply gap</b> 供给缺口</span>
+                        <span class="vocab-item"><b>high-purity grade</b> 高纯等级</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>六氟化钨是半导体制造中用于化学气相沉积（CVD）的关键材料，用于形成钨金属互连层。日本企业长期占据高端市场主导地位，停产意味着全球芯片制造商将面临“无米下锅”的困境。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（<span class="num-key">3-6个月</span>）内，存储芯片和逻辑芯片产能将受制约，价格可能上涨 <span class="num-up">10-20%</span>；中长期看，中国、韩国企业可能加速WF6国产化替代，但技术爬坡需 <span class="num-key">1-2年</span>，期间供应链脆弱性将持续。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>此次事件暴露了全球半导体供应链的“隐性单点依赖”——关键材料集中在少数国家。未来各国可能建立“关键材料战略储备”机制，芯片产业的竞争将从制造工艺延伸到上游材料自主可控。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.facebook.com/groups/336645027162039/" target="_blank">Facebook - 華語世界時事討論社</a></p>
+        </div>
+
+        <!-- 新闻 7 -->
+        <div class="item">
+            <div class="item-header">
+                <strong>美超微（SMCI）宣布70亿美元增发，盘后重挫10%</strong>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                美超微（SMCI）宣布通过增发股票筹集 <span class="num-key">70亿美元</span>，用于购买AI服务器所需零部件。其中 <span class="num-key">50亿美元</span> 为承销发行，<span class="num-key">20亿美元</span> 为市场发行。消息公布后，盘后股价一度重挫超过 <span class="num-down">-10%</span>，反映市场对股权稀释的担忧。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Super Micro (SMCI) Announces $7 Billion Stock Offering, Shares Fall 10% After Hours</p>
+                <p class="en-summary">Super Micro Computer (SMCI) announced a $7 billion stock offering to purchase components for AI servers, including $5 billion in underwritten public offering and $2 billion in at-the-market offering. Shares fell over 10% in after-hours trading, reflecting market concerns over equity dilution.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>stock offering</b> 股票发行</span>
+                        <span class="vocab-item"><b>equity dilution</b> 股权稀释</span>
+                        <span class="vocab-item"><b>underwritten offering</b> 承销发行</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美超微是AI服务器的重要供应商，订单需求旺盛，但同时也面临零部件短缺和现金周转压力。此次增发是为了锁定关键零部件供应，但代价是稀释现有股东权益。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期股价承压，但如果资金能有效转化为产能扩张，中长期可能受益于AI资本开支浪潮。投资者需关注其毛利率变化和订单交付能力。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>AI服务器供应链正在经历“军备竞赛”式扩张，类似SMCI这样的公司通过融资扩产将成为常态，行业整合加速，最终可能形成寡头格局。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.facebook.com/FinGuider/posts/..." target="_blank">FinGuider 美股資訊網</a></p>
+        </div>
+
+        <!-- 新闻 8 -->
+        <div class="item">
+            <div class="item-header">
+                <strong>微软推送Windows 11六月大更新，新增“低延迟配置”功能</strong>
+                <span class="stars">⭐⭐⭐</span>
+                <span class="impact impact-low">冲击：Low</span>
+            </div>
+            <div class="item-summary">
+                微软正式推送Windows 11六月份大更新KB5094126，新增“低延迟配置（Low Latency Profile）”功能，可优化CPU调度以提升系统响应速度。但用户反馈该功能可能增加 <span class="num-key">5-10%</span> 的功耗，对笔记本电脑续航影响有待评估。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Microsoft Rolls Out Windows 11 June Update with Low Latency Profile</p>
+                <p class="en-summary">Microsoft has released the Windows 11 June cumulative update KB5094126, introducing a "Low Latency Profile" feature that optimizes CPU scheduling for improved system responsiveness. However, users report a potential 5-10% increase in power consumption, with battery life impact on laptops yet to be fully assessed.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>low latency</b> 低延迟</span>
+                        <span class="vocab-item"><b>CPU scheduling</b> CPU调度</span>
+                        <span class="vocab-item"><b>power consumption</b> 功耗</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“低延迟配置”通过调整CPU的电源管理和线程调度策略，优先保障前台应用的响应速度，减少卡顿感。对于游戏玩家和实时应用用户是利好，但牺牲了一定的能效比。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将改善Windows 11在高端PC上的用户体验；中长期看，微软可能将此功能与AI驱动的动态性能调优结合，实现“按需分配”计算资源。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来操作系统将不再是“一刀切”的调度，而是根据用户实时行为（游戏、办公、视频）动态调整CPU/GPU策略，实现“零感知”性能优化。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.facebook.com/unwirehk/posts/..." target="_blank">UNWIRE.HK</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：硬科技领域呈现“供应链危机与终端创新并存”——日本WF6停产暴露上游材料脆弱性，而美超微的融资和微软的更新则反映下游需求旺盛。芯片供应链的“去日本化”或将成为未来12个月的关键议题。</div>
+    </div>
+
+    <!-- 板块 5: 材料科学 -->
+    <div class="section">
+        <div class="section-title">🔬 材料科学</div>
+
+        <!-- 新闻 9 -->
+        <div class="item">
+            <div class="item-header">
+                <strong>日本六氟化钨停产引发材料科学界关注，替代材料研发加速</strong>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+            <div class="item-summary">
+                受日本WF6永久停产影响，材料科学界加速寻找替代材料。目前候选方案包括钼基前驱体（MoF6）和新型原子层沉积（ALD）工艺，但短期内难以实现同等纯度与沉积速率。学术界与工业界联合攻关，预计 <span class="num-key">12-18个月</span> 内有望推出初步替代方案。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Japan's WF6 Halt Accelerates Search for Alternative Semiconductor Materials</p>
+                <p class="en-summary">The permanent halt of WF6 production in Japan has spurred a race in materials science to find alternatives. Candidates include molybdenum-based precursors (MoF6) and novel atomic layer deposition (ALD) processes, though achieving equivalent purity and deposition rates remains challenging. Industry-academia collaborations aim to deliver preliminary solutions within 12-18 months.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>precursor</b> 前驱体</span>
+                        <span class="vocab-item"><b>atomic layer deposition (ALD)</b> 原子层沉积</span>
+                        <span class="vocab-item"><b>deposition rate</b> 沉积速率</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>WF6在半导体制造中几乎不可替代，因其具有高蒸汽压、高纯度和良好的沉积选择性。替代材料如MoF6虽在实验室中可行，但产业化面临纯度控制、成本和安全性的多重挑战。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（<span class="num-key">1年内</span>）仍以库存消耗和回收再利用为主；中长期（<span class="num-key">2-3年</span>），可能催生“非钨互连”技术路线，如钌（Ru）或钴（Co）基互连，推动芯片制造工艺变革。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>材料危机往往是技术革命的催化剂。此次WF6短缺可能意外推动下一代互连材料的商业化，使芯片性能在 <span class="num-key">3nm</span> 以下节点获得突破。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：综合自Facebook芯片讨论组及行业分析</p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：材料科学领域进入“危机驱动创新”模式，日本WF6停产成为催化剂。短期内上游材料价格将持续高企，但中长期看，替代材料的研发竞赛可能催生新的技术路线，改变半导体制造的材料格局。</div>
+    </div>
+
+    <!-- 板块 6: 中国政策与监管 -->
+    <div class="section">
+        <div class="section-title">🇨🇳 中国政策与监管</div>
+
+        <!-- 新闻 10 -->
+        <div class="item">
+            <div class="item-header">
+                <strong>国务院印发《现代化应急体系建设“十五五”规划》</strong>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                据中国政府网消息，国务院于2026年6月8日印发《现代化应急体系建设“十五五”规划》，重点强化公共卫生、自然灾害、安全生产等领域的应急响应能力。规划提出到 <span class="num-key">2030年</span> 建成“统一指挥、专常兼备、反应灵敏、上下联动”的应急体系，并明确加大物联网、AI、无人机等技术的应用。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">State Council Issues 15th Five-Year Plan for Modern Emergency Response System</p>
+                <p class="en-summary">China's State Council has issued the "15th Five-Year Plan for Modern Emergency Response System," focusing on strengthening capabilities in public health, natural disasters, and workplace safety. The plan aims to build a unified, agile, and coordinated emergency system by 2030, with an emphasis on integrating IoT, AI, and drone technologies.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>emergency response system</b> 应急响应体系</span>
+                        <span class="vocab-item"><b>Five-Year Plan</b> 五年规划</span>
+                        <span class="vocab-item"><b>IoT (Internet of Things)</b> 物联网</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是中国在经历疫情、极端天气等事件后，系统性升级国家应急能力的顶层设计。规划强调“技术赋能”，要求应急响应从“人海战术”转向“智慧调度”。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将带动应急产业投资，相关设备（无人机、通信设备、监测传感器）需求增长；中长期可能催生“应急即服务”新业态，政府与科技公司合作建设城市级应急大脑。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来城市可能拥有“数字孪生应急系统”，在灾害发生前就能模拟推演并自动调度资源，将响应时间从小时级压缩到分钟级。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.gov.cn/" target="_blank">中国政府网</a></p>
+        </div>
+
+        <!-- 新闻 11 -->
+        <div class="item">
+            <div class="item-header">
+                <strong>中国禁止进口美国基因测序仪因美纳（Illumina）</strong>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+                <span class="risk-red">🔴 重大风险</span>
+            </div>
+            <div class="item-summary">
+                据美国之音报道，在中国宣布对美国商品加征 <span class="num-key">10%</span> 额外关税当天，中国商务部宣布禁止进口美国医疗设备制造商因美纳（Illumina）的基因测序仪。此举被视为中美贸易摩擦在生物科技领域的升级，可能加速中国国产测序仪的替代进程。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">China Bans Imports of Illumina Gene Sequencers Amid Trade Tensions</p>
+                <p class="en-summary">On the same day China announced an additional 10% tariff on U.S. goods, the Ministry of Commerce banned imports of gene sequencers from U.S. manufacturer Illumina. The move is seen as an escalation of trade friction into the biotech sector, potentially accelerating the adoption of domestic Chinese sequencers.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>gene sequencer</b> 基因测序仪</span>
+                        <span class="vocab-item"><b>trade friction</b> 贸易摩擦</span>
+                        <span class="vocab-item"><b>domestic substitution</b> 国产替代</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>因美纳（Illumina）是全球基因测序仪市场的绝对霸主，占据约 <span class="num-key">80%</span> 份额。中国禁令将直接冲击其营收，同时倒逼中国本土企业（如华大智造）加速技术突破和产能扩张。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将导致中国科研机构和医院的测序成本上升，设备维护面临挑战；中长期（<span class="num-key">2-3年</span>），中国国产测序仪有望实现 <span class="num-key">50%</span> 以上的进口替代，但核心技术（光学系统、流体芯片）差距仍需时间弥合。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若中国成功建立独立的基因测序产业链，将从根本上改变全球生命科学工具的竞争格局，从“美国垄断”走向“中美双极”。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.voachinese.com/z/1776" target="_blank">美国之音中文网</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：中国政策呈现“安全与发展并重”主线——应急体系规划体现对国内治理的重视，而Illumina禁令则显示在科技领域“去美化”的持续推进。中美科技脱钩在生命科学工具领域加速，国产替代迎来战略机遇期。</div>
+    </div>
+
+    <!-- 板块 7: 地缘政治与国际关系 -->
+    <div class="section">
+        <div class="section-title">🌍 地缘政治与国际关系</div>
+
+        <!-- 新闻 12 -->
+        <div class="item">
+            <div class="item-header">
+                <strong>中美元首北京会晤达成“建设性战略稳定关系”新定位</strong>
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+            </div>
+            <div class="item-summary">
+                据央视新闻和外交部消息，2026年5月14日，中国国家主席习近平与美国总统特朗普在北京会晤，双方同意将构建“中美建设性战略稳定关系”作为两国关系新定位，为未来 <span class="num-key">3年</span> 乃至更长时间的中美关系提供战略指引。中方强调合作清单应不断拉长，美方则重申“一个中国”政策。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">U.S.-China Summit in Beijing Establishes 'Constructive Strategic Stability' Framework</p>
+                <p class="en-summary">Chinese President Xi Jinping and U.S. President Donald Trump met in Beijing on May 14, 2026, agreeing to establish a "constructive strategic stability relationship" as the new framework for bilateral ties. The framework aims to guide relations for the next three years and beyond, with China emphasizing a longer cooperation list and the U.S. reaffirming its "One China" policy.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>constructive strategic stability</b> 建设性战略稳定</span>
+                        <span class="vocab-item"><b>bilateral ties</b> 双边关系</span>
+                        <span class="vocab-item"><b>One China policy</b> 一个中国政策</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“建设性战略稳定”是一个新提法，介于“战略竞争”与“战略合作”之间。它承认双方存在分歧，但强调通过“建设性”对话管控风险，避免冲突升级。这为中美在贸易、科技、气候等领域的务实合作提供了政治基础。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期可能推动双方在AI安全、公共卫生等领域建立沟通热线；中长期看，该框架能否有效执行，取决于两国国内政治变化（如美国2028年大选）以及具体议题上的利益博弈。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果“建设性战略稳定”成为中美关系新常态，全球可能进入“竞争性共存”时代——在科技、军事领域竞争，在气候变化、全球卫生等议题上合作，形成一种新型大国关系模式。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://news.cctv.com/2026/05/14/ARTIyjulsWnzXsCXs5rIbbQO260514.shtml" target="_blank">央视新闻</a> / <a href="https://www.mfa.gov.cn/zyxw/202605/t20260514_11910264.shtml" target="_blank">外交部</a></p>
+        </div>
+
+        <!-- 新闻 13 -->
+        <div class="item">
+            <div class="item-header">
+                <strong>美国对中国商品加征10%额外关税，贸易摩擦升温</strong>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+                <span class="risk-red">🔴 重大风险</span>
+            </div>
+            <div class="item-summary">
+                美国之音报道，美国总统特朗普宣布对中国商品加征 <span class="num-up">10%</span> 额外关税，作为对所谓“不公平贸易行为”的回应。中国随即宣布禁止进口美国基因测序仪因美纳（Illumina）产品，并暗示可能进一步采取反制措施。全球市场对中美贸易战升级的担忧加剧。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">U.S. Imposes Additional 10% Tariff on Chinese Goods; China Retaliates</p>
+                <p class="en-summary">President Trump announced an additional 10% tariff on Chinese goods, citing unfair trade practices. China retaliated by banning imports of U.S.-made Illumina gene sequencers and hinted at further countermeasures, reigniting global concerns over an escalating trade war between the world's two largest economies.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>tariff</b> 关税</span>
+                        <span class="vocab-item"><b>retaliation</b> 报复/反制</span>
+                        <span class="vocab-item"><b>trade war</b> 贸易战</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>此次加征关税是在“建设性战略稳定”框架达成后不久发生的，显示中美关系“合作与对抗并存”的复杂性。10%的幅度相对克制，但象征意义重大——美国试图在科技和贸易领域保持施压。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将增加两国企业成本，特别是依赖跨境供应链的科技公司；中长期看，如果双方继续升级，可能触发“关税螺旋”，破坏全球供应链稳定，并影响2026年下半年全球经济复苏预期。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>中美贸易战若持续，可能加速“区域化供应链”的形成——跨国公司被迫在“中国+1”策略上加码，东南亚、印度等地承接更多产能转移。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.voachinese.com/z/1776" target="_blank">美国之音中文网</a></p>
+        </div>
+
+        <!-- 新闻 14 -->
+        <div class="item">
+            <div class="item-header">
+                <strong>美国政府强制下架AI模型，开创AI地缘政治新范式</strong>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-red">🔴 重大风险</span>
+            </div>
+            <div class="item-summary">
+                美国政府下令Anthropic下架Fable和Mythos模型的事件，不仅涉及AI安全，更开创了“政府直接干预AI部署”的先例。此举可能被其他国家效仿，用于以安全为由限制外国AI模型进入本国市场，AI领域的地缘政治博弈正在从“技术竞赛”延伸至“治理规则”之争。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">U.S. Government Model Takedown Sets New Geopolitical Precedent for AI</p>
+                <p class="en-summary">The U.S. government's order for Anthropic to take down its models sets a precedent for direct state intervention in AI deployment. This move could be emulated by other nations to restrict foreign AI models under the guise of security concerns, extending the geopolitical rivalry from technology competition to governance rule-setting.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>geopolitical precedent</b> 地缘政治先例</span>
+                        <span class="vocab-item"><b>state intervention</b> 国家干预</span>
+                        <span class="vocab-item"><b>governance rule-setting</b> 治理规则制定</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>以往AI治理多依赖企业自律和行业标准，政府角色有限。此次事件标志着政府开始行使“AI部署否决权”，相当于在AI领域建立了“国家安全审查”机制。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将引发欧盟、中国等主要经济体加速制定AI部署审批制度；中长期看，AI模型可能像“军火”一样被纳入出口管制清单，全球AI市场可能分裂为“美国标准”、“中国标准”、“欧洲标准”等不同阵营。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来AI公司可能需要为每个国家/地区开发“合规版本”，类似汽车在不同市场需要满足不同的安全标准。这将增加企业成本，但也可能催生“AI合规咨询”新产业。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：综合自American Banker, Yahoo News</p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：地缘政治呈现“多线交织”格局——中美在“建设性战略稳定”框架下维持高层沟通，但贸易与科技领域的摩擦在局部升级。AI成为地缘博弈新战场，政府干预从“间接引导”转向“直接出手”，全球科技治理规则正被重新书写。</div>
+    </div>
+
+    <!-- 第三步：时间提醒模块（条件触发） -->
+    <div class="timeline">
+        <h4>⏰ 近期关键时间节点</h4>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-06-15</span>
+            <span>美国对华10%额外关税正式生效，预计中国将公布进一步反制措施</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-06-30</span>
+            <span>国务院《现代化应急体系建设“十五五”规划》启动实施，相关部委将出台配套细则</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-07-15</span>
+            <span>OpenAI IPO 机密文件预计进入SEC审查关键阶段，可能披露更多财务细节</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-09-30</span>
+            <span>Anthropic Fable/Mythos 模型下架事件后续：国会可能就AI安全立法举行听证会</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>全球动态简报 · 2026年6月14日 · 数据来源包括AP News、央视新闻、外交部、雪球、IGI等</p>
+        <p>本简报由 AI 自动生成，仅供参考，不构成投资或决策建议。</p>
+    </div>
+</div>
+</body>
+</html>
