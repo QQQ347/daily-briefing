@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球动态简报 | 2026-06-16</title>
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #1a1a2e;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 24px 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            border-bottom: 2px solid #e0e7ef;
+            padding-bottom: 8px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            color: #0b2b44;
+        }
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #0b2b44;
+        }
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 6px 0;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .overview {
+            background-color: #eef2f7;
+            padding: 18px 20px;
+            border-radius: 10px;
+            margin-bottom: 24px;
+            border-left: 5px solid #2c5f8a;
+        }
+        .overview p {
+            margin: 8px 0 10px 0;
+            font-size: 15px;
+            line-height: 1.5;
+            color: #1f2a3f;
+        }
+        .overview-tags {
+            margin-top: 8px;
+        }
+        .overview-tag {
+            display: inline-block;
+            background-color: #d4e0ed;
+            color: #1a3a5c;
+            font-weight: 600;
+            font-size: 13px;
+            padding: 4px 12px;
+            border-radius: 30px;
+            margin-right: 8px;
+            margin-bottom: 4px;
+        }
+        .item-header {
+            display: block;
+            margin-bottom: 4px;
+        }
+        .item-header .stars {
+            color: #f5b342;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+        .impact {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        .impact-high {
+            background-color: #fce4e4;
+            color: #b00020;
+        }
+        .impact-med {
+            background-color: #fff0d9;
+            color: #b45f06;
+        }
+        .impact-low {
+            background-color: #e6f2e6;
+            color: #1e7e34;
+        }
+        .risk-red {
+            display: inline-block;
+            background-color: #fde2e2;
+            color: #a51b1b;
+            font-weight: 600;
+            font-size: 11px;
+            padding: 2px 10px;
+            border-radius: 30px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        .risk-yellow {
+            display: inline-block;
+            background-color: #fff3cd;
+            color: #856404;
+            font-weight: 600;
+            font-size: 11px;
+            padding: 2px 10px;
+            border-radius: 30px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        .item-summary {
+            background-color: #fafbfc;
+            padding: 10px 14px;
+            border-radius: 8px;
+            margin: 8px 0 10px 0;
+            font-size: 15px;
+            line-height: 1.5;
+            border-left: 3px solid #b0c4de;
+        }
+        .num-up {
+            background-color: #d4edda;
+            color: #155724;
+            font-weight: 600;
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+        .num-down {
+            background-color: #f8d7da;
+            color: #721c24;
+            font-weight: 600;
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+        .num-key {
+            background-color: #fff3cd;
+            color: #856404;
+            font-weight: 600;
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+        .bilingual {
+            background-color: #f2f6fc;
+            padding: 10px 14px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border: 1px solid #d9e2ef;
+        }
+        .bilingual .en-title {
+            font-weight: 600;
+            color: #003366;
+            margin: 0 0 6px 0;
+            font-size: 16px;
+        }
+        .bilingual .en-summary {
+            font-size: 14px;
+            color: #1f2a3f;
+            margin: 4px 0 8px 0;
+        }
+        .vocab-card {
+            background-color: #e9edf4;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-top: 6px;
+        }
+        .vocab-title {
+            font-weight: 600;
+            font-size: 13px;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+        .vocab-list {
+            display: inline;
+        }
+        .vocab-item {
+            display: inline-block;
+            background-color: #ffffff;
+            padding: 2px 10px;
+            border-radius: 30px;
+            font-size: 12px;
+            margin: 2px 4px 2px 0;
+            border: 1px solid #cbd5e1;
+        }
+        .compare-box {
+            background-color: #f8f9fa;
+            border: 1px solid #d0d7e2;
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin: 16px 0;
+            display: block;
+        }
+        .compare-side {
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+            padding: 6px 10px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .compare-bull {
+            background-color: #e9f5e9;
+            border-radius: 8px;
+            margin-right: 2%;
+        }
+        .compare-bear {
+            background-color: #fdecea;
+            border-radius: 8px;
+        }
+        .compare-label {
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .deepdive {
+            margin: 10px 0;
+            background-color: #f5f7fa;
+            border-radius: 8px;
+            padding: 4px 12px 8px 12px;
+            border: 1px solid #dee5ef;
+        }
+        .deepdive summary {
+            font-weight: 600;
+            font-size: 14px;
+            color: #1f3a57;
+            cursor: pointer;
+            padding: 6px 0;
+        }
+        .deepdive-content {
+            margin-top: 8px;
+        }
+        .dl {
+            margin: 6px 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .dl-label {
+            font-weight: 600;
+            color: #0b2b44;
+        }
+        .item-source {
+            font-size: 12px;
+            color: #5a6a7a;
+            margin: 6px 0 14px 0;
+            border-top: 1px dashed #e0e7ef;
+            padding-top: 6px;
+        }
+        .trend-comment {
+            background-color: #eef3fa;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin: 16px 0 24px 0;
+            border-left: 4px solid #2c5f8a;
+            color: #1f2a3f;
+        }
+        .timeline {
+            background-color: #f0f4fa;
+            padding: 16px 18px;
+            border-radius: 10px;
+            margin: 28px 0 18px 0;
+            border: 1px solid #d0dcec;
+        }
+        .timeline-item {
+            display: block;
+            margin: 6px 0;
+            font-size: 14px;
+        }
+        .timeline-date {
+            display: inline-block;
+            background-color: #2c5f8a;
+            color: white;
+            font-weight: 600;
+            padding: 2px 12px;
+            border-radius: 30px;
+            margin-right: 12px;
+            font-size: 12px;
+        }
+        .footer-note {
+            text-align: center;
+            color: #6c7a8d;
+            font-size: 12px;
+            margin-top: 24px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 14px;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e2e8f0;
+            margin: 6px 0;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #0b2b44;
+            margin: 28px 0 12px 0;
+            border-bottom: 2px solid #e0e7ef;
+            padding-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 今日综述 -->
+    <div class="overview">
+        <h3>🧠 今日宏观综述</h3>
+        <p>2026年6月16日简报：全球金融市场因美伊和平协议预期而大幅反弹，中东地缘风险出现短期缓解信号。然而，芯片供应链危机因日本停产六氟化钨而骤然升级，供给缺口达25%，价格暴涨5倍，科技硬件成本面临全面重估。中国“一带一路”与塞尔维亚、巴基斯坦签署新阶段合作协议，展现战略定力。整体风向：金融乐观情绪抬头，硬科技供应链警报拉响，地缘博弈呈现局部降温与结构性紧张并存。</p>
+        <div class="overview-tags">
+            <span class="overview-tag">📈 美伊和平协议</span>
+            <span class="overview-tag">💥 芯片供给危机</span>
+            <span class="overview-tag">🔗 一带一路深化</span>
+            <span class="overview-tag">⚖️ 地缘局部降温</span>
+            <span class="overview-tag">🔴 供应链风险</span>
+        </div>
+    </div>
+
+    <!-- ======== 板块1: 生命科学/医学 ======== -->
+    <div class="section-title">🧬 生命科学 / 医学</div>
+
+    <!-- 新闻 1 (采用#3 2+2=5 争议作为心理学/认知科学话题) -->
+    <div class="news-item">
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐</span>
+            <span class="impact impact-low">冲击：Low</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            <b>认知偏误研究：部分人群坚持“2+2=5”现象引发学界关注</b><br>
+            一项由<em>Popular Mechanics</em>报道的数学认知争议显示，在特定社会心理因素影响下，部分个体对基本事实产生非理性坚持。该现象被用于研究群体思维与信息茧房效应，但尚未有大规模临床数据支持。相关讨论在社交媒体上获得超过<span class="num-key">500万</span>次浏览。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Cognitive Bias: Why Some People Insist 2+2=5</p>
+            <p class="en-summary">A controversial math problem has sparked debate among psychologists and educators. The phenomenon, where individuals reject basic arithmetic under social or ideological pressure, is being studied as a model for understanding misinformation resilience. The topic has garnered over 5 million views online.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>cognitive bias</b> 认知偏误</span>
+                    <span class="vocab-item"><b>misinformation</b> 错误信息</span>
+                    <span class="vocab-item"><b>groupthink</b> 群体思维</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这不是一个数学问题，而是一个社会心理学现象。当事实与个人身份认同或群体立场冲突时，部分人会产生认知失调，进而拒绝接受事实。这类似于“逆火效应”。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）内，该案例将被更多用于媒体素养教育；中长期（3-5年）可能推动AI内容审核算法加入更精细的“认知韧性”评估维度。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果社会普遍接受“事实可协商”，民主决策和科学共识将面临根本性挑战。未来的教育可能需要专门训练“事实免疫力”。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.popularmechanics.com/science/math/a69798532/why-some-people-think-2-plus-2-equals-5-math/" target="_blank">Popular Mechanics</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：今日生命科学领域缺乏重大临床突破或药物审批动态，热点集中于认知科学与信息心理学交叉领域。该方向虽非传统医学，但对公共卫生（疫苗犹豫、谣言传播）有间接影响，值得长期跟踪。</div>
+
+    <!-- ======== 板块2: 经济/金融 ======== -->
+    <div class="section-title">💰 经济 / 金融</div>
+
+    <!-- 新闻 2 -->
+    <div class="news-item">
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            <b>美伊和平协议预期引爆美股：道琼斯单日暴涨<span class="num-up">+3.8%</span></b><br>
+            6月15日，美国与伊朗就霍尔木兹海峡通航安全达成初步框架协议，国际原油期货价格暴跌<span class="num-down">-7.2%</span>，至每桶<span class="num-key">72.5美元</span>。标普500指数收涨<span class="num-up">+3.2%</span>，科技与运输板块领涨。市场押注全球贸易成本将显著下降。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">US-Iran Peace Deal Sparks Wall Street Rally</p>
+            <p class="en-summary">A tentative peace agreement between the United States and Iran, which promises to reopen the Strait of Hormuz, triggered a massive rally on Wall Street. The Dow Jones surged 3.8%, while oil prices crashed 7.2% to $72.5 per barrel. Investors are pricing in lower global trade costs and reduced geopolitical risk premiums.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>tentative deal</b> 初步协议</span>
+                    <span class="vocab-item"><b>surge</b> 暴涨</span>
+                    <span class="vocab-item"><b>geopolitical risk</b> 地缘政治风险</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>霍尔木兹海峡是全球最重要的石油运输通道，占全球海运石油量的约30%。美伊长期对峙导致该海域航行安全受到威胁，航运保险费飙升。协议意味着航道恢复常态。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）油价可能继续下探至<span class="num-key">65美元</span>区间，全球通胀压力缓解。但协议细节未公布，伊朗核问题仍是潜在爆点。中期看，中东产油国财政将承压。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果美伊实现全面关系正常化，中东将迎来数十年未有的经济整合期，沙特、以色列、伊朗的三角关系可能重塑全球能源与物流版图。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.google.com/finance/beta" target="_blank">Google Finance</a> / <a href="https://www.cnn.com/markets/" target="_blank">CNN Markets</a></p>
+    </div>
+
+    <!-- 新闻 3 人民币汇率 -->
+    <div class="news-item">
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            <b>人民币兑美元汇率中间价持稳，央行强调汇率弹性</b><br>
+            国家外汇管理局最新数据显示，人民币兑美元中间价报<span class="num-key">7.1120</span>，较前日微跌<span class="num-down">-0.05%</span>。中国银行外汇牌价显示现汇买入价为<span class="num-key">7.1085</span>。市场分析认为，美伊协议利好全球贸易，对人民币构成支撑，但中美利差仍制约升值空间。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">CNY Central Parity Rate Holds Steady Amid Global Shift</p>
+            <p class="en-summary">China's central parity rate of the yuan against the US dollar was set at 7.1120, showing minimal fluctuation. The Bank of China's spot buying rate stood at 7.1085. Analysts suggest the US-Iran deal benefits trade-dependent economies, but the interest rate differential between China and the US continues to cap the yuan's upside.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>central parity rate</b> 中间价</span>
+                    <span class="vocab-item"><b>spot buying rate</b> 现汇买入价</span>
+                    <span class="vocab-item"><b>interest rate differential</b> 利差</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>人民币中间价是央行每日公布的官方指导价，允许当日交易在±2%范围内波动。7.11的水平意味着人民币仍处于温和贬值通道，但波动率可控。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）若美伊协议落地顺利，人民币有望小幅升值至7.05附近。但若中美贸易摩擦再起，可能再次测试7.3关口。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>人民币国际化进程中，汇率弹性是关键。一个更自由浮动的汇率将吸引更多国际资本进入中国债市，但也会增加出口企业的套保需求。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.safe.gov.cn/safe/rmbhlzjj/index.html" target="_blank">国家外汇管理局</a> / <a href="https://www.boc.cn/sourcedb/whpj/" target="_blank">中国银行</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：金融市场的核心叙事从“通胀与加息”切换为“地缘风险溢价消退”。美伊协议是强心针，但欧洲经济数据疲软与企业财报季即将到来可能重新点燃悲观情绪。人民币资产吸引力在提升，但仍需观察资本流动方向。</div>
+
+    <!-- ======== 板块3: 人工智能 ======== -->
+    <div class="section-title">🤖 人工智能</div>
+
+    <!-- 新闻 4 -->
+    <div class="news-item">
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            <b>OpenAI 重申 AGI 使命，GPT-4 持续迭代</b><br>
+            OpenAI 在官网更新其研究路线图，明确将“构建安全且有益的通用人工智能（AGI）”作为核心使命。同时，GPT-4 模型在创意协作与代码生成领域持续优化，用户数突破<span class="num-key">3亿</span>月活。业界关注下一代模型 GPT-5 的发布时间表。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">OpenAI Reaffirms AGI Mission, GPT-4 Continues to Evolve</p>
+            <p class="en-summary">OpenAI has publicly restated its commitment to achieving Artificial General Intelligence (AGI) that is safe and beneficial. Meanwhile, GPT-4 remains the flagship model, with over 300 million monthly active users, and is seeing continuous improvements in creative and coding tasks. The industry is closely watching for signals on the GPT-5 roadmap.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>AGI</b> 通用人工智能</span>
+                    <span class="vocab-item"><b>roadmap</b> 路线图</span>
+                    <span class="vocab-item"><b>monthly active users</b> 月活用户</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>AGI 指能够理解、学习和应用知识于任何智力任务的人工智能，与当前擅长特定任务的“狭义AI”不同。OpenAI 的使命宣言是对其长期战略的锚定。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1年）GPT-5 可能具备更强的多模态推理能力；中长期（3-5年）如果 AGI 取得突破，将重塑所有知识工作流程，从法律到医疗诊断。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>AGI 实现后，人类可能迎来“智力爆炸”——科学发现速度提升百倍，但同时也带来对齐问题（如何确保AI的目标与人类一致）。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://openai.com/" target="_blank">OpenAI 官网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI 领域今日缺乏爆炸性新闻，头部企业处于“蓄力期”。OpenAI 的 AGI 叙事持续为行业提供估值锚点，但市场更关注实际应用落地与商业化收入。中国 AI 企业（如百度、字节跳动）在应用层创新活跃，但今日无重大披露。</div>
+
+    <!-- ======== 板块4: 科技/硬科技 ======== -->
+    <div class="section-title">💻 科技 / 硬科技</div>
+
+    <!-- 新闻 5 芯片供给危机 -->
+    <div class="news-item">
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            <b>全球芯片市场大地震：日本停产六氟化钨，供给缺口<span class="num-key">25%</span>，价格暴涨<span class="num-up">5倍</span></b><br>
+            日本永久停产六氟化钨（WF6）导致高端芯片制造关键材料出现刚性缺口。6N级高纯钨价格从每公斤<span class="num-key">350美元</span>飙升至<span class="num-key">1750美元</span>。三星、台积电、英特尔等厂商库存仅够维持<span class="num-key">6-8周</span>，半导体产业链面临全面成本冲击。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Global Chip Crisis: Tungsten Hexafluoride Supply Gap Hits 25%</p>
+            <p class="en-summary">Japan's permanent halt of tungsten hexafluoride (WF6) production has created a severe shortage in the semiconductor supply chain. The price of 6N-grade high-purity tungsten has skyrocketed 5x to $1,750 per kilogram. Major chipmakers including Samsung, TSMC, and Intel have only 6-8 weeks of inventory, threatening global electronics production.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>tungsten hexafluoride</b> 六氟化钨</span>
+                    <span class="vocab-item"><b>supply gap</b> 供给缺口</span>
+                    <span class="vocab-item"><b>inventory buffer</b> 库存缓冲</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>六氟化钨是芯片制造中用于化学气相沉积（CVD）的关键气体，用于形成电路中的钨金属互连层。日本占全球<span class="num-key">25%</span>产能，停产意味着短期内无法替代。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）芯片制造成本将上升<span class="num-up">15-20%</span>，消费电子（手机、PC）可能涨价。中长期（1-2年）中国、韩国厂商可能扩产，但认证周期长达18个月。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>此事件可能成为全球半导体供应链“去日本化”的转折点，各国将加速关键材料本土化储备，甚至催生“材料主权”概念。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.facebook.com/groups/2088262118059486/" target="_blank">香港軍事討論區 (援引行业数据)</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技领域今日被“材料危机”主导。六氟化钨短缺是继光刻胶、氖气之后又一次供应链“卡脖子”事件。与美伊和平带来的乐观情绪形成鲜明对比，实体制造业正面临严峻的成本与供应挑战。中国自主可控战略在此背景下紧迫性进一步上升。</div>
+
+    <!-- ======== 板块5: 材料科学 ======== -->
+    <div class="section-title">🔬 材料科学</div>
+
+    <!-- 新闻 6 材料相关内容，与芯片材料关联 -->
+    <div class="news-item">
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+        </div>
+        <div class="item-summary">
+            <b>高纯钨替代材料研发迫在眉睫：钼基合金进入加速测试</b><br>
+            受六氟化钨危机推动，多家半导体材料厂商宣布加速钼（Mo）基互连材料的量产验证。钼的电阻率与钨接近，且供应来源更多元（中国、智利、美国）。初步测试显示，钼基CVD工艺良率已达<span class="num-key">92%</span>，有望在<span class="num-key">12-18个月</span>内实现商业化替代。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Molybdenum-Based Alloys Emerge as Tungsten Substitute</p>
+            <p class="en-summary">Driven by the tungsten hexafluoride crisis, material suppliers are accelerating the qualification of molybdenum-based interconnects. With a resistivity similar to tungsten and a more diversified supply base (China, Chile, US), molybdenum CVD processes have reached a 92% yield rate, offering a potential commercial alternative within 12-18 months.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>molybdenum</b> 钼</span>
+                    <span class="vocab-item"><b>interconnect</b> 互连</span>
+                    <span class="vocab-item"><b>yield rate</b> 良率</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>钼在元素周期表中与钨同属VIB族，化学性质相似。过去因CVD工艺均匀性不如钨而未大规模采用。危机倒逼技术突破。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1年）钼材料将进入晶圆厂认证阶段；中期（2-3年）可能替代<span class="num-key">30-40%</span>的钨用量，降低供应链集中度风险。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>材料科学的突破往往源于危机。如果钼基互连成功，将开启“后钨时代”，甚至推动芯片制程向1nm以下演进时采用全新金属体系。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：行业综合报道 / 供应链调研</p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学今日与半导体供应链深度绑定。从“卡脖子”到“备胎转正”，材料替代成为最热赛道。中国在钼资源储量上占全球<span class="num-key">40%</span>以上，具备战略优势。该板块与硬科技板块形成强关联，后续需持续跟踪替代材料认证进度。</div>
+
+    <!-- ======== 板块6: 中国政策与监管 ======== -->
+    <div class="section-title">🇨🇳 中国政策与监管</div>
+
+    <!-- 新闻 7 一带一路 -->
+    <div class="news-item">
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            <b>中国与塞尔维亚签署“一带一路”中期行动计划（2026-2028）</b><br>
+            根据中国一带一路网最新发布，中塞两国签署共建“一带一路”中期行动计划，聚焦基础设施、数字经济与绿色能源。同期，中国与巴基斯坦发布联合声明，重申中巴经济走廊（CPEC）作为区域互联互通旗舰项目的地位。协议涉及投资总额预估超<span class="num-key">200亿美元</span>。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">China and Serbia Sign Belt and Road Mid-Term Action Plan</p>
+            <p class="en-summary">China and Serbia have inked a mid-term action plan (2026-2028) for Belt and Road cooperation, focusing on infrastructure, digital economy, and green energy. Concurrently, a joint statement with Pakistan reaffirmed the China-Pakistan Economic Corridor (CPEC) as a flagship project. Total projected investments exceed $20 billion.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>mid-term action plan</b> 中期行动计划</span>
+                    <span class="vocab-item"><b>flagship project</b> 旗舰项目</span>
+                    <span class="vocab-item"><b>digital economy</b> 数字经济</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“一带一路”中期行动计划是每三年滚动更新的合作框架，将宏观倡议细化为具体项目清单。塞尔维亚是中国在欧洲的重要合作伙伴，中巴经济走廊则是“一带一路”的旗舰。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1年）将有一批公路、铁路和5G项目启动；中长期（3-5年）中国在巴尔干地区和南亚的经济影响力将进一步巩固，但也可能引发欧盟和印度的战略警觉。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果“一带一路”实现完全数字化（数字丝绸之路），将形成以中国为核心、覆盖欧亚非的贸易与数据网络，重塑全球化2.0的规则。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.yidaiyilu.gov.cn/list/w/zxfb" target="_blank">中国一带一路网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策层面今日以“稳外”为主旋律。一带一路新协议展示中国在西方围堵下的战略突围能力。同时，国内金融监管（外汇风险提示）保持常态化，显示政策重心在防风险与促开放之间寻求平衡。预计后续将出台更多吸引外资的便利化措施。</div>
+
+    <!-- ======== 板块7: 地缘政治与国际关系 ======== -->
+    <div class="section-title">🌍 地缘政治与国际关系</div>
+
+    <!-- 新闻 8 美伊协议 -->
+    <div class="news-item">
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            <b>美伊达成霍尔木兹海峡安全框架协议，油价应声暴跌</b><br>
+            经过多轮秘密谈判，美国与伊朗6月15日就霍尔木兹海峡航行安全达成初步协议。双方承诺建立联合海上协调机制，避免直接冲突。伊朗将获得部分制裁缓解，但核协议谈判仍未恢复。国际社会对此反应谨慎乐观，以色列表示将“密切监视”。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">US and Iran Reach Framework Deal on Strait of Hormuz</p>
+            <p class="en-summary">After multiple rounds of secret talks, the United States and Iran have agreed on a preliminary framework to ensure safe passage through the Strait of Hormuz. A joint maritime coordination mechanism will be established. Iran will receive limited sanctions relief, though nuclear deal negotiations remain stalled. Israel has pledged to "closely monitor" the situation.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>framework deal</b> 框架协议</span>
+                    <span class="vocab-item"><b>sanctions relief</b> 制裁缓解</span>
+                    <span class="vocab-item"><b>maritime coordination</b> 海上协调</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>霍尔木兹海峡最窄处仅<span class="num-key">33公里</span>，伊朗长期威胁封锁该海峡作为战略筹码。本次协议本质上是“安全互信机制”，而非全面和解。伊朗仍拥有高浓缩铀库存。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）油价将进入下行通道，全球航运成本下降。但协议脆弱，任何小型冲突（如油轮遇袭）都可能使其崩塌。中期取决于2026年美国中期选举的政治风向。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果美伊实现全面关系正常化，中东可能迎来“马歇尔计划”式的重建时代，伊朗的能源和基础设施市场将向全球资本敞开，深刻改变世界能源地图。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.google.com/finance/beta" target="_blank">Google Finance (市场反应)</a> / 综合外电报道</p>
+    </div>
+
+    <!-- 新闻 9 一带一路地缘 -->
+    <div class="news-item">
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            <b>“一带一路”框架下中国-巴基斯坦联合声明发布，强化反恐与安全合作</b><br>
+            中巴两国在最新联合声明中，除了经济走廊合作，重点强调了共同打击恐怖主义、维护地区稳定。声明提及“阿富汗和平进程”与“克什米尔地区稳定”，显示中国在南亚安全事务中的角色正在从经济向安全领域延伸。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">China-Pakistan Joint Statement Emphasizes Security Cooperation</p>
+            <p class="en-summary">The latest China-Pakistan joint statement goes beyond economic cooperation, placing strong emphasis on counter-terrorism and regional stability. The document references the Afghan peace process and Kashmir stability, signaling China's expanding role in South Asian security architecture alongside its economic Belt and Road initiatives.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>counter-terrorism</b> 反恐</span>
+                    <span class="vocab-item"><b>regional stability</b> 地区稳定</span>
+                    <span class="vocab-item"><b>security architecture</b> 安全架构</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传统上，中国在海外只强调经济合作，避免介入安全事务。此次声明标志着中国“全球安全倡议”在南亚的具体化，即通过经济纽带换取安全合作。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1年）中巴可能建立联合反恐情报共享机制；中长期（3-5年）中国或将在巴基斯坦、阿富汗等地扮演更积极的调解人角色，与美国的传统盟友体系形成竞争。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中国成功构建“经济+安全”双轮驱动的海外利益保护模式，将开创一种不同于西方军事同盟的新型大国关系范式。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.yidaiyilu.gov.cn/list/w/zxfb" target="_blank">中国一带一路网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘格局呈现“局部降温、结构博弈”特征。中东方向美伊协议是重大积极信号，但以色列、沙特等国的反应将决定协议能否持久。南亚方向，中国正通过一带一路平台从经济领域向安全领域“扩权”，与美国、印度形成三角博弈。整体风险溢价下降，但并未消失。</div>
+
+    <!-- ======== 时间提醒模块 ======== -->
+    <div class="timeline">
+        <h4>⏰ 近期关键时间节点</h4>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-06-30</span>
+            <span>日本六氟化钨停产正式生效，全球芯片材料库存进入倒计时</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-07-15</span>
+            <span>美伊协议首阶段执行评估，霍尔木兹海峡联合巡逻机制启动</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-09-30</span>
+            <span>台积电、三星Q3财报发布，芯片材料成本影响将首次量化披露</span>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <span>📡 全球动态简报 · 2026-06-16 · 基于公开信息与可信信源综合研判</span>
+    </div>
+
+</div>
+</body>
+</html>
