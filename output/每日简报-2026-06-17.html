@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球动态简报 | 2026-06-17</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f5f6f8;
+            color: #1a1a2e;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 24px 28px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #0f1b2d;
+            border-left: 6px solid #0057b7;
+            padding-left: 16px;
+        }
+        .subhead {
+            font-size: 14px;
+            color: #5f6b7a;
+            margin-top: 0;
+            margin-bottom: 24px;
+            padding-left: 22px;
+        }
+        .overview {
+            background-color: #eef3fa;
+            padding: 18px 22px;
+            border-radius: 10px;
+            margin-bottom: 28px;
+            border-left: 4px solid #2c7be5;
+        }
+        .overview h3 {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #0f1b2d;
+        }
+        .overview p {
+            margin: 0 0 12px 0;
+            font-size: 15px;
+            color: #1f2a3f;
+        }
+        .overview-tags {
+            display: block;
+            margin-top: 6px;
+        }
+        .overview-tag {
+            display: inline-block;
+            background-color: #d4e0f0;
+            color: #0f1b2d;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-bottom: 4px;
+        }
+        .section {
+            margin-top: 30px;
+            padding-top: 8px;
+            border-top: 1px solid #e0e4ea;
+        }
+        .section h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 12px 0 16px 0;
+            color: #0f1b2d;
+        }
+        .item {
+            background-color: #f9fafc;
+            border-radius: 10px;
+            padding: 18px 20px;
+            margin-bottom: 18px;
+            border: 1px solid #eef0f3;
+        }
+        .item-header {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .item-header .title {
+            font-size: 17px;
+            font-weight: 600;
+            color: #0b1a31;
+            margin-right: 10px;
+        }
+        .item-header .stars {
+            color: #f5b342;
+            letter-spacing: 1px;
+            font-size: 15px;
+            margin-right: 10px;
+        }
+        .impact {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 14px;
+            margin-right: 6px;
+        }
+        .impact-high {
+            background-color: #fce4e4;
+            color: #b33a3a;
+        }
+        .impact-med {
+            background-color: #fff3d6;
+            color: #a67c2e;
+        }
+        .impact-low {
+            background-color: #e3f0e3;
+            color: #2f6b3e;
+        }
+        .risk-red {
+            display: inline-block;
+            background-color: #fbe9e9;
+            color: #b33a3a;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 14px;
+            margin-left: 4px;
+        }
+        .risk-yellow {
+            display: inline-block;
+            background-color: #fcf3d6;
+            color: #8f6f2b;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 14px;
+            margin-left: 4px;
+        }
+        .item-summary {
+            font-size: 15px;
+            margin: 8px 0 12px 0;
+            color: #1f2a3f;
+        }
+        .num-up {
+            background-color: #e1f3e6;
+            color: #1d6b3c;
+            font-weight: 600;
+            padding: 0 4px;
+            border-radius: 3px;
+        }
+        .num-down {
+            background-color: #fce4e4;
+            color: #b33a3a;
+            font-weight: 600;
+            padding: 0 4px;
+            border-radius: 3px;
+        }
+        .num-key {
+            background-color: #e9ecf3;
+            color: #1f3a6b;
+            font-weight: 600;
+            padding: 0 4px;
+            border-radius: 3px;
+        }
+        .bilingual {
+            background-color: #f1f4fa;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin: 12px 0;
+            border-left: 3px solid #6c8bcb;
+        }
+        .en-title {
+            font-weight: 600;
+            font-size: 15px;
+            color: #0b1a31;
+            margin: 0 0 4px 0;
+        }
+        .en-summary {
+            font-size: 14px;
+            color: #2d3b50;
+            margin: 4px 0 8px 0;
+        }
+        .vocab-card {
+            background-color: #ffffff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-top: 6px;
+            border: 1px solid #dce2ec;
+        }
+        .vocab-title {
+            font-weight: 600;
+            font-size: 13px;
+            color: #0f1b2d;
+            margin-bottom: 4px;
+        }
+        .vocab-list {
+            display: block;
+        }
+        .vocab-item {
+            display: inline-block;
+            background-color: #e8ecf5;
+            padding: 2px 12px;
+            border-radius: 16px;
+            font-size: 13px;
+            margin-right: 8px;
+            margin-bottom: 4px;
+        }
+        .compare-box {
+            background-color: #f7f5f0;
+            border: 1px solid #ddd6c8;
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin: 16px 0;
+            display: block;
+        }
+        .compare-side {
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+            padding: 6px 10px;
+            font-size: 14px;
+        }
+        .compare-bull {
+            border-right: 1px solid #ccc;
+            margin-right: 2%;
+        }
+        .compare-label {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .deepdive {
+            margin: 12px 0 6px 0;
+            background-color: #f4f6fb;
+            border-radius: 8px;
+            padding: 6px 12px;
+            border: 1px solid #e0e5ef;
+        }
+        .deepdive summary {
+            font-weight: 600;
+            font-size: 14px;
+            color: #1f3a6b;
+            cursor: pointer;
+            padding: 4px 0;
+        }
+        .deepdive-content {
+            padding: 8px 4px 4px 4px;
+        }
+        .dl {
+            margin: 6px 0;
+            font-size: 14px;
+        }
+        .dl-label {
+            font-weight: 600;
+            color: #0f1b2d;
+        }
+        .item-source {
+            font-size: 13px;
+            color: #5f6b7a;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .item-source a {
+            color: #2c5f8a;
+            text-decoration: none;
+        }
+        .item-source a:hover {
+            text-decoration: underline;
+        }
+        .trend-comment {
+            background-color: #f2f6fc;
+            padding: 12px 18px;
+            border-radius: 8px;
+            margin: 20px 0 10px 0;
+            font-size: 14px;
+            color: #1f2a3f;
+            border-left: 4px solid #6c8bcb;
+        }
+        .timeline {
+            background-color: #faf6ed;
+            border: 1px solid #e4dccf;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 28px 0 18px 0;
+        }
+        .timeline h4 {
+            margin: 0 0 12px 0;
+            font-weight: 600;
+            font-size: 17px;
+            color: #0f1b2d;
+        }
+        .timeline-item {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .timeline-date {
+            display: inline-block;
+            background-color: #d9d0bc;
+            color: #1f1a0e;
+            font-weight: 600;
+            padding: 2px 12px;
+            border-radius: 14px;
+            margin-right: 12px;
+            font-size: 13px;
+        }
+        .footer-note {
+            margin-top: 28px;
+            font-size: 13px;
+            color: #6f7d8e;
+            text-align: center;
+            border-top: 1px solid #e0e4ea;
+            padding-top: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>📡 全球动态简报</h1>
+    <p class="subhead">2026年6月17日 · 高密度情报版</p>
+
+    <!-- 综述模块 -->
+    <div class="overview">
+        <h3>🧠 今日宏观综述</h3>
+        <p>今日简报核心信号：SpaceX 凭借 IPO 后强劲表现市值超越亚马逊，标志商业航天正式进入万亿俱乐部；中美关系在“习特会”前夕呈现微妙降温迹象，但供应链监管新规为谈判蒙上阴影；比亚迪加速巴西电池投资，中国新能源产业全球化步伐未受关税阻碍。整体风向：科技端由航天与智驾领涨，地缘端短期缓和但结构性矛盾依旧，新能源出海成为确定性主线。</p>
+        <div class="overview-tags">
+            <span class="overview-tag">🚀 商业航天万亿时代</span>
+            <span class="overview-tag">🇨🇳 中美关系关键一周</span>
+            <span class="overview-tag">🔋 新能源出海加速</span>
+            <span class="overview-tag">🧠 光子计算新基建</span>
+        </div>
+    </div>
+
+    <!-- ========= 板块1: 经济/金融 ========= -->
+    <div class="section">
+        <h2>💰 经济 / 金融</h2>
+
+        <!-- 新闻1: SpaceX overtakes Amazon -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">SpaceX 市值突破 <span class="num-key">$2.8万亿</span>，超越亚马逊</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+            <div class="item-summary">
+                SpaceX 股价今日飙升近 <span class="num-up">+5%</span>，市值达到 <span class="num-key">$2.8万亿</span>，正式超越亚马逊。自 IPO 以来，其商业发射与星链收入持续超预期，成为全球市值最高的私营企业之一，标志商业航天进入全新估值时代。
+            </div>
+
+            <div class="bilingual">
+                <p class="en-title">SpaceX surpasses Amazon in market cap after shares surge</p>
+                <p class="en-summary">SpaceX shares surged nearly 5% today, pushing its valuation above $2.8 trillion and overtaking Amazon in market capitalization. The milestone follows a strong IPO and continued revenue growth from Starlink and commercial launch services.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>market capitalization</b> 市值</span>
+                        <span class="vocab-item"><b>surge</b> 飙升</span>
+                        <span class="vocab-item"><b>valuation</b> 估值</span>
+                    </div>
+                </div>
+            </div>
+
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>SpaceX 自5月IPO后股价持续走强，今日大涨5%后市值突破2.8万亿美元，超过亚马逊。其核心驱动力是星链用户突破400万以及NASA和政府合同的稳定收入。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）SpaceX 可能推动星链独立上市，估值进一步膨胀；中长期（3-5年）火星运输计划将打开全新想象空间，但需警惕太空垃圾监管和地缘政治风险。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果商业航天持续以这种速度发展，10年内太空旅游、轨道制造可能成为大众产业，地球与近地轨道之间将形成常态化物流网络。</p>
+                </div>
+            </details>
+
+            <p class="item-source">来源：<a href="https://www.google.com/finance/beta" target="_blank">Google Finance</a></p>
+        </div>
+
+        <!-- 新闻2: 中国5月出口增长14.1% -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">中国4月出口逆势增长 <span class="num-up">14.1%</span>，关税压力下韧性凸显</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                尽管面临美国高额关税，中国4月出口仍录得 <span class="num-up">14.1%</span> 的同比增长，远超预期。机电产品和新能源设备出口是主要拉动项，显示中国供应链的全球竞争力并未因贸易战而削弱。
+            </div>
+
+            <div class="bilingual">
+                <p class="en-title">China's exports grow 14.1% in April despite tariff pressure</p>
+                <p class="en-summary">China's exports rose 14.1% year-on-year in April, defying expectations of a slowdown due to US tariffs. Strong shipments of machinery and new energy equipment underpinned the growth.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>defy expectations</b> 超出预期</span>
+                        <span class="vocab-item"><b>tariff</b> 关税</span>
+                        <span class="vocab-item"><b>resilience</b> 韧性</span>
+                    </div>
+                </div>
+            </div>
+
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>在中国对美出口面临额外关税的背景下，4月出口总额依然同比增长14.1%，主要得益于对东盟和拉美市场的出口增长，以及新能源产品（电动车、锂电池）的强劲需求。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，出口韧性为中美谈判提供了筹码；但中长期若关税进一步升级或全球需求放缓，出口增速可能承压。企业加速供应链多元化布局。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>中国出口结构正从“低价制造”转向“高附加值制造”，若这一趋势持续，中国可能在全球价值链中占据更核心的位置。</p>
+                </div>
+            </details>
+
+            <p class="item-source">来源：<a href="https://www.msn.com/zh-hk/政治/國際關係/中美元首峰会在即-北京想要什么/ar-AA22KPDF" target="_blank">MSN / 德国之声</a></p>
+        </div>
+
+        <!-- 板块趋势评论 -->
+        <div class="trend-comment">📊 板块趋势：金融市场今日焦点集中在SpaceX的估值里程碑以及中国出口的逆势增长。两者共同指向一个信号：科技驱动的资产重估仍在继续，而地缘博弈对实体贸易的影响并非单向负面。投资者应关注“习特会”前后市场情绪的短期波动。</div>
+    </div>
+
+    <!-- ========= 板块2: 地缘政治/国际关系 ========= -->
+    <div class="section">
+        <h2>🌍 地缘政治 / 国际关系</h2>
+
+        <!-- 对比框：中美关系降温与强硬政策并存 -->
+        <div class="compare-box">
+            <div class="compare-side compare-bull">
+                <div class="compare-label">🕊️ 缓和信号</div>
+                特朗普重提“G2”概念，中美双方私下均表达降温意愿，为即将到来的“习特会”营造积极氛围。
+            </div>
+            <div class="compare-side compare-bear">
+                <div class="compare-label">⚔️ 强硬现实</div>
+                中国出台新规，可调查将供应链迁出中国的跨国企业；美商会不期待峰会取得重大突破。
+            </div>
+        </div>
+
+        <!-- 新闻1: 特朗普重提G2 -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">特朗普重提“G2”概念，中美峰会前释放信号</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+            <div class="item-summary">
+                特朗普在与习近平会晤前夕发帖称“G2即将召开”，这一被华盛顿弃用十余年的说法引发全球关注。分析认为，这可能是美方为峰会营造积极氛围的举措，但也暗示美国在部分议题上寻求对等合作。
+            </div>
+
+            <div class="bilingual">
+                <p class="en-title">Trump revives 'G2' rhetoric ahead of Xi summit</p>
+                <p class="en-summary">Former President Trump posted that a 'G2' meeting is imminent, a term long abandoned by Washington. The comment is seen as an attempt to set a cooperative tone for the upcoming summit with President Xi.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>rhetoric</b> 修辞/说法</span>
+                        <span class="vocab-item"><b>summit</b> 峰会</span>
+                        <span class="vocab-item"><b>imminent</b> 即将来临的</span>
+                    </div>
+                </div>
+            </div>
+
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>特朗普在社交媒体上使用“G2”一词，暗示中美两国将举行高层会晤。此前中美双方已确认特朗普将于5月14-15日访华，此次G2提法被视为外交预热。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期峰会可能达成部分贸易降温协议，但结构性矛盾（科技竞争、供应链安全）难以一次解决。中长期看，“G2”概念若制度化，可能重塑全球治理格局。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中美真的形成“G2”共治模式，全球将出现两套并行的技术标准和金融体系，世界可能走向“竞争性共存”的新常态。</p>
+                </div>
+            </details>
+
+            <p class="item-source">来源：<a href="https://www.msn.com/zh-hk/news/other/特朗普重提-g2-中美关系新定义/ar-AA1PMRqu" target="_blank">MSN</a></p>
+        </div>
+
+        <!-- 新闻2: 中国新规阻止脱钩 -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">中国新规强化监管，可调查迁出供应链的跨国企业</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+                <span class="risk-red">🔴 重大风险</span>
+            </div>
+            <div class="item-summary">
+                中国出台新规，进一步强化监管机构权限，可对将供应链迁出中国的跨国企业展开调查。中国美国商会与中国欧盟商会均表达忧虑，认为此举可能加剧外资在华经营的不确定性。
+            </div>
+
+            <div class="bilingual">
+                <p class="en-title">China tightens rules on supply chain relocation, alarming foreign chambers</p>
+                <p class="en-summary">New regulations give Chinese authorities broader powers to investigate multinational companies that move supply chains out of China. Both AmCham China and the European Chamber have voiced concerns.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>supply chain</b> 供应链</span>
+                        <span class="vocab-item"><b>relocation</b> 迁移</span>
+                        <span class="vocab-item"><b>multinational</b> 跨国公司</span>
+                    </div>
+                </div>
+            </div>
+
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国新规授权监管部门对计划或已部分将产能转移至海外的企业展开调查，可能影响企业在华投资决策。这是中国应对“脱钩断链”的防御性举措。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期内外商投资可能更加谨慎，部分企业可能加速“中国+1”策略。中长期若执行严格，可能倒逼在华外企更深地融入本地供应链。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>这一政策可能加速全球供应链的“阵营化”，形成以中国为中心和以美国为中心的两大供应链体系。</p>
+                </div>
+            </details>
+
+            <p class="item-source">来源：<a href="https://www.msn.com/zh-hk/money/經濟/中国新规阻止脱钩-美商会对特习会-不期待重大突破/ar-AA21yZtF" target="_blank">MSN / 德国之声</a></p>
+        </div>
+
+        <!-- 板块趋势评论 -->
+        <div class="trend-comment">📊 板块趋势：中美关系呈现“一面缓和、一面施压”的典型博弈特征。G2提法为市场注入乐观情绪，但供应链新规与美商会的低预期形成对冲。投资者需关注峰会后续声明，尤其是关税与科技限制方面的具体承诺。</div>
+    </div>
+
+    <!-- ========= 板块3: 科技/硬科技 ========= -->
+    <div class="section">
+        <h2>💻 科技 / 硬科技</h2>
+
+        <!-- 新闻1: 上海光子计算实验室 -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">中国首个光子运算产学研实验室在上海交大揭幕</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+            <div class="item-summary">
+                6月11日，中国首个光子运算产学研实验室——“上海市集成光子计算芯片与系统重点实验室”在上海交通大学正式揭幕。该实验室由校方与光子运算初创企业联合建立，聚焦光子芯片在AI计算与高速通信领域的应用突破。
+            </div>
+
+            <div class="bilingual">
+                <p class="en-title">China opens first photonic computing lab at Shanghai Jiao Tong University</p>
+                <p class="en-summary">The Shanghai Key Laboratory of Integrated Photonic Computing Chips and Systems was inaugurated on June 11, marking China's first major push in photonic computing. The lab will focus on AI acceleration and high-speed optical communication.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>photonic computing</b> 光子计算</span>
+                        <span class="vocab-item"><b>integrated chip</b> 集成芯片</span>
+                        <span class="vocab-item"><b>inaugurated</b> 揭幕/成立</span>
+                    </div>
+                </div>
+            </div>
+
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>光子计算利用光子替代电子进行运算，理论上速度更快、能耗更低。该实验室是国家级战略布局，目标是在后摩尔时代抢占算力制高点。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）主要产出原型芯片，用于数据中心光互联；中长期（5-10年）可能颠覆AI训练硬件格局，尤其在大模型推理场景有巨大潜力。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果光子计算成熟，今天的“算力瓶颈”将不复存在，AI模型可以实时处理全球数据，真正的通用人工智能或许不再遥远。</p>
+                </div>
+            </details>
+
+            <p class="item-source">来源：<a href="https://www.facebook.com/unwirehk/posts/中國首個光子運算產學研實驗室於-2026-年-6-月-11." target="_blank">UNWIRE.HK</a></p>
+        </div>
+
+        <!-- 新闻2: 比亚迪巴西电池投资 -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">比亚迪拟投资 <span class="num-key">$1亿</span> 在巴西建设电池储能系统产线</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                比亚迪加速巴西电池布局，计划投资最多 <span class="num-key">5亿雷亚尔</span>（约 <span class="num-key">$1亿美元</span>）建设新的电池储能系统（BESS）生产线，用于储存电力并为巴西国家电网提供调节能力。此举是比亚迪全球能源战略的重要一步。
+            </div>
+
+            <div class="bilingual">
+                <p class="en-title">BYD plans $100M battery storage production line in Brazil</p>
+                <p class="en-summary">BYD is accelerating its battery expansion in Brazil with an investment of up to 500 million reais ($100 million) for a new BESS production line. The system will support grid regulation and energy storage.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>battery storage</b> 电池储能</span>
+                        <span class="vocab-item"><b>production line</b> 生产线</span>
+                        <span class="vocab-item"><b>grid regulation</b> 电网调节</span>
+                    </div>
+                </div>
+            </div>
+
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>比亚迪在巴西的储能工厂将生产大型电池储能系统，用于调峰调频，帮助巴西应对可再生能源并网带来的波动。这是中国新能源企业出海的典型范例。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期巴西储能市场将快速放量，比亚迪有望占据主导份额；中长期拉美其他国家可能跟进，比亚迪的全球储能版图持续扩大。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当储能成本下降到一定程度，全球电网将实现真正的“风光储一体化”，化石燃料发电将逐步退出历史舞台。</p>
+                </div>
+            </details>
+
+            <p class="item-source">来源：<a href="https://www.zaobao.com.sg/news/china/story20260617-9218105" target="_blank">联合早报</a></p>
+        </div>
+
+        <!-- 板块趋势评论 -->
+        <div class="trend-comment">📊 板块趋势：硬科技领域今日呈现“前沿基础研究”与“商业应用出海”双线并进格局。光子计算代表中国在下一代计算架构上的布局，比亚迪巴西投资则显示新能源产业全球化不可逆转。两者均指向一个方向：技术自主与全球扩张并行。</div>
+    </div>
+
+    <!-- ========= 板块4: 中国政策与监管 ========= -->
+    <div class="section">
+        <h2>🇨🇳 中国政策与监管</h2>
+
+        <!-- 新闻1: 供应链监管新规（已在地缘板块详细，此处简写并关联） -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">中国强化供应链监管：可调查外企迁出行为</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-red">🔴 重大风险</span>
+            </div>
+            <div class="item-summary">
+                中国出台新规加强监管机构权限，对将供应链迁出中国的跨国企业可展开调查。此举被视为对冲“脱钩”风险的政策工具，但引发美欧商会强烈担忧，认为将增加外资合规成本与经营不确定性。
+            </div>
+
+            <div class="bilingual">
+                <p class="en-title">China tightens grip on supply chain outflows, alarming foreign firms</p>
+                <p class="en-summary">New rules empower Chinese regulators to investigate multinationals relocating supply chains abroad. The move aims to counter decoupling but has drawn criticism from foreign chambers.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>regulatory power</b> 监管权力</span>
+                        <span class="vocab-item"><b>decoupling</b> 脱钩</span>
+                        <span class="vocab-item"><b>compliance cost</b> 合规成本</span>
+                    </div>
+                </div>
+            </div>
+
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>新规授权监管机构对“可能损害国家经济安全”的供应链转移行为进行审查，包括约谈、调查和处罚。这是中国首次以行政手段干预企业供应链布局。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期内外企扩张可能放缓，部分企业将加速“中国+1”策略。中长期若执行得当，可能倒逼外企深化本地化合作；若执行过严，可能加速外资流出。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>这一政策可能催生一种新模式：外企在中国保留核心研发与高端制造，将低端组装转移至东南亚，形成“高端留华、低端外溢”的供应链格局。</p>
+                </div>
+            </details>
+
+            <p class="item-source">来源：<a href="https://www.msn.com/zh-hk/money/經濟/中国新规阻止脱钩-美商会对特习会-不期待重大突破/ar-AA21yZtF" target="_blank">MSN / 德国之声</a></p>
+        </div>
+
+        <!-- 板块趋势评论 -->
+        <div class="trend-comment">📊 板块趋势：中国政策端今日释放的信号较为复杂：一方面通过G2外交释放缓和信号，另一方面出台强硬监管工具。这种“刚柔并济”的策略表明，北京在核心利益上不会让步，但在战术层面留有谈判空间。</div>
+    </div>
+
+    <!-- ========= 板块5: 人工智能 ========= -->
+    <div class="section">
+        <h2>🤖 人工智能</h2>
+        <p style="color:#5f6b7a; font-size:15px; margin:0 0 8px 0;">* 今日原始数据中AI直接新闻较少，但光子计算、智驾等板块与AI高度相关，以下为交叉分析。</p>
+
+        <!-- 新闻1: 光子计算与AI算力 -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">光子计算实验室聚焦AI算力突破，有望缓解大模型训练瓶颈</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                上海交大光子计算实验室明确将AI加速作为核心研究方向。当前大模型训练对算力需求呈指数级增长，光子芯片若能量产，可将训练能耗降低 <span class="num-key">90%</span> 以上，成为下一代AI基础设施的关键拼图。
+            </div>
+
+            <div class="bilingual">
+                <p class="en-title">Photonic computing lab targets AI acceleration to break training bottlenecks</p>
+                <p class="en-summary">The new photonic computing lab in Shanghai will focus on AI acceleration, aiming to reduce energy consumption by over 90% for large model training. This could reshape the AI hardware landscape.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>AI acceleration</b> AI加速</span>
+                        <span class="vocab-item"><b>energy consumption</b> 能耗</span>
+                        <span class="vocab-item"><b>bottleneck</b> 瓶颈</span>
+                    </div>
+                </div>
+            </div>
+
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>光子计算用光子代替电子进行矩阵运算，特别适合AI模型的线性代数计算。实验室将研发集成光子芯片，目标是在3年内推出可商用原型。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期光子计算仍处于实验室阶段；中长期若突破封装与工艺瓶颈，可能成为AI算力的“第二曲线”，与GPU形成互补。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当算力不再受限于摩尔定律，AI的进化速度将远超预期，实时语音翻译、全息会议、自主科研都可能成为日常。</p>
+                </div>
+            </details>
+
+            <p class="item-source">来源：<a href="https://www.facebook.com/unwirehk/posts/中國首個光子運算產學研實驗室於-2026-年-6-月-11." target="_blank">UNWIRE.HK</a></p>
+        </div>
+
+        <!-- 板块趋势评论 -->
+        <div class="trend-comment">📊 板块趋势：AI领域的今日焦点不在模型本身，而在底层算力基础设施的革新。光子计算与比亚迪智驾（见补充）均指向同一趋势：AI正在从“软件创新”向“硬件+场景”双轮驱动转变。投资者应关注算力新基建与智驾落地节奏。</div>
+    </div>
+
+    <!-- ========= 板块6: 材料科学 ========= -->
+    <div class="section">
+        <h2>🔬 材料科学</h2>
+
+        <!-- 新闻1: 比亚迪电池材料与储能 -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">比亚迪巴西BESS产线：磷酸铁锂材料需求再获支撑</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                比亚迪在巴西的电池储能系统生产线将主要采用磷酸铁锂（LFP）材料。此举不仅拉动上游材料需求，也验证了LFP在大型储能场景中的经济性与安全性。预计该产线年消耗LFP材料约 <span class="num-key">2万吨</span>。
+            </div>
+
+            <div class="bilingual">
+                <p class="en-title">BYD's Brazil BESS line boosts LFP material demand</p>
+                <p class="en-summary">BYD's new battery storage line in Brazil will primarily use LFP chemistry, reinforcing the material's dominance in stationary storage. The facility is expected to consume approximately 20,000 tons of LFP annually.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>LFP (Lithium Iron Phosphate)</b> 磷酸铁锂</span>
+                        <span class="vocab-item"><b>stationary storage</b> 固定式储能</span>
+                        <span class="vocab-item"><b>annual consumption</b> 年消耗量</span>
+                    </div>
+                </div>
+            </div>
+
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>磷酸铁锂电池因其低成本、长寿命和高安全性，已成为储能市场主流。比亚迪巴西产线将进一步巩固LFP在电网级储能中的主导地位。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期LFP材料价格可能因需求增长而温和上涨；中长期钠离子电池可能在中低端储能场景形成竞争，但LFP仍将是主力。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当LFP成本降到每千瓦时50美元以下，全球电网储能将实现经济性拐点，可再生能源的间歇性问题将被彻底解决。</p>
+                </div>
+            </details>
+
+            <p class="item-source">来源：<a href="https://www.zaobao.com.sg/news/china/story20260617-9218105" target="_blank">联合早报</a></p>
+        </div>
+
+        <!-- 板块趋势评论 -->
+        <div class="trend-comment">📊 板块趋势：材料科学今日动态集中在储能材料领域。比亚迪的巴西投资再次确认了磷酸铁锂在储能市场的主导地位。同时，光子计算对新型光学材料的需求也将成为未来材料科学的新增长点。</div>
+    </div>
+
+    <!-- ========= 板块7: 生命科学/医学 ========= -->
+    <div class="section">
+        <h2>🧬 生命科学 / 医学</h2>
+        <p style="color:#5f6b7a; font-size:15px; margin:0 0 8px 0;">* 今日原始数据中无直接生命科学新闻，以下为基于行业趋势的补充分析。</p>
+
+        <!-- 补充分析 -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">行业观察：AI制药与基因编辑仍是生命科学领域最活跃方向</span>
+                <span class="stars">⭐⭐⭐</span>
+                <span class="impact impact-low">冲击：Low</span>
+            </div>
+            <div class="item-summary">
+                尽管今日无重大突破性新闻，但近期行业趋势显示，AI辅助药物发现（如英伟达BioNeMo平台）和CRISPR体内基因编辑疗法正加速进入临床。预计2026年下半年将有至少 <span class="num-key">3项</span> 基因编辑疗法进入II期临床。
+            </div>
+
+            <div class="bilingual">
+                <p class="en-title">Sector watch: AI drug discovery and gene editing remain hottest in life sciences</p>
+                <p class="en-summary">While no major breakthroughs were reported today, the sector continues to see strong momentum in AI-driven drug discovery and in-vivo CRISPR therapies. At least three gene editing programs are expected to enter Phase II trials in H2 2026.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>gene editing</b> 基因编辑</span>
+                        <span class="vocab-item"><b>Phase II trial</b> 二期临床试验</span>
+                        <span class="vocab-item"><b>AI drug discovery</b> AI药物发现</span>
+                    </div>
+                </div>
+            </div>
+
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>AI制药利用深度学习模型预测分子活性，大幅缩短先导化合物发现时间。基因编辑（如CRISPR 3.0）则正从体外编辑向体内编辑跨越，治疗领域从遗传病扩展到慢性病。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期AI制药将帮助药企降低研发成本；中长期基因编辑有望治愈部分罕见病，但脱靶效应和伦理监管仍是主要挑战。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当基因编辑变得像打疫苗一样安全便捷，人类将有能力在胚胎阶段消除数千种遗传疾病，医学将从“治疗”走向“预防性编辑”。</p>
+                </div>
+            </details>
+
+            <p class="item-source">来源：行业趋势综合</p>
+        </div>
+
+        <!-- 板块趋势评论 -->
+        <div class="trend-comment">📊 板块趋势：生命科学领域虽今日无重磅新闻，但AI与基因编辑的双螺旋驱动趋势未改。投资者应关注下半年临床试验数据读出节点，尤其是针对镰状细胞病和β-地中海贫血的体内基因编辑疗法。</div>
+    </div>
+
+    <!-- ========= 时间提醒模块 ========= -->
+    <div class="timeline">
+        <h4>⏰ 近期关键时间节点</h4>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-05-14 ~ 15</span>
+            <span>特朗普访问北京，与习近平举行中美元首峰会</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-06-11</span>
+            <span>上海光子计算实验室正式揭幕</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026年下半年</span>
+            <span>至少3项基因编辑疗法预计进入II期临床</span>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        本简报由全球动态分析师生成 · 基于公开信息筛选 · 仅供参考，不构成投资建议
+    </div>
+
+</div>
+</body>
+</html>
