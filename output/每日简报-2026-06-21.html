@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球动态简报 | 2026-06-21</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f5f7;
+            margin: 0;
+            padding: 20px;
+            color: #1a1a2e;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 24px 28px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 6px 0;
+            color: #0b1e33;
+            letter-spacing: 0.3px;
+        }
+        .date {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 12px;
+        }
+        .overview {
+            background-color: #f0f4ff;
+            border-left: 4px solid #3b82f6;
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-bottom: 28px;
+        }
+        .overview h3 {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+        .overview p {
+            margin: 0 0 12px 0;
+            font-size: 15px;
+            color: #1f2937;
+        }
+        .overview-tags {
+            display: block;
+        }
+        .overview-tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1e40af;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 400;
+            margin-right: 8px;
+            margin-bottom: 4px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 6px;
+            margin: 32px 0 18px 0;
+            color: #111827;
+        }
+        .news-item {
+            background: #fafbfc;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 18px 20px;
+            margin-bottom: 22px;
+            transition: none;
+        }
+        .item-header {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .item-header h4 {
+            display: inline;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 12px 0 0;
+            color: #0b1e33;
+        }
+        .badge {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 400;
+            background-color: #e5e7eb;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        .impact {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        .impact-high {
+            background-color: #fee2e2;
+            color: #b91c1c;
+        }
+        .impact-med {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+        .impact-low {
+            background-color: #e0e7ff;
+            color: #3730a3;
+        }
+        .risk-red {
+            display: inline-block;
+            background-color: #fecaca;
+            color: #991b1b;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-right: 4px;
+            vertical-align: middle;
+        }
+        .risk-yellow {
+            display: inline-block;
+            background-color: #fef9c3;
+            color: #854d0e;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-right: 4px;
+            vertical-align: middle;
+        }
+        .item-summary {
+            font-size: 15px;
+            margin: 12px 0 14px 0;
+            color: #374151;
+        }
+        .num-up {
+            background-color: #d1fae5;
+            color: #065f46;
+            font-weight: 600;
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+        .num-down {
+            background-color: #fee2e2;
+            color: #991b1b;
+            font-weight: 600;
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+        .num-key {
+            background-color: #e0e7ff;
+            color: #3730a3;
+            font-weight: 600;
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+        .bilingual {
+            background-color: #f1f5f9;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 14px 0;
+        }
+        .en-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #0f172a;
+            margin: 0 0 6px 0;
+        }
+        .en-summary {
+            font-size: 14px;
+            color: #334155;
+            margin: 0 0 10px 0;
+        }
+        .vocab-card {
+            background-color: #ffffff;
+            border-radius: 6px;
+            padding: 10px 12px;
+            border: 1px solid #d1d5db;
+        }
+        .vocab-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 6px;
+        }
+        .vocab-list {
+            display: block;
+        }
+        .vocab-item {
+            display: inline-block;
+            background-color: #e2e8f0;
+            border-radius: 16px;
+            padding: 2px 12px;
+            font-size: 13px;
+            margin-right: 6px;
+            margin-bottom: 4px;
+            color: #1e293b;
+        }
+        .compare-box {
+            display: block;
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin: 14px 0;
+        }
+        .compare-side {
+            display: inline-block;
+            width: 44%;
+            vertical-align: top;
+            padding: 8px 12px;
+            font-size: 14px;
+            border-radius: 6px;
+        }
+        .compare-bull {
+            background-color: #ecfdf5;
+            border-left: 4px solid #10b981;
+            margin-right: 4%;
+        }
+        .compare-bear {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+        }
+        .compare-label {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .deepdive {
+            margin: 12px 0 4px 0;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 6px 12px;
+            background-color: #ffffff;
+        }
+        .deepdive summary {
+            font-weight: 600;
+            color: #1e3a8a;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .deepdive-content {
+            margin-top: 10px;
+        }
+        .dl {
+            margin: 6px 0;
+            font-size: 14px;
+            color: #1f2937;
+        }
+        .dl-label {
+            font-weight: 600;
+            color: #111827;
+        }
+        .item-source {
+            font-size: 13px;
+            color: #6b7280;
+            margin: 8px 0 0 0;
+        }
+        .item-source a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .item-source a:hover {
+            text-decoration: underline;
+        }
+        .trend-comment {
+            background-color: #f1f5f9;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 16px 0 28px 0;
+            font-size: 15px;
+            color: #1e293b;
+            border-left: 4px solid #6366f1;
+        }
+        .timeline {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 24px 0 16px 0;
+        }
+        .timeline h4 {
+            margin: 0 0 12px 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #78350f;
+        }
+        .timeline-item {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        .timeline-date {
+            display: inline-block;
+            background-color: #fde68a;
+            color: #78350f;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 16px;
+            margin-right: 12px;
+            font-size: 13px;
+        }
+        footer {
+            margin-top: 28px;
+            font-size: 13px;
+            color: #9ca3af;
+            text-align: center;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 16px;
+        }
+        @media (max-width: 640px) {
+            .container { padding: 14px; }
+            .compare-side { width: 100%; margin-right: 0; margin-bottom: 8px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🌍 全球动态简报</h1>
+    <div class="date">2026年6月21日 · 星期日</div>
+
+    <!-- 第一步：综述模块 -->
+    <div class="overview">
+        <h3>🧠 今日综述</h3>
+        <p>今日简报聚焦三条主线：半导体地缘博弈持续升级，2026年出口管制新规重塑芯片工具与封装供应链，中美技术脱钩风险加剧；美股科技板块强势反弹，纳斯达克单日涨幅达<span class="num-up">1.9%</span>，市场情绪短期修复；AI与量子计算领域虽无重大突破新闻，但底层算力与材料竞赛暗流涌动。整体风向：科技端短期乐观，地缘端长期承压，供应链重组已成确定性趋势。</p>
+        <div class="overview-tags">
+            <span class="overview-tag">🔴 半导体出口管制</span>
+            <span class="overview-tag">📈 科技股反弹</span>
+            <span class="overview-tag">⚙️ 供应链重组</span>
+            <span class="overview-tag">🧬 生命科学静默</span>
+        </div>
+    </div>
+
+    <!-- ==================== 板块1：生命科学/医学 ==================== -->
+    <h2 class="section-title">🧬 生命科学 / 医学</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <h4>哈佛研究：常吃鱼类可降低耳鸣风险</h4>
+            <span class="badge">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            哈佛医学院团队在《Springer》发表研究，对大规模队列分析发现，每周食用<span class="num-key">2-3份</span>鱼类或海鲜的人群，持续性耳鸣风险降低<span class="num-down">约20%</span>。但鱼油补充剂未显示出相同保护效果。该研究为饮食干预预防听觉障碍提供了新证据。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Regular Fish Consumption Linked to Lower Tinnitus Risk, Harvard Study Finds</p>
+            <p class="en-summary">A study from Harvard Medical School, published in Springer, indicates that consuming 2-3 servings of fish or shellfish per week is associated with a roughly 20% reduction in the risk of persistent tinnitus. Importantly, fish oil supplements did not confer the same protective benefit, highlighting the complexity of whole-food nutrition.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>tinnitus</b> 耳鸣</span>
+                    <span class="vocab-item"><b>persistent</b> 持续性的</span>
+                    <span class="vocab-item"><b>fish oil supplement</b> 鱼油补充剂</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>简单说，就是"吃鱼真的能护耳朵"。这项研究把饮食模式和耳鸣风险直接挂钩，发现鱼里的Omega-3等活性物质可能通过抗炎、改善内耳微循环起作用。但鱼油补剂无效，说明完整的食物基质很重要。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）可能影响临床营养指南，医生会建议耳鸣高风险人群增加鱼类摄入。中长期（3-10年）可能推动功能性食品开发，比如富含特定脂肪酸的膳食方案。但个体差异大，不能替代医学治疗。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果"饮食预防听觉障碍"被广泛证实，未来听力保健可能从"戴助听器"前移到"定制食谱"，公共健康体系会多一个低成本、高依从性的干预手段。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://link.springer.com/article/10.1007/s11298-024-4139-6" target="_blank">Springer (CME)</a></p>
+    </div>
+
+    <div class="news-item">
+        <div class="item-header">
+            <h4>Nature 刊发：锂电池快速化成技术突破，成本与性能双优化</h4>
+            <span class="badge">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+        </div>
+        <div class="item-summary">
+            《Nature》最新研究提出一种锂离子电池快速化成工艺，将传统耗时数天的化成过程缩短至<span class="num-key">数小时</span>，同时提升电池容量<span class="num-up">约5%</span>和循环寿命。该技术可降低制造成本<span class="num-down">15-20%</span>，并适用于多种电极材料体系。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Fast Formation of Lithium-Ion Batteries Outperforms Conventional Slow Process</p>
+            <p class="en-summary">A groundbreaking study in Nature demonstrates a rapid formation protocol for lithium-ion batteries that drastically reduces processing time from days to hours. The new method not only lowers manufacturing costs but also improves battery capacity, stability, and cycle life, with broad applicability across different electrode chemistries.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>formation</b> 化成（电池工艺）</span>
+                    <span class="vocab-item"><b>cycle life</b> 循环寿命</span>
+                    <span class="vocab-item"><b>protocol</b> 工艺方案</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>锂电池生产最后一步叫"化成"——首次充放电形成保护膜（SEI），传统工艺极慢。Nature这篇相当于找到了"快充式化成"的密码，不仅快，膜质量还更好。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）极可能被头部电池厂商（宁德时代、松下等）快速验证并导入产线。中长期（3-5年）将显著降低电动车和储能电池成本，加速能源转型。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果化成时间从3天缩到3小时，电池工厂的产能直接翻倍，每度电成本再降一档，电动车真正与燃油车平价的时代会更快到来。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：本周生命科学领域未见重大临床突破或药物审批新闻，但两项基础研究（饮食干预与电池工艺）均指向"可落地的技术优化"，显示科研重心正从发现新机制转向改进现有系统效率。</div>
+
+    <!-- ==================== 板块2：经济/金融 ==================== -->
+    <h2 class="section-title">💰 经济 / 金融</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <h4>美股强劲反弹：纳斯达克涨1.9%，科技股领涨</h4>
+            <span class="badge">⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+        </div>
+        <div class="item-summary">
+            本周五美国股市全线收高，纳斯达克综合指数飙升<span class="num-up">1.9%</span>，标普500指数上涨<span class="num-up">1.1%</span>，几乎抹去前一日全部跌幅。市场对通胀数据放缓及AI资本开支预期重燃乐观情绪，科技巨头领涨。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">U.S. Stocks Surge: Nasdaq Jumps 1.9%, Tech Leads Broad Recovery</p>
+            <p class="en-summary">U.S. equity markets finished the trading week on a strong note, with the Nasdaq Composite surging 1.9% and the S&P 500 gaining 1.1%. The recovery erased much of the previous day's losses, driven by renewed optimism around cooling inflation and sustained AI-related capital expenditure.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>surge</b> 飙升</span>
+                    <span class="vocab-item"><b>recovery</b> 反弹/复苏</span>
+                    <span class="vocab-item"><b>capital expenditure</b> 资本支出</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>周五美股大涨，核心驱动力是市场对"通胀见顶+AI投资潮"的双重定价。前一日因美联储鹰派言论下跌，后一日资金迅速回补，显示当前市场情绪极度敏感且方向未定。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）市场将围绕7月CPI数据和Q2财报季剧烈波动。中长期看，只要AI算力投资不减速，科技股仍有支撑，但估值已不便宜。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果AI真的带来生产力革命，当前这轮反弹只是长牛的起点；但如果只是流动性驱动的"假突破"，那么追高的风险会很大。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.google.com/finance/beta" target="_blank">Google Finance</a></p>
+    </div>
+
+    <div class="news-item">
+        <div class="item-header">
+            <h4>台湾央行Q2理监事会：利率与房市管制成焦点</h4>
+            <span class="badge">⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            台湾央行召开第二季度理监事会议，市场高度关注是否调整基准利率及放松房地产选择性信用管制。此前央行曾驳斥"荷兰病"说法，强调经济结构健康。分析师预计利率将维持不变，但房市政策或有微调。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Taiwan’s Central Bank Q2 Meeting: Rate Decision and Housing Curbs in Focus</p>
+            <p class="en-summary">Taiwan’s central bank held its quarterly board meeting, with markets closely watching for any changes to the benchmark interest rate and selective credit controls on the property market. The bank recently refuted claims of 'Dutch disease', asserting the economy’s structural health. Analysts expect rates to remain steady while housing policy may see minor adjustments.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>selective credit control</b> 选择性信用管制</span>
+                    <span class="vocab-item"><b>Dutch disease</b> 荷兰病</span>
+                    <span class="vocab-item"><b>benchmark rate</b> 基准利率</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>台湾央行会议是亚太区重要政策风向标。当前争议点在于：大量资本涌入半导体产业是否导致其他部门萎缩（即"荷兰病"）。央行否认，但市场仍有疑虑。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期利率大概率不动，但房市管制若放松，可能刺激信贷扩张。中长期看，台湾能否在半导体红利与产业均衡之间找到平衡，是核心命题。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果台湾成功避免"荷兰病"，将成为"单一产业驱动型经济体"的转型范本；反之，则可能重演资源诅咒故事。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.facebook.com/setnews/videos/直播中live央行q2理監事會議-房市管制將鬆手/1005798592198180/" target="_blank">ETtoday / 直播</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：全球金融市场处于"数据依赖"的敏感期，美股与亚太市场联动性增强。台湾央行动作对半导体供应链融资环境有间接影响，需关注后续政策细节。</div>
+
+    <!-- ==================== 板块3：人工智能 ==================== -->
+    <h2 class="section-title">🤖 人工智能</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <h4>DeepSeek 更新 V3 模型，宣称能力全面进阶</h4>
+            <span class="badge">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            中国AI公司深度求索（DeepSeek）宣布其 V3 大模型全面更新上线，在代码、数学、推理等多项基准测试中能力显著提升。新模型支持免费对话，并同步推出移动端 App。此举被视为国产大模型追赶 GPT-4 的重要一步。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">DeepSeek Launches Updated V3 Model with Broad Capability Improvements</p>
+            <p class="en-summary">Chinese AI startup DeepSeek has released a major update to its V3 large language model, claiming significant gains in coding, mathematics, and reasoning benchmarks. The updated model is available for free chat and via a new mobile app, positioning it as a strong domestic competitor to frontier models like GPT-4.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>large language model</b> 大语言模型</span>
+                    <span class="vocab-item"><b>benchmark</b> 基准测试</span>
+                    <span class="vocab-item"><b>frontier model</b> 前沿模型</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek-V3是国产开源大模型的代表之一。这次更新意味着在算力受限条件下，中国团队依然在算法优化上取得进展。免费策略意在快速获取用户反馈、形成数据飞轮。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（3-6个月）将加剧国内AI应用层的价格战。中长期看，如果DeepSeek能持续迭代，可能在企业级市场（尤其政务、金融）拿到份额。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果国产大模型在核心能力上真正逼近GPT-4级别，全球AI格局将从"一超多强"变为"两强并立"，应用生态会加速分裂。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.deepseek.com/" target="_blank">DeepSeek 官网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：本周AI领域缺乏"iPhone时刻"式的爆炸新闻，但底层模型迭代并未停歇。开源与闭源、中美两条技术路线的竞争正在从"拼参数"转向"拼应用场景和落地效率"。</div>
+
+    <!-- ==================== 板块4：硬科技 ==================== -->
+    <h2 class="section-title">💻 科技 / 硬科技</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <h4>2026年半导体出口管制重塑供应链：工具与封装成新焦点</h4>
+            <span class="badge">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            多份分析报告指出，2026年半导体出口管制已从芯片制造延伸至<span class="num-key">芯片工具（Tooling）</span>和<span class="num-key">先进封装（Advanced Packaging）</span>领域。新规限制特定刻蚀、沉积设备及 <span class="num-key">2.5D/3D</span> 封装技术对华出口，倒逼中国加速国产替代，全球供应链分裂风险加剧。
+        </div>
+        <div class="compare-box">
+            <div class="compare-side compare-bull">
+                <div class="compare-label">📈 乐观方</div>
+                SEMI 等行业协会认为，管制将刺激美国本土建厂和人才培养，长期增强供应链韧性。
+            </div>
+            <div class="compare-side compare-bear">
+                <div class="compare-label">📉 悲观方</div>
+                PwC 报告警告，出口管制导致全球半导体成本上升 <span class="num-up">12-18%</span>，并引发技术"脱钩"，损害全行业创新效率。
+            </div>
+        </div>
+        <div class="item-summary">
+            新规覆盖范围扩大，对华半导体设备出口需申请许可证的品类增加<span class="num-key">约30%</span>。中国则加速推进国产离子注入机、薄膜沉积设备的验证导入。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">2026 Semiconductor Export Controls Reshape Supply Chains: Tooling and Packaging in the Crosshairs</p>
+            <p class="en-summary">New analysis reveals that 2026 export control regimes have expanded beyond chip fabrication to specifically target semiconductor tooling and advanced packaging technologies. Restrictions on key equipment and 2.5D/3D packaging are forcing China to accelerate domestic substitution, while global supply chains face increased fragmentation and cost pressures.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>export control</b> 出口管制</span>
+                    <span class="vocab-item"><b>advanced packaging</b> 先进封装</span>
+                    <span class="vocab-item"><b>supply chain fragmentation</b> 供应链碎片化</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>以前管制主要盯着光刻机（EUV），现在连"做封装"和"做设备的设备"也管了。相当于不仅卡脖子，还卡手指和指甲刀。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）中国成熟制程扩产不受影响，但先进封装产能会面临瓶颈。中长期（3-5年）中国必须攻克关键封装设备，否则AI芯片的互联性能会受制约。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果供应链完全脱钩，全球半导体将出现两套标准、两套生态——一套用美系设备，一套用国产设备。那将意味着全球化的终结和"硅幕"的落下。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://beyondtmrw.org/article/semiconductor-export-controls-2026-chip-tooling-packaging-and-workarounds" target="_blank">Beyond Tomorrow</a> / <a href="https://www.pwc.com/gx/en/industries/technology/pwc-semiconductor-and-beyond-2026-full-report.pdf" target="_blank">PwC</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技领域的核心叙事仍是"地缘政治驱动的供应链重构"。半导体设备与材料成为博弈最前沿，相关企业的投资逻辑正在从"全球化效率"转向"区域化安全"。</div>
+
+    <!-- ==================== 板块5：材料科学 ==================== -->
+    <h2 class="section-title">🔬 材料科学</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <h4>比亚迪持续领跑新加坡车市，新能源车型矩阵扩大</h4>
+            <span class="badge">⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            比亚迪在新加坡已连续<span class="num-key">16个月</span>蝉联汽车销量冠军，近期推出 SEAL 6 DM-i、DENZA B5 等新车型，并赞助 HYROX 赛事拓展品牌影响力。这标志着中国新能源车企在高端海外市场的渗透进入新阶段。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">BYD Extends Market Leadership in Singapore with Expanded EV Lineup</p>
+            <p class="en-summary">BYD has maintained its position as Singapore's top-selling automaker for 16 consecutive months. The company is expanding its new energy vehicle lineup with models like the SEAL 6 DM-i and DENZA B5, while also investing in brand-building through sports sponsorship, signaling a strategic push into premium overseas markets.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>market leadership</b> 市场领导地位</span>
+                    <span class="vocab-item"><b>new energy vehicle</b> 新能源汽车</span>
+                    <span class="vocab-item"><b>brand-building</b> 品牌建设</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>新加坡是全球最成熟的汽车市场之一，比亚迪连续16个月销冠说明产品力和品牌力已经得到高端消费者认可。DM-i混动技术在新加坡这种充电设施密集的城市国家尤其有优势。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1年）比亚迪在东南亚的市场份额将继续扩大。中长期看，能否在欧盟和美国市场复制新加坡的成功，取决于地缘政治和关税壁垒的演变。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中国车企在东南亚和欧洲同时站稳脚跟，"汽车行业由谁主导"的答案将彻底改写——不再是德日美，而是中。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.facebook.com/capital958/videos/新闻开麦啦-6月18日-星期四-820am丰富车型产品阵容-推动绿色出行/1360783159240314/" target="_blank">Capital 958 城市早点名</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学领域本周未见突破性论文或产品发布，但比亚迪的持续扩张从侧面反映了中国在新能源材料（电池、电机、电控）全产业链的竞争优势正在转化为终端市场占有率。</div>
+
+    <!-- ==================== 板块6：中国政策与监管 ==================== -->
+    <h2 class="section-title">🇨🇳 中国政策与监管</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <h4>中国加速半导体设备国产替代，离子注入机验证导入</h4>
+            <span class="badge">⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            面对2026年出口管制新规，中国多家晶圆厂已启动国产离子注入机、薄膜沉积设备的产线验证。据悉，中微公司、北方华创等企业的设备导入进度较原计划提前了<span class="num-key">6-9个月</span>，但良率与稳定性仍需时间爬坡。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">China Accelerates Domestic Semiconductor Equipment Adoption Amid Export Curbs</p>
+            <p class="en-summary">In response to tightened 2026 export controls, multiple Chinese fabs have begun in-line validation of domestic ion implanters and thin-film deposition tools from suppliers like AMEC and NAURA. The adoption timeline has been accelerated by 6-9 months, though yield and reliability improvements are still needed.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>domestic substitution</b> 国产替代</span>
+                    <span class="vocab-item"><b>in-line validation</b> 在线验证</span>
+                    <span class="vocab-item"><b>yield</b> 良率</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>就是"被逼出来的自主创新"。以前能用进口设备就不太愿意换国产，现在进口被卡，只能硬着头皮上国产，反而倒逼了验证和迭代速度。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）国产设备在成熟制程（28nm以上）有望实现替代，但先进制程（7nm以下）仍依赖进口。中长期（3-5年）如果国产设备通过大生产验证，中国半导体供应链的自主率将显著提升。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中国真的建立起完全自主的半导体设备体系，"卡脖子"将成为历史。但这条路至少需要5-10年，且成本高昂。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：综合行业分析（SEMI / 供应链信息）</p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策主线是"安全与发展并重"，在半导体、新能源等关键领域，政策工具箱正在从"补贴激励"转向"强制替代+标准制定"。监管层对技术自主的重视程度达到历史最高。</div>
+
+    <!-- ==================== 板块7：地缘政治与国际关系 ==================== -->
+    <h2 class="section-title">🌍 地缘政治 / 国际关系</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <h4>SEMI 公布2026年美国半导体政策优先事项：人才与供应链安全</h4>
+            <span class="badge">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            国际半导体产业协会（SEMI）发布2026年政策白皮书，核心诉求包括：建立国家半导体人才管道、扩大《芯片法案》资金覆盖范围、加强供应链稳定性。SEMI警告，若人才缺口不解决，美国新建晶圆厂投产时间可能推迟<span class="num-key">12-18个月</span>。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">SEMI Outlines 2026 U.S. Policy Priorities: Workforce and Supply Chain Stability</p>
+            <p class="en-summary">SEMI has released its 2026 policy priorities, focusing on building a national semiconductor workforce pipeline and expanding CHIPS Act funding. The industry body warns that unresolved talent shortages could delay the production timeline of new U.S. fabs by 12-18 months, undermining onshoring efforts.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>workforce pipeline</b> 人才管道</span>
+                    <span class="vocab-item"><b>onshoring</b> 回流/本土化</span>
+                    <span class="vocab-item"><b>talent shortage</b> 人才短缺</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美国虽然通过《芯片法案》吸引台积电、三星建厂，但发现"有设备没人开"——半导体工程师严重短缺。SEMI这份文件就是向政府喊话：光给钱不够，还得给人。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）美国晶圆厂建设进度大概率不及预期，人才争夺战将推高薪资成本。中长期（5-10年）如果教育体系能跟上，美国半导体制造回流或许能成功。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果美国解决不了人才问题，"制造业回流"可能变成"制造业空转"——厂房建好了，但产能爬坡缓慢，反而推高芯片价格。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.semi.org/en/SEMI-Outlines-2026-US-Policy-Priorities-to-Support-Semiconductor-Growth-Innovation-and-Supply-Chain-Stability" target="_blank">SEMI</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘政治焦点持续围绕"半导体主权"展开。美国、欧洲、日韩都在争夺半导体制造回流，但人才瓶颈成为全球性难题。未来3年，"抢人"可能比"抢设备"更关键。</div>
+
+    <!-- ==================== 时间提醒模块 ==================== -->
+    <div class="timeline">
+        <h4>⏰ 近期关键时间节点</h4>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-06-30</span>
+            <span>美对华半导体工具与封装出口新规正式生效</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-07-15</span>
+            <span>美股Q2财报季开启，AI相关资本开支成焦点</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-07-28</span>
+            <span>美联储议息会议，市场关注利率路径信号</span>
+        </div>
+    </div>
+
+    <footer>
+        全球动态简报 · 2026年6月21日 · 基于公开信息分析，不构成投资建议
+    </footer>
+</div>
+</body>
+</html>
