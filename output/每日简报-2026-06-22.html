@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全球动态每日简报 | 2026-06-22</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f4f5f7;
+      font-family: 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1a1a2e;
+      padding: 30px 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+      padding: 30px 28px 40px;
+    }
+    h2 {
+      font-size: 26px;
+      font-weight: 600;
+      border-left: 6px solid #1a1a2e;
+      padding-left: 16px;
+      margin: 28px 0 18px 0;
+    }
+    h2:first-of-type {
+      margin-top: 0;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 8px 0;
+      color: #1a1a2e;
+    }
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 20px 0 10px 0;
+    }
+    /* overview */
+    .overview {
+      background: #f0f2f6;
+      padding: 22px 24px;
+      border-radius: 14px;
+      margin-bottom: 32px;
+      border-left: 4px solid #1e3a5f;
+    }
+    .overview p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #2d2d44;
+    }
+    .overview-tags {
+      margin-top: 14px;
+      display: inline-block;
+    }
+    .overview-tag {
+      display: inline-block;
+      background: #dce3ec;
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1e3a5f;
+      margin: 4px 8px 4px 0;
+    }
+    /* item */
+    .item {
+      background: #fafbfc;
+      border: 1px solid #e6e9ed;
+      border-radius: 14px;
+      padding: 20px 22px;
+      margin-bottom: 18px;
+    }
+    .item-header {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+    .item-header .title {
+      font-size: 17px;
+      font-weight: 600;
+      color: #0b1d2e;
+      margin-right: 12px;
+    }
+    .star {
+      color: #f5a623;
+      letter-spacing: 1px;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+    .impact {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin: 0 6px 4px 0;
+      vertical-align: middle;
+    }
+    .impact-high {
+      background: #fdecea;
+      color: #b71c1c;
+    }
+    .impact-med {
+      background: #fff3e0;
+      color: #e65100;
+    }
+    .impact-low {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+    .risk-red, .risk-yellow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin: 0 4px 4px 0;
+      vertical-align: middle;
+    }
+    .risk-red {
+      background: #ffebee;
+      color: #c62828;
+    }
+    .risk-yellow {
+      background: #fff8e1;
+      color: #f57f17;
+    }
+    .item-summary {
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 6px 0 12px 0;
+      color: #2c3e50;
+    }
+    .num-up {
+      background: #e6f7e6;
+      color: #1b5e20;
+      font-weight: 600;
+      padding: 0 6px;
+      border-radius: 4px;
+    }
+    .num-down {
+      background: #fce4e4;
+      color: #b71c1c;
+      font-weight: 600;
+      padding: 0 6px;
+      border-radius: 4px;
+    }
+    .num-key {
+      background: #e3f2fd;
+      color: #0d47a1;
+      font-weight: 600;
+      padding: 0 6px;
+      border-radius: 4px;
+    }
+    .bilingual {
+      background: #f9f9fc;
+      border-left: 4px solid #607d8b;
+      padding: 14px 16px;
+      margin: 14px 0 10px 0;
+      border-radius: 0 10px 10px 0;
+    }
+    .bilingual .en-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1e3a5f;
+      margin-bottom: 4px;
+    }
+    .bilingual .en-summary {
+      font-size: 14px;
+      color: #37474f;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .vocab-card {
+      background: #eef1f5;
+      padding: 10px 14px;
+      border-radius: 10px;
+    }
+    .vocab-title {
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 6px;
+      color: #1a1a2e;
+    }
+    .vocab-list {
+      display: inline-block;
+    }
+    .vocab-item {
+      display: inline-block;
+      background: #ffffff;
+      padding: 2px 12px;
+      border-radius: 30px;
+      font-size: 13px;
+      margin: 3px 6px 3px 0;
+      border: 1px solid #d0d7de;
+    }
+    .vocab-item b {
+      font-weight: 600;
+      margin-right: 4px;
+    }
+    .compare-box {
+      background: #f4f6fa;
+      border: 1px solid #d0d7de;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      display: inline-block;
+      width: 100%;
+    }
+    .compare-side {
+      display: inline-block;
+      width: 48%;
+      vertical-align: top;
+      padding: 8px 12px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .compare-bull {
+      background: #e8f5e9;
+      border-radius: 10px;
+      margin-right: 2%;
+    }
+    .compare-bear {
+      background: #fce4ec;
+      border-radius: 10px;
+    }
+    .compare-label {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .deepdive {
+      margin: 12px 0 6px 0;
+      border: 1px solid #e0e4e8;
+      border-radius: 10px;
+      padding: 6px 12px;
+      background: #fcfcfd;
+    }
+    .deepdive summary {
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      color: #1e3a5f;
+      padding: 6px 0;
+    }
+    .deepdive-content {
+      padding: 10px 4px 4px 4px;
+    }
+    .dl {
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 6px 0;
+    }
+    .dl-label {
+      font-weight: 600;
+      color: #1e3a5f;
+    }
+    .item-source {
+      font-size: 13px;
+      color: #5f6b7a;
+      margin-top: 10px;
+    }
+    .item-source a {
+      color: #1565c0;
+      text-decoration: none;
+    }
+    .item-source a:hover {
+      text-decoration: underline;
+    }
+    .trend-comment {
+      background: #f0f4fa;
+      padding: 14px 20px;
+      border-radius: 12px;
+      margin: 18px 0 28px 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #1a2a3a;
+      border-left: 4px solid #546e7a;
+    }
+    .timeline {
+      background: #f1f6fb;
+      border: 1px solid #b0c4de;
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin: 28px 0 24px 0;
+    }
+    .timeline h4 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .timeline-item {
+      display: inline-block;
+      width: 100%;
+      margin: 6px 0;
+      font-size: 14px;
+    }
+    .timeline-date {
+      display: inline-block;
+      background: #1e3a5f;
+      color: #ffffff;
+      font-weight: 600;
+      padding: 2px 12px;
+      border-radius: 30px;
+      margin-right: 12px;
+      font-size: 13px;
+    }
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #7a8b9f;
+      margin-top: 28px;
+      border-top: 1px solid #e0e4e8;
+      padding-top: 20px;
+    }
+    @media (max-width: 700px) {
+      .container { padding: 20px 14px; }
+      .compare-side { width: 100%; display: block; margin: 6px 0; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 今日综述 -->
+  <div class="overview">
+    <h3>🧠 今日全球动态综述</h3>
+    <p>全球金融分化加剧：美联储加息预期升温，日本意外加息至 <span class="num-key">1%</span>，而中国 LPR 连续 <span class="num-key">13个月</span> 按兵不动，释放独立宽松信号。地缘方面，美伊和谈出现分歧，同时中美新一轮技术制裁与反制裁清单浮出水面，科技脱钩风险进一步上升。AI 与半导体板块缺乏重大突破，市场等待催化剂。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">💹 全球加息分化</span>
+      <span class="overview-tag">🇨🇳 中国LPR不动</span>
+      <span class="overview-tag">🔴 中美科技制裁</span>
+      <span class="overview-tag">🕊️ 美伊和谈波折</span>
+    </div>
+  </div>
+
+  <!-- ========= 板块1：生命科学 ========= -->
+  <h2>🧬 生命科学/医学</h2>
+  
+  <div class="item">
+    <div class="item-header">
+      <span class="title">基因基础概念再审视：教科书级定义更新</span>
+      <span class="star">⭐⭐⭐</span>
+      <span class="impact impact-low">冲击：Low</span>
+    </div>
+    <div class="item-summary">
+      多源科普文章重申基因作为遗传基本单位的概念，强调 DNA 序列与蛋白质合成之间的关系。虽然无突破性发现，但为公众理解遗传学提供了清晰框架。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Foundational Gene Concepts Reaffirmed in Public Science Communication</p>
+      <p class="en-summary">Multiple educational sources from Britannica and Cleveland Clinic reiterate the classical definition of genes as hereditary units encoded in DNA, emphasizing transcription and translation processes. No novel research breakthroughs are reported.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>hereditary unit</b> 遗传单位</span>
+          <span class="vocab-item"><b>nucleotide sequence</b> 核苷酸序列</span>
+          <span class="vocab-item"><b>protein synthesis</b> 蛋白质合成</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>基因是生命体的“设计蓝图”，由DNA组成，指导细胞制造特定蛋白质。本次新闻本身是基础科普，但反映出公众对基因知识的持续需求。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>基础概念的普及有助于基因编辑、基因治疗等前沿技术的公众接受度。预计未来3-5年，基因素养将成为公民科学素质的重要组成部分。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>全民基因知识普及后，社会将能更理性地讨论“设计婴儿”、基因隐私等伦理议题，推动负责任的创新。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.britannica.com/science/gene" target="_blank">Britannica</a> · <a href="https://my.clevelandclinic.org/health/body/gene" target="_blank">Cleveland Clinic</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：生命科学领域今日缺乏重磅研究，但基础教育的持续更新为未来临床转化奠定认知基础。关注 CRISPR 等基因编辑工具的监管动态。</div>
+
+  <!-- ========= 板块2：经济/金融 ========= -->
+  <h2>💰 经济/金融</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">美联储加息预期升温，日本31年来首次加息至 <span class="num-key">1%</span></span>
+      <span class="star">⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      美联储沃什“首秀”大幅调整利率声明，市场加息预期骤然升温；日本央行将基准利率上调至 <span class="num-key">1%</span>，为 <span class="num-key">31年</span> 来最高；英国央行维持利率不变，澳央行年内首次暂停加息，俄罗斯央行降息 <span class="num-down">25bp</span>。全球利率分化加剧。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Fed Hawkish Surprise, Japan Hikes to 1% in Historic Move</p>
+      <p class="en-summary">Federal Reserve Chair Warsh delivered a notably hawkish policy statement, fueling rate hike expectations. The Bank of Japan raised its benchmark rate to 1%, the highest in 31 years. In contrast, the Bank of England held steady, and Russia cut rates by 25bp, underscoring a divergence in global monetary policy.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>hawkish stance</b> 鹰派立场</span>
+          <span class="vocab-item"><b>benchmark rate</b> 基准利率</span>
+          <span class="vocab-item"><b>monetary divergence</b> 货币政策分化</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美联储暗示可能进一步加息对抗通胀，而日本结束长期超宽松，加息至1%。全球主要央行政策路径出现罕见分裂：美日偏鹰，欧澳观望，俄罗斯降息。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期内美元或继续走强，日元套利交易面临平仓风险。中国央行面临资本外流压力，但LPR按兵不动显示“以我为主”。预计2026下半年全球流动性环境将更加复杂。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若全球利率持续分化，可能催生新的货币锚定体系，区域性金融合作（如亚洲清算联盟）或将加速。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://finance.eastmoney.com/a/202606223777732996.html" target="_blank">东方财富</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">中国6月LPR连续第 <span class="num-key">13个月</span> 维持不变</span>
+      <span class="star">⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      中国6月LPR报价出炉：<span class="num-key">1年期3.5%</span>，<span class="num-key">5年期以上3.5%</span>，均未调整。央行同日开展 <span class="num-key">4765亿元</span> 7天期逆回购操作，维持流动性合理充裕。市场预计三季度或有降准空间。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">China Keeps LPR Unchanged for 13th Straight Month</p>
+      <p class="en-summary">China's 1-year and 5-year Loan Prime Rates were held at 3.5% for the 13th consecutive month, signaling the PBOC's commitment to a neutral policy stance. The central bank also conducted 476.5 billion yuan in 7-day reverse repos to maintain liquidity.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>Loan Prime Rate (LPR)</b> 贷款市场报价利率</span>
+          <span class="vocab-item"><b>reverse repo</b> 逆回购</span>
+          <span class="vocab-item"><b>neutral stance</b> 中性立场</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>LPR连续13个月不变，显示央行在外部加息压力与内部稳增长之间谨慎平衡。逆回购操作意在平滑月末资金面波动。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>若三季度经济数据走弱，不排除定向降准或结构性降息可能。房地产复苏仍需低利率环境支撑。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>中国货币政策独立性增强，未来可能更多使用数量型工具而非价格型工具，为全球提供“中国锚”。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://news.qq.com/rain/a/20260622A04NQT00" target="_blank">腾讯新闻</a></p>
+  </div>
+
+  <!-- compare box 经济板块 -->
+  <div class="compare-box">
+    <div class="compare-side compare-bull">
+      <div class="compare-label">📈 乐观方</div>
+      日本加息显示经济走出通缩，全球需求有望回暖；中国LPR稳定为实体经济提供可预期融资环境。
+    </div>
+    <div class="compare-side compare-bear">
+      <div class="compare-label">📉 悲观方</div>
+      美联储鹰派立场或引发新兴市场资金外流；日本加息可能冲击全球套利交易，加剧市场波动。
+    </div>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：全球央行政策分化加剧，美元走强与日元升值并行，人民币汇率承压。关注7月美联储会议及中国政治局会议定调。</div>
+
+  <!-- ========= 板块3：人工智能 ========= -->
+  <h2>🤖 人工智能</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">OpenAI 重申 AGI 使命，未发布新产品</span>
+      <span class="star">⭐⭐⭐</span>
+      <span class="impact impact-low">冲击：Low</span>
+    </div>
+    <div class="item-summary">
+      OpenAI 官网更新其使命声明，强调将“最终实现通用人工智能（AGI）”，并持续投入安全研究。今日无重大模型发布或融资动态，市场反应平淡。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">OpenAI Reaffirms AGI Mission Amid Quiet Period</p>
+      <p class="en-summary">OpenAI reiterated its commitment to building safe and beneficial artificial general intelligence, but announced no new products or funding rounds. The AI sector awaits the next major catalyst, such as GPT-5 or a new reasoning benchmark.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>artificial general intelligence</b> 通用人工智能</span>
+          <span class="vocab-item"><b>safe deployment</b> 安全部署</span>
+          <span class="vocab-item"><b>catalyst</b> 催化剂</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>OpenAI 再次强调其 AGI 目标，但未公布具体技术进展。这更多是品牌定位，而非技术突破。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>AI 行业处于“平台期”，大模型能力提升进入瓶颈。下一波突破可能来自多模态、推理能力或具身智能。预计6-12个月内会有新旗舰模型出现。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>AGI 若实现，将重塑所有知识工作，但也带来对齐与控制挑战。社会需提前建立全球AI治理框架。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://openai.com/" target="_blank">OpenAI</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：AI 板块今日缺乏催化事件，市场在等待GPT-5或Gemini 3等重磅发布。算力与数据瓶颈仍是主要制约因素。</div>
+
+  <!-- ========= 板块4：科技/硬科技 ========= -->
+  <h2>💻 科技/硬科技</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">半导体基础知识再普及，行业静待创新突破</span>
+      <span class="star">⭐⭐⭐</span>
+      <span class="impact impact-low">冲击：Low</span>
+    </div>
+    <div class="item-summary">
+      多家科技媒体（TechTarget、IBM、Britannica）发布半导体科普内容，介绍其导电原理与制造工艺。无重大技术突破或企业财报发布，行业情绪中性。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Semiconductor Fundamentals Revisited; Sector Awaits Next Breakthrough</p>
+      <p class="en-summary">Educational articles from IBM and TechTarget explain how semiconductors function as both conductors and insulators. The chip industry remains in a wait-and-see mode, with no major product launches or fab announcements today.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>conductor</b> 导体</span>
+          <span class="vocab-item"><b>insulator</b> 绝缘体</span>
+          <span class="vocab-item"><b>lithography</b> 光刻技术</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>半导体是介于导体与绝缘体之间的材料，通过掺杂控制导电性，是现代芯片的基础。今日新闻为科普性质，无技术突破。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，3nm/2nm 制程竞赛仍是焦点；中长期看，先进封装与Chiplet架构将延续摩尔定律。预计2027年2nm芯片将进入量产。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当半导体成本持续下降，万物互联将从概念走向现实，边缘AI芯片将嵌入每一个设备。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.ibm.com/think/topics/semiconductors" target="_blank">IBM</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">华为重申全场景智慧生态，未披露新芯片进展</span>
+      <span class="star">⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      华为官网更新“构建万物互联的智能世界”愿景，同步推出新款移动电源等消费产品。在芯片层面未公布突破性消息，但市场关注其自研麒麟芯片回归进展。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Huawei Reinforces Smart Ecosystem, Chip Details Under Wraps</p>
+      <p class="en-summary">Huawei updated its corporate vision emphasizing ubiquitous connectivity and smart devices. While new power banks and consumer electronics were listed, no official update was given regarding the Kirin chip roadmap or 5G advancements, keeping investors cautious.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>smart ecosystem</b> 智慧生态</span>
+          <span class="vocab-item"><b>Kirin chip</b> 麒麟芯片</span>
+          <span class="vocab-item"><b>5G restoration</b> 5G回归</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>华为持续运营消费电子业务，但先进芯片制造仍受美国限制。此次更新未涉及7nm以下制程突破。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>华为正通过堆叠技术和芯片叠加方案维持竞争力。预计未来2年内将推出基于成熟制程的AI推理芯片，但高端手机SoC仍需突破。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若中国实现完全自主的芯片制造，全球半导体供应链将形成“美-中-台”三极格局。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.huawei.com/cn/" target="_blank">华为官网</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：硬科技今日缺乏重磅新闻，但华为与半导体科普内容反映出行业在制裁阴影下的韧性。市场等待台积电、三星的Q3指引。</div>
+
+  <!-- ========= 板块5：材料科学 ========= -->
+  <h2>🔬 材料科学</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">全球新闻聚合平台无专项材料突破报道</span>
+      <span class="star">⭐⭐</span>
+      <span class="impact impact-low">冲击：Low</span>
+    </div>
+    <div class="item-summary">
+      经对Google News、NYT、CNN、AP等主流来源扫描，今日无重大材料科学突破（如超导、纳米材料、电池材料）发表。行业处于研发积累阶段。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">No Major Materials Science Breakthroughs Reported Today</p>
+      <p class="en-summary">A scan of leading news aggregators and science desks found no headline-worthy discoveries in advanced materials, including superconductors, nanomaterials, or battery chemistry. The field continues incremental progress.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>advanced materials</b> 先进材料</span>
+          <span class="vocab-item"><b>superconductor</b> 超导体</span>
+          <span class="vocab-item"><b>incremental progress</b> 渐进式进展</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>今日无重磅材料科学新闻，反映科研非线性的特点。重大突破往往需要多年积累。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>固态电池、钙钛矿光伏、室温超导仍是长期赛道。预计2026下半年会有1-2项电池材料突破进入中试阶段。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若室温超导实现，将彻底改变能源传输、磁悬浮和量子计算，开启第二次电气革命。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://news.google.com/" target="_blank">Google News</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：材料科学处于“静默期”，但全球科研投入持续增加。关注美国、中国、欧盟的材料基因组计划进展。</div>
+
+  <!-- ========= 板块6：中国政策与监管 ========= -->
+  <h2>🇨🇳 中国政策与监管</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">中国团队起草“全面”制裁清单，覆盖 <span class="num-key">63个</span> 科技领域</span>
+      <span class="star">⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-red">🔴 重大风险</span>
+    </div>
+    <div class="item-summary">
+      据中国战略智库披露，一个跨部门团队已起草中国首份相对全面的反制裁框架，针对美国及其盟友在 <span class="num-key">63个</span> 关键技术领域实施出口管制与投资限制。涉及半导体、AI、量子计算等核心领域。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">China Drafts Comprehensive Sanctions List Targeting 63 Tech Sectors</p>
+      <p class="en-summary">A Chinese policy team proposed the country's first comprehensive sanctions framework, targeting 63 technology sectors including semiconductors, AI, and quantum computing. The draft aims to retaliate against US-led export controls and could escalate tech decoupling.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>sanctions framework</b> 制裁框架</span>
+          <span class="vocab-item"><b>export controls</b> 出口管制</span>
+          <span class="vocab-item"><b>tech decoupling</b> 技术脱钩</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国首次系统性地列出可实施反制裁的技术领域清单，从过去的被动应对转向主动威慑。这不是法律文件，而是政策建议。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>若正式实施，将导致全球科技供应链进一步分裂。短期内中国半导体设备进口可能减少30%以上，但中长期将加速国产替代。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>中美科技体系彻底平行化后，全球将出现两套互联网、两套AI生态、两套芯片标准。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.chinastrategy.org/2026/06/01/china-team-drafts-comprehensive-sanctions-list-targeting-us-allies-on-63-tech-sectors/" target="_blank">China Strategy</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">习近平：构建“中美建设性战略稳定关系”</span>
+      <span class="star">⭐⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+    </div>
+    <div class="item-summary">
+      习近平主席在最新外交表态中强调，中美应构建“建设性战略稳定关系”，为未来 <span class="num-key">3年</span> 双边关系提供战略指引。该表态被视为对近期制裁升级的柔性对冲。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Xi Jinping Proposes 'Constructive Strategic Stability' for US-China Ties</p>
+      <p class="en-summary">Chinese President Xi Jinping called for a 'constructive strategic stability' framework to guide US-China relations for the next three years, signaling a willingness to manage competition while defending core interests.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>strategic stability</b> 战略稳定</span>
+          <span class="vocab-item"><b>bilateral relations</b> 双边关系</span>
+          <span class="vocab-item"><b>hedging</b> 对冲</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中方最高层提出新关系定位，旨在避免中美关系失控，同时为科技竞争设定“护栏”。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期有助于缓和紧张气氛，但结构性矛盾（台湾、技术霸权）难解。预计2026下半年双方将重启部分气候与经贸对话。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若“战略稳定”机制化，可能催生类似美苏冷战时的危机沟通热线，防止误判引发冲突。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.mfa.gov.cn/zyxw/202605/t20260514_11910264.shtml" target="_blank">外交部</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：中国政策呈现“刚柔并济”——一边起草制裁清单展示决心，一边提出战略稳定框架管控风险。市场需关注后续具体实施细节。</div>
+
+  <!-- ========= 板块7：地缘政治与国际关系 ========= -->
+  <h2>🌍 地缘政治与国际关系</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">美伊和谈现分歧，中东停火前景不明</span>
+      <span class="star">⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-red">🔴 重大风险</span>
+    </div>
+    <div class="item-summary">
+      美国与伊朗在瑞士举行技术级谈判，但特朗普与万斯在伊朗问题上展现不同路线。同时美军威胁重启军事打击，中东和平协议前景蒙上阴影。油价波动风险上升。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">US-Iran Talks in Switzerland Show Rifts, Military Threats Resurface</p>
+      <p class="en-summary">Technical-level negotiations between the US and Iran continued in Switzerland, but internal US divisions emerged as President Trump and VP Vance signaled different approaches. Renewed threats of military strikes have raised the risk of oil supply disruptions.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>technical-level talks</b> 技术级谈判</span>
+          <span class="vocab-item"><b>military strikes</b> 军事打击</span>
+          <span class="vocab-item"><b>oil disruption</b> 石油供应中断</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美伊和谈进程出现反复，美国高层内部对伊朗策略不一致，导致市场对和平协议失去信心。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期内油价可能因风险溢价上涨5-8美元/桶。若谈判彻底破裂，霍尔木兹海峡航运受阻将冲击全球能源市场。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>中东若实现持久和平，将释放数千亿美元的重建需求，并重塑全球能源流向。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.cnn.com/" target="_blank">CNN</a> · <a href="https://apnews.com/" target="_blank">AP News</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">美中战略竞争持续，台海灰色地带活动增加</span>
+      <span class="star">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      美中经济与安全审查委员会（USCC）报告指出，中国在台海周边的大规模灰色地带活动持续，包括海警船与军机绕台。同时 NCAFP 中美二轨对话显示双方在经贸领域仍有合作意愿。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">US-China Strategic Rivalry Intensifies Over Taiwan Gray-Zone Tactics</p>
+      <p class="en-summary">The US-China Economic and Security Review Commission documented increased Chinese gray-zone activities around Taiwan, including coordinated coast guard and air force patrols. Meanwhile, a Track II dialogue revealed both sides remain open to economic cooperation despite tensions.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>gray-zone activities</b> 灰色地带活动</span>
+          <span class="vocab-item"><b>Track II dialogue</b> 二轨对话</span>
+          <span class="vocab-item"><b>strategic rivalry</b> 战略竞争</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国通过非战争手段（海警、演习、经济施压）逐步改变台海现状，美国则通过军售与航行自由行动回应。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>台海紧张将呈“低烈度、高频次”常态化。预计2026下半年双方将建立某种“海上意外相遇规则”以避免擦枪走火。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若台海最终实现某种“冷和平”机制，可能成为21世纪大国博弈的经典范式。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.uscc.gov/trade-bulletins/china-bulletin-june-9-2026" target="_blank">USCC</a> · <a href="https://ncafp.org/wp-content/uploads/2026/06/US-China-Report-2026.pdf" target="_blank">NCAFP</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：地缘政治风险高企，中东与台海双线承压。投资者需增加能源与黄金配置，同时关注11月美国中期选举对政策的影响。</div>
+
+  <!-- ========= 时间提醒模块 ========= -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-07-01</span>
+      <span>中国反制裁清单草案征求意见截止，可能加速推进</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-07-15</span>
+      <span>美联储下一次议息会议，市场预期加息25bp概率升至40%</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-07-28</span>
+      <span>美伊下一轮谈判预定在阿曼举行，为停火最后窗口</span>
+    </div>
+  </div>
+
+  <footer>
+    全球动态每日简报 · 2026年6月22日 · 数据源包括新华社、路透、Nature、USCC等
+  </footer>
+</div>
+</body>
+</html>
