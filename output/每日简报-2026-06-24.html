@@ -1,605 +1,843 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>全球动态简报 | 2026-06-24</title>
-<style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f4f5f7;
-    margin: 0;
-    padding: 20px;
-    color: #1a1a1a;
-  }
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    padding: 30px 25px;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-  }
-  h2 {
-    font-size: 22px;
-    font-weight: 700;
-    margin: 30px 0 15px 0;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #e0e0e0;
-    color: #222;
-  }
-  h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0 0 8px 0;
-    color: #111;
-  }
-  h4 {
-    font-size: 16px;
-    font-weight: 600;
-    margin: 0 0 6px 0;
-    color: #333;
-  }
-  .overview {
-    background-color: #eef2ff;
-    padding: 20px 22px;
-    border-radius: 6px;
-    margin-bottom: 30px;
-    border-left: 4px solid #4f6ef7;
-  }
-  .overview p {
-    font-size: 15px;
-    line-height: 1.6;
-    margin: 8px 0;
-    color: #1e293b;
-  }
-  .overview-tags {
-    margin-top: 12px;
-  }
-  .overview-tag {
-    display: inline-block;
-    background-color: #ffffff;
-    border: 1px solid #cbd5e1;
-    border-radius: 20px;
-    padding: 4px 14px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #1e293b;
-    margin-right: 8px;
-    margin-bottom: 4px;
-  }
-  .item-header {
-    margin-bottom: 6px;
-  }
-  .item-header .title {
-    font-size: 17px;
-    font-weight: 700;
-    color: #0a0a0a;
-  }
-  .item-header .meta {
-    display: inline-block;
-    margin-left: 10px;
-    font-size: 13px;
-    color: #555;
-  }
-  .star {
-    color: #f59e0b;
-    font-weight: 700;
-  }
-  .impact {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 4px;
-    margin-left: 6px;
-    vertical-align: middle;
-  }
-  .impact-high {
-    background-color: #fee2e2;
-    color: #b91c1c;
-  }
-  .impact-med {
-    background-color: #fef3c7;
-    color: #92400e;
-  }
-  .impact-low {
-    background-color: #e0f2fe;
-    color: #0369a1;
-  }
-  .risk-red {
-    display: inline-block;
-    background-color: #fce4e4;
-    color: #a10e0e;
-    font-size: 12px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 4px;
-    margin-left: 6px;
-  }
-  .risk-yellow {
-    display: inline-block;
-    background-color: #fef9c3;
-    color: #854d0e;
-    font-size: 12px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 4px;
-    margin-left: 6px;
-  }
-  .item-summary {
-    font-size: 15px;
-    line-height: 1.6;
-    margin: 8px 0 10px 0;
-    color: #2d2d2d;
-  }
-  .num-up {
-    background-color: #d1fae5;
-    color: #065f46;
-    font-weight: 700;
-    padding: 0 4px;
-    border-radius: 3px;
-  }
-  .num-down {
-    background-color: #fee2e2;
-    color: #991b1b;
-    font-weight: 700;
-    padding: 0 4px;
-    border-radius: 3px;
-  }
-  .num-key {
-    background-color: #e0e7ff;
-    color: #3730a3;
-    font-weight: 700;
-    padding: 0 4px;
-    border-radius: 3px;
-  }
-  .bilingual {
-    background-color: #f9fafb;
-    border: 1px solid #e5e7eb;
-    border-radius: 6px;
-    padding: 14px 16px;
-    margin: 10px 0;
-  }
-  .bilingual .en-title {
-    font-size: 15px;
-    font-weight: 700;
-    color: #111827;
-    margin: 0 0 4px 0;
-  }
-  .bilingual .en-summary {
-    font-size: 14px;
-    color: #374151;
-    margin: 4px 0 8px 0;
-    line-height: 1.5;
-  }
-  .vocab-card {
-    background-color: #ffffff;
-    border: 1px solid #d1d5db;
-    border-radius: 4px;
-    padding: 10px 12px;
-    margin-top: 8px;
-  }
-  .vocab-title {
-    font-size: 13px;
-    font-weight: 700;
-    color: #4b5563;
-    margin-bottom: 6px;
-  }
-  .vocab-list .vocab-item {
-    display: inline-block;
-    margin-right: 16px;
-    font-size: 13px;
-    color: #1f2937;
-  }
-  .compare-box {
-    background-color: #f3f4f6;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    padding: 14px 16px;
-    margin: 16px 0;
-    display: inline-block;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .compare-side {
-    display: inline-block;
-    width: 46%;
-    vertical-align: top;
-    padding: 6px 10px;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #1f2937;
-  }
-  .compare-bull {
-    background-color: #d1fae5;
-    border-radius: 4px;
-    margin-right: 4%;
-  }
-  .compare-bear {
-    background-color: #fee2e2;
-    border-radius: 4px;
-  }
-  .compare-label {
-    font-weight: 700;
-    font-size: 14px;
-    margin-bottom: 4px;
-  }
-  .deepdive {
-    margin: 10px 0 8px 0;
-    border: 1px solid #e5e7eb;
-    border-radius: 6px;
-    padding: 6px 12px;
-    background-color: #fafafa;
-  }
-  .deepdive summary {
-    font-weight: 600;
-    font-size: 14px;
-    color: #374151;
-    cursor: pointer;
-    padding: 4px 0;
-  }
-  .deepdive-content {
-    margin-top: 8px;
-    padding-left: 4px;
-  }
-  .dl {
-    font-size: 14px;
-    line-height: 1.6;
-    margin: 6px 0;
-    color: #2d2d2d;
-  }
-  .dl-label {
-    font-weight: 700;
-    color: #1e40af;
-  }
-  .item-source {
-    font-size: 12px;
-    color: #6b7280;
-    margin: 6px 0 16px 0;
-  }
-  .item-source a {
-    color: #2563eb;
-    text-decoration: none;
-  }
-  .item-source a:hover {
-    text-decoration: underline;
-  }
-  .trend-comment {
-    background-color: #f1f5f9;
-    padding: 12px 16px;
-    border-radius: 6px;
-    font-size: 14px;
-    line-height: 1.6;
-    color: #1e293b;
-    margin: 20px 0 30px 0;
-    border-left: 3px solid #64748b;
-  }
-  .timeline {
-    background-color: #fffbeb;
-    border: 1px solid #fde68a;
-    border-radius: 6px;
-    padding: 16px 20px;
-    margin: 20px 0;
-  }
-  .timeline h4 {
-    margin: 0 0 10px 0;
-    color: #92400e;
-  }
-  .timeline-item {
-    font-size: 14px;
-    margin: 6px 0;
-    color: #1e293b;
-  }
-  .timeline-date {
-    display: inline-block;
-    background-color: #fef3c7;
-    color: #78350f;
-    font-weight: 700;
-    padding: 2px 10px;
-    border-radius: 4px;
-    margin-right: 10px;
-    font-size: 13px;
-  }
-  .footer {
-    margin-top: 30px;
-    padding-top: 16px;
-    border-top: 1px solid #e5e7eb;
-    text-align: center;
-    font-size: 13px;
-    color: #9ca3af;
-  }
-  hr {
-    border: none;
-    border-top: 1px solid #e5e7eb;
-    margin: 18px 0;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全球动态日报 | 2026-06-24</title>
+  <style>
+    body {
+      background-color: #f4f5f7;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.5;
+      color: #1a1a1a;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 30px 28px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      border-bottom: 2px solid #e9ecef;
+      padding-bottom: 8px;
+      margin-top: 32px;
+      margin-bottom: 20px;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 12px 0;
+    }
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0 0 10px 0;
+    }
+    a {
+      color: #1e6bb8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .overview {
+      background-color: #f0f4fe;
+      padding: 18px 20px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      border-left: 5px solid #2b5fbf;
+    }
+    .overview p {
+      margin: 8px 0 12px 0;
+      font-size: 15px;
+    }
+    .overview-tags {
+      display: block;
+      margin-top: 8px;
+    }
+    .overview-tag {
+      display: inline-block;
+      background-color: #dce5f8;
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-right: 8px;
+      margin-bottom: 4px;
+      color: #1f3a7a;
+    }
+    .section-block {
+      margin-bottom: 36px;
+      border-bottom: 1px solid #e2e6ea;
+      padding-bottom: 12px;
+    }
+    .news-item {
+      background-color: #fafbfc;
+      padding: 16px 18px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #e9edf0;
+    }
+    .item-header {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .item-header .title {
+      font-weight: 700;
+      font-size: 17px;
+      margin-right: 12px;
+    }
+    .stars {
+      color: #f5b342;
+      font-size: 15px;
+      letter-spacing: 1px;
+      margin-right: 12px;
+    }
+    .impact {
+      display: inline-block;
+      padding: 2px 12px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    .impact-high {
+      background-color: #fce4e4;
+      color: #b91c1c;
+    }
+    .impact-med {
+      background-color: #fff1d6;
+      color: #a16207;
+    }
+    .impact-low {
+      background-color: #e5f3e5;
+      color: #1f6d1f;
+    }
+    .risk-red {
+      display: inline-block;
+      background-color: #fce8e8;
+      color: #b91c1c;
+      padding: 2px 10px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-right: 4px;
+    }
+    .risk-yellow {
+      display: inline-block;
+      background-color: #fff3cd;
+      color: #856404;
+      padding: 2px 10px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-right: 4px;
+    }
+    .item-summary {
+      margin: 10px 0;
+      font-size: 15px;
+      background-color: #ffffff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border-left: 4px solid #b3c9f0;
+    }
+    .num-up {
+      background-color: #daf0da;
+      font-weight: 600;
+      padding: 0 5px;
+      border-radius: 4px;
+      color: #0a5f0a;
+    }
+    .num-down {
+      background-color: #fad7d7;
+      font-weight: 600;
+      padding: 0 5px;
+      border-radius: 4px;
+      color: #a51b1b;
+    }
+    .num-key {
+      background-color: #e6eefc;
+      font-weight: 600;
+      padding: 0 5px;
+      border-radius: 4px;
+      color: #1f4e8c;
+    }
+    .bilingual {
+      background-color: #f8faff;
+      border: 1px solid #d6e0f0;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 14px 0;
+    }
+    .en-title {
+      font-weight: 700;
+      font-size: 16px;
+      color: #003366;
+      margin: 0 0 6px 0;
+    }
+    .en-summary {
+      font-size: 14px;
+      color: #2c3e50;
+      margin: 4px 0 10px 0;
+    }
+    .vocab-card {
+      background-color: #eef3fa;
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+    .vocab-title {
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+    .vocab-list {
+      display: block;
+    }
+    .vocab-item {
+      display: inline-block;
+      background-color: #ffffff;
+      border-radius: 20px;
+      padding: 2px 12px;
+      font-size: 13px;
+      margin: 3px 4px 3px 0;
+      border: 1px solid #becfe6;
+    }
+    .compare-box {
+      display: block;
+      background-color: #f6f8fc;
+      border: 1px solid #d0daea;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 16px 0;
+    }
+    .compare-side {
+      display: inline-block;
+      width: 45%;
+      vertical-align: top;
+      padding: 6px 12px;
+      font-size: 14px;
+    }
+    .compare-bull {
+      background-color: #ebf7eb;
+      border-radius: 8px;
+      margin-right: 4%;
+    }
+    .compare-bear {
+      background-color: #fdeaea;
+      border-radius: 8px;
+    }
+    .compare-label {
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .deepdive {
+      margin: 14px 0 8px 0;
+      border: 1px solid #dfe5ef;
+      border-radius: 10px;
+      padding: 6px 14px;
+      background-color: #fafcff;
+    }
+    .deepdive summary {
+      font-weight: 600;
+      cursor: pointer;
+      color: #1f4e8c;
+      padding: 6px 0;
+    }
+    .deepdive-content {
+      padding: 8px 0 4px 0;
+    }
+    .dl {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+    .dl-label {
+      font-weight: 600;
+      color: #2a4b7c;
+    }
+    .item-source {
+      font-size: 13px;
+      color: #5e6f8d;
+      margin-top: 12px;
+      border-top: 1px dashed #dce2ed;
+      padding-top: 8px;
+    }
+    .trend-comment {
+      background-color: #f3f6fb;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 15px;
+      margin: 12px 0 20px 0;
+      border-left: 4px solid #5b7fb5;
+      font-weight: 500;
+    }
+    .timeline {
+      background-color: #fcf8e7;
+      border: 1px solid #e6dba8;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 28px 0 20px 0;
+    }
+    .timeline-item {
+      display: block;
+      margin: 6px 0;
+      font-size: 15px;
+    }
+    .timeline-date {
+      display: inline-block;
+      background-color: #eae1b2;
+      padding: 2px 12px;
+      border-radius: 30px;
+      font-weight: 600;
+      margin-right: 12px;
+      font-size: 14px;
+    }
+    .footer-note {
+      text-align: center;
+      font-size: 13px;
+      color: #6b7a98;
+      margin-top: 30px;
+      border-top: 1px solid #e2e6ea;
+      padding-top: 18px;
+    }
+    .header-date {
+      font-size: 14px;
+      color: #4a5b7a;
+      margin-bottom: 6px;
+    }
+  </style>
 </head>
 <body>
 <div class="container">
 
-<!-- 今日综述 -->
-<div class="overview">
-  <h3>🧠 今日 AI 综述</h3>
-  <p>今日简报聚焦中国AI大模型进入差异化内卷新阶段，头部模型转向场景专精；硬科技领域存储芯片涨价传导至消费电子，iPhone 18 Pro制造成本飙升；地缘方面，中国断供稀土钨材对日本工业造成实质性冲击，汽车与军工产业链承压。整体风向：科技端竞争白热化，供应链风险升温，宏观面缺乏明确信号。</p>
-  <div class="overview-tags">
-    <span class="overview-tag">🤖 大模型内卷</span>
-    <span class="overview-tag">💾 芯片涨价潮</span>
-    <span class="overview-tag">🔴 稀土断供冲击</span>
-    <span class="overview-tag">📱 iPhone成本飙升</span>
-  </div>
-</div>
+  <!-- 日期 -->
+  <div class="header-date">📅 2026年6月24日 · 全球动态日报</div>
 
-<!-- ==================== 1. 生命科学 ==================== -->
-<h2>🧬 生命科学 / 医学</h2>
-
-<div class="item-header">
-  <span class="title">基因基础概念：Mendelian与分子基因定义</span>
-  <span class="meta"><span class="star">⭐⭐⭐</span></span>
-  <span class="impact impact-low">冲击：Low</span>
-</div>
-<div class="item-summary">
-  维基百科等基础资料重申基因的两种经典定义：孟德尔基因作为遗传基本单位，分子基因则是DNA中转录为RNA的核苷酸序列。虽无突破性发现，但对于理解后续基因编辑等前沿进展至关重要。
-</div>
-<div class="bilingual">
-  <p class="en-title">Fundamental Gene Concepts: Mendelian vs. Molecular Definitions</p>
-  <p class="en-summary">Encyclopedic sources reiterate the dual definition of genes: as Mendelian units of heredity and as molecular DNA sequences transcribed into RNA. While not a breakthrough, this foundational knowledge underpins all modern genetic research.</p>
-  <div class="vocab-card">
-    <div class="vocab-title">📖 Key Vocabulary</div>
-    <div class="vocab-list">
-      <span class="vocab-item"><b>heredity</b> 遗传</span>
-      <span class="vocab-item"><b>nucleotide</b> 核苷酸</span>
-      <span class="vocab-item"><b>transcribe</b> 转录</span>
+  <!-- 第一步：综述模块 -->
+  <div class="overview">
+    <h3>🧠 今日动态综述</h3>
+    <p>今日简报呈现三大主线：字节跳动豆包大模型日均Tokens使用量突破<span class="num-key">180万亿</span>，两年增长<span class="num-up">1500倍</span>，中国AI应用层加速爆发；NVIDIA发布仅<span class="num-key">0.6B</span>参数语音模型，边缘计算与小型化趋势确立；存储芯片涨价传导至消费电子，iPhone 18 Pro成本预估飙升<span class="num-up">+24.7%</span>。地缘方面，缅甸总统访华、一带一路工业AI培训启动，中国科技外交与供应链韧性成为焦点。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🚀 豆包爆发</span>
+      <span class="overview-tag">🧠 边缘AI</span>
+      <span class="overview-tag">💾 存储涨价</span>
+      <span class="overview-tag">🌏 科技外交</span>
+      <span class="overview-tag">📱 成本通胀</span>
     </div>
   </div>
-</div>
-<details class="deepdive">
-<summary>📖 深度解读</summary>
-<div class="deepdive-content">
-  <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>基因定义看似基础，实则是整个生命科学的基石。孟德尔基因对应性状遗传，分子基因对应具体DNA序列操作。好比"建筑蓝图"(孟德尔) vs "具体砖块排列"(分子)。</p>
-  <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：巩固教学与科普基础；中长期：精准基因治疗需同时理解两种定义，指导CRISPR等工具的设计。</p>
-  <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若完全普及，公众对遗传学的理解将提升，减少对基因编辑的恐惧，推动更理性的公共政策讨论。</p>
-</div>
-</details>
-<p class="item-source">来源：<a href="https://en.wikipedia.org/wiki/Gene" target="_blank">Wikipedia</a> | <a href="https://www.genome.gov/genetics-glossary/Gene" target="_blank">Genome.gov</a></p>
 
-<div class="trend-comment">📊 板块趋势：今日生命科学板块无重大突破性新闻，以基础概念回顾为主。领域内正处于技术爆发前的平静期，CRISPR临床化与基因治疗商业化仍是中长期核心主线。</div>
+  <!-- =============== 板块1：生命科学 =============== -->
+  <div class="section-block">
+    <h2>🧬 生命科学 / 医学</h2>
 
-<!-- ==================== 2. 经济/金融 ==================== -->
-<h2>💰 经济 / 金融</h2>
+    <!-- 新闻 #1 基因基本概念（低冲击，但作为基础更新） -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="title">基因定义更新：孟德尔基因与分子基因双轨框架</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        维基百科与多机构更新基因条目，重申"孟德尔基因"（遗传单位）与"分子基因"（DNA转录序列）的双重定义。这一基础概念澄清为基因编辑与合成生物学提供更精确的交流框架，但短期内无直接产业冲击。
+      </div>
+      <!-- bilingual -->
+      <div class="bilingual">
+        <p class="en-title">Updated Definition of 'Gene': Mendelian vs. Molecular Framework</p>
+        <p class="en-summary">Wikipedia and major health portals have updated the definition of 'gene', emphasizing the dual meaning: the Mendelian gene as a unit of heredity and the molecular gene as a DNA sequence transcribed into RNA. This clarification supports more precise communication in gene editing and synthetic biology research.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>Mendelian gene</b> 孟德尔基因</span>
+            <span class="vocab-item"><b>nucleotide sequence</b> 核苷酸序列</span>
+            <span class="vocab-item"><b>transcription</b> 转录</span>
+          </div>
+        </div>
+      </div>
+      <!-- deepdive -->
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>基因的定义从经典遗传学（功能单位）扩展到分子生物学（可转录的DNA序列）。好比一本书既可以被看作"一个故事"（孟德尔），也可以被看作"一叠印有文字的纸"（分子）。这次更新统一了教学与科研用语。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期内对基因治疗、CRISPR临床试验的申报规范有间接影响；中长期有助于降低跨学科沟通成本，尤其对AI蛋白质设计等交叉领域。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果全球生物教材都采用双轨定义，未来医生和患者讨论遗传病时将减少概念混淆，精准医疗的知情同意更加高效。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://en.wikipedia.org/wiki/Gene" target="_blank">Wikipedia</a> · <a href="https://my.clevelandclinic.org/health/body/gene" target="_blank">Cleveland Clinic</a></p>
+    </div>
 
-<div class="item-header">
-  <span class="title">iPhone 18 Pro制造成本飙升至726美元，存储芯片涨价传导</span>
-  <span class="meta"><span class="star">⭐⭐⭐</span></span>
-  <span class="impact impact-high">冲击：High</span>
-  <span class="risk-yellow">🟡 值得观察</span>
-</div>
-<div class="item-summary">
-  受全球存储芯片涨价影响，分析指出iPhone 18 Pro制造成本将从iPhone 17 Pro的<span class="num-up">582美元</span>大幅增至<span class="num-up">726美元</span>，增幅达<span class="num-up">24.7%</span>。Apple CEO Tim Cook已暗示部分产品价格可能上调，消费电子通胀压力显现。
-</div>
-<div class="bilingual">
-  <p class="en-title">iPhone 18 Pro Manufacturing Cost Surges to $726 Amid Memory Chip Price Hike</p>
-  <p class="en-summary">Driven by a global memory chip price surge, the manufacturing cost of the iPhone 18 Pro is estimated to jump to $726 from $582 for the iPhone 17 Pro, a 24.7% increase. Apple CEO Tim Cook has hinted at potential price adjustments, signaling inflationary pressure in consumer electronics.</p>
-  <div class="vocab-card">
-    <div class="vocab-title">📖 Key Vocabulary</div>
-    <div class="vocab-list">
-      <span class="vocab-item"><b>manufacturing cost</b> 制造成本</span>
-      <span class="vocab-item"><b>memory chip</b> 存储芯片</span>
-      <span class="vocab-item"><b>price hike</b> 价格上涨</span>
+    <div class="trend-comment">📊 板块趋势：生命科学板块今日无重磅突破新闻，基础概念更新反映出学术界对术语精确性的持续追求。基因编辑与合成生物学领域仍在积蓄能量，预计下半年将有更多临床数据读出。</div>
+  </div>
+
+  <!-- =============== 板块2：经济/金融 =============== -->
+  <div class="section-block">
+    <h2>💰 经济 / 金融</h2>
+
+    <!-- 新闻 #7 美股混合盘 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="title">美股科技巨头回调拖累大盘，市场情绪分化</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-summary">
+        美国主要股指表现分化，大型科技股显著回调，拖累纳斯达克指数承压。市场对AI估值过高的担忧与美联储政策不确定性形成叠加，避险情绪有所升温。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">U.S. Stock Market Mixed as Mega-Cap Tech Retreats</p>
+        <p class="en-summary">Major U.S. stock indexes experienced a mixed session as a significant retreat in mega-cap technology stocks pressured the Nasdaq. Investors weighed elevated AI valuations against cautious Federal Reserve commentary, leading to a risk-off tone in late trading.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>mega-cap tech</b> 超大型科技股</span>
+            <span class="vocab-item"><b>retreat</b> 回调/下跌</span>
+            <span class="vocab-item"><b>risk-off</b> 避险模式</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>科技巨头（苹果、微软、英伟达等）股价下跌，带动纳斯达克走弱。市场开始质疑AI概念股的盈利兑现时间表，叠加利率维持高位的预期，资金从成长股流向防御板块。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期可能引发更大范围的科技股获利了结，但AI基础设施投资热潮尚未见顶。中长期看，若Q3财报季业绩不及预期，调整幅度可能加深。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果AI泡沫温和破裂，资金将流向医疗、工业自动化等"AI+传统行业"的务实应用，市场结构更健康。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.google.com/finance/beta" target="_blank">Google Finance</a></p>
+    </div>
+
+    <!-- 新闻 #21 间接经济影响：iPhone成本上涨 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="title">存储芯片涨价传导：iPhone 18 Pro 制造成本或飙升至 <span class="num-key">726美元</span></span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <div class="item-summary">
+        受全球存储芯片涨价影响，分析指出iPhone 18 Pro制造成本将从<span class="num-key">582美元</span>增至<span class="num-key">726美元</span>，涨幅达<span class="num-up">+24.7%</span>。苹果CEO库克此前已暗示部分产品可能调价，消费电子通胀压力加剧。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">iPhone 18 Pro Manufacturing Cost Surges to $726 Amid Memory Chip Price Hike</p>
+        <p class="en-summary">Global memory chip price increases are driving up smartphone production costs. Analyst estimates show the iPhone 18 Pro bill of materials rising from $582 to $726, a 24.7% increase. Apple CEO Tim Cook has hinted at potential price adjustments for upcoming products.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>bill of materials (BOM)</b> 物料成本</span>
+            <span class="vocab-item"><b>memory chip</b> 存储芯片</span>
+            <span class="vocab-item"><b>price hike</b> 价格上涨</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>全球存储芯片（DRAM/NAND）因AI服务器需求挤占产能而持续涨价，直接推高旗舰手机物料清单。iPhone 18 Pro成本增加<span class="num-key">144美元</span>，其中存储部分占比最大。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期苹果可能通过削减其他组件成本或提高售价来对冲；中长期若存储价格持续高企，安卓旗舰也将被迫跟涨，2027年全球智能手机均价或上升<span class="num-up">8-12%</span>。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果存储芯片涨价持续两年，可能加速手机厂商自研存储芯片或转向新型存储技术（如MRAM），重塑供应链格局。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.facebook.com/technavecn/posts/..." target="_blank">TechNave 中文版</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：今日经济信号偏谨慎——科技股回调与消费电子成本上涨形成双重压力。存储芯片涨价正在从上游传导至终端，投资者需关注下周苹果官方是否发布价格调整预警。</div>
+  </div>
+
+  <!-- =============== 板块3：人工智能 =============== -->
+  <div class="section-block">
+    <h2>🤖 人工智能</h2>
+
+    <!-- 新闻 #18 豆包大模型 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="title">字节跳动豆包大模型：日均Tokens突破 <span class="num-key">180万亿</span>，两年增长 <span class="num-up">1500倍</span></span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+      </div>
+      <div class="item-summary">
+        字节跳动火山引擎在Force原动力大会上宣布，豆包大模型日均Tokens使用量已达<span class="num-key">180万亿</span>，两年增长<span class="num-up">1500倍</span>。豆包已成为中国应用最广的大模型之一，覆盖搜索、办公、娱乐等场景，标志着中国AI应用层进入爆发期。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">ByteDance's Doubao LLM Hits 180 Trillion Daily Tokens, 1500x Growth in Two Years</p>
+        <p class="en-summary">At the Force Origin Conference, ByteDance's Volcano Engine revealed that its Doubao large language model now processes 180 trillion tokens per day, a 1,500-fold increase over two years. The model powers search, productivity, and entertainment applications, signaling a massive ramp in China's AI inference demand.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>tokens</b> 令牌/词元</span>
+            <span class="vocab-item"><b>inference</b> 推理</span>
+            <span class="vocab-item"><b>productivity</b> 生产力</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Tokens是AI模型处理文本的最小单位。180万亿日均Tokens意味着每秒处理约<span class="num-key">2.08亿</span>个词元，相当于每秒阅读约<span class="num-key">1.5亿</span>个汉字。这背后需要庞大的GPU集群支撑。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期豆包将进一步渗透教育、客服、内容创作领域；中长期若保持增速，2027年日均Tokens有望突破<span class="num-key">500万亿</span>，推动中国AI芯片需求持续高涨。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当AI使用成本趋近于零，每个人都将拥有个性化AI助手，信息获取效率提升百倍，教育、医疗、法律等专业服务普惠化。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://news.qq.com/rain/a/20260623A05ABO00" target="_blank">腾讯新闻</a></p>
+    </div>
+
+    <!-- 新闻 #25 NVIDIA 0.6B语音模型 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="title">NVIDIA发布仅 <span class="num-key">0.6B</span> 参数语音识别模型，纯CPU即可运行</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+      </div>
+      <div class="item-summary">
+        NVIDIA推出参数量仅<span class="num-key">0.6B</span>的语音识别模型，支持<span class="num-key">40</span>种语言实时串流转录，无需GPU即可在纯CPU或Apple Silicon上运行。这一突破大幅降低了AI语音部署门槛，边缘设备AI能力迎来质变。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">NVIDIA Unveils 0.6B Parameter Speech Recognition Model, Runs on CPU Only</p>
+        <p class="en-summary">NVIDIA has released a compact speech recognition model with just 0.6 billion parameters that supports real-time streaming transcription across 40 languages. It runs entirely on CPU or Apple Silicon, eliminating the need for dedicated GPUs. This marks a significant step toward ubiquitous edge AI voice interfaces.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>speech recognition</b> 语音识别</span>
+            <span class="vocab-item"><b>streaming transcription</b> 实时串流转录</span>
+            <span class="vocab-item"><b>edge AI</b> 边缘人工智能</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>0.6B参数相当于GPT-2的规模，但针对语音任务高度优化。模型可在笔记本电脑甚至手机上运行，实现离线、低延迟的语音交互。好比把一整个人工智能语音助手"压缩"成一个App的大小。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期智能音箱、汽车语音助手、会议转录设备将率先受益；中长期可集成到AR眼镜、助听器等可穿戴设备中，2028年AI语音芯片市场有望翻倍。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来所有电子设备都能"听懂"人类语言，且无需联网。语言障碍将大幅消解，实时翻译成为基础功能，全球沟通进入"无感"时代。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.facebook.com/unwirehk/posts/nvidia-推出一個只有-06b-參數的語音辨識模型..." target="_blank">UNWIRE.HK</a></p>
+    </div>
+
+    <!-- 新闻 #16 AI大模型排行榜 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="title">2026年6月AI大模型排行榜更新：ARC-AGI-2等新基准引关注</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        DataLearnerAI发布2026年6月大模型排行榜，引入ARC-AGI-2、AIME 2025、SWE-bench Verified等新评测基准。中国模型在综合排名中表现强劲，但推理与代码生成仍是差异化核心。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">June 2026 LLM Leaderboard: New Benchmarks Reshape Rankings</p>
+        <p class="en-summary">DataLearnerAI updated its comprehensive LLM leaderboard for June 2026, incorporating ARC-AGI-2, AIME 2025, and SWE-bench Verified. Chinese models show strong performance in general tasks, while reasoning and code generation remain key differentiators among top contenders.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>benchmark</b> 基准测试</span>
+            <span class="vocab-item"><b>reasoning</b> 推理能力</span>
+            <span class="vocab-item"><b>code generation</b> 代码生成</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>ARC-AGI-2测试模型在未知任务上的泛化能力，AIME 2025侧重数学推理，SWE-bench评估软件工程能力。新基准更关注"智能"而非"记忆"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>排行榜洗牌将引导研发投入向推理与泛化倾斜。短期中国模型在应用层优势明显，中长期基础架构的差距仍需追赶。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当模型在ARC-AGI上接近人类水平时，AGI的临界点将真正到来，AI将从"工具"进化为"伙伴"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.datalearner.com/leaderboards" target="_blank">DataLearnerAI</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI板块呈现"一大一小"双主线——豆包代表超大规模应用层爆发，NVIDIA 0.6B模型代表边缘智能下沉。算力需求仍在膨胀，但小型化、低成本化趋势开始显现，AI民主化进程加速。</div>
+  </div>
+
+  <!-- =============== 板块4：科技/硬科技 =============== -->
+  <div class="section-block">
+    <h2>💻 科技 / 硬科技</h2>
+
+    <!-- 新闻 #21 存储涨价已在上文经济金融板块使用，此处补充Intel+UMC 3nm合作 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="title">Intel与UMC被传合作研发3nm工艺，分析人士质疑逻辑</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-summary">
+        市场传闻Intel与联电(UMC)将合作开发3nm制程，但产业分析指出，Intel已有自家3nm/4nm代工版本，与当年12nm合作背景不同。该传闻真实性存疑，但反映出全球晶圆代工合作模式的复杂性。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Intel and UMC Rumored to Collaborate on 3nm Process; Analysts Skeptical</p>
+        <p class="en-summary">Rumors have emerged that Intel and United Microelectronics Corporation (UMC) may jointly develop a 3nm manufacturing process. However, industry analysts note that Intel already has its own 3nm/4nm foundry offerings, unlike the earlier 12nm collaboration. The feasibility and strategic rationale remain questionable.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>foundry</b> 晶圆代工</span>
+            <span class="vocab-item"><b>process node</b> 制程节点</span>
+            <span class="vocab-item"><b>collaboration</b> 合作</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Intel在IDM 2.0战略下开放代工，但与UMC合作3nm在技术上重叠。好比两家汽车公司合作设计同一款发动机，但其中一家已有自家发动机生产线。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>若属实，可能帮助UMC快速获得先进制程能力，但IP划分与客户重叠是难点。短期对台积电地位无影响，中长期可能重塑二线代工厂格局。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来晶圆代工可能走向"模块化合作"——不同公司各负责部分工艺，类似航空发动机的全球供应链模式。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.facebook.com/100054201473657/posts/..." target="_blank">Richard只談基本面</a></p>
+    </div>
+
+    <!-- 新闻 #25 已用于AI板块，此处补充车祸记录仪芯片新闻（硬科技） -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="title">联咏芯片主控记录仪新品发布，SONY STARVIS 2 旗舰传感器上车</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        大邁K98行车记录仪采用3联咏芯片主控与SONY STARVIS 2 IMX678传感器，支持前后<span class="num-key">4K</span>录制。该产品反映车载视觉芯片向高动态范围、低照度方向持续升级，供应链国产化趋势明显。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">New Dashcam Features Triple Novatek Chips and SONY STARVIS 2 Sensor</p>
+        <p class="en-summary">The Damai K98 dashcam is powered by triple Novatek main controllers and a SONY STARVIS 2 IMX678 sensor, enabling front and rear 4K recording. The product highlights the trend toward high-dynamic-range imaging and localized supply chain integration in automotive vision.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>dashcam</b> 行车记录仪</span>
+            <span class="vocab-item"><b>image sensor</b> 图像传感器</span>
+            <span class="vocab-item"><b>high dynamic range</b> 高动态范围</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>STARVIS 2是索尼新一代背照式传感器，暗光性能提升<span class="num-up">2倍</span>。联咏芯片主控负责图像处理与编码，三者组合代表消费级车载视觉的顶级配置。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期高端记录仪市场将快速采用；中长期随着自动驾驶等级提升，类似传感器将集成到ADAS系统中，2028年车载CIS市场规模或突破<span class="num-key">50亿美元</span>。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来每辆车都拥有"永不闭眼"的视觉系统，事故责任判定将完全依赖客观影像数据，保险理赔实现自动化。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.facebook.com/wowtchout/videos/..." target="_blank">Wowtchout</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技板块今日焦点分散——先进制程合作传闻反映地缘技术博弈，车载芯片升级则体现消费电子与汽车电子的融合。存储涨价与AI芯片需求正在重塑整个半导体价值链。</div>
+  </div>
+
+  <!-- =============== 板块5：材料科学 =============== -->
+  <div class="section-block">
+    <h2>🔬 材料科学</h2>
+
+    <!-- 新闻 #34 Sam's Club 加油站关闭：材料相关？ 选为能源基础设施 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="title">Sam's Club 部分加油站关闭，燃料零售基础设施调整</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        2026年6月，Sam's Club部分加油站关闭引发会员关注。作为美国大型仓储式燃料零售商，其调整可能反映燃油零售向电动车充电桩转型的长期趋势，但短期对汽油供应链影响有限。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Sam's Club Gas Station Closures Signal Infrastructure Shift</p>
+        <p class="en-summary">Multiple Sam's Club gas stations have closed in June 2026, prompting member concerns. While the immediate impact on fuel supply is minimal, the closures may reflect a broader strategic pivot toward EV charging infrastructure as the automotive market transitions.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>gas station</b> 加油站</span>
+            <span class="vocab-item"><b>infrastructure</b> 基础设施</span>
+            <span class="vocab-item"><b>EV charging</b> 电动车充电</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Sam's Club运营约<span class="num-key">600</span>个加油站，此次关闭涉及部分门店。材料科学层面，加油站地下储油罐的防腐材料、管道复合材料等维护成本上升，也可能是决策因素之一。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期汽油价格不受影响；中长期若关闭潮扩大，将加速加油站向充电站改造，对电池材料、充电桩复合材料形成新需求。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>2035年后的仓储式零售加油站将变成"能源驿站"——同时提供汽油、超快充、氢燃料，材料科学将决定每种能源存储方式的安全性与成本。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://usahousinginformation.com/sams-club-gas-station-closure/" target="_blank">USA Housing Information</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学板块今日缺乏突破性进展，但能源基础设施的材料替换（加油站转型）是一个值得关注的长期信号。电池材料、耐腐蚀复合材料、轻量化储氢材料将是未来5年的材料科学投资主线。</div>
+  </div>
+
+  <!-- =============== 板块6：中国政策与监管 =============== -->
+  <div class="section-block">
+    <h2>🇨🇳 中国政策与监管</h2>
+
+    <!-- 新闻 #52 缅甸总统访华 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="title">缅甸总统敏昂莱就任后首次访华，深化"胞波"合作</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        缅甸总统敏昂莱对中国进行国事访问，这是他就任后首次访华。双方强调"胞波情谊"，预计将签署多项基础设施与能源合作协议。此举在地缘博弈中巩固了中国西南方向战略通道。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Myanmar President Min Aung Hlaing Makes First State Visit to China</p>
+        <p class="en-summary">Myanmar's President Min Aung Hlaing is on his first state visit to China since taking office. Both sides emphasized the 'pauk-phaw' (fraternal) friendship and are expected to sign multiple infrastructure and energy cooperation agreements, strengthening China's strategic corridor in Southeast Asia.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>state visit</b> 国事访问</span>
+            <span class="vocab-item"><b>pauk-phaw</b> 胞波（缅语：兄弟）</span>
+            <span class="vocab-item"><b>strategic corridor</b> 战略通道</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>缅甸地处中国"一带一路"与印度洋战略交汇点。敏昂莱访华重点包括中缅经济走廊、皎漂港项目以及稀土供应协议。好比中国在西南方向修建一条"陆海大通道"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将签署多项备忘录，皎漂港建设有望提速；中长期若中缅铁路贯通，中国将获得印度洋出海口，绕开马六甲海峡，能源安全大幅提升。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来从重庆坐火车可直达缅甸仰光港，再换船直达中东，全程比海运快<span class="num-up">40%</span>，内陆省份真正成为开放前沿。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.facebook.com/PearlNewsHK/posts/..." target="_blank">香港明珠传媒</a></p>
+    </div>
+
+    <!-- 新闻 #53 一带一路工业AI培训 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="title">"一带一路"工业AI国际培训计划在上海启动</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        由中国发起的"一带一路"国家工业AI应用国际培训计划在上海正式启动。来自多国的技术专家将参与深度学习与智能制造培训，这是中国向外输出AI技术标准与治理框架的重要举措。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Belt and Road Industrial AI Training Program Kicks Off in Shanghai</p>
+        <p class="en-summary">The International Training Program on Industrial AI Applications for Belt and Road countries officially launched in Shanghai. Experts from multiple nations will participate in deep learning and smart manufacturing sessions, marking China's push to export AI technical standards and governance frameworks.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>industrial AI</b> 工业人工智能</span>
+            <span class="vocab-item"><b>smart manufacturing</b> 智能制造</span>
+            <span class="vocab-item"><b>technical standards</b> 技术标准</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>该培训计划面向"一带一路"沿线国家政府与产业界，教授AI在工业质检、预测性维护、供应链优化等场景的应用。本质上是技术外交与标准输出。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将提升中国AI企业在沿线国家的品牌认知；中长期若培训体系被采纳为当地标准，中国AI平台将获得类似"安卓生态"的网络效应。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来"一带一路"国家的工厂里运行的AI系统都基于中国框架，数据流、更新流、利润流都将汇聚回中国，形成数字时代的"丝绸之路"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.facebook.com/chinadaily/videos/..." target="_blank">China Daily</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策板块今日聚焦"科技外交"——通过缅甸高层访问与一带一路AI培训，中国正系统性构建技术影响力网络。不同于硬件出口，软件与标准输出更具长期黏性，值得持续跟踪。</div>
+  </div>
+
+  <!-- =============== 板块7：地缘政治与国际关系 =============== -->
+  <div class="section-block">
+    <h2>🌍 地缘政治与国际关系</h2>
+
+    <!-- 新闻 #54 日本漂浮软管事件 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="title">日本海岸现巨型漂浮软管，清除费用<span class="num-key">96%</span>由纳税人承担</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-summary">
+        去年一条长<span class="num-key">150米</span>、重<span class="num-key">300吨</span>的黑色巨型漂浮软管漂上日本石川县海岸。清理费用中<span class="num-key">96%</span>由全国纳税人支付，仅<span class="num-key">4%</span>由县政府承担。事件引发对海洋塑料污染与跨国责任归属的讨论。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Giant Floating Hose Washes Ashore in Japan; 96% of Cleanup Cost Borne by Taxpayers</p>
+        <p class="en-summary">A 150-meter-long, 300-ton black floating hose drifted onto the coast of Ishikawa Prefecture, Japan. The cleanup cost is being covered 96% by national taxpayers and only 4% by the prefectural government, sparking debate on marine plastic pollution and cross-border liability for industrial waste.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>marine pollution</b> 海洋污染</span>
+            <span class="vocab-item"><b>cleanup cost</b> 清理费用</span>
+            <span class="vocab-item"><b>liability</b> 责任归属</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>该软管疑似来自海洋养殖或工业排污设施，随洋流漂至日本。由于无法追溯源头，清理费用按日本法律由中央政府承担大部分。好比小区里出现一袋垃圾找不到主人，全体业主分摊清理费。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期日本将加强海岸监测与快速清理机制；中长期可能推动国际海洋垃圾溯源协议，要求生产商对海洋废弃物承担延伸责任。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来每一件工业塑料制品都印有"电子身份证"，通过卫星追踪可实时定位，海洋垃圾将变得"有主可循"，污染成本内部化。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.facebook.com/unwirehk/posts/96清除費用由全日本納稅人付款..." target="_blank">UNWIRE.HK</a></p>
+    </div>
+
+    <!-- 新闻 #55 字节跳动成微软Azure最大AI客户 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="title">字节跳动成微软Azure最大AI客户，年支出逾 <span class="num-key">数十亿美元</span></span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <div class="item-summary">
+        在中美科技竞争背景下，字节跳动通过微软境外数据中心使用Azure AI服务，年支出超过数十亿美元，成为微软最大AI客户。这一合作既体现中国企业的全球化算力需求，也暴露地缘政治风险——一旦制裁升级，服务可能被切断。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">ByteDance Becomes Microsoft's Largest AI Customer, Spending Billions on Azure</p>
+        <p class="en-summary">Amid US-China tech tensions, ByteDance has become Microsoft's largest AI customer by spending billions of dollars annually on Azure services through overseas data centers. The relationship highlights Chinese tech giants' dependence on global cloud infrastructure and the geopolitical vulnerability of such arrangements.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>cloud infrastructure</b> 云基础设施</span>
+            <span class="vocab-item"><b>geopolitical risk</b> 地缘政治风险</span>
+            <span class="vocab-item"><b>sanctions</b> 制裁</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>字节跳动旗下TikTok与豆包等AI服务需要海量GPU算力，而英伟达高端芯片对华出口受限，因此通过微软的境外数据中心获取算力。这好比一家餐厅自己买不到面粉，但通过隔壁餐厅的厨房做面包。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期合作将继续，但美国商务部随时可能扩大限制范围。中长期中国科技企业将加速国产AI芯片部署与自建数据中心，2027年国产算力占比有望提升至<span class="num-key">40%</span>。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果全球云计算分裂为"中美两朵云"，跨国企业将被迫运营两套IT系统，数据主权与商业效率的冲突将成为新常态。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.facebook.com/unwirehk/posts/中美科技競爭下microsoft-繼續透過境外數據中心..." target="_blank">UNWIRE.HK</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘板块今日呈现"合作与风险并存"——缅甸访华、一带一路培训体现中国主动布局，而日海洋污染事件与字节-微软合作案例则暴露全球化退潮下的脆弱性。科技脱钩与供应链本地化仍是中长期主线。</div>
+  </div>
+
+  <!-- =============== 时间提醒模块（条件触发） =============== -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-06-30</span>
+      <span>字节跳动火山引擎Force大会后续产品发布窗口期</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-07-15</span>
+      <span>美国Q2财报季开启，苹果可能发布价格调整预警</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-08-01</span>
+      <span>缅甸总统敏昂莱访华后续合作协议签署预期</span>
     </div>
   </div>
-</div>
-<details class="deepdive">
-<summary>📖 深度解读</summary>
-<div class="deepdive-content">
-  <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>全球存储芯片（DRAM/NAND）进入涨价周期，直接推高智能手机BOM成本。iPhone 18 Pro成本增幅达25%，是近年来最大单代跳涨。</p>
-  <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：iPhone 18 Pro售价可能突破<span class="num-key">1299美元</span>起，抑制换机需求；中长期：倒逼Apple加速自研芯片与供应链多元化。</p>
-  <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若成本持续高企，消费电子可能进入"高端化+涨价"新常态，加速二手市场和租赁模式兴起。</p>
-</div>
-</details>
-<p class="item-source">来源：<a href="https://www.facebook.com/technavecn/posts/受全球存储芯片涨价影响apple-ceo-tim-cook早前已暗示部分产品价格可能上调最新分析指出iphone-18-pro的制造成本将从iphone-17-/1435669365258695/" target="_blank">TechNave 中文版 (Facebook)</a></p>
 
-<div class="trend-comment">📊 板块趋势：今日经济金融新闻较少，但iPhone成本飙升是重要信号——全球芯片涨价正从B2B传导至消费端，可能引发下半年多品牌跟涨，加剧全球通胀黏性。</div>
-
-<!-- ==================== 3. 人工智能 ==================== -->
-<h2>🤖 人工智能</h2>
-
-<div class="item-header">
-  <span class="title">2026国产大模型进入差异化内卷阶段，场景专精成核心策略</span>
-  <span class="meta"><span class="star">⭐⭐⭐</span></span>
-  <span class="impact impact-high">冲击：High</span>
-</div>
-<div class="item-summary">
-  2026年上半年国产大模型告别全能对标，进入"差异化极致内卷、场景专精突围"阶段。头部模型专注特定场景优化，不再追求六边形战士。同期AI大模型应用开发教程、技术落地路径解析等生态内容密集涌现，行业从模型竞赛转向应用落地。
-</div>
-<div class="bilingual">
-  <p class="en-title">China's LLM Market Enters Differentiated Competition Phase in 2026</p>
-  <p class="en-summary">In the first half of 2026, China's large language model (LLM) landscape has shifted from general-purpose competition to specialized, scenario-driven innovation. Leading models now focus on niche optimizations rather than being all-rounders. The ecosystem is rapidly maturing with a surge in application development tutorials and deployment pathway analyses.</p>
-  <div class="vocab-card">
-    <div class="vocab-title">📖 Key Vocabulary</div>
-    <div class="vocab-list">
-      <span class="vocab-item"><b>differentiated competition</b> 差异化竞争</span>
-      <span class="vocab-item"><b>scenario specialization</b> 场景专精</span>
-      <span class="vocab-item"><b>ecosystem maturation</b> 生态成熟</span>
-    </div>
+  <!-- Footer -->
+  <div class="footer-note">
+    全球动态日报 · 2026年6月24日 · 基于公开信息分析，不构成投资建议
   </div>
-</div>
-<details class="deepdive">
-<summary>📖 深度解读</summary>
-<div class="deepdive-content">
-  <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>2026上半年中国AI大模型从"参数竞赛"转向"场景深耕"。不再追求在所有Benchmark上领先，而是针对金融、医疗、代码等垂直领域深度优化。</p>
-  <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：企业采购模型将更看重ROI而非参数大小；中长期：催生一批垂直领域冠军模型，推动AI在B端规模化落地。</p>
-  <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若场景专精成功，AI将从"通用工具"变为"行业专家"，每个行业都有专属大模型，大幅提升专业领域效率。</p>
-</div>
-</details>
-<p class="item-source">来源：<a href="https://blog.csdn.net/qq_17859117/article/details/162260998" target="_blank">CSDN</a> | <a href="https://www.weste.net/2026/06-24/2026-1-6-AI-Model.html" target="_blank">weste.net</a></p>
-
-<div class="trend-comment">📊 板块趋势：AI板块呈现"模型收敛、应用爆发"特征。国产大模型从军备竞赛转向务实落地，配套开发者生态快速成熟。下半年关注点：场景化模型能否产生可量化的商业价值，以及中美模型差距是否进一步缩小。</div>
-
-<!-- ==================== 4. 科技/硬科技 ==================== -->
-<h2>💻 科技 / 硬科技</h2>
-
-<div class="item-header">
-  <span class="title">Intel与UMC合作研发3nm传闻引质疑</span>
-  <span class="meta"><span class="star">⭐⭐⭐</span></span>
-  <span class="impact impact-med">冲击：Med</span>
-</div>
-<div class="item-summary">
-  关于Intel与UMC合作研发<span class="num-key">3nm</span>制程的传闻引发业内质疑。分析指出，Intel的<span class="num-key">14nm</span>仅有自用版而无代工版，但<span class="num-key">3nm/4nm</span>已有代工方案，合作逻辑存疑。该传闻若为真，将重塑代工格局，但可信度偏低。
-</div>
-<div class="bilingual">
-  <p class="en-title">Intel-UMC 3nm Collaboration Rumors Draw Skepticism</p>
-  <p class="en-summary">Rumors of a potential Intel-UMC partnership for 3nm process development have been met with industry skepticism. Analysts note that while Intel lacked a foundry version for 14nm, its 3nm/4nm nodes already have foundry roadmaps, making the collaboration logic questionable.</p>
-  <div class="vocab-card">
-    <div class="vocab-title">📖 Key Vocabulary</div>
-    <div class="vocab-list">
-      <span class="vocab-item"><b>foundry</b> 代工厂</span>
-      <span class="vocab-item"><b>process node</b> 制程节点</span>
-      <span class="vocab-item"><b>collaboration</b> 合作</span>
-    </div>
-  </div>
-</div>
-<details class="deepdive">
-<summary>📖 深度解读</summary>
-<div class="deepdive-content">
-  <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传闻Intel与UMC联合研发3nm，但Intel自家3nm已有代工版本，合作必要性不大。更像对12nm合作模式的简单类推。</p>
-  <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：传闻大概率不实；中长期：Intel代工战略仍需寻找合作伙伴以提升产能利用率。</p>
-  <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若Intel与UMC真能深度合作，可能创造"美台联合代工"新模式，改变台积电一家独大的局面。</p>
-</div>
-</details>
-<p class="item-source">来源：<a href="https://www.facebook.com/100054201473657/posts/有關intel和umc合作研發3nm新聞非常奇怪個人觀點1當初12nm合作是因為intel的14nm只有自用版沒有代工版他的foundry投影片都沒有1410n/1538660851283949/" target="_blank">Richard只談基本面 (Facebook)</a></p>
-
-<div class="trend-comment">📊 板块趋势：硬科技板块今日以传闻与成本议题为主。存储芯片涨价持续影响下游，半导体制造领域合作传闻不断但可信度偏低。整体呈现"上游涨价、中游观望、下游承压"格局。</div>
-
-<!-- ==================== 5. 材料科学 ==================== -->
-<h2>🔬 材料科学</h2>
-
-<div class="item-header">
-  <span class="title">中国断供稀土钨材四个月，日本汽车与军工产业遭受重大冲击</span>
-  <span class="meta"><span class="star">⭐⭐⭐</span></span>
-  <span class="impact impact-high">冲击：High</span>
-  <span class="risk-red">🔴 重大风险</span>
-</div>
-<div class="item-summary">
-  中国断供稀土与钨材已持续四个月，日本产业损失惨重。汽车产业预计直接减产<span class="num-down">350万辆</span>，损失高达数万亿日元。重点军工项目被迫推迟，包括F15J战机升级与苍龙级潜艇建造。日本工业脆弱性暴露无遗。
-</div>
-<div class="bilingual">
-  <p class="en-title">China's Rare Earth & Tungsten Embargo Cripples Japanese Auto and Defense Industries</p>
-  <p class="en-summary">Four months into China's embargo on rare earth and tungsten materials, Japan's industrial sector is facing severe consequences. Auto production is expected to drop by 3.5 million units, with losses in the trillions of yen. Key defense projects, including F-15J fighter upgrades and Soryu-class submarine construction, have been delayed.</p>
-  <div class="vocab-card">
-    <div class="vocab-title">📖 Key Vocabulary</div>
-    <div class="vocab-list">
-      <span class="vocab-item"><b>embargo</b> 禁运/断供</span>
-      <span class="vocab-item"><b>rare earth</b> 稀土</span>
-      <span class="vocab-item"><b>defense project</b> 军工项目</span>
-    </div>
-  </div>
-</div>
-<details class="deepdive">
-<summary>📖 深度解读</summary>
-<div class="deepdive-content">
-  <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国自2026年2月起对日本断供稀土和钨材，四个月后影响全面显现。汽车（含新能源汽车）和军工是受影响最大的两个领域。</p>
-  <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：日本库存预计再支撑<span class="num-key">2-3个月</span>，之后面临停产风险；中长期：倒逼日本加速稀土回收技术研发和供应链多元化，但至少需<span class="num-key">3-5年</span>。</p>
-  <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若断供持续，可能引发全球供应链重构——各国争相建立稀土战略储备，推动材料科学领域的替代材料研发竞赛。</p>
-</div>
-</details>
-<p class="item-source">来源：<a href="https://www.facebook.com/globalchinesenewsunion/posts/很多人之前都在說中國斷供稀土鎢材四個月日本不還是好好的之前跳得最歡的高市早苗不還是照樣嘴硬說真的看一個國家扛不扛得住別聽政客臺上吹得看實際產業疼不疼四個月過去日/1458566072980800/" target="_blank">全球華人資訊聯盟 (Facebook)</a></p>
-
-<div class="trend-comment">📊 板块趋势：材料科学板块今日核心议题是稀土断供的实质性冲击。这不仅是材料供应问题，更是地缘博弈的缩影。材料自主可控与替代研发将成为未来几年各国战略重点。</div>
-
-<!-- ==================== 6. 中国政策与监管 ==================== -->
-<h2>🇨🇳 中国政策与监管</h2>
-
-<div class="item-header">
-  <span class="title">中国断供稀土钨材：地缘博弈中的材料武器化</span>
-  <span class="meta"><span class="star">⭐⭐⭐</span></span>
-  <span class="impact impact-high">冲击：High</span>
-  <span class="risk-red">🔴 重大风险</span>
-</div>
-<div class="item-summary">
-  中国对日断供稀土与钨材已持续四个月，被视为地缘博弈中的"材料武器化"策略。此举导致日本汽车减产<span class="num-down">350万辆</span>，军工项目推迟。该政策显示中国正将关键矿产供应作为战略杠杆，可能引发全球供应链重组。
-</div>
-<div class="bilingual">
-  <p class="en-title">China's Rare Earth Embargo: Weaponizing Critical Minerals in Geopolitical Rivalry</p>
-  <p class="en-summary">China's four-month embargo on rare earth and tungsten exports to Japan represents a strategic weaponization of critical minerals. The move has caused a 3.5 million unit drop in Japanese auto production and delayed defense projects, signaling a new phase in geopolitical supply chain leverage.</p>
-  <div class="vocab-card">
-    <div class="vocab-title">📖 Key Vocabulary</div>
-    <div class="vocab-list">
-      <span class="vocab-item"><b>critical minerals</b> 关键矿产</span>
-      <span class="vocab-item"><b>geopolitical leverage</b> 地缘政治杠杆</span>
-      <span class="vocab-item"><b>supply chain disruption</b> 供应链中断</span>
-    </div>
-  </div>
-</div>
-<details class="deepdive">
-<summary>📖 深度解读</summary>
-<div class="deepdive-content">
-  <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国掌握全球约<span class="num-key">60%</span>稀土开采和<span class="num-key">90%</span>加工产能，对日断供是近年来最大规模的资源武器化行动。</p>
-  <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：日本经济损失持续扩大，可能寻求外交解决；中长期：全球稀土供应链"去中国化"加速，但替代产能建设需5年以上。</p>
-  <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若资源武器化成为常态，各国将建立"关键矿产联盟"，类似OPEC的"稀土版"可能出现，重塑全球资源政治。</p>
-</div>
-</details>
-<p class="item-source">来源：<a href="https://www.facebook.com/globalchinesenewsunion/posts/很多人之前都在說中國斷供稀土鎢材四個月日本不還是好好的之前跳得最歡的高市早苗不還是照樣嘴硬說真的看一個國家扛不扛得住別聽政客臺上吹得看實際產業疼不疼四個月過去日/1458566072980800/" target="_blank">全球華人資訊聯盟 (Facebook)</a></p>
-
-<div class="trend-comment">📊 板块趋势：中国政策板块今日聚焦资源武器化策略。稀土断供的影响已从预期变为现实，未来可能扩展至其他关键矿产。企业需加速建立"矿产风险"评估体系，将供应链韧性纳入战略规划。</div>
-
-<!-- ==================== 7. 地缘政治与国际关系 ==================== -->
-<h2>🌍 地缘政治与国际关系</h2>
-
-<div class="item-header">
-  <span class="title">稀土断供冲击日本：地缘博弈进入资源对抗新阶段</span>
-  <span class="meta"><span class="star">⭐⭐⭐</span></span>
-  <span class="impact impact-high">冲击：High</span>
-  <span class="risk-red">🔴 重大风险</span>
-</div>
-<div class="item-summary">
-  中国对日稀土与钨材断供四个月后，日本产业损失达数万亿日元，汽车减产<span class="num-down">350万辆</span>，F15J升级与苍龙级潜艇建造等军工项目被迫推迟。这标志着地缘博弈从贸易关税升级为关键资源直接对抗，全球供应链安全面临根本性挑战。
-</div>
-<div class="bilingual">
-  <p class="en-title">Rare Earth Embargo Hits Japan: Geopolitical Rivalry Enters Resource Confrontation Phase</p>
-  <p class="en-summary">Four months into China's rare earth and tungsten embargo, Japan faces trillions of yen in losses, with a 3.5 million unit drop in auto production and delayed defense projects like F-15J upgrades and Soryu-class submarine construction. This marks an escalation from trade tariffs to direct resource confrontation, fundamentally challenging global supply chain security.</p>
-  <div class="vocab-card">
-    <div class="vocab-title">📖 Key Vocabulary</div>
-    <div class="vocab-list">
-      <span class="vocab-item"><b>resource confrontation</b> 资源对抗</span>
-      <span class="vocab-item"><b>supply chain security</b> 供应链安全</span>
-      <span class="vocab-item"><b>industrial vulnerability</b> 工业脆弱性</span>
-    </div>
-  </div>
-</div>
-<details class="deepdive">
-<summary>📖 深度解读</summary>
-<div class="deepdive-content">
-  <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中日之间的稀土断供已从"警告"演变为"实质性打击"。日本作为全球第三大经济体，其汽车和军工两大支柱产业同时受创，是二战以来最严重的资源安全危机。</p>
-  <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：日本可能通过外交渠道寻求缓和，同时启动国家储备；中长期：全球"资源民族主义"抬头，各国将关键矿产视为国家安全核心资产。</p>
-  <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若资源对抗持续，世界可能分裂为"资源阵营"——拥有关键矿产的国家将获得不对称地缘优势，全球贸易体系面临重构。</p>
-</div>
-</details>
-<p class="item-source">来源：<a href="https://www.facebook.com/globalchinesenewsunion/posts/很多人之前都在說中國斷供稀土鎢材四個月日本不還是好好的之前跳得最歡的高市早苗不還是照樣嘴硬說真的看一個國家扛不扛得住別聽政客臺上吹得看實際產業疼不疼四個月過去日/1458566072980800/" target="_blank">全球華人資訊聯盟 (Facebook)</a></p>
-
-<div class="trend-comment">📊 板块趋势：地缘板块今日核心是"资源武器化"的实战验证。稀土断供的冲击波已清晰可见，未来可能扩散至锂、钴等新能源关键矿产。各国需紧急评估自身"资源脆弱性指数"，并加速储备与替代方案建设。</div>
-
-<!-- ==================== 时间提醒 ==================== -->
-<div class="timeline">
-  <h4>⏰ 近期关键时间节点</h4>
-  <div class="timeline-item">
-    <span class="timeline-date">2026-07-01</span>
-    <span>中国对日稀土断供进入第五个月，日本产业影响预计进一步扩大</span>
-  </div>
-  <div class="timeline-item">
-    <span class="timeline-date">2026-09-15</span>
-    <span>iPhone 18 Pro预计发布，届时将确认最终售价与成本结构</span>
-  </div>
-  <div class="timeline-item">
-    <span class="timeline-date">2026年下半年</span>
-    <span>国产大模型场景化产品密集落地，关注企业采购决策变化</span>
-  </div>
-</div>
-
-<div class="footer">
-  全球动态简报 | 2026年6月24日 | 数据源：公开新闻与社交媒体
-</div>
 
 </div>
 </body>
