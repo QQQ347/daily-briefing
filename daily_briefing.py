@@ -804,23 +804,13 @@ def send_email(html_content: str, filepath: str, config: dict, today_str: str):
 
     receiver = email_config["receiver"]
     resend_key = os.environ.get("RESEND_API_KEY", "").strip()
+    # 额外收件人（逗号分隔，如 "a@qq.com,b@163.com"）
+    extra_recipients = [e.strip() for e in os.environ.get("EXTRA_RECIPIENTS", "").split(",") if e.strip()]
+    sender = email_config.get("sender", "")
+    password = email_config.get("password", "")
 
-    # ── 方式1: Resend HTTPS API（推荐）──
-    if resend_key:
-        try:
-            log.info(f"发送邮件 (Resend API) → {receiver}...")
-
-            resp = requests.post(
-                "https://api.resend.com/emails",
-                headers={
-                    "Authorization": f"Bearer {resend_key}",
-                    "Content-Type": "application/json",
-                },
-                json={
-                    "from": "每日简报 <onboarding@resend.dev>",
-                    "to": [receiver],
-                    "subject": f"📡 每日全球重要动态简报 - {today_str}",
-                    "html": f"""
+    subject = f"📡 每日全球重要动态简报 - {today_str}"
+    email_html = f"""
                     <div style="max-width:560px;margin:0 auto;font-family:'Microsoft YaHei',sans-serif;padding:24px;background:#f5f5f5;border-radius:10px;">
                       <h2 style="color:#1a1a2e;margin:0 0 12px 0;">📡 每日全球重要动态简报</h2>
                       <p style="color:#666;font-size:14px;">{today_str} 的简报已生成。</p>
@@ -830,53 +820,79 @@ def send_email(html_content: str, filepath: str, config: dict, today_str: str):
                       <p style="color:#999;font-size:12px;margin-top:20px;">或复制链接：<br><a href="{page_url}" style="color:#4a90d9;">{page_url}</a></p>
                       <p style="color:#bbb;font-size:11px;margin-top:24px;">由 DeepSeek AI 自动生成 · 每日早 8 点</p>
                     </div>
-                    """,
-                },
+                    """
+
+    def _resend_send(to_email: str):
+        """用 Resend HTTPS API 发送到单个邮箱，返回 (成功?, resp)"""
+        if not resend_key:
+            return False, None
+        try:
+            log.info(f"  Resend → {to_email}...")
+            resp = requests.post(
+                "https://api.resend.com/emails",
+                headers={"Authorization": f"Bearer {resend_key}", "Content-Type": "application/json"},
+                json={"from": "每日简报 <onboarding@resend.dev>", "to": [to_email], "subject": subject, "html": email_html},
                 timeout=30,
             )
             if resp.status_code in (200, 201):
-                log.info(f"邮件发送成功 (Resend)! ID: {resp.json().get('id', '?')}")
-                return
+                log.info(f"  ✅ Resend 成功 → {to_email} (ID: {resp.json().get('id', '?')})")
+                return True, resp
             else:
-                log.error(f"Resend 发送失败: {resp.status_code} {resp.text[:200]}")
+                log.error(f"  ❌ Resend 失败 → {to_email}: {resp.status_code} {resp.text[:200]}")
+                return False, resp
         except Exception as e:
-            log.error(f"Resend 请求异常: {e}")
+            log.error(f"  ❌ Resend 异常 → {to_email}: {e}")
+            return False, None
 
-    # ── 方式2: SMTP 备用（GitHub Actions 上端口被封，仅本地可用）──
-    sender = email_config.get("sender", "")
-    password = email_config.get("password", "")
-    if not sender or not password:
-        log.error("SMTP 未配置 sender/password，跳过备用发送")
-        return
+    def _smtp_send(to_email: str):
+        """用 QQ SMTP 发送到单个邮箱，返回 成功?"""
+        if not sender or not password:
+            log.error(f"  SMTP 未配置 sender/password，跳过 → {to_email}")
+            return False
+        msg = MIMEMultipart("alternative")
+        msg["From"] = sender
+        msg["To"] = to_email
+        msg["Subject"] = Header(subject, "utf-8")
+        msg.attach(MIMEText(
+            f"今日简报已生成。\n\n日期: {today_str}\n文件: {filepath}\n\n本邮件包含 HTML 版本，请直接查看。",
+            "plain", "utf-8",
+        ))
+        msg.attach(MIMEText(html_content, "html", "utf-8"))
+        for host, port, use_ssl in [("smtp.qq.com", 465, True), ("smtp.qq.com", 587, False)]:
+            try:
+                log.info(f"  SMTP {host}:{port} → {to_email}...")
+                if use_ssl:
+                    server = smtplib.SMTP_SSL(host, port, timeout=30)
+                else:
+                    server = smtplib.SMTP(host, port, timeout=30)
+                    server.ehlo()
+                    server.starttls()
+                server.login(sender, password)
+                server.sendmail(sender, [to_email], msg.as_string())
+                server.quit()
+                log.info(f"  ✅ SMTP 成功 → {to_email} ({port})")
+                return True
+            except Exception as e:
+                log.error(f"  ❌ SMTP {port} → {to_email} 失败: {e}")
+        return False
 
-    msg = MIMEMultipart("alternative")
-    msg["From"] = sender
-    msg["To"] = receiver
-    msg["Subject"] = Header(f"📡 每日全球重要动态简报 - {today_str}", "utf-8")
-    msg.attach(MIMEText(
-        f"今日简报已生成。\n\n日期: {today_str}\n文件: {filepath}\n\n本邮件包含 HTML 版本，请直接查看。",
-        "plain", "utf-8",
-    ))
-    msg.attach(MIMEText(html_content, "html", "utf-8"))
+    # ── 1. 主收件人: Resend 优先，SMTP 备用 ──
+    log.info(f"=== 发送主收件人: {receiver} ===")
+    main_sent, _ = _resend_send(receiver)
+    if not main_sent:
+        log.info(f"主收件人 Resend 未成功，尝试 SMTP → {receiver}...")
+        _smtp_send(receiver)
 
-    for host, port, use_ssl in [("smtp.qq.com", 465, True), ("smtp.qq.com", 587, False)]:
-        try:
-            log.info(f"SMTP 尝试 {host}:{port} ({'SSL' if use_ssl else 'STARTTLS'})...")
-            if use_ssl:
-                server = smtplib.SMTP_SSL(host, port, timeout=30)
-            else:
-                server = smtplib.SMTP(host, port, timeout=30)
-                server.ehlo()
-                server.starttls()
-            server.login(sender, password)
-            server.sendmail(sender, [receiver], msg.as_string())
-            server.quit()
-            log.info(f"邮件发送成功 (SMTP {port})!")
-            return
-        except Exception as e:
-            log.error(f"SMTP {port} 失败: {e}")
+    # ── 2. 额外收件人: 每个都 Resend 优先，SMTP 备用 ──
+    for email in extra_recipients:
+        if email == receiver:
+            continue  # 跳过与主收件人重复的
+        log.info(f"=== 发送额外收件人: {email} ===")
+        extra_sent, _ = _resend_send(email)
+        if not extra_sent:
+            log.info(f"额外收件人 Resend 未成功，尝试 SMTP → {email}...")
+            _smtp_send(email)
 
-    log.error("所有邮件发送方式均失败，简报已保存至本地文件")
     log.info(f"简报文件: {filepath}")
 
 
