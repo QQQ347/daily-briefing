@@ -804,6 +804,9 @@ def send_email(html_content: str, filepath: str, config: dict, today_str: str):
 
     receiver = email_config["receiver"]
     resend_key = os.environ.get("RESEND_API_KEY", "").strip()
+    # 额外收件人的 Resend key（用额外邮箱注册的 Resend 账号）
+    # onboarding@resend.dev 只能发到注册邮箱，所以每个额外收件人需要对应账号的 key
+    resend_key_extra = os.environ.get("RESEND_API_KEY_EXTRA", "").strip()
     # 额外收件人（逗号分隔，如 "a@qq.com,b@163.com"）
     extra_recipients = [e.strip() for e in os.environ.get("EXTRA_RECIPIENTS", "").split(",") if e.strip()]
     sender = email_config.get("sender", "")
@@ -822,15 +825,16 @@ def send_email(html_content: str, filepath: str, config: dict, today_str: str):
                     </div>
                     """
 
-    def _resend_send(to_email: str):
+    def _resend_send(to_email: str, key: str = None):
         """用 Resend HTTPS API 发送到单个邮箱，返回 (成功?, resp)"""
-        if not resend_key:
+        api_key = key or resend_key
+        if not api_key:
             return False, None
         try:
             log.info(f"  Resend → {to_email}...")
             resp = requests.post(
                 "https://api.resend.com/emails",
-                headers={"Authorization": f"Bearer {resend_key}", "Content-Type": "application/json"},
+                headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
                 json={"from": "每日简报 <onboarding@resend.dev>", "to": [to_email], "subject": subject, "html": email_html},
                 timeout=30,
             )
@@ -883,13 +887,19 @@ def send_email(html_content: str, filepath: str, config: dict, today_str: str):
         log.info(f"主收件人 Resend 未成功，尝试 SMTP → {receiver}...")
         _smtp_send(receiver)
 
-    # ── 2. 额外收件人: 每个都 Resend 优先，SMTP 备用 ──
+    # ── 2. 额外收件人: 用 EXTRA key 的 Resend 优先，SMTP 备用 ──
+    # onboarding@resend.dev 只能发到注册邮箱，所以额外收件人需要对应账号的 key
     for email in extra_recipients:
         if email == receiver:
             continue  # 跳过与主收件人重复的
         log.info(f"=== 发送额外收件人: {email} ===")
-        extra_sent, _ = _resend_send(email)
+        # 优先用 EXTRA key (额外邮箱注册的 Resend 账号)
+        extra_sent, _ = _resend_send(email, key=resend_key_extra if resend_key_extra else None)
         if not extra_sent:
+            # 用主 key 再试一次（可能注册邮箱恰好匹配）
+            if resend_key_extra:
+                extra_sent2, _ = _resend_send(email, key=resend_key)
+            # SMTP 备用 (GitHub Actions 上端口可能被封)
             log.info(f"额外收件人 Resend 未成功，尝试 SMTP → {email}...")
             _smtp_send(email)
 
