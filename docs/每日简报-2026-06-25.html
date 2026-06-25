@@ -5,698 +5,465 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>全球动态简报 | 2026-06-25</title>
 <style>
-  body {
-    font-family: 'Inter', 'Segoe UI', Roboto, -apple-system, sans-serif;
-    background: #f4f6fa;
-    margin: 0;
-    padding: 20px;
-    color: #1a1c23;
-  }
-  .container {
-    max-width: 920px;
-    margin: 0 auto;
-    background: #ffffff;
-    border-radius: 24px;
-    padding: 32px 36px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-  }
-  h2 {
-    font-size: 24px;
-    font-weight: 600;
-    margin: 0 0 6px 0;
-    padding-bottom: 4px;
-    border-bottom: 2px solid #eef0f4;
-  }
-  h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0 0 8px 0;
-  }
-  h4 {
-    font-size: 16px;
-    font-weight: 600;
-    margin: 0 0 6px 0;
-  }
-  .header-date {
-    font-size: 14px;
-    color: #6b7280;
-    margin-bottom: 24px;
-    display: inline-block;
-    background: #eef0f4;
-    padding: 4px 14px;
-    border-radius: 40px;
-  }
-  .overview {
-    background: #f0f3fa;
-    padding: 20px 24px;
-    border-radius: 18px;
-    margin-bottom: 32px;
-  }
-  .overview p {
-    font-size: 15px;
-    line-height: 1.6;
-    margin: 8px 0 14px 0;
-    color: #1f2937;
-  }
-  .overview-tags {
-    display: block;
-    margin-top: 10px;
-  }
-  .overview-tag {
-    display: inline-block;
-    background: #dde3f0;
-    padding: 4px 14px;
-    border-radius: 40px;
-    font-size: 13px;
-    font-weight: 500;
-    margin: 4px 8px 4px 0;
-    color: #1f2a44;
-  }
-  .section {
-    margin-top: 28px;
-    padding-top: 8px;
-  }
-  .section-title {
-    font-size: 20px;
-    font-weight: 600;
-    padding: 8px 0 10px 0;
-    border-bottom: 1px solid #e2e6ed;
-    margin-bottom: 18px;
-  }
-  .item {
-    background: #fafbfc;
-    border: 1px solid #e8ecf2;
-    border-radius: 18px;
-    padding: 20px 22px;
-    margin-bottom: 18px;
-  }
-  .item-header {
-    display: block;
-    margin-bottom: 12px;
-  }
-  .item-header .title {
-    font-size: 17px;
-    font-weight: 600;
-    margin-right: 12px;
-    display: inline;
-  }
-  .item-header .meta {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 6px;
-  }
-  .star {
-    display: inline-block;
-    font-size: 14px;
-    letter-spacing: 1px;
-    margin-right: 10px;
-  }
-  .impact {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 2px 12px;
-    border-radius: 40px;
-    margin-right: 6px;
-  }
-  .impact-high {
-    background: #fee9e7;
-    color: #b91c1c;
-  }
-  .impact-med {
-    background: #fef3c7;
-    color: #92400e;
-  }
-  .impact-low {
-    background: #e6f0e6;
-    color: #1f6e3f;
-  }
-  .risk-red {
-    display: inline-block;
-    background: #fee2e2;
-    color: #b91c1c;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 2px 12px;
-    border-radius: 40px;
-    margin-left: 4px;
-  }
-  .risk-yellow {
-    display: inline-block;
-    background: #fef9c3;
-    color: #854d0e;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 2px 12px;
-    border-radius: 40px;
-    margin-left: 4px;
-  }
-  .item-summary {
-    font-size: 15px;
-    line-height: 1.6;
-    margin: 6px 0 12px 0;
-    padding: 8px 0 4px 0;
-    color: #1f2937;
-  }
-  .num-up {
-    background: #dcfce7;
-    font-weight: 600;
-    padding: 0 6px;
-    border-radius: 12px;
-    color: #166534;
-  }
-  .num-down {
-    background: #fee2e2;
-    font-weight: 600;
-    padding: 0 6px;
-    border-radius: 12px;
-    color: #991b1b;
-  }
-  .num-key {
-    background: #eef2ff;
-    font-weight: 600;
-    padding: 0 6px;
-    border-radius: 12px;
-    color: #4338ca;
-  }
-  .bilingual {
-    background: #f4f7fb;
-    border-left: 4px solid #3b82f6;
-    padding: 12px 16px;
-    border-radius: 12px;
-    margin: 14px 0;
-  }
-  .en-title {
-    font-weight: 600;
-    font-size: 15px;
-    margin: 0 0 4px 0;
-  }
-  .en-summary {
-    font-size: 14px;
-    color: #374151;
-    margin: 4px 0 8px 0;
-    line-height: 1.5;
-  }
-  .vocab-card {
-    background: #eef2f6;
-    border-radius: 12px;
-    padding: 10px 14px;
-    margin-top: 6px;
-  }
-  .vocab-title {
-    font-weight: 600;
-    font-size: 13px;
-    margin-bottom: 6px;
-  }
-  .vocab-list {
-    display: block;
-  }
-  .vocab-item {
-    display: inline-block;
-    background: #ffffff;
-    padding: 2px 12px;
-    border-radius: 30px;
-    font-size: 13px;
-    margin: 3px 6px 3px 0;
-    border: 1px solid #d1d9e6;
-  }
-  .compare-box {
-    background: #f9fafb;
-    border: 1px solid #d1d9e6;
-    border-radius: 16px;
-    padding: 14px 18px;
-    margin: 18px 0;
-    display: block;
-  }
-  .compare-side {
-    display: inline-block;
-    width: 44%;
-    vertical-align: top;
-    padding: 8px 10px;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  .compare-bull {
-    background: #e6f7ec;
-    border-radius: 12px;
-    margin-right: 4%;
-  }
-  .compare-bear {
-    background: #fde8e8;
-    border-radius: 12px;
-  }
-  .compare-label {
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-  .deepdive {
-    margin: 12px 0 6px;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    padding: 4px 14px;
-    background: #f8faff;
-  }
-  .deepdive summary {
-    font-weight: 600;
-    font-size: 14px;
-    padding: 6px 0;
-    cursor: pointer;
-    color: #1e3a8a;
-  }
-  .deepdive-content {
-    padding: 10px 0 6px;
-  }
-  .dl {
-    margin: 8px 0;
-    font-size: 14px;
-    line-height: 1.6;
-  }
-  .dl-label {
-    font-weight: 600;
-  }
-  .item-source {
-    font-size: 13px;
-    color: #5f6b7a;
-    margin: 10px 0 2px;
-  }
-  .item-source a {
-    color: #2563eb;
-    text-decoration: none;
-  }
-  .trend-comment {
-    background: #f1f5f9;
-    border-radius: 14px;
-    padding: 12px 18px;
-    font-size: 14px;
-    margin: 10px 0 24px;
-    color: #1e293b;
-    border-left: 4px solid #64748b;
-  }
-  .timeline {
-    background: #f7f0fc;
-    border: 1px solid #d9c9f0;
-    border-radius: 18px;
-    padding: 18px 22px;
-    margin: 28px 0 18px;
-  }
-  .timeline h4 {
-    margin: 0 0 12px 0;
-    color: #4c1d95;
-  }
-  .timeline-item {
-    margin: 6px 0;
-    font-size: 14px;
-  }
-  .timeline-date {
-    display: inline-block;
-    background: #e4d9f5;
-    padding: 2px 12px;
-    border-radius: 30px;
-    font-weight: 600;
-    margin-right: 12px;
-    color: #3b1f6e;
-  }
-  .footer-note {
-    margin-top: 32px;
-    font-size: 12px;
-    color: #6b7280;
-    border-top: 1px solid #e2e6ed;
-    padding-top: 16px;
-    text-align: center;
-  }
-  @media (max-width: 680px) {
-    .container { padding: 18px 16px; }
-    .compare-side { width: 100%; display: block; margin: 6px 0; }
-  }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f5f7; margin: 0; padding: 20px; color: #1a1a1a; }
+  .container { max-width: 900px; margin: 0 auto; background: #ffffff; border-radius: 12px; padding: 30px 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  h2 { font-size: 22px; font-weight: 600; margin: 28px 0 16px 0; padding-bottom: 8px; border-bottom: 2px solid #e0e0e0; }
+  h3 { font-size: 18px; font-weight: 600; margin: 0 0 10px 0; }
+  h4 { font-size: 16px; font-weight: 600; margin: 20px 0 10px 0; }
+  .overview { background: #eef3fa; padding: 20px 22px; border-radius: 10px; margin-bottom: 25px; border-left: 4px solid #1a73e8; }
+  .overview p { font-size: 15px; line-height: 1.6; margin: 0 0 14px 0; }
+  .overview-tags { display: block; }
+  .overview-tag { display: inline-block; background: #ffffff; padding: 5px 14px; border-radius: 16px; font-size: 13px; font-weight: 400; margin: 0 8px 6px 0; border: 1px solid #c5d5e8; }
+  .item { background: #f9fafb; border: 1px solid #e8eaed; border-radius: 10px; padding: 18px 20px; margin-bottom: 18px; }
+  .item-header { margin-bottom: 10px; }
+  .item-header .stars { color: #f5a623; font-size: 14px; margin-right: 8px; }
+  .impact { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 12px; margin-right: 8px; }
+  .impact-high { background: #fce8e6; color: #c5221f; }
+  .impact-med { background: #fef7e0; color: #b06000; }
+  .impact-low { background: #e8f5e9; color: #1e7e34; }
+  .risk-red { display: inline-block; background: #fce8e6; color: #c5221f; font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 12px; }
+  .risk-yellow { display: inline-block; background: #fef7e0; color: #b06000; font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 12px; }
+  .item-summary { font-size: 15px; line-height: 1.6; margin: 10px 0 12px 0; }
+  .num-up { color: #1e7e34; font-weight: 600; background: #e8f5e9; padding: 1px 5px; border-radius: 4px; }
+  .num-down { color: #c5221f; font-weight: 600; background: #fce8e6; padding: 1px 5px; border-radius: 4px; }
+  .num-key { color: #1a73e8; font-weight: 600; background: #e8f0fe; padding: 1px 5px; border-radius: 4px; }
+  .bilingual { background: #f8f9fa; border: 1px dashed #bcc0c4; border-radius: 8px; padding: 14px 16px; margin: 14px 0; }
+  .en-title { font-size: 15px; font-weight: 600; color: #1a1a1a; margin: 0 0 6px 0; }
+  .en-summary { font-size: 14px; color: #3c4043; line-height: 1.5; margin: 0 0 10px 0; }
+  .vocab-card { background: #ffffff; border: 1px solid #e8eaed; border-radius: 6px; padding: 10px 12px; }
+  .vocab-title { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  .vocab-list { display: block; }
+  .vocab-item { display: inline-block; background: #e8f0fe; border-radius: 12px; padding: 2px 12px; font-size: 13px; margin: 3px 6px 3px 0; }
+  .compare-box { background: #f0f4f8; border: 1px solid #d2d9e2; border-radius: 8px; padding: 14px 18px; margin: 16px 0; display: block; }
+  .compare-side { display: inline-block; width: 45%; vertical-align: top; padding: 8px 12px; font-size: 14px; line-height: 1.5; }
+  .compare-bull { background: #e8f5e9; border-radius: 6px; margin-right: 4%; }
+  .compare-bear { background: #fce8e6; border-radius: 6px; }
+  .compare-label { font-weight: 600; margin-bottom: 4px; }
+  .deepdive { margin: 14px 0 8px 0; }
+  .deepdive summary { font-weight: 600; font-size: 14px; cursor: pointer; color: #1a73e8; padding: 6px 0; }
+  .deepdive-content { background: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 14px 16px; margin-top: 8px; }
+  .dl { font-size: 14px; line-height: 1.6; margin: 8px 0; }
+  .dl-label { font-weight: 600; }
+  .item-source { font-size: 13px; color: #5f6368; margin-top: 8px; }
+  .item-source a { color: #1a73e8; text-decoration: none; }
+  .trend-comment { background: #eef3fa; border-radius: 8px; padding: 14px 18px; margin: 20px 0 10px 0; font-size: 14px; line-height: 1.6; border-left: 3px solid #1a73e8; }
+  .timeline { background: #fef7e0; border: 1px solid #f9d849; border-radius: 10px; padding: 18px 22px; margin: 25px 0 15px 0; }
+  .timeline h4 { margin: 0 0 12px 0; }
+  .timeline-item { padding: 6px 0; font-size: 14px; line-height: 1.5; }
+  .timeline-date { display: inline-block; background: #ffffff; border: 1px solid #d2d9e2; border-radius: 14px; padding: 1px 12px; font-weight: 600; font-size: 13px; margin-right: 10px; }
+  .footer { text-align: center; color: #5f6368; font-size: 13px; padding-top: 20px; border-top: 1px solid #e0e0e0; margin-top: 25px; }
 </style>
 </head>
 <body>
 <div class="container">
 
-<div class="header-date">📅 2026-06-25 · 全球动态简报</div>
-
-<!-- 第一步：综述模块 -->
-<div class="overview">
-  <h3>🧠 今日综述</h3>
-  <p>今日简报聚焦三大主线：美国行政令正式启动量子计算“登月计划”，目标在<span class="num-key">2028年前</span>建成百万量子比特机器，科技竞争进入新范式；中国“十五五”新材料产业规划落地，高性能碳纤维与复合材料被列为战略级赛道，研发效率有望提升<span class="num-up">40%以上</span>；中美贸易摩擦再现波折，特朗普宣布对华加征<span class="num-down">10%</span>额外关税，中方反制直指美基因测序巨头。整体风向：硬科技政策密集，地缘紧张情绪升温，金融与AI领域暂时缺乏明确信号。</p>
-  <div class="overview-tags">
-    <span class="overview-tag">⚛️ 量子登月</span>
-    <span class="overview-tag">🧪 新材料战略</span>
-    <span class="overview-tag">🔴 中美关税升级</span>
-    <span class="overview-tag">🧬 基因测序反制</span>
-    <span class="overview-tag">📉 贸易紧张加剧</span>
+  <!-- 综述模块 -->
+  <div class="overview">
+    <h3>🧠 今日全球动态综述</h3>
+    <p>今日简报呈现三条主线：中国AI产业在2026年上半年迎来爆发式增长，核心产业规模突破<span class="num-up">1.2万亿元</span>，国产大模型实现全球调用量反超；全球芯片股遭遇重挫，美光与Sandisk领跌，市场对半导体需求前景转冷；夏季达沃斯在大连开幕，"一带一路"未来发展路径成为焦点，地缘合作信号积极。整体风向：科技端中国AI强势崛起，金融端半导体板块承压，地缘端合作与风险并存。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🇨🇳 AI产业爆发</span>
+      <span class="overview-tag">💾 芯片股暴跌</span>
+      <span class="overview-tag">🌐 一带一路新议程</span>
+      <span class="overview-tag">🤖 大模型全球竞争</span>
+    </div>
   </div>
-</div>
 
-<!-- 板块1：生命科学/医学（由于原始新闻无有效医学内容，选用地缘中涉及基因测序的替代，但板块仍保留2条） -->
-<div class="section">
-  <div class="section-title">🧬 生命科学 / 医学</div>
-  
+  <!-- ==================== 板块1：生命科学 ==================== -->
+  <h2>🧬 生命科学 / 医学</h2>
+
   <div class="item">
     <div class="item-header">
-      <span class="title">中国禁止进口美企基因测序仪，精准医疗供应链承压</span>
-      <span class="star">⭐⭐⭐⭐</span>
+      <span class="stars">⭐⭐⭐</span>
+      <span class="impact impact-low">冲击：Low</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      清华大学材料研究院在新能源电池领域取得新进展，重点推进可穿戴柔性储能器件与新型电池材料研究，旨在提升储能器件性能与可靠性。该方向与AI硬件、医疗可穿戴设备需求高度契合。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Tsinghua Advances Flexible Energy Storage for Wearables</p>
+      <p class="en-summary">Tsinghua University's Materials Research Institute is accelerating research on flexible energy storage devices and next-generation battery materials, targeting performance and reliability improvements for wearable electronics and medical devices.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>flexible energy storage</b> 柔性储能</span>
+          <span class="vocab-item"><b>wearable electronics</b> 可穿戴电子设备</span>
+          <span class="vocab-item"><b>reliability</b> 可靠性</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>清华大学材料研究院正在研发柔性、高能量密度的电池材料，目标是让电池可以像布料一样弯曲，同时保持长续航和安全。这是可穿戴设备（如智能手表、医疗贴片）发展的关键瓶颈。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内有望在智能手环、医疗监测贴片上实现商用；中长期（3-7年）可能应用于柔性手机、电子皮肤等。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果柔性电池技术成熟，电子设备将不再有硬邦邦的电池仓，衣服、背包甚至皮肤贴片都能成为电源，医疗监测将实现真正的无感化、全天候。</p>
+    </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.sigs.tsinghua.edu.cn/7695/list.htm" target="_blank">清华大学深圳国际研究生院 - 材料研究院</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="stars">⭐⭐⭐</span>
+      <span class="impact impact-low">冲击：Low</span>
+    </div>
+    <div class="item-summary">
+      清华大学《能源材料与器件》期刊正式被Scopus收录，标志该期刊学术认可度大幅提升，有望吸引更多高质量投稿与引用，推动中国在能源材料领域的国际话语权。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Tsinghua Energy Materials Journal Indexed by Scopus</p>
+      <p class="en-summary">The journal "Energy Materials and Devices" published by Tsinghua University has been officially accepted into the Scopus database, significantly boosting its academic visibility and potential for attracting high-quality submissions.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>Scopus</b> 斯高帕斯数据库</span>
+          <span class="vocab-item"><b>academic recognition</b> 学术认可</span>
+          <span class="vocab-item"><b>citation</b> 引用</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Scopus是全球最大的学术文献数据库之一，被收录意味着该期刊的文章更容易被全球研究者检索和引用，是期刊走向国际化的关键一步。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期内将直接提升稿件数量和质量；中长期有助于中国在能源材料领域建立自己的顶级学术阵地，减少对国外期刊的依赖。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来，中国本土期刊可能成为全球科学家首选的发表平台，学术话语权从西方逐步向东方转移。</p>
+    </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.sohu.com/a/848783445_122066678" target="_blank">搜狐</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：生命科学领域今日信号偏弱，主要集中在国内高校的基础研究与学术基建层面。柔性储能与能源材料期刊的进展，反映出中国在"硬科技"底层材料上的持续投入，虽非爆发性突破，但为中长期产业升级奠定基础。</div>
+
+  <!-- ==================== 板块2：经济金融 ==================== -->
+  <h2>💰 经济 / 金融</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="stars">⭐⭐⭐</span>
       <span class="impact impact-high">冲击：High</span>
       <span class="risk-red">🔴 重大风险</span>
     </div>
     <div class="item-summary">
-      中国宣布禁止进口美国因美纳（Illumina）基因测序仪，作为对美加征<span class="num-down">10%</span>关税的反制。Illumina占据全球基因测序市场约<span class="num-key">80%</span>份额，禁令将直接影响中国精准医疗、肿瘤早筛及科研项目，倒逼国产测序仪加速替代。
+      芯片股遭遇大规模抛售，美光（Micron）在财报发布前暴跌<span class="num-down">13%</span>，Sandisk 暴跌<span class="num-down">14%</span>。市场对存储芯片需求前景急剧恶化，可能预示半导体周期转向。新任主席Kevin首次主持董事会即面临市场动荡。
     </div>
     <div class="bilingual">
-      <p class="en-title">China Bans Illumina Gene Sequencers, Precision Medicine Supply Chain Under Pressure</p>
-      <p class="en-summary">China has blocked imports of Illumina’s gene sequencing machines in retaliation for new U.S. tariffs. Illumina controls roughly 80% of the global market, and the ban threatens China’s precision medicine and cancer screening programs, accelerating domestic substitution efforts.</p>
+      <p class="en-title">Chip Stocks Plunge: Micron Down 13%, Sandisk Down 14%</p>
+      <p class="en-summary">Key chipmakers suffered heavy losses in a broad selloff, with Micron falling 13% ahead of its earnings report and Sandisk plummeting 14%. The rout signals growing investor concern over weakening demand in the semiconductor sector, particularly for memory chips.</p>
       <div class="vocab-card">
         <div class="vocab-title">📖 Key Vocabulary</div>
         <div class="vocab-list">
-          <span class="vocab-item"><b>gene sequencer</b> 基因测序仪</span>
-          <span class="vocab-item"><b>retaliatory tariff</b> 报复性关税</span>
-          <span class="vocab-item"><b>supply chain</b> 供应链</span>
+          <span class="vocab-item"><b>selloff</b> 抛售</span>
+          <span class="vocab-item"><b>semiconductor rout</b> 半导体暴跌</span>
+          <span class="vocab-item"><b>memory chip demand</b> 存储芯片需求</span>
         </div>
       </div>
     </div>
     <details class="deepdive">
-      <summary>📖 深度解读</summary>
-      <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>基因测序仪是精准医疗的“显微镜”，Illumina的机器是全球临床与科研的标配。中国此举相当于在高端医疗器械领域切断关键技术来源。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）国内测序成本可能上升，部分临床试验延迟；中长期（3-5年）华大智造等国产企业有望填补空白，但精度和通量仍需追赶。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若国产测序仪完全替代，中国将建立独立于美国的基因数据体系，但也可能形成全球基因技术“双轨制”，阻碍跨国医学合作。</p>
-      </div>
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美光和Sandisk是存储芯片领域的龙头，其股价暴跌通常被市场视为行业风向标。此次暴跌发生在财报季前，说明投资者对即将公布的业绩非常悲观，可能意味着下游（PC、手机、服务器）需求远低于预期。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）内，存储芯片价格可能继续承压，相关公司财报或低于预期；中长期（6-12个月）需观察AI算力需求是否能抵消消费电子疲软。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果存储芯片进入下行周期，将拖累整个科技板块，但也可能加速行业洗牌，为拥有先进制程（如HBM）的公司创造并购机会。</p>
+    </div>
     </details>
-    <p class="item-source">来源：<a href="https://www.voachinese.com/z/1776" target="_blank">美国之音中文网</a></p>
+    <p class="item-source">来源：<a href="https://www.google.com/finance/beta" target="_blank">Google Finance</a></p>
   </div>
+
+  <div class="trend-comment">📊 板块趋势：金融板块今日核心信号是"半导体恐慌"。存储芯片的大幅下跌是市场对全球经济增速放缓的直接反应，尤其是消费电子需求疲软。投资者需密切关注美光财报是否确认这一悲观预期，以及AI算力投资能否形成对冲。</div>
+
+  <!-- ==================== 板块3：人工智能 ==================== -->
+  <h2>🤖 人工智能</h2>
 
   <div class="item">
     <div class="item-header">
-      <span class="title">“十五五”新材料规划明确生物医用材料为战略方向</span>
-      <span class="star">⭐⭐⭐⭐</span>
-      <span class="impact impact-med">冲击：Med</span>
-      <span class="risk-yellow">🟡 值得观察</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
     </div>
     <div class="item-summary">
-      中国“十五五”新材料产业规划将高性能复合材料、碳纤维及生物医用材料列为重点。规划提出利用AI辅助研发，使新材料从实验到应用的效率提高<span class="num-up">40%以上</span>，并推动可降解植入材料、仿生组织工程等医学应用落地。
+      中国AI产业2026年上半年数据亮眼：AI核心产业规模预计突破<span class="num-up">1.2万亿元</span>，同比增长近<span class="num-up">30%</span>；企业数量超过<span class="num-key">6000家</span>；国产开源大模型全球累计下载量突破<span class="num-key">100亿次</span>。中国正从"跟随者"向"引领者"转变。
     </div>
     <div class="bilingual">
-      <p class="en-title">China’s 15th Five-Year Plan Targets Biomedical Materials as Strategic Priority</p>
-      <p class="en-summary">China’s latest five-year plan for advanced materials highlights high-performance composites, carbon fiber, and biomedical materials. AI-driven R&D is expected to boost development efficiency by over 40%, accelerating innovations in biodegradable implants and tissue engineering.</p>
+      <p class="en-title">China's AI Core Industry Surpasses 1.2 Trillion Yuan in 2026</p>
+      <p class="en-summary">China's AI core industry has exceeded 1.2 trillion yuan in the first half of 2026, with a year-on-year growth of nearly 30%. The number of AI enterprises has surpassed 6,000, and domestic open-source models have been downloaded over 10 billion times globally, signaling China's transition from a follower to a leader in AI.</p>
       <div class="vocab-card">
         <div class="vocab-title">📖 Key Vocabulary</div>
         <div class="vocab-list">
-          <span class="vocab-item"><b>biomedical materials</b> 生物医用材料</span>
-          <span class="vocab-item"><b>tissue engineering</b> 组织工程</span>
-          <span class="vocab-item"><b>composites</b> 复合材料</span>
+          <span class="vocab-item"><b>core industry scale</b> 核心产业规模</span>
+          <span class="vocab-item"><b>year-on-year growth</b> 同比增长</span>
+          <span class="vocab-item"><b>open-source model</b> 开源模型</span>
         </div>
       </div>
     </div>
     <details class="deepdive">
-      <summary>📖 深度解读</summary>
-      <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“十五五”规划是中国2026-2030年的产业蓝图，首次将生物医用材料与碳纤维并列，意味着国家将投入专项基金支持可降解心脏支架、人工骨等高端医疗器械国产化。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）相关企业研发补贴增加，部分三类医疗器械审批加速；中长期（3-7年）中国有望在可吸收植入物领域形成全球竞争力。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来心梗患者或可使用完全可降解的“智能支架”，在血管修复后自行溶解，免除终身服药痛苦。</p>
-      </div>
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这组数据标志着中国AI产业从"政策驱动"进入"产业驱动"阶段。1.2万亿的产业规模涵盖芯片、算力、大模型、应用等全链条，30%的增速远高于全球平均水平。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）内，国产大模型将在更多垂直行业（医疗、金融、制造）落地；中长期（3-5年），中国有望在AI专利和标准制定上占据主导地位。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果保持这一势头，中国可能在2030年前成为全球AI创新中心，从"世界工厂"转变为"世界算法工厂"。</p>
+    </div>
     </details>
-    <p class="item-source">来源：<a href="https://finance.sina.com.cn/roll/2025-11-14/doc-infxkany4486356.shtml" target="_blank">新浪财经</a></p>
+    <p class="item-source">来源：<a href="https://news.qq.com/rain/a/20260128A05HC900" target="_blank">腾讯新闻</a></p>
   </div>
-  <div class="trend-comment">📊 板块趋势：生命科学领域今日受地缘政治冲击显著，基因测序禁令可能引发全球精准医疗供应链重组；与此同时，中国新材料规划为生物医用材料注入政策红利，国产替代与自主创新成为核心主线。</div>
-</div>
 
-<!-- 板块2：经济/金融（从地缘中提取关税信息） -->
-<div class="section">
-  <div class="section-title">💰 经济 / 金融</div>
   <div class="item">
     <div class="item-header">
-      <span class="title">特朗普宣布对中国商品加征10%额外关税，中美贸易战升级</span>
-      <span class="star">⭐⭐⭐⭐⭐</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      2026年3月全球大模型格局发生标志性变化：国产大模型实现全球调用量反超，旗舰模型登顶国际盲测榜单，百万上下文窗口成为标配，智能体（Agent）应用全面爆发。中国厂商与OpenAI、谷歌同台竞技。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Chinese LLMs Overtake Global Leaders in API Calls</p>
+      <p class="en-summary">By March 2026, Chinese large language models have overtaken their global counterparts in total API call volume, with flagship models topping international blind test leaderboards. The industry has embraced million-token context windows and seen an explosion in agent-based applications.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>API call volume</b> API调用量</span>
+          <span class="vocab-item"><b>blind test leaderboard</b> 盲测榜单</span>
+          <span class="vocab-item"><b>agent-based application</b> 智能体应用</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>"全球调用量反超"意味着中国大模型在商业落地和用户规模上已领先全球，不再只是"追赶者"。百万上下文意味着模型可以一次性处理整本书或整个代码库，极大提升了实用性。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（6个月）内，智能体（Agent）将接管更多重复性工作（客服、编程、数据分析）；中长期（2-3年），大模型将成为企业"操作系统"。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来，每个人可能拥有一个"AI管家"，能理解你的全部历史记录，帮你规划日程、管理财务、甚至进行情感陪伴。</p>
+    </div>
+    </details>
+    <p class="item-source">来源：<a href="https://cloud.tencent.com/developer/article/2658619" target="_blank">腾讯云开发者社区</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="stars">⭐⭐⭐</span>
+      <span class="impact impact-low">冲击：Low</span>
+    </div>
+    <div class="item-summary">
+      微软持续扩展Copilot生态，新增多个对话模式、集成Claude与ChatGPT模型，并推出Researcher工具用于复杂多步研究。办公场景的AI化进入深水区。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Microsoft Expands Copilot Ecosystem with Multi-Model Support</p>
+      <p class="en-summary">Microsoft is deepening its Copilot integration across Office products, introducing new conversation modes, support for multiple AI models including Claude and ChatGPT, and a Researcher tool for complex multi-step investigations, pushing AI deeper into enterprise workflows.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>conversation mode</b> 对话模式</span>
+          <span class="vocab-item"><b>multi-step research</b> 多步研究</span>
+          <span class="vocab-item"><b>enterprise workflow</b> 企业工作流</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>微软不再满足于单一模型，而是打造一个"AI模型超市"，让用户在不同任务下选择最合适的模型（如写作用Claude、编程用ChatGPT）。Researcher工具则能自动完成跨文档、跨网页的复杂信息收集与整理。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1年内）将显著提升Office用户的工作效率；中长期可能改变"软件"的定义——从工具变为"智能协作者"。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来的办公可能不再需要"打开软件"，而是直接"吩咐AI"，它自动调用各种工具完成报告、分析、演示。</p>
+    </div>
+    </details>
+    <p class="item-source">来源：<a href="https://support.microsoft.com/en-us/microsoft-copilot/conversation-modes-in-microsoft-copilot" target="_blank">Microsoft Support</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：AI板块今日呈现"中国崛起+全球生态扩张"双重主线。中国AI产业从规模到技术全面追赶并局部反超，微软等巨头则通过多模型战略巩固办公入口。中美AI竞争进入"贴身肉搏"阶段，应用落地速度将成为胜负手。</div>
+
+  <!-- ==================== 板块4：科技/硬科技 ==================== -->
+  <h2>💻 科技 / 硬科技</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="stars">⭐⭐⭐⭐</span>
       <span class="impact impact-high">冲击：High</span>
       <span class="risk-red">🔴 重大风险</span>
     </div>
     <div class="item-summary">
-      美国总统特朗普宣布对中国商品加征<span class="num-down">10%</span>的额外关税，立即生效。此举标志着中美贸易摩擦再度升级，市场预计将影响价值约<span class="num-key">5000亿美元</span>的双边贸易，全球供应链成本面临新一轮上涨压力。
+      芯片股暴跌（美光<span class="num-down">-13%</span>，Sandisk <span class="num-down">-14%</span>）引发对半导体行业周期见顶的担忧。存储芯片是科技硬件的基础，其价格下跌可能传导至整个供应链，影响设备制造商和材料供应商。
     </div>
     <div class="bilingual">
-      <p class="en-title">Trump Imposes Extra 10% Tariff on Chinese Goods, Escalating Trade War</p>
-      <p class="en-summary">President Trump announced an additional 10% tariff on all Chinese imports, effective immediately. The move escalates the protracted trade conflict, affecting an estimated $500 billion in bilateral trade and raising costs across global supply chains.</p>
+      <p class="en-title">Semiconductor Rout Raises Cycle Peak Concerns</p>
+      <p class="en-summary">The sharp selloff in memory chip stocks, with Micron dropping 13% and Sandisk 14%, has reignited fears that the semiconductor cycle may have peaked. Falling memory prices could cascade through the supply chain, impacting equipment makers and materials suppliers.</p>
       <div class="vocab-card">
         <div class="vocab-title">📖 Key Vocabulary</div>
         <div class="vocab-list">
-          <span class="vocab-item"><b>tariff</b> 关税</span>
-          <span class="vocab-item"><b>trade war</b> 贸易战</span>
-          <span class="vocab-item"><b>supply chain</b> 供应链</span>
+          <span class="vocab-item"><b>cycle peak</b> 周期顶点</span>
+          <span class="vocab-item"><b>supply chain cascade</b> 供应链传导</span>
+          <span class="vocab-item"><b>memory price</b> 存储价格</span>
         </div>
       </div>
     </div>
     <details class="deepdive">
-      <summary>📖 深度解读</summary>
-      <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是特朗普第二任期以来对华最大规模的关税行动，叠加此前已有的税率，部分商品综合税率将超过<span class="num-key">35%</span>。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（3-6个月）中国出口企业利润承压，部分订单可能转移至东南亚；中长期若僵局持续，全球可能出现“中美双供应链”格局。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若关税长期化，全球消费者将面临更高通胀，而中国企业可能加速向“一带一路”国家转移产能，重塑全球制造业版图。</p>
-      </div>
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>半导体行业具有强周期性，通常经历2-3年的上行期和1-2年的下行期。美光、Sandisk的暴跌可能是周期转向的明确信号，原因包括PC/手机需求疲软、库存积压。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2个季度）内，芯片价格可能继续下跌，相关公司盈利承压；但AI对HBM（高带宽存储）的需求可能提供结构性支撑。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果下行周期确认，将加速落后产能出清，拥有先进封装和HBM技术的公司（如三星、SK海力士）可能逆势扩张。</p>
+    </div>
     </details>
-    <p class="item-source">来源：<a href="https://www.voachinese.com/z/1776" target="_blank">美国之音中文网</a></p>
+    <p class="item-source">来源：<a href="https://www.google.com/finance/beta" target="_blank">Google Finance</a></p>
   </div>
-  <div class="trend-comment">📊 板块趋势：经济层面今日受地缘政治主导，关税升级信号明确，全球避险情绪可能升温。投资者需关注下周中美经贸高级别磋商是否重启，以及人民币汇率波动风险。</div>
-</div>
 
-<!-- 板块3：人工智能 -->
-<div class="section">
-  <div class="section-title">🤖 人工智能</div>
   <div class="item">
     <div class="item-header">
-      <span class="title">2026上半年AI大模型全景回顾：国产模型进入“极致内卷”阶段</span>
-      <span class="star">⭐⭐⭐⭐</span>
+      <span class="stars">⭐⭐⭐</span>
+      <span class="impact impact-low">冲击：Low</span>
+    </div>
+    <div class="item-summary">
+      Persimmon Technologies 展示其在真空机器人和混合场3D打印电机技术方面的进展，主要服务于半导体、新能源和LED设备制造领域，是半导体上游设备国产替代的关键一环。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Persimmon Advances Vacuum Robotics for Semiconductor Tools</p>
+      <p class="en-summary">Persimmon Technologies is making strides in vacuum robotics and Hybrid-Field 3D printed motor technology, targeting applications in semiconductor, renewable energy, and LED manufacturing equipment, a critical area for supply chain localization.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>vacuum robotics</b> 真空机器人</span>
+          <span class="vocab-item"><b>3D printed motor</b> 3D打印电机</span>
+          <span class="vocab-item"><b>supply chain localization</b> 供应链国产化</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>半导体制造需要在真空环境中进行，真空机器人负责在腔体之间搬运晶圆，是光刻、刻蚀等核心工艺的"搬运工"。3D打印电机则能实现更轻、更定制化的运动控制。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）内，国产真空机器人有望进入国内晶圆厂；中长期（3-5年）可能打破日本发那科、安川等巨头的垄断。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果国产设备全面突破，中国半导体产业链将不再受制于"卡脖子"，实现从设计到制造的全自主可控。</p>
+    </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.htgc.com/portfolio-ajax-loader/?id=616" target="_blank">HTGC</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：硬科技板块出现显著分化。一方面，芯片股暴跌预示着行业周期可能见顶，短期风险加剧；另一方面，上游设备国产替代（如真空机器人）仍在稳步推进，长期逻辑未变。投资者需区分"周期波动"与"结构趋势"。</div>
+
+  <!-- ==================== 板块5：材料科学 ==================== -->
+  <h2>🔬 材料科学</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="stars">⭐⭐⭐</span>
       <span class="impact impact-med">冲击：Med</span>
     </div>
     <div class="item-summary">
-      多家机构发布2026上半年AI大模型回顾报告，指出国产大模型已从“追平对标”进入“差异化极致内卷”阶段。百度、阿里、华为等厂商在<span class="num-key">16项Benchmark</span>上交替领先，模型参数规模突破<span class="num-key">万亿级</span>，应用落地聚焦智能体开发与知识增强。
+      清华大学王笑楠团队探索AI赋能能源化工新材料发现与过程设计，利用机器学习加速催化剂、电解质等新材料的筛选与优化，有望将新材料研发周期从<span class="num-key">5-10年</span>缩短至<span class="num-key">1-2年</span>。
     </div>
     <div class="bilingual">
-      <p class="en-title">2026 H1 AI Model Landscape: Chinese LLMs Enter ‘Extreme Differentiation’ Phase</p>
-      <p class="en-summary">Industry reviews indicate that Chinese large language models have moved beyond catch-up to a phase of intense differentiation. Baidu, Alibaba, and Huawei are trading leads across 16 benchmarks, with model parameters exceeding the trillion scale, focusing on agent development and knowledge augmentation.</p>
+      <p class="en-title">AI Accelerates Discovery of Energy Materials at Tsinghua</p>
+      <p class="en-summary">Professor Wang Xiaonan's team at Tsinghua University is leveraging AI and machine learning to accelerate the discovery and design of new materials for energy and chemical engineering, potentially reducing the R&D cycle for new catalysts and electrolytes from 5-10 years to 1-2 years.</p>
       <div class="vocab-card">
         <div class="vocab-title">📖 Key Vocabulary</div>
         <div class="vocab-list">
-          <span class="vocab-item"><b>large language model (LLM)</b> 大语言模型</span>
-          <span class="vocab-item"><b>benchmark</b> 基准测试</span>
-          <span class="vocab-item"><b>differentiation</b> 差异化</span>
-        </div>
-      </div>
-    </div>
-    <details class="deepdive">
-      <summary>📖 深度解读</summary>
-      <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“极致内卷”指各厂商在特定场景（如医疗、法律、编程）上深度优化模型，而不是追求通用能力全面第一。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（6-12个月）企业级AI应用将爆发，尤其在智能客服、代码生成领域；中长期（2-3年）模型能力趋于同质化，算力成本成为胜负手。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来每个行业都将拥有自己的“专用大模型”，AI从通用工具转变为行业基础设施，就像今天的数据库一样。</p>
-      </div>
-    </details>
-    <p class="item-source">来源：<a href="https://www.weste.net/2026/06-24/2026-1-6-AI-Model.html" target="_blank">weste.net</a></p>
-  </div>
-  <div class="trend-comment">📊 板块趋势：AI领域今日无重大技术突破，但国产大模型的商业化竞争进入白热化。值得关注的是，模型评测标准日趋复杂，厂商“刷榜”行为增多，第三方中立评测机构的价值凸显。</div>
-</div>
-
-<!-- 板块4：科技/硬科技（量子计算） -->
-<div class="section">
-  <div class="section-title">💻 科技 / 硬科技</div>
-  <div class="item">
-    <div class="item-header">
-      <span class="title">特朗普签署行政令：美国启动“量子登月”计划，目标百万量子比特</span>
-      <span class="star">⭐⭐⭐⭐⭐</span>
-      <span class="impact impact-high">冲击：High</span>
-    </div>
-    <div class="item-summary">
-      美国总统特朗普签署行政令，正式启动“量子创新前沿计划”，目标在<span class="num-key">2028年前</span>建成一台拥有<span class="num-key">100万</span>个物理量子比特的量子计算机。该机器将比现有最强量子计算机强大<span class="num-key">数个数量级</span>，用于破解加密、新材料模拟和复杂系统优化。
-    </div>
-    <div class="bilingual">
-      <p class="en-title">Trump Signs Executive Order for ‘Quantum Moonshot’, Aiming for Million-Qubit Machine</p>
-      <p class="en-summary">President Trump signed an executive order launching the Quantum Innovation Frontier Initiative, targeting a quantum computer with 1 million physical qubits by 2028. The machine would be orders of magnitude more powerful than current systems, with applications in cryptography, materials simulation, and optimization.</p>
-      <div class="vocab-card">
-        <div class="vocab-title">📖 Key Vocabulary</div>
-        <div class="vocab-list">
-          <span class="vocab-item"><b>qubit</b> 量子比特</span>
-          <span class="vocab-item"><b>quantum computing</b> 量子计算</span>
-          <span class="vocab-item"><b>executive order</b> 行政令</span>
-        </div>
-      </div>
-    </div>
-    <details class="deepdive">
-      <summary>📖 深度解读</summary>
-      <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>当前最先进的量子计算机（如IBM、谷歌）仅有约<span class="num-key">1000</span>个物理量子比特。百万量子比特意味着实现“量子优越性”的全面突破，能够解决经典计算机无法企及的问题。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）将带动量子材料、超导、低温控制等产业链投资；中期（3-5年）若目标实现，现有RSA加密体系将面临颠覆，金融、国防安全体系需提前升级。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>量子计算机或成为“21世纪的曼哈顿工程”，一旦成功，药物研发周期可从10年缩短至数月，新型电池材料将加速涌现，彻底改变能源和医疗格局。</p>
-      </div>
-    </details>
-    <p class="item-source">来源：<a href="https://www.whitehouse.gov/fact-sheets/2026/06/fact-sheet-president-donald-j-trump-ushers-in-the-next-frontier-of-quantum-innovation/" target="_blank">白宫官网</a> · <a href="https://www.nbcnews.com/business/economy/trump-order-quantum-computer-rcna351237" target="_blank">NBC News</a></p>
-  </div>
-  <div class="trend-comment">📊 板块趋势：量子计算正式成为国家级战略竞争焦点，美国以行政令形式明确时间表和预算，中国、欧盟预计将迅速跟进。硬科技赛道从“AI独大”转向“AI+量子”双轮驱动，相关ETF和初创企业估值可能迎来重估。</div>
-</div>
-
-<!-- 板块5：材料科学 -->
-<div class="section">
-  <div class="section-title">🔬 材料科学</div>
-  <div class="item">
-    <div class="item-header">
-      <span class="title">“十五五”新材料产业规划发布：高性能碳纤维与复合材料列为战略重点</span>
-      <span class="star">⭐⭐⭐⭐</span>
-      <span class="impact impact-med">冲击：Med</span>
-      <span class="risk-yellow">🟡 值得观察</span>
-    </div>
-    <div class="item-summary">
-      中国“十五五”新材料产业发展规划正式发布，明确将高性能碳纤维、轻量化复合材料、先进半导体材料列为战略级赛道。规划提出利用AI与机器学习加速研发，目标使新材料研发周期缩短<span class="num-up">40%以上</span>，并推动在航空航天、新能源汽车领域的大规模应用。
-    </div>
-    <div class="bilingual">
-      <p class="en-title">China’s 15th Five-Year Plan for Advanced Materials Prioritizes Carbon Fiber and Composites</p>
-      <p class="en-summary">China unveiled its latest five-year plan for new materials, designating high-performance carbon fiber, lightweight composites, and advanced semiconductors as strategic priorities. AI and machine learning are expected to shorten R&D cycles by over 40%, with applications in aerospace and new energy vehicles.</p>
-      <div class="vocab-card">
-        <div class="vocab-title">📖 Key Vocabulary</div>
-        <div class="vocab-list">
-          <span class="vocab-item"><b>carbon fiber</b> 碳纤维</span>
-          <span class="vocab-item"><b>composite materials</b> 复合材料</span>
+          <span class="vocab-item"><b>machine learning</b> 机器学习</span>
+          <span class="vocab-item"><b>catalyst discovery</b> 催化剂发现</span>
           <span class="vocab-item"><b>R&D cycle</b> 研发周期</span>
         </div>
       </div>
     </div>
     <details class="deepdive">
-      <summary>📖 深度解读</summary>
-      <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>新材料是所有高端制造业的基础。碳纤维被称为“黑色黄金”，是航空航天（C919、军机）和氢能储罐的关键材料；复合材料则是电动汽车轻量化的核心。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）国内碳纤维产能将加速扩张，国产替代率有望从<span class="num-key">30%</span>提升至<span class="num-up">50%</span>；中长期（3-5年）中国有望在部分高性能材料领域实现全球领先。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当碳纤维成本降低到与钢材相当，汽车将减重<span class="num-key">50%</span>，电动车续航突破<span class="num-key">1000公里</span>，建筑行业也将迎来“轻量化革命”。</p>
-      </div>
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传统材料研发依赖"试错法"，周期长、成本高。AI可以通过模拟和预测，快速筛选数百万种材料组合，找到最优解。这就像用"导航"代替"盲人摸象"。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）内，AI将帮助找到更高效的电池电解液和催化剂；中长期（3-5年），可能实现"按需设计"新材料，彻底改变材料科学的研究范式。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来，科学家可能只需要描述需求（如"室温超导、柔性、低成本"），AI就能自动生成候选材料配方并模拟验证，材料创新将进入"指数级"增长时代。</p>
+    </div>
     </details>
-    <p class="item-source">来源：<a href="https://finance.sina.com.cn/roll/2025-11-14/doc-infxkany4486356.shtml" target="_blank">新浪财经</a> · <a href="https://zhuanlan.zhihu.com/p/2008881858985882211" target="_blank">知乎专栏</a></p>
+    <p class="item-source">来源：<a href="https://zhuanlan.zhihu.com/p/1961103937143808181" target="_blank">知乎</a></p>
   </div>
-  <div class="trend-comment">📊 板块趋势：材料科学今日受政策驱动明显，“十五五”规划为产业注入长期信心。叠加量子计算对新型超导材料的巨大需求，材料板块可能成为未来5年最确定的成长赛道之一。</div>
-</div>
 
-<!-- 板块6：中国政策与监管 -->
-<div class="section">
-  <div class="section-title">🇨🇳 中国政策与监管</div>
+  <div class="trend-comment">📊 板块趋势：材料科学板块今日亮点集中在"AI+材料"这一交叉领域。AI正从"辅助工具"变为"核心引擎"，大幅缩短研发周期。这是中国在基础科学领域实现"换道超车"的重要机会，尤其在新能源材料方向。</div>
+
+  <!-- ==================== 板块6：中国政策与监管 ==================== -->
+  <h2>🇨🇳 中国政策与监管</h2>
+
   <div class="item">
     <div class="item-header">
-      <span class="title">中方宣布禁止进口美国Illumina基因测序仪，反制美关税</span>
-      <span class="star">⭐⭐⭐⭐⭐</span>
-      <span class="impact impact-high">冲击：High</span>
-      <span class="risk-red">🔴 重大风险</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
     </div>
     <div class="item-summary">
-      作为对美加征<span class="num-down">10%</span>关税的反制，中国商务部宣布即日起禁止进口美国Illumina公司生产的基因测序仪。这是中国首次在高端医疗设备领域实施“精准反制”，预计将影响国内超过<span class="num-key">2000家</span>医疗机构和科研机构的正常运营。
+      清华大学张亚勤教授指出，在前三次工业革命中中国分别是"零参与"和"跟随者"，但在以AI为核心的第四次工业革命中，"中国完全有可能走在前列"。这一判断反映了国家层面对AI战略地位的共识。
     </div>
     <div class="bilingual">
-      <p class="en-title">China Bans Illumina Gene Sequencers in Retaliation for U.S. Tariffs</p>
-      <p class="en-summary">China’s Ministry of Commerce announced an immediate ban on imports of Illumina gene sequencers, retaliating against the U.S. 10% tariff. The move targets over 2,000 medical and research institutions, marking the first time China has used precision medical devices as a leverage tool.</p>
+      <p class="en-title">Tsinghua Professor: China Can Lead the 4th Industrial Revolution</p>
+      <p class="en-summary">Professor Zhang Yaqin of Tsinghua University stated that while China was absent from the first two industrial revolutions and a follower in the third, it has a real chance to lead in the AI-driven fourth industrial revolution, reflecting a growing national consensus on AI's strategic importance.</p>
       <div class="vocab-card">
         <div class="vocab-title">📖 Key Vocabulary</div>
         <div class="vocab-list">
-          <span class="vocab-item"><b>retaliation</b> 报复</span>
-          <span class="vocab-item"><b>import ban</b> 进口禁令</span>
-          <span class="vocab-item"><b>precision medicine</b> 精准医疗</span>
+          <span class="vocab-item"><b>industrial revolution</b> 工业革命</span>
+          <span class="vocab-item"><b>strategic consensus</b> 战略共识</span>
+          <span class="vocab-item"><b>AI-driven</b> AI驱动的</span>
         </div>
       </div>
     </div>
     <details class="deepdive">
-      <summary>📖 深度解读</summary>
-      <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是中美科技脱钩在生命科学领域的标志性事件。Illumina测序仪是癌症基因检测、出生缺陷筛查的“金标准”，短期内难以被完全替代。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（3-6个月）国内基因检测服务可能涨价或延迟，华大智造等企业将加速抢占市场；中长期（2-3年）中国有望建立独立的基因测序产业链。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果全球基因测序市场分裂为“中国标准”和“美国标准”，跨国药物研发和疾病研究数据将无法互通，可能阻碍人类对抗癌症的进程。</p>
-      </div>
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是中国顶级学者对AI战略地位的权威判断。前三次工业革命分别对应蒸汽机、电气化和信息技术，中国都处于落后地位。AI革命中，中国在数据规模、应用场景和政策支持上具有独特优势。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内，政策将继续大力支持AI基础设施和人才培养；中长期（5-10年），中国有望在AI标准制定和国际规则上拥有更大话语权。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中国成功引领第四次工业革命，全球科技格局将从"西方主导"变为"东西方双核"，甚至可能出现"中国标准"成为全球通用标准的局面。</p>
+    </div>
     </details>
-    <p class="item-source">来源：<a href="https://www.voachinese.com/z/1776" target="_blank">美国之音中文网</a></p>
+    <p class="item-source">来源：<a href="https://www.tsinghua.edu.cn/info/1182/124190.htm" target="_blank">清华大学</a></p>
   </div>
-  <div class="trend-comment">📊 板块趋势：中国政策端今日呈现明显“反制+自主”双主线。一方面通过贸易手段施压美国，另一方面“十五五”规划为国产替代提供制度保障。监管层对科技自主的重视程度达到历史高点。</div>
-</div>
 
-<!-- 板块7：地缘政治与国际关系 -->
-<div class="section">
-  <div class="section-title">🌍 地缘政治与国际关系</div>
+  <div class="trend-comment">📊 板块趋势：中国政策板块的核心信号是"AI国家战略"的进一步确认。从产业数据到高层学者表态，AI已被视为国运之争的关键战场。预计后续将出台更多配套政策，包括算力基建、人才培养、数据安全等。</div>
+
+  <!-- ==================== 板块7：地缘政治与国际关系 ==================== -->
+  <h2>🌍 地缘政治与国际关系</h2>
+
   <div class="item">
     <div class="item-header">
-      <span class="title">特朗普宣布对华加征10%关税，中美关系再陷紧张</span>
-      <span class="star">⭐⭐⭐⭐⭐</span>
-      <span class="impact impact-high">冲击：High</span>
-      <span class="risk-red">🔴 重大风险</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
     </div>
     <div class="item-summary">
-      美国总统特朗普宣布对中国商品加征<span class="num-down">10%</span>额外关税，中方随即宣布反制措施。尽管两国此前曾就“建设性战略稳定关系”达成共识，但本次关税行动表明双边关系仍然脆弱。分析人士指出，2026年下半年的中美关系将进入“竞争性共存”的新阶段。
+      2026年夏季达沃斯论坛（世界经济论坛新领军者年会）在大连开幕，专门设置"'一带一路'未来如何发展？"分论坛。与会人士就绿色基建、数字丝绸之路、第三方市场合作等议题进行交流与展望。
     </div>
     <div class="bilingual">
-      <p class="en-title">Trump Imposes 10% Tariff on China, Straining Bilateral Ties</p>
-      <p class="en-summary">President Trump announced an additional 10% tariff on Chinese imports, prompting swift retaliation from Beijing. Despite earlier agreements on a “constructive strategic stable relationship,” the tariff move underscores the fragility of the world’s most important bilateral relationship, now entering a phase of “competitive coexistence.”</p>
+      <p class="en-title">Summer Davos Focuses on Belt and Road Future in Dalian</p>
+      <p class="en-summary">The 2026 World Economic Forum's Annual Meeting of the New Champions (Summer Davos) opened in Dalian, featuring a dedicated session on the future of the Belt and Road Initiative (BRI). Discussions centered on green infrastructure, the Digital Silk Road, and third-party market cooperation.</p>
       <div class="vocab-card">
         <div class="vocab-title">📖 Key Vocabulary</div>
         <div class="vocab-list">
-          <span class="vocab-item"><b>bilateral relationship</b> 双边关系</span>
-          <span class="vocab-item"><b>competitive coexistence</b> 竞争性共存</span>
-          <span class="vocab-item"><b>retaliation</b> 报复</span>
+          <span class="vocab-item"><b>Belt and Road Initiative</b> 一带一路倡议</span>
+          <span class="vocab-item"><b>Digital Silk Road</b> 数字丝绸之路</span>
+          <span class="vocab-item"><b>third-party market cooperation</b> 第三方市场合作</span>
         </div>
       </div>
     </div>
     <details class="deepdive">
-      <summary>📖 深度解读</summary>
-      <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>关税是特朗普标志性的施压工具，本次加征距离两国元首会晤仅过去不到<span class="num-key">6周</span>，显示美方对中方在技术转让、市场准入等议题上的进展不满。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）双方可能启动新一轮谈判，但达成协议难度较大；中长期（6-12个月）如果关税持续，全球供应链可能加速“去中国化”或“去美国化”。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>世界可能走向“经济北约”与“经济华约”的对峙，全球贸易体系面临二战以来最大重构。</p>
-      </div>
+    <summary>📖 深度解读</summary>
+    <div class="deepdive-content">
+      <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>夏季达沃斯是中国重要的主场外交平台。"一带一路"分论坛的设立，表明中国希望在全球经济不确定性增加的背景下，继续推动多边合作和互联互通。</p>
+      <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）内，"一带一路"将更侧重绿色能源和数字基础设施；中长期（3-5年），可能形成从"硬联通"（铁路、港口）到"软联通"（数字支付、数据跨境）的全面升级。</p>
+      <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果数字丝绸之路成型，沿线国家将实现"无国界"的数字服务，跨境贸易、支付、物流效率大幅提升，可能催生新的"丝路经济体"。</p>
+    </div>
     </details>
-    <p class="item-source">来源：<a href="https://www.voachinese.com/z/1776" target="_blank">美国之音中文网</a> · <a href="https://www.mfa.gov.cn/zyxw/202605/t20260514_11910264.shtml" target="_blank">外交部</a></p>
+    <p class="item-source">来源：<a href="https://china.chinadaily.com.cn/a/202606/24/WS6a3b488aa310d709c2fb9c34.html" target="_blank">中国日报网</a></p>
   </div>
-  <div class="item">
-    <div class="item-header">
-      <span class="title">缅甸总统敏昂莱就任后首次访华，推进“一带一路”合作</span>
-      <span class="star">⭐⭐⭐⭐</span>
-      <span class="impact impact-low">冲击：Low</span>
-    </div>
-    <div class="item-summary">
-      缅甸总统敏昂莱就任后首次对中国进行国事访问，双方就中缅经济走廊、皎漂港项目等达成多项合作共识。中方表示将继续支持缅甸国内和平进程，并推动“一带一路”在东南亚的深化。
-    </div>
-    <div class="bilingual">
-      <p class="en-title">Myanmar President Makes First State Visit to China, Boosts Belt and Road Cooperation</p>
-      <p class="en-summary">Myanmar’s President Min Aung Hlaing paid his first state visit to China since taking office, reaching agreements on the China-Myanmar Economic Corridor and the Kyaukphyu port project. China reaffirmed support for Myanmar’s peace process and deeper Belt and Road collaboration.</p>
-      <div class="vocab-card">
-        <div class="vocab-title">📖 Key Vocabulary</div>
-        <div class="vocab-list">
-          <span class="vocab-item"><b>state visit</b> 国事访问</span>
-          <span class="vocab-item"><b>economic corridor</b> 经济走廊</span>
-          <span class="vocab-item"><b>Belt and Road</b> 一带一路</span>
-        </div>
-      </div>
-    </div>
-    <details class="deepdive">
-      <summary>📖 深度解读</summary>
-      <div class="deepdive-content">
-        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>敏昂莱2026年2月当选总统后首次访华，旨在巩固中缅传统友谊，同时为缅甸争取更多基础设施投资，缓解西方制裁压力。</p>
-        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）皎漂港项目将加速建设，成为中国通往印度洋的又一战略通道；中长期（3-5年）中缅经济走廊可能成为“一带一路”的样板工程。</p>
-        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中缅铁路连通，中国西部省份将获得直通印度洋的出海口，绕开马六甲海峡，彻底改变全球地缘格局。</p>
-      </div>
-    </details>
-    <p class="item-source">来源：<a href="https://www.facebook.com/PearlNewsHK/posts/1630790935718604/" target="_blank">香港明珠传媒</a></p>
-  </div>
-  <div class="trend-comment">📊 板块趋势：地缘政治今日呈“美攻中守”格局。美国以关税施压，中国以反制+外交突围应对。缅甸访问显示中国在东南亚的影响力持续巩固，但中美博弈仍是全球主线。</div>
-</div>
 
-<!-- 时间提醒模块（条件触发） -->
-<div class="timeline">
-  <h4>⏰ 近期关键时间节点</h4>
-  <div class="timeline-item">
-    <span class="timeline-date">2026-06-25</span>
-    <span>美国对华10%额外关税今日生效，中方反制措施同步启动</span>
-  </div>
-  <div class="timeline-item">
-    <span class="timeline-date">2026-07-01</span>
-    <span>中国“十五五”新材料产业规划正式实施，首批专项资金开放申报</span>
-  </div>
-  <div class="timeline-item">
-    <span class="timeline-date">2026-07-15</span>
-    <span>中美经贸高级别磋商预计在华盛顿重启</span>
-  </div>
-</div>
+  <div class="trend-comment">📊 板块趋势：地缘板块今日信号偏积极。夏季达沃斯聚焦"一带一路"，显示出中国在逆全球化浪潮中坚持开放合作的姿态。但需警惕美欧对"数字丝绸之路"的警惕和潜在制裁，地缘博弈仍将持续。</div>
 
-<div class="footer-note">
-  全球动态简报 · 2026-06-25 · 基于公开信息整理，不构成投资建议。
-</div>
+  <!-- ==================== 时间提醒模块 ==================== -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-06-23</span>
+      <span>夏季达沃斯论坛在大连开幕，"一带一路"分论坛举行</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-07-XX</span>
+      <span>美光（Micron）即将发布季度财报，市场预期悲观</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    全球动态简报 | 2026-06-25 | 数据来源：Yahoo Finance, Google Finance, 清华大学, 腾讯新闻, 中国日报等
+  </div>
 
 </div>
 </body>
