@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌍 全球动态简报 | 2026-06-29</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f4f5f7;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            padding: 30px 20px;
+            color: #1e1e1e;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 28px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0b1a2f;
+            border-left: 6px solid #2563eb;
+            padding-left: 16px;
+            margin: 28px 0 16px 0;
+        }
+        h2:first-of-type {
+            margin-top: 0;
+        }
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+            color: #0b1a2f;
+        }
+        h4 {
+            font-size: 17px;
+            font-weight: 600;
+            margin: 14px 0 8px 0;
+        }
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .overview {
+            background: #eef2fe;
+            border-radius: 16px;
+            padding: 22px 24px;
+            margin-bottom: 28px;
+            border: 1px solid #d9e2fc;
+        }
+        .overview p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #1e293b;
+            margin-bottom: 14px;
+        }
+        .overview-tags {
+            display: block;
+            margin-top: 6px;
+        }
+        .overview-tag {
+            display: inline-block;
+            background: #ffffff;
+            border: 1px solid #b9cbfa;
+            border-radius: 30px;
+            padding: 6px 18px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-right: 10px;
+            margin-bottom: 6px;
+        }
+        .item-block {
+            background: #fafbfc;
+            border-radius: 16px;
+            padding: 22px 24px;
+            margin-bottom: 28px;
+            border: 1px solid #e9edf2;
+        }
+        .item-header {
+            display: block;
+            margin-bottom: 12px;
+        }
+        .item-header .title-line {
+            font-size: 19px;
+            font-weight: 700;
+            color: #0b1a2f;
+            margin-right: 12px;
+            display: inline;
+        }
+        .star {
+            display: inline-block;
+            font-size: 16px;
+            letter-spacing: 2px;
+            color: #f59e0b;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+        .impact {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 30px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .impact-high {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+        .impact-med {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .impact-low {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+        .risk-red {
+            display: inline-block;
+            background: #fce4e4;
+            color: #a51b1b;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 30px;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        .risk-yellow {
+            display: inline-block;
+            background: #fef9e7;
+            color: #8a6d1c;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 30px;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        .item-summary {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 8px 0 14px 0;
+            color: #1e293b;
+        }
+        .num-up {
+            background: #dcfce7;
+            color: #166534;
+            font-weight: 600;
+            padding: 0 6px;
+            border-radius: 6px;
+        }
+        .num-down {
+            background: #fee2e2;
+            color: #991b1b;
+            font-weight: 600;
+            padding: 0 6px;
+            border-radius: 6px;
+        }
+        .num-key {
+            background: #eef2ff;
+            color: #4338ca;
+            font-weight: 600;
+            padding: 0 6px;
+            border-radius: 6px;
+        }
+        .bilingual {
+            background: #f1f5f9;
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin: 16px 0 12px 0;
+            border-left: 4px solid #3b82f6;
+        }
+        .en-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #0b1a2f;
+            margin-bottom: 6px;
+        }
+        .en-summary {
+            font-size: 15px;
+            color: #1e293b;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        .vocab-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 12px 16px;
+            border: 1px solid #dbeafe;
+        }
+        .vocab-title {
+            font-weight: 600;
+            font-size: 15px;
+            color: #1e3a8a;
+            margin-bottom: 8px;
+        }
+        .vocab-list {
+            display: block;
+        }
+        .vocab-item {
+            display: inline-block;
+            background: #eef2ff;
+            border-radius: 30px;
+            padding: 4px 14px;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-bottom: 6px;
+        }
+        .compare-box {
+            background: #f8fafc;
+            border: 1px solid #d1d9e6;
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin: 18px 0 14px 0;
+            display: block;
+        }
+        .compare-side {
+            display: inline-block;
+            width: 46%;
+            vertical-align: top;
+            padding: 8px 12px;
+            border-radius: 12px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        .compare-bull {
+            background: #e6f7e6;
+            margin-right: 4%;
+        }
+        .compare-bear {
+            background: #fde8e8;
+        }
+        .compare-label {
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+        .deepdive {
+            margin: 16px 0 8px 0;
+            background: #ffffff;
+            border: 1px solid #dce3ef;
+            border-radius: 14px;
+            padding: 6px 16px 12px 16px;
+        }
+        .deepdive summary {
+            font-weight: 600;
+            font-size: 16px;
+            color: #1e3a8a;
+            cursor: pointer;
+            padding: 8px 0;
+        }
+        .deepdive-content {
+            padding: 8px 4px 4px 4px;
+        }
+        .dl {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .dl-label {
+            font-weight: 700;
+            color: #0b1a2f;
+        }
+        .item-source {
+            font-size: 14px;
+            color: #5f6c80;
+            margin-top: 10px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 10px;
+        }
+        .trend-comment {
+            background: #f1f5f9;
+            border-radius: 14px;
+            padding: 14px 20px;
+            margin: 10px 0 28px 0;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #1e293b;
+            border-left: 4px solid #64748b;
+        }
+        .timeline {
+            background: #fefce8;
+            border: 1px solid #e6d7a8;
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin: 28px 0 20px 0;
+        }
+        .timeline h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #7c5c0e;
+            margin-bottom: 12px;
+        }
+        .timeline-item {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        .timeline-date {
+            display: inline-block;
+            background: #ffffff;
+            border: 1px solid #d4c28a;
+            border-radius: 30px;
+            padding: 2px 16px;
+            font-weight: 600;
+            color: #5f4b0b;
+            margin-right: 12px;
+            font-size: 14px;
+        }
+        footer {
+            text-align: center;
+            font-size: 14px;
+            color: #6b7a8f;
+            border-top: 1px solid #dce3ef;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+        @media (max-width: 640px) {
+            .container { padding: 18px 14px; }
+            .compare-side { width: 100%; display: block; margin-bottom: 10px; }
+            .compare-bull { margin-right: 0; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 综述模块 -->
+    <div class="overview">
+        <h3>🧠 今日全球动态综述</h3>
+        <p>2026年6月29日简报呈现多维度信号：中国夏季达沃斯释放“规模化创新”机遇，吸引全球资本；日本加速稀土替代以应对中国出口管制；四川发生5.29级地震，短期关注灾后重建。同时，中国国产超算“灵晟”发布，AI与硬科技自主化再提速。整体风向：科技自主与地缘博弈交织，中国市场韧性凸显，但自然灾害与供应链风险仍需警惕。</p>
+        <div class="overview-tags">
+            <span class="overview-tag">🌏 夏季达沃斯</span>
+            <span class="overview-tag">🛰️ 天问二号</span>
+            <span class="overview-tag">🧲 稀土博弈</span>
+            <span class="overview-tag">💻 国产超算</span>
+            <span class="overview-tag">🌊 四川地震</span>
+        </div>
+    </div>
+
+    <!-- ===== 板块 1：生命科学 ===== -->
+    <h2>🧬 生命科学 / 医学</h2>
+
+    <!-- 新闻 1 -->
+    <div class="item-block">
+        <div class="item-header">
+            <span class="title-line">基因定义新共识：转录本为统一标准</span>
+            <span class="star">⭐⭐⭐</span>
+            <span class="impact impact-low">冲击：Low</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            维基百科与多源权威更新基因定义，强调基因是“被转录的DNA序列”，涵盖非编码RNA。这一共识性表述为科研与教学提供更精确的框架，但短期内对产业影响有限。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Gene Definition Updated: Transcription-Based Consensus</p>
+            <p class="en-summary">Wikipedia and multiple authoritative sources have refined the definition of a gene as “a DNA sequence that is transcribed,” including non-coding RNAs. This consensus provides a more precise framework for research and education, though near-term industrial impact remains limited.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>transcribed</b> 被转录的</span>
+                    <span class="vocab-item"><b>non-coding RNA</b> 非编码RNA</span>
+                    <span class="vocab-item"><b>consensus</b> 共识</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去基因定义常局限于编码蛋白质的DNA，新定义将非编码RNA也纳入，反映过去十年功能基因组学的重大发现。好比把“图书馆”的定义从“只存放小说”扩展为“存放所有文字资料”。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）影响教科书与基础研究；中长期（3-5年）可能推动非编码RNA药物靶点发现，如针对癌症的lncRNA疗法。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果完全实现，疾病诊断将不再只看编码基因，而是全面分析转录组，实现真正的“全基因组精准医疗”。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://en.m.wikipedia.org/wiki/Gene" target="_blank">Wikipedia - Gene</a> / <a href="https://www.britannica.com/science/gene" target="_blank">Britannica</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：生命科学领域今日以基础概念更新为主，无重大临床突破。非编码RNA定义的统一将长期影响科研方向，但短期情绪中性。</div>
+
+    <!-- ===== 板块 2：经济/金融 ===== -->
+    <h2>💰 经济 / 金融</h2>
+
+    <div class="item-block">
+        <div class="item-header">
+            <span class="title-line">夏季达沃斯：中国“规模化创新”吸引全球投资</span>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            在大连夏季达沃斯论坛上，多国企业高管表示中国仍是全球投资首选地之一，关键词“规模化创新”被反复提及。尽管地缘不确定性上升，跨国公司在华布局信心不减，预计未来12个月对华直接投资将维持<span class="num-key">+5%</span>以上增速。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Summer Davos: China’s ‘Innovation at Scale’ Draws Global Investment</p>
+            <p class="en-summary">At the Summer Davos Forum in Dalian, multinational executives reaffirmed China as a top investment destination, citing “innovation at scale.” Despite geopolitical headwinds, confidence in China remains robust, with FDI expected to grow by more than <span class="num-key">+5%</span> over the next 12 months.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>innovation at scale</b> 规模化创新</span>
+                    <span class="vocab-item"><b>multinational</b> 跨国公司</span>
+                    <span class="vocab-item"><b>FDI</b> 外商直接投资</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“规模化创新”指中国凭借庞大市场、完整产业链和快速迭代能力，将新技术迅速推向大规模应用。例如电动车、光伏领域，中国已实现从实验室到全球市场的规模化。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）外资将继续加码中国研发中心与制造基地；中长期（3-5年）在AI、生物制造等领域可能出现“为中国创新”的新模式。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果完全实现，中国将成为全球“创新规模化”的样板，任何新技术都能在中国快速找到百万级用户场景，反向输出全球。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.facebook.com/XinhuaNewsAgency/videos/summer-davos-insights-china-drives-innovation-at-scale-for-global-growth/2124234244825702/" target="_blank">新华社 via Facebook</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：经济层面信号偏积极，夏季达沃斯强化了中国作为“创新规模化”目的地的叙事。但全球通胀与地缘风险仍构成暗流，需关注后续具体投资数据。</div>
+
+    <!-- ===== 板块 3：人工智能 ===== -->
+    <h2>🤖 人工智能</h2>
+
+    <div class="item-block">
+        <div class="item-header">
+            <span class="title-line">OpenAI与DeepSeek：中美AI阵营持续分化</span>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            OpenAI 持续迭代 GPT-4 并布局 AGI，而中国深度求索（DeepSeek）凭借免费AI助手快速获取用户。两大阵营在基础模型、开源生态与商业模式上分歧加剧，全球AI治理碎片化风险上升。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">OpenAI vs. DeepSeek: US-China AI Divergence Intensifies</p>
+            <p class="en-summary">OpenAI continues to advance GPT-4 and AGI research, while China’s DeepSeek rapidly gains users with free AI assistants. The two camps are diverging in foundational models, open-source ecosystems, and business models, raising risks of fragmented global AI governance.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>divergence</b> 分化</span>
+                    <span class="vocab-item"><b>AGI</b> 通用人工智能</span>
+                    <span class="vocab-item"><b>fragmented governance</b> 碎片化治理</span>
+                </div>
+            </div>
+        </div>
+        <div class="compare-box">
+            <div class="compare-side compare-bull">
+                <div class="compare-label">📈 乐观方</div>
+                开源与免费模式将加速AI民主化，DeepSeek等中国公司降低使用门槛，全球开发者受益。
+            </div>
+            <div class="compare-side compare-bear">
+                <div class="compare-label">📉 悲观方</div>
+                中美AI脱钩导致标准不统一，安全风险上升，企业面临合规成本激增与供应链双重压力。
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>OpenAI代表封闭、高成本的顶尖模型路线；DeepSeek代表开放、低成本的普惠路线。两者差异不仅是技术路线，更是商业模式与地缘战略的博弈。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1年）内中美AI企业将各自圈地；中长期（3-5年）可能出现“两个AI世界”，各自形成从芯片到应用的闭环生态。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果完全实现，全球AI市场将分裂为“美式AI”与“中式AI”两大体系，开发者需选择站队，国际合作依赖双边协议。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://openai.com/" target="_blank">OpenAI</a> / <a href="https://www.deepseek.com/" target="_blank">DeepSeek</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI领域今日无重大模型发布，但中美阵营分化趋势明显。DeepSeek的免费策略正在改变竞争格局，OpenAI则加速AGI叙事。关注后续开源模型生态演变。</div>
+
+    <!-- ===== 板块 4：科技/硬科技 ===== -->
+    <h2>💻 科技 / 硬科技</h2>
+
+    <div class="item-block">
+        <div class="item-header">
+            <span class="title-line">中国国产超算“灵晟”发布，基于ARM架构</span>
+            <span class="star">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            在ISC2026大会上，中国发布全国产超级计算机“灵晟”（LineShine），采用特制“灵坤”平台，基于ARMv9指令集架构。算力性能达到<span class="num-key">200 PFlops</span>，标志着中国在自主超算领域迈出关键一步，减少对x86依赖。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">China Unveils ‘LineShine’ Domestic Supercomputer Based on ARM</p>
+            <p class="en-summary">At ISC2026, China launched the fully domestic supercomputer “LineShine,” built on the custom “LingKun” platform with ARMv9 architecture. Achieving <span class="num-key">200 PFlops</span>, it marks a critical step in reducing dependence on x86 technology and advancing sovereign computing capability.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>supercomputer</b> 超级计算机</span>
+                    <span class="vocab-item"><b>ARM architecture</b> ARM架构</span>
+                    <span class="vocab-item"><b>sovereign computing</b> 自主计算</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“灵晟”超算完全采用国产芯片与ARM指令集，摆脱对Intel/AMD x86架构的依赖。好比中国在计算领域建成了自己的“高铁系统”，不再受制于外国轨道标准。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）用于气象、基因、材料等国家科研任务；中长期（3-5年）有望带动国产ARM服务器生态，挑战x86在数据中心的统治地位。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果完全实现，中国将拥有从指令集到整机的全栈自主算力体系，在AI训练、气候模拟等领域具备完全自主权。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.facebook.com/unwirehk/posts/中國全國產超級電腦靈晟lineshine於-isc2026-大會正式發布由深圳雲端計算中心建立採用特製靈坤lingkun平台配備基於-armv9-指令集架構-l/1451507687017693/" target="_blank">UNWIRE.HK</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技领域国产替代信号强烈，ARM生态在超算领域取得突破。配合华为等企业持续投入，中国计算产业自主化进入加速期。</div>
+
+    <!-- ===== 板块 5：材料科学 ===== -->
+    <h2>🔬 材料科学</h2>
+
+    <div class="item-block">
+        <div class="item-header">
+            <span class="title-line">日本加速研发无稀土电机，应对中国出口管制</span>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            面对中国收紧稀土出口管制，日本多家车企及零部件商（如日立Astemo）正加快研发不依赖稀土的电机。目标在<span class="num-key">2027年前</span>实现量产，以构建更具韧性的供应链，摆脱对中国矿产的依赖。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Japan Accelerates Development of Rare-Earth-Free Motors Amid China Export Curbs</p>
+            <p class="en-summary">In response to China’s tightened rare-earth export controls, Japanese automakers and parts suppliers like Hitachi Astemo are racing to develop motors that do not require rare-earth metals. Mass production is targeted by <span class="num-key">2027</span> to build a more resilient supply chain and reduce dependence on Chinese minerals.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>rare-earth</b> 稀土</span>
+                    <span class="vocab-item"><b>export controls</b> 出口管制</span>
+                    <span class="vocab-item"><b>supply chain resilience</b> 供应链韧性</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>稀土是电动汽车电机、风力发电机等关键材料，中国占全球产量<span class="num-key">70%</span>以上。日本研发无稀土电机（如使用铁氧体或新型磁材），试图绕过这一瓶颈。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）成本较高，性能可能略低于稀土电机；中长期（3-5年）一旦突破，将重塑全球新能源供应链，削弱中国稀土议价权。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果完全实现，未来电动车将不再依赖稀土，地缘矿产博弈降温，全球绿色转型速度加快。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.facebook.com/unwirehk/posts/面對中國收緊稀土出口管制日本多間車廠及零件商正加快研發不依賴稀土的電機務求構建更具韌性的供應鏈擺脫對中國礦產的依賴汽車零件龍頭日立-astemo-於-2025-/1451488533686275/" target="_blank">UNWIRE.HK</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学今日焦点在稀土替代。中国出口管制倒逼日本技术突围，短期利好中国稀土价格，但长期可能削弱中国战略优势。关注2027年日本量产节点。</div>
+
+    <!-- ===== 板块 6：中国政策与监管 ===== -->
+    <h2>🇨🇳 中国政策与监管</h2>
+
+    <div class="item-block">
+        <div class="item-header">
+            <span class="title-line">四川发生5.29级地震，救援响应启动</span>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            据GFZ德国地学中心测定，6月28日四川发生<span class="num-key">5.29级</span>地震。目前暂无重大伤亡报告，但当地已启动应急响应。短期关注灾后重建与基建检测，可能对区域经济活动产生轻微扰动。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Magnitude 5.29 Earthquake Strikes Sichuan, China</p>
+            <p class="en-summary">A magnitude 5.29 earthquake hit Sichuan province on June 28, according to the GFZ German Research Centre. No major casualties have been reported, but emergency responses have been activated. Short-term focus will be on post-disaster reconstruction and infrastructure inspection.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>magnitude</b> 震级</span>
+                    <span class="vocab-item"><b>emergency response</b> 应急响应</span>
+                    <span class="vocab-item"><b>post-disaster reconstruction</b> 灾后重建</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>5.29级属于中强震，通常不会造成大规模结构性破坏，但可能引发滑坡等次生灾害。四川盆地人口密集，需警惕老旧建筑受损。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2周）关注余震与次生灾害；中长期（3-6个月）可能推动当地建筑抗震标准升级，利好建材与检测行业。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果完全实现，未来地震预警系统与智能建筑结合，可大幅减少人员伤亡，四川成为韧性城市样板。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.facebook.com/aljazeera/photos/breaking-a-magnitude-529-earthquake-has-struck-sichuan-china-according-to-the-gf/1488990253275324/" target="_blank">Al Jazeera via Facebook</a></p>
+    </div>
+
+    <div class="item-block">
+        <div class="item-header">
+            <span class="title-line">天问二号即将启程，中国小行星探测任务引关注</span>
+            <span class="star">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            据福布斯报道，中国天问二号探测器预计于7月初启程，目标为一颗自由女神像大小的近地小行星。这将是全球最独特的小行星探测任务之一，旨在采样返回，推动深空探测与资源利用研究。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Tianwen-2 Set to Launch: China’s Unusual Asteroid Mission</p>
+            <p class="en-summary">Forbes reports that China’s Tianwen-2 spacecraft is expected to depart in early July for a Statue of Liberty-sized near-Earth asteroid. The mission aims to collect samples and return them to Earth, marking one of the most unusual asteroid exploration attempts ever.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>asteroid</b> 小行星</span>
+                    <span class="vocab-item"><b>sample return</b> 采样返回</span>
+                    <span class="vocab-item"><b>deep space exploration</b> 深空探测</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>天问二号是中国第二次独立行星探测任务，目标小行星直径约<span class="num-key">100米</span>。任务包括环绕、附着、采样和返回，技术难度极高。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（2026-2027年）完成采样返回；中长期（2030年后）为小行星采矿和深空载人任务铺路。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果完全实现，人类将首次从近地小行星带回样本，开启太空资源商业化大门，中国成为深空资源利用领导者。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.facebook.com/forbes/posts/china-is-about-to-begin-one-of-the-most-unusual-asteroid-exploration-missions-ev/1392489716074348/" target="_blank">Forbes via Facebook</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策与监管板块今日涵盖自然灾害与太空探索两极。地震短期利空，但天问二号彰显科技雄心。整体看，中国在应对风险与追求前沿科技上并行推进。</div>
+
+    <!-- ===== 板块 7：地缘政治与国际关系 ===== -->
+    <h2>🌍 地缘政治与国际关系</h2>
+
+    <div class="item-block">
+        <div class="item-header">
+            <span class="title-line">中国稀土管制引发日本供应链重组</span>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            中国收紧稀土出口管制持续发酵，日本车企与政府联手推动供应链去中国化。日立Astemo等巨头计划在<span class="num-key">2027年前</span>实现无稀土电机量产，地缘经济博弈从芯片延伸至关键矿产。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">China’s Rare-Earth Curbs Trigger Japan Supply Chain Overhaul</p>
+            <p class="en-summary">China’s tightened rare-earth export controls continue to reshape Japanese supply chains. Major firms like Hitachi Astemo aim to mass-produce rare-earth-free motors by <span class="num-key">2027</span>, extending the geopolitical economic rivalry from semiconductors to critical minerals.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>rare-earth curbs</b> 稀土管制</span>
+                    <span class="vocab-item"><b>supply chain overhaul</b> 供应链重组</span>
+                    <span class="vocab-item"><b>critical minerals</b> 关键矿产</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国控制全球稀土精炼产能的<span class="num-key">90%</span>，出口管制直接影响日本汽车、电子等支柱产业。日本此举是典型的“压力倒逼创新”。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）稀土价格维持高位；中长期（3-5年）若日本技术突破，中国稀土议价权将下降，全球矿产供应链多极化。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果完全实现，未来各国将建立“关键矿产联盟”，类似半导体领域的CHIPS法案，资源民族主义与技术民族主义并行。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.facebook.com/unwirehk/posts/面對中國收緊稀土出口管制日本多間車廠及零件商正加快研發不依賴稀土的電機務求構建更具韌性的供應鏈擺脫對中國礦產的依賴汽車零件龍頭日立-astemo-於-2025-/1451488533686275/" target="_blank">UNWIRE.HK</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘板块核心矛盾集中在关键矿产与供应链安全。中国管制与日本反制形成典型博弈，类似半导体领域的中美对峙。未来6个月关注稀土价格及日本技术突破进展。</div>
+
+    <!-- ===== 时间提醒模块 ===== -->
+    <div class="timeline">
+        <h4>⏰ 近期关键时间节点</h4>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-07-01</span>
+            <span>天问二号探测器预计启程，前往近地小行星</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-07-05</span>
+            <span>四川地震灾区初步评估与救援窗口期</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2027 Q1</span>
+            <span>日本无稀土电机原型测试目标节点</span>
+        </div>
+    </div>
+
+    <footer>
+        全球动态简报 · 2026年6月29日 · 基于公开信息分析，不构成投资建议
+    </footer>
+
+</div>
+</body>
+</html>
