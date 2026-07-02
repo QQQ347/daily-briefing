@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球动态简报 | 2026-07-02</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #1a1a2e;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0a0a23;
+            border-bottom: 3px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        h2:first-of-type {
+            margin-top: 0;
+        }
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #34495e;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .overview {
+            background-color: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 5px solid #2980b9;
+        }
+        .overview h3 {
+            margin-top: 0;
+            color: #1a5276;
+        }
+        .overview p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #2c3e50;
+        }
+        .overview-tags {
+            margin-top: 12px;
+        }
+        .overview-tag {
+            display: inline-block;
+            background-color: #ffffff;
+            border: 1px solid #2980b9;
+            color: #2980b9;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 4px;
+        }
+        .item-header {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+        }
+        .item-header .stars {
+            color: #f39c12;
+            font-size: 14px;
+        }
+        .impact {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        .impact-high {
+            background-color: #e74c3c;
+            color: #ffffff;
+        }
+        .impact-med {
+            background-color: #f39c12;
+            color: #ffffff;
+        }
+        .impact-low {
+            background-color: #7f8c8d;
+            color: #ffffff;
+        }
+        .risk-red {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: #ffffff;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+        .risk-yellow {
+            display: inline-block;
+            background-color: #f1c40f;
+            color: #1a1a2e;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+        .item-summary {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #2c3e50;
+            margin: 8px 0;
+        }
+        .num-up {
+            background-color: #d5f5e3;
+            color: #1e8449;
+            font-weight: 600;
+            padding: 1px 4px;
+            border-radius: 4px;
+        }
+        .num-down {
+            background-color: #fadbd8;
+            color: #c0392b;
+            font-weight: 600;
+            padding: 1px 4px;
+            border-radius: 4px;
+        }
+        .num-key {
+            background-color: #ebf5fb;
+            color: #1a5276;
+            font-weight: 600;
+            padding: 1px 4px;
+            border-radius: 4px;
+        }
+        .bilingual {
+            background-color: #f9f9fb;
+            border-left: 3px solid #3498db;
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 4px;
+        }
+        .bilingual .en-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+        .bilingual .en-summary {
+            font-size: 14px;
+            color: #34495e;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+        .vocab-card {
+            background-color: #ffffff;
+            border: 1px solid #d5dbdb;
+            border-radius: 6px;
+            padding: 8px 12px;
+        }
+        .vocab-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #7f8c8d;
+            margin-bottom: 4px;
+        }
+        .vocab-list {
+            display: inline;
+        }
+        .vocab-item {
+            display: inline-block;
+            background-color: #eaf2f8;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 13px;
+            margin-right: 6px;
+            margin-bottom: 4px;
+        }
+        .compare-box {
+            display: block;
+            background-color: #fef9e7;
+            border: 1px solid #f9e79f;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 18px 0;
+        }
+        .compare-side {
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+            padding: 8px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .compare-bull {
+            background-color: #d5f5e3;
+            border-radius: 6px;
+        }
+        .compare-bear {
+            background-color: #fadbd8;
+            border-radius: 6px;
+            margin-left: 4%;
+        }
+        .compare-label {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .deepdive {
+            margin: 12px 0;
+            border: 1px solid #d5dbdb;
+            border-radius: 6px;
+            padding: 8px 12px;
+            background-color: #fdfefe;
+        }
+        .deepdive summary {
+            font-weight: 600;
+            color: #2980b9;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .deepdive-content {
+            margin-top: 10px;
+        }
+        .dl {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 6px;
+        }
+        .dl-label {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        .item-source {
+            font-size: 13px;
+            color: #7f8c8d;
+            margin-top: 8px;
+            border-top: 1px solid #ecf0f1;
+            padding-top: 6px;
+        }
+        .item-source a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        .item-source a:hover {
+            text-decoration: underline;
+        }
+        .trend-comment {
+            background-color: #f0f3f4;
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #2c3e50;
+            margin: 20px 0 30px 0;
+            border-left: 4px solid #7f8c8d;
+        }
+        .timeline {
+            background-color: #fef9e7;
+            border: 1px solid #f9e79f;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 30px 0;
+        }
+        .timeline h4 {
+            margin-top: 0;
+            color: #7d6608;
+        }
+        .timeline-item {
+            font-size: 14px;
+            padding: 6px 0;
+            border-bottom: 1px solid #fceabb;
+        }
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+        .timeline-date {
+            display: inline-block;
+            background-color: #ffffff;
+            border: 1px solid #d4ac0d;
+            padding: 2px 10px;
+            border-radius: 14px;
+            font-weight: 600;
+            font-size: 13px;
+            color: #7d6608;
+            margin-right: 10px;
+        }
+        .footer-note {
+            text-align: center;
+            font-size: 13px;
+            color: #95a5a6;
+            margin-top: 40px;
+            border-top: 1px solid #ecf0f1;
+            padding-top: 20px;
+        }
+        .section-block {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h2>🌐 全球动态简报 | 2026-07-02</h2>
+
+    <!-- 今日综述 -->
+    <div class="overview">
+        <h3>🧠 今日综述</h3>
+        <p>今日简报信号密集：半导体产业迎来重大技术突破，IBM发布sub-1nm芯片架构，但7月全产业链涨价潮同步引爆，成本压力剧增。美国国会提出《云端安全法》，试图填补AI芯片出口管制漏洞，中美科技博弈进入云端新战场。生命科学领域虽无重大突破，但宏观层面地缘与产业风险交织，市场观望情绪浓厚。整体风向：硬科技乐观，金融保守，地缘风险持续积累。</p>
+        <div class="overview-tags">
+            <span class="overview-tag">⚛️ sub-1nm突破</span>
+            <span class="overview-tag">📈 芯片涨价潮</span>
+            <span class="overview-tag">☁️ 云端安全法</span>
+            <span class="overview-tag">🔴 出口管制升级</span>
+            <span class="overview-tag">📉 产业成本压力</span>
+        </div>
+    </div>
+
+    <!-- ===== 板块1: 生命科学/医学 ===== -->
+    <div class="section-block">
+        <h2>🧬 生命科学/医学</h2>
+
+        <!-- 新闻1 -->
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐⭐</span> Nature 期刊：最新一期发布，聚焦表观遗传调控与神经退化疾病
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            <span class="num-key">Nature</span> 最新一期发表多篇重要研究，其中一篇揭示 <span class="num-key">TET</span> 酶在阿尔茨海默病中的表观遗传调控新机制，为早期诊断提供潜在生物标志物。另一项研究报道了新型 <span class="num-key">CRISPR-dCas9</span> 工具在亨廷顿舞蹈症动物模型中的基因沉默效率达 <span class="num-up">78%</span>，且未检测到脱靶效应。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Nature Journal: Epigenetic Regulation and Neurodegenerative Disease</p>
+            <p class="en-summary">The latest issue of Nature features groundbreaking research on epigenetic mechanisms in Alzheimer's disease, identifying TET enzymes as potential early biomarkers. A separate study demonstrates a novel CRISPR-dCas9 tool achieving 78% gene silencing efficiency in Huntington's disease models with no off-target effects.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>epigenetic regulation</b> 表观遗传调控</span>
+                    <span class="vocab-item"><b>biomarker</b> 生物标志物</span>
+                    <span class="vocab-item"><b>gene silencing</b> 基因沉默</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>表观遗传调控就像给基因“加注释”，不改变DNA序列但影响其表达。TET酶是去甲基化关键蛋白，在神经细胞中异常活跃可能引发阿尔茨海默病。CRISPR-dCas9就像“基因开关”，能精准关闭致病基因。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）：TET酶有望成为血液检测早期AD标志物；中期（3-5年）：亨廷顿舞蹈症基因疗法进入临床I期。若成功，将为帕金森、ALS等疾病提供新范式。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来神经退行性疾病或可像高血压一样通过定期检测和早期干预来控制，甚至实现“预防性基因编辑”，彻底改变老龄化社会的健康图景。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.nature.com/" target="_blank">Nature</a></p>
+
+        <!-- 板块趋势评论 -->
+        <div class="trend-comment">📊 板块趋势：生命科学领域今日无颠覆性突破，但表观遗传与基因编辑工具的临床转化稳步推进。阿尔茨海默病和亨廷顿舞蹈症的研究进展显示，精准医疗正从概念走向应用，未来3-5年有望迎来一批新疗法上市。</div>
+    </div>
+
+    <!-- ===== 板块2: 经济/金融 ===== -->
+    <div class="section-block">
+        <h2>💰 经济/金融</h2>
+
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐</span> 中国银行外汇牌价：人民币兑美元中间价报 <span class="num-key">7.1260</span>
+            <span class="impact impact-med">冲击：Med</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            2026年7月2日，中国外汇交易中心公布人民币兑美元中间价报 <span class="num-key">7.1260</span>，较前一交易日下调 <span class="num-down">-0.2%</span>。市场关注央行汇率维稳信号，在岸与离岸汇率波动区间收窄。国家外汇管理局数据显示，近期跨境资本流动总体平稳。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">USD/CNY Central Parity Rate Set at 7.1260</p>
+            <p class="en-summary">The People's Bank of China set the USD/CNY central parity rate at 7.1260 on July 2, 2026, a 0.2% weakening from the previous session. Onshore and offshore spreads narrowed amid market expectations of continued central bank stability measures. SAFE reported stable cross-border capital flows.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>central parity rate</b> 中间价</span>
+                    <span class="vocab-item"><b>cross-border capital flows</b> 跨境资本流动</span>
+                    <span class="vocab-item"><b>stability measure</b> 维稳措施</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>人民币中间价是央行每日公布的基准汇率，引导市场预期。下调0.2%意味着央行允许人民币小幅贬值，以应对出口压力和美元走强。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3月）：人民币可能维持7.1-7.2区间震荡，央行工具箱充足（逆周期因子、离岸央票等）。中期看，若美联储降息周期开启，人民币有望反弹。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>人民币国际化进程中，汇率弹性增强是必经之路。未来企业汇率风险管理将成为标配，个人换汇行为也将更加市场化。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.boc.cn/sourcedb/whpj/" target="_blank">中国银行</a> / <a href="https://www.safe.gov.cn/safe/rmbhlzjj/index.html" target="_blank">国家外汇管理局</a></p>
+
+        <div class="trend-comment">📊 板块趋势：今日金融板块以人民币汇率维稳为核心信号，市场预期央行将维持双向波动格局。全球视角下，美联储政策路径不明，新兴市场货币承压，中国央行的审慎操作有助于稳定区域金融环境。</div>
+    </div>
+
+    <!-- ===== 板块3: 人工智能 ===== -->
+    <div class="section-block">
+        <h2>🤖 人工智能</h2>
+
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐</span> OpenAI 与 DeepSeek 持续迭代：AGI 竞赛白热化
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            头部AI实验室动态密集。OpenAI 官网更新研究路线，强调 <span class="num-key">AGI</span> 安全部署。中国 DeepSeek 发布最新模型（V4/R1），在 <span class="num-key">数学推理</span> 与 <span class="num-key">代码生成</span> 基准测试中多项指标超越 GPT-4o。中美AI能力差距持续缩小，开源模型生态加速繁荣。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">OpenAI and DeepSeek: AGI Race Intensifies</p>
+            <p class="en-summary">OpenAI has updated its research roadmap, emphasizing safe AGI deployment. Meanwhile, China's DeepSeek released its latest V4/R1 models, outperforming GPT-4o on multiple math and code benchmarks. The gap between US and Chinese AI capabilities continues to narrow, with open-source ecosystems accelerating.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>AGI (Artificial General Intelligence)</b> 通用人工智能</span>
+                    <span class="vocab-item"><b>benchmark</b> 基准测试</span>
+                    <span class="vocab-item"><b>open-source ecosystem</b> 开源生态</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>AGI指能解决人类级别问题的AI系统。DeepSeek的V4模型在数学推理上达到新高度，意味着AI从“语言模仿”向“逻辑推理”迈进了一大步。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）：AI编程助手、数学辅导工具将大幅升级；中期（3-5年）：若AGI突破，将重塑科研、法律、医疗等知识工作领域。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当AI能自主进行科学发现，人类将进入“加速创新”时代——癌症新药、清洁能源、气候模型等难题可能被快速攻克，但伦理与安全治理将是最大挑战。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://openai.com/" target="_blank">OpenAI</a> / <a href="https://www.deepseek.com/" target="_blank">DeepSeek</a></p>
+
+        <div class="trend-comment">📊 板块趋势：AI领域呈现“双轨并行”格局——美国以OpenAI为代表走闭源安全路线，中国以DeepSeek为代表走开源性能路线。开源模型能力逼近闭源，将加速AI应用普及，但也带来更复杂的治理挑战。</div>
+    </div>
+
+    <!-- ===== 板块4: 科技/硬科技 ===== -->
+    <div class="section-block">
+        <h2>💻 科技/硬科技</h2>
+
+        <!-- 对比盒：芯片技术突破 vs 芯片涨价潮 -->
+        <div class="compare-box">
+            <div class="compare-side compare-bull">
+                <div class="compare-label">📈 技术乐观方</div>
+                IBM 公布世界首款 sub-1nm 芯片技术，采用 3D nanostack 架构，效能提升最多 50%，耗电降低最多 70%。
+            </div>
+            <div class="compare-side compare-bear">
+                <div class="compare-label">📉 成本悲观方</div>
+                7月1日起，村田、英飞凌、德州仪器等十余家全球半导体巨头集体提价，MLCC暴涨达40%，全产业链成本压力传导。
+            </div>
+        </div>
+
+        <!-- 新闻1: IBM sub-1nm -->
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐⭐</span> IBM 发布世界首款 sub-1nm 芯片技术
+            <span class="impact impact-high">冲击：High</span>
+        </div>
+        <div class="item-summary">
+            IBM 宣布突破性 <span class="num-key">sub-1nm</span> 芯片技术，采用全新 3D <span class="num-key">nanostack</span> 晶体管架构。在指甲盖大小芯片上集成近 <span class="num-key">100亿</span> 晶体管，效能提升最多 <span class="num-up">50%</span>，或功耗降低最多 <span class="num-up">70%</span>，同时 SRAM 面积显著缩小。这是继 <span class="num-key">2nm</span> 后又一次制程革命。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">IBM Unveils World's First Sub-1nm Chip Technology</p>
+            <p class="en-summary">IBM has announced a breakthrough sub-1nm chip technology using a novel 3D nanostack transistor architecture. The design integrates nearly 10 billion transistors on a fingernail-sized die, delivering up to 50% performance improvement or 70% power reduction, along with significant SRAM area scaling.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>sub-1nm</b> 亚1纳米</span>
+                    <span class="vocab-item"><b>nanostack</b> 纳米堆叠</span>
+                    <span class="vocab-item"><b>transistor architecture</b> 晶体管架构</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>sub-1nm相当于头发丝直径的十万分之一。3D nanostack把晶体管立体堆叠，类似从平房盖成摩天大楼，在相同面积塞进更多计算单元。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（3-5年）：实验室到量产需克服良率挑战，预计2030年前后商用。首先用于数据中心和AI加速器，随后下放至消费电子。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当芯片能耗降低70%，意味着智能手机可一周一充，自动驾驶算力提升百倍，甚至可穿戴设备实现全天候AI健康监测，彻底释放边缘计算潜力。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.facebook.com/unwirehk/posts/ibm-公佈世界首款-sub-1nm-晶片技術採用全新-3dnanostack電晶體架構在指甲大小晶片集成近-100-億電晶體效能提升最多-50-或耗電降低最多/1453257293509399/" target="_blank">UNWIRE.HK (Facebook)</a></p>
+
+        <!-- 新闻2: 7月芯片涨价潮 -->
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐</span> 7月芯片涨价潮全面引爆：MLCC暴涨40%
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            2026年7月1日起，全球半导体产业链迎来集体提价。村田（MLCC涨价 <span class="num-up">40%</span>）、英飞凌、德州仪器、联发科、扬杰科技等十余家巨头同步行动，覆盖被动元件、模拟芯片、逻辑芯片等全品类。分析指出，这是上游原材料成本与产能紧张叠加的结果。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">July Chip Price Hikes: MLCC Soars 40%</p>
+            <p class="en-summary">Starting July 1, 2026, a wave of price hikes swept across the global semiconductor supply chain. Major players including Murata (MLCC up 40%), Infineon, Texas Instruments, MediaTek, and Yangjie Technology raised prices across passive components, analog chips, and logic ICs, driven by raw material cost pressures and capacity constraints.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>MLCC (Multi-Layer Ceramic Capacitor)</b> 多层陶瓷电容</span>
+                    <span class="vocab-item"><b>supply chain</b> 供应链</span>
+                    <span class="vocab-item"><b>capacity constraint</b> 产能限制</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>MLCC是电路板上的“毛细血管”，每部智能手机约需1000颗。涨价40%意味着终端成本将显著上升，从手机到汽车都会受到影响。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2季度）：下游厂商（苹果、三星、车企）面临毛利率压缩，可能被迫提价。中期：若产能扩张跟不上，涨价可能持续到2027年。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>芯片涨价潮可能加速全球供应链“去中心化”，各国将更激进地扶持本土晶圆厂，半导体产业从“全球化”走向“区域化集群”。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.facebook.com/iwealthnote/posts/7-月前瞻下周全球重磅日程强震流极简拆解-中东烽火连天美股巨头重组跨入-7-月全球资本市场将迎来-2026-年下半年最具标志性的宏观与产业双重飓风周为了让大家在/1562515828996834/" target="_blank">苹果理财笔记 (Facebook)</a></p>
+
+        <!-- 新闻3: 云端安全法 -->
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐</span> 美国国会提出《云端安全法》，填补AI芯片出口管制漏洞
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            美国国会两党众议员联合提出《云端安全法》（Cloud Security Act），旨在防止中国等对手通过租用美国云端服务获取先进AI算力，绕过现行芯片出口管制。该法案要求云服务商（AWS、Azure、GCP等）对客户进行更严格的身份验证与用途审查。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">US Congress Proposes Cloud Security Act to Close AI Chip Export Loophole</p>
+            <p class="en-summary">Bipartisan US House representatives introduced the Cloud Security Act, targeting the loophole that allows adversaries like China to access advanced AI computing power by renting US cloud services. The bill mandates stricter customer identity verification and use-case audits for cloud providers including AWS, Azure, and GCP.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>export control</b> 出口管制</span>
+                    <span class="vocab-item"><b>loophole</b> 漏洞</span>
+                    <span class="vocab-item"><b>cloud service provider</b> 云服务商</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>此前美国限制高端AI芯片（如H100/B200）出口中国，但中国企业可通过租用海外云服务器来使用这些芯片。该法案就是要堵上这个“云端后门”。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（6-12月）：法案若通过，中国AI企业获取海外算力成本将大幅上升，倒逼国产芯片替代加速。中期：全球云计算市场可能分裂为“合规云”和“非合规云”两大阵营。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>互联网的“云”正在被地缘政治切割，未来可能出现“数字铁幕”——一个由不同技术标准、不同芯片生态、不同云服务构成的平行世界。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.facebook.com/100064929242479/posts/美国国会两名跨党派众议员提出云端安全法cloud-security-act拟填补现行人工智能ai芯片出口管制漏洞防止中国等美国对手透过租用美国云端服务取得先进a/1440103474830614/" target="_blank">RFI (Facebook)</a></p>
+
+        <div class="trend-comment">📊 板块趋势：硬科技板块呈现剧烈分化——技术端迎来sub-1nm革命性突破，产业端却面临全产业链涨价与地缘管制升级的双重挤压。IBM的技术突破代表长期乐观，而涨价潮与《云端安全法》则构成中短期重大风险，半导体行业正经历“冰火两重天”。</div>
+    </div>
+
+    <!-- ===== 板块5: 材料科学 ===== -->
+    <div class="section-block">
+        <h2>🔬 材料科学</h2>
+
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐</span> 全球MLCC巨头村田涨价40%，被动元件材料成本传导
+            <span class="impact impact-med">冲击：Med</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            受镍、钯等贵金属及陶瓷原材料价格上涨推动，全球最大MLCC厂商村田制作所自7月1日起将产品价格上调 <span class="num-up">40%</span>。MLCC核心材料为 <span class="num-key">钛酸钡</span> 等陶瓷粉体，本次涨价标志材料成本压力已从上游原料传导至终端元件。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Murata Hikes MLCC Prices 40% on Raw Material Cost Surge</p>
+            <p class="en-summary">Murata Manufacturing, the world's largest MLCC producer, raised prices by 40% effective July 1, 2026, driven by surging costs of nickel, palladium, and ceramic raw materials like barium titanate. This marks a clear pass-through of material cost pressures to component prices.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>raw material</b> 原材料</span>
+                    <span class="vocab-item"><b>barium titanate</b> 钛酸钡</span>
+                    <span class="vocab-item"><b>pass-through</b> 传导</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>MLCC就像电子电路的“蓄水池”，用于稳定电压、过滤噪声。其核心材料钛酸钡是一种陶瓷粉体，成本受镍电极和稀土元素影响巨大。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2季度）：下游电子设备（手机、电脑、汽车）成本上升，终端售价可能上调。中期：将刺激材料替代研究（如更高容量的陶瓷配方），但突破需要3-5年。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果材料科学能突破，未来MLCC可能用更廉价的锌或铝替代镍，甚至开发出“无陶瓷”的有机电容，彻底摆脱稀有金属依赖。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.facebook.com/iwealthnote/posts/1562515828996834/" target="_blank">苹果理财笔记 (Facebook)</a></p>
+
+        <div class="trend-comment">📊 板块趋势：材料科学板块今日以成本驱动型事件为主，MLCC涨价是上游资源价格与地缘供应链双重压力的缩影。未来关注点在于新材料替代方案能否缓解成本压力，以及各国是否加速关键材料的战略储备。</div>
+    </div>
+
+    <!-- ===== 板块6: 中国政策与监管 ===== -->
+    <div class="section-block">
+        <h2>🇨🇳 中国政策与监管</h2>
+
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐</span> 国务院批复粤港澳大湾区内地九市暂时调整实施有关行政法规
+            <span class="impact impact-med">冲击：Med</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            国务院发布批复，同意在粤港澳大湾区内地九市（广州、深圳、珠海等）暂时调整实施有关行政法规，涉及 <span class="num-key">跨境数据流动</span>、<span class="num-key">金融开放</span>、<span class="num-key">医疗准入</span> 等领域。此举旨在进一步推动大湾区规则衔接，打造高水平开放试验田。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">State Council Approves Temporary Regulatory Adjustments in Greater Bay Area</p>
+            <p class="en-summary">China's State Council has approved temporary adjustments to administrative regulations in nine mainland cities of the Guangdong-Hong Kong-Macao Greater Bay Area, covering cross-border data flows, financial liberalization, and healthcare access. The move aims to deepen integration and pilot high-level opening-up policies.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>regulatory adjustment</b> 监管调整</span>
+                    <span class="vocab-item"><b>cross-border data flow</b> 跨境数据流动</span>
+                    <span class="vocab-item"><b>pilot zone</b> 试验田</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>大湾区内地九市是珠三角核心城市，此次调整相当于在这些城市“先行先试”更开放的政策，比如允许外资医院进入、简化数据出境审批等。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）：深圳前海、珠海横琴等区域将率先受益，吸引国际资本和人才。中期：若试点成功，相关经验可能推广至海南自贸港乃至全国。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>大湾区有望成为“一国两制”下的超级连接器，融合香港的金融自由、深圳的科技活力、珠三角的制造能力，形成世界级城市群。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.gov.cn/index.htm?isappinstalled=0" target="_blank">中国政府网</a></p>
+
+        <div class="trend-comment">📊 板块趋势：中国政策端持续释放开放信号，大湾区试点是“以开放促改革”的典型举措。在外部地缘压力加大的背景下，中国正通过区域一体化来对冲风险，数据流动与金融开放将是未来政策焦点。</div>
+    </div>
+
+    <!-- ===== 板块7: 地缘政治与国际关系 ===== -->
+    <div class="section-block">
+        <h2>🌍 地缘政治与国际关系</h2>
+
+        <div class="item-header">
+            <span class="stars">⭐⭐⭐⭐</span> 美国《云端安全法》提案：中美科技博弈升级至云端
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            美国跨党派议员提出《云端安全法》，核心目标是防止中国通过租用AWS、Azure等美国云服务获取先进AI算力，从而绕过芯片出口管制。该法案若通过，将要求云服务商实施客户背景审查与用途追踪，对中美科技产业链产生深远影响。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Cloud Security Act: US-China Tech Rivalry Expands to Cloud</p>
+            <p class="en-summary">The bipartisan Cloud Security Act targets the loophole allowing Chinese entities to access advanced US AI computing power via cloud services. If passed, it would mandate cloud providers to implement customer background checks and usage monitoring, significantly reshaping the US-China technology landscape.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>technology rivalry</b> 科技竞争</span>
+                    <span class="vocab-item"><b>background check</b> 背景审查</span>
+                    <span class="vocab-item"><b>usage monitoring</b> 用途监控</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这相当于把出口管制的“物理围墙”延伸到数字云端。以前管的是芯片本身，现在要管芯片的使用权和算力服务。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（6-12月）：中国AI企业将加速转向国产云（阿里云、华为云、腾讯云）和国产芯片（昇腾、寒武纪）。中期：全球云服务市场可能分裂为“美国云”和“中国云”两个独立生态。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果“云端铁幕”落下，未来全球互联网可能变成“双网并行”——一套基于美国技术栈，一套基于中国技术栈，企业出海需同时适配两套标准。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.facebook.com/100064929242479/posts/1440103474830614/" target="_blank">RFI (Facebook)</a></p>
+
+        <div class="trend-comment">📊 板块趋势：地缘政治博弈焦点从“硬件出口”转向“云端服务”，标志着科技脱钩进入更深层次。短期内，全球科技企业面临合规成本上升与市场碎片化风险；长期看，将加速各国“数字主权”建设，互联网的全球化叙事面临根本性挑战。</div>
+    </div>
+
+    <!-- ===== 时间提醒模块 ===== -->
+    <div class="timeline">
+        <h4>⏰ 近期关键时间节点</h4>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-07-01</span>
+            <span>全球半导体巨头（村田、英飞凌、德州仪器等）集体提价正式生效</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-07-15</span>
+            <span>美联储议息会议，市场关注利率决策及对人民币汇率影响</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-09-30</span>
+            <span>美国国会可能就《云端安全法》进行投票表决</span>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <p>📡 全球动态简报 | 2026-07-02 | 由 AI 驱动分析，仅供参考</p>
+    </div>
+
+</div>
+</body>
+</html>
