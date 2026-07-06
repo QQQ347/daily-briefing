@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球动态简报 | 2026-07-06</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #1a1a2e;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 24px 28px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 6px;
+            color: #0a2540;
+            border-left: 6px solid #0057b7;
+            padding-left: 16px;
+        }
+        .date {
+            font-size: 14px;
+            color: #6c757d;
+            margin-bottom: 24px;
+            margin-top: 4px;
+            padding-left: 22px;
+        }
+        .overview {
+            background: #eef2f7;
+            padding: 18px 22px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid #0057b7;
+        }
+        .overview h3 {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .overview p {
+            margin: 0 0 12px 0;
+            font-size: 15px;
+            color: #2c3e50;
+        }
+        .overview-tags {
+            display: block;
+        }
+        .overview-tag {
+            display: inline-block;
+            background: #ffffff;
+            border: 1px solid #b0c4de;
+            border-radius: 20px;
+            padding: 4px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 4px;
+            color: #1e3a5f;
+        }
+        .section {
+            margin-top: 32px;
+            padding-top: 12px;
+            border-top: 2px solid #e0e6ed;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #0a2540;
+        }
+        .item {
+            background: #f9fafc;
+            border-radius: 10px;
+            padding: 18px 20px;
+            margin-bottom: 20px;
+            border: 1px solid #e9edf2;
+        }
+        .item-header {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .item-header .title {
+            font-size: 18px;
+            font-weight: 700;
+            display: inline;
+            margin-right: 10px;
+            color: #0b2b44;
+        }
+        .badge {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-right: 6px;
+        }
+        .badge-star {
+            background: #f1c40f;
+            color: #2c3e50;
+        }
+        .impact {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-right: 6px;
+        }
+        .impact-high {
+            background: #e74c3c;
+            color: white;
+        }
+        .impact-med {
+            background: #f39c12;
+            color: white;
+        }
+        .impact-low {
+            background: #3498db;
+            color: white;
+        }
+        .risk-red {
+            display: inline-block;
+            background: #ffdddd;
+            color: #b22222;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-right: 4px;
+        }
+        .risk-yellow {
+            display: inline-block;
+            background: #fff3cd;
+            color: #856404;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-right: 4px;
+        }
+        .item-summary {
+            font-size: 15px;
+            margin: 8px 0 12px 0;
+            color: #2c3e50;
+        }
+        .num-up {
+            background: #d4edda;
+            color: #155724;
+            font-weight: 700;
+            padding: 1px 6px;
+            border-radius: 4px;
+        }
+        .num-down {
+            background: #f8d7da;
+            color: #721c24;
+            font-weight: 700;
+            padding: 1px 6px;
+            border-radius: 4px;
+        }
+        .num-key {
+            background: #fff3cd;
+            color: #856404;
+            font-weight: 700;
+            padding: 1px 6px;
+            border-radius: 4px;
+        }
+        .bilingual {
+            background: #f0f4fa;
+            border-left: 4px solid #5b7fa5;
+            padding: 12px 16px;
+            margin: 14px 0;
+            border-radius: 6px;
+        }
+        .bilingual .en-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin: 0 0 6px 0;
+        }
+        .bilingual .en-summary {
+            font-size: 14px;
+            color: #34495e;
+            margin: 0 0 10px 0;
+        }
+        .vocab-card {
+            background: #ffffff;
+            border: 1px solid #d0dbe8;
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin-top: 8px;
+        }
+        .vocab-title {
+            font-weight: 700;
+            font-size: 13px;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+        .vocab-list {
+            display: block;
+        }
+        .vocab-item {
+            display: inline-block;
+            background: #e8edf3;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 13px;
+            margin-right: 6px;
+            margin-bottom: 4px;
+        }
+        .compare-box {
+            background: #fef9e7;
+            border: 1px solid #f9e79f;
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin: 16px 0;
+            display: block;
+        }
+        .compare-side {
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+            padding: 6px 10px;
+            font-size: 14px;
+        }
+        .compare-bull {
+            border-right: 1px dashed #d4ac0d;
+            margin-right: 4%;
+        }
+        .compare-label {
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .deepdive {
+            margin: 14px 0 8px 0;
+            background: #f9fafc;
+            border: 1px solid #e0e6ed;
+            border-radius: 6px;
+            padding: 4px 12px;
+        }
+        .deepdive summary {
+            font-weight: 700;
+            cursor: pointer;
+            color: #1e3a5f;
+            padding: 6px 0;
+        }
+        .deepdive-content {
+            padding: 8px 0 12px 0;
+        }
+        .dl {
+            margin: 6px 0;
+            font-size: 14px;
+        }
+        .dl-label {
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        .item-source {
+            font-size: 13px;
+            color: #7f8c8d;
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+        .item-source a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        .item-source a:hover {
+            text-decoration: underline;
+        }
+        .trend-comment {
+            background: #eaf2f8;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #1a3e60;
+            margin: 16px 0 8px 0;
+            font-weight: 600;
+        }
+        .timeline {
+            background: #fdf2e9;
+            border: 1px solid #f0c27a;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 30px 0 20px 0;
+        }
+        .timeline h4 {
+            margin: 0 0 12px 0;
+            font-weight: 700;
+            font-size: 18px;
+            color: #8a6d3b;
+        }
+        .timeline-item {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .timeline-date {
+            display: inline-block;
+            background: #ffffff;
+            border: 1px solid #d4ac0d;
+            padding: 2px 12px;
+            border-radius: 16px;
+            font-weight: 700;
+            margin-right: 12px;
+            color: #6c4f1d;
+        }
+        .footer {
+            margin-top: 32px;
+            padding-top: 16px;
+            border-top: 1px solid #dce1e8;
+            font-size: 13px;
+            color: #7f8c8d;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>全球动态简报</h1>
+    <div class="date">2026年7月6日 · 星期一</div>
+
+    <!-- 第一步：综述模块 -->
+    <div class="overview">
+        <h3>🧠 今日动态综述</h3>
+        <p>今日简报信号强度偏弱，主要动态集中于地缘政治与技术泄密领域。维基解密发布CIA Vault 7系列新文件（BothanSpy项目），揭示针对SSH凭证的拦截能力，网络安全风险升级。中国方面，中科院与华为保持常规动态，未见重大政策或技术突破。材料科学就业市场数据显示半导体与新能源领域需求稳健。整体风向：地缘技术对抗暗流涌动，金融与生命科学板块今日无明显冲击事件。</p>
+        <div class="overview-tags">
+            <span class="overview-tag">🔐 网络间谍曝光</span>
+            <span class="overview-tag">⚙️ 半导体人才热</span>
+            <span class="overview-tag">📡 情报技术扩散</span>
+            <span class="overview-tag">🇨🇳 科研基建平稳</span>
+        </div>
+    </div>
+
+    <!-- ================= 板块1：生命科学 ================= -->
+    <div class="section">
+        <div class="section-title">🧬 生命科学 / 医学</div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="title">2025江苏眼科医院核心排名发布</span>
+                <span class="badge badge-star">⭐⭐⭐</span>
+                <span class="impact impact-low">冲击：Low</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+            <div class="item-summary">
+                2025年江苏省眼科TOP10榜单显示，南京、苏州、无锡、徐州四地公立三甲与专科医院主导格局。南京医科大学第一附属医院等机构实力领跑，区域医疗资源集中度较高。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">2025 Jiangsu Ophthalmology Hospital Rankings Released</p>
+                <p class="en-summary">The 2025 top 10 ophthalmology hospitals in Jiangsu province are dominated by public tertiary and specialized hospitals in Nanjing, Suzhou, Wuxi, and Xuzhou. The First Affiliated Hospital of Nanjing Medical University leads in comprehensive strength, highlighting regional concentration of high-quality medical resources.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>ophthalmology</b> 眼科学</span>
+                        <span class="vocab-item"><b>tertiary hospital</b> 三级医院</span>
+                        <span class="vocab-item"><b>medical resource concentration</b> 医疗资源集中</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是一份区域性医疗资源排名，反映江苏省内眼科医疗实力的分布格局，类似于“就医指南”。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期内，患者跨市就医趋势仍将持续；中长期看，随着分级诊疗推进，地级市专科能力有望提升。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来若实现全国眼科医疗质量均质化，患者无需远赴大城市即可获得顶尖诊疗，将大幅降低就医成本。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://health.baidu.com/m/detail/ar_5788135238821509015" target="_blank">百度健康</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：今日生命科学板块缺乏重磅突破性研究，以区域性医疗资源盘点为主，整体信号偏静态，未出现临床或药物研发领域的重大催化剂。</div>
+    </div>
+
+    <!-- ================= 板块2：经济/金融 ================= -->
+    <div class="section">
+        <div class="section-title">💰 经济 / 金融</div>
+        <div class="item">
+            <div class="item-header">
+                <span class="title">Windows 11 帮助指南流量上升，用户求助需求增长</span>
+                <span class="badge badge-star">⭐⭐⭐</span>
+                <span class="impact impact-low">冲击：Low</span>
+            </div>
+            <div class="item-summary">
+                多篇关于Windows 11使用帮助的指南文章在近期集中更新，反映用户对新系统功能适应过程中的持续需求。该趋势虽非宏观金融指标，但侧面体现企业级软件生态的调整周期。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Rise in Windows 11 Help Guide Traffic Signals User Adaptation Needs</p>
+                <p class="en-summary">A cluster of updated guides for Windows 11 help and troubleshooting indicates sustained user demand for navigating the operating system. This trend, while not a direct economic indicator, reflects ongoing adjustments within the enterprise software ecosystem.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>troubleshooting</b> 故障排除</span>
+                        <span class="vocab-item"><b>ecosystem</b> 生态系统</span>
+                        <span class="vocab-item"><b>operating system</b> 操作系统</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>大量用户搜索如何解决Windows 11问题，说明系统更新或新功能部署后存在普遍的学习成本。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期内，IT支持与培训需求可能增加；中长期，AI辅助客服或自动化运维工具将受益于此类需求。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来操作系统可能通过AI主动预测用户问题并自动修复，彻底消除“帮助指南”的需求。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.techbloat.com/how-to-get-help-in-windows-11.html" target="_blank">TechBloat</a></p>
+        </div>
+        <div class="trend-comment">📊 板块趋势：金融板块今日无重大宏观经济数据或央行政策发布，市场缺乏明确方向性信号，整体处于信息静默期。</div>
+    </div>
+
+    <!-- ================= 板块3：人工智能 ================= -->
+    <div class="section">
+        <div class="section-title">🤖 人工智能</div>
+        <div class="item">
+            <div class="item-header">
+                <span class="title">维基解密发布Vault 7系列新文件：BothanSpy项目</span>
+                <span class="badge badge-star">⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-red">🔴 重大风险</span>
+            </div>
+            <div class="item-summary">
+                维基解密于7月6日公开CIA的BothanSpy与Gyrfalcon项目文档，揭示其设计用于拦截和窃取SSH凭证的技术能力。此举可能暴露全球大量服务器与网络设备的访问风险，网络安全形势骤然紧张。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">WikiLeaks Releases CIA Vault 7 Documents: BothanSpy Project</p>
+                <p class="en-summary">On July 6, WikiLeaks published documents from the CIA's BothanSpy and Gyrfalcon projects, detailing capabilities designed to intercept and exfiltrate SSH credentials. This disclosure potentially exposes critical vulnerabilities in global server and network infrastructure, escalating cybersecurity threats.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>exfiltrate</b> 窃取/泄露</span>
+                        <span class="vocab-item"><b>SSH credentials</b> SSH凭证</span>
+                        <span class="vocab-item"><b>cybersecurity</b> 网络安全</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>BothanSpy是CIA开发的网络间谍工具，专门针对SSH（安全外壳协议）凭证，相当于拿到了服务器的“万能钥匙”。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期内，全球系统管理员将紧急排查SSH密钥安全，相关安全软件需求激增；中长期，零信任架构将加速普及。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果此类技术被广泛武器化，互联网的信任根基将被动摇，催生新一代去中心化身份验证体系。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://wikileaks.org/ciav7p1/" target="_blank">WikiLeaks</a></p>
+        </div>
+        <div class="trend-comment">📊 板块趋势：AI板块今日焦点从模型竞赛转向安全对抗。维基解密的新一轮爆料表明，国家级网络攻击能力正在工具化、文档化，AI安全与基础设施防护成为最紧迫议题。</div>
+    </div>
+
+    <!-- ================= 板块4：科技/硬科技 ================= -->
+    <div class="section">
+        <div class="section-title">💻 科技 / 硬科技</div>
+        <div class="item">
+            <div class="item-header">
+                <span class="title">半导体基础科普内容广泛传播，公众关注度提升</span>
+                <span class="badge badge-star">⭐⭐⭐</span>
+                <span class="impact impact-low">冲击：Low</span>
+            </div>
+            <div class="item-summary">
+                多家科技媒体与百科平台（TechTarget、IBM、Britannica）关于半导体基础原理的科普文章在近期获得高流量，反映芯片产业成为公众与投资界热议话题，基础教育需求旺盛。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Surge in Public Interest for Semiconductor Fundamentals</p>
+                <p class="en-summary">High traffic to basic semiconductor explainers from TechTarget, IBM, and Britannica indicates growing public and investor curiosity about chip technology. This trend underscores the mainstreaming of semiconductor literacy as a key component of modern tech awareness.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>semiconductor</b> 半导体</span>
+                        <span class="vocab-item"><b>integrated circuit</b> 集成电路</span>
+                        <span class="vocab-item"><b>conductor</b> 导体</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>大量非专业人士开始主动学习“什么是半导体”，说明芯片已从幕后走向台前，成为大众科技认知的一部分。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，半导体科普内容创作者和在线教育平台将受益；中长期，全民芯片认知提升有助于缓解产业人才缺口。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来半导体知识可能像计算机基础一样成为通识教育的一部分，每个人都理解芯片如何塑造数字世界。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.ibm.com/think/topics/semiconductors" target="_blank">IBM</a></p>
+        </div>
+        <div class="trend-comment">📊 板块趋势：硬科技板块今日以知识普及为主导，未出现具体产品发布或技术突破。但公众对半导体的高度关注，往往是产业投资热潮的同步指标。</div>
+    </div>
+
+    <!-- ================= 板块5：材料科学 ================= -->
+    <div class="section">
+        <div class="section-title">🔬 材料科学</div>
+        <div class="item">
+            <div class="item-header">
+                <span class="title">材料科学与工程专业就业前景分析：半导体与新能源领跑</span>
+                <span class="badge badge-star">⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                2026年3月发布的行业分析显示，材料科学与工程专业就业方向聚焦新能源电池、半导体材料、航空航天复合材料。典型雇主包括宁德时代、中芯国际、中国商飞，初级岗位起薪约 <span class="num-key">8-12K/月</span>，<span class="num-key">3-5年</span>经验后薪资显著提升。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Materials Science Career Outlook: Semiconductors and New Energy Lead</p>
+                <p class="en-summary">A March 2026 industry analysis highlights that materials science graduates are primarily recruited by new energy battery, semiconductor material, and aerospace composite sectors. Key employers include CATL, SMIC, and COMAC, with entry-level salaries ranging from <span class="num-key">8,000 to 12,000 RMB per month</span>.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>composite materials</b> 复合材料</span>
+                        <span class="vocab-item"><b>new energy</b> 新能源</span>
+                        <span class="vocab-item"><b>entry-level salary</b> 起薪</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是一份针对中国材料专业学生的就业市场报告，揭示了当前最吸才的三大赛道及其薪酬水平。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期内，半导体国产化与储能需求将继续推高材料工程师薪资；中长期，固态电池、钙钛矿光伏等前沿领域将创造新岗位。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当材料科学成为AI与能源革命的底层基石时，材料工程师将跻身最核心的技术人才梯队。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.gk100.com/read_1023442072841.htm" target="_blank">高考100</a></p>
+        </div>
+        <div class="trend-comment">📊 板块趋势：材料科学板块今日以产业人才需求分析为主，释放出半导体与新能源赛道持续高温的信号。这与硬科技板块的公众关注度提升形成呼应。</div>
+    </div>
+
+    <!-- ================= 板块6：中国政策与监管 ================= -->
+    <div class="section">
+        <div class="section-title">🇨🇳 中国政策与监管</div>
+        <div class="item">
+            <div class="item-header">
+                <span class="title">中国科学院2026年部门预算公布，科研投入持续稳定</span>
+                <span class="badge badge-star">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                中国科学院官网于2026年3月26日发布2026年部门预算，显示科研经费维持高位。同时，中科院与广东省、东莞市共建材料科学与技术研究所，强化大湾区基础研究布局。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Chinese Academy of Sciences Releases 2026 Budget, Maintains High Research Spending</p>
+                <p class="en-summary">The Chinese Academy of Sciences (CAS) published its 2026 departmental budget on March 26, indicating sustained high-level investment in research. Additionally, CAS is co-establishing a materials science institute in Dongguan with Guangdong Province, strengthening the Greater Bay Area's fundamental research infrastructure.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>departmental budget</b> 部门预算</span>
+                        <span class="vocab-item"><b>research infrastructure</b> 科研基础设施</span>
+                        <span class="vocab-item"><b>Greater Bay Area</b> 粤港澳大湾区</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中科院作为中国最高科研机构，其预算规模反映国家在基础科学领域的投入决心。新建材料所是区域创新布局的一环。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期内，稳定的经费保障有利于产出持续成果；中长期，大湾区有望成为全球材料科学创新高地。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当科研投入与产业转化形成闭环，中国有望在下一代材料领域实现从跟跑到领跑。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.cas.cn/" target="_blank">中国科学院</a></p>
+        </div>
+        <div class="trend-comment">📊 板块趋势：中国政策板块今日以科研预算与机构建设为主，显示国家在基础科学领域的持续发力。未见新的监管收紧或产业政策重大调整。</div>
+    </div>
+
+    <!-- ================= 板块7：地缘政治与国际关系 ================= -->
+    <div class="section">
+        <div class="section-title">🌍 地缘政治与国际关系</div>
+        <div class="item">
+            <div class="item-header">
+                <span class="title">华为官网更新，强调“构建万物互联的智能世界”愿景</span>
+                <span class="badge badge-star">⭐⭐⭐</span>
+                <span class="impact impact-low">冲击：Low</span>
+            </div>
+            <div class="item-summary">
+                华为官网及商城保持常规更新，重申其作为全球领先ICT基础设施提供商的定位。产品页面涉及手机、PC、穿戴设备等，显示公司业务运营正常，但未发布突破性地缘政治相关声明。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Huawei Maintains Routine Operations, Reaffirms Smart World Vision</p>
+                <p class="en-summary">Huawei's official website and Vmall platform continue routine updates, reaffirming its role as a leading global ICT infrastructure provider. Product pages for smartphones, PCs, and wearables indicate normal business operations, though no major geopolitical statements were issued.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>ICT infrastructure</b> 信息通信基础设施</span>
+                        <span class="vocab-item"><b>smart world</b> 智能世界</span>
+                        <span class="vocab-item"><b>business operations</b> 业务运营</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>华为官网的常规更新本身不是新闻，但在当前地缘敏感期，其正常运营本身就是一种信号——表明公司仍在全球市场持续活动。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期内，华为将继续在现有制裁框架下寻求生存与发展；中长期，其能否在半导体供应链上取得突破仍是关键变量。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果华为最终建立起完全自主的芯片生态，全球科技版图将发生根本性重塑。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.huawei.com/cn/" target="_blank">华为官网</a></p>
+        </div>
+        <div class="trend-comment">📊 板块趋势：地缘板块今日相对平静，主要动态集中在中美科技巨头的常规运营层面。维基解密爆料虽属网络安全范畴，但具有显著地缘政治影响，暗示情报对抗持续升级。</div>
+    </div>
+
+    <!-- ================= 时间提醒模块 ================= -->
+    <div class="timeline">
+        <h4>⏰ 近期关键时间节点</h4>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-07-06</span>
+            <span>维基解密公开CIA BothanSpy项目文档，全球网络安全团队启动应急评估</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-03-26</span>
+            <span>中国科学院2026年部门预算已发布，科研经费分配进入执行阶段</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        全球动态简报 · 2026年7月6日 · 基于公开信息生成，仅供参考
+    </div>
+
+</div>
+</body>
+</html>
