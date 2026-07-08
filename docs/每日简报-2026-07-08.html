@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌏 全球动态简报 | 2026-07-08</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 20px;
+      color: #1a1a2e;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 30px 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      border: 1px solid #e6e9f0;
+    }
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: #0b1a2e;
+      letter-spacing: -0.02em;
+    }
+    .date {
+      font-size: 0.9rem;
+      color: #6b7a8f;
+      margin-bottom: 24px;
+      border-bottom: 1px solid #eef0f5;
+      padding-bottom: 12px;
+    }
+    .overview {
+      background-color: #f0f4fe;
+      border-left: 4px solid #2a6df4;
+      padding: 18px 22px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+    .overview h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1f3a6b;
+    }
+    .overview p {
+      margin: 8px 0;
+      line-height: 1.6;
+      font-size: 0.98rem;
+      color: #1c2b42;
+    }
+    .overview-tags {
+      margin-top: 12px;
+      display: block;
+    }
+    .overview-tag {
+      display: inline-block;
+      background-color: #dce6fc;
+      color: #1f3a6b;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 14px;
+      border-radius: 30px;
+      margin-right: 8px;
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 28px 0 14px 0;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e6e9f0;
+      color: #0f1e33;
+    }
+    .news-item {
+      background: #fafbff;
+      border: 1px solid #eaeef5;
+      border-radius: 14px;
+      padding: 20px 22px;
+      margin-bottom: 20px;
+    }
+    .item-header {
+      margin-bottom: 10px;
+    }
+    .item-header h4 {
+      margin: 0 0 6px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #0b1a2e;
+      display: inline-block;
+    }
+    .badge-wrapper {
+      display: inline-block;
+      margin-left: 10px;
+    }
+    .star {
+      color: #f5b342;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+    .impact {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 30px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .impact-high {
+      background-color: #fbe9e7;
+      color: #b71c1c;
+    }
+    .impact-med {
+      background-color: #fff3e0;
+      color: #b7650e;
+    }
+    .impact-low {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+    }
+    .risk-red {
+      display: inline-block;
+      background-color: #ffebee;
+      color: #c62828;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 30px;
+      margin-left: 6px;
+    }
+    .risk-yellow {
+      display: inline-block;
+      background-color: #fff8e1;
+      color: #b76e0e;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 30px;
+      margin-left: 6px;
+    }
+    .item-summary {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 12px 0;
+      background-color: #f8faff;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border-left: 3px solid #b3c6e7;
+    }
+    .num-up {
+      background-color: #e6f7e6;
+      font-weight: 600;
+      padding: 0 6px;
+      border-radius: 4px;
+      color: #1b5e20;
+    }
+    .num-down {
+      background-color: #fde0e0;
+      font-weight: 600;
+      padding: 0 6px;
+      border-radius: 4px;
+      color: #b71c1c;
+    }
+    .num-key {
+      background-color: #e3eaf3;
+      font-weight: 600;
+      padding: 0 6px;
+      border-radius: 4px;
+      color: #0d3b66;
+    }
+    .bilingual {
+      background-color: #f4f7fc;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 12px 0;
+      border: 1px solid #d9e2ef;
+    }
+    .en-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 6px 0;
+      color: #1f3a6b;
+    }
+    .en-summary {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: #2c3e50;
+      margin: 8px 0;
+    }
+    .vocab-card {
+      margin-top: 10px;
+      background: #eef3fa;
+      padding: 10px 14px;
+      border-radius: 8px;
+    }
+    .vocab-title {
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+      color: #1a2b4a;
+    }
+    .vocab-list {
+      display: block;
+    }
+    .vocab-item {
+      display: inline-block;
+      background: #ffffff;
+      padding: 2px 12px;
+      border-radius: 30px;
+      margin: 3px 4px 3px 0;
+      font-size: 0.8rem;
+      border: 1px solid #cdd9ed;
+    }
+    .compare-box {
+      display: block;
+      background: #f0f4fa;
+      border: 1px solid #d0dcee;
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin: 18px 0;
+    }
+    .compare-side {
+      display: inline-block;
+      width: 45%;
+      vertical-align: top;
+      padding: 6px 10px;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+    .compare-bull {
+      background-color: #e6f3e6;
+      border-radius: 8px;
+      margin-right: 4%;
+    }
+    .compare-bear {
+      background-color: #fdeaea;
+      border-radius: 8px;
+    }
+    .compare-label {
+      font-weight: 700;
+      margin-bottom: 4px;
+      font-size: 0.9rem;
+    }
+    .deepdive {
+      margin: 12px 0 6px 0;
+      background: #f9faff;
+      border-radius: 10px;
+      border: 1px solid #e2e9f3;
+      padding: 4px 14px;
+    }
+    .deepdive summary {
+      font-weight: 600;
+      color: #1f3a6b;
+      cursor: pointer;
+      padding: 8px 0;
+      font-size: 0.9rem;
+    }
+    .deepdive-content {
+      padding: 8px 0 12px 0;
+    }
+    .dl {
+      margin: 8px 0;
+      line-height: 1.6;
+      font-size: 0.9rem;
+    }
+    .dl-label {
+      font-weight: 600;
+      color: #1a2b4a;
+    }
+    .item-source {
+      font-size: 0.75rem;
+      color: #5e6f88;
+      margin-top: 10px;
+      border-top: 1px dashed #dbe2ed;
+      padding-top: 10px;
+    }
+    .item-source a {
+      color: #2a6df4;
+      text-decoration: none;
+    }
+    .item-source a:hover {
+      text-decoration: underline;
+    }
+    .trend-comment {
+      background: #eef3fa;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      margin: 10px 0 28px 0;
+      color: #1c2b42;
+      border-left: 4px solid #6a8bcb;
+    }
+    .timeline {
+      background: #f8f4e8;
+      border: 1px solid #e6dcc8;
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin: 30px 0 20px 0;
+    }
+    .timeline h4 {
+      margin: 0 0 12px 0;
+      font-weight: 600;
+      color: #6b4f2a;
+    }
+    .timeline-item {
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+    .timeline-date {
+      display: inline-block;
+      background: #e6dcc8;
+      padding: 2px 12px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      margin-right: 12px;
+      color: #3f2e1a;
+    }
+    footer {
+      margin-top: 32px;
+      font-size: 0.8rem;
+      color: #7a8a9f;
+      text-align: center;
+      border-top: 1px solid #e6e9f0;
+      padding-top: 18px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 日期 -->
+  <div class="date">📅 2026年7月8日 · 全球动态简报</div>
+
+  <!-- 第一步：综述模块 -->
+  <div class="overview">
+    <h3>🧠 今日 AI 综述</h3>
+    <p>今日简报聚焦中国大模型突围：阿里Qwen3.7-Max跻身全球第一梯队，市场年均增长<span class="num-up">98.12%</span>。硬科技与地缘方面，天津中欧班列双通道打通，一带一路基建持续升温，但地缘竞争格局微妙。整体风向：AI赛道情绪高涨，政策端积极护航，供应链与物流链展现韧性。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🚀 大模型军备竞赛</span>
+      <span class="overview-tag">🇨🇳 国产AI突围</span>
+      <span class="overview-tag">🚂 中欧班列提速</span>
+      <span class="overview-tag">📊 高增长赛道</span>
+    </div>
+  </div>
+
+  <!-- ========== 板块 1：生命科学 ========== -->
+  <div class="section-title">🧬 生命科学 / 医学</div>
+  
+  <div class="news-item">
+    <div class="item-header">
+      <h4>Discord账号风控与社群运营生态观察</h4>
+      <span class="badge-wrapper">
+        <span class="star">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </span>
+    </div>
+    <div class="item-summary">
+      Discord作为全球主流社群工具，近期大量中国用户反映新注册账号被封、邀请链接失效及更新卡死问题。平台风控升级导致多账号运营受阻，间接影响出海社群与Web3项目方用户增长效率。
+    </div>
+    
+    <div class="bilingual">
+      <p class="en-title">Discord Account Restrictions and Community Operations</p>
+      <p class="en-summary">Discord has tightened its anti-abuse policies, causing newly registered accounts from certain regions to be flagged or banned. This creates friction for international community managers and Web3 projects relying on multi-account strategies.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>account restriction</b> 账号限制</span>
+          <span class="vocab-item"><b>community management</b> 社群管理</span>
+          <span class="vocab-item"><b>multi-account operation</b> 多账号运营</span>
+        </div>
+      </div>
+    </div>
+    
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Discord 提高新号门槛，通过手机验证、行为分析等机制打击机器人，但误伤正常用户。好比小区突然升级门禁，快递员和业主都得重新登记。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期(1-3个月)内海外社群运营成本上升，国内出海团队需储备老号或使用企业版。中长期平台可能推出区域白名单。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来社群工具可能分化：合规性强的企业转向 Slack/飞书，而Web3项目寻求去中心化替代方案。</p>
+      </div>
+    </details>
+    
+    <p class="item-source">来源：<a href="https://www.zhihu.com/question/520904404" target="_blank">知乎 · Discord账号封禁讨论</a> · <a href="https://www.zhihu.com/question/647445527" target="_blank">邀请链接失效</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：生命科学板块今日无重大科研突破，但数字社群生态的健康度直接影响生物医药、学术协作的跨境沟通效率。Discord 风控升级为中国出海团队敲响警钟。</div>
+
+  <!-- ========== 板块 2：经济/金融 ========== -->
+  <div class="section-title">💰 经济 / 金融</div>
+  
+  <div class="news-item">
+    <div class="item-header">
+      <h4>人民币兑美元中间价持稳，外汇市场交易活跃</h4>
+      <span class="badge-wrapper">
+        <span class="star">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </span>
+    </div>
+    <div class="item-summary">
+      国家外汇管理局公布最新人民币汇率中间价，美元兑人民币维持<span class="num-key">7.25</span>区间震荡。中国银行外汇牌价显示现汇卖出价与现钞卖出价分化，反映跨境资金流动结构性需求。
+    </div>
+    
+    <div class="bilingual">
+      <p class="en-title">USD/CNY Fixing Holds Steady; Onshore FX Volumes Active</p>
+      <p class="en-summary">China's central parity rate for USD/CNY remained range-bound around 7.25. Divergence between spot and cash selling rates at Bank of China indicates structural cross-border capital flow dynamics.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>central parity rate</b> 中间价</span>
+          <span class="vocab-item"><b>cross-border capital</b> 跨境资本</span>
+          <span class="vocab-item"><b>selling rate</b> 卖出价</span>
+        </div>
+      </div>
+    </div>
+    
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>央行通过中间价引导汇率预期，现汇与现钞价差反映实际购汇需求。好比官方指导价和市场实际成交价之间的温差。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期内人民币维持区间震荡，利差和出口结汇是主要影响变量。进出口企业需关注三季度分红购汇潮。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若跨境贸易本币结算比例提升，人民币汇率形成机制将更加市场化，减少对中间价依赖。</p>
+      </div>
+    </details>
+    
+    <p class="item-source">来源：<a href="https://www.safe.gov.cn/safe/rmbhlzjj/index.html" target="_blank">国家外汇管理局</a> · <a href="https://www.boc.cn/sourcedb/whpj/" target="_blank">中国银行外汇牌价</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：外汇市场整体平稳，但关注美联储后续动作对新兴市场货币的溢出效应。人民币短期缺乏单边驱动，企业套保需求上升。</div>
+
+  <!-- ========== 板块 3：人工智能 ========== -->
+  <div class="section-title">🤖 人工智能</div>
+
+  <div class="compare-box">
+    <div class="compare-side compare-bull">
+      <div class="compare-label">📈 乐观方</div>
+      阿里 Qwen3.7-Max 登顶全球第一梯队，国产大模型进入爆发期，市场规模年增 <span class="num-up">98%</span>。
+    </div>
+    <div class="compare-side compare-bear">
+      <div class="compare-label">📉 谨慎方</div>
+      评测榜单繁多，部分模型未开源，实际应用场景与基准测试存在差距，商业化落地仍需验证。
+    </div>
+  </div>
+
+  <div class="news-item">
+    <div class="item-header">
+      <h4>通义千问Qwen3.7-Max正式发布：国产大模型登顶全球第一梯队</h4>
+      <span class="badge-wrapper">
+        <span class="star">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+      </span>
+    </div>
+    <div class="item-summary">
+      阿里云发布Qwen3.7-Max，多项基准测试超越GPT-5与Claude 4.5。据艾媒咨询，2026年中国AI大模型市场规模将达<span class="num-key">738.57亿</span>元，2020-2025年复合增长率高达<span class="num-up">98.12%</span>。国产大模型正式进入全球第一梯队。
+    </div>
+    
+    <div class="bilingual">
+      <p class="en-title">Alibaba Qwen3.7-Max: China's LLM Reaches Global Top Tier</p>
+      <p class="en-summary">Alibaba Cloud released Qwen3.7-Max, outperforming GPT-5 and Claude 4.5 on multiple benchmarks. The Chinese LLM market is projected to reach 73.86 billion RMB in 2026, with a CAGR of 98.12% from 2020 to 2025.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>benchmark</b> 基准测试</span>
+          <span class="vocab-item"><b>compound annual growth rate</b> 复合年增长率</span>
+          <span class="vocab-item"><b>top-tier</b> 第一梯队</span>
+        </div>
+      </div>
+    </div>
+    
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Qwen3.7-Max 是阿里云最新旗舰大模型，在数学推理、代码生成、多语言理解上均达到顶尖水平。好比中国AI选手首次在奥运会多个项目上同时夺金。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期(6个月)内，企业级API调用成本有望下降，催生更多AI原生应用。中长期看，国产模型在合规与数据安全方面具备本土优势，金融、医疗、政务场景加速落地。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当国产大模型全面超越，全球AI格局将从“一超多强”变为“中美双极”，技术标准与生态可能分裂。</p>
+      </div>
+    </details>
+    
+    <p class="item-source">来源：<a href="https://www.aitoollab.cn/articles/qwen3-7-max-official-release-20260521/" target="_blank">AI Tool Lab</a> · <a href="https://news.qq.com/rain/a/20260706A07XT600" target="_blank">腾讯新闻</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：AI大模型竞争进入白热化，Qwen3.7-Max 的发布标志着国产模型从“追赶”到“并跑”的转折。但评测与实用之间存在鸿沟，企业选型需关注推理成本与场景适配。</div>
+
+  <!-- ========== 板块 4：硬科技 ========== -->
+  <div class="section-title">💻 科技 / 硬科技</div>
+
+  <div class="news-item">
+    <div class="item-header">
+      <h4>华为连续四年入选Gartner企业有线无线局域网领导者象限</h4>
+      <span class="badge-wrapper">
+        <span class="star">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </span>
+    </div>
+    <div class="item-summary">
+      华为宣布连续第四年入选Gartner®企业有线无线局域网领导者象限。同时华为光网络助力帕杜拉修道院实现“数字复兴”，展现中国科技企业在全球基础设施领域的持续渗透力。
+    </div>
+    
+    <div class="bilingual">
+      <p class="en-title">Huawei Named Gartner Leader for 4th Consecutive Year</p>
+      <p class="en-summary">Huawei has been positioned as a Leader in the Gartner Magic Quadrant for Enterprise Wired and Wireless LAN for the fourth straight year. Its optical networking solutions also digitally restored the Padula Monastery, highlighting its global infrastructure reach.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>Magic Quadrant</b> 魔力象限</span>
+          <span class="vocab-item"><b>optical networking</b> 光网络</span>
+          <span class="vocab-item"><b>digital restoration</b> 数字复兴</span>
+        </div>
+      </div>
+    </div>
+    
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Gartner领导者象限代表全球顶级竞争力，华为连续四年入选，证明其园区网络产品在可靠性、AI运维能力上达到世界级。好比五星级酒店连续四年获得福布斯旅行指南五星评级。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将巩固华为在政企市场地位，尤其是在欧洲与东南亚。中长期看，Wi-Fi 7与AI原生网络的融合将成为新战场。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来企业网络将像电网一样智能自愈，华为若主导标准，可能重塑全球网络设备供应链格局。</p>
+      </div>
+    </details>
+    
+    <p class="item-source">来源：<a href="https://www.huawei.com/cn/" target="_blank">华为官网</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：硬科技领域，华为持续展示全球领导力，但外部制裁压力未减。国内替代生态加速成熟，RISC-V与先进封装成为下一阶段焦点。</div>
+
+  <!-- ========== 板块 5：材料科学 ========== -->
+  <div class="section-title">🔬 材料科学</div>
+
+  <div class="news-item">
+    <div class="item-header">
+      <h4>Nature发表黑洞霍金辐射光纤模拟实验新证据</h4>
+      <span class="badge-wrapper">
+        <span class="star">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+      </span>
+    </div>
+    <div class="item-summary">
+      《Nature》最新研究通过光纤模拟黑洞物理，首次提供霍金辐射过程的实验证据。该成果利用纤维光学类比，为量子引力理论验证开辟新路径，被视为基础物理学<span class="num-key">里程碑</span>。
+    </div>
+    
+    <div class="bilingual">
+      <p class="en-title">Hawking Radiation Simulated in Fiber-Optic Black Hole Analogue</p>
+      <p class="en-summary">A Nature paper presents experimental evidence for Hawking radiation using a fiber-optical analogue of black hole physics. The work opens a new pathway for testing quantum gravity theories in tabletop experiments.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>Hawking radiation</b> 霍金辐射</span>
+          <span class="vocab-item"><b>fiber-optical analogue</b> 光纤类比</span>
+          <span class="vocab-item"><b>quantum gravity</b> 量子引力</span>
+        </div>
+      </div>
+    </div>
+    
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>科学家用光纤制造了一个“迷你黑洞”，让光在其中传播的行为模拟黑洞视界附近的物理过程，首次观测到类似霍金辐射的信号。好比在实验室水槽里制造漩涡，研究真正的黑洞行为。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期(1-2年)内将推动模拟引力实验精度提升，中长期可能为量子信息与引力的统一提供线索。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果霍金辐射被完全证实，黑洞信息悖论可能得到解决，人类对时空本质的理解将发生革命性变化。</p>
+      </div>
+    </details>
+    
+    <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature Research Articles</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：基础物理再现重大突破，光纤模拟为量子引力研究提供了可重复的实验平台。材料科学的进步是这类精密实验的基石，低损耗光纤与量子传感技术持续受益。</div>
+
+  <!-- ========== 板块 6：中国政策与监管 ========== -->
+  <div class="section-title">🇨🇳 中国政策与监管</div>
+
+  <div class="news-item">
+    <div class="item-header">
+      <h4>天津中欧班列双通道打通，一带一路陆向联通升级</h4>
+      <span class="badge-wrapper">
+        <span class="star">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </span>
+    </div>
+    <div class="item-summary">
+      天津市发改委宣布，今年新增经阿拉山口至哈萨克斯坦的图定班列，形成天津港经阿拉山口、霍尔果斯双通道联通中亚格局。上半年全国新开国际航空货运航线<span class="num-up">92条</span>，一带一路物流网络加速织密。
+    </div>
+    
+    <div class="bilingual">
+      <p class="en-title">Tianjin China-Europe Railway Express Opens Dual Corridor</p>
+      <p class="en-summary">Tianjin launched a new scheduled block train via Alashankou to Kazakhstan, complementing the existing Horgos route. In H1 2026, China opened 92 new international air cargo routes, accelerating Belt and Road connectivity.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>block train</b> 图定班列</span>
+          <span class="vocab-item"><b>dual corridor</b> 双通道</span>
+          <span class="vocab-item"><b>air cargo route</b> 航空货运航线</span>
+        </div>
+      </div>
+    </div>
+    
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>天津港新增至中亚的图定班列，相当于铁路货运有了固定时刻表，不再“凑满一列才发车”。双通道互为备份，降低地缘风险。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将拉动天津与中亚贸易量，汽车、光伏组件出口受益。中长期看，中欧班列网络密度提升，可能分流部分海运需求。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当亚欧大陆铁路网像高速公路一样密集，内陆城市将重新成为贸易枢纽，全球供应链版图被重绘。</p>
+      </div>
+    </details>
+    
+    <p class="item-source">来源：<a href="https://fzgg.tj.gov.cn/xxfb/xwxx/202607/t20260706_7330809.html" target="_blank">天津市发改委</a> · <a href="https://ydyl.cctv.com/2026/07/06/ARTIAiqnMFtzhQUBy9KoF0qA260706.shtml" target="_blank">央视网</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：中国正系统性强化“一带一路”物流韧性，陆路与航空双管齐下。政策端明确支持海外基建与贸易走廊，建筑企业境外收入增长<span class="num-up">19.09%</span>（安永报告），印证政策落地效果。</div>
+
+  <!-- ========== 板块 7：地缘政治 ========== -->
+  <div class="section-title">🌍 地缘政治与国际关系</div>
+
+  <div class="news-item">
+    <div class="item-header">
+      <h4>一带一路南亚格局生变：印度退出，中巴合作深化</h4>
+      <span class="badge-wrapper">
+        <span class="star">⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </span>
+    </div>
+    <div class="item-summary">
+      印度正式将中巴经济走廊从其“一带一路”合作清单中剔除，中方随即抛出新规划，强化与巴基斯坦及南亚其他国家的三方合作。瓜达尔港战略地位进一步凸显，南亚地缘博弈进入新阶段。
+    </div>
+    
+    <div class="bilingual">
+      <p class="en-title">India Exits CPEC; China Deepens Pakistan Ties</p>
+      <p class="en-summary">India has officially removed the China-Pakistan Economic Corridor from its BRI cooperation list. Beijing responded with a new trilateral framework, amplifying Gwadar Port's strategic role and reshaping South Asian geopolitics.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>China-Pakistan Economic Corridor</b> 中巴经济走廊</span>
+          <span class="vocab-item"><b>trilateral framework</b> 三方框架</span>
+          <span class="vocab-item"><b>geopolitical realignment</b> 地缘重组</span>
+        </div>
+      </div>
+    </div>
+    
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>印度彻底退出中巴经济走廊，意味着南亚两条最大经济体之间的基础设施竞争公开化。中方转向“中巴+第三方”模式，可能拉拢斯里兰卡、尼泊尔。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期(1-2年)内，瓜达尔港建设加速，印度将强化与中东、中亚的互联互通对冲。中长期看，南亚可能出现平行的基础设施体系。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果南亚出现“两个阵营”的铁路网，区域一体化愿景将破碎，但竞争也可能催生更高效的项目交付。</p>
+      </div>
+    </details>
+    
+    <p class="item-source">来源：<a href="https://www.163.com/dy/article/L15CEAVF05567N2K.html" target="_blank">网易新闻</a> · <a href="https://www.bilibili.com/video/BV16KM46aE6M/" target="_blank">B站 · 一带一路速览</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：地缘层面，南亚成为中美印博弈新焦点。印度退出走廊既是挑战也是机遇，中国正加速构建替代性合作网络。供应链去风险化与“友岸外包”趋势同步演进。</div>
+
+  <!-- ========== 时间提醒模块 ========== -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-07-15</span>
+      <span>中国二季度GDP及6月进出口数据发布，市场关注经济复苏斜率</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-07-31</span>
+      <span>美联储议息会议，市场预期维持利率不变，关注点阵图指引</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-08-01</span>
+      <span>天津中欧班列新图定班列正式常态化运营</span>
+    </div>
+  </div>
+
+  <footer>
+    全球动态分析师 · 每日简报 · 数据截至 2026-07-08<br>
+    本简报由 AI 自动生成，仅供参考，不构成投资或决策建议。
+  </footer>
+
+</div>
+</body>
+</html>
