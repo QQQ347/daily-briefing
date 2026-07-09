@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全球动态简报 | 2026-07-09</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+      color: #1a1a2e;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      border-left: 5px solid #1e3a8a;
+      padding-left: 12px;
+      margin-top: 30px;
+      margin-bottom: 16px;
+    }
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0 0 8px 0;
+    }
+    h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 8px 0;
+    }
+    a {
+      color: #1e3a8a;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .overview {
+      background-color: #eef2ff;
+      padding: 20px 24px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      border-left: 6px solid #3b82f6;
+    }
+    .overview p {
+      margin: 8px 0 12px 0;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    .overview-tags {
+      display: inline-block;
+      margin-top: 4px;
+    }
+    .overview-tag {
+      display: inline-block;
+      background-color: #dbeafe;
+      color: #1e3a8a;
+      padding: 4px 12px;
+      border-radius: 16px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-right: 8px;
+      margin-bottom: 4px;
+    }
+    .item-header {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 6px;
+    }
+    .item-header .title-line {
+      display: inline-block;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-right: 12px;
+    }
+    .stars {
+      display: inline-block;
+      color: #f59e0b;
+      font-size: 0.9rem;
+      margin-right: 10px;
+    }
+    .impact {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-right: 6px;
+    }
+    .impact-high {
+      background-color: #fee2e2;
+      color: #b91c1c;
+    }
+    .impact-med {
+      background-color: #fef3c7;
+      color: #92400e;
+    }
+    .impact-low {
+      background-color: #e0e7ff;
+      color: #3730a3;
+    }
+    .risk-red {
+      display: inline-block;
+      background-color: #fce4ec;
+      color: #b71c1c;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .risk-yellow {
+      display: inline-block;
+      background-color: #fff8e1;
+      color: #b8860b;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .item-summary {
+      background-color: #f9fafb;
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin: 8px 0 12px 0;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    .num-up {
+      background-color: #d1fae5;
+      color: #065f46;
+      font-weight: 600;
+      padding: 0 4px;
+      border-radius: 3px;
+    }
+    .num-down {
+      background-color: #fee2e2;
+      color: #991b1b;
+      font-weight: 600;
+      padding: 0 4px;
+      border-radius: 3px;
+    }
+    .num-key {
+      background-color: #e0e7ff;
+      color: #3730a3;
+      font-weight: 600;
+      padding: 0 4px;
+      border-radius: 3px;
+    }
+    .bilingual {
+      background-color: #f0fdf4;
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin: 12px 0;
+      border: 1px solid #bbf7d0;
+    }
+    .bilingual .en-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin: 0 0 6px 0;
+    }
+    .bilingual .en-summary {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 4px 0 10px 0;
+    }
+    .vocab-card {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 10px 14px;
+    }
+    .vocab-title {
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+    }
+    .vocab-list {
+      display: inline-block;
+    }
+    .vocab-item {
+      display: inline-block;
+      background-color: #e2e8f0;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      margin-right: 6px;
+      margin-bottom: 4px;
+    }
+    .compare-box {
+      display: inline-block;
+      width: 100%;
+      background-color: #fefce8;
+      border: 1px solid #fde047;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 16px 0;
+    }
+    .compare-side {
+      display: inline-block;
+      width: 45%;
+      vertical-align: top;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .compare-bull {
+      background-color: #ecfdf5;
+      border-left: 4px solid #10b981;
+      margin-right: 4%;
+    }
+    .compare-bear {
+      background-color: #fef2f2;
+      border-left: 4px solid #ef4444;
+    }
+    .compare-label {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .deepdive {
+      margin: 12px 0;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 8px 14px;
+      background-color: #fafafa;
+    }
+    .deepdive summary {
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.9rem;
+      padding: 4px 0;
+    }
+    .deepdive-content {
+      padding: 8px 0 4px 0;
+    }
+    .dl {
+      margin: 6px 0;
+      line-height: 1.5;
+      font-size: 0.9rem;
+    }
+    .dl-label {
+      font-weight: 600;
+    }
+    .item-source {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin: 6px 0 18px 0;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 12px;
+    }
+    .trend-comment {
+      background-color: #f1f5f9;
+      padding: 12px 18px;
+      border-radius: 6px;
+      margin: 20px 0 30px 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      border-left: 4px solid #64748b;
+    }
+    .timeline {
+      background-color: #f0f9ff;
+      padding: 18px 22px;
+      border-radius: 8px;
+      margin: 24px 0;
+      border: 1px solid #bae6fd;
+    }
+    .timeline h4 {
+      margin: 0 0 12px 0;
+    }
+    .timeline-item {
+      display: inline-block;
+      width: 100%;
+      padding: 6px 0;
+      border-bottom: 1px dashed #cbd5e1;
+    }
+    .timeline-date {
+      display: inline-block;
+      font-weight: 700;
+      color: #0369a1;
+      margin-right: 16px;
+      min-width: 100px;
+    }
+    .footer {
+      text-align: center;
+      color: #9ca3af;
+      font-size: 0.8rem;
+      margin-top: 30px;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 16px;
+    }
+    @media (max-width: 600px) {
+      .container { padding: 16px; }
+      .compare-side { width: 100%; margin: 4px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- 今日综述模块 -->
+    <div class="overview">
+      <h3>🧠 今日全球动态综述</h3>
+      <p>2026年7月9日，全球市场在中东局势突变中剧烈震荡：美伊停火协议破裂，油价与股指承压。与此同时，中国量子计算与半导体自主化进程加速，DeepSeek等国产AI模型持续迭代。生命科学领域迎来基础科学普及日，但无重大临床突破。整体风向：地缘风险骤然升温，资产避险情绪蔓延，科技端国产替代叙事走强。</p>
+      <div class="overview-tags">
+        <span class="overview-tag">🌍 中东局势升级</span>
+        <span class="overview-tag">📉 全球股市承压</span>
+        <span class="overview-tag">🇨🇳 量子计算里程碑</span>
+        <span class="overview-tag">🤖 DeepSeek开源生态</span>
+        <span class="overview-tag">🔬 半导体自主化</span>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 板块1: 生命科学/医学 -->
+    <!-- ============================================================ -->
+    <h2>🧬 生命科学 / 医学</h2>
+
+    <!-- 新闻1-1 -->
+    <div class="item-header">
+      <span class="title-line">基因定义再审视：转录本中心论获得共识</span>
+      <span class="stars">⭐⭐⭐</span>
+      <span class="impact impact-low">冲击：Low</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      维基百科与权威机构更新基因定义，明确将基因界定为“被转录的DNA序列”，包含非编码RNA。这一基础科学共识的厘清，有助于规范科研与教学语境，但对短期产业与临床影响有限。
+    </div>
+
+    <div class="bilingual">
+      <p class="en-title">Gene Definition Refined: Transcription-Centric Consensus</p>
+      <p class="en-summary">Wikipedia and leading institutions have updated the definition of a gene to emphasize it as a transcribed DNA sequence, including non-coding RNAs. This conceptual clarification standardizes terminology in genetics research and education, though near-term translational impact remains modest.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>transcribed</b> 被转录的</span>
+          <span class="vocab-item"><b>non-coding RNA</b> 非编码RNA</span>
+          <span class="vocab-item"><b>consensus</b> 共识</span>
+        </div>
+      </div>
+    </div>
+
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传统上基因被定义为编码蛋白质的DNA片段，但大量非编码RNA被发现具有调控功能。新定义将基因还原为“转录单元”，更符合基因组学的实际。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期内影响教科书与数据库注释；长期有助于精准医学中非编码RNA靶点的识别与药物开发，如lncRNA抑制剂。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若完全采纳该定义，未来基因治疗将不再局限于编码区，非编码RNA可作为全新药物靶点，极大拓展可成药基因组空间。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://en.m.wikipedia.org/wiki/Gene" target="_blank">Wikipedia - Gene</a> / <a href="https://www.britannica.com/science/gene" target="_blank">Britannica</a></p>
+
+    <div class="trend-comment">📊 板块趋势：今日生命科学领域以基础概念更新为主，无重大临床或产业突破。基因定义共识虽学术意义大于市场影响，但反映了精准医学底层逻辑的进化。建议关注非编码RNA领域后续临床转化动态。</div>
+
+    <!-- ============================================================ -->
+    <!-- 板块2: 经济/金融 -->
+    <!-- ============================================================ -->
+    <h2>💰 经济 / 金融</h2>
+
+    <!-- 新闻2-1 -->
+    <div class="item-header">
+      <span class="title-line">美伊停火协议破裂，全球股指重挫</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-red">🔴 重大风险</span>
+    </div>
+    <div class="item-summary">
+      美国总统特朗普宣布与伊朗的停火协议结束，中东军事冲突风险重燃。全球主要股指周三大幅下跌，能源价格飙升。市场恐慌情绪蔓延，投资者涌入避险资产，黄金与美元走强。
+    </div>
+
+    <div class="bilingual">
+      <p class="en-title">U.S.-Iran Ceasefire Collapses, Global Equities Plunge</p>
+      <p class="en-summary">President Trump announced the termination of the ceasefire with Iran, reigniting fears of military conflict in the Middle East. Major stock indices fell sharply on Wednesday, with energy prices surging. Investors rushed to safe-haven assets, boosting gold and the U.S. dollar.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>ceasefire</b> 停火协议</span>
+          <span class="vocab-item"><b>safe-haven assets</b> 避险资产</span>
+          <span class="vocab-item"><b>plunge</b> 暴跌</span>
+        </div>
+      </div>
+    </div>
+
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美伊此前达成的临时停火协议被单方面终止，霍尔木兹海峡通航安全再受威胁，全球石油供应面临中断风险。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期油价可能突破<span class="num-key">100美元/桶</span>，通胀压力加剧；美联储降息预期进一步推迟。若冲突长期化，全球经济增长将遭受显著拖累。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>地缘冲突若持续升级，可能加速全球能源结构转型，可再生能源投资将获得更强政策与资本支持。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.google.com/finance/beta" target="_blank">Google Finance</a> / <a href="https://www.cnn.com/" target="_blank">CNN</a></p>
+
+    <!-- 新闻2-2 -->
+    <div class="item-header">
+      <span class="title-line">台湾央行发布6月外汇存底与金融统计</span>
+      <span class="stars">⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      台湾央行公布2026年6月数据：金融业拆款市场及商业本票市场统计出炉，6月底外汇存底规模更新。数据反映区域金融体系流动性状况，为亚太市场提供参照。
+    </div>
+
+    <div class="bilingual">
+      <p class="en-title">Taiwan Central Bank Releases June Foreign Exchange Reserves Data</p>
+      <p class="en-summary">The Central Bank of Taiwan published its June 2026 financial statistics, including interbank call loan market and commercial paper market data, along with updated foreign exchange reserves. The figures offer a snapshot of regional liquidity conditions.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>foreign exchange reserves</b> 外汇存底</span>
+          <span class="vocab-item"><b>interbank market</b> 拆款市场</span>
+          <span class="vocab-item"><b>commercial paper</b> 商业本票</span>
+        </div>
+      </div>
+    </div>
+
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>台湾央行每月例行发布金融统计，包括外汇存底、拆款利率等，反映岛内金融体系稳定性。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>数据本身偏中性，但在全球避险情绪升温背景下，亚太各经济体外汇储备的充足性成为关注焦点。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>持续的区域金融数据透明化有助于增强市场信心，降低信息不对称带来的波动风险。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.cbc.gov.tw/tw/sp-news-list-1.html" target="_blank">中央银行全球资讯网</a></p>
+
+    <div class="trend-comment">📊 板块趋势：今日金融板块核心驱动因素为地缘政治突变。美伊停火破裂引发全球风险资产抛售，避险情绪主导市场。亚太区域数据相对次要，但流动性状况将在后续波动中受到考验。建议短期降低风险敞口，增配黄金与短久期债券。</div>
+
+    <!-- ============================================================ -->
+    <!-- 板块3: 人工智能 -->
+    <!-- ============================================================ -->
+    <h2>🤖 人工智能</h2>
+
+    <!-- 新闻3-1 -->
+    <div class="item-header">
+      <span class="title-line">DeepSeek持续开源：半年内发布多款百亿级参数大模型</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      中国AI团队深度求索（DeepSeek）基于自研训练框架与万卡算力，半年内开源DeepSeek-LLM、DeepSeek-Coder等多个百亿级参数大模型。其高效训练策略引发业界关注，被视为国产大模型开源生态的重要力量。
+    </div>
+
+    <div class="bilingual">
+      <p class="en-title">DeepSeek Open-Sources Multi-Billion Parameter Models in Six Months</p>
+      <p class="en-summary">Chinese AI lab DeepSeek has open-sourced several hundred-billion-parameter large models within six months, including DeepSeek-LLM and DeepSeek-Coder, leveraging its proprietary training framework and a 10,000-GPU cluster. The efficiency gains have drawn industry attention, positioning DeepSeek as a key player in China's open-source AI ecosystem.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>open-source</b> 开源</span>
+          <span class="vocab-item"><b>proprietary training framework</b> 自研训练框架</span>
+          <span class="vocab-item"><b>compute cluster</b> 算力集群</span>
+        </div>
+      </div>
+    </div>
+
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek在受限算力条件下，通过自研框架与高效并行策略，实现了与Meta Llama等开源模型相当的性能，证明算法优化可部分弥补硬件差距。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将加速国内AI应用落地，特别是在代码生成与垂直行业场景；中长期或挑战现有开源模型格局，推动全球AI民主化。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若DeepSeek持续迭代，未来中国AI开发者可不再依赖海外闭源API，形成自主可控的开源AI技术栈。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.deepseek.com/" target="_blank">DeepSeek | 深度求索</a></p>
+
+    <div class="trend-comment">📊 板块趋势：今日AI领域焦点为DeepSeek的开源生态进展。在中美科技竞争背景下，国产大模型通过开源策略争夺开发者社区，有望形成差异化竞争力。建议关注DeepSeek后续在推理与多模态领域的模型发布。</div>
+
+    <!-- ============================================================ -->
+    <!-- 板块4: 科技/硬科技 -->
+    <!-- ============================================================ -->
+    <h2>💻 科技 / 硬科技</h2>
+
+    <!-- 新闻4-1 -->
+    <div class="item-header">
+      <span class="title-line">2026年量子计算：从实验室走向产业化的分水岭</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      业界分析指出，2026年是量子计算发展的关键分水岭。量子比特数量突破<span class="num-key">1000+</span>，纠错技术取得实质性进展，多个行业开始试点量子化学模拟与优化问题。中国在超导与光量子两条路线均实现国产化突破。
+    </div>
+
+    <div class="bilingual">
+      <p class="en-title">2026: The Tipping Point for Quantum Computing Commercialization</p>
+      <p class="en-summary">Industry analysts identify 2026 as a watershed year for quantum computing. Qubit counts have surpassed 1,000, error correction has made substantive progress, and multiple industries are piloting quantum chemistry simulations and optimization problems. China has achieved domestic breakthroughs in both superconducting and photonic quantum computing routes.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>qubit</b> 量子比特</span>
+          <span class="vocab-item"><b>error correction</b> 纠错</span>
+          <span class="vocab-item"><b>superconducting</b> 超导</span>
+        </div>
+      </div>
+    </div>
+
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>量子计算正从<100量子比特的含噪声时代迈入1000+逻辑量子比特的纠错时代，药物发现、金融建模、材料设计等领域开始受益。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）化学与材料科学率先落地；中期（3-7年）金融风险建模与密码学将受冲击；长期通用量子计算机仍需10年以上。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当量子计算成熟，新药研发周期可从10年缩短至1年，室温超导材料的发现将不再是运气，而是可计算的工程问题。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://zhuanlan.zhihu.com/p/2023533245795508961" target="_blank">知乎 - 2026 量子计算：从实验室走向产业化的关键一年</a></p>
+
+    <!-- 新闻4-2 -->
+    <div class="item-header">
+      <span class="title-line">华为连续四年入选Gartner企业有线无线局域网领导者象限</span>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      华为宣布连续第四年入选Gartner企业有线无线局域网领导者象限。该成就标志着华为在园区网络领域的技术实力与市场地位持续获得国际权威认可，尤其在AI驱动的智能运维方面表现突出。
+    </div>
+
+    <div class="bilingual">
+      <p class="en-title">Huawei Named Gartner Leader for Enterprise Wired/Wireless LAN for Fourth Consecutive Year</p>
+      <p class="en-summary">Huawei has been positioned as a Leader in the Gartner Magic Quadrant for Enterprise Wired and Wireless LAN for the fourth straight year. The recognition underscores Huawei's strength in campus networking, particularly in AI-driven intelligent operations.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>Magic Quadrant</b> 魔力象限</span>
+          <span class="vocab-item"><b>campus network</b> 园区网络</span>
+          <span class="vocab-item"><b>intelligent operations</b> 智能运维</span>
+        </div>
+      </div>
+    </div>
+
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Gartner魔力象限是IT采购的重要参考，华为连续入选表明其产品在可靠性、AI能力与全球服务方面具备竞争力。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期有助于华为在政企市场进一步拓展，尤其在中国新基建与海外数字化转型项目中获得优势。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若华为持续引领，未来企业网络将全面走向AI原生，实现零接触运维与自愈网络。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.huawei.com/cn/" target="_blank">华为官网</a></p>
+
+    <div class="trend-comment">📊 板块趋势：硬科技板块呈现两条主线：量子计算产业化加速与中国科技企业国际竞争力提升。量子计算2026年里程碑意义重大，建议关注相关标的与国产替代机会。华为在网络领域的持续领先为通信产业链提供稳定锚点。</div>
+
+    <!-- ============================================================ -->
+    <!-- 板块5: 材料科学 -->
+    <!-- ============================================================ -->
+    <h2>🔬 材料科学</h2>
+
+    <!-- 新闻5-1 -->
+    <div class="item-header">
+      <span class="title-line">全球新闻聚合：无重大材料科学专项突破报道</span>
+      <span class="stars">⭐⭐⭐</span>
+      <span class="impact impact-low">冲击：Low</span>
+    </div>
+    <div class="item-summary">
+      今日主要新闻聚合平台（Google News、NYT、CNN、Fox）头条聚焦美伊冲突与金融市场，未出现独立的材料科学重大突破报道。该领域处于消息面平静期。
+    </div>
+
+    <div class="bilingual">
+      <p class="en-title">No Major Materials Science Breakthroughs Reported Today</p>
+      <p class="en-summary">Leading news aggregators and major outlets are primarily covering the U.S.-Iran conflict and financial market turmoil. No independent breakthroughs in materials science have been reported today, indicating a quiet period for the field.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>news aggregator</b> 新闻聚合平台</span>
+          <span class="vocab-item"><b>breakthrough</b> 突破</span>
+          <span class="vocab-item"><b>quiet period</b> 平静期</span>
+        </div>
+      </div>
+    </div>
+
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>材料科学领域的重大发现通常发表在Nature Materials、Advanced Materials等期刊，且传播周期较长。今日头条被地缘事件占据，不代表领域停滞。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>静默期往往是下一轮突破的蓄力阶段。固态电池、钙钛矿光伏、超材料等领域仍有大量在研项目，建议关注8-9月学术会议季。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>材料科学是AI与量子计算的底层支撑，每一次突破都可能引发产业革命，如室温超导将重塑能源与交通格局。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://news.google.com/" target="_blank">Google News</a> / <a href="https://www.nytimes.com/" target="_blank">NYT</a></p>
+
+    <div class="trend-comment">📊 板块趋势：材料科学今日无重大新闻，属于正常的信息间歇期。但在地缘冲突背景下，关键矿产供应链（如稀土、锂、钴）的稳定性格外值得关注，这可能成为材料领域下一个热点。</div>
+
+    <!-- ============================================================ -->
+    <!-- 板块6: 中国政策与监管 -->
+    <!-- ============================================================ -->
+    <h2>🇨🇳 中国政策与监管</h2>
+
+    <!-- 新闻6-1 -->
+    <div class="item-header">
+      <span class="title-line">“一带一路”倡议持续推进，官方网站更新合作动态</span>
+      <span class="stars">⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      中国一带一路网持续更新共建国家合作项目动态，强调基础设施互联互通与绿色发展合作。在美伊冲突升级背景下，中国通过“一带一路”深化与中东、中亚国家的经济联系，对冲地缘风险。
+    </div>
+
+    <div class="bilingual">
+      <p class="en-title">Belt and Road Initiative Continues to Advance, Official Website Updates Cooperation Progress</p>
+      <p class="en-summary">China's Belt and Road Initiative (BRI) official website continues to update cooperation projects, emphasizing infrastructure connectivity and green development. Amid the U.S.-Iran conflict escalation, China is deepening economic ties with Middle Eastern and Central Asian nations via the BRI to hedge geopolitical risks.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>Belt and Road Initiative</b> 一带一路倡议</span>
+          <span class="vocab-item"><b>infrastructure connectivity</b> 基础设施互联互通</span>
+          <span class="vocab-item"><b>geopolitical hedge</b> 地缘对冲</span>
+        </div>
+      </div>
+    </div>
+
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>一带一路是中国主导的跨国经济合作框架，覆盖基建、能源、数字丝绸之路等领域，目前已有超过150个国家参与。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，中东局势不稳反而凸显中国作为稳定合作伙伴的价值；中长期，绿色丝绸之路与数字丝绸之路将成为新增长点。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若一带一路与全球能源转型深度绑定，中国有望在新能源标准、跨境支付体系等方面获得更大话语权。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.yidaiyilu.gov.cn/" target="_blank">中国一带一路网</a></p>
+
+    <div class="trend-comment">📊 板块趋势：中国政策层面今日以“一带一路”常规更新为主，但在地缘风险升温的背景下，该倡议的战略价值凸显。建议关注中国与中东国家在能源与基建领域的进一步合作动态。</div>
+
+    <!-- ============================================================ -->
+    <!-- 板块7: 地缘政治与国际关系 -->
+    <!-- ============================================================ -->
+    <h2>🌍 地缘政治与国际关系</h2>
+
+    <!-- 新闻7-1 -->
+    <div class="item-header">
+      <span class="title-line">美伊停火协议破裂，霍尔木兹海峡通航风险上升</span>
+      <span class="stars">⭐⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-red">🔴 重大风险</span>
+    </div>
+    <div class="item-summary">
+      美国总统特朗普宣布结束与伊朗的停火协议，中东和平进程急转直下。全球油价应声上涨，标普500指数期货下跌<span class="num-down">-1.8%</span>。霍尔木兹海峡若被封锁，全球约<span class="num-key">20%</span>的石油运输将受威胁，各国正评估战略石油储备释放方案。
+    </div>
+
+    <div class="bilingual">
+      <p class="en-title">U.S.-Iran Ceasefire Collapses, Strait of Hormuz at Risk</p>
+      <p class="en-summary">President Trump announced the end of the ceasefire with Iran, reversing Middle East peace progress. Global oil prices surged and S&P 500 futures fell 1.8%. A blockade of the Strait of Hormuz would threaten approximately 20% of global oil shipments, prompting nations to assess strategic petroleum reserve releases.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>ceasefire</b> 停火协议</span>
+          <span class="vocab-item"><b>Strait of Hormuz</b> 霍尔木兹海峡</span>
+          <span class="vocab-item"><b>strategic petroleum reserve</b> 战略石油储备</span>
+        </div>
+      </div>
+    </div>
+
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美伊此前签署的和平计划被单方面撕毁，伊朗可能重新封锁霍尔木兹海峡，引发全球能源供应危机。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期油价可能突破<span class="num-key">120美元/桶</span>，全球通胀压力骤增，美联储可能被迫暂停降息甚至加息。若冲突持续，2026年全球经济增速可能被拖累<span class="num-down">-0.5%</span>。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>此次危机或成为全球能源转型的催化剂，加速电动车、可再生能源与核能的投资，改变未来十年的能源地缘格局。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.cnn.com/" target="_blank">CNN</a> / <a href="https://www.google.com/finance/beta" target="_blank">Google Finance</a></p>
+
+    <div class="trend-comment">📊 板块趋势：地缘政治今日主导全球市场情绪。美伊冲突升级是最核心的风险变量，其影响已传导至金融、能源、航运等多个领域。建议投资者密切关注外交斡旋进展与各国战略储备释放计划，做好尾部风险对冲。</div>
+
+    <!-- ============================================================ -->
+    <!-- 时间提醒模块（条件触发） -->
+    <!-- ============================================================ -->
+    <div class="timeline">
+      <h4>⏰ 近期关键时间节点</h4>
+      <div class="timeline-item">
+        <span class="timeline-date">2026-07-10</span>
+        <span>市场继续评估美伊冲突影响，各国可能宣布紧急能源措施</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-date">2026-07-15</span>
+        <span>美联储可能发布紧急声明或调整利率预期</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-date">2026-07-31</span>
+        <span>美联储议息会议，市场降息预期已大幅消退</span>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>全球动态简报 | 2026-07-09 | 数据截至当日北京时间 18:00</p>
+      <p>本简报由AI自动生成，仅供参考，不构成投资建议。</p>
+    </div>
+  </div>
+</body>
+</html>
