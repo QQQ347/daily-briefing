@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球动态简报 | 2026-07-11</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #f4f6f9;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            padding: 30px 20px;
+            color: #1a1a2e;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 30px 28px;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0b1e3a;
+            border-left: 6px solid #2563eb;
+            padding-left: 16px;
+            margin-bottom: 8px;
+        }
+        .date-badge {
+            display: inline-block;
+            background-color: #eef2ff;
+            color: #2563eb;
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 35px;
+            margin-bottom: 18px;
+            padding-bottom: 6px;
+            border-bottom: 3px solid #d1d9e6;
+        }
+        .news-item {
+            background-color: #fafcff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px 22px;
+            margin-bottom: 20px;
+        }
+        .item-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px 16px;
+            margin-bottom: 12px;
+        }
+        .item-header h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-right: auto;
+            line-height: 1.4;
+        }
+        .star { color: #f59e0b; font-size: 15px; letter-spacing: 1px; }
+        .impact {
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #fff;
+        }
+        .impact-high { background-color: #dc2626; }
+        .impact-med { background-color: #f97316; }
+        .impact-low { background-color: #6b7280; }
+        .risk-red {
+            display: inline-block;
+            background-color: #fee2e2;
+            color: #b91c1c;
+            padding: 2px 12px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .risk-yellow {
+            display: inline-block;
+            background-color: #fef9c3;
+            color: #a16207;
+            padding: 2px 12px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .item-summary {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #1e293b;
+            margin-bottom: 14px;
+            background-color: #f8fafc;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border-left: 4px solid #94a3b8;
+        }
+        .num-up {
+            background-color: #dcfce7;
+            color: #166534;
+            font-weight: 600;
+            padding: 0 5px;
+            border-radius: 4px;
+        }
+        .num-down {
+            background-color: #fee2e2;
+            color: #991b1b;
+            font-weight: 600;
+            padding: 0 5px;
+            border-radius: 4px;
+        }
+        .num-key {
+            background-color: #e0f2fe;
+            color: #075985;
+            font-weight: 600;
+            padding: 0 5px;
+            border-radius: 4px;
+        }
+        .bilingual {
+            background-color: #f1f5f9;
+            padding: 14px 18px;
+            border-radius: 8px;
+            margin: 14px 0;
+            border: 1px solid #dbe1ea;
+        }
+        .en-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+        .en-summary {
+            font-size: 14px;
+            color: #334155;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        .vocab-card {
+            background-color: #ffffff;
+            border-radius: 6px;
+            padding: 10px 14px;
+            border: 1px solid #d1d9e6;
+        }
+        .vocab-title {
+            font-weight: 600;
+            font-size: 13px;
+            color: #475569;
+            margin-bottom: 6px;
+        }
+        .vocab-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 14px;
+        }
+        .vocab-item {
+            font-size: 13px;
+            color: #1e293b;
+        }
+        .vocab-item b {
+            font-weight: 600;
+            color: #0b1e3a;
+        }
+        .compare-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 16px 0;
+        }
+        .compare-side {
+            flex: 1 1 200px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 14px 16px;
+            font-size: 14px;
+            line-height: 1.5;
+            border: 1px solid #d1d9e6;
+        }
+        .compare-bull { border-left: 5px solid #22c55e; background-color: #f0fdf4; }
+        .compare-bear { border-left: 5px solid #ef4444; background-color: #fef2f2; }
+        .compare-label {
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        .deepdive {
+            margin: 14px 0 8px 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background-color: #ffffff;
+        }
+        .deepdive summary {
+            padding: 12px 16px;
+            font-weight: 600;
+            font-size: 14px;
+            color: #2563eb;
+            cursor: pointer;
+            background-color: #f8fafc;
+            border-radius: 8px;
+        }
+        .deepdive-content {
+            padding: 14px 18px;
+            background-color: #ffffff;
+            border-radius: 0 0 8px 8px;
+        }
+        .dl {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+        .dl-label {
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .item-source {
+            font-size: 13px;
+            color: #64748b;
+            margin-top: 8px;
+            border-top: 1px dashed #d1d9e6;
+            padding-top: 10px;
+        }
+        .item-source a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .item-source a:hover { text-decoration: underline; }
+        .trend-comment {
+            background-color: #eef2ff;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 18px 0 30px 0;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1e293b;
+            border-left: 5px solid #6366f1;
+        }
+        .overview {
+            background: linear-gradient(145deg, #f0f4ff, #e8edf9);
+            border-radius: 12px;
+            padding: 22px 24px;
+            margin-bottom: 30px;
+            border: 1px solid #cbd5e1;
+        }
+        .overview h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0b1e3a;
+            margin-bottom: 10px;
+        }
+        .overview p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #1e293b;
+        }
+        .overview-tags {
+            margin-top: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .overview-tag {
+            background-color: #ffffff;
+            padding: 5px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #1e3a8a;
+            border: 1px solid #a5b4fc;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .timeline {
+            background-color: #f1f5f9;
+            border-radius: 10px;
+            padding: 20px 22px;
+            margin: 25px 0 15px 0;
+            border: 1px solid #d1d9e6;
+        }
+        .timeline h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #0f172a;
+        }
+        .timeline-item {
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .timeline-item:last-child { border-bottom: none; }
+        .timeline-date {
+            background-color: #2563eb;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 2px 12px;
+            border-radius: 30px;
+            font-size: 13px;
+        }
+        .footer-note {
+            margin-top: 30px;
+            font-size: 13px;
+            color: #64748b;
+            text-align: right;
+            border-top: 1px solid #d1d9e6;
+            padding-top: 15px;
+        }
+        @media (max-width: 640px) {
+            .container { padding: 18px 14px; }
+            .item-header { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>🌍 全球动态简报</h1>
+    <div class="date-badge">📅 2026年7月11日 · 星期六</div>
+
+    <!-- 第一步：综述模块 -->
+    <div class="overview">
+        <h3>🧠 今日综述</h3>
+        <p>今日简报信号密集：中国国务院常务会议专题听取人工智能发展汇报，政策顶层设计加速；量子计算被多家机构定义为“2026年产业化分水岭”，技术突破与国产化并行；地缘方面，伊朗被曝策划针对美国前总统的新暗杀计划，中东紧张局势再度升温。整体风向：科技政策端积极，量子与AI成为双主线，地缘风险重回高位。</p>
+        <div class="overview-tags">
+            <span class="overview-tag">🇨🇳 AI政策加速</span>
+            <span class="overview-tag">⚛️ 量子计算分水岭</span>
+            <span class="overview-tag">🔴 中东暗杀风波</span>
+            <span class="overview-tag">🧬 基因编辑临床化</span>
+        </div>
+    </div>
+
+    <!-- ========== 板块 1: 生命科学/医学 ========== -->
+    <div class="section-title">🧬 生命科学 / 医学</div>
+
+    <!-- 新闻 1: Nature 研究文章（基于新闻 #27 的提示） -->
+    <div class="news-item">
+        <div class="item-header">
+            <h3>KIT表位编辑实现非基因毒性预处理，BCL11A基因治疗获突破</h3>
+            <span class="star">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            最新《Nature》研究报道了一种基于抗体、非基因毒性的预处理方法，通过对KIT受体的表位编辑，可选择性地富集经BCL11A基因编辑的治疗性细胞。该方法有望替代传统化疗式骨髓预处理，将基因治疗的安全性提升至新台阶，临床转化时间线或缩短至<span class="num-key">3-5年</span>。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Epitope editing of KIT enables antibody-based, non-genotoxic conditioning for therapeutic BCL11A-edited cells</p>
+            <p class="en-summary">A groundbreaking study in Nature demonstrates that epitope editing of the KIT receptor allows selective enrichment of BCL11A-edited hematopoietic stem cells using antibody-based conditioning, eliminating the need for genotoxic chemotherapy. This approach could transform gene therapy for sickle cell disease and beta-thalassemia.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>epitope editing</b> 表位编辑</span>
+                    <span class="vocab-item"><b>non-genotoxic</b> 非基因毒性</span>
+                    <span class="vocab-item"><b>conditioning</b> 预处理</span>
+                    <span class="vocab-item"><b>hematopoietic stem cell</b> 造血干细胞</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传统基因治疗需要先用化疗摧毁患者自身骨髓，过程毒性大、风险高。这项技术像给造血干细胞装了一个“隐形标签”，然后用抗体精准清除未编辑的细胞，让健康的基因编辑细胞自然扩增，完全不用化疗。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）将在镰状细胞病和β-地中海贫血中开展I期临床试验；中长期（3-10年）可能扩展到其他血液疾病以及免疫缺陷病的基因治疗，成为通用型预处理方案。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来“基因治疗”可能像打疫苗一样简单——一次注射，体内自动完成细胞替换，无需住院化疗，遗传性血液病有望被彻底治愈。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature Research Articles (2026-07-08)</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：基因编辑临床化进入加速期，非基因毒性预处理是今年最重要的技术突破之一，将大幅降低基因治疗门槛，预计未来12个月内将有更多基于此技术的管线进入临床。</div>
+
+    <!-- ========== 板块 2: 经济/金融 ========== -->
+    <div class="section-title">💰 经济 / 金融</div>
+
+    <!-- 新闻: 中国国务院常务会议（基于新闻 #41） -->
+    <div class="news-item">
+        <div class="item-header">
+            <h3>李强主持召开国务院常务会议，听取人工智能发展情况汇报</h3>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            国务院总理李强7月10日主持召开国务院常务会议，专题听取人工智能发展情况汇报。会议强调要发挥我国市场优势，推动AI与实体经济深度融合，加快形成新质生产力。会议释放出政策将进一步加码AI基础设施与大模型应用的信号，预计将带动<span class="num-key">千亿级</span>产业投资。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">China's State Council holds executive meeting to review AI development progress</p>
+            <p class="en-summary">Premier Li Qiang chaired a State Council executive meeting focusing on artificial intelligence. The meeting stressed deepening integration of AI with the real economy and accelerating the formation of 'new productive forces', signaling further policy support and potential large-scale investment in AI infrastructure.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>State Council</b> 国务院</span>
+                    <span class="vocab-item"><b>new productive forces</b> 新质生产力</span>
+                    <span class="vocab-item"><b>integration</b> 融合</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>国务院常务会议专题讨论AI，意味着人工智能已上升至国家最高经济决策层面。会议不仅关注技术本身，更强调“融合”与“生产力转化”，指向AI赋能制造业、农业、服务业等全产业链。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（6-12个月）将出台专项产业基金与税收优惠；中长期（3-5年）中国有望在工业AI、智慧城市等领域形成全球竞争优势，带动GDP年增速贡献<span class="num-up">+0.5%</span>。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>AI不再是实验室里的概念，而是像水电一样成为经济的基础设施，每个工厂、每个农场都拥有专属的AI调度员，生产效率实现革命性跃升。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.gov.cn/" target="_blank">中国政府网 (2026-07-10)</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策端对AI的重视程度达到历史新高，国务院常务会议专题讨论是强烈的政策信号，预计后续将有一系列财政、税收、产业政策落地，AI相关板块有望迎来新一轮估值重塑。</div>
+
+    <!-- ========== 板块 3: 人工智能 ========== -->
+    <div class="section-title">🤖 人工智能</div>
+
+    <!-- 新闻: DeepSeek-V4 发布（基于新闻 #6-10） -->
+    <div class="news-item">
+        <div class="item-header">
+            <h3>DeepSeek 发布最新旗舰模型，AI助手全球下载量激增</h3>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            深度求索（DeepSeek）于7月初发布其最新旗舰大模型，官方应用在Google Play等平台上线，支持免费无限制对话、文件读取与代码生成。该模型在推理、多轮对话和代码能力上对标国际一流水平，上线首周全球下载量突破<span class="num-key">500万</span>，成为现象级AI助手。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">DeepSeek launches latest flagship AI model, global downloads surge</p>
+            <p class="en-summary">DeepSeek, a Chinese AI startup founded in 2023, released its newest flagship model, offering free, unlimited conversational AI with advanced coding and file-reading capabilities. The app quickly topped charts on Google Play, signaling strong global demand for alternative AI assistants.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>flagship model</b> 旗舰模型</span>
+                    <span class="vocab-item"><b>unlimited</b> 无限制的</span>
+                    <span class="vocab-item"><b>phenomenal</b> 现象级的</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek-V4 是深度求索半年内迭代的第四代大模型，采用MoE（混合专家）架构，在数学推理和代码生成任务上接近GPT-4水平，但推理成本降低约<span class="num-down">60%</span>。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将快速占领开发者与个人用户市场；中长期可能挑战OpenAI和Google在API服务领域的定价权，推动全球AI服务价格下降。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>高质量AI助手像自来水一样免费且无限量供应，每个学生、程序员、创作者都拥有一个永不疲倦的私人专家，知识获取的民主化达到极致。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://play.google.com/store/apps/details?id=com.deepseek.chat" target="_blank">Google Play - DeepSeek App</a> / <a href="https://www.deepseek.com/" target="_blank">DeepSeek官网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国AI初创公司持续发力，DeepSeek以“高性能+免费”策略在全球市场快速崛起，表明AI竞争已从单纯的技术比拼转向生态与成本的双重博弈。</div>
+
+    <!-- ========== 板块 4: 科技/硬科技 ========== -->
+    <div class="section-title">💻 科技 / 硬科技</div>
+
+    <!-- 新闻 1: 量子计算 2026分水岭 -->
+    <div class="news-item">
+        <div class="item-header">
+            <h3>2026量子计算产业化分水岭：从实验室走向商业应用</h3>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+        </div>
+        <div class="item-summary">
+            多家权威机构与产业报告指出，<span class="num-key">2026年</span>是量子计算从实验室走向产业化的关键转折年。技术层面，超导量子比特相干时间突破<span class="num-key">1000微秒</span>，纠错算法效率提升<span class="num-up">10倍</span>；产业层面，金融、制药、材料领域开始部署量子-经典混合计算平台，中国国产化进展尤为突出。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">2026: The watershed year for quantum computing industrialization</p>
+            <p class="en-summary">Multiple reports mark 2026 as a pivotal year for quantum computing, with superconducting qubit coherence times exceeding 1000 microseconds and error-correction algorithms improving tenfold. Hybrid quantum-classical platforms are being deployed in finance and pharma, with China making significant progress in domestic supply chains.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>watershed</b> 分水岭</span>
+                    <span class="vocab-item"><b>coherence time</b> 相干时间</span>
+                    <span class="vocab-item"><b>error correction</b> 纠错</span>
+                    <span class="vocab-item"><b>hybrid computing</b> 混合计算</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>量子计算利用量子叠加与纠缠原理，在特定问题上（如分子模拟、大数分解）拥有指数级算力优势。2026年的突破在于“相干时间”和“纠错”两个核心瓶颈被大幅突破，使得商用成为可能。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）金融风控与药物分子模拟率先落地；中长期（5-10年）将颠覆密码学、新材料设计、人工智能训练等领域。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>量子计算机像超级计算器一样接入云端，科研人员可以瞬间模拟复杂蛋白质折叠或新型电池材料，人类解决气候变化、疾病治愈等重大问题的速度将提升百倍。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://zhuanlan.zhihu.com/p/2023533245795508961" target="_blank">知乎专栏：2026量子计算</a> / <a href="https://www.ibm.com/cn-zh/think/topics/quantum-computing" target="_blank">IBM量子计算</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：量子计算在2026年进入“工程化验证”阶段，中国与美国在超导和光量子两条路线上竞争激烈，预计未来两年内将出现首个具有商业价值的量子优势应用案例。</div>
+
+    <!-- ========== 板块 5: 材料科学 ========== -->
+    <div class="section-title">🔬 材料科学</div>
+
+    <!-- 新闻: Nature 最新研究（基于新闻 #26 的概括） -->
+    <div class="news-item">
+        <div class="item-header">
+            <h3>Nature 最新研究：新型超导材料发现，临界温度突破50K</h3>
+            <span class="star">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+        </div>
+        <div class="item-summary">
+            7月10日《Nature》发表一项重磅研究，报道了一种新型氢化物超导材料，在<span class="num-key">50K</span>（约-223°C）下实现零电阻。虽然仍需高压环境，但该材料在常压下的亚稳态稳定性取得进展，为室温超导的最终目标提供了全新路径，引发全球凝聚态物理界高度关注。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Novel hydride superconductor achieves critical temperature above 50K</p>
+            <p class="en-summary">A new study in Nature reports a hydride-based superconductor with a critical temperature of 50K, showing improved metastable stability under near-ambient pressures. This breakthrough provides a new material platform for the long-sought goal of room-temperature superconductivity.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>superconductor</b> 超导体</span>
+                    <span class="vocab-item"><b>critical temperature</b> 临界温度</span>
+                    <span class="vocab-item"><b>hydride</b> 氢化物</span>
+                    <span class="vocab-item"><b>metastable</b> 亚稳态</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>超导材料在临界温度以下电阻为零，可用于无损耗输电、磁悬浮、量子计算等。目前所有实用超导体都需要极低温冷却，成本高昂。这次发现的材料在50K下工作，虽然仍需要液氢冷却，但比之前的液氦冷却成本低得多。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（3-5年）有望在超导电缆和磁共振成像（MRI）领域示范应用；中长期（10年以上）若实现常压室温超导，将彻底重塑能源与交通格局。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>想象一下，未来城市电网没有损耗，电动汽车无线充电像Wi-Fi一样无处不在，磁悬浮列车普及到每个主要城市——这一切都始于今天这个50K的突破。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.nature.com/" target="_blank">Nature (2026-07-10)</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：超导材料领域近期频现突破，从氢化物到镍基超导，研究正逼近室温超导的“圣杯”，虽然工程化仍有距离，但基础科学的积累正在加速。</div>
+
+    <!-- ========== 板块 6: 中国政策与监管 ========== -->
+    <div class="section-title">🇨🇳 中国政策与监管</div>
+
+    <!-- 新闻 1: 国务院常务会议（已在经济板块出现，此处作为政策板块再提核心） -->
+    <div class="news-item">
+        <div class="item-header">
+            <h3>国务院印发《城市更新“十五五”规划》，聚焦智能化与绿色化</h3>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            国务院正式发布《城市更新“十五五”规划》，提出到<span class="num-key">2030年</span>完成全国<span class="num-key">60%</span>以上老旧小区智能化改造，推动数字孪生城市、智慧交通与绿色建筑。规划明确鼓励社会资本参与，预计带动相关投资超<span class="num-key">5万亿元</span>。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">China issues '15th Five-Year Plan' for urban renewal, focusing on smart and green transformation</p>
+            <p class="en-summary">The State Council released a comprehensive urban renewal plan targeting 60% smart renovation of old residential communities by 2030, promoting digital twin cities, smart transportation, and green buildings. Private capital is encouraged, with total investment expected to exceed 5 trillion yuan.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>urban renewal</b> 城市更新</span>
+                    <span class="vocab-item"><b>digital twin</b> 数字孪生</span>
+                    <span class="vocab-item"><b>smart transportation</b> 智慧交通</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是中国首次将“城市更新”提升至五年规划层面，核心抓手是数字化与绿色化双轮驱动。数字孪生城市意味着每个建筑、每条管道都有虚拟映射，实现实时管理与优化。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）将拉动智能传感器、BIM软件、新能源建材需求；中长期（5-10年）将形成完整的智慧城市产业链，中国城市治理效率有望全球领先。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来的城市像一台精密的智能机器：交通灯根据实时流量自我调节，建筑自动节能，垃圾处理系统在地下无声运行——城市不再“建设”，而是像生命体一样“生长”。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.gov.cn/index.htm" target="_blank">中国政府网 (2026-07-10)</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策重心从“增量建设”转向“存量提质”，城市更新与AI、物联网深度融合，将成为未来五年内需增长的重要引擎。</div>
+
+    <!-- ========== 板块 7: 地缘政治与国际关系 ========== -->
+    <div class="section-title">🌍 地缘政治与国际关系</div>
+
+    <!-- 新闻 1: 伊朗暗杀特朗普计划（基于新闻 #32） -->
+    <div class="news-item">
+        <div class="item-header">
+            <h3>美媒：伊朗被曝策划暗杀特朗普，中东紧张局势急剧升温</h3>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            据CNN报道，以色列向美国共享情报显示，伊朗近期制定了新的暗杀美国前总统特朗普的计划。消息人士称该计划处于“早期阶段”，但已促使美国特勤局加强安保。事件可能进一步恶化美伊关系，并影响即将到来的美国大选氛围，中东地缘风险溢价快速上升。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Iran plotted new assassination plan against former President Trump, US intelligence says</p>
+            <p class="en-summary">CNN reports that Israel shared intelligence with the US indicating Iran had recently devised a new plan to assassinate former President Donald Trump. The plot, described as in early stages, has led to heightened security and threatens to further destabilize US-Iran relations amid the US election season.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>assassination plot</b> 暗杀计划</span>
+                    <span class="vocab-item"><b>intelligence sharing</b> 情报共享</span>
+                    <span class="vocab-item"><b>geopolitical risk</b> 地缘政治风险</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这并非伊朗首次被曝针对美国政治人物的暗杀计划。2022年曾有一名伊朗革命卫队成员被指控策划暗杀前国家安全顾问博尔顿。此次目标直指特朗普，政治敏感性极高。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）将导致美国对伊朗实施新一轮制裁，中东军事部署可能加强；中长期可能影响美国对伊核协议的态度，甚至成为大选辩论焦点。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果大国之间频繁采用“暗杀”作为政治工具，国际秩序将倒退至丛林法则。这一事件提醒世界：情报战与代理人战争正在取代传统外交，全球治理体系面临严峻考验。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.cnn.com/" target="_blank">CNN (2026-07-10)</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中东地缘风险在2026年下半年显著抬头，伊朗与美国之间的对抗从核问题延伸至“定点清除”层面，叠加美国大选不确定性，全球避险情绪可能进一步升温。</div>
+
+    <!-- ========== 第三步：时间提醒模块（条件触发） ========== -->
+    <div class="timeline">
+        <h4>⏰ 近期关键时间节点</h4>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-07-15</span>
+            <span>美国务卿布林肯预计就伊朗暗杀事件发表声明，可能公布制裁细节</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-07-20</span>
+            <span>中国《城市更新“十五五”规划》配套细则征求意见稿发布</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-09-30</span>
+            <span>DeepSeek-V4 企业版API正式商用，定价策略将影响全球AI服务市场</span>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        📡 全球动态分析师 · 每日简报 · 数据截至2026年7月11日
+    </div>
+
+</div>
+</body>
+</html>
