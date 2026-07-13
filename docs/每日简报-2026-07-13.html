@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球动态简报 | 2026-07-13</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+            color: #1a1a2e;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+            padding: 30px 35px;
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a1a2e;
+            border-left: 6px solid #3a7bd5;
+            padding-left: 14px;
+            margin-top: 30px;
+            margin-bottom: 18px;
+        }
+        h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+        }
+        h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+        }
+        a {
+            color: #2a6bb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        /* overview */
+        .overview {
+            background-color: #eef3fb;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 30px;
+        }
+        .overview p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 10px 0 12px 0;
+        }
+        .overview-tags {
+            display: block;
+            margin-top: 8px;
+        }
+        .overview-tag {
+            display: inline-block;
+            background-color: #d4e0f0;
+            color: #1f3a6b;
+            font-weight: 600;
+            font-size: 13px;
+            padding: 4px 14px;
+            border-radius: 30px;
+            margin: 4px 6px 4px 0;
+        }
+        /* item */
+        .item {
+            background: #ffffff;
+            border: 1px solid #e6edf4;
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin-bottom: 20px;
+        }
+        .item-header {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .item-title {
+            font-size: 18px;
+            font-weight: 700;
+            display: inline;
+        }
+        .star {
+            color: #f5a623;
+            font-size: 16px;
+            letter-spacing: 1px;
+            margin-left: 6px;
+        }
+        .impact {
+            display: inline-block;
+            font-weight: 700;
+            font-size: 12px;
+            padding: 2px 12px;
+            border-radius: 30px;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        .impact-high {
+            background-color: #ffdede;
+            color: #b22222;
+        }
+        .impact-med {
+            background-color: #fff3d6;
+            color: #b8860b;
+        }
+        .impact-low {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        .risk-red {
+            display: inline-block;
+            background-color: #ffebee;
+            color: #c62828;
+            font-weight: 700;
+            font-size: 12px;
+            padding: 2px 12px;
+            border-radius: 30px;
+            margin-left: 8px;
+        }
+        .risk-yellow {
+            display: inline-block;
+            background-color: #fff8e1;
+            color: #b76e00;
+            font-weight: 700;
+            font-size: 12px;
+            padding: 2px 12px;
+            border-radius: 30px;
+            margin-left: 8px;
+        }
+        .item-summary {
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        .num-up {
+            background-color: #e6f7ec;
+            color: #1b7a3d;
+            font-weight: 700;
+            padding: 0 6px;
+            border-radius: 4px;
+        }
+        .num-down {
+            background-color: #fde8e8;
+            color: #b22222;
+            font-weight: 700;
+            padding: 0 6px;
+            border-radius: 4px;
+        }
+        .num-key {
+            background-color: #eef3fb;
+            color: #1f3a6b;
+            font-weight: 700;
+            padding: 0 6px;
+            border-radius: 4px;
+        }
+        .bilingual {
+            background-color: #f8faff;
+            border-left: 4px solid #3a7bd5;
+            padding: 12px 16px;
+            margin: 14px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        .en-title {
+            font-size: 16px;
+            font-weight: 700;
+            font-style: italic;
+            color: #1f3a6b;
+            margin: 0 0 6px 0;
+        }
+        .en-summary {
+            font-size: 14px;
+            color: #2c3e50;
+            margin: 6px 0;
+            line-height: 1.5;
+        }
+        .vocab-card {
+            background: #ffffff;
+            border: 1px solid #dce5f0;
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-top: 10px;
+        }
+        .vocab-title {
+            font-weight: 700;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .vocab-list {
+            display: block;
+        }
+        .vocab-item {
+            display: inline-block;
+            background-color: #eef3fb;
+            border-radius: 20px;
+            padding: 3px 14px;
+            font-size: 13px;
+            margin: 3px 4px 3px 0;
+        }
+        .vocab-item b {
+            font-weight: 700;
+            margin-right: 4px;
+        }
+        .compare-box {
+            background-color: #f9fafc;
+            border: 1px solid #dce5f0;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 18px 0;
+            display: block;
+        }
+        .compare-side {
+            display: inline-block;
+            width: 44%;
+            vertical-align: top;
+            padding: 8px 12px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .compare-bull {
+            background-color: #e8f5e9;
+            border-radius: 8px;
+            margin-right: 8px;
+        }
+        .compare-bear {
+            background-color: #ffebee;
+            border-radius: 8px;
+            margin-left: 8px;
+        }
+        .compare-label {
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        .deepdive {
+            margin: 14px 0 6px 0;
+            border: 1px solid #e6edf4;
+            border-radius: 10px;
+            padding: 6px 14px;
+            background-color: #fafcff;
+        }
+        .deepdive summary {
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            padding: 6px 0;
+        }
+        .deepdive-content {
+            padding: 8px 0 4px 0;
+        }
+        .dl {
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 8px 0;
+        }
+        .dl-label {
+            font-weight: 700;
+        }
+        .item-source {
+            font-size: 13px;
+            color: #5a6a7a;
+            margin-top: 10px;
+            border-top: 1px dashed #e0e8f0;
+            padding-top: 8px;
+        }
+        .trend-comment {
+            background-color: #f0f4fb;
+            border-radius: 10px;
+            padding: 12px 18px;
+            margin: 16px 0 28px 0;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1f3a6b;
+            font-weight: 500;
+            border-left: 4px solid #3a7bd5;
+        }
+        .timeline {
+            background-color: #f9f9fc;
+            border: 1px solid #dce5f0;
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin: 30px 0 20px 0;
+        }
+        .timeline h4 {
+            margin-top: 0;
+        }
+        .timeline-item {
+            font-size: 14px;
+            padding: 6px 0;
+            border-bottom: 1px solid #eaeef5;
+        }
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+        .timeline-date {
+            font-weight: 700;
+            background-color: #eef3fb;
+            padding: 2px 12px;
+            border-radius: 30px;
+            margin-right: 10px;
+            font-size: 13px;
+        }
+        .footer-note {
+            text-align: center;
+            font-size: 12px;
+            color: #7a8a9a;
+            margin-top: 30px;
+            border-top: 1px solid #e6edf4;
+            padding-top: 18px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 今日综述 -->
+    <div class="overview">
+        <h3>🧠 今日全球动态综述</h3>
+        <p>今日简报聚焦三大主线：美国政坛突发变动，资深参议员林赛·格雷厄姆病逝，或影响国会外交与司法议程；中国基础科研持续突破，陈嘉庚科学奖揭晓及人工球状闪电成果引发关注；全球科技领域无重大颠覆性发布，但汇率市场与半导体基础动态维持常态。整体风向：地缘政治出现短期不确定性，科技端保持稳步推进，金融市场观望情绪浓厚。</p>
+        <div class="overview-tags">
+            <span class="overview-tag">🇺🇸 美政坛变动</span>
+            <span class="overview-tag">🧪 中国基础科研</span>
+            <span class="overview-tag">💱 汇率稳态</span>
+            <span class="overview-tag">🔬 量子纠错</span>
+            <span class="overview-tag">⚡ 人工球状闪电</span>
+        </div>
+    </div>
+
+    <!-- ======= 板块1: 生命科学/医学 ======= -->
+    <h2>🧬 生命科学 / 医学</h2>
+
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">2026年度陈嘉庚科学奖揭晓</span>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            中国科学院公布2026年度陈嘉庚科学奖，共<span class="num-key">6个</span>项目获奖，涵盖发现宇宙第一代超大质量星化学印记等前沿突破。该奖项被视为中国基础科学领域最高荣誉之一，彰显原创性研究实力。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">2026 Chen Jiageng Science Awards Announced</p>
+            <p class="en-summary">The Chinese Academy of Sciences announced the winners of the 2026 Chen Jiageng Science Awards, honoring six projects including the detection of chemical imprints from the first generation of supermassive stars. The awards highlight China's growing emphasis on fundamental research originality.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>fundamental research</b> 基础研究</span>
+                    <span class="vocab-item"><b>supermassive star</b> 超大质量星</span>
+                    <span class="vocab-item"><b>originality</b> 原创性</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>陈嘉庚科学奖对标国际顶级科学奖项，奖励在中国做出的重大原创性成果。本次获奖项目涉及天体物理、生命科学等领域，反映了中国科研从“跟跑”向“领跑”转变的趋势。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内，获奖成果将获得更多政策与经费倾斜，加速成果转化；中长期（3-10年）有望在宇宙学、新材料等领域形成标志性突破，提升中国在国际科学界的话语权。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当基础科学全面突破，人类对宇宙与生命的认知边界将被大幅拓宽，催生下一代颠覆性技术，但同时也需警惕科研资源过度集中带来的“马太效应”。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.sohu.com/a/986828359_120343587" target="_blank">搜狐 · 2026年度陈嘉庚科学奖评选结果公布</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国基础科学奖项持续激励原创研究，生命科学领域虽无当日重大临床突破，但陈嘉庚奖的导向作用将推动基因编辑、合成生物学等底层技术加速发展。全球生命科学资本仍处于调整期，耐心资本更倾向早期颠覆性技术。</div>
+
+    <!-- ======= 板块2: 经济/金融 ======= -->
+    <h2>💰 经济 / 金融</h2>
+
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">人民币汇率中间价保持基本稳定</span>
+            <span class="star">⭐⭐⭐</span>
+            <span class="impact impact-low">冲击：Low</span>
+        </div>
+        <div class="item-summary">
+            中国人民银行授权中国外汇交易中心公布2026年7月10日人民币汇率中间价，数据延续近期窄幅波动格局。市场预期短期内人民币兑美元汇率将在合理均衡水平上运行，波动率维持在低位。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">PBOC Sets Yuan Parity at Stable Level</p>
+            <p class="en-summary">The People's Bank of China published the official yuan midpoint rate for July 10, 2026, maintaining the recent trend of tight range trading. Market participants expect the yuan to remain stable against the US dollar in the near term, with low implied volatility.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>midpoint rate</b> 中间价</span>
+                    <span class="vocab-item"><b>tight range</b> 窄幅波动</span>
+                    <span class="vocab-item"><b>implied volatility</b> 隐含波动率</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>人民币中间价是央行每日公布的官方汇率指导价，对市场交易具有强信号意义。当前稳定态势反映央行“以我为主”的汇率管理思路，旨在为国内经济复苏提供稳定外部环境。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3月）人民币大概率维持区间震荡，若美联储下半年释放降息信号，人民币可能迎来小幅升值窗口；中长期（1-2年）汇率弹性将逐步增强，双向波动成为常态。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>一个更加市场化、更具弹性的人民币汇率机制，将助力人民币国际化进程，使中国资产成为全球投资者不可忽视的配置选项。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.pbc.gov.cn/zhengcehuobisi/125207/125217/125925/index.html" target="_blank">中国人民银行 · 人民币汇率中间价公告</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：全球外汇市场缺乏明确催化剂，人民币汇率在强势美元与国内稳增长政策之间取得平衡。市场关注本周美国CPI数据对美联储路径的影响，若通胀超预期，可能引发新兴市场货币新一轮波动。</div>
+
+    <!-- ======= 板块3: 人工智能 ======= -->
+    <h2>🤖 人工智能</h2>
+
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">DeepSeek 持续迭代，国产大模型生态初显</span>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            中国AI公司深度求索（DeepSeek）持续活跃在公众视野，其自研大模型在编程、内容生成等场景获得广泛使用。公司总部位于杭州，依托自建万卡算力集群，仅用半年即实现模型能力跃升，代表中国AI力量的快速发展。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">DeepSeek Advances as a Key Chinese AI Contender</p>
+            <p class="en-summary">DeepSeek, a Hangzhou-based AI startup, continues to gain traction with its self-developed large language models for coding and content creation. Backed by a proprietary computing cluster with tens of thousands of GPUs, the company represents China's accelerating push in foundational AI models.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>large language model</b> 大语言模型</span>
+                    <span class="vocab-item"><b>computing cluster</b> 算力集群</span>
+                    <span class="vocab-item"><b>proprietary</b> 自研的</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek是中国AI领域的新锐力量，其特点是高算力投入与快速迭代。在目前全球AI军备竞赛背景下，它代表了中国在底层模型领域“不落伍”甚至局部追赶的努力。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）DeepSeek有望在垂直行业（如金融、医疗）落地应用；中长期（3-5年）若持续获得算力和数据支持，有可能成为具有全球竞争力的AI基础平台。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当国产大模型达到世界一流水平，将重塑中国数字经济的底层架构，从芯片设计到应用生态形成完整闭环，但需警惕算力封锁与数据孤岛的制约。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.deepseek.com/" target="_blank">DeepSeek 官网</a> · <a href="https://en.wikipedia.org/wiki/DeepSeek" target="_blank">Wikipedia</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI领域今日无爆炸性新闻，但DeepSeek等企业的持续进化表明，中国AI产业正从“应用创新”向“基础模型创新”过渡。全球AI竞争焦点正从单纯参数规模转向工程效率与应用落地能力。</div>
+
+    <!-- ======= 板块4: 科技/硬科技 ======= -->
+    <h2>💻 科技 / 硬科技</h2>
+
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">Nature 报道：强化学习实现量子计算自校准，逻辑错误率创纪录</span>
+            <span class="star">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+        </div>
+        <div class="item-summary">
+            《Nature》最新研究将强化学习与量子纠错结合，使量子计算机在计算过程中实现连续自校准，逻辑错误率降至创纪录水平。这一突破为实用化容错量子计算铺平关键道路，有望加速量子计算机从实验室走向工程化。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Reinforcement Learning Enables Self-Calibrating Quantum Error Correction</p>
+            <p class="en-summary">A new study in Nature integrates reinforcement learning with quantum error correction, allowing a quantum computer to continuously self-calibrate during computation. This achieves record-low logical error rates, marking a significant step toward practical fault-tolerant quantum computing.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>reinforcement learning</b> 强化学习</span>
+                    <span class="vocab-item"><b>quantum error correction</b> 量子纠错</span>
+                    <span class="vocab-item"><b>fault-tolerant</b> 容错的</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>量子计算机极易受环境噪声干扰，纠错是实用化的最大瓶颈。传统纠错方案需要大量物理量子比特，效率低下。这项研究让AI“边算边学”，动态调整纠错参数，大幅降低错误率。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）该技术将在小型量子处理器上验证；中长期（5-10年）有望推动量子计算机突破<span class="num-key">1000</span>逻辑量子比特大关，在药物模拟、密码学、材料设计等领域展现优势。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当容错量子计算成为现实，人类将获得模拟复杂分子和材料的“终极计算力”，新药研发周期从10年缩短至数月，能源材料迎来革命，但现有加密体系也将面临根本性挑战。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature Research Articles</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技领域今日亮点来自量子计算与AI的交叉创新。强化学习反哺量子纠错，体现了“AI for Science”的范式威力。半导体基础科普类内容虽无新动态，但行业对2nm以下制程的竞争依然白热化。</div>
+
+    <!-- ======= 板块5: 材料科学 ======= -->
+    <h2>🔬 材料科学</h2>
+
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">中国科学家首次人工制造“球状闪电”</span>
+            <span class="star">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+        </div>
+        <div class="item-summary">
+            中国科学院上海光机所团队在世界首次用人工方式成功激发并捕获类似自然界的“球状闪电”。该成果在形状、状态和发光特性上高度模拟自然现象，为理解等离子体物理和新型能源应用打开全新窗口。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Chinese Scientists Artificially Create 'Ball Lightning' for the First Time</p>
+            <p class="en-summary">A team from the Shanghai Institute of Optics and Fine Mechanics, Chinese Academy of Sciences, successfully generated and captured an artificial ball lightning that mimics the shape, state, and luminescence of its natural counterpart. This breakthrough offers new insights into plasma physics and potential energy applications.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>ball lightning</b> 球状闪电</span>
+                    <span class="vocab-item"><b>plasma physics</b> 等离子体物理</span>
+                    <span class="vocab-item"><b>luminescence</b> 发光</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>球状闪电是一种罕见自然现象，传统上难以在实验室复现。上海光机所利用高功率激光与特殊材料相互作用，创造了稳定可控的等离子体火球，持续时间远超以往记录。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）该平台可用于研究极端物质状态；中长期（5-10年）若实现能量转化效率突破，可能催生新型等离子体能源或推进技术。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果人类能够驾驭“人造闪电”，或许将迎来一种全新的清洁能源形式，甚至为聚变能研究提供另类路径，但当前距离应用仍有巨大鸿沟。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.news.cn/tech/20260416/b487a8967b70495f8fc00364844225d6/c.html" target="_blank">新华网 · 我国科学家在世界首次人工制造出类似自然界的“球状闪电”</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学领域今日由中国团队贡献重磅成果。人工球状闪电不仅具有基础科学价值，也展示了中国在极端物理条件模拟方面的实验能力。全球材料科学正从“被动发现”转向“主动设计”，AI与高能实验的结合是未来方向。</div>
+
+    <!-- ======= 板块6: 中国政策与监管 ======= -->
+    <h2>🇨🇳 中国政策与监管</h2>
+
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">中国空间站哺乳动物繁育研究再获新进展</span>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            我国首次空间站小型哺乳动物科学实验持续突破。从太空返回的小鼠在2025年12月首次产仔后，又于2026年<span class="num-key">1月</span>和<span class="num-key">2月</span>分别顺利产下后代，证明哺乳动物在太空环境后仍具备持续繁殖能力，为长期深空探测奠定生物学基础。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">China's Space Station Achieves Breakthrough in Mammalian Reproduction</p>
+            <p class="en-summary">Mice returned from China's space station have successfully given birth multiple times, demonstrating sustained reproductive capability after space exposure. This milestone supports the biological feasibility of long-duration deep-space missions.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>reproductive capability</b> 繁殖能力</span>
+                    <span class="vocab-item"><b>deep-space mission</b> 深空探测任务</span>
+                    <span class="vocab-item"><b>sustained</b> 持续的</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>在微重力和宇宙辐射环境下，生物繁殖面临巨大挑战。中国空间站的小鼠实验首次证明，短期太空生活不会对哺乳动物的长期生育能力造成不可逆损伤，这是载人火星任务必须回答的关键问题。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）将开展更多代际繁殖实验，验证遗传稳定性；中长期（5-15年）若结果积极，将极大增强人类建立地外永久定居点的信心。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当“太空婴儿”成为现实，人类将真正成为跨行星物种，但随之而来的伦理、法律与心理挑战也将是前所未有的。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://news.cctv.com/2026/03/02/ARTIUmDvWzSFUEGyMc9idDrT260302.shtml" target="_blank">央视网 · 首次、首创、新突破！我国科技发展再添新成果</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国在空间科学领域的投入持续产出高质量成果。从量子纠错到人工球状闪电，再到太空生物学，中国正系统性地布局前沿科学。政策层面，“新型举国体制”在基础研究领域的效率优势正在显现。</div>
+
+    <!-- ======= 板块7: 地缘政治与国际关系 ======= -->
+    <h2>🌍 地缘政治与国际关系</h2>
+
+    <div class="item">
+        <div class="item-header">
+            <span class="item-title">美共和党参议员林赛·格雷厄姆去世，享年71岁</span>
+            <span class="star">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            美国资深共和党参议员、特朗普盟友林赛·格雷厄姆于2026年7月11日因突发急病去世，享年<span class="num-key">71</span>岁。格雷厄姆在参议院任职超过<span class="num-key">23</span>年，在国家安全、司法和外交事务领域具有重要影响力。他的离世将改变参议院权力格局，并可能影响2026年中期选举选情。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Senator Lindsey Graham Dies at 71 After Sudden Illness</p>
+            <p class="en-summary">Longtime Republican Senator Lindsey Graham of South Carolina passed away on July 11, 2026, following a brief and sudden illness. A key ally of President Trump and influential voice on national security and the judiciary, his death reshapes the Senate landscape and introduces uncertainty ahead of the midterm elections.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>sudden illness</b> 突发疾病</span>
+                    <span class="vocab-item"><b>national security</b> 国家安全</span>
+                    <span class="vocab-item"><b>midterm elections</b> 中期选举</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>格雷厄姆是共和党内的建制派与保守派桥梁人物，尤其在对外政策上主张强硬路线。他的突然离世使共和党在参议院失去一个关键协调者，也可能影响对华法案的推进节奏。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-6月）南卡罗来纳州将举行特别选举，共和党内可能陷入短暂混乱；中长期（1-2年）若民主党赢得该席位，将改变参议院力量对比，影响拜登政府剩余任期的立法议程。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>美国政治的不确定性正在上升。一位资深参议员的离世可能成为蝴蝶效应的起点，从国会山到华尔街，从外交到科技政策，全球都将感受到涟漪。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.cnn.com/2026/07/12/politics/sen-lindsey-graham-dies-at-71-hnk" target="_blank">CNN</a> · <a href="https://www.nytimes.com/2026/07/12/us/politics/lindsey-graham-dead.html" target="_blank">The New York Times</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘政治今日最大变量来自美国内部政治变动。格雷厄姆的去世短期内将加剧华盛顿的政策不确定性，尤其是在对华半导体出口管制、国防预算等议题上。市场可能对“政治风险溢价”进行重新定价。</div>
+
+    <!-- 时间提醒模块 -->
+    <div class="timeline">
+        <h4>⏰ 近期关键时间节点</h4>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-07-15</span>
+            <span>美国6月CPI数据公布，影响美联储降息预期</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-07-30</span>
+            <span>南卡罗来纳州宣布格雷厄姆继任者特别选举日期</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-09-30</span>
+            <span>美国联邦政府本财年结束，预算谈判关键期</span>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        全球动态分析师 · 每日简报 · 2026年7月13日
+    </div>
+</div>
+</body>
+</html>
