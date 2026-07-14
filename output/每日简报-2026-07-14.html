@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全球动态简报 | 2026-07-14</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+      color: #1a1a2e;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0 0 4px 0;
+      color: #0b1b33;
+    }
+    .date-badge {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 12px;
+    }
+    /* Overview */
+    .overview {
+      background-color: #eef2ff;
+      padding: 20px 24px;
+      border-radius: 10px;
+      margin-bottom: 28px;
+      border-left: 5px solid #3b82f6;
+    }
+    .overview h3 {
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: #1e3a5f;
+    }
+    .overview p {
+      margin: 0 0 14px 0;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+    .overview-tags {
+      display: block;
+    }
+    .overview-tag {
+      display: inline-block;
+      background-color: #dbeafe;
+      color: #1e40af;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-right: 8px;
+      margin-bottom: 4px;
+    }
+    /* Section */
+    .section {
+      margin-top: 28px;
+      padding-top: 6px;
+      border-top: 1px solid #e5e7eb;
+    }
+    .section-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0 0 16px 0;
+      color: #1f2937;
+    }
+    .item {
+      background-color: #f9fafb;
+      padding: 16px 18px;
+      margin-bottom: 18px;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+    }
+    .item-header {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .item-header .title {
+      font-weight: 600;
+      font-size: 16px;
+      color: #111827;
+      display: inline;
+    }
+    .stars {
+      display: inline-block;
+      margin-left: 6px;
+      font-size: 14px;
+      color: #f59e0b;
+    }
+    .impact {
+      display: inline-block;
+      margin-left: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 12px;
+      vertical-align: middle;
+    }
+    .impact-high {
+      background-color: #fee2e2;
+      color: #b91c1c;
+    }
+    .impact-med {
+      background-color: #fef9c3;
+      color: #854d0e;
+    }
+    .impact-low {
+      background-color: #e0e7ff;
+      color: #3730a3;
+    }
+    .risk-red {
+      display: inline-block;
+      background-color: #fecaca;
+      color: #991b1b;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 12px;
+      margin-left: 6px;
+    }
+    .risk-yellow {
+      display: inline-block;
+      background-color: #fef08a;
+      color: #713f12;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 12px;
+      margin-left: 6px;
+    }
+    .item-summary {
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 6px 0 10px 0;
+      padding: 0;
+    }
+    .num-up {
+      background-color: #d1fae5;
+      color: #065f46;
+      font-weight: 600;
+      padding: 0 4px;
+      border-radius: 3px;
+    }
+    .num-down {
+      background-color: #fee2e2;
+      color: #991b1b;
+      font-weight: 600;
+      padding: 0 4px;
+      border-radius: 3px;
+    }
+    .num-key {
+      background-color: #e0e7ff;
+      color: #3730a3;
+      font-weight: 600;
+      padding: 0 4px;
+      border-radius: 3px;
+    }
+    /* bilingual */
+    .bilingual {
+      background-color: #f0fdf4;
+      padding: 12px 14px;
+      border-radius: 6px;
+      margin: 12px 0;
+      border-left: 3px solid #22c55e;
+    }
+    .bilingual .en-title {
+      font-weight: 600;
+      font-size: 14px;
+      color: #14532d;
+      margin: 0 0 4px 0;
+    }
+    .bilingual .en-summary {
+      font-size: 13px;
+      color: #166534;
+      margin: 0 0 8px 0;
+      line-height: 1.5;
+    }
+    .vocab-card {
+      background-color: #ffffff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid #bbf7d0;
+    }
+    .vocab-title {
+      font-weight: 600;
+      font-size: 12px;
+      color: #15803d;
+      margin-bottom: 4px;
+    }
+    .vocab-list {
+      display: block;
+    }
+    .vocab-item {
+      display: inline-block;
+      background-color: #dcfce7;
+      padding: 2px 10px;
+      margin: 2px 4px 2px 0;
+      border-radius: 12px;
+      font-size: 12px;
+      color: #14532d;
+    }
+    .vocab-item b {
+      font-weight: 600;
+    }
+    /* compare box */
+    .compare-box {
+      display: block;
+      background-color: #fef9c3;
+      border: 1px solid #facc15;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin: 16px 0;
+    }
+    .compare-side {
+      display: inline-block;
+      width: 46%;
+      vertical-align: top;
+      font-size: 13px;
+      line-height: 1.5;
+      padding: 0 8px;
+    }
+    .compare-bull {
+      border-right: 1px dashed #d97706;
+    }
+    .compare-bear {
+      margin-left: 4%;
+    }
+    .compare-label {
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+    /* deepdive */
+    .deepdive {
+      margin: 10px 0 6px 0;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      padding: 6px 12px;
+      background-color: #ffffff;
+    }
+    .deepdive summary {
+      font-weight: 600;
+      font-size: 13px;
+      color: #374151;
+      cursor: pointer;
+    }
+    .deepdive-content {
+      margin-top: 8px;
+      padding-top: 6px;
+      border-top: 1px solid #e5e7eb;
+    }
+    .dl {
+      font-size: 13px;
+      line-height: 1.5;
+      margin: 6px 0;
+    }
+    .dl-label {
+      font-weight: 600;
+      color: #1f2937;
+    }
+    .item-source {
+      font-size: 12px;
+      color: #6b7280;
+      margin: 4px 0 0 0;
+    }
+    .item-source a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    .item-source a:hover {
+      text-decoration: underline;
+    }
+    /* trend comment */
+    .trend-comment {
+      background-color: #f3f4f6;
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin: 16px 0 8px 0;
+      font-size: 14px;
+      color: #1f2937;
+      border-left: 4px solid #6366f1;
+    }
+    /* timeline */
+    .timeline {
+      background-color: #fefce8;
+      border: 1px solid #eab308;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 28px 0 20px 0;
+    }
+    .timeline h4 {
+      margin: 0 0 10px 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: #713f12;
+    }
+    .timeline-item {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+    .timeline-date {
+      display: inline-block;
+      background-color: #fef08a;
+      padding: 1px 10px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 12px;
+      color: #422006;
+      margin-right: 8px;
+    }
+    .footer {
+      margin-top: 30px;
+      padding-top: 12px;
+      border-top: 1px solid #d1d5db;
+      font-size: 12px;
+      color: #6b7280;
+      text-align: center;
+    }
+    @media (max-width: 640px) {
+      .container { padding: 16px; }
+      .compare-side { width: 100%; display: block; border-right: none; margin-left: 0; }
+      .compare-bull { border-right: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>🌍 全球动态简报</h1>
+  <div class="date-badge">📅 2026年7月14日 · 高密度情报版</div>
+
+  <!-- 综述模块 -->
+  <div class="overview">
+    <h3>🧠 今日全球综述</h3>
+    <p>今日简报反映全球信息流冷热不均：生命科学领域缺乏重大突破性新闻，人工智能与硬科技板块被巨头常规更新主导；经济金融受中东局势扰动，避险情绪升温；地缘方面半导体供应链议题持续发酵，中国政策面保持静默。整体信号：市场处于事件驱动前的观望期，风险偏好下降，地缘与科技监管为短期焦点。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🛢️ 中东紧张</span>
+      <span class="overview-tag">📉 避险升温</span>
+      <span class="overview-tag">🤖 AI 静默期</span>
+      <span class="overview-tag">🔬 科研空窗</span>
+      <span class="overview-tag">⚙️ 芯片博弈</span>
+    </div>
+  </div>
+
+  <!-- ========== 板块1: 生命科学/医学 ========== -->
+  <div class="section">
+    <h2 class="section-title">🧬 生命科学 / 医学</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="title">Nature 期刊最新研究：KIT 表位编辑实现非基因毒性骨髓移植预处理</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">《Nature》发表研究，通过编辑 KIT 表位，实现抗体介导的非基因毒性预处理，可选择性富集经 BCL11A 编辑的治疗性造血干细胞。该技术有望替代传统放化疗预处理，降低移植风险，尤其在镰状细胞病和 β-地中海贫血治疗中具有潜力。</p>
+      <div class="bilingual">
+        <p class="en-title">Epitope editing of KIT enables antibody-based, non-genotoxic conditioning for selective enrichment of therapeutic BCL11A-edited cells</p>
+        <p class="en-summary">A study published in Nature demonstrates a novel conditioning approach using epitope editing of the KIT receptor, enabling antibody-based selective enrichment of gene-edited hematopoietic stem cells without genotoxic chemotherapy or radiation. This breakthrough could transform bone marrow transplant protocols for blood disorders.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>epitope editing</b> 表位编辑</span>
+            <span class="vocab-item"><b>non-genotoxic conditioning</b> 非基因毒性预处理</span>
+            <span class="vocab-item"><b>hematopoietic stem cell</b> 造血干细胞</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传统骨髓移植前需用化疗或放疗摧毁患者自身造血系统，毒性极大。这项技术像给干细胞贴上一个“隐形标签”，再用特定抗体精准清除未编辑的细胞，保留编辑后的健康细胞，实现温和过渡。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）将在镰状细胞病临床试验中验证安全性；中长期（5-10年）可扩展至自身免疫病、遗传代谢病，成为基因治疗的标准预处理方案。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来“移植”可能不再需要“摧毁重建”，而是像软件升级一样温和替换有缺陷的细胞，血液疾病治疗将从高风险手术变为门诊级干预。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature Research Articles</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：本周生命科学领域重磅成果有限，Nature 发表的 KIT 表位编辑是少有的亮点。基因编辑临床转化正从“能否编辑”向“如何安全递送/预处理”演进，非基因毒性预处理成为新竞争赛道。</div>
+  </div>
+
+  <!-- ========== 板块2: 经济/金融 ========== -->
+  <div class="section">
+    <h2 class="section-title">💰 经济 / 金融</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="title">中东局势升级：霍尔木兹海峡遭封锁报道引发美股下挫</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <p class="item-summary">据 Google Finance 报道，美国与伊朗冲突再度升级，传闻伊朗封锁霍尔木兹海峡，美国主要股指周一大幅下跌。能源供应担忧推动油价飙升，全球避险情绪迅速升温，投资者转向黄金和国债。</p>
+      <div class="bilingual">
+        <p class="en-title">U.S. stocks tumble as Iran blockade of Strait of Hormuz rattles markets</p>
+        <p class="en-summary">Major U.S. stock indexes fell sharply on Monday following reports of a blockade of Iranian shipping in the Strait of Hormuz, re-escalating tensions between the United States and Iran. Investors fled to safe-haven assets amid fears of a global energy supply disruption.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>blockade</b> 封锁</span>
+            <span class="vocab-item"><b>safe-haven assets</b> 避险资产</span>
+            <span class="vocab-item"><b>energy supply disruption</b> 能源供应中断</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>霍尔木兹海峡是全球约三分之一石油运输的咽喉要道。一旦被封锁，相当于掐断了中东石油的出口命脉，直接冲击全球能源价格和通胀预期。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（数周）油价可能突破 <span class="num-key">120美元/桶</span>，美股能源板块受益但整体承压；若冲突持续，美联储降息空间将被进一步压缩，衰退风险上升。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>事件若长期化，将加速全球能源格局重构——欧洲加速可再生能源，亚洲国家战略储备竞赛白热化，石油美元体系面临更大挑战。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.google.com/finance/beta" target="_blank">Google Finance</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="title">全球股市普遍承压，避险资产获资金流入</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">CNN 及 MarketWatch 数据显示，受中东地缘风险影响，全球主要股指普遍下跌，标普500指数跌逾 <span class="num-down">-1.8%</span>，欧洲斯托克600指数跌 <span class="num-down">-1.5%</span>。资金加速涌入美国国债和黄金，10年期美债收益率降至 <span class="num-key">4.12%</span>。</p>
+      <div class="bilingual">
+        <p class="en-title">Global equities slide as geopolitical risk spikes; bonds rally</p>
+        <p class="en-summary">Global stock markets came under broad selling pressure as rising geopolitical tensions in the Middle East drove a flight to safety. The S&P 500 fell 1.8%, while the 10-year U.S. Treasury yield dropped to 4.12% as investors sought shelter.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>flight to safety</b> 避险转移</span>
+            <span class="vocab-item"><b>geopolitical risk</b> 地缘政治风险</span>
+            <span class="vocab-item"><b>bond rally</b> 债券上涨</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>地缘冲突爆发时，投资者会抛售股票等风险资产，转而买入国债、黄金等安全资产，导致股市跌、债市涨。这是典型的“避险模式”。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>若局势缓和，市场可能出现报复性反弹；若持续，则可能演变为类似 <span class="num-key">2022年</span> 俄乌冲突初期的持续震荡格局。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>高频交易与算法在极端事件中可能加剧波动，未来市场需要设计“地缘熔断机制”来防止流动性瞬间枯竭。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.cnn.com/markets/" target="_blank">CNN Markets</a> / <a href="https://www.marketwatch.com/" target="_blank">MarketWatch</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中东地缘风险成为全球金融市场主导变量，短期避险逻辑压倒一切。能源价格与通胀预期挂钩，直接影响央行货币政策路径。投资者需密切关注霍尔木兹海峡事态演变，任何缓和信号都可能触发风险资产反弹。</div>
+  </div>
+
+  <!-- ========== 板块3: 人工智能 ========== -->
+  <div class="section">
+    <h2 class="section-title">🤖 人工智能</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="title">OpenAI 持续推动通用人工智能（AGI）研究，ChatGPT 生态扩展</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">OpenAI 官网更新显示，其研究路线图正稳步推进通用人工智能（AGI）目标，ChatGPT 已集成搜索、图像生成、多模态交互等能力。行业关注点聚焦于下一代大模型（GPT-5）的发布窗口与安全对齐进展。</p>
+      <div class="bilingual">
+        <p class="en-title">OpenAI advances toward AGI with expanded ChatGPT capabilities</p>
+        <p class="en-summary">OpenAI continues its mission toward artificial general intelligence, with ChatGPT now supporting multimodal interactions including web search, image generation, and real-time reasoning. The industry is closely watching the anticipated release of GPT-5 and its safety alignment framework.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>artificial general intelligence (AGI)</b> 通用人工智能</span>
+            <span class="vocab-item"><b>multimodal interaction</b> 多模态交互</span>
+            <span class="vocab-item"><b>safety alignment</b> 安全对齐</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>AGI 指能完成任何人类智力任务的AI系统。OpenAI 正通过不断扩展 ChatGPT 的能力边界（从纯文本到图像、语音、搜索），逐步向此目标靠近。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（6-12个月）GPT-5 可能发布，推理能力显著提升；中长期（3-5年）AI Agent 将自主执行复杂工作流，重塑软件开发、客户服务等行业。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>AGI 若实现，可能催生“AI科学家”——自主设计实验、分析数据、撰写论文，科研效率提升百倍，但同时也带来对齐控制、就业结构等深刻挑战。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://openai.com/" target="_blank">OpenAI</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI 领域今日无突发重磅事件，处于技术迭代的“静默积累期”。行业焦点集中在模型能力边界扩展与安全治理的平衡，以及下一代基础模型的发布预期。资本市场对 AI 的关注度仍维持高位，但短期缺乏催化剂。</div>
+  </div>
+
+  <!-- ========== 板块4: 科技/硬科技 ========== -->
+  <div class="section">
+    <h2 class="section-title">💻 科技 / 硬科技</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="title">量子计算基础研究持续：量子定义与量子力学原理被广泛报道</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">Britannica 与多家科普媒体近日集中报道量子力学基本原理与“量子”定义更新，反映学术界对量子计算底层概念的持续普及需求。尽管无重大技术突破，但量子纠错与 <span class="num-key">100+</span> 量子比特处理器仍是工程化焦点。</p>
+      <div class="bilingual">
+        <p class="en-title">Quantum mechanics fundamentals revisited as quantum computing race heats up</p>
+        <p class="en-summary">Educational resources on quantum physics have seen renewed interest, with outlets like Britannica updating definitions of 'quantum' and quantum mechanics. While no major breakthroughs were reported today, the industry continues to focus on quantum error correction and scaling beyond 100 qubits.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>quantum error correction</b> 量子纠错</span>
+            <span class="vocab-item"><b>qubit</b> 量子比特</span>
+            <span class="vocab-item"><b>scaling</b> 规模化</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>量子计算利用量子叠加与纠缠原理，在特定问题上（如大数分解、药物模拟）具有经典计算无法比拟的优势。目前仍处于“含噪声中等规模量子”（NISQ）时代。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（2-3年）量子优势将在特定优化问题上验证；中长期（5-10年）若纠错技术成熟，金融风险建模、新药研发等领域将迎来革命。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>成熟量子计算机可能破解当前所有公钥加密体系，推动后量子密码学标准化；同时加速室温超导材料发现，改变能源传输格局。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.britannica.com/science/quantum" target="_blank">Britannica</a> / <a href="https://www.sciencenewstoday.org/what-is-quantum-physics-a-beginners-guide" target="_blank">Science News Today</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="title">美国电信运营商 AT&T 与 T-Mobile 2026年套餐对比：5G覆盖与价格竞争白热化</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">多家科技媒体发布 2026年 AT&T 与 T-Mobile 套餐深度对比报告。T-Mobile 在 <span class="num-key">5G</span> 中频段覆盖与性价比上占优，AT&T 则凭借更稳定的网络与商务套餐保持竞争力。双方无限流量套餐月费均维持在 <span class="num-key">$60-$85</span> 区间。</p>
+      <div class="bilingual">
+        <p class="en-title">AT&T vs T-Mobile 2026: 5G coverage and pricing comparison</p>
+        <p class="en-summary">Tech review sites have published comprehensive comparisons of AT&T and T-Mobile's 2026 cell phone plans. T-Mobile leads in mid-band 5G coverage and value pricing, while AT&T competes with network reliability and business-oriented plans. Unlimited data plans range from $60 to $85 per month.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>mid-band 5G</b> 中频段5G</span>
+            <span class="vocab-item"><b>unlimited data plan</b> 无限流量套餐</span>
+            <span class="vocab-item"><b>network reliability</b> 网络可靠性</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>AT&T 和 T-Mobile 是美国两大电信巨头，其套餐对比反映行业竞争态势：T-Mobile 凭借早期中频段5G部署占据速度优势，AT&T 则以广泛的低频覆盖和政企服务见长。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>5G 用户渗透率已超 <span class="num-key">60%</span>，竞争焦点转向网络切片、低延迟应用（云游戏、工业互联网）等增值服务。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来运营商可能从“卖流量”转向“卖体验”——按延迟、可靠性、覆盖场景分级定价，网络质量成为差异化核心。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.whistleout.com/CellPhones/Guides/att-vs-t-mobile" target="_blank">WhistleOut</a> / <a href="https://www.usnews.com/360-reviews/services/cell-phone-plans/tmobile-vs-att" target="_blank">U.S. News</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技领域今日以科普与消费级对比为主，缺乏突破性工程进展。量子计算仍处于“原理普及”阶段，电信行业的5G套餐竞争趋于同质化。市场更关注即将发布的旗舰芯片与新型显示技术动态。</div>
+  </div>
+
+  <!-- ========== 板块5: 材料科学 ========== -->
+  <div class="section">
+    <h2 class="section-title">🔬 材料科学</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="title">全球综合新闻聚合：材料科学领域暂无重大突破报道</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">Google News、NYT、CNN、Fox News 等主流媒体今日头条均未聚焦材料科学突破。行业活动集中于电池材料（固态电解质）与半导体衬底（<span class="num-key">8英寸SiC</span>）的产能扩张消息，但缺乏权威期刊验证。</p>
+      <div class="bilingual">
+        <p class="en-title">Materials science: no major breakthroughs reported in today's news cycle</p>
+        <p class="en-summary">A scan of major news aggregators and scientific outlets shows no headline-worthy breakthroughs in materials science today. Industry chatter focuses on incremental advances in solid-state battery electrolytes and the expansion of 8-inch SiC substrate production capacity.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>solid-state electrolyte</b> 固态电解质</span>
+            <span class="vocab-item"><b>SiC substrate</b> 碳化硅衬底</span>
+            <span class="vocab-item"><b>capacity expansion</b> 产能扩张</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>尽管今日无爆炸性新闻，材料科学的长期趋势明确：固态电池被视为下一代储能核心，SiC衬底是电动汽车逆变器效率提升的关键。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>固态电池预计 <span class="num-key">2028-2030</span> 年进入规模量产；SiC 衬底产能今明两年将翻倍，推动电动车续航提升 <span class="num-up">5-10%</span>。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当固态电池能量密度突破 <span class="num-key">500Wh/kg</span>，电动航空（eVTOL）的商业闭环将真正打通，城市空中交通成为现实。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://news.google.com/" target="_blank">Google News</a> / <a href="https://www.nytimes.com/" target="_blank">NYT</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学今日处于信息低潮期，无顶级期刊论文或产业里程碑发布。但固态电池与宽禁带半导体仍是中长期确定性赛道，建议关注《Nature Energy》《Advanced Materials》等期刊的未来发布。</div>
+  </div>
+
+  <!-- ========== 板块6: 中国政策与监管 ========== -->
+  <div class="section">
+    <h2 class="section-title">🇨🇳 中国政策与监管</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="title">华为官网更新：Pura 80 Ultra 搭载巨鲸电池，快充技术持续领先</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">华为官网展示最新旗舰手机 Pura 80 Ultra，搭载 <span class="num-key">8500 mAh</span> 华为巨鲸电池，支持 <span class="num-up">100W</span> 有线超级快充与 <span class="num-up">80W</span> 无线超级快充。此举显示华为在消费电子领域持续突破硬件限制，巩固高端市场地位。</p>
+      <div class="bilingual">
+        <p class="en-title">Huawei unveils Pura 80 Ultra with 8500 mAh 'Whale' battery and 100W fast charging</p>
+        <p class="en-summary">Huawei's official website highlights the Pura 80 Ultra featuring an 8500 mAh 'Whale' battery with 100W wired and 80W wireless supercharging. The device underscores Huawei's continued hardware innovation despite ongoing U.S. sanctions, targeting the premium smartphone segment.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>supercharging</b> 超级快充</span>
+            <span class="vocab-item"><b>premium smartphone</b> 高端智能手机</span>
+            <span class="vocab-item"><b>sanctions</b> 制裁</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>华为在被制裁背景下，通过自研芯片（麒麟）与供应链去美化，仍能推出领先的电池与快充技术，展现其垂直整合能力。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期巩固国内高端市场份额；中长期若芯片制造瓶颈突破（如 <span class="num-key">7nm</span> 国产线成熟），可能重返全球市场。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>华为若实现完全自主的芯片+操作系统+硬件生态，将成为全球唯一不依赖西方技术的消费电子巨头，重塑行业格局。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://consumer.huawei.com/cn/phones/" target="_blank">华为官网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：今日中国政策面相对平静，无重大监管新规出台。产业层面华为的硬件创新持续进行，反映中国科技企业在外部压力下加速自主化。关注后续对半导体设备进口限制的进一步回应。</div>
+  </div>
+
+  <!-- ========== 板块7: 地缘政治与国际关系 ========== -->
+  <div class="section">
+    <h2 class="section-title">🌍 地缘政治与国际关系</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="title">美伊冲突升级：霍尔木兹海峡航运受阻，全球能源安全承压</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <p class="item-summary">Google Finance 报道，美国与伊朗紧张关系再度激化。伊朗据称在霍尔木兹海峡实施航运封锁，美军加强部署。此举直接威胁全球约 <span class="num-key">30%</span> 的海运石油贸易，布伦特原油价格日内上涨逾 <span class="num-up">+5%</span>。</p>
+      <div class="bilingual">
+        <p class="en-title">U.S.-Iran tensions escalate: Strait of Hormuz blockade threatens global oil supply</p>
+        <p class="en-summary">Geopolitical tensions between the United States and Iran have escalated sharply, with reports of a blockade in the Strait of Hormuz. The strait handles approximately 30% of the world's seaborne oil trade, triggering a 5% surge in Brent crude prices and raising fears of a sustained energy crisis.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>escalation</b> 升级</span>
+            <span class="vocab-item"><b>seaborne oil trade</b> 海运石油贸易</span>
+            <span class="vocab-item"><b>Brent crude</b> 布伦特原油</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>霍尔木兹海峡位于阿曼与伊朗之间，是波斯湾石油出口的唯一航道。任何封锁行为都等同于经济战，将推高全球通胀，重创依赖中东石油的经济体（如日本、印度、韩国）。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期油价可能冲击 <span class="num-key">$100+</span> 关口；若封锁持续超过两周，美国可能释放战略石油储备并推动外交斡旋。长期将加速非中东石油投资（美国页岩油、巴西深海油田）。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>此事件可能成为全球能源转型的“催化剂”——当石油供应变得武器化，各国将以前所未有的速度投资可再生能源与核能，化石燃料时代加速落幕。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.google.com/finance/beta" target="_blank">Google Finance</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中东地缘风险成为今日绝对主线。霍尔木兹海峡局势牵动全球能源、金融与安全格局。市场正在定价“冲突长期化”风险，建议投资者做好对冲准备。半导体供应链方面虽无新动态，但地缘风险外溢可能影响芯片制造所需的稀有气体供应。</div>
+  </div>
+
+  <!-- ========== 时间提醒模块（条件触发） ========== -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-07-15</span>
+      <span>霍尔木兹海峡局势后续发展窗口，关注美伊外交接触信号</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-07-28</span>
+      <span>美联储议息会议，市场关注中东局势对利率路径的影响</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-09-30</span>
+      <span>美国对华半导体出口新规预计将更新限制清单</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    全球动态简报 · 每日出品 · 数据截至 2026-07-14
+  </div>
+</div>
+</body>
+</html>
