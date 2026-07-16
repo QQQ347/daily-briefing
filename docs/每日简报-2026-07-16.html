@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球动态简报 | 2026年7月16日</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #1a1a2e;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            padding: 30px 35px;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #0f1b2d;
+            border-left: 6px solid #2563eb;
+            padding-left: 18px;
+        }
+        .date {
+            font-size: 15px;
+            color: #6b7280;
+            margin-bottom: 25px;
+            margin-top: -5px;
+            padding-left: 24px;
+        }
+        .overview {
+            background-color: #eef2ff;
+            border-radius: 12px;
+            padding: 22px 26px;
+            margin-bottom: 30px;
+            border-left: 5px solid #4f46e5;
+        }
+        .overview h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+        .overview p {
+            margin: 0 0 12px 0;
+            font-size: 15px;
+            color: #1f2937;
+        }
+        .overview-tags {
+            display: block;
+            margin-top: 10px;
+        }
+        .overview-tag {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #2563eb;
+            font-weight: 600;
+            font-size: 13px;
+            padding: 4px 14px;
+            border-radius: 30px;
+            margin-right: 8px;
+            margin-bottom: 4px;
+            border: 1px solid #a5b4fc;
+        }
+        .section {
+            margin-top: 35px;
+            padding-top: 10px;
+            border-top: 2px solid #e5e7eb;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 20px;
+            background-color: #f3f4f6;
+            display: inline-block;
+            padding: 4px 18px;
+            border-radius: 30px;
+        }
+        .item {
+            background-color: #fafbfc;
+            border-radius: 14px;
+            padding: 20px 22px;
+            margin-bottom: 22px;
+            border: 1px solid #e9edf2;
+        }
+        .item-header {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .item-header .title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0b1e33;
+            margin-right: 12px;
+        }
+        .stars {
+            color: #f59e0b;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-right: 12px;
+        }
+        .impact {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 12px;
+            border-radius: 30px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .impact-high {
+            background-color: #fee2e2;
+            color: #b91c1c;
+        }
+        .impact-med {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+        .impact-low {
+            background-color: #e0e7ff;
+            color: #3730a3;
+        }
+        .risk-red {
+            display: inline-block;
+            background-color: #fce4ec;
+            color: #b71c1c;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 12px;
+            border-radius: 30px;
+            margin-right: 6px;
+        }
+        .risk-yellow {
+            display: inline-block;
+            background-color: #fff8e1;
+            color: #b76e00;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 12px;
+            border-radius: 30px;
+            margin-right: 6px;
+        }
+        .item-summary {
+            font-size: 15px;
+            color: #1f2937;
+            margin: 10px 0 14px 0;
+            padding: 10px 14px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            border-left: 4px solid #3b82f6;
+        }
+        .num-up {
+            background-color: #d1fae5;
+            color: #065f46;
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 6px;
+        }
+        .num-down {
+            background-color: #fee2e2;
+            color: #991b1b;
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 6px;
+        }
+        .num-key {
+            background-color: #e0e7ff;
+            color: #3730a3;
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 6px;
+        }
+        .bilingual {
+            background-color: #f1f5f9;
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin: 14px 0;
+            border-left: 4px solid #64748b;
+        }
+        .bilingual .en-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #0c4a6e;
+            margin: 0 0 6px 0;
+        }
+        .bilingual .en-summary {
+            font-size: 14px;
+            color: #1e293b;
+            margin: 6px 0 10px 0;
+        }
+        .vocab-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 10px 14px;
+            border: 1px solid #d1d5db;
+        }
+        .vocab-title {
+            font-weight: 600;
+            color: #1e3a5f;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+        .vocab-list {
+            display: block;
+        }
+        .vocab-item {
+            display: inline-block;
+            background-color: #e5e7eb;
+            color: #1f2937;
+            font-size: 13px;
+            padding: 2px 14px;
+            border-radius: 30px;
+            margin: 3px 6px 3px 0;
+        }
+        .vocab-item b {
+            font-weight: 600;
+        }
+        .compare-box {
+            background-color: #f9fafb;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 18px 0;
+            border: 1px solid #d1d5db;
+            display: block;
+        }
+        .compare-side {
+            display: inline-block;
+            width: 44%;
+            vertical-align: top;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #1f2937;
+        }
+        .compare-bull {
+            background-color: #ecfdf5;
+            border-left: 4px solid #10b981;
+            margin-right: 4%;
+        }
+        .compare-bear {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+        }
+        .compare-label {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        .deepdive {
+            margin: 14px 0 8px 0;
+            background-color: #ffffff;
+            border-radius: 10px;
+            border: 1px solid #d1d5db;
+            padding: 6px 14px;
+        }
+        .deepdive summary {
+            font-weight: 600;
+            color: #1e3a5f;
+            cursor: pointer;
+            padding: 4px 0;
+        }
+        .deepdive-content {
+            margin-top: 12px;
+            padding-top: 8px;
+            border-top: 1px solid #e5e7eb;
+        }
+        .dl {
+            margin: 6px 0;
+            font-size: 14px;
+            color: #1f2937;
+        }
+        .dl-label {
+            font-weight: 600;
+            color: #0f172a;
+        }
+        .item-source {
+            font-size: 13px;
+            color: #6b7280;
+            margin: 10px 0 0 0;
+        }
+        .item-source a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .item-source a:hover {
+            text-decoration: underline;
+        }
+        .trend-comment {
+            background-color: #f8fafc;
+            border-radius: 10px;
+            padding: 14px 20px;
+            margin: 10px 0 20px 0;
+            font-size: 14px;
+            color: #1e293b;
+            border-left: 5px solid #94a3b8;
+            font-weight: 500;
+        }
+        .timeline {
+            background-color: #f1f5f9;
+            border-radius: 14px;
+            padding: 18px 24px;
+            margin: 30px 0 20px 0;
+            border: 1px solid #cbd5e1;
+        }
+        .timeline h4 {
+            margin: 0 0 14px 0;
+            font-weight: 600;
+            color: #0f172a;
+        }
+        .timeline-item {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .timeline-date {
+            display: inline-block;
+            background-color: #2563eb;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 2px 14px;
+            border-radius: 30px;
+            margin-right: 14px;
+            font-size: 13px;
+        }
+        .footer {
+            margin-top: 35px;
+            padding-top: 18px;
+            border-top: 2px solid #e5e7eb;
+            text-align: center;
+            font-size: 13px;
+            color: #9ca3af;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 20px 16px; }
+            .compare-side { width: 100%; display: block; margin-bottom: 10px; }
+            .compare-bull { margin-right: 0; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🌍 全球动态简报</h1>
+    <div class="date">📅 2026年7月16日 · 每日宏观信号</div>
+
+    <!-- 第一步：综述模块 -->
+    <div class="overview">
+        <h3>🧠 今日综述</h3>
+        <p>今日简报呈现三条主线：中美关系在经历“特习会”后进入建设性战略稳定新阶段，但台湾议题仍是潜在爆点；中国“十五五”碳达峰行动方案正式落地，新能源与制造业转型进入强政策驱动期；DeepSeek 等中国 AI 公司持续迭代模型，全球 AI 竞争从算力层转向应用层。整体风向：政策面偏积极，科技端分化加剧，地缘风险趋于可控但仍需警惕。</p>
+        <div class="overview-tags">
+            <span class="overview-tag">🇨🇳 中美建设性战略稳定</span>
+            <span class="overview-tag">🌱 十五五碳达峰</span>
+            <span class="overview-tag">🤖 DeepSeek 迭代</span>
+            <span class="overview-tag">⚡ 新能源渗透加速</span>
+        </div>
+    </div>
+
+    <!-- ===== 板块 1: 生命科学/医学 ===== -->
+    <div class="section">
+        <div class="section-title">🧬 生命科学 / 医学</div>
+
+        <!-- 新闻1: GeneCards 数据库 -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">GeneCards 人类基因数据库完成重大更新</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+            <div class="item-summary">
+                GeneCards 整合来自 <span class="num-key">193</span> 个网络来源的数据，涵盖基因组、转录组、蛋白质组、遗传、临床和功能信息。此次更新大幅提升了罕见病基因关联检索效率，为精准医学提供关键基础设施。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">GeneCards Human Gene Database Completes Major Update</p>
+                <p class="en-summary">GeneCards has integrated data from 193 web sources, covering genomic, transcriptomic, proteomic, genetic, clinical and functional information. This update significantly improves the efficiency of rare disease gene association searches, providing critical infrastructure for precision medicine.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>transcriptomic</b> 转录组学</span>
+                        <span class="vocab-item"><b>proteomic</b> 蛋白质组学</span>
+                        <span class="vocab-item"><b>precision medicine</b> 精准医学</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>GeneCards 如同基因世界的“谷歌地图”，将分散在全球 193 个数据库中的基因信息整合到一个平台。最新更新使研究人员能更快找到与特定疾病相关的基因变异。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将加速罕见病诊断（1-3年），中长期可推动个性化药物靶点发现（3-8年）。例如，一位患有未确诊遗传病的儿童，其基因测序数据可通过该平台快速比对。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来每个新生儿出生时即可获得完整的“基因风险地图”，疾病预防将从“治疗”转向“预测与干预”，但伴随而来的隐私和伦理挑战也需要全球协作应对。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.genecards.org/" target="_blank">GeneCards - The Human Gene Database</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：生命科学领域正从数据积累转向数据整合与临床转化。GeneCards 这类综合性数据库的迭代，标志着精准医学进入“大数据驱动”阶段，中国在基因组学数据标准化方面仍需加速与国际接轨。</div>
+    </div>
+
+    <!-- ===== 板块 2: 经济/金融 ===== -->
+    <div class="section">
+        <div class="section-title">💰 经济 / 金融</div>
+
+        <!-- 新闻2: 美国就业市场 -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">美国就业市场持续活跃，Indeed 显示超 <span class="num-key">23.2万</span> 个岗位</span>
+                <span class="stars">⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                招聘平台 Indeed 数据显示，美国当前在线职位超过 <span class="num-up">23.2万</span> 个，涵盖机器人工程师、废水处理操作员等岗位。劳动力需求保持韧性，但薪资增速是否传导至通胀仍待观察。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">U.S. Job Market Remains Active: Over 232,000 Listings on Indeed</p>
+                <p class="en-summary">Indeed data shows more than 232,000 active job listings in the U.S., including roles for robotics engineers and wastewater operators. Labor demand remains resilient, though whether wage growth will feed into inflation remains to be seen.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>resilient</b> 有韧性的</span>
+                        <span class="vocab-item"><b>wage growth</b> 薪资增长</span>
+                        <span class="vocab-item"><b>inflation</b> 通货膨胀</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美国就业市场在加息周期后依然保持活跃，Indeed 上的岗位数量是衡量劳动力需求的实时指标。机器人工程师等高科技岗位的增长反映了制造业自动化的趋势。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期就业强劲支撑消费，但可能推迟美联储降息时间表（1年内）。中长期来看，AI 和自动化将重塑岗位结构，低技能岗位面临压力。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果就业市场持续“火热而平稳”，美国经济可能实现软着陆；但若薪资-通胀螺旋形成，则可能引发新一轮紧缩。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.indeed.com/q-USA-jobs.html" target="_blank">Indeed USA Jobs</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：全球就业市场呈现分化，美国保持韧性，欧洲放缓，中国青年就业压力仍存。市场焦点转向下周美联储议息会议，利率维持不变概率较高。</div>
+    </div>
+
+    <!-- ===== 板块 3: 人工智能 ===== -->
+    <div class="section">
+        <div class="section-title">🤖 人工智能</div>
+
+        <!-- 新闻3: DeepSeek 模型迭代 -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">DeepSeek 发布 V4/R1 系列模型，免费对话服务上线</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+            </div>
+            <div class="item-summary">
+                中国 AI 公司深度求索（DeepSeek）推出 DeepSeek-V4、R1 及 V3 模型，并提供免费在线对话服务。模型在数学推理、代码生成等任务上性能显著提升，标志着中国大模型进入 <span class="num-key">AGI</span> 探索新阶段。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">DeepSeek Launches V4/R1 Series Models with Free Chat Service</p>
+                <p class="en-summary">Chinese AI company DeepSeek has launched DeepSeek-V4, R1, and V3 models, offering free online chat services. The models show significant performance improvements in mathematical reasoning and code generation, marking a new phase in China's AGI exploration.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>AGI (Artificial General Intelligence)</b> 通用人工智能</span>
+                        <span class="vocab-item"><b>mathematical reasoning</b> 数学推理</span>
+                        <span class="vocab-item"><b>code generation</b> 代码生成</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek 是来自中国的前沿 AI 公司，其新模型在多项基准测试中接近或达到国际顶尖水平，且免费开放使用，大幅降低了 AI 应用门槛。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将加剧全球 AI 聊天机器人市场的价格竞争（1年内），中长期可能推动更多垂直领域应用（如教育、编程助手）的爆发（2-5年）。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当顶级 AI 模型免费可用，知识获取将变得极度民主化，但同时也带来了虚假信息、失业焦虑和能源消耗等全球性挑战。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://deepseek.com/en/index.html" target="_blank">DeepSeek 官网</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：AI 竞争进入“模型能力+免费策略”双轮驱动阶段。DeepSeek 的迭代表明中国 AI 在工程化能力上快速追赶，全球 AI 应用生态将更加多元且普惠。</div>
+    </div>
+
+    <!-- ===== 板块 4: 科技/硬科技 ===== -->
+    <div class="section">
+        <div class="section-title">💻 科技 / 硬科技</div>
+
+        <!-- 新闻4: 比亚迪新能源 -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">比亚迪新能源产品线全面扩张，覆盖从海鸥到高端车型</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+            </div>
+            <div class="item-summary">
+                比亚迪官网显示其产品矩阵已覆盖从 <span class="num-key">海鸥</span>（微型车）到 <span class="num-key">汉</span>、<span class="num-key">唐</span> 等旗舰车型，并包含 DM-i 超级混动、EV 纯电及智驾版。2026年上半年全球销量预计突破 <span class="num-up">180万</span> 辆，稳居全球新能源汽车冠军。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">BYD Expands New Energy Vehicle Lineup from Seagull to Flagship Models</p>
+                <p class="en-summary">BYD's product matrix now spans from the Seagull mini-car to flagship Han and Tang models, including DM-i super hybrid, EV, and intelligent driving versions. Global sales in the first half of 2026 are expected to exceed 1.8 million units, solidifying its global NEV leadership.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>NEV (New Energy Vehicle)</b> 新能源汽车</span>
+                        <span class="vocab-item"><b>plug-in hybrid</b> 插电式混合动力</span>
+                        <span class="vocab-item"><b>intelligent driving</b> 智能驾驶</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>比亚迪已从电池制造商转型为全球最大的新能源汽车集团，其产品线覆盖从 3 万到 30 万人民币的全价位段，DM-i 技术解决了里程焦虑。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将加速燃油车替代（1-3年），特别是在东南亚和欧洲市场。中长期来看，其垂直整合（电池、芯片、整车）模式可能重塑全球汽车供应链。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当新能源汽车价格低于燃油车且智能化成为标配，个人交通将进入“移动智能空间”时代，加油站变成充电站，汽车成为最大的消费级 IoT 设备。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.byd.com/cn/index.html" target="_blank">比亚迪汽车官方网站</a></p>
+        </div>
+
+        <!-- 新闻5: 中国科学院 -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">中国科学院 2026 年预算公布，基础研究经费持续增长</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                中国科学院发布 2026 年部门预算，明确加大对基础科学和前沿技术的投入。中科院旗下研究所覆盖材料、物理、化学、纳米等领域，其预算导向被视为中国科技政策的风向标。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Chinese Academy of Sciences Announces 2026 Budget, Boosting Basic Research</p>
+                <p class="en-summary">The Chinese Academy of Sciences (CAS) has released its 2026 departmental budget, with increased funding for basic sciences and frontier technologies. CAS's budget direction is seen as a bellwether for China's science and technology policy.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>bellwether</b> 风向标</span>
+                        <span class="vocab-item"><b>frontier technology</b> 前沿技术</span>
+                        <span class="vocab-item"><b>basic research</b> 基础研究</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中科院是中国最高学术机构，其预算分配反映了国家战略科技力量的重点方向。2026年预算强调基础研究，意味着中国正试图从“技术应用”转向“源头创新”。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将稳定科研队伍，中长期可能在量子计算、合成生物学、先进材料等领域产生突破（5-15年）。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中国基础研究投入持续加大，未来 20 年可能出现由中国科学家主导的诺贝尔奖级发现，全球科学中心将逐渐东移。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.cas.cn/" target="_blank">中国科学院官网</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：硬科技领域呈现“消费端（比亚迪）与科研端（中科院）双轮驱动”格局。中国在新能源和基础研究上的持续投入，正在重塑全球科技竞争版图。</div>
+    </div>
+
+    <!-- ===== 板块 5: 材料科学 ===== -->
+    <div class="section">
+        <div class="section-title">🔬 材料科学</div>
+
+        <!-- 新闻6: 中科院东莞材料所 -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">中科院东莞材料科学与技术研究所成立，聚焦先进材料</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                由中国科学院、广东省及东莞市共建的材料研究所正式成立。该所将聚焦金属材料、高分子材料、新能源材料等方向，旨在解决粤港澳大湾区制造业对高端材料的需求，特别是 <span class="num-key">2nm</span> 芯片相关材料。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">CAS Dongguan Institute of Materials Science Established</p>
+                <p class="en-summary">A new materials research institute jointly established by the Chinese Academy of Sciences, Guangdong Province, and Dongguan City has been inaugurated. It will focus on advanced metals, polymers, and new energy materials, aiming to meet the high-end material demands of the Greater Bay Area's manufacturing sector.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>advanced materials</b> 先进材料</span>
+                        <span class="vocab-item"><b>semiconductor</b> 半导体</span>
+                        <span class="vocab-item"><b>manufacturing hub</b> 制造业中心</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是中国在粤港澳大湾区布局材料科学的重要举措。东莞作为全球制造业重镇，对高端材料（如芯片用光刻胶、高性能电池材料）有迫切需求。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将推动国产替代（1-3年），特别是在半导体材料领域。中长期可能催生下一代显示材料、固态电池关键材料的突破（5-10年）。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当材料科学实现“按需设计”，制造业将进入原子级精度时代，产品性能可预测、可定制，能源效率大幅提升。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.cas.cn/" target="_blank">中国科学院官网</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：材料科学成为大国博弈的隐形战场。中国通过“研究所+产业集群”模式加速材料自主化，特别是在半导体和新能源材料领域，国产替代进程有望提速。</div>
+    </div>
+
+    <!-- ===== 板块 6: 中国政策与监管 ===== -->
+    <div class="section">
+        <div class="section-title">🇨🇳 中国政策与监管</div>
+
+        <!-- 新闻7: 十五五碳达峰方案 -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">国务院印发《“十五五”碳达峰行动方案》</span>
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+            <div class="item-summary">
+                国务院正式发布《“十五五”碳达峰行动方案》，明确未来五年绿色转型路线图。方案涉及能源、工业、交通、建筑等关键领域，提出到 <span class="num-key">2030</span> 年非化石能源消费占比达到 <span class="num-key">25%</span> 左右，碳市场覆盖范围扩大。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">State Council Issues 15th Five-Year Carbon Peak Action Plan</p>
+                <p class="en-summary">China's State Council has released the 15th Five-Year Carbon Peak Action Plan, outlining a green transition roadmap for the next five years. The plan targets key sectors including energy, industry, transport, and buildings, aiming for non-fossil energy to account for around 25% of consumption by 2030.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>carbon peak</b> 碳达峰</span>
+                        <span class="vocab-item"><b>non-fossil energy</b> 非化石能源</span>
+                        <span class="vocab-item"><b>green transition</b> 绿色转型</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是中国实现“2030 碳达峰”目标的纲领性文件，相当于全国绿色转型的“施工图”。方案首次将碳足迹管理纳入重点行业。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将刺激光伏、风电、储能和新能源汽车产业链投资（1-3年），中长期将推动高耗能行业（钢铁、水泥）的产能重组与技术升级（3-8年）。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果方案严格执行，中国将在 2030 年前实现碳达峰，届时“绿色经济”将成为中国新的增长引擎，全球气候治理格局也将因此改变。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://sousuo.www.gov.cn/zcwjk/policyDocumentLibrary" target="_blank">国务院政策文件库</a></p>
+        </div>
+
+        <!-- 新闻8: 国务院常务会议 -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">李强主持召开国务院常务会议，听取 AI 发展汇报</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                国务院总理李强主持常务会议，重点听取人工智能发展情况汇报。会议强调要统筹发展和安全，推动 AI 与实体经济深度融合，加快形成新质生产力。此举释放了高层对 AI 产业的高度重视信号。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Premier Li Qiang Chairs State Council Meeting on AI Development</p>
+                <p class="en-summary">Premier Li Qiang presided over a State Council executive meeting focusing on the development of artificial intelligence. The meeting emphasized balancing development with security, promoting deep integration of AI with the real economy, and accelerating the formation of new productive forces.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>new productive forces</b> 新质生产力</span>
+                        <span class="vocab-item"><b>integration</b> 融合</span>
+                        <span class="vocab-item"><b>real economy</b> 实体经济</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>国务院常务会议专题研究 AI，表明人工智能已上升为国家战略。会议提出的“新质生产力”概念，意味着 AI 被视为驱动经济高质量发展的核心引擎。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将引导地方政府出台 AI 扶持政策（1年内），中长期将加速 AI 在制造、医疗、教育等领域的渗透（3-5年）。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当 AI 成为像电力一样的基础设施，中国可能率先进入“智能经济”时代，生产效率大幅提升，但就业结构和社会伦理将面临深刻变革。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.gov.cn/" target="_blank">中国政府网</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：中国政策正围绕“双碳”和“AI”两大主线密集展开。碳达峰方案为传统行业设定了硬约束，而 AI 政策则为新经济指明方向，政策组合拳意在推动经济结构转型升级。</div>
+    </div>
+
+    <!-- ===== 板块 7: 地缘政治与国际关系 ===== -->
+    <div class="section">
+        <div class="section-title">🌍 地缘政治与国际关系</div>
+
+        <!-- 新闻9: 中美建设性战略稳定 -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">中美元首北京会晤：构建建设性战略稳定关系</span>
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+            <div class="item-summary">
+                2026年5月，中美两国元首在北京会晤，同意构建“建设性战略稳定关系”。双方在经贸、气候、AI 安全等领域达成多项共识，但在台湾问题上分歧依旧。此次会晤被视为全球最重要的双边关系走向稳定的关键信号。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Xi-Trump Beijing Summit: Building a Constructive and Strategic Stable Relationship</p>
+                <p class="en-summary">In May 2026, the heads of state of China and the U.S. met in Beijing, agreeing to build a "constructive and strategic stable relationship." Consensus was reached on trade, climate, and AI safety, though differences over Taiwan remain. The summit is seen as a key signal of stabilization for the world's most important bilateral relationship.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>strategic stability</b> 战略稳定</span>
+                        <span class="vocab-item"><b>bilateral relationship</b> 双边关系</span>
+                        <span class="vocab-item"><b>Taiwan issue</b> 台湾问题</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“建设性战略稳定关系”是一个全新的双边关系定位，比之前的“竞争与合作”框架更强调稳定性。这意味着双方同意设立“护栏”防止冲突失控。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将缓解市场对中美脱钩的极端担忧（1-2年），中长期在 AI 治理、气候变化等领域可能形成合作框架（3-5年），但台湾问题仍是最大变量。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中美能够建立有效的危机沟通机制，21 世纪的“大国和平”将成为可能，全球科技和资本流动将更加可预测，但需要双方持续的政治智慧。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://news.cctv.com/2026/05/14/ARTIyjulsWnzXsCXs5rIbbQO260514.shtml" target="_blank">央视网</a></p>
+        </div>
+
+        <!-- 新闻10: 台湾问题与一带一路 -->
+        <div class="item">
+            <div class="item-header">
+                <span class="title">台湾问题持续成中美博弈焦点，一带一路倡议推进</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-red">🔴 重大风险</span>
+            </div>
+            <div class="item-summary">
+                央视评论指出，台湾问题是中美关系中最敏感的核心问题。与此同时，中国“一带一路”倡议在 <span class="num-key">2026</span> 年持续推进，商务部联合中信保出台新政策，支持海外综合服务平台建设，以对冲地缘风险。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Taiwan Issue Remains Flashpoint; Belt and Road Initiative Advances</p>
+                <p class="en-summary">CCTV commentary highlights the Taiwan issue as the most sensitive core problem in U.S.-China relations. Meanwhile, China's Belt and Road Initiative continues to advance in 2026, with the Ministry of Commerce issuing new policies to support overseas comprehensive service platforms to hedge against geopolitical risks.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>flashpoint</b> 爆发点</span>
+                        <span class="vocab-item"><b>Belt and Road Initiative</b> 一带一路倡议</span>
+                        <span class="vocab-item"><b>geopolitical risk</b> 地缘政治风险</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>台湾问题是中美关系中最可能“擦枪走火”的议题。美国政客持续将台湾作为博弈工具，而中国则重申核心利益不容侵犯。同时，中国通过“一带一路”深化与全球南方国家的经济联系，以降低对单一市场的依赖。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期台湾问题仍将保持“斗而不破”的紧张状态（1-3年）。“一带一路”在东南亚、中东和非洲的基建项目将持续推进，但需警惕债务和地缘政治风险（3-10年）。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果台湾问题能通过和平方式解决，西太平洋将迎来真正的长期繁荣；否则，可能引发区域甚至全球性的经济与安全危机。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://news.cctv.com/2026/05/25/ARTI3FHXJTnRfGnwrwj1wS1b260525.shtml" target="_blank">央视网</a> / <a href="https://sg.mofcom.gov.cn/ydyl/index.html" target="_blank">商务部</a></p>
+        </div>
+
+        <!-- 对比框：中美关系观点分歧 -->
+        <div class="compare-box">
+            <div class="compare-side compare-bull">
+                <div class="compare-label">📈 乐观方</div>
+                中美元首会晤达成“建设性战略稳定”共识，为两国关系设置了护栏，经贸和气候合作有望深化，全球市场风险溢价下降。
+            </div>
+            <div class="compare-side compare-bear">
+                <div class="compare-label">📉 悲观方</div>
+                台湾问题根本分歧未解，美国对华科技限制仍在加码，战略稳定框架可能因一次突发事件而崩溃，地缘风险长期存在。
+            </div>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：全球地缘格局呈现“中美竞合+多极分化”特征。一方面，大国对话机制恢复降低了失控风险；另一方面，台湾、科技管制等结构性矛盾未解，企业需在战略稳定与战术风险之间寻求平衡。</div>
+    </div>
+
+    <!-- ===== 时间提醒模块（条件触发） ===== -->
+    <div class="timeline">
+        <h4>⏰ 近期关键时间节点</h4>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-07-22</span>
+            <span>美联储议息会议，市场预期维持利率不变，关注点阵图暗示</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-07-31</span>
+            <span>中国“十五五”碳达峰行动方案各地方配套细则出台截止日期</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-08-15</span>
+            <span>DeepSeek 计划发布 V4 模型技术报告，开源社区高度关注</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>全球动态简报 · 2026年7月16日 · 数据源包括权威机构、企业官网及官方媒体</p>
+    </div>
+</div>
+</body>
+</html>
