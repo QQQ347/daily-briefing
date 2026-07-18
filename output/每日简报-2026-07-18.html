@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球动态简报 | 2026-07-18</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+            color: #1e293b;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 24px 28px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+        }
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 6px 0;
+        }
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Overview */
+        .overview {
+            background-color: #eef2ff;
+            padding: 20px 24px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4f46e5;
+        }
+        .overview p {
+            margin: 8px 0 12px 0;
+            line-height: 1.5;
+            font-size: 15px;
+        }
+        .overview-tags {
+            display: block;
+        }
+        .overview-tag {
+            display: inline-block;
+            background-color: #c7d2fe;
+            padding: 4px 12px;
+            border-radius: 14px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 4px;
+            color: #312e81;
+        }
+
+        /* Item block */
+        .news-item {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 18px 20px;
+            margin-bottom: 20px;
+        }
+        .item-header {
+            margin-bottom: 10px;
+        }
+        .item-header .title {
+            font-size: 17px;
+            font-weight: 600;
+            margin-right: 12px;
+        }
+        .star {
+            color: #f59e0b;
+            font-size: 14px;
+            margin-right: 8px;
+        }
+        .impact {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-right: 6px;
+        }
+        .impact-high {
+            background-color: #fee2e2;
+            color: #b91c1c;
+        }
+        .impact-med {
+            background-color: #fef3c7;
+            color: #b45309;
+        }
+        .impact-low {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+        .risk-red {
+            display: inline-block;
+            background-color: #fecaca;
+            color: #991b1b;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-left: 4px;
+        }
+        .risk-yellow {
+            display: inline-block;
+            background-color: #fde68a;
+            color: #92400e;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-left: 4px;
+        }
+
+        .item-summary {
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 10px 0 12px 0;
+            background-color: #ffffff;
+            padding: 10px 14px;
+            border-radius: 6px;
+            border-left: 3px solid #94a3b8;
+        }
+
+        .num-up {
+            background-color: #bbf7d0;
+            font-weight: 600;
+            padding: 0 4px;
+            border-radius: 3px;
+        }
+        .num-down {
+            background-color: #fecaca;
+            font-weight: 600;
+            padding: 0 4px;
+            border-radius: 3px;
+        }
+        .num-key {
+            background-color: #fef08a;
+            font-weight: 600;
+            padding: 0 4px;
+            border-radius: 3px;
+        }
+
+        .bilingual {
+            background-color: #f1f5f9;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin: 12px 0;
+        }
+        .en-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            color: #0f172a;
+        }
+        .en-summary {
+            font-size: 14px;
+            color: #334155;
+            margin: 0 0 8px 0;
+            line-height: 1.5;
+        }
+        .vocab-card {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 8px 12px;
+        }
+        .vocab-title {
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+        .vocab-list {
+            display: block;
+        }
+        .vocab-item {
+            display: inline-block;
+            background-color: #e2e8f0;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-right: 6px;
+            margin-bottom: 4px;
+        }
+        .vocab-item b {
+            font-weight: 600;
+        }
+
+        .compare-box {
+            display: block;
+            background-color: #fff7ed;
+            border: 1px solid #fed7aa;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 16px 0;
+        }
+        .compare-side {
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+            padding: 6px 10px;
+            font-size: 14px;
+        }
+        .compare-bull {
+            background-color: #ecfdf5;
+            border-radius: 6px;
+        }
+        .compare-bear {
+            background-color: #fef2f2;
+            border-radius: 6px;
+            margin-left: 4%;
+        }
+        .compare-label {
+            font-weight: 700;
+            font-size: 13px;
+            margin-bottom: 2px;
+        }
+
+        .deepdive {
+            margin: 12px 0 8px 0;
+            background-color: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 6px 12px;
+        }
+        .deepdive summary {
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            color: #1e40af;
+        }
+        .deepdive-content {
+            margin-top: 8px;
+        }
+        .dl {
+            margin: 6px 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .dl-label {
+            font-weight: 600;
+        }
+
+        .item-source {
+            font-size: 13px;
+            color: #64748b;
+            margin-top: 8px;
+            border-top: 1px dashed #d1d5db;
+            padding-top: 8px;
+        }
+
+        .trend-comment {
+            background-color: #f1f5f9;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin: 16px 0 28px 0;
+            font-size: 14px;
+            line-height: 1.5;
+            border-left: 4px solid #64748b;
+        }
+
+        .timeline {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 20px 0;
+        }
+        .timeline h4 {
+            margin: 0 0 12px 0;
+        }
+        .timeline-item {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .timeline-date {
+            display: inline-block;
+            background-color: #fde68a;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-right: 10px;
+        }
+
+        .footer {
+            margin-top: 28px;
+            padding-top: 16px;
+            border-top: 2px solid #e2e8f0;
+            font-size: 13px;
+            color: #64748b;
+            text-align: center;
+        }
+        @media (max-width: 640px) {
+            .container { padding: 16px; }
+            .compare-side { width: 100%; display: block; margin-left: 0; margin-bottom: 8px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 今日综述 -->
+    <div class="overview">
+        <h3>🧠 今日全球动态综述</h3>
+        <p>今日简报信号密度偏低，核心动态集中于中国“一带一路”倡议进入“十五五”新阶段，伴随出口信用保险政策加码；华为连续四年入选Gartner有线无线局域网领导者象限，体现其企业业务韧性。地缘方面，全球数据中心电缆布局正主动绕开中国及关键海峡，供应链重构加速。整体风向：政策驱动型增长预期增强，科技端局部突破，地缘风险持续累积。</p>
+        <div class="overview-tags">
+            <span class="overview-tag">🛣️ 一带一路新阶段</span>
+            <span class="overview-tag">📡 华为企业业务韧性</span>
+            <span class="overview-tag">🔌 数据中心绕道布局</span>
+            <span class="overview-tag">🏢 十五五政策加码</span>
+        </div>
+    </div>
+
+    <!-- ===================== 板块1：生命科学/医学 ===================== -->
+    <h2>🧬 生命科学 / 医学</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">Facebook 平台动态：连接与分享功能更新</span>
+            <span class="star">⭐⭐⭐</span>
+            <span class="impact impact-low">冲击：Low</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            Facebook 持续优化用户连接与分享体验，推出 AI 增强的图片再创作功能。尽管与生命科学无直接关联，但社交平台在健康信息传播与患者社群建设中扮演日益重要的角色，其算法调整可能影响医疗健康内容的触达效率。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Facebook Platform Update: Enhanced Sharing & AI-powered Image Reimagination</p>
+            <p class="en-summary">Facebook, a Meta platform, continues to roll out features aimed at improving user connectivity and content virality. The integration of AI for image reimagination reflects broader trends in social media's role in health communication and community building, though no direct biomedical application is reported.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>social media platform</b> 社交媒体平台</span>
+                    <span class="vocab-item"><b>AI reimagination</b> 人工智能再创作</span>
+                    <span class="vocab-item"><b>health communication</b> 健康传播</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Facebook 作为全球最大社交平台之一，其功能迭代虽非生命科学直接进展，但通过优化用户互动与 AI 内容生成，可能间接影响医疗健康信息的传播效率与准确性。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期内，健康类账号与患者社群可能获得更好的内容分发工具；中长期看，AI 生成内容的真实性审核将成为公共卫生领域的潜在挑战。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果社交平台能精准识别并抑制健康谣言，同时放大权威医学声音，将重塑全球公共卫生教育的基础设施。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://play.google.com/store/apps/details?id=com.facebook.katana&hl=en-US" target="_blank">Google Play - Facebook</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：今日生命科学领域缺乏重大突破性新闻。社交平台在健康信息生态中的作用值得长期关注，但无直接影响临床或科研进展的信号。</div>
+
+    <!-- ===================== 板块2：经济/金融 ===================== -->
+    <h2>💰 经济 / 金融</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">加州反职场歧视法律框架：孕期歧视诉讼时效为三年</span>
+            <span class="star">⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            加州法律明确规定，根据 FEHA，孕期歧视投诉的诉讼时效为 <span class="num-key">3年</span>，联邦层面另有规定。此政策为职场女性提供明确维权路径，可能影响企业人力资源合规成本，尤其对拥有 <span class="num-key">5名</span> 以上员工的企业形成约束。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">California Pregnancy Discrimination: Statute of Limitations Clarified at Three Years</p>
+            <p class="en-summary">Under the California Fair Employment and Housing Act (FEHA), employees have up to three years from the discriminatory act to file a complaint with the Civil Rights Department. This legal clarity impacts employer liability and human resource practices across the state.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>statute of limitations</b> 诉讼时效</span>
+                    <span class="vocab-item"><b>pregnancy discrimination</b> 孕期歧视</span>
+                    <span class="vocab-item"><b>FEHA</b> 加州公平就业与住房法案</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>加州进一步明确了孕期歧视的维权时效，为 <span class="num-key">3年</span>，这比许多其他州的期限更长，为雇员提供了更充裕的申诉时间。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期内，企业法务与HR部门将加强合规培训；中长期可能推动更多州效仿，提升全美职场公平标准。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若全美统一延长诉讼时效，将显著降低职场歧视的隐蔽性，推动形成更包容的劳动环境。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.eagan.law/blog/employment/pregnancy-discrimination-leave-rights-california.html" target="_blank">Eagan Law</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：今日经济金融新闻以法律政策为主，缺乏宏观数据或市场波动信号。加州劳动法更新反映了美国国内劳动权益保障的持续收紧，对企业运营成本构成温和压力。</div>
+
+    <!-- ===================== 板块3：人工智能 ===================== -->
+    <h2>🤖 人工智能</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">DeepSeek 深度求索：AGI 研究与开放平台持续推进</span>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            中国 AI 初创公司 DeepSeek（深度求索）持续运营其 AGI 研究平台与开发者 API 服务，提供面向编码、内容创作和文件读取的智能助手。公司成立于 <span class="num-key">2023年</span>，专注于通用人工智能底层模型，挑战前沿难题。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">DeepSeek: Advancing AGI Research and Open Platform Development</p>
+            <p class="en-summary">DeepSeek, a Chinese AI startup founded in 2023, continues to develop its general-purpose AI models and developer platform. The company offers API access for coding, content creation, and file analysis, positioning itself as a challenger in the global AGI race.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>AGI</b> 通用人工智能</span>
+                    <span class="vocab-item"><b>API platform</b> API平台</span>
+                    <span class="vocab-item"><b>foundation model</b> 基础模型</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek 是中国少数专注 AGI 长线研究的公司之一，其开放平台策略类似于 OpenAI 的早期路线，旨在通过开发者生态反哺模型迭代。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，API 服务将吸引中小开发者；中长期需关注其算力获取与模型能力能否比肩美国头部玩家。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果 DeepSeek 能在 AGI 底层实现突破，将打破中美在基础模型领域的现有格局，推动全球 AI 多极化。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.deepseek.com/" target="_blank">DeepSeek 官网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国 AI 力量持续蓄力，DeepSeek 保持活跃但未发布突破性成果。全球 AI 竞赛进入平台期，各方均在等待下一代模型架构的涌现。</div>
+
+    <!-- ===================== 板块4：科技/硬科技 ===================== -->
+    <h2>💻 科技 / 硬科技</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">华为连续四年入选 Gartner 企业有线无线局域网领导者象限</span>
+            <span class="star">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+        </div>
+        <div class="item-summary">
+            华为宣布连续 <span class="num-up">第四年</span> 入选 Gartner 企业有线无线局域网基础设施领导者象限。该评级反映华为在园区网络、AI 数据平台等企业 ICT 领域的持续竞争力，在 <span class="num-key">5G</span> 与 <span class="num-key">Wi-Fi 7</span> 融合趋势下占据有利位置。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Huawei Named a Gartner Leader in Enterprise Wired & Wireless LAN for Fourth Consecutive Year</p>
+            <p class="en-summary">Huawei has been recognized as a Leader in the Gartner Magic Quadrant for Enterprise Wired and Wireless LAN Infrastructure for the fourth year in a row, highlighting its strength in AI-driven data platforms and campus network solutions amid the convergence of 5G and Wi-Fi 7.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>Magic Quadrant</b> 魔力象限</span>
+                    <span class="vocab-item"><b>enterprise LAN</b> 企业局域网</span>
+                    <span class="vocab-item"><b>AI data platform</b> AI数据平台</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Gartner 魔力象限是 ICT 领域权威评估，华为连续四年入选领导者象限，证明其企业网络产品在复杂国际环境下仍具全球竞争力。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将巩固华为在政企市场的份额；中长期看，AI 与网络融合（如智能运维）将成为其差异化优势。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若华为能突破高端芯片供应限制，其企业业务有望成为新的增长支柱，重塑全球网络设备市场格局。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.huawei.com/cn/" target="_blank">华为官网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：华为在制裁背景下仍保持企业业务的技术领导力，显示硬科技领域的韧性。今日硬科技新闻较少，华为的持续认证是唯一亮点。</div>
+
+    <!-- ===================== 板块5：材料科学 ===================== -->
+    <h2>🔬 材料科学</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">复旦材料科学系：高熵硫化物纳米晶材料库新进展</span>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            复旦大学材料科学系孙大林、王飞、刘洋课题组在《Advanced Materials》发表研究，开发高熵硫化物纳米晶材料库。该工作为能源存储与催化领域提供了新的材料设计范式，有望加速 <span class="num-key">下一代电池</span> 与 <span class="num-key">电催化剂</span> 的发现。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Fudan Team Develops High-Entropy Sulfide Nanocrystal Library in Advanced Materials</p>
+            <p class="en-summary">Researchers at Fudan University published a study in Advanced Materials on a high-entropy sulfide nanocrystal material library. This combinatorial approach enables rapid screening of novel compositions for energy storage and electrocatalysis, potentially accelerating the discovery of next-generation battery materials.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>high-entropy</b> 高熵</span>
+                    <span class="vocab-item"><b>nanocrystal</b> 纳米晶</span>
+                    <span class="vocab-item"><b>material library</b> 材料库</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>高熵材料通过混合多种主元元素形成稳定结构，复旦团队将其拓展至硫化物纳米晶体系，建立了系统性的材料库。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期可用于筛选新型固态电解质；中长期可能推动高能量密度、高安全性电池的商用化进程。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>材料库结合 AI 筛选，将实现“按需设计”电池材料，彻底改变能源存储的研发模式。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://mse.fudan.edu.cn/" target="_blank">复旦大学材料科学系</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学领域以学术进展为主，复旦的高熵材料库代表了中国在新能源材料源头创新上的持续投入，属于中长期利好信号。</div>
+
+    <!-- ===================== 板块6：中国政策与监管 ===================== -->
+    <h2>🇨🇳 中国政策与监管</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">商务部与中信保联合印发“十五五”出口信用保险政策</span>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+        </div>
+        <div class="item-summary">
+            商务部与中国出口信用保险公司联合发文，推动出口信用保险在“十五五”期间服务商务高质量发展。政策旨在降低企业出海风险，重点支持 <span class="num-up">一带一路</span> 项目与 <span class="num-key">中小外贸企业</span>，预计将覆盖 <span class="num-up">数千亿美元</span> 的出口规模。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">China's Ministry of Commerce and Sinosure Issue New Export Credit Insurance Policy for 15th Five-Year Plan</p>
+            <p class="en-summary">China's Ministry of Commerce, together with China Export & Credit Insurance Corporation (Sinosure), released a joint policy document to leverage export credit insurance for high-quality trade development during the 15th Five-Year Plan period (2026-2030). The policy prioritizes Belt and Road projects and SMEs.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>export credit insurance</b> 出口信用保险</span>
+                    <span class="vocab-item"><b>Belt and Road</b> 一带一路</span>
+                    <span class="vocab-item"><b>15th Five-Year Plan</b> 十五五规划</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>出口信用保险是国家为鼓励外贸出口提供的政策性金融工具，此次联合发文标志着“十五五”期间政策支持力度将进一步加大。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将直接利好参与一带一路建设的基建与制造业企业；中长期有助于提升中国外贸的抗风险能力。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若保险覆盖面扩大到数字服务贸易，将重塑中国在全球数字经济中的角色。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://sg.mofcom.gov.cn/ydyl/index.html" target="_blank">商务部一带一路官网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策重心明确向“十五五”与“一带一路”倾斜，出口信用保险加码是稳外贸的实质性举措，信号偏积极。</div>
+
+    <!-- ===================== 板块7：地缘政治与国际关系 ===================== -->
+    <h2>🌍 地缘政治与国际关系</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">全球数据中心电缆布局绕开中国与关键海峡</span>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            据《经济学人》报道，新建海底数据电缆正刻意绕开中国及马六甲海峡等关键地缘节点，转向更安全的路线。此举反映 <span class="num-up">供应链去风险化</span> 从硬件蔓延至数字基础设施，可能改变全球数据流动格局，增加 <span class="num-key">东南亚</span> 与 <span class="num-key">非洲</span> 部分国家的战略地位。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Submarine Data Cables Increasingly Bypass China and Strategic Chokepoints</p>
+            <p class="en-summary">According to The Economist, new submarine cable projects are actively avoiding routes near China and the Strait of Malacca to mitigate geopolitical risks. This shift in digital infrastructure strategy reflects deepening supply chain decoupling and may elevate the strategic importance of alternative landing points in Southeast Asia and Africa.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>submarine cable</b> 海底电缆</span>
+                    <span class="vocab-item"><b>chokepoint</b> 咽喉要道</span>
+                    <span class="vocab-item"><b>de-risking</b> 去风险化</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>海底电缆承载全球 <span class="num-key">99%</span> 洲际数据流量，其路线选择是地缘政治的风向标。绕开中国和海峡意味着数字领域的“脱钩断链”正在实质化。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将推高东南亚数据中心建设需求；中长期可能导致全球互联网出现“数字分裂”，增加跨国企业合规成本。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果数据流动完全政治化，未来可能出现“互联网2.0”——基于地缘联盟的并行网络体系。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.economist.com/topics/geopolitics" target="_blank">The Economist</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘政治风险从贸易、技术蔓延至数字基础设施。电缆绕道是长期结构性变化，对全球科技供应链和数据主权影响深远。</div>
+
+    <!-- ===================== 时间提醒模块 ===================== -->
+    <div class="timeline">
+        <h4>⏰ 近期关键时间节点</h4>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-07-18</span>
+            <span>今日：中国“一带一路”官网更新“十五五”出口信用保险政策细节</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">持续进行</span>
+            <span>全球海底电缆新项目规划中，绕道中国与马六甲海峡的趋势预计在未来12-18个月加速</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>全球动态简报 · 2026年7月18日 · 由 AI 分析师生成，仅供参考，不构成任何投资或政策建议。</p>
+    </div>
+
+</div>
+</body>
+</html>
