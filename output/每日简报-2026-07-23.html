@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全球动态简报 | 2026-07-23</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+      color: #1a1a2e;
+    }
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 24px 28px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 28px;
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e2e8f0;
+      color: #0f172a;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0 0 10px 0;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .overview {
+      background-color: #eef2ff;
+      border-left: 4px solid #4f46e5;
+      padding: 18px 20px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+    }
+    .overview p {
+      margin: 6px 0 12px 0;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+    .overview-tags {
+      display: block;
+      margin-top: 8px;
+    }
+    .overview-tag {
+      display: inline-block;
+      background-color: #dbeafe;
+      color: #1e40af;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-right: 8px;
+      margin-bottom: 4px;
+    }
+    .news-item {
+      background-color: #fafbfc;
+      border: 1px solid #e9edf2;
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-bottom: 16px;
+    }
+    .item-header {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .item-header .title {
+      font-size: 17px;
+      font-weight: 600;
+      display: inline;
+      margin-right: 10px;
+    }
+    .star {
+      color: #f59e0b;
+      font-size: 14px;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-right: 8px;
+    }
+    .impact {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 12px;
+      margin-right: 6px;
+    }
+    .impact-high {
+      background-color: #fee2e2;
+      color: #b91c1c;
+    }
+    .impact-med {
+      background-color: #fef3c7;
+      color: #92400e;
+    }
+    .impact-low {
+      background-color: #e0e7ff;
+      color: #3730a3;
+    }
+    .risk-red {
+      display: inline-block;
+      background-color: #fce4ec;
+      color: #b71c1c;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 12px;
+      margin-left: 4px;
+    }
+    .risk-yellow {
+      display: inline-block;
+      background-color: #fff3cd;
+      color: #856404;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 12px;
+      margin-left: 4px;
+    }
+    .item-summary {
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 10px 0 12px 0;
+      color: #1e293b;
+    }
+    .num-up {
+      background-color: #d1fae5;
+      color: #065f46;
+      font-weight: 600;
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+    .num-down {
+      background-color: #fee2e2;
+      color: #991b1b;
+      font-weight: 600;
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+    .num-key {
+      background-color: #e0e7ff;
+      color: #3730a3;
+      font-weight: 600;
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+    .bilingual {
+      background-color: #f1f5f9;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 12px 0;
+    }
+    .en-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 0 0 6px 0;
+    }
+    .en-summary {
+      font-size: 14px;
+      color: #334155;
+      margin: 0 0 8px 0;
+      line-height: 1.5;
+    }
+    .vocab-card {
+      background-color: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      padding: 8px 12px;
+      display: inline-block;
+    }
+    .vocab-title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #475569;
+    }
+    .vocab-list {
+      display: block;
+    }
+    .vocab-item {
+      display: inline-block;
+      font-size: 13px;
+      background-color: #f1f5f9;
+      padding: 2px 10px;
+      border-radius: 16px;
+      margin-right: 6px;
+      margin-bottom: 4px;
+      color: #1e293b;
+    }
+    .vocab-item b {
+      font-weight: 600;
+      margin-right: 4px;
+    }
+    .compare-box {
+      background-color: #f8fafc;
+      border: 1px dashed #94a3b8;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 16px 0;
+      display: block;
+    }
+    .compare-side {
+      display: inline-block;
+      width: 45%;
+      vertical-align: top;
+      padding: 6px 10px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .compare-bull {
+      border-right: 1px solid #cbd5e1;
+      margin-right: 4%;
+    }
+    .compare-label {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .deepdive {
+      margin: 12px 0 8px 0;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 4px 12px;
+      background-color: #ffffff;
+    }
+    .deepdive summary {
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      color: #2563eb;
+      padding: 6px 0;
+    }
+    .deepdive-content {
+      padding: 8px 4px 4px 4px;
+    }
+    .dl {
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 6px 0;
+    }
+    .dl-label {
+      font-weight: 600;
+      color: #0f172a;
+    }
+    .item-source {
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+    .trend-comment {
+      background-color: #f1f5f9;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 18px 0 24px 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #1e293b;
+      border-left: 4px solid #64748b;
+    }
+    .timeline {
+      background-color: #fef9c3;
+      border: 1px solid #eab308;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 20px 0 10px 0;
+    }
+    .timeline h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #854d0e;
+    }
+    .timeline-item {
+      font-size: 14px;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .timeline-date {
+      display: inline-block;
+      background-color: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      padding: 1px 10px;
+      font-weight: 600;
+      font-size: 13px;
+      margin-right: 10px;
+      color: #0f172a;
+    }
+    .footer-note {
+      text-align: center;
+      font-size: 13px;
+      color: #94a3b8;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 16px;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 今日综述 -->
+  <div class="overview">
+    <h3>🧠 今日全球动态综述</h3>
+    <p>今日简报聚焦三大主线：中国“一带一路”高峰论坛咨委会强调高质量合作，地缘影响力持续深化；量子计算科普与政策端热度上升，预示硬科技战略地位提升；人民币汇率维持稳定，市场静待国内政策信号。整体风向：外交与基建稳步推进，科技自主创新预期增强，金融端以稳为主。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🌏 一带一路深化</span>
+      <span class="overview-tag">⚛️ 量子计算升温</span>
+      <span class="overview-tag">💱 人民币维稳</span>
+      <span class="overview-tag">🏗️ 城市更新规划</span>
+    </div>
+  </div>
+
+  <!-- ==================== 板块1：生命科学/医学 ==================== -->
+  <h2>🧬 生命科学 / 医学</h2>
+
+  <!-- 新闻1 -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">Nature 期刊：多学科前沿研究持续输出</span>
+      <span class="star">⭐⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      《Nature》作为全球顶级多学科科学期刊，持续发表涵盖基因组学、细胞生物学等领域的高影响力研究。近期重点包括对褐牛头鲶肿瘤及匹配正常组织的全基因组测序分析，为比较肿瘤学与进化医学提供新数据。
+    </div>
+    <!-- bilingual -->
+    <div class="bilingual">
+      <p class="en-title">Nature Journal: Multidisciplinary Research Output</p>
+      <p class="en-summary">Nature, the world's leading multidisciplinary science journal, continues to publish high-impact studies. Recent research includes whole-genome sequencing of brown bullhead catfish tumors, offering insights into comparative oncology and evolutionary medicine.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>whole-genome sequencing</b> 全基因组测序</span>
+          <span class="vocab-item"><b>comparative oncology</b> 比较肿瘤学</span>
+          <span class="vocab-item"><b>multidisciplinary</b> 多学科的</span>
+        </div>
+      </div>
+    </div>
+    <!-- deepdive -->
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>《Nature》周刊是全球科研界的风向标，其发表的每项研究都经过严苛同行评审。此次涉及的猫鱼肿瘤基因组项目，属于“比较肿瘤学”范畴，通过研究动物自然发生的癌症来理解人类肿瘤机制。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内，该数据将丰富癌症进化数据库；中长期（3-10年）可能推动针对跨物种保守致癌靶点的药物开发。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果完全实现，人类或能从动物癌症研究中获得更普适的抗癌策略，实现“One Health”理念下的肿瘤防治。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.nature.com/" target="_blank">Nature</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：生命科学领域基础研究持续积累，跨物种基因组学与比较医学成为新热点，但临床转化仍需时间。整体信号偏中性，科研活跃度维持高位。</div>
+
+  <!-- ==================== 板块2：经济/金融 ==================== -->
+  <h2>💰 经济 / 金融</h2>
+
+  <!-- 新闻2 -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">人民币汇率中间价持稳，外汇市场平稳运行</span>
+      <span class="star">⭐⭐⭐⭐</span>
+      <span class="impact impact-low">冲击：Low</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      国家外汇管理局公布最新人民币汇率中间价，美元兑人民币维持在 <span class="num-key">7.13</span> 附近波动。市场交投清淡，央行通过稳健的中间价引导预期，短期汇率弹性可控。境内机构结售汇基本均衡。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">CNY Central Parity Rate Stable, FX Market Calm</p>
+      <p class="en-summary">China's central parity rate of the yuan against the US dollar held steady around 7.13, reflecting the PBOC's commitment to exchange rate stability. Market trading was muted with balanced corporate FX settlement and sales.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>central parity rate</b> 中间价</span>
+          <span class="vocab-item"><b>FX settlement</b> 结售汇</span>
+          <span class="vocab-item"><b>exchange rate flexibility</b> 汇率弹性</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>人民币中间价是央行每日公布的基准汇率，用于指导市场交易。当前 <span class="num-key">7.13</span> 的水平表明政策以稳为主，避免单边贬值预期。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）汇率大概率在 <span class="num-key">7.10-7.18</span> 区间震荡；若国内经济刺激政策加码，不排除小幅升值。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若人民币国际化与汇率弹性同步提升，未来人民币有望成为亚洲主要避险货币。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.safe.gov.cn/safe/rmbhlzjj/index.html" target="_blank">国家外汇管理局</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：金融端整体偏“稳”，人民币汇率中间价信号明确，市场缺乏方向性驱动。投资者关注后续国内信贷数据和美联储动向，短期以防御性策略为主。</div>
+
+  <!-- ==================== 板块3：人工智能 ==================== -->
+  <h2>🤖 人工智能</h2>
+
+  <!-- 新闻3 -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">OpenAI 持续推动通用人工智能（AGI）研究</span>
+      <span class="star">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      OpenAI 官网强调其研究目标是最终实现通用人工智能（AGI），即能够解决人类级别问题的系统。公司持续迭代 ChatGPT 等产品，并在对齐研究、多模态能力上投入资源，但近期未发布重大更新。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">OpenAI Advances AGI Research Agenda</p>
+      <p class="en-summary">OpenAI reiterates its mission to achieve Artificial General Intelligence (AGI) that can solve human-level problems. The organization continues to refine ChatGPT and invest in alignment research and multimodal capabilities, though no major product launches were reported today.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>Artificial General Intelligence</b> 通用人工智能</span>
+          <span class="vocab-item"><b>alignment research</b> 对齐研究</span>
+          <span class="vocab-item"><b>multimodal</b> 多模态</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>AGI 是 AI 领域的终极目标，指机器具备与人类同等甚至更强的通用认知能力。OpenAI 的公开表态维持其长期技术雄心。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）内，行业焦点仍在专用大模型应用落地；中长期（3-5年）若 AGI 路线取得突破，将彻底重塑劳动力市场与经济结构。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>实现 AGI 后，人类或可拥有“万能科学家”与“超级工程师”，加速解决气候变化、疾病等复杂问题。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://openai.com/" target="_blank">OpenAI</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：AI 领域热度不减，头部公司继续为 AGI 铺路，但短期缺乏突破性新闻。行业处于“平台期”，应用层竞争加剧，基础模型能力提升进入深水区。</div>
+
+  <!-- ==================== 板块4：科技/硬科技 ==================== -->
+  <h2>💻 科技 / 硬科技</h2>
+
+  <!-- 新闻4 -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">量子计算科普与战略地位再受关注</span>
+      <span class="star">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      多平台（知乎、IBM、百度百科）集中推出量子计算入门内容与前沿应用解读，强调其作为“未来算力”的战略意义。IBM 指出量子计算可解决经典计算机无法应对的问题，中国学界亦加速基础研究布局。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Quantum Computing Gains Strategic Attention</p>
+      <p class="en-summary">Multiple platforms, including IBM and Chinese knowledge portals, are publishing educational content on quantum computing, highlighting its role as future computing power. IBM emphasizes quantum's ability to solve problems intractable for classical computers, while Chinese academia accelerates fundamental research.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>quantum computing</b> 量子计算</span>
+          <span class="vocab-item"><b>intractable problem</b> 棘手问题/难解问题</span>
+          <span class="vocab-item"><b>fundamental research</b> 基础研究</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>量子计算利用量子比特（qubit）的叠加与纠缠特性进行计算，在特定问题上（如大数分解、药物模拟）拥有指数级算力优势。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）仍处于含噪中等规模量子（NISQ）阶段，应用有限；中长期（5-10年）若实现容错量子计算，将颠覆密码学、材料设计、AI 训练等领域。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来每个人或许都能通过“量子云”调用超级算力，新材料的发现周期从十年缩短到几天。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.ibm.com/cn-zh/think/topics/quantum-computing" target="_blank">IBM</a> / <a href="https://zhuanlan.zhihu.com/p/32485185125" target="_blank">知乎</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：硬科技领域“量子计算”成为显性议题，科普与战略讨论升温。虽然距离大规模商用尚远，但政策与资本已开始提前布局，显示对未来算力制高点的争夺。</div>
+
+  <!-- ==================== 板块5：材料科学 ==================== -->
+  <h2>🔬 材料科学</h2>
+
+  <!-- 新闻5 -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">中科院与广东省共建材料科学与技术研究所</span>
+      <span class="star">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      百度百科资料显示，中国科学院与广东省、东莞市人民政府于 <span class="num-key">2026年1月</span> 共同筹建“中国科学院东莞材料科学与技术研究所”，聚焦新材料研发与产业化，强化大湾区材料科学创新链。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">CAS and Guangdong Establish Materials Science Institute</p>
+      <p class="en-summary">The Chinese Academy of Sciences (CAS), together with Guangdong Province and Dongguan City, co-founded the Dongguan Institute of Materials Science and Technology in January 2026, aiming to boost innovation in new materials and industrial application within the Greater Bay Area.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>materials science</b> 材料科学</span>
+          <span class="vocab-item"><b>industrialization</b> 产业化</span>
+          <span class="vocab-item"><b>innovation chain</b> 创新链</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>该研究所是中科院在粤港澳大湾区的重要布局，专注于新材料从基础研究到中试产业化的全链条创新。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）将聚焦先进金属、高分子及复合材料；中长期（3-5年）有望在半导体衬底、新能源材料领域产出可转化成果。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来大湾区或成为全球材料创新策源地，支撑中国在高端制造与绿色能源领域的领先地位。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://baike.baidu.com/item/中国科学院/271375" target="_blank">百度百科</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：材料科学领域以机构整合与平台建设为主，政策驱动明显。地方与国家级科研力量协同，聚焦“卡脖子”材料自主化，长期利好高端制造与半导体产业。</div>
+
+  <!-- ==================== 板块6：中国政策与监管 ==================== -->
+  <h2>🇨🇳 中国政策与监管</h2>
+
+  <!-- 新闻6 -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">国务院印发《城市更新“十五五”规划》</span>
+      <span class="star">⭐⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+    </div>
+    <div class="item-summary">
+      国务院正式印发《城市更新“十五五”规划》，明确未来五年城市更新行动路线图，涵盖老旧小区改造、基础设施升级、智慧城市试点等。规划强调以人为核心，推动城市高质量发展，预计拉动投资超过 <span class="num-up">2.5万亿元</span>。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">State Council Issues 15th Five-Year Urban Renewal Plan</p>
+      <p class="en-summary">China's State Council released the 15th Five-Year Plan for Urban Renewal, outlining a roadmap for renovating old neighborhoods, upgrading infrastructure, and piloting smart city projects. The plan emphasizes people-centered development and is expected to drive over 2.5 trillion yuan in investment.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>urban renewal</b> 城市更新</span>
+          <span class="vocab-item"><b>smart city</b> 智慧城市</span>
+          <span class="vocab-item"><b>infrastructure upgrade</b> 基础设施升级</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“十五五”城市更新规划是国家级行动纲领，旨在通过存量空间优化提升城市韧性、宜居性与经济活力。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）将利好建筑、建材、智慧交通行业；中长期（3-5年）将重塑城市空间结构，推动房地产向运营服务转型。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来中国城市或实现“15分钟生活圈”全覆盖，老旧社区变身绿色智能社区。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.gov.cn/index.htm?isappinstalled=0" target="_blank">中国政府网</a></p>
+  </div>
+
+  <!-- 新闻7 -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">粤港澳大湾区内地九市暂时调整部分行政法规</span>
+      <span class="star">⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+    </div>
+    <div class="item-summary">
+      国务院批复同意在粤港澳大湾区内地九市暂时调整实施有关行政法规，旨在深化改革开放、优化营商环境。此举将降低市场准入门槛，促进人流、物流、资金流跨境便利化，为粤港澳一体化注入新动力。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Administrative Regulations Temporarily Adjusted for GBA Cities</p>
+      <p class="en-summary">The State Council approved temporary adjustments to certain administrative regulations in nine mainland cities of the Guangdong-Hong Kong-Macao Greater Bay Area (GBA), aiming to lower market entry barriers and facilitate cross-border flows of people, goods, and capital.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>Greater Bay Area</b> 粤港澳大湾区</span>
+          <span class="vocab-item"><b>market access</b> 市场准入</span>
+          <span class="vocab-item"><b>cross-border facilitation</b> 跨境便利化</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是中央支持大湾区融合发展的重要制度创新，通过“暂时调整”方式突破现有法规限制，在特定区域先行先试。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1年内）将吸引港澳专业服务、金融、医疗等机构进入内地；中长期推动大湾区规则衔接与一体化市场形成。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来大湾区或成为“一国两制”下的超级经济特区，实现生活与制度深度交融。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.gov.cn/index.htm?isappinstalled=0" target="_blank">中国政府网</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：中国政策端释放积极信号，城市更新与大湾区改革双轮驱动，体现“稳投资+促开放”的政策思路。基建与制度创新并重，为中长期经济增长蓄力。</div>
+
+  <!-- ==================== 板块7：地缘政治与国际关系 ==================== -->
+  <h2>🌍 地缘政治与国际关系</h2>
+
+  <!-- 新闻8 -->
+  <div class="news-item">
+    <div class="item-header">
+      <span class="title">“一带一路”咨委会会议在乌鲁木齐召开，强调合作行稳致远</span>
+      <span class="star">⭐⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+    </div>
+    <div class="item-summary">
+      “一带一路”国际合作高峰论坛咨询委员会 <span class="num-key">2026年会议</span> 在新疆乌鲁木齐举行。咨委会围绕如何在变乱交织的国际形势下更加有效推动高质量共建展开讨论，强调绿色、数字、健康丝绸之路新方向。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">BRI Advisory Committee Meeting in Urumqi Stresses High-Quality Cooperation</p>
+      <p class="en-summary">The 2026 meeting of the Belt and Road Initiative (BRI) Advisory Committee was held in Urumqi, Xinjiang. Discussions focused on promoting high-quality Belt and Road cooperation amid a complex international landscape, with emphasis on green, digital, and health Silk Roads.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>Belt and Road Initiative</b> 一带一路倡议</span>
+          <span class="vocab-item"><b>high-quality cooperation</b> 高质量合作</span>
+          <span class="vocab-item"><b>advisory committee</b> 咨询委员会</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>咨委会是“一带一路”最高级别智库平台，此次会议选址乌鲁木齐凸显新疆作为核心区的战略地位。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）将推动一批绿色能源与数字基建项目签约；中长期（3-5年）有望形成更完善的国际融资与标准体系。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若“数字丝绸之路”全面铺开，亚欧大陆或将诞生全新的跨境数据流动与贸易规则。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://news.cctv.com/2026/07/22/ARTIX5WAptdfjhGUMmGfYwM0260722.shtml" target="_blank">央视网</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：地缘方面，中国通过“一带一路”多边平台持续扩大影响力，聚焦高质量与可持续。在全球不确定性背景下，中国外交强调“行稳致远”，以基建与合作绑定利益，对冲地缘风险。</div>
+
+  <!-- ==================== 时间节点 ==================== -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-07-22</span>
+      <span>“一带一路”咨委会会议在乌鲁木齐闭幕，发布合作倡议</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-09-30</span>
+      <span>粤港澳大湾区内地九市行政法规调整正式生效执行</span>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    全球动态每日简报 · 2026年7月23日 · 数据截至当日
+  </div>
+
+</div>
+</body>
+</html>
