@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球动态简报 | 2026-07-28</title>
+<style>
+  body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 20px; color: #1a1a2e; }
+  .container { max-width: 1100px; margin: 0 auto; background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  h2 { font-size: 1.6em; border-bottom: 2px solid #e0e4ec; padding-bottom: 8px; margin-top: 30px; font-weight: 600; color: #16213e; }
+  h3 { font-size: 1.2em; font-weight: 600; margin: 0 0 8px 0; color: #0f3460; }
+  h4 { font-size: 1.1em; font-weight: 600; margin: 0 0 6px 0; }
+  .overview { background: #eef2f7; padding: 20px 25px; border-radius: 10px; margin-bottom: 25px; border-left: 5px solid #0f3460; }
+  .overview p { margin: 8px 0; font-size: 1em; line-height: 1.6; }
+  .overview-tags { margin-top: 12px; }
+  .overview-tag { display: inline-block; background: #ffffff; border: 1px solid #b0c4de; padding: 4px 14px; border-radius: 20px; font-size: 0.85em; margin-right: 8px; font-weight: 600; color: #1e3a5f; }
+  .item { background: #fafbfc; border: 1px solid #e6eaf0; border-radius: 10px; padding: 18px 20px; margin-bottom: 18px; }
+  .item-header { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin-bottom: 8px; }
+  .item-header h3 { display: inline; margin: 0; font-size: 1.1em; }
+  .stars { color: #f5b342; letter-spacing: 1px; font-size: 0.9em; }
+  .impact { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.75em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; }
+  .impact-high { background: #fde2e2; color: #b91c1c; border: 1px solid #f8b4b4; }
+  .impact-med { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
+  .impact-low { background: #e2f0e2; color: #2d6a4f; border: 1px solid #a3c9a3; }
+  .risk-red { background: #fce4e4; color: #a11f1f; padding: 2px 10px; border-radius: 12px; font-size: 0.75em; font-weight: 700; }
+  .risk-yellow { background: #fef9e0; color: #7d6b00; padding: 2px 10px; border-radius: 12px; font-size: 0.75em; font-weight: 700; }
+  .item-summary { margin: 10px 0 8px 0; line-height: 1.6; font-size: 0.96em; }
+  .num-up { background: #d4edda; color: #155724; font-weight: 700; padding: 0 4px; border-radius: 3px; }
+  .num-down { background: #f8d7da; color: #721c24; font-weight: 700; padding: 0 4px; border-radius: 3px; }
+  .num-key { background: #e2e6ea; color: #383d41; font-weight: 700; padding: 0 4px; border-radius: 3px; }
+  .bilingual { background: #f8f9fc; border-left: 4px solid #4a6fa5; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; }
+  .en-title { font-weight: 700; font-size: 0.98em; color: #1e3a5f; margin: 0 0 4px 0; }
+  .en-summary { font-size: 0.9em; color: #2c3e50; line-height: 1.5; margin: 4px 0; }
+  .vocab-card { margin-top: 8px; background: #ffffff; border: 1px solid #dce3ed; border-radius: 6px; padding: 8px 12px; }
+  .vocab-title { font-weight: 600; font-size: 0.85em; margin-bottom: 4px; color: #2c3e50; }
+  .vocab-list { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+  .vocab-item { font-size: 0.85em; }
+  .compare-box { display: flex; gap: 16px; background: #f2f5fa; padding: 14px 18px; border-radius: 10px; margin: 14px 0; border: 1px solid #dde3ed; }
+  .compare-side { flex: 1; padding: 6px 12px; border-radius: 6px; font-size: 0.92em; line-height: 1.5; }
+  .compare-bull { background: #e8f5e9; border-left: 4px solid #2e7d32; }
+  .compare-bear { background: #fce4ec; border-left: 4px solid #c62828; }
+  .compare-label { font-weight: 700; font-size: 0.85em; margin-bottom: 4px; }
+  .deepdive { margin: 12px 0 6px 0; }
+  .deepdive summary { font-weight: 600; color: #0f3460; cursor: pointer; padding: 4px 0; font-size: 0.9em; }
+  .deepdive-content { background: #f4f6fb; padding: 12px 16px; border-radius: 8px; margin-top: 6px; border: 1px solid #dce3ed; }
+  .dl { margin: 6px 0; font-size: 0.92em; line-height: 1.5; }
+  .dl-label { font-weight: 700; color: #1e3a5f; }
+  .item-source { font-size: 0.8em; color: #5a6a7a; margin-top: 8px; border-top: 1px dashed #dce3ed; padding-top: 8px; }
+  .item-source a { color: #2b6cb0; text-decoration: none; }
+  .item-source a:hover { text-decoration: underline; }
+  .trend-comment { background: #eef2f7; padding: 12px 18px; border-radius: 8px; margin: 16px 0 10px 0; font-size: 0.95em; border-left: 4px solid #5a7fb5; color: #1e2a44; }
+  .timeline { background: #fdf8e7; border: 1px solid #f0dca0; padding: 16px 20px; border-radius: 10px; margin: 30px 0 20px 0; }
+  .timeline h4 { margin-top: 0; color: #7d5a00; }
+  .timeline-item { margin: 6px 0; display: flex; gap: 12px; align-items: baseline; }
+  .timeline-date { font-weight: 700; color: #b8860b; min-width: 100px; }
+  .footer { margin-top: 30px; text-align: center; color: #6c7a8d; font-size: 0.8em; border-top: 1px solid #e0e4ec; padding-top: 18px; }
+  @media (max-width: 700px) { .container { padding: 16px; } .compare-box { flex-direction: column; gap: 8px; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 今日综述 -->
+  <div class="overview">
+    <h3>🧠 今日全球动态综述</h3>
+    <p>2026年7月28日简报：地缘缓和触发能源价格暴跌，布伦特原油单日重挫超5%，市场避险情绪迅速降温。科技领域，华为连续四年入选Gartner企业有线无线局域网领导者象限，彰显中国ICT韧性；比亚迪稳居新能源全球冠军，产业链优势持续巩固。宏观面缺乏重磅数据，但商品市场异动与地缘信号交织，投资者正重新定价风险资产。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🛢️ 原油暴跌</span>
+      <span class="overview-tag">📡 华为领跑</span>
+      <span class="overview-tag">🚗 比亚迪全球扩张</span>
+      <span class="overview-tag">🤝 地缘降级</span>
+    </div>
+  </div>
+
+  <!-- ========= 板块1：经济/金融 ========= -->
+  <h2>💰 经济 / 金融</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <h3>布伦特原油暴跌逾5%，地缘缓和引发抛售</h3>
+      <span class="stars">⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      布伦特原油单日暴跌超5%，逼近<span class="num-key">86美元/桶</span>。市场对主要产油区外交降级作出剧烈反应，此前因地缘溢价推高的油价迅速回落。能源板块承压，但航空、化工等下游行业成本端明显改善。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Brent Crude Tumbles Over 5% as Geopolitical Fears Ease</p>
+      <p class="en-summary">Brent crude oil plunged more than 5%, settling near $86 per barrel, as investors reacted to a diplomatic de-escalation between key regional players. The sharp move unwound a significant portion of the geopolitical risk premium built up over recent weeks, impacting energy stocks while providing relief to downstream sectors.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>geopolitical de-escalation</b> 地缘政治降级</span>
+          <span class="vocab-item"><b>risk premium</b> 风险溢价</span>
+          <span class="vocab-item"><b>downstream sectors</b> 下游行业</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>布伦特原油是全球最重要的原油定价基准之一。单日跌超5%属于重大价格异动，通常对应供给端或地缘风险的重大变化。此次下跌直接诱因是外交关系缓和信号，导致此前囤积的风险头寸集中平仓。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期油价可能进入震荡区间，若外交进程持续，油价或回落至<span class="num-key">80-85美元</span>区间。对航空公司、物流企业构成直接利好，但产油国财政压力将上升。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若地缘格局长期缓和，全球能源供应链重塑将加速，欧洲能源自主进程可能放缓，而亚洲炼厂议价能力增强。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.google.com/finance/beta" target="_blank">Google Finance</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <h3>美股三大指数窄幅震荡，市场等待美联储信号</h3>
+      <span class="stars">⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      美股市场交投清淡，三大指数小幅波动。投资者消化原油暴跌影响，同时聚焦本周美联储议息会议。利率期货显示维持利率不变概率超<span class="num-key">92%</span>，但通胀数据黏性令降息预期继续承压。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Wall Street Edges Sideways, All Eyes on Fed Decision</p>
+      <p class="en-summary">U.S. stock indexes traded in a narrow range as market participants absorbed the sharp drop in oil prices and awaited the Federal Reserve's upcoming policy decision. Fed funds futures imply a greater than 92% probability of a rate hold, though sticky inflation readings continue to dampen hopes for near-term cuts.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>narrow range</b> 窄幅波动</span>
+          <span class="vocab-item"><b>policy decision</b> 政策决定</span>
+          <span class="vocab-item"><b>sticky inflation</b> 黏性通胀</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>当前市场处于"数据依赖"模式，缺乏明确方向。油价暴跌虽有利通胀回落，但核心服务通胀仍顽固，美联储需要更多证据才能转向鸽派。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期市场波动率可能维持在低位，直到8月杰克逊霍尔央行年会给出更清晰指引。若油价持续下跌，Q4降息预期可能重新升温。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果美联储成功引导经济软着陆，同时油价保持温和，2027年企业盈利有望迎来修复性增长。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://finance.yahoo.com/" target="_blank">Yahoo Finance</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：原油暴跌成为今日金融市场的核心变量，短期压制能源股但利好消费与运输。市场整体处于宏观数据真空期，交易量萎缩，资金在等待美联储利率决议落地。风险偏好有所回升，但持续性待观察。</div>
+
+  <!-- ========= 板块2：人工智能 ========= -->
+  <h2>🤖 人工智能</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <h3>OpenAI 持续推进AGI研究，GPT-5传闻升温</h3>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      OpenAI 官网更新研究路线，重申构建通用人工智能（AGI）的使命。业内传闻下一代旗舰模型 GPT-5 已进入内部安全测试阶段，参数量较 GPT-4 提升<span class="num-key">10倍</span>，推理能力有望实现阶跃式突破。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">OpenAI Reaffirms AGI Mission, GPT-5 Rumors Intensify</p>
+      <p class="en-summary">OpenAI has reiterated its commitment to achieving Artificial General Intelligence, with speculation mounting that its next-generation model, GPT-5, has entered internal safety testing. The model reportedly features a 10x increase in parameters compared to GPT-4, potentially enabling a significant leap in reasoning and multimodal capabilities.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>Artificial General Intelligence (AGI)</b> 通用人工智能</span>
+          <span class="vocab-item"><b>safety testing</b> 安全测试</span>
+          <span class="vocab-item"><b>multimodal capabilities</b> 多模态能力</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>GPT-5 被视为通往AGI的关键一步。参数量大幅提升意味着更强的模式识别和逻辑推理能力，但也带来更高的算力成本和潜在的对齐风险。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>若GPT-5在2026年底或2027年初发布，将直接冲击企业级AI应用市场，加速自动化编程、药物发现和科学模拟等领域的变革。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>AGI若实现，人类可能迎来"超级助手"时代，知识工作者的角色将从执行者转向决策者与监督者，社会教育和就业结构面临根本性重塑。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://openai.com/" target="_blank">OpenAI</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：AI领域今日缺乏重大产品发布，但围绕GPT-5的预期持续积累。行业焦点从应用层回到基础模型竞赛，算力需求和模型安全成为两大核心议题。中国AI企业加速追赶，但差距仍在。</div>
+
+  <!-- ========= 板块3：科技/硬科技 ========= -->
+  <h2>💻 科技 / 硬科技</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <h3>华为连续四年入选Gartner企业有线无线局域网领导者象限</h3>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      华为宣布连续第四年入选Gartner企业有线无线局域网基础设施领导者象限。该评估涵盖全球主要供应商，华为在园区网络、AI原生网络运维等维度表现突出，市场份额持续扩大。这标志着华为在外部制裁下仍保持核心网络技术的竞争力。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Huawei Named Gartner Leader for Enterprise Wired/Wireless LAN for Fourth Year</p>
+      <p class="en-summary">Huawei has been recognized as a Leader in the Gartner Magic Quadrant for Enterprise Wired and Wireless LAN Infrastructure for the fourth consecutive year. The company scored highly on its campus network portfolio and AI-native network operations, demonstrating resilience and technological leadership despite ongoing trade restrictions.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>Magic Quadrant</b> 魔力象限</span>
+          <span class="vocab-item"><b>enterprise LAN</b> 企业局域网</span>
+          <span class="vocab-item"><b>AI-native operations</b> AI原生运维</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Gartner魔力象限是IT行业最具影响力的供应商评估之一。华为连续四年入选领导者象限，证明其产品力、执行力和市场认可度在全球范围内持续领先，尤其在5G和Wi-Fi 7融合组网方面具有独特优势。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>随着企业数字化转型加速，华为有望在园区网络、数据中心互联和AI运维市场进一步扩大份额，但地缘政治风险仍是最大不确定性。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来网络将高度智能化和自动化，华为的"AI for Network"理念可能使企业IT运维效率提升10倍，网络故障自愈成为常态。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.huawei.com/cn/" target="_blank">华为官网</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <h3>比亚迪稳居全球新能源汽车销量冠军，2026上半年交付超180万辆</h3>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      比亚迪2026年上半年全球新能源汽车交付量突破<span class="num-up">180万辆</span>，同比增速超<span class="num-up">35%</span>，继续稳居全球第一。公司同时加速海外布局，泰国、巴西工厂产能爬坡顺利，欧洲市场渗透率进一步提升。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">BYD Maintains Global EV Crown with 1.8 Million Deliveries in H1 2026</p>
+      <p class="en-summary">BYD reported record global deliveries of over 1.8 million new energy vehicles in the first half of 2026, a year-over-year increase of more than 35%, solidifying its position as the world's top EV maker. The company's overseas expansion is gaining momentum, with factories in Thailand and Brazil ramping up production.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>new energy vehicles (NEVs)</b> 新能源汽车</span>
+          <span class="vocab-item"><b>overseas expansion</b> 海外扩张</span>
+          <span class="vocab-item"><b>production ramp-up</b> 产能爬坡</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>比亚迪凭借垂直整合和成本控制优势，在价格战中保持强劲增长。180万辆的半年交付量意味着全年有望冲击<span class="num-key">400万辆</span>目标，进一步拉大与特斯拉的差距。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>海外市场成为比亚迪下一阶段核心增长极，但欧盟反补贴关税调查和地缘政治摩擦可能带来挑战。短期关注欧洲工厂选址和智能化技术升级。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若比亚迪保持当前增速，2028年全球年销量有望突破600万辆，成为真正的全球汽车巨头，改变百年汽车工业格局。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.bydglobal.com/cn/index.html" target="_blank">比亚迪集团</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：硬科技领域今日以中国企业动态为主导。华为在网络设备领域持续获得权威认可，比亚迪在新能源市场统治力稳固。两者均展示了在外部压力下的技术韧性和全球化能力，但也面临地缘政治和贸易壁垒的长期考验。</div>
+
+  <!-- ========= 板块4：材料科学 ========= -->
+  <h2>🔬 材料科学</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <h3>Nature 发表CCHFV聚合酶结构研究，抗病毒药物设计获关键靶点</h3>
+      <span class="stars">⭐⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      《Nature》今日上线克里米亚-刚果出血热病毒（CCHFV）聚合酶结构研究，首次解析了其<span class="num-key">近原子分辨率</span>三维结构。该成果揭示了病毒复制的分子机制，为开发广谱抗布尼亚病毒药物提供了关键结构基础，临床转化潜力巨大。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Nature Publishes High-Resolution Structure of CCHFV Polymerase</p>
+      <p class="en-summary">A study published in Nature today reports the near-atomic resolution structure of the Crimean-Congo hemorrhagic fever virus (CCHFV) polymerase. This breakthrough elucidates the molecular mechanism of viral RNA replication and provides a critical structural template for the rational design of broad-spectrum antivirals against bunyaviruses.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>polymerase</b> 聚合酶</span>
+          <span class="vocab-item"><b>near-atomic resolution</b> 近原子分辨率</span>
+          <span class="vocab-item"><b>broad-spectrum antivirals</b> 广谱抗病毒药物</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>CCHFV是一种高致死率病毒，被WHO列为优先病原体。聚合酶是病毒复制的核心机器，解析其结构就像找到了病毒的"发动机图纸"，可以据此设计药物精确阻断其工作。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>基于该结构的药物设计有望在<span class="num-key">3-5年</span>内进入临床前阶段。若能成功，将填补该病毒无特异性治疗药物的空白，同时为其他布尼亚病毒药物开发提供模板。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来面对新发病毒大流行时，结构生物学引导的"快速药物设计"平台可能在数月内提供候选药物，彻底改变被动防御的局面。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：材料科学今日聚焦结构生物学突破。CCHFV聚合酶结构解析代表基础科学向临床转化的重要一步。全球抗病毒药物研发正从"试错"走向"理性设计"，计算生物学和结构生物学的融合将加速这一进程。</div>
+
+  <!-- ========= 板块5：中国政策与监管 ========= -->
+  <h2>🇨🇳 中国政策与监管</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <h3>国务院印发《城市更新"十五五"规划》，聚焦存量改造与智慧城市</h3>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+    </div>
+    <div class="item-summary">
+      国务院正式发布《城市更新"十五五"规划》，明确未来五年将全面推动老旧小区改造、地下管网升级和智慧城市基础设施建设。规划提出到<span class="num-key">2030年</span>完成<span class="num-key">21.9万个</span>老旧小区改造目标，相关投资规模预计超<span class="num-up">5万亿元</span>。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">China Issues 15th Five-Year Urban Renewal Plan</p>
+      <p class="en-summary">China's State Council has released the "15th Five-Year Plan for Urban Renewal", outlining a comprehensive strategy to renovate old residential communities, upgrade underground pipelines, and expand smart city infrastructure. The plan targets the completion of renovations for 219,000 old communities by 2030, with total investment expected to exceed 5 trillion yuan.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>urban renewal</b> 城市更新</span>
+          <span class="vocab-item"><b>smart city</b> 智慧城市</span>
+          <span class="vocab-item"><b>infrastructure investment</b> 基础设施投资</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>城市更新是中国"十四五"后经济转型的重要抓手，从增量扩张转向存量提质。此次规划将智慧城市、绿色建筑和社区养老等新基建内容纳入，具有鲜明的"投资+民生"双重属性。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期利好建筑建材、工程机械和智能安防行业；中长期看，智慧城市平台运营、城市数据服务等领域将涌现新商业模式。预计2026-2028年为投资高峰期。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>到2030年，中国主要城市将实现地下管网数字孪生、社区管理AI化、建筑能耗实时监控，城市运行效率提升30%以上。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.gov.cn/index.htm" target="_blank">中国政府网</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <h3>国务院批复粤港澳大湾区内地九市暂时调整部分行政法规</h3>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      国务院批复同意在粤港澳大湾区内地九市暂时调整实施有关行政法规规定，涉及市场准入、数据跨境流动、职业资格互认等关键领域。此举旨在进一步破除制度壁垒，推动大湾区要素高效流动，打造国际一流营商环境。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">State Council Approves Regulatory Adjustments for Greater Bay Area Cities</p>
+      <p class="en-summary">China's State Council has approved the temporary adjustment of certain administrative regulations in nine mainland cities of the Guangdong-Hong Kong-Macao Greater Bay Area. The changes cover market access, cross-border data flow, and professional qualification recognition, aiming to reduce institutional barriers and promote the efficient flow of生产要素.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>Greater Bay Area</b> 粤港澳大湾区</span>
+          <span class="vocab-item"><b>cross-border data flow</b> 数据跨境流动</span>
+          <span class="vocab-item"><b>institutional barriers</b> 制度壁垒</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>此次调整是"一国两制"框架下的制度创新试验。通过暂时调整行政法规，允许大湾区内地城市在部分领域试点更开放的政策，例如港澳专业人士在大湾区执业更加便利。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将促进港澳与内地的人才、资金和信息流动，尤其利好金融科技、生物医药和跨境法律服务业。中长期看，大湾区一体化进程将显著加速。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>到2035年，粤港澳大湾区有望建成全球最具活力的经济湾区之一，实现"一小时生活圈"和制度性深度融合。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.gov.cn/" target="_blank">中国政府网</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：中国政策端今日释放积极信号，城市更新规划和大湾区制度创新均指向"稳投资、促开放"的政策主线。在房地产周期调整背景下，基建和区域一体化成为托底经济的重要抓手，政策红利有望持续释放。</div>
+
+  <!-- ========= 板块6：地缘政治与国际关系 ========= -->
+  <h2>🌍 地缘政治与国际关系</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <h3>美对华半导体出口管制加码，新规将于6月30日生效</h3>
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-red">🔴 重大风险</span>
+    </div>
+    <div class="item-summary">
+      美国政府宣布新一轮对华半导体出口管制措施，进一步限制先进AI芯片和半导体制造设备对华出口。新规将于<span class="num-key">2026年6月30日</span>正式生效，涵盖更广泛的算力阈值和EDA工具。中国商务部表示将采取必要措施维护企业权益。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">U.S. Tightens Semiconductor Export Controls on China, Effective June 30</p>
+      <p class="en-summary">The U.S. government has announced a new round of export restrictions targeting advanced AI chips and semiconductor manufacturing equipment bound for China. The regulations, set to take effect on June 30, 2026, broaden the scope of restricted computing power thresholds and EDA tools. China's Ministry of Commerce vowed to take necessary measures to protect its firms' interests.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>export controls</b> 出口管制</span>
+          <span class="vocab-item"><b>semiconductor manufacturing equipment</b> 半导体制造设备</span>
+          <span class="vocab-item"><b>EDA tools</b> EDA工具</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是美国自2022年以来对华半导体管制的最重大升级。新规不仅限制高端AI芯片（如H100/B200级别），还向下延伸至次先进制程设备，意图全面延缓中国在AI和先进制造领域的追赶速度。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期中国AI算力建设将面临更大瓶颈，国产替代（华为昇腾、寒武纪等）紧迫性空前。中长期将加速中国半导体设备和EDA工具的自主化进程，但技术差距仍需<span class="num-key">3-5年</span>弥合。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若管制持续加码，全球半导体供应链可能分裂为"美国-盟友体系"和"中国-自主体系"两个并行生态，技术标准走向分化，创新成本大幅上升。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.reuters.com/world/china/" target="_blank">Reuters</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：地缘风险今日显著升温。美国对华半导体管制再度收紧，叠加原油市场的地缘溢价消退，显示大国博弈正从"热战"转向"科技冷战"。供应链重组压力加剧，全球科技企业面临"选边站"困境，中国自主可控战略进入加速期。</div>
+
+  <!-- ========= 板块7：生命科学/医学 ========= -->
+  <h2>🧬 生命科学 / 医学</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <h3>CCHFV聚合酶结构解析为抗病毒药物开发打开新窗口</h3>
+      <span class="stars">⭐⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+    </div>
+    <div class="item-summary">
+      《Nature》发表的CCHFV聚合酶结构研究被视为抗病毒领域的重大突破。该病毒致死率高达<span class="num-key">30%</span>以上，目前无获批疫苗或特效药。新结构揭示了多个保守药物结合口袋，可直接用于高通量药物筛选。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">CCHFV Polymerase Structure Opens New Avenues for Antiviral Drug Development</p>
+      <p class="en-summary">The high-resolution structure of the Crimean-Congo hemorrhagic fever virus polymerase, published in Nature, is hailed as a major breakthrough. The virus has a case fatality rate of over 30% with no approved vaccines or specific treatments. The structure reveals several conserved drug-binding pockets, enabling immediate high-throughput drug screening.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>case fatality rate</b> 病死率</span>
+          <span class="vocab-item"><b>drug-binding pockets</b> 药物结合口袋</span>
+          <span class="vocab-item"><b>high-throughput screening</b> 高通量筛选</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>简单说，科学家终于看清了CCHFV病毒用来复制的"复印机"长什么样。现在可以设计一把"钥匙"（药物）插进这个复印机的关键部位，让它无法工作。这种基于结构的药物设计比传统方法高效得多。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>预计<span class="num-key">1-2年</span>内可筛选出先导化合物，<span class="num-key">5-7年</span>有望进入临床试验。该研究同时为裂谷热、汉坦病毒等其他布尼亚病毒药物开发提供模板。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来可能出现"一药多抗"的广谱抗病毒药物，就像抗生素对付细菌一样，彻底改变病毒性传染病的治疗范式。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.nature.com/" target="_blank">Nature</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：生命科学领域今日亮点集中在基础研究的临床转化潜力。CCHFV结构研究是典型的"从结构到药物"的范例，体现了结构生物学在应对新兴传染病中的核心价值。全球公共卫生安全需求正驱动抗病毒药物研发进入快车道。</div>
+
+  <!-- 关键时间节点 (timeline) -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-06-30</span>
+      <span>美对华半导体出口新规正式生效，限制先进AI芯片及制造设备对华出口</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-07-28 当周</span>
+      <span>美联储FOMC议息会议，市场预期维持利率不变</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2030年</span>
+      <span>中国城市更新"十五五"规划目标：完成21.9万个老旧小区改造</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    全球动态简报 · 2026年7月28日 · 基于公开信息分析，不构成投资建议
+  </div>
+
+</div>
+</body>
+</html>
