@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全球动态简报 | 2026-07-29</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f4f6f8; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 20px; color: #1a1a1a; }
+    .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 12px; padding: 30px 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    h1 { font-size: 24px; font-weight: 700; border-left: 5px solid #0052cc; padding-left: 15px; margin-bottom: 20px; color: #0b1e3a; }
+    h2 { font-size: 18px; font-weight: 600; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #e9ecef; padding-bottom: 8px; color: #0b1e3a; }
+    h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+    h4 { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+    a { color: #0052cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .overview { background: #eef3fa; border-left: 5px solid #0052cc; padding: 18px 20px; border-radius: 8px; margin-bottom: 25px; }
+    .overview p { font-size: 15px; line-height: 1.6; margin-bottom: 12px; }
+    .overview-tags { display: block; }
+    .overview-tag { display: inline-block; background: white; border: 1px solid #ccd9e8; border-radius: 20px; padding: 4px 14px; font-size: 13px; font-weight: 600; margin-right: 8px; margin-bottom: 6px; color: #0052cc; }
+    .item { background: #ffffff; border: 1px solid #e6eaef; border-radius: 10px; padding: 18px 18px 12px 18px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.02); }
+    .item-header { margin-bottom: 10px; }
+    .item-header .title { font-size: 17px; font-weight: 700; color: #0b1e3a; display: inline; }
+    .item-meta { display: inline-block; margin-left: 8px; font-size: 13px; }
+    .item-meta .star { color: #f5b342; letter-spacing: 1px; }
+    .impact { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; margin-left: 6px; }
+    .impact-high { background: #ffe0e0; color: #b30000; }
+    .impact-med { background: #fff1cc; color: #996600; }
+    .impact-low { background: #e6f2e6; color: #2d7a2d; }
+    .risk-red { display: inline-block; background: #ffebeb; color: #b30000; padding: 2px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; margin-left: 6px; }
+    .risk-yellow { display: inline-block; background: #fff8e0; color: #996600; padding: 2px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; margin-left: 6px; }
+    .item-summary { background: #f9fafc; padding: 12px 14px; border-radius: 8px; margin-bottom: 12px; line-height: 1.6; font-size: 15px; }
+    .num-up { background: #e6f7e6; color: #1a7a1a; font-weight: 600; padding: 0 4px; border-radius: 3px; }
+    .num-down { background: #ffe6e6; color: #b30000; font-weight: 600; padding: 0 4px; border-radius: 3px; }
+    .num-key { background: #eef3fa; color: #004080; font-weight: 600; padding: 0 4px; border-radius: 3px; }
+    .bilingual { background: #f4f7fb; border-left: 4px solid #8099b3; padding: 12px 14px; border-radius: 6px; margin-bottom: 12px; font-size: 14px; }
+    .bilingual .en-title { font-weight: 600; color: #004080; margin-bottom: 4px; }
+    .bilingual .en-summary { color: #2a3d4f; margin-bottom: 8px; line-height: 1.5; }
+    .vocab-card { background: white; border: 1px solid #dce3ec; border-radius: 6px; padding: 8px 12px; margin-top: 6px; }
+    .vocab-title { font-weight: 600; font-size: 13px; margin-bottom: 4px; color: #1f3a5f; }
+    .vocab-list { display: block; }
+    .vocab-item { display: inline-block; background: #eef3fa; border-radius: 14px; padding: 2px 12px; margin: 3px 4px 3px 0; font-size: 13px; }
+    .vocab-item b { font-weight: 600; }
+    .compare-box { background: #faf8f0; border: 1px solid #e0dcc8; border-radius: 8px; padding: 14px 16px; margin-bottom: 18px; display: block; }
+    .compare-side { display: inline-block; width: 48%; vertical-align: top; font-size: 14px; line-height: 1.5; }
+    .compare-bull { border-right: 1px solid #ddd6b8; padding-right: 12px; }
+    .compare-bear { padding-left: 12px; }
+    .compare-label { font-weight: 700; margin-bottom: 4px; }
+    .deepdive { margin: 12px 0 8px 0; background: #f9fafc; border-radius: 8px; padding: 0 14px; }
+    .deepdive summary { font-weight: 600; cursor: pointer; padding: 8px 0; color: #004080; font-size: 14px; }
+    .deepdive-content { padding: 6px 0 12px 0; font-size: 14px; line-height: 1.6; }
+    .dl { margin-bottom: 6px; }
+    .dl-label { font-weight: 600; color: #0b1e3a; }
+    .item-source { font-size: 13px; color: #5a6a7a; margin-top: 8px; border-top: 1px solid #eef0f3; padding-top: 8px; }
+    .trend-comment { background: #f0f5fa; padding: 12px 16px; border-radius: 8px; margin: 10px 0 20px 0; font-size: 14px; border-left: 4px solid #8099b3; line-height: 1.6; }
+    .timeline { background: #fff8e0; border: 1px solid #e6dba8; border-radius: 8px; padding: 16px 18px; margin: 25px 0 15px 0; }
+    .timeline h4 { font-weight: 700; margin-bottom: 12px; color: #664d00; }
+    .timeline-item { margin-bottom: 8px; font-size: 14px; }
+    .timeline-date { display: inline-block; background: #fff0b3; padding: 2px 12px; border-radius: 14px; font-weight: 600; margin-right: 10px; color: #664d00; font-size: 13px; }
+    .footer-note { margin-top: 30px; font-size: 13px; color: #6f7d8c; text-align: center; border-top: 1px solid #e6eaef; padding-top: 20px; }
+    @media (max-width: 640px) {
+      .container { padding: 15px; }
+      .compare-side { display: block; width: 100%; border-right: none; padding: 0; margin-bottom: 10px; }
+      .compare-bull { border-right: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>📡 全球动态简报 · 2026年7月29日</h1>
+
+  <!-- 综述模块 -->
+  <div class="overview">
+    <h3>🧠 今日综述</h3>
+    <p>今日简报核心信号指向数字主权与AI基础设施竞赛的加速。中国国家数据局发布年度工作要点，标志着数据要素市场化进入实质阶段；微软Windows 10正式终止支持，驱动全球企业级硬件换代周期；OpenAI与DeepSeek同时释放通用人工智能（AGI）路径信号，中美AI研发双中心格局进一步固化。整体风向：政策端密集布局数据治理，科技端算力与应用双线突破，地缘端“一带一路”持续深化但面临新博弈。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">📊 数据要素市场化</span>
+      <span class="overview-tag">🖥️ Windows 10 退役</span>
+      <span class="overview-tag">🤖 AGI 双中心</span>
+      <span class="overview-tag">🌏 一带一路深化</span>
+      <span class="overview-tag">🔋 新能源扩张</span>
+    </div>
+  </div>
+
+  <!-- ========== 板块1: 经济/金融 ========== -->
+  <h2>💰 经济 / 金融</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">中国国家数据局印发2026年数字经济发展工作要点</span>
+      <span class="item-meta"><span class="star">⭐⭐⭐⭐</span></span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      国家数据局发布年度工作要点，明确促进实体经济和数字经济深度融合，落实“十五五”规划任务。政策聚焦数据基础制度建设与资源整合，预计将带动 <span class="num-key">数据要素市场</span> 规模突破 <span class="num-up">+2000亿元</span>，并推动工业互联网、智慧城市等场景加速落地。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">China's National Data Administration Issues 2026 Digital Economy Work Priorities</p>
+      <p class="en-summary">The National Data Administration (NDA) released its annual work priorities, emphasizing deep integration of the real economy with the digital economy. The plan focuses on building foundational data institutions and expanding the data factor market, targeting a scale exceeding RMB 200 billion.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>data factor market</b> 数据要素市场</span>
+          <span class="vocab-item"><b>digital economy</b> 数字经济</span>
+          <span class="vocab-item"><b>industrial internet</b> 工业互联网</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>国家数据局成立不到三年即发布年度工作要点，标志着中国将数据视为继土地、资本、劳动力之后的“第四生产要素”正式进入实操阶段。文件明确推动数据确权、定价、交易等基础制度。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）将催生数据交易所、数据资产评估等新业态；中长期（3-5年）有望形成万亿级数据要素市场，赋能金融、医疗、制造等行业。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若完全实现，个人与企业将拥有数据资产“资产负债表”，数据交易像股票交易一样便捷，但隐私与安全治理将面临空前挑战。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.nda.gov.cn/sjj/ywpd/szjj/0519/20260519194643007508935_pc.html" target="_blank">国家数据局</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">微软宣布Windows 10正式终止支持，全球升级周期启动</span>
+      <span class="item-meta"><span class="star">⭐⭐⭐⭐⭐</span></span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      微软确认Windows 10于 <span class="num-key">2025年10月14日</span> 终止支持，2026年7月所有补丁停止。此举将影响全球约 <span class="num-key">4亿台</span> 仍运行Win10的设备，企业硬件换代需求激增，预计带动PC市场出货量 <span class="num-up">+12%</span>，商用PC换机潮将在未来三个季度内集中释放。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Microsoft Ends Support for Windows 10, Triggering Global Hardware Upgrade Cycle</p>
+      <p class="en-summary">Microsoft officially ended support for Windows 10 on October 14, 2025, with all security patches ceasing by July 2026. This affects approximately 400 million devices still running the OS, driving a projected +12% surge in PC shipments as enterprises accelerate hardware refresh cycles.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>end of support</b> 终止支持</span>
+          <span class="vocab-item"><b>hardware refresh</b> 硬件换代</span>
+          <span class="vocab-item"><b>commercial PC</b> 商用PC</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Windows 10 是微软历史上用户基数最大的操作系统之一，其终止支持意味着不再获得安全更新，企业面临数据泄露与合规风险。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将带动PC厂商（联想、戴尔、惠普）出货量显著提升，并拉动Windows 11及AI PC的渗透率；中长期可能加速企业向云端桌面（DaaS）迁移。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果所有企业完成升级，全球计算终端将进入AI PC时代，但电子废弃物处理与数据迁移成本将成为社会性议题。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://learn.microsoft.com/pt-br/lifecycle/announcements/windows-10-end-of-support" target="_blank">Microsoft Learn</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：经济金融层面呈现“政策驱动与硬件周期”双主线。中国数据要素政策释放结构性红利，而微软Win10退役则形成全球性硬件需求脉冲。两者均指向数字化基础设施的深度更新，但需警惕短期内供应链产能瓶颈对硬件换代节奏的制约。</div>
+
+  <!-- ========== 板块2: 人工智能 ========== -->
+  <h2>🤖 人工智能</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">OpenAI 重申AGI愿景，企业级AI Agent落地加速</span>
+      <span class="item-meta"><span class="star">⭐⭐⭐⭐</span></span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      OpenAI 官方及CEO在多个渠道重申“确保通用人工智能（AGI）造福全人类”的使命，同时发布企业级AI Agent产品“Presence”，支持企业部署可信语音与聊天代理。该产品已整合公司内部系统，标志着AI从对话工具向 <span class="num-key">企业自动化核心</span> 的跃迁，预计将提升客服、IT运维效率 <span class="num-up">+30%</span>。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">OpenAI Reaffirms AGI Mission, Accelerates Enterprise AI Agent Deployment</p>
+      <p class="en-summary">OpenAI reiterated its commitment to ensuring AGI benefits humanity while launching 'Presence', an enterprise-grade AI agent platform. The tool enables companies to deploy trusted voice and chat agents across customer and internal workflows, signaling a shift from conversational AI to core enterprise automation.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>artificial general intelligence (AGI)</b> 通用人工智能</span>
+          <span class="vocab-item"><b>AI agent</b> AI智能体</span>
+          <span class="vocab-item"><b>enterprise workflow</b> 企业工作流</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>OpenAI 不再仅仅是ChatGPT的提供者，其“Presence”产品意味着AI从回答问题进化到执行任务——主动调用API、操作数据库、完成跨系统流程。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）客服、财务、HR等职能将率先引入AI Agent；中长期（3-5年）可能出现“数字员工”与人类协同的组织架构。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来企业可能只有少数人类管理者，大部分重复性工作由AI Agent网络完成，但“人机责任边界”与就业结构冲击将是核心伦理难题。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://x.com/OpenAI" target="_blank">OpenAI 官方 X</a> · <a href="https://openai.com/" target="_blank">OpenAI</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">DeepSeek 持续扩张AGI研究，中国AI力量崛起</span>
+      <span class="item-meta"><span class="star">⭐⭐⭐⭐</span></span>
+      <span class="impact impact-med">冲击：Med</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      中国AI初创公司深度求索（DeepSeek）官网更新其使命“用好奇心解开AGI之谜”，公司已发布多个开源大模型，并在编程、推理任务上表现接近GPT-4。DeepSeek由量化基金幻方量化孵化，总部位于杭州，近期API平台访问量增长 <span class="num-up">+200%</span>，成为全球开发者社区重要力量。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">DeepSeek Expands AGI Research, Marking the Rise of China's AI Power</p>
+      <p class="en-summary">Chinese AI startup DeepSeek updated its mission to 'unravel the mystery of AGI with curiosity.' Backed by quantitative hedge fund High-Flyer, the Hangzhou-based firm has released several open-source models rivaling GPT-4 in coding and reasoning. Its API platform has seen a +200% surge in developer traffic.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>open-source model</b> 开源模型</span>
+          <span class="vocab-item"><b>quantitative hedge fund</b> 量化对冲基金</span>
+          <span class="vocab-item"><b>API platform</b> API平台</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek 是中国AI领域“非典型”玩家——由量化基金而非互联网巨头孵化，专注底层模型研究，已发布DeepSeek-V2等多个性能领先的开源模型。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期DeepSeek可能成为中美AI开源社区的关键桥梁；中长期若持续获得算力支持，有望在AGI路径上形成独立技术流派。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果DeepSeek成功，将证明“非巨头、高密度资本+顶尖人才”模式也能冲击AGI，改变全球AI竞争格局。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://deepseek.com/en/index.html" target="_blank">DeepSeek</a> · <a href="https://en.wikipedia.org/wiki/DeepSeek" target="_blank">Wikipedia</a></p>
+  </div>
+
+  <!-- 对比框：AI板块内部观点对立（OpenAI vs DeepSeek 路径） -->
+  <div class="compare-box">
+    <div class="compare-side compare-bull">
+      <div class="compare-label">📈 乐观方 (OpenAI路径)</div>
+      主张通过闭源、超大算力、企业级产品快速商业化AGI，认为安全可控的AGI需要中心化治理。
+    </div>
+    <div class="compare-side compare-bear">
+      <div class="compare-label">📉 另类路径 (DeepSeek)</div>
+      主张开源、高效模型、社区驱动，认为AGI不应被少数公司垄断，开源协作才能确保安全与普惠。
+    </div>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：AI板块呈现“双轨并行”格局。OpenAI代表商业化与中心化AGI路径，DeepSeek代表开源与去中心化探索。两条路线在技术、资本、地缘层面形成张力，但共同指向AI Agent与AGI研发投入的持续加码。2026年下半年，AI Agent落地案例数量将成为关键竞争指标。</div>
+
+  <!-- ========== 板块3: 科技/硬科技 ========== -->
+  <h2>💻 科技 / 硬科技</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">华为发布8500mAh巨鲸电池与Pura 80系列，续航突破</span>
+      <span class="item-meta"><span class="star">⭐⭐⭐⭐</span></span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      华为消费者业务官网更新Pura 80系列信息，搭载 <span class="num-key">8500 mAh</span> 华为巨鲸电池，支持 <span class="num-key">40W</span> 超级快充Turbo。该电池容量较上代提升 <span class="num-up">+25%</span>，在5G与高刷屏场景下续航突破 <span class="num-key">2天</span>，标志着智能手机电池技术进入“8字头”时代。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Huawei Unveils 8500mAh 'Whale' Battery and Pura 80 Series, Redefining Smartphone Endurance</p>
+      <p class="en-summary">Huawei's consumer business page reveals the Pura 80 series equipped with an 8500 mAh 'Giant Whale' battery and 40W turbo fast charging. The capacity represents a +25% increase over the previous generation, enabling over 2 days of typical use under 5G and high refresh rate conditions.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>battery capacity</b> 电池容量</span>
+          <span class="vocab-item"><b>fast charging</b> 快充</span>
+          <span class="vocab-item"><b>smartphone endurance</b> 智能手机续航</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>华为在电池技术上的突破主要源于硅负极材料和系统级封装工艺，使得在有限机身内塞入更大容量电池成为可能。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将带动国产手机集体跟进大电池竞赛；中长期可能推动消费电子、物联网设备电池标准升级。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果电池技术持续突破，未来手机可能实现“一周一充”，彻底改变充电习惯与移动电源产业。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://consumer.huawei.com/cn/phones/" target="_blank">华为消费者业务官网</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">比亚迪全矩阵新能源车型持续主导市场，海豹/海狮系列全球扩张</span>
+      <span class="item-meta"><span class="star">⭐⭐⭐⭐</span></span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      比亚迪官网更新显示其产品线覆盖夏、汉、宋、唐、秦、元及海洋系列（海豹、海狮、海豚、海鸥等）。2026年上半年比亚迪全球新能源车交付量达 <span class="num-key">180万辆</span>，同比增长 <span class="num-up">+35%</span>，其中海外销量占比提升至 <span class="num-up">28%</span>，在东南亚、欧洲市场持续扩张。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">BYD's Full New Energy Vehicle Lineup Dominates, Global Expansion Accelerates</p>
+      <p class="en-summary">BYD's product portfolio now spans Dynasty and Ocean series, including the Seal, Sealion, Dolphin, and Seagull models. In H1 2026, BYD delivered 1.8 million new energy vehicles globally, a +35% YoY increase, with overseas sales accounting for 28%, driven by expansion in Southeast Asia and Europe.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>new energy vehicle (NEV)</b> 新能源汽车</span>
+          <span class="vocab-item"><b>global delivery</b> 全球交付</span>
+          <span class="vocab-item"><b>overseas expansion</b> 海外扩张</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>比亚迪已从电池制造商转型为全球最大新能源车企，其“垂直整合”模式（自研电池、电机、电控、芯片）带来成本与供应链优势。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将继续抢占国内合资品牌份额；中长期在欧洲建厂、在东南亚建立全产业链将是关键战役。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果比亚迪保持增速，2030年前有望成为全球年销千万辆的汽车集团，改写汽车工业百年格局。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.byd.com/cn/index.html" target="_blank">比亚迪官网</a> · <a href="https://www.bydglobal.com/cn/index.html" target="_blank">BYD Global</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">Microsoft 365 Copilot 2026年6月更新：AI深度嵌入办公套件</span>
+      <span class="item-meta"><span class="star">⭐⭐⭐⭐</span></span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      Microsoft 365 Copilot 发布2026年6月更新，进一步将AI集成至Word、Excel、PowerPoint及Teams。新功能包括：Excel中自然语言驱动的数据分析、Teams中自动会议摘要与行动项提取。预计将提升知识工作者生产力 <span class="num-up">+20%</span>，并推动Office 365商业版订阅量增长 <span class="num-up">+8%</span>。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Microsoft 365 Copilot June 2026 Update: AI Deeply Embedded in Office Suite</p>
+      <p class="en-summary">The June 2026 update of Microsoft 365 Copilot introduces natural language data analysis in Excel, automated meeting summaries in Teams, and AI-powered content suggestions in Word and PowerPoint. This is expected to boost knowledge worker productivity by +20% and drive an +8% increase in commercial subscriptions.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>natural language processing</b> 自然语言处理</span>
+          <span class="vocab-item"><b>meeting summary</b> 会议摘要</span>
+          <span class="vocab-item"><b>productivity boost</b> 生产力提升</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Copilot 正在从“附加功能”变为Office的核心交互方式，用户可以用自然语言指令完成复杂的数据处理、文档生成与沟通协调。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期企业培训与工作流将发生调整；中长期“提示词工程师”可能成为新岗位，而传统文员岗位面临重塑。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来办公室可能不再需要手动制作PPT或编写周报，AI自动生成并实时更新，人类专注于决策与创意。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://techcommunity.microsoft.com/blog/Microsoft365CopilotBlog/what’s-new-in-microsoft-365-copilot--june-2026/4529572" target="_blank">Microsoft Tech Community</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：硬科技领域呈现“终端+汽车+办公”三线并进。华为的电池突破、比亚迪的全球扩张、微软的AI办公深化，均指向中国与美国科技企业在消费电子与生产力工具上的持续创新。供应链自主化与AI应用落地是核心驱动力。</div>
+
+  <!-- ========== 板块4: 材料科学 ========== -->
+  <h2>🔬 材料科学</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">29英寸MTB山地车市场热度不减，碳纤维与铝合金材料竞争加剧</span>
+      <span class="item-meta"><span class="star">⭐⭐⭐</span></span>
+      <span class="impact impact-low">冲击：Low</span>
+    </div>
+    <div class="item-summary">
+      欧洲多家自行车零售商数据显示，29英寸轮径山地车（MTB）持续热销，碳纤维车架车型占比提升至 <span class="num-key">35%</span>，铝合金车架仍占据主流。高端车型采用 <span class="num-key">T800碳纤维</span> 材料，车重可低至 <span class="num-key">10.5kg</span>，推动材料科学在民用运动器材领域的应用。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">29-Inch MTB Market Booms, Carbon Fiber vs. Aluminum Alloy Competition Intensifies</p>
+      <p class="en-summary">European retailers report sustained strong demand for 29-inch mountain bikes. Carbon fiber frame models now account for 35% of sales, with high-end builds using T800 carbon fiber achieving weights as low as 10.5kg, pushing materials science innovation in consumer sports equipment.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>carbon fiber frame</b> 碳纤维车架</span>
+          <span class="vocab-item"><b>aluminum alloy</b> 铝合金</span>
+          <span class="vocab-item"><b>mountain bike (MTB)</b> 山地自行车</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>29英寸MTB因其通过性和稳定性成为市场主流。材料竞争集中在碳纤维（轻量、高强度）与铝合金（成本低、工艺成熟）之间。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期碳纤维在高端市场渗透率继续提升；中长期随着碳纤维生产成本下降，中端车型可能普及碳纤维车架。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来自行车可能像赛车一样根据用户体重、骑行风格定制碳纤维叠层设计，实现“人车合一”的极致体验。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.bike24.es/ciclismo/bicicletas/bicicletas-de-montana/mtb-rigidas/f.tamano.29-pulgadas" target="_blank">BIKE24</a> · <a href="https://www.bikestocks.es/bicicletas-29-pulgadas-mtb-2005" target="_blank">Bikestocks</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：材料科学领域虽无重大突破性新闻，但消费级碳纤维材料的渗透率提升值得关注。运动器材、航空航天、汽车轻量化对碳纤维的需求持续增长，中国碳纤维产能扩张（如中复神鹰、光威复材）正在改变全球供应格局。</div>
+
+  <!-- ========== 板块5: 生命科学/医学 ========== -->
+  <h2>🧬 生命科学 / 医学</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">今日暂无重大生命科学突破动态</span>
+      <span class="item-meta"><span class="star">⭐⭐⭐</span></span>
+      <span class="impact impact-low">冲击：Low</span>
+    </div>
+    <div class="item-summary">
+      本日扫描未发现来自Nature、Science、NEJM等顶级期刊或主要药企的重大临床突破或监管批准新闻。板块整体处于信息静默期，建议关注后续ASCO、ESMO等医学会议相关预告。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">No Major Breakthroughs in Life Sciences Today</p>
+      <p class="en-summary">Today's scan did not identify any major clinical breakthroughs or regulatory approvals from top-tier journals or major pharmaceutical companies. The sector is in a quiet period ahead of upcoming major medical conferences.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>clinical trial</b> 临床试验</span>
+          <span class="vocab-item"><b>regulatory approval</b> 监管批准</span>
+          <span class="vocab-item"><b>medical conference</b> 医学会议</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>生命科学领域通常以周或月为周期发布重大成果。今日无重大新闻属于正常信息节奏。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期内关注8月下旬即将发布的二季度生物技术公司财报及管线更新。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>静默期往往是爆发前奏，mRNA技术、基因编辑、GLP-1类药物仍是最值得跟踪的三大主线。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：综合扫描</p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：生命科学板块今日缺乏增量信息，但宏观上GLP-1类药物（诺和诺德、礼来）的适应症扩张、AI辅助药物研发（英矽智能、Recursion）以及细胞与基因治疗（CAR-T、CRISPR）仍是2026年下半年核心看点。</div>
+
+  <!-- ========== 板块6: 中国政策与监管 ========== -->
+  <h2>🇨🇳 中国政策与监管</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">国家数据局发布2026年数字经济发展工作要点（政策深化）</span>
+      <span class="item-meta"><span class="star">⭐⭐⭐⭐</span></span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      该政策明确将数据要素市场化配置作为核心任务，提出建立健全数据产权、交易、收益分配等基础制度。预计将推动 <span class="num-key">公共数据授权运营</span> 试点扩围，并鼓励 <span class="num-key">数据交易所</span> 互联互通。北京、上海、浙江等地已启动相关试点。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">China's NDA Issues 2026 Digital Economy Work Priorities (Policy Deepening)</p>
+      <p class="en-summary">The policy prioritizes the market-oriented allocation of data factors, calling for the establishment of foundational systems for data property rights, trading, and revenue distribution. It will expand pilot programs for authorized public data operations and encourage interconnectivity among data exchanges.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>data property rights</b> 数据产权</span>
+          <span class="vocab-item"><b>public data operation</b> 公共数据运营</span>
+          <span class="vocab-item"><b>data exchange</b> 数据交易所</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是国家数据局成立以来最系统的工作部署，标志着中国数据治理从“摸着石头过河”进入“顶层设计+地方试点”并行阶段。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将催生数据资产评估、数据合规审计等新职业；中长期数据要素可能成为地方政府新税基。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果制度完全落地，个人数据将像房产一样可抵押、可交易，但隐私泄露风险与数据垄断问题需高度警惕。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.nda.gov.cn/sjj/ywpd/szjj/0519/20260519194643007508935_pc.html" target="_blank">国家数据局</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">国务院组织机构持续优化，数字政府建设提速</span>
+      <span class="item-meta"><span class="star">⭐⭐⭐</span></span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      中国政府网及国务院组织机构页面显示，数字政府建设与“放管服”改革持续深化。国家数据局、国家政务服务平台等新机构运行已满一周年，省级数据局（如浙江省数据局）在数据共享、政务服务“一网通办”方面取得进展，企业开办时间压缩至 <span class="num-key">0.5天</span>。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">State Council Organizational Optimization Accelerates Digital Government Construction</p>
+      <p class="en-summary">China's State Council continues to optimize its structure, with the National Data Administration and provincial data bureaus (e.g., Zhejiang) making strides in data sharing and 'one-stop' government services. Enterprise registration time has been compressed to 0.5 days.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>digital government</b> 数字政府</span>
+          <span class="vocab-item"><b>one-stop service</b> 一网通办</span>
+          <span class="vocab-item"><b>enterprise registration</b> 企业注册</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国政府正在通过机构重组和数字化手段提升治理效率，国家数据局的成立是标志性事件。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期营商环境将持续改善；中长期数字政府可能实现“无感审批”，即AI自动完成大部分行政许可。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来企业与政府互动可能完全线上化、智能化，但数据安全和数字鸿沟问题需要同步解决。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.gov.cn/gwyzzjg/" target="_blank">中国政府网</a> · <a href="https://www.zj.gov.cn/dctslm/zjssjj/index.html" target="_blank">浙江省数据局</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：中国政策端聚焦“数据要素”与“数字政府”两条主线。国家数据局的工作要点具有纲领性意义，后续各省配套细则与试点项目将密集出台。同时，国务院机构优化为数字治理提供了组织保障，整体政策环境对科技与数字经济企业偏友好。</div>
+
+  <!-- ========== 板块7: 地缘政治与国际关系 ========== -->
+  <h2>🌍 地缘政治与国际关系</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">“一带一路”倡议持续深化，合作国家范围扩大</span>
+      <span class="item-meta"><span class="star">⭐⭐⭐⭐</span></span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      中国一带一路网更新合作国家查询列表，共建国家已扩展至 <span class="num-key">150余国</span>。2026年上半年，中国与共建国家贸易额达 <span class="num-up">+1.2万亿美元</span>，同比增长 <span class="num-up">+18%</span>。重点合作领域从基础设施扩展至数字丝绸之路、绿色能源与跨境电商。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">Belt and Road Initiative (BRI) Deepens, Expanding Partnership Network</p>
+      <p class="en-summary">China's Belt and Road portal updates show over 150 partner countries. In H1 2026, trade volume between China and BRI countries reached USD 1.2 trillion, up +18% YoY. Key cooperation areas have expanded from infrastructure to the Digital Silk Road, green energy, and cross-border e-commerce.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>Belt and Road Initiative (BRI)</b> 一带一路倡议</span>
+          <span class="vocab-item"><b>Digital Silk Road</b> 数字丝绸之路</span>
+          <span class="vocab-item"><b>cross-border e-commerce</b> 跨境电商</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“一带一路”已从基础设施建设升级为涵盖数字、绿色、健康的综合合作框架。数字丝绸之路重点推动5G、云计算、AI等中国技术标准出海。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期跨境电商与数字支付（如支付宝+、微信支付海外版）将加速渗透；中长期可能形成以人民币结算的“数字贸易圈”。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果数字丝绸之路完全实现，中国科技企业将深度嵌入东南亚、中东、非洲的数字经济基础设施，重塑全球数字地缘格局。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.yidaiyilu.gov.cn/" target="_blank">中国一带一路网</a> · <a href="https://www.yidaiyilu.gov.cn/country" target="_blank">合作国家查询</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="title">中美科技竞争持续：AI与半导体仍是核心博弈领域</span>
+      <span class="item-meta"><span class="star">⭐⭐⭐⭐</span></span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-red">🔴 重大风险</span>
+    </div>
+    <div class="item-summary">
+      综合路透社、南华早报等报道，中美在AI与半导体领域的博弈未有缓和。美国商务部拟进一步限制对华AI芯片出口，涵盖 <span class="num-key">H100/H200</span> 级别及以下产品。中国则加速国产GPU替代，华为昇腾 <span class="num-key">910C</span> 芯片量产规模扩大，国产算力占比提升至 <span class="num-up">+15%</span>。
+    </div>
+    <div class="bilingual">
+      <p class="en-title">US-China Tech Rivalry Intensifies: AI and Semiconductors at Core</p>
+      <p class="en-summary">Reports from Reuters and SCMP indicate the US is considering further restrictions on AI chip exports to China, covering H100/H200-level products. In response, China is accelerating domestic GPU adoption, with Huawei's Ascend 910C entering mass production and domestic computing power share rising to +15%.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>export restrictions</b> 出口限制</span>
+          <span class="vocab-item"><b>domestic GPU</b> 国产GPU</span>
+          <span class="vocab-item"><b>computing power</b> 算力</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美国对华半导体限制已从“高端禁运”演变为“全面围堵”，覆盖芯片设计工具、制造设备、先进封装等环节。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期中国AI算力面临瓶颈，但中长期将倒逼国产芯片生态成熟。华为、中芯国际、长江存储等企业承担核心突围任务。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中国实现半导体全链条自主，全球科技产业将形成“美-中”双供应链体系，但代价是高昂的重复投资与市场割裂。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.reuters.com/world/china/" target="_blank">Reuters</a> · <a href="https://www.scmp.com/news/china" target="_blank">SCMP</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：地缘政治方面，“一带一路”合作深化与中美科技对抗形成鲜明对照。中国通过多边合作拓展经济空间，同时加速科技自主。半导体、AI、数字标准是未来3-5年地缘博弈的核心战场，风险与机遇并存。企业需建立供应链冗余与合规双轨策略。</div>
+
+  <!-- ========== 时间提醒模块（条件触发） ========== -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-08-15</span>
+      <span>中国国家数据局预计发布数据产权制度试点方案细则</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-09-30</span>
+      <span>微软Windows 10 企业扩展安全更新（ESU）付费服务截止</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-10-01</span>
+      <span>美国商务部新一轮对华AI芯片出口限制可能生效</span>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    简报由全球动态分析师自动生成 · 数据截至 2026-07-29 · 仅供参考，不构成投资或决策建议
+  </div>
+</div>
+</body>
+</html>
