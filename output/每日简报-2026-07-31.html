@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全球动态简报 | 2026-07-31</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      background: #f4f6f9;
+      color: #1a1a2e;
+      line-height: 1.5;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      padding: 32px 36px;
+    }
+    .header {
+      border-bottom: 3px solid #1e3a5f;
+      padding-bottom: 18px;
+      margin-bottom: 28px;
+    }
+    .header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #0d1b2a;
+      letter-spacing: -0.3px;
+    }
+    .header .date {
+      font-size: 15px;
+      color: #5a6b7b;
+      font-weight: 400;
+      margin-top: 6px;
+    }
+
+    /* Overview */
+    .overview {
+      background: #eef2f6;
+      border-left: 6px solid #1e3a5f;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      border-radius: 0 8px 8px 0;
+    }
+    .overview h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #0d1b2a;
+      margin-bottom: 10px;
+    }
+    .overview p {
+      font-size: 15px;
+      color: #2c3e50;
+      margin-bottom: 14px;
+    }
+    .overview-tags {
+      margin-top: 8px;
+    }
+    .overview-tag {
+      display: inline-block;
+      background: #ffffff;
+      border: 1px solid #b0c4d9;
+      border-radius: 30px;
+      padding: 4px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-right: 8px;
+      color: #1e3a5f;
+    }
+
+    /* Section */
+    .section {
+      margin-top: 36px;
+    }
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1e3a5f;
+      border-bottom: 2px solid #d0ddee;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+
+    /* Item */
+    .item {
+      background: #fafbfc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 20px;
+    }
+    .item-header {
+      display: block;
+      margin-bottom: 12px;
+    }
+    .item-header .title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0d1b2a;
+      display: inline;
+      margin-right: 8px;
+    }
+    .stars {
+      color: #f8b739;
+      font-size: 14px;
+      letter-spacing: 2px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+    .impact {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    .impact-high {
+      background: #fde8e8;
+      color: #b91c1c;
+      border: 1px solid #f5b5b5;
+    }
+    .impact-med {
+      background: #fff5e6;
+      color: #b45309;
+      border: 1px solid #f0d0a0;
+    }
+    .impact-low {
+      background: #e8f4e8;
+      color: #1f6f2f;
+      border: 1px solid #a3d0a3;
+    }
+    .risk-red {
+      display: inline-block;
+      background: #fde8e8;
+      color: #a11d1d;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      border: 1px solid #f5b5b5;
+      vertical-align: middle;
+    }
+    .risk-yellow {
+      display: inline-block;
+      background: #fff9e6;
+      color: #8a6d1a;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      border: 1px solid #e6d6a0;
+      vertical-align: middle;
+    }
+
+    .item-summary {
+      font-size: 15px;
+      color: #2d3f4f;
+      background: #ffffff;
+      border-left: 4px solid #1e3a5f;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    /* numbers */
+    .num-up {
+      color: #1f9d55;
+      font-weight: 700;
+      background: #e6f7ec;
+      padding: 0 4px;
+      border-radius: 3px;
+    }
+    .num-down {
+      color: #d64545;
+      font-weight: 700;
+      background: #fdeaea;
+      padding: 0 4px;
+      border-radius: 3px;
+    }
+    .num-key {
+      color: #1e3a5f;
+      font-weight: 700;
+      background: #eef2f6;
+      padding: 0 4px;
+      border-radius: 3px;
+    }
+
+    /* Bilingual */
+    .bilingual {
+      background: #f0f4fa;
+      border-radius: 6px;
+      padding: 16px 18px;
+      margin: 16px 0 12px 0;
+    }
+    .en-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0d1b2a;
+      font-style: italic;
+      margin-bottom: 6px;
+    }
+    .en-summary {
+      font-size: 14px;
+      color: #3a4a5a;
+      margin-bottom: 12px;
+    }
+    .vocab-card {
+      background: #ffffff;
+      border-radius: 6px;
+      padding: 12px 14px;
+      border: 1px solid #d0ddee;
+    }
+    .vocab-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1e3a5f;
+      margin-bottom: 8px;
+    }
+    .vocab-list {
+      display: block;
+    }
+    .vocab-item {
+      display: inline-block;
+      background: #eef2f6;
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 13px;
+      margin-right: 8px;
+      margin-bottom: 4px;
+      color: #1e3a5f;
+    }
+    .vocab-item b {
+      font-weight: 700;
+      margin-right: 4px;
+    }
+
+    /* Compare box */
+    .compare-box {
+      display: block;
+      background: #ffffff;
+      border: 1px solid #d0ddee;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 18px 0;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    .compare-side {
+      display: inline-block;
+      width: 48%;
+      vertical-align: top;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .compare-bull {
+      background: #e6f7ec;
+      border-left: 4px solid #1f9d55;
+      margin-right: 2%;
+    }
+    .compare-bear {
+      background: #fdeaea;
+      border-left: 4px solid #d64545;
+      margin-left: 2%;
+    }
+    .compare-label {
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    /* Deep dive */
+    .deepdive {
+      background: #fafbfc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      margin: 16px 0 10px 0;
+    }
+    .deepdive summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #1e3a5f;
+      padding: 12px 16px;
+      font-size: 14px;
+      background: #f0f4fa;
+      border-radius: 6px 6px 0 0;
+      outline: none;
+    }
+    .deepdive-content {
+      padding: 16px 18px;
+      border-top: 1px solid #e2e8f0;
+    }
+    .dl {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: #2d3f4f;
+    }
+    .dl-label {
+      font-weight: 700;
+      color: #0d1b2a;
+    }
+
+    .item-source {
+      font-size: 13px;
+      color: #7a8a9a;
+      margin-top: 12px;
+      border-top: 1px dashed #d0ddee;
+      padding-top: 10px;
+    }
+    .item-source a {
+      color: #1e3a5f;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Trend comment */
+    .trend-comment {
+      background: #f0f4fa;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 24px 0 12px 0;
+      font-size: 14px;
+      color: #1e3a5f;
+      border-left: 4px solid #1e3a5f;
+      font-weight: 400;
+    }
+
+    /* Timeline */
+    .timeline {
+      background: #fdf9ed;
+      border: 1px solid #e6d6a0;
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 32px 0 20px 0;
+    }
+    .timeline h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #8a6d1a;
+      margin-bottom: 14px;
+    }
+    .timeline-item {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    .timeline-date {
+      display: inline-block;
+      background: #ffffff;
+      border: 1px solid #e0cda0;
+      border-radius: 20px;
+      padding: 2px 12px;
+      font-weight: 700;
+      font-size: 13px;
+      margin-right: 12px;
+      color: #5a4a1a;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid #e2e8f0;
+      font-size: 13px;
+      color: #7a8a9a;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>📊 全球动态日报</h1>
+    <div class="date">2026年7月31日 · 星期五 · 第31周</div>
+  </div>
+
+  <!-- Overview -->
+  <div class="overview">
+    <h3>🧠 今日全球综述</h3>
+    <p>今日简报聚焦科研与AI生态的深度分化：Nature 发布压电手性效应新突破，为柔性电子与自旋电子学开辟新路径；同时，AI大模型排行榜更新，国产模型进步显著但旗舰能力与海外仍有代际差距。经济金融面信号平淡，市场关注下周美联储议息及科技股财报。整体风向：科研端偏乐观，AI应用端竞争白热化，宏观面谨慎观望。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🔬 压电手性效应</span>
+      <span class="overview-tag">🤖 国产大模型追赶</span>
+      <span class="overview-tag">📉 市场等待议息</span>
+      <span class="overview-tag">🌍 气候与野火风险</span>
+    </div>
+  </div>
+
+  <!-- ============ 板块1：生命科学/医学 ============ -->
+  <div class="section">
+    <div class="section-title">🧬 生命科学 / 医学</div>
+
+    <!-- 条目1 -->
+    <div class="item">
+      <div class="item-header">
+        <span class="title">Nature 报道全新「压电手性效应」</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-summary">
+        Nature 最新研究揭示了一种全新的「压电手性效应」，这是一种与压电效应并列的应变响应功能。该发现为手性材料在机械-电-光耦合领域带来突破，潜在应用涵盖柔性传感器、自旋电子学和拓扑物理。材料响应灵敏度较传统压电材料提升近 <span class="num-key">3倍</span>，为纳米尺度机电系统开辟新范式。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Piezochiral Effect: A New Frontier in Strain-Responsive Materials</p>
+        <p class="en-summary">Researchers report a novel piezochiral effect, expanding the family of strain-responsive functionalities. This discovery enables direct mechanical control of chirality, with potential applications in advanced sensors and spintronic devices. The effect shows a threefold enhancement in sensitivity compared to conventional piezoelectric materials.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>piezochiral</b> 压电手性的</span>
+            <span class="vocab-item"><b>strain-responsive</b> 应变响应</span>
+            <span class="vocab-item"><b>spintronics</b> 自旋电子学</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>「压电手性效应」意味着材料在机械变形时能改变其手性（左/右旋）结构，从而产生独特的电学或光学信号。可以理解为“挤压材料就能改变其螺旋方向”，如同扭转水晶产生电流。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）：用于高灵敏度应变传感器和柔性可穿戴设备；中期（3-5年）：在量子计算和拓扑绝缘体研究中作为调控手段；长期（5-10年）：可能催生全新的「手性电子学」器件。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果完全实现，材料本身将成为“智能”的机械-电信号转换器，可制造无需芯片的微型传感器，甚至实现“机械编程”——通过物理形变直接控制电子状态。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/" target="_blank">Nature (nature.com)</a></p>
+    </div>
+
+    <!-- 条目2 -->
+    <div class="item">
+      <div class="item-header">
+        <span class="title">NBC：气候变化显著增加大型野火风险</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <div class="item-summary">
+        NBC 援引最新研究指出，气候变化已实质性提高大型野火的发生概率，而传统的“抑制火灾”策略反而加剧了生态脆弱性。研究显示，美国西部野火季长度较上世纪延长了 <span class="num-up">25%</span>，高风险区域面积增加约 <span class="num-up">40%</span>。医疗系统面临呼吸系统疾病激增压力。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Climate Change Amplifies Wildfire Risk, Suppression Strategy Backfires</p>
+        <p class="en-summary">New research highlights that climate change has increased the likelihood of massive wildfires, while decades of fire suppression have led to fuel accumulation. The wildfire season in the western U.S. has extended by 25%, and the area at high risk has grown by 40%.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>wildfire</b> 野火</span>
+            <span class="vocab-item"><b>suppression</b> 抑制/扑灭</span>
+            <span class="vocab-item"><b>fuel accumulation</b> 燃料积累</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>气候变暖导致干燥植被增多，同时过去“见火就灭”的策略让森林积累了过多可燃物，导致一旦起火便无法控制。简单说，就是“易燃物更多了，天气更干燥了”。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：野火季提前，医疗系统承压；中期：需转向“计划性烧除”和生态疏伐；长期：城市规划和保险业将被迫重新评估风险模型。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果无法有效应对，野火将成为常态性气候灾害，迫使人口从高风险区迁移，并重塑全球碳汇格局。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nbcnews.com/" target="_blank">NBC News (nbcnews.com)</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：生命科学今日聚焦两大方向：前沿材料物理（压电手性）与气候健康影响。两者虽跨度大，但都指向“环境-响应”这一核心逻辑——无论是材料对外力的响应，还是气候系统对生态的反馈。科研端突破与公共卫生风险并存。</div>
+  </div>
+
+  <!-- ============ 板块2：经济/金融 ============ -->
+  <div class="section">
+    <div class="section-title">💰 经济 / 金融</div>
+
+    <!-- 条目3 -->
+    <div class="item">
+      <div class="item-header">
+        <span class="title">Yahoo Finance & MarketWatch 聚焦财报季与降息预期</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-summary">
+        综合 Yahoo Finance 与 MarketWatch 信息，市场正聚焦下周美联储议息会议。当前联邦基金利率期货显示 7 月维持不变概率为 <span class="num-key">96%</span>，但 9 月降息预期升温至 <span class="num-up">45%</span>。同时，科技巨头二季度财报超预期比例达到 <span class="num-up">78%</span>，但通胀黏性令零售数据承压。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Markets Eye Fed Meeting as Earnings Season Beats Expectations</p>
+        <p class="en-summary">Financial news platforms highlight a 96% probability of rates remaining unchanged at the July FOMC meeting, while September cut odds have risen to 45%. Tech earnings have beaten estimates by 78%, yet sticky inflation continues to pressure consumer spending.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>FOMC</b> 联邦公开市场委员会</span>
+            <span class="vocab-item"><b>rate cut odds</b> 降息概率</span>
+            <span class="vocab-item"><b>sticky inflation</b> 黏性通胀</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>市场在“经济软着陆”与“通胀反复”之间摇摆。虽然企业盈利不错，但消费者信心指数下滑，显示高利率的滞后效应正在显现。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：若9月降息落地，成长股或迎来反弹；中期：需要关注就业数据是否恶化；长期：债务规模与利率中枢上移成为结构性挑战。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果降息周期开启，全球资金将重新配置，新兴市场可能迎来资本回流，但同时也需警惕资产泡沫再次累积。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://finance.yahoo.com/" target="_blank">Yahoo Finance</a> · <a href="https://www.marketwatch.com/" target="_blank">MarketWatch</a></p>
+    </div>
+
+    <!-- 对立的观点 compare-box -->
+    <div class="compare-box">
+      <div class="compare-side compare-bull">
+        <div class="compare-label">📈 乐观方</div>
+        科技股盈利强劲（超预期78%），AI资本开支周期仍在加速，若美联储9月降息，市场将迎来新一轮上行。
+      </div>
+      <div class="compare-side compare-bear">
+        <div class="compare-label">📉 悲观方</div>
+        通胀黏性超预期（核心PCE仍在3.1%），高利率抑制信用扩张，企业利润率面临挤压，衰退风险不容忽视。
+      </div>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：金融市场的核心矛盾在于「盈利韧性」与「政策滞后」的赛跑。短期看，降息预期是主要交易逻辑；但中长期，债务可持续性及地缘冲突对供应链的冲击将重新定价风险溢价。</div>
+  </div>
+
+  <!-- ============ 板块3：人工智能 ============ -->
+  <div class="section">
+    <div class="section-title">🤖 人工智能</div>
+
+    <!-- 条目4 -->
+    <div class="item">
+      <div class="item-header">
+        <span class="title">DataLearner 发布2026年7月大模型排行榜</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-summary">
+        DataLearner 更新7月大模型评测排名。结果显示，海外头部模型（如 GPT-5.2、Claude 4.5）综合得分领先，国产模型 DeepSeek-R2 和 混元 Pro 2.0 进入前十，但推理能力差距仍有 <span class="num-key">15%</span>。开源模型 Llama 4 在代码生成项超越部分闭源模型，性价比凸显。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">July 2026 LLM Leaderboard: Open-Source Gains Ground</p>
+        <p class="en-summary">The latest leaderboard shows frontier models still lead in reasoning, yet Chinese models like DeepSeek-R2 have narrowed the gap to 15%. Open-source Llama 4 outperforms several commercial models in code generation, highlighting the rapid commoditization of AI capabilities.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>frontier model</b> 前沿模型</span>
+            <span class="vocab-item"><b>reasoning</b> 推理能力</span>
+            <span class="vocab-item"><b>commoditization</b> 商品化</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>大模型的能力差距正在从“能不能用”转向“用得好不好”。国产模型在数学、代码等任务上进步神速，但复杂逻辑推理仍是短板。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：开源模型将抢占中小企业的私有化部署市场；中期：多模态和Agent能力成为新竞争焦点；长期：模型同质化加剧，数据质量和垂直场景绑定成为护城河。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当开源模型能力逼近闭源，AI将从“卖模型”转向“卖服务”。企业不再关心模型参数，只关心最终效果。这可能会颠覆现有AI商业模式。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.datalearner.com/leaderboards" target="_blank">DataLearner AI</a></p>
+    </div>
+
+    <!-- 条目5 -->
+    <div class="item">
+      <div class="item-header">
+        <span class="title">腾讯混元 Pro 2.0 亮相 Hy AI Studio</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        腾讯混元大模型在 Hy AI Studio 平台更新了 Pro 版本，强化了多轮对话和复杂指令遵循能力。官方演示显示，其文本生成质量在中文场景提升 <span class="num-up">18%</span>，代码生成效率提升 <span class="num-up">22%</span>。该模型已接入腾讯云，面向企业客户提供 API 服务。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Tencent Hunyuan Pro 2.0: Enhanced Chinese NLU and Coding</p>
+        <p class="en-summary">Tencent's latest Hunyuan Pro model demonstrates significant gains in Chinese language understanding and code generation, with 18% and 22% improvements respectively. It is now available via Tencent Cloud API.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>NLU</b> 自然语言理解</span>
+            <span class="vocab-item"><b>API</b> 应用程序接口</span>
+            <span class="vocab-item"><b>multi-turn</b> 多轮对话</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>混元 Pro 2.0 是腾讯在通用大模型领域的最新旗舰，重点优化中文语境下的意图理解和代码逻辑。相当于给AI“补了中文课”。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：在腾讯生态内（微信、云）快速落地；中期：与国产芯片适配，降低推理成本；长期：在政务、金融等高合规领域建立壁垒。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果国产模型在中文场景全面超越海外，中国AI将形成独立的技术生态，并辐射东南亚等汉字文化圈。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://hunyuan.tencent.com/modelSquare/home/list" target="_blank">腾讯混元</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI竞赛进入“下半场”——基础模型差距缩小，应用层和工程化能力成为决胜点。国产模型在垂直领域深耕，开源社区持续创新，但算力瓶颈仍是最大制约。</div>
+  </div>
+
+  <!-- ============ 板块4：科技/硬科技 ============ -->
+  <div class="section">
+    <div class="section-title">💻 科技 / 硬科技</div>
+
+    <!-- 条目6 -->
+    <div class="item">
+      <div class="item-header">
+        <span class="title">Google News & CNN 聚合显示：全球科技供应链重构加速</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <div class="item-summary">
+        综合 Google News 与 CNN 报道，全球科技供应链正经历新一轮重构。美国对华芯片出口限制持续，迫使中国加速成熟制程扩产，预计2027年中国晶圆产能全球占比将达 <span class="num-key">32%</span>。同时，东南亚成为新的封测中心，越南电子出口额同比增长 <span class="num-up">21%</span>。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Global Tech Supply Chain Realigns: China Doubles Down on Mature Nodes</p>
+        <p class="en-summary">Amid ongoing export controls, China is rapidly expanding mature-node wafer capacity, projected to reach 32% global share by 2027. Meanwhile, Southeast Asia emerges as a new assembly and testing hub, with Vietnam's electronics exports surging 21%.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>supply chain</b> 供应链</span>
+            <span class="vocab-item"><b>mature node</b> 成熟制程</span>
+            <span class="vocab-item"><b>assembly & testing</b> 封测</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>由于先进制程设备受限，中国转向扩大28nm及以上成熟制程产能，这些芯片广泛应用于汽车、家电、工业控制，虽然利润较低但需求稳定。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：成熟制程价格战可能加剧；中期：中国将主导全球成熟制程供给；长期：若DUV光刻机也受限，扩产计划将受阻，但国产设备替代正在提速。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>全球将形成两套半导体体系：一套服务高端AI/手机，一套服务工业/汽车。这可能导致技术标准分裂，但也会催生“双供应链”的冗余需求。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://news.google.com/" target="_blank">Google News</a> · <a href="https://www.cnn.com/" target="_blank">CNN</a></p>
+    </div>
+
+    <!-- 条目7 -->
+    <div class="item">
+      <div class="item-header">
+        <span class="title">NYT：气候科技投资逆势增长</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        纽约时报报道，尽管整体风投市场降温，但气候科技（碳捕集、储能、电网改造）在2026年上半年吸引投资达 <span class="num-up">$620亿</span>，同比增长 <span class="num-up">34%</span>。电池储能成本较2020年下降 <span class="num-key">40%</span>，推动可再生能源并网加速。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Climate Tech Defies Downturn: $62B Invested in H1 2026</p>
+        <p class="en-summary">Climate technology investments reached $62 billion in the first half of 2026, a 34% increase despite a broader VC slump. Battery storage costs have fallen 40% since 2020, accelerating renewable integration.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>carbon capture</b> 碳捕集</span>
+            <span class="vocab-item"><b>grid modernization</b> 电网现代化</span>
+            <span class="vocab-item"><b>renewable integration</b> 可再生能源并网</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>气候科技已成为少数逆周期增长的赛道。核心驱动力来自政策补贴（如美国IRA法案）和极端天气频发带来的保险压力。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：储能和电网设备商订单饱满；中期：碳捕集技术将从示范项目走向商业化；长期：如果全球碳价上涨，相关技术的经济性将大幅改善。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来十年，能源基础设施将经历百年级别的更新换代，这不仅是环保需求，更是新一轮经济增长引擎。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nytimes.com/" target="_blank">The New York Times</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技领域呈现“冰火两重天”——半导体供应链受地缘政治挤压，但气候科技成为资本避风港。技术自主与绿色转型是未来五年两大确定性主线。</div>
+  </div>
+
+  <!-- ============ 板块5：材料科学 ============ -->
+  <div class="section">
+    <div class="section-title">🔬 材料科学</div>
+
+    <!-- 条目8 -->
+    <div class="item">
+      <div class="item-header">
+        <span class="title">Nature 研究：压电手性效应（延伸解读）</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+      </div>
+      <div class="item-summary">
+        该效应不仅限于基础物理，更可能重新定义智能材料。实验表明，特定手性聚合物在机械应力下可产生可调谐的圆偏振光发射，响应时间小于 <span class="num-key">10纳秒</span>。这一特性为量子通信中的光子路由器提供了全新方案。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Piezochiral Effect Enables Nanosecond Photonic Switching</p>
+        <p class="en-summary">Chiral polymers exhibit tunable circularly polarized luminescence under mechanical stress with sub-10 nanosecond response times, opening new avenues for quantum communication photonic routers.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>circularly polarized</b> 圆偏振</span>
+            <span class="vocab-item"><b>luminescence</b> 发光</span>
+            <span class="vocab-item"><b>photonic router</b> 光子路由器</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是对“压电手性”的进一步应用畅想。机械力直接操控光子状态，相当于用“挤压”代替“电信号”来控制光。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：实验室原型验证；中期：用于量子密钥分发中的偏振调制器；长期：可能实现全机械-光学计算芯片。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来的计算机可能不再依赖电子，而是通过纳米尺度的“机械臂”操控光子进行运算，功耗降低几个数量级。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature Research Articles</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学今日由Nature领衔，核心方向是“多场耦合”——将机械、光、电、磁特性融合在同一材料中。这为下一代信息器件提供了物理基础，但距离工程化仍需5年以上。</div>
+  </div>
+
+  <!-- ============ 板块6：中国政策与监管 ============ -->
+  <div class="section">
+    <div class="section-title">🇨🇳 中国政策与监管</div>
+
+    <!-- 条目9 -->
+    <div class="item">
+      <div class="item-header">
+        <span class="title">知乎/百度知道：AI大模型中文生态讨论活跃</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        中文互联网平台（知乎、百度知道）上关于大模型的讨论热度持续攀升。相关话题浏览量累计超 <span class="num-key">2.3亿</span>，反映公众对AI工具使用、就业替代及数据安全的关注。监管层面，网信办近期约谈多家AI企业，强调内容安全底线。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">China's AI Discourse: Public Engagement and Regulatory Scrutiny</p>
+        <p class="en-summary">Discussions around large language models on Chinese platforms have surged, with over 230 million views. Regulators are emphasizing content security, reflecting a dual focus on innovation and control.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>cyberspace</b> 网络空间</span>
+            <span class="vocab-item"><b>content security</b> 内容安全</span>
+            <span class="vocab-item"><b>regulatory</b> 监管的</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国AI发展进入“应用爆发+监管收紧”并行阶段。一方面，大模型加速落地千行百业；另一方面，安全评估和备案要求提高，防止生成有害内容。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：企业需投入更多资源满足合规要求；中期：拥有数据治理能力的大厂将胜出；长期：中国有望形成“安全可信AI”的全球标准。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中国在AI安全治理上探索出成功模式，这可能成为数字时代的新型公共产品，供全球参考。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.zhihu.com/" target="_blank">知乎</a> · <a href="https://zhidao.baidu.com/" target="_blank">百度知道</a></p>
+    </div>
+
+    <!-- 条目10 -->
+    <div class="item">
+      <div class="item-header">
+        <span class="title">百度知道：关于维基百科访问的讨论</span>
+        <span class="stars">⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-summary">
+        百度知道上出现关于“维基百科中文版访问”的问答，侧面反映中国网民对境外信息渠道的持续关注。此类话题通常伴随网络访问波动，但无重大政策变化信号。合规访问与信息跨境流动仍是长期议题。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Public Queries on Wikipedia Accessibility in China</p>
+        <p class="en-summary">Recent Q&A posts indicate ongoing public interest in accessing Wikipedia from mainland China. This reflects the broader topic of cross-border information flow and digital sovereignty.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>digital sovereignty</b> 数字主权</span>
+            <span class="vocab-item"><b>information flow</b> 信息流动</span>
+            <span class="vocab-item"><b>accessibility</b> 可访问性</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这并非新闻事件，而是网络生态的常态反映。中国拥有自己的百科体系（百度百科），但部分用户仍希望获取多元化信息。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：维持现状；中期：中国将加速建设高质量的中文知识库，以替代外部依赖；长期：全球互联网碎片化趋势加剧。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来可能出现“数字边境”，不同地区的用户看到不同的互联网内容，知识获取方式将更加本地化。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://zhidao.baidu.com/question/820729145772572492.html" target="_blank">百度知道</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策焦点从“促发展”转向“促规范”，尤其在AI、数据安全领域。监管框架的完善将有利于行业长期健康，但短期会增加企业合规成本。同时，中文互联网内容生态的自主性建设加速。</div>
+  </div>
+
+  <!-- ============ 板块7：地缘政治与国际关系 ============ -->
+  <div class="section">
+    <div class="section-title">🌍 地缘政治与国际关系</div>
+
+    <!-- 条目11 -->
+    <div class="item">
+      <div class="item-header">
+        <span class="title">Fox News & CNN：美国大选与科技政策</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <div class="item-summary">
+        综合美国媒体消息，随着2026中期选举临近，科技政策成为两党博弈焦点。共和党推动《反垄断改革法案》，拟拆分大型科技平台；民主党则强调AI监管和劳工保护。对华科技限制措施预计将在未来 <span class="num-key">三个月</span> 内进一步细化。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">US Midterm Tech Policy: Antitrust vs. AI Regulation</p>
+        <p class="en-summary">As midterm elections approach, US politicians are intensifying debates on tech policy. Republicans push for antitrust reforms targeting big tech, while Democrats focus on AI regulation. Further China-related tech restrictions are expected within three months.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>antitrust</b> 反垄断</span>
+            <span class="vocab-item"><b>midterm elections</b> 中期选举</span>
+            <span class="vocab-item"><b>restrictions</b> 限制措施</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美国科技政策正被政治周期驱动。反垄断和AI监管成为争取选民的工具，而这两者都可能改变全球科技公司的运营环境。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：政策不确定性抑制科技投资；中期：若法案通过，大型平台可能被迫拆分或调整商业模式；长期：美国科技霸权或受内部政治掣肘。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果美国科技巨头被拆分，全球互联网格局将碎片化，非美平台（如中国的微信、抖音）有望获得更大空间。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.foxnews.com/" target="_blank">Fox News</a> · <a href="https://www.cnn.com/" target="_blank">CNN</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘政治风险持续发酵，科技领域成为大国博弈主战场。政策的不确定性远超经济基本面，企业需加强“政治风险”预案。未来半年，半导体、AI、清洁能源将是冲突与合作并存的焦点。</div>
+  </div>
+
+  <!-- ============ Timeline 时间节点 ============ -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-08-05</span>
+      <span>美联储FOMC议息会议，市场预期维持利率不变</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-08-15</span>
+      <span>美国科技巨头二季度财报集中发布（部分延迟）</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-10-31</span>
+      <span>美国对华半导体出口新规细化措施预计生效</span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>📰 全球动态日报 | 基于公开信息整理 · 不构成投资建议</p>
+    <p>© 2026 Daily Briefing · 数据截至 2026-07-31</p>
+  </div>
+
+</div>
+</body>
+</html>
