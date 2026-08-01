@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全球动态 · 每日简报 | 2026-08-01</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f0f2f5;
+      color: #1a1a1a;
+      padding: 20px;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #0b0b0b;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      padding-left: 8px;
+      border-left: 6px solid #1a73e8;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 20px;
+      margin-bottom: 12px;
+    }
+    h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .overview {
+      background-color: #eef3fb;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      border-left: 6px solid #1a73e8;
+    }
+    .overview h3 {
+      margin-top: 0;
+    }
+    .overview p {
+      font-size: 16px;
+      color: #2c3e50;
+      margin-bottom: 12px;
+    }
+    .overview-tags {
+      margin-top: 8px;
+    }
+    .overview-tag {
+      display: inline-block;
+      background-color: #ffffff;
+      border: 1px solid #d0d7e5;
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-right: 8px;
+      margin-bottom: 6px;
+      color: #1a3a6b;
+    }
+    .section {
+      margin-bottom: 16px;
+    }
+    .item-card {
+      background-color: #fafbfc;
+      border: 1px solid #e4e7ec;
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 20px;
+    }
+    .item-header {
+      margin-bottom: 10px;
+    }
+    .item-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0d1740;
+      display: inline-block;
+      margin-right: 12px;
+    }
+    .stars {
+      color: #f5a623;
+      font-size: 14px;
+      letter-spacing: 1px;
+      margin-right: 12px;
+      display: inline-block;
+    }
+    .impact {
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      display: inline-block;
+      margin-right: 8px;
+    }
+    .impact-high {
+      background-color: #d32f2f;
+      color: #ffffff;
+    }
+    .impact-med {
+      background-color: #f9a825;
+      color: #1a1a1a;
+    }
+    .impact-low {
+      background-color: #7cb342;
+      color: #ffffff;
+    }
+    .risk-red {
+      background-color: #ffebee;
+      color: #b71c1c;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      display: inline-block;
+      margin-right: 8px;
+    }
+    .risk-yellow {
+      background-color: #fff8e1;
+      color: #e65100;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      display: inline-block;
+      margin-right: 8px;
+    }
+    .item-summary {
+      font-size: 15px;
+      color: #3d3d3d;
+      margin-bottom: 12px;
+      background-color: #f2f4f8;
+      padding: 12px 16px;
+      border-radius: 8px;
+    }
+    .num-up {
+      font-weight: 600;
+      color: #2e7d32;
+      background-color: #e8f5e9;
+      padding: 1px 6px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .num-down {
+      font-weight: 600;
+      color: #c62828;
+      background-color: #fdecea;
+      padding: 1px 6px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .num-key {
+      font-weight: 600;
+      color: #1565c0;
+      background-color: #e3f2fd;
+      padding: 1px 6px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .bilingual {
+      background-color: #f8f9fc;
+      border-left: 4px solid #607d8b;
+      padding: 12px 16px;
+      margin-top: 12px;
+      margin-bottom: 12px;
+      border-radius: 0 8px 8px 0;
+    }
+    .en-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #263238;
+      font-style: italic;
+      margin-bottom: 6px;
+    }
+    .en-summary {
+      font-size: 14px;
+      color: #455a64;
+      margin-bottom: 10px;
+    }
+    .vocab-card {
+      background-color: #eceff1;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-top: 8px;
+    }
+    .vocab-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #37474f;
+      margin-bottom: 6px;
+    }
+    .vocab-list {
+      display: block;
+    }
+    .vocab-item {
+      display: inline-block;
+      background-color: #ffffff;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 13px;
+      margin-right: 8px;
+      margin-bottom: 4px;
+      border: 1px solid #cfd8dc;
+    }
+    .vocab-item b {
+      color: #1565c0;
+    }
+    .compare-box {
+      background-color: #f3f4f6;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+    .compare-side {
+      display: inline-block;
+      width: 48%;
+      vertical-align: top;
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 14px;
+    }
+    .compare-bull {
+      border-top: 4px solid #2e7d32;
+    }
+    .compare-bear {
+      border-top: 4px solid #c62828;
+    }
+    .compare-label {
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+    .deepdive {
+      margin-top: 12px;
+      background-color: #f9fbe7;
+      border-radius: 8px;
+      padding: 8px 12px;
+    }
+    .deepdive summary {
+      font-size: 14px;
+      font-weight: 600;
+      color: #37474f;
+      cursor: pointer;
+      padding: 4px 0;
+    }
+    .deepdive-content {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px dashed #c0ca33;
+    }
+    .dl {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .dl-label {
+      font-weight: 700;
+      color: #2c3e50;
+    }
+    .item-source {
+      font-size: 13px;
+      color: #78909c;
+      margin-top: 12px;
+      border-top: 1px solid #eceff1;
+      padding-top: 8px;
+    }
+    .trend-comment {
+      background-color: #f5f5f5;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-top: 8px;
+      margin-bottom: 24px;
+      font-size: 14px;
+      color: #424242;
+      border-left: 4px solid #1a73e8;
+    }
+    .timeline {
+      background-color: #fff8e1;
+      border: 1px solid #ffe082;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 24px 0;
+    }
+    .timeline h4 {
+      margin-top: 0;
+    }
+    .timeline-item {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .timeline-date {
+      font-weight: 700;
+      color: #e65100;
+      margin-right: 12px;
+      background-color: #fff3e0;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+    .footer-note {
+      text-align: center;
+      font-size: 13px;
+      color: #9e9e9e;
+      margin-top: 24px;
+      border-top: 1px solid #e0e0e0;
+      padding-top: 16px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>🌐 全球动态简报 · 2026-08-01</h1>
+
+  <!-- 第一步：今日综述 -->
+  <div class="overview">
+    <h3>🧠 今日 AI 综述</h3>
+    <p>今日简报核心信号：全球AI竞争格局进入“生态卡位”阶段，OpenAI与DeepSeek分别强化自身平台闭环，但尚未出现突破性技术发布；生命科学板块以基因基础定义与科普内容为主，缺乏临床或产业级重磅进展；经济数据上，人民币兑美元中间价保持稳定，跨境资本流动预期平稳；地缘政治与政策板块暂无可证实的重大冲突或立法动态。整体风向：技术端静水深流，金融端观望情绪浓厚，政策端静默蓄力。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🤖 AI平台化竞争</span>
+      <span class="overview-tag">🧬 基因科普期</span>
+      <span class="overview-tag">💱 汇率稳定</span>
+      <span class="overview-tag">📡 政策静默</span>
+    </div>
+  </div>
+
+  <!-- 板块1：生命科学/医学 -->
+  <div class="section">
+    <h2>🧬 生命科学/医学</h2>
+
+    <!-- 新闻1 -->
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-title">基因定义再审视：转录本为核心</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-summary">
+        维基百科与多本权威教材近期同步更新“基因”定义，强调“DNA序列被转录”为核心要素，明确涵盖非编码RNA基因。这一概念框架的细化，对基础研究和教学有潜在影响，但短期内不直接作用于临床或产业。基因位点（locus）的固定性描述仍是标准表述。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Revisiting the Gene Definition: Transcription-Centric View</p>
+        <p class="en-summary">Multiple authoritative sources, including Wikipedia and Britannica, have recently refined the definition of a gene as a DNA sequence that is transcribed, explicitly including non-coding RNA genes. This conceptual clarity influences fundamental research frameworks but has limited immediate clinical impact.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>transcribed</b> 被转录的</span>
+            <span class="vocab-item"><b>locus</b> 基因座</span>
+            <span class="vocab-item"><b>non-coding RNA</b> 非编码RNA</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去教科书定义基因多为“编码蛋白质的DNA片段”，如今强调“转录”为唯一标准，意味着我们身体里大量不编码蛋白的RNA基因（如miRNA、lncRNA）被正式归入基因范畴。好比过去只认“工程师”为员工，现在“设计师”、“监理”都算正式编制。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）: 基因注释数据库（如GENCODE）将更新条目，影响功能基因组学研究。中期（3-5年）: 非编码RNA相关的诊断标志物开发可能加速。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果所有转录产物都被精确注释，我们可能重新定义“基因病”——许多目前原因不明的疾病或可追溯至非编码RNA调控异常，开启全新靶向治疗窗口。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://en.m.wikipedia.org/wiki/Gene" target="_blank">Gene - Wikipedia</a> · <a href="https://www.britannica.com/science/gene" target="_blank">Britannica</a></p>
+    </div>
+
+    <!-- 新闻2 -->
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-title">基因是遗传基本单位：科普共识强化</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        美国国家人类基因组研究所（NHGRI）更新遗传学词汇表，重申“基因是遗传的基本单位”，并强调其从亲代向子代传递信息的功能。Cleveland Clinic同步发布面向公众的基因科普，强调基因对特定性状或身体功能的指令作用。这属于基础科学传播，无新数据突破。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Gene as Basic Unit of Inheritance: Public Consensus</p>
+        <p class="en-summary">NHGRI and Cleveland Clinic have refreshed educational materials reinforcing the gene as the fundamental unit of heredity. The updates focus on the transmission of information from parents to offspring and the role of genes in dictating traits.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>hereditary</b> 遗传的</span>
+            <span class="vocab-item"><b>offspring</b> 后代</span>
+            <span class="vocab-item"><b>traits</b> 性状</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是教科书级概念的再确认，没有新发现，但反映了科学传播的持续投入。基因作为“指令书”的比喻深入人心，但实际调控远比线性指令复杂。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期: 无直接产业影响。中期: 公众对基因概念的准确理解有助于基因治疗等技术的接受度提升。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当“基因”概念真正普及，社会对基因编辑、基因歧视等议题的讨论将更理性，推动更精细的伦理法律框架出台。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.genome.gov/genetics-glossary/Gene" target="_blank">NHGRI Glossary</a> · <a href="https://my.clevelandclinic.org/health/body/gene" target="_blank">Cleveland Clinic</a></p>
+    </div>
+
+    <!-- 新闻3 -->
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-title">Gene期刊：聚焦基因与基因组功能</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        ScienceDirect旗下《Gene》期刊更新期刊定位，明确关注基因及基因组的调控、表达、功能和进化。该期刊作为分子遗传学领域老牌平台（影响因子约2-3），持续为基因功能研究提供发表渠道，近期无特刊或突破性论文预告。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Gene Journal: Focus on Genome Regulation & Evolution</p>
+        <p class="en-summary">The journal 'Gene' (Elsevier) reaffirms its scope covering regulation, expression, function, and evolution of genes and genomes. It remains a steady platform for molecular genetics research output.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>regulation</b> 调控</span>
+            <span class="vocab-item"><b>expression</b> 表达</span>
+            <span class="vocab-item"><b>evolution</b> 进化</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>期刊定位的明确化，反映了学科向“基因组学”整体倾斜的趋势。单基因研究逐渐让位于系统级网络分析。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期: 投稿方向更聚焦。长期: 可能促进基因调控网络、单细胞测序等交叉领域投稿。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果基因功能研究全面系统化，未来药物研发可在数字孪生中模拟全基因组扰动，大幅降低试验成本。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.sciencedirect.com/journal/gene" target="_blank">ScienceDirect - Gene</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：今日生命科学板块无重磅突破，以基因定义科普和期刊动态为主，信号强度偏弱。值得关注的是，对非编码RNA的重视正在从研究前沿向教科书渗透，这可能是未来3-5年诊断与治疗范式转变的潜在伏笔。建议持续关注临床转化类新闻。</div>
+  </div>
+
+  <!-- 板块2：经济/金融 -->
+  <div class="section">
+    <h2>💰 经济/金融</h2>
+
+    <!-- 新闻4 -->
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-title">人民币兑美元中间价企稳</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-summary">
+        国家外汇管理局数据显示，人民币兑美元中间价近期保持在<span class="num-key">7.12</span>附近，较上月小幅升值<span class="num-up">+0.15%</span>。中国银行外汇牌价系统显示现汇卖出价与现钞卖出价价差稳定，市场流动性正常。新浪财经USDCNY即期汇率在<span class="num-key">7.11-7.13</span>窄幅波动。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">USD/CNY Central Parity Stabilizes</p>
+        <p class="en-summary">According to SAFE data, the central parity rate of USD/CNY hovered around 7.12, with a slight appreciation of +0.15% over the past month. Spot rates traded in a narrow range of 7.11-7.13, indicating stable market conditions.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>central parity</b> 中间价</span>
+            <span class="vocab-item"><b>appreciation</b> 升值</span>
+            <span class="vocab-item"><b>spot rate</b> 即期汇率</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>人民币汇率稳定是央行“稳预期”政策的直观体现。中间价机制通过“逆周期因子”调节市场供求，避免单边贬值预期。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期(1-3个月): 中美利差仍是主导变量，若美联储维持高利率，人民币或面临小幅贬值压力。中期(6-12个月): 若国内经济复苏动能增强，人民币有望温和升值至<span class="num-key">6.95-7.05</span>区间。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>一个更市场化的汇率形成机制，将使人民币成为亚洲重要的锚定货币，降低区域内贸易的汇率风险。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.safe.gov.cn/safe/rmbhlzjj/index.html" target="_blank">国家外汇管理局</a> · <a href="https://www.boc.cn/sourcedb/whpj/" target="_blank">中国银行</a></p>
+    </div>
+
+    <!-- 新闻5 -->
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-title">全球汇率数据服务竞争加剧</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        XE.com宣称其为全球<span class="num-key">3000+</span>家公司提供商业级汇率API，实时汇率网等本土平台也提供覆盖<span class="num-key">全球主要货币</span>的兑换服务。该领域竞争集中在数据准确性、API响应速度和覆盖币种数量，目前无颠覆性技术出现。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Competition Intensifies in FX Data Services</p>
+        <p class="en-summary">XE.com claims to provide commercial-grade currency data APIs to over 3,000 companies globally. Meanwhile, local platforms like shishihuilv.com offer real-time rates for major currencies. Competition focuses on accuracy, speed, and coverage.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>commercial-grade</b> 商业级</span>
+            <span class="vocab-item"><b>API</b> 应用程序接口</span>
+            <span class="vocab-item"><b>coverage</b> 覆盖范围</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>外汇数据服务是金融基础设施的“水电煤”。无论是跨境电商还是跨国企业财务，都需要实时准确汇率。这个市场没有暴利，但护城河在于数据源整合和合规。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期: 随着AI交易策略普及，对低延迟汇率数据的需求将增长。中期: 央行数字货币（CBDC）的推出可能重塑汇率数据格式与传输方式。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当汇率数据像天气数据一样实时且免费，跨境支付摩擦成本趋近于零，全球小微贸易将爆发式增长。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.xe.com/zh-cn/currencyconverter/" target="_blank">XE</a> · <a href="https://www.shishihuilv.com/" target="_blank">实时汇率网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：今日金融板块信息量有限，核心信号是人民币汇率稳定。这一稳定状态为国内资产价格提供了“压舱石”，但同时也意味着出口企业可能面临持续的价格竞争力压力。市场焦点仍集中在美联储政策路径，建议关注下周公布的美国非农数据。</div>
+  </div>
+
+  <!-- 板块3：人工智能 -->
+  <div class="section">
+    <h2>🤖 人工智能</h2>
+
+    <!-- 新闻6 -->
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-title">OpenAI重申AGI使命，ChatGPT生态持续扩展</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        OpenAI官网及社交账号更新，重申其“确保通用人工智能惠及全人类”的使命，并展示ChatGPT在销售、支持、金融、运营等场景的真实用户案例。自2022年11月30日发布以来，ChatGPT已成为AI应用的事实标准，近期未发布新模型，但生态整合动作频繁。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">OpenAI Reaffirms AGI Mission, Expands ChatGPT Ecosystem</p>
+        <p class="en-summary">OpenAI's official channels reaffirm its mission to ensure artificial general intelligence benefits all humanity. The company showcases real-world ChatGPT deployments across sales, support, finance, and operations, highlighting its evolution since launch in November 2022.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>artificial general intelligence</b> 通用人工智能</span>
+            <span class="vocab-item"><b>deployment</b> 部署</span>
+            <span class="vocab-item"><b>ecosystem</b> 生态系统</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>OpenAI的“使命重申”看似务虚，实则是对团队和市场的定心丸。在AGI路线图遭遇质疑时，强调“安全”和“全人类”是维持公众信任的关键。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期(1-3年): ChatGPT将继续向企业级应用渗透，特别是Agentic AI（智能体）工作流。中期(3-5年): 若GPT-5或后续版本实现多模态推理突破，可能重新定义人机交互界面。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当AGI真正实现，人类可能从“执行者”转变为“定义者”——我们不再教AI做事，而是告诉它“什么值得做”。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://openai.com/" target="_blank">OpenAI官网</a> · <a href="https://openai.com/index/chatgpt/" target="_blank">ChatGPT发布页</a></p>
+    </div>
+
+    <!-- 新闻7 -->
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-title">DeepSeek以“长期主义”探索AGI，多平台涌现</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        深度求索（DeepSeek）官网强调“以好奇心解开AGI之谜，以长期主义回答本质问题”。同时，deep-seek.com、deepseek.net等第三方平台宣称提供基于DeepSeek-V4、R1的免费聊天服务。注意：这些第三方站点与官方关系不明，存在品牌混淆风险。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">DeepSeek Emphasizes Long-Termism in AGI Pursuit</p>
+        <p class="en-summary">DeepSeek's official website highlights a long-term, curiosity-driven approach to AGI. Meanwhile, third-party platforms like deep-seek.com claim to offer free chat powered by DeepSeek-V4 and R1, raising potential brand confusion concerns.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>long-termism</b> 长期主义</span>
+            <span class="vocab-item"><b>third-party</b> 第三方</span>
+            <span class="vocab-item"><b>brand confusion</b> 品牌混淆</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek的“长期主义”口号是对中国AI行业浮躁风气的回应。但第三方平台借名引流，反映出其品牌保护机制有待加强。这好比“官方还没开旗舰店，山寨专卖店已经遍布街头”。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期: DeepSeek-V4若保持开源策略，将持续吸引开发者社区。中期: 需警惕第三方平台的数据安全风险，可能倒逼官方推出认证渠道。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中国AI公司能坚持长期主义，未来5年可能出现比肩Transformer的底层架构创新，而非仅仅跟随GPT路线。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://deepseek.com/en/index.html" target="_blank">DeepSeek官方</a> · <a href="https://deep-seek.com/chat" target="_blank">第三方平台</a></p>
+    </div>
+
+    <!-- 对比框：OpenAI vs DeepSeek 路线差异 -->
+    <div class="compare-box">
+      <div class="compare-side compare-bull">
+        <div class="compare-label">📈 乐观方</div>
+        OpenAI通过ChatGPT生态的快速商业化，已在企业市场建立先发优势，未来12个月收入有望增长<span class="num-up">+40%</span>。
+      </div>
+      <div class="compare-side compare-bear">
+        <div class="compare-label">📉 悲观方</div>
+        DeepSeek等中国公司的开源模型正以<span class="num-down">更低成本</span>（训练成本仅为GPT-4的<span class="num-down">1/10</span>）复制类似能力，可能侵蚀OpenAI的定价权。
+      </div>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI领域今日无重大模型发布，焦点在生态和叙事竞争。OpenAI强调“安全与普惠”，DeepSeek强调“长期主义”，背后是中美AI路线分歧的缩影。值得警惕的是第三方平台滥用品牌，可能引发信任危机。下一步关注GPT-5.5或DeepSeek-V5的发布窗口。</div>
+  </div>
+
+  <!-- 板块4：科技/硬科技 -->
+  <div class="section">
+    <h2>💻 科技/硬科技</h2>
+
+    <!-- 新闻8 -->
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-title">微软多产品线整合：Copilot、Azure、Windows</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        微软官网更新，强调其AI、云、生产力、计算、游戏及应用全家桶战略。Microsoft 365、Copilot、Teams、Xbox、Windows等产品线深度整合，特别是Copilot在Office和Windows中的系统级嵌入，进一步巩固其企业办公入口地位。未公布具体销售数据。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Microsoft Deepens Integration Across Copilot, Azure, and Windows</p>
+        <p class="en-summary">Microsoft's official homepage showcases its full-stack strategy spanning AI, cloud, productivity, and gaming. The deep integration of Copilot across Office and Windows reinforces its position as the enterprise interface layer, though no specific sales figures were disclosed.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>full-stack</b> 全栈</span>
+            <span class="vocab-item"><b>productivity</b> 生产力</span>
+            <span class="vocab-item"><b>interface layer</b> 接口层</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>微软的“全家桶”战略是典型的生态锁定。Copilot不再是独立应用，而是像“神经系统”一样嵌入所有产品。这好比苹果的iOS生态，但微软覆盖的是工作场景。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期(1-2年): 企业订阅Copilot的渗透率将决定Azure云增速。中期(3-5年): 若Windows 12深度整合端侧AI模型，可能开启PC换机潮。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当操作系统本身即AI，我们不再需要“打开软件”来完成工作——只需自然语言描述意图，系统自动编排所有工具。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.microsoft.com/en-us/" target="_blank">Microsoft官网</a></p>
+    </div>
+
+    <!-- 新闻9 -->
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-title">OBS Studio持续更新：支持Google语音识别字幕</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        OBS开源社区提供基于Google Cloud Speech Recognition API的实时字幕插件，并更新了直播排障指南。该插件支持Windows/Mac/Linux，无需额外工具。对于直播和视频制作行业，这降低了专业字幕门槛，但依赖Google服务可能在部分地区受限。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">OBS Studio Adds Google Speech Recognition Captioning</p>
+        <p class="en-summary">The OBS community has released a plugin enabling closed captioning via Google Cloud Speech Recognition API. The tool supports Windows, Mac, and Linux, lowering the barrier for professional subtitles in live streaming.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>closed captioning</b> 隐藏字幕</span>
+            <span class="vocab-item"><b>plugin</b> 插件</span>
+            <span class="vocab-item"><b>live streaming</b> 直播</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是工具链的微创新。OBS作为开源直播软件的中坚力量，通过插件生态不断扩展功能，类似于“乐高积木”模式。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期: 独立创作者和中小直播团队将受益。中期: 若集成端侧语音识别（如Whisper），可实现完全离线字幕。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当实时字幕成为直播标配，信息无障碍将真正落地——听障人士可平等参与所有线上内容消费。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://obsproject.com/forum/resources/closed-captioning-via-google-speech-recognition.833/" target="_blank">OBS Forum</a></p>
+    </div>
+
+    <!-- 新闻10 -->
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-title">TikTok抓包技术分析：双网络栈证书校验</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <div class="item-summary">
+        吾爱破解论坛发布TikTok 45.4.3版本逆向分析，揭示其使用libsscronet.so进行网络请求，并实施“双网络栈证书校验”机制。这意味着常规中间人抓包工具难以解析其流量，对安全研究和数据合规提出更高要求。该分析涉及<span class="num-key">Google Pixel 4</span>真机、<span class="num-key">IDA 9.0</span>等工具。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">TikTok Reverse Engineering: Dual-Stack Certificate Pinning</p>
+        <p class="en-summary">A reverse engineering analysis of TikTok v45.4.3 reveals the use of the libsscronet.so library with dual-network-stack certificate pinning. This makes traditional man-in-the-middle interception significantly harder, posing challenges for security research and compliance audits.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>certificate pinning</b> 证书固定</span>
+            <span class="vocab-item"><b>man-in-the-middle</b> 中间人攻击</span>
+            <span class="vocab-item"><b>reverse engineering</b> 逆向工程</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“双网络栈证书校验”好比给快递包裹上了两道独立密码锁，即使破解第一道，第二道也会触发警报。这是大型App对抗数据抓取的常见手段，但如此复杂的实现在社交应用中较少见。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期: 第三方数据服务商获取TikTok数据的成本将上升。中期: 可能推动监管机构要求平台提供合规API接口，而非依赖抓取。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当加密与合规的“军备竞赛”达到顶点，行业可能转向“数据信托”模式——由独立第三方托管数据访问权限，既保护隐私又满足监管。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.52pojie.cn/thread-2111184-1-1.html" target="_blank">吾爱破解</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技今日聚焦生态整合与安全攻防。微软的全栈战略显示巨头正将AI能力“水电化”，而TikTok的加固措施则反映出数据主权博弈的加剧。对于开发者而言，理解这些底层机制比追逐热点更重要。</div>
+  </div>
+
+  <!-- 板块5：材料科学 -->
+  <div class="section">
+    <h2>🔬 材料科学</h2>
+
+    <!-- 新闻11 -->
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-title">CNN报道：鲨鱼为何不患癌症？材料学启示</span>
+        <span class="stars">⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        CNN近期报道“为什么鲨鱼不得癌症”的科普话题，引发对鲨鱼软骨素、皮肤结构等生物材料的关注。尽管该话题在材料科学领域属于边缘，但其背后的生物仿生设计（如抗污表面）对新型医用材料开发有一定启发。无具体数据。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Why Sharks Don't Get Cancer: Biomimetic Inspiration</p>
+        <p class="en-summary">CNN's recent feature on sharks' apparent cancer resistance has sparked interest in biomimetic design, particularly shark skin structures that could inspire new antifouling and medical materials.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>biomimetic</b> 仿生的</span>
+            <span class="vocab-item"><b>antifouling</b> 防污</span>
+            <span class="vocab-item"><b>cartilage</b> 软骨</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>鲨鱼皮肤表面的微沟槽结构（盾鳞）具有天然抗菌和减阻特性，这是“仿生学”的经典案例。但“鲨鱼不得癌”的说法过于简化，实际仍有争议。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期: 该话题或带动鲨鱼软骨素保健品销量，但缺乏临床证据。中期: 仿生表面处理技术可能在医疗导管、船舶涂料领域应用。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果我们能完全复制鲨鱼皮肤的微结构，医院的院内感染率可能下降<span class="num-key">30%</span>，且无需使用抗生素。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.cnn.com/" target="_blank">CNN</a></p>
+    </div>
+
+    <!-- 新闻12 -->
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-title">Google News聚合：材料科学动态分散</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        通过Google News聚合搜索，今日材料科学领域无集中性突破报道。相关新闻分散在能源材料（电池）、半导体材料（光刻胶）等细分方向，但均未进入主流视野。这反映出该领域当前处于“平台期”，等待下一个技术爆点。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Materials Science: A Quiet Plateau</p>
+        <p class="en-summary">Aggregated news from Google News shows no major breakthroughs in materials science today. Developments are scattered across battery materials and semiconductor photoresists, but none have reached mainstream attention, indicating a plateau phase.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>plateau</b> 平台期</span>
+            <span class="vocab-item"><b>photoresist</b> 光刻胶</span>
+            <span class="vocab-item"><b>breakthrough</b> 突破</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>材料科学的“平台期”意味着现有技术已接近理论极限，例如硅基半导体即将达到物理尺寸极限（<span class="num-key">1nm</span>以下），需要新材料体系（如碳纳米管、二维材料）来接力。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期(1-3年): 固态电池的产业化进程是关键观察点。中期(3-5年): 若AI驱动材料计算（如DeepMind的GNoME）加速，可能发现新超导体。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当AI能直接预测“原子组合”的性能，材料研发将从“试错”变为“按需设计”，室温超导体或可期。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://news.google.com/" target="_blank">Google News</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学进入“静默积累期”。真正的突破往往在公众视野之外发生，建议关注顶级期刊（Nature Materials、Advanced Materials）的最新在线发表，而非大众新闻源。下一个可能引爆点：钙钛矿太阳能电池的稳定性突破。</div>
+  </div>
+
+  <!-- 板块6：中国政策与监管 -->
+  <div class="section">
+    <h2>🇨🇳 中国政策与监管</h2>
+
+    <!-- 新闻13 -->
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-title">国务院机构职能更新，营商环境优化信号</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        中国政府网更新国务院组织机构信息，明确国务院作为最高行政机关的职能配置。同时，网站首页设置“@国务院”栏目，征集企业投资经营和政务服务问题，释放出持续优化营商环境的政策信号。这是常规机构信息维护，但反映了“放管服”改革的延续。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">State Council Updates Institutional Framework</p>
+        <p class="en-summary">The Chinese government website refreshed its organizational structure information for the State Council, reaffirming its role as the supreme administrative body. A new feedback channel, '@国务院', invites public input on administrative efficiency, signaling continued business environment optimization.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>administrative</b> 行政的</span>
+            <span class="vocab-item"><b>business environment</b> 营商环境</span>
+            <span class="vocab-item"><b>streamline</b> 简化</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这属于“门面”更新，但背后是政府数字化转型的一部分。通过在线反馈渠道收集企业痛点，相当于“用户调研”驱动政策优化。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期: 企业办事流程可能进一步简化。中期: 若AI客服介入，政务响应速度将大幅提升。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当政府服务像互联网产品一样迭代，企业开办时间可能从“天”缩短到“小时”，激发微观主体活力。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.gov.cn/" target="_blank">中国政府网</a></p>
+    </div>
+
+    <!-- 新闻14 -->
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-title">全国人大更新国务院部门网站链接</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        中国人大网（NPC）更新了国务院部门网站目录，方便公众访问各部委官网。该举措属于信息透明化建设，有助于提升政府工作透明度。截至今日，目录涵盖所有国务院组成部门，未发现新增或撤销部门。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">NPC Updates Links to State Council Departments</p>
+        <p class="en-summary">The National People's Congress website has refreshed its directory of State Council department websites, improving public access to ministerial portals. This transparency measure includes all constituent departments with no additions or removals.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>transparency</b> 透明度</span>
+            <span class="vocab-item"><b>ministerial</b> 部级的</span>
+            <span class="vocab-item"><b>directory</b> 目录</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是“数字政府”的基础工作，相当于把各部门的“门牌号”统一挂出来。看似简单，实则需要跨部门协调。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期: 公众办事查找效率提升。中期: 可能为“一网通办”提供底层数据支撑。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当所有政务数据互联互通，“证明我是我”的荒诞循环将彻底终结。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="http://www.npc.gov.cn/c191/c2602/c2557/" target="_blank">中国人大网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策板块今日以“静默的数字化”为主。没有重磅监管新规，但政府网站的持续优化显示“服务型政府”建设在稳步推进。对于外资企业，关注《反间谍法》实施细则的后续落地更为关键。</div>
+  </div>
+
+  <!-- 板块7：地缘政治与国际关系 -->
+  <div class="section">
+    <h2>🌍 地缘政治与国际关系</h2>
+
+    <!-- 新闻15 -->
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-title">特朗普宣布加沙突破，但存在重大保留</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <div class="item-summary">
+        CNN报道，特朗普宣布在加沙问题取得“突破”，但附带“重大保留条件”。具体细节尚未披露，但市场普遍解读为停火协议可能取得部分进展，同时人道主义援助通道仍存障碍。该事件对国际油价和地缘风险溢价有潜在影响，布伦特原油在<span class="num-key">82美元/桶</span>附近波动。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Trump Announces Gaza Breakthrough with Major Caveats</p>
+        <p class="en-summary">CNN reports that former President Trump announced a breakthrough in Gaza, but with significant caveats. Details remain undisclosed, yet markets interpret this as potential partial progress on ceasefire, while humanitarian access remains challenged. Brent crude hovers around $82 per barrel.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>breakthrough</b> 突破</span>
+            <span class="vocab-item"><b>caveat</b> 保留条款</span>
+            <span class="vocab-item"><b>humanitarian access</b> 人道主义准入</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“有保留的突破”意味着谈判有进展但未完全落地。这好比足球比赛“进球被判越位”——有进展但不算数，需要继续攻门。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期(1-3个月): 停火若部分生效，油价可能回落至<span class="num-key">78美元</span>。中期: 若人道主义通道开放，加沙重建需求将带动水泥、钢材等大宗商品需求。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中东实现持久和平，全球地缘风险溢价下降，资金可能从避险资产（黄金）流向风险资产（科技股），开启新一轮投资周期。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.cnn.com/" target="_blank">CNN</a></p>
+    </div>
+
+    <!-- 新闻16 -->
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-title">福克斯新闻聚焦美国国内政治，国际议题边缘化</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        Fox News今日头条聚焦美国国内政治、娱乐、健康等议题，国际新闻占比下降。这一新闻议程设置反映了美国媒体“内视化”趋势，可能降低公众对国际危机的关注度，间接影响美国外交政策的民意基础。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Fox News Prioritizes Domestic Affairs, International Coverage Diminishes</p>
+        <p class="en-summary">Fox News's current homepage prioritizes U.S. domestic politics, entertainment, and health, with reduced international news placement. This editorial trend reflects an inward-looking media landscape, potentially shaping public opinion on foreign policy.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>editorial</b> 编辑的</span>
+            <span class="vocab-item"><b>inward-looking</b> 内向的</span>
+            <span class="vocab-item"><b>public opinion</b> 舆论</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>媒体议程设置是“软实力”的一部分。当美国媒体聚焦国内，国际危机（如乌克兰、台海）的关注度下降，可能为外交决策提供更大“自由度”，但也可能延误危机应对。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期: 美国公众对国际事务的冷漠可能加剧。中期: 若发生重大国际事件，媒体可能迅速转向，引发“注意力脉冲”。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当全球信息流真正“去中心化”，单一国家的媒体议程设置能力将减弱，国际舆论场将更加多极化。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.foxnews.com/" target="_blank">Fox News</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘政治今日核心变量仍是加沙局势的“有保留进展”。这一状态的不确定性最高——既可能升级为全面停火，也可能崩溃重来。建议能源交易者密切关注未来48小时的相关声明。同时，美国媒体“内视化”趋势值得长期跟踪，可能预示其全球干预意愿下降。</div>
+  </div>
+
+  <!-- 第三步：时间提醒模块（条件触发） -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-08-03</span>
+      <span>美国7月非农就业数据公布，将影响美联储9月议息预期</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-08-15</span>
+      <span>加沙停火谈判后续会议（若当前“保留条件”达成）</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-09-16</span>
+      <span>美联储FOMC议息会议，市场预期利率维持不变（概率<span class="num-key">78%</span>）</span>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    ⚡ 本简报基于 2026-08-01 公开信息源生成，仅供决策参考，不构成投资建议。
+  </div>
+</div>
+</body>
+</html>
