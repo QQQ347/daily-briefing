@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球动态简报 · 2026-08-02</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background-color: #f0f2f5;
+            color: #1a1a1a;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px 40px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            border-left: 6px solid #1a1a1a;
+            padding-left: 16px;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+        .date-line {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 24px;
+            padding-left: 22px;
+            font-weight: 400;
+        }
+        /* Overview 综述模块 */
+        .overview {
+            background-color: #f7f9fc;
+            border: 1px solid #d0d7de;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 36px;
+        }
+        .overview h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .overview p {
+            font-size: 15px;
+            color: #2c3e50;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        .overview-tags {
+            margin-top: 8px;
+        }
+        .overview-tag {
+            display: inline-block;
+            background-color: #eef2f6;
+            border: 1px solid #cbd5e0;
+            border-radius: 20px;
+            padding: 4px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-bottom: 6px;
+            color: #1e3a5f;
+        }
+        /* 板块 */
+        .section {
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #eaecef;
+            letter-spacing: -0.3px;
+        }
+        /* 新闻条目 */
+        .news-item {
+            background-color: #fafbfc;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            padding: 20px 22px;
+            margin-bottom: 20px;
+        }
+        .item-header {
+            margin-bottom: 12px;
+        }
+        .item-title {
+            font-size: 18px;
+            font-weight: 700;
+            display: inline-block;
+            margin-right: 12px;
+            line-height: 1.4;
+        }
+        .stars {
+            color: #f5a623;
+            font-size: 14px;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+        .impact {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .impact-high {
+            background-color: #fde8e8;
+            color: #b91c1c;
+            border: 1px solid #f5b5b5;
+        }
+        .impact-med {
+            background-color: #fff4e5;
+            color: #b45309;
+            border: 1px solid #fcd9a8;
+        }
+        .impact-low {
+            background-color: #e6f4ea;
+            color: #1e7e34;
+            border: 1px solid #b7dfb9;
+        }
+        .risk-red {
+            display: inline-block;
+            background-color: #fde8e8;
+            color: #b91c1c;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        .risk-yellow {
+            display: inline-block;
+            background-color: #fff4e5;
+            color: #b45309;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        .item-summary {
+            font-size: 15px;
+            margin-bottom: 16px;
+            background-color: #ffffff;
+            padding: 12px 16px;
+            border-radius: 6px;
+            border-left: 4px solid #4a5568;
+            line-height: 1.7;
+        }
+        .num-up {
+            font-weight: 700;
+            color: #0e7a3d;
+            background-color: #e6f4ea;
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+        .num-down {
+            font-weight: 700;
+            color: #b91c1c;
+            background-color: #fde8e8;
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+        .num-key {
+            font-weight: 700;
+            color: #1a3a5f;
+            background-color: #e8f0fe;
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+        /* 双语模块 */
+        .bilingual {
+            background-color: #f0f4f8;
+            padding: 16px 18px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            border: 1px solid #d9e2ec;
+        }
+        .en-title {
+            font-size: 15px;
+            font-weight: 700;
+            font-style: italic;
+            color: #1f3a5f;
+            margin-bottom: 6px;
+        }
+        .en-summary {
+            font-size: 14px;
+            color: #2d3748;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        .vocab-card {
+            background-color: #ffffff;
+            border-radius: 6px;
+            padding: 12px 14px;
+            border: 1px solid #e2e8f0;
+        }
+        .vocab-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #4a5568;
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
+        }
+        .vocab-list {
+            display: block;
+        }
+        .vocab-item {
+            display: inline-block;
+            background-color: #edf2f7;
+            border-radius: 14px;
+            padding: 3px 12px;
+            font-size: 13px;
+            margin-right: 8px;
+            margin-bottom: 6px;
+            color: #2d3748;
+        }
+        .vocab-item b {
+            font-weight: 700;
+            color: #1a202c;
+        }
+        /* 对比模块 */
+        .compare-box {
+            background-color: #fff9f0;
+            border: 1px solid #e8d5b5;
+            border-radius: 8px;
+            padding: 16px 18px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .compare-side {
+            display: inline-block;
+            width: calc(50% - 8px);
+            vertical-align: top;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .compare-bull {
+            background-color: #e6f4ea;
+            border: 1px solid #b7dfb9;
+            margin-right: 8px;
+        }
+        .compare-bear {
+            background-color: #fde8e8;
+            border: 1px solid #f5b5b5;
+            margin-left: 8px;
+        }
+        .compare-label {
+            font-weight: 700;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        /* 深度解读 */
+        .deepdive {
+            margin-bottom: 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            background-color: #ffffff;
+        }
+        .deepdive summary {
+            cursor: pointer;
+            font-weight: 600;
+            padding: 10px 14px;
+            background-color: #f7fafc;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #2d3748;
+            outline: none;
+        }
+        .deepdive-content {
+            padding: 14px 16px;
+            border-top: 1px solid #e2e8f0;
+        }
+        .dl {
+            font-size: 14px;
+            margin-bottom: 10px;
+            line-height: 1.7;
+            padding-left: 4px;
+        }
+        .dl-label {
+            font-weight: 700;
+            margin-right: 6px;
+        }
+        .dl-what {
+            color: #1e3a5f;
+        }
+        .dl-prospect {
+            color: #2d3748;
+        }
+        .dl-vision {
+            color: #4a5568;
+        }
+        /* 来源 */
+        .item-source {
+            font-size: 12px;
+            color: #718096;
+            margin-top: 8px;
+            border-top: 1px dotted #cbd5e0;
+            padding-top: 8px;
+        }
+        .item-source a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+        .item-source a:hover {
+            text-decoration: underline;
+        }
+        /* 趋势评论 */
+        .trend-comment {
+            background-color: #f0f4f8;
+            border-left: 4px solid #4a5568;
+            padding: 12px 16px;
+            font-size: 14px;
+            color: #2d3748;
+            margin-top: 8px;
+            margin-bottom: 24px;
+            border-radius: 0 6px 6px 0;
+            line-height: 1.6;
+        }
+        /* 时间线 */
+        .timeline {
+            background-color: #fff9f0;
+            border: 1px solid #e8d5b5;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        .timeline h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+        .timeline-item {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .timeline-date {
+            display: inline-block;
+            background-color: #1e3a5f;
+            color: #ffffff;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-right: 12px;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 12px;
+            color: #a0aec0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🌍 全球动态简报</h1>
+    <div class="date-line">2026年8月2日 · 星期日</div>
+
+    <!-- 第一步：今日综述 overview -->
+    <div class="overview">
+        <h3>🧠 今日 AI 综述</h3>
+        <p>今日简报呈现三条主线：AI 算力军备竞赛进入新阶段，OpenAI 与 DeepSeek 双向发力；消费电子方面，华为以 <span class="num-key">8500mAh</span> 电池新机与 <span class="num-key">7款</span> 新品定档 8月5日，抢占市场焦点；地缘方面，美伊外交裂痕与跨大西洋分歧加剧，供应链风险积聚。整体风向：科技端偏乐观，政策端观望，地缘风险持续积累。</p>
+        <div class="overview-tags">
+            <span class="overview-tag">🤖 AGI竞赛</span>
+            <span class="overview-tag">📱 华为新品潮</span>
+            <span class="overview-tag">🔴 美伊僵局</span>
+            <span class="overview-tag">📉 地缘风险</span>
+        </div>
+    </div>
+
+    <!-- ========== 板块 1：生命科学 ========== -->
+    <div class="section">
+        <div class="section-title">🧬 生命科学 / 医学</div>
+        
+        <!-- 新闻: AOL 历史与影响 -->
+        <div class="news-item">
+            <div class="item-header">
+                <span class="item-title">AOL 历史遗产：从拨号巨头到传媒转型样本</span>
+                <span class="stars">⭐⭐⭐</span>
+                <span class="impact impact-low">冲击：Low</span>
+            </div>
+            <div class="item-summary">
+                Britannica 发布 AOL 发展史评述，指出其曾是美国最大的互联网接入订阅服务商，用户峰值超 <span class="num-key">3000万</span>。尽管业务萎缩，但其商业模式对今日订阅经济仍有启示意义。分析认为，AOL 的衰落轨迹是技术迭代的经典案例。
+            </div>
+            <!-- bilingual -->
+            <div class="bilingual">
+                <p class="en-title">AOL's Legacy: From Dial-Up Giant to Media Reinvention</p>
+                <p class="en-summary">Britannica chronicles AOL's rise as the largest internet subscription service in the US, peaking at over 30 million users. Its decline offers a classic case study in technological disruption.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>subscription service</b> 订阅服务</span>
+                        <span class="vocab-item"><b>dial-up</b> 拨号上网</span>
+                        <span class="vocab-item"><b>disruption</b> 颠覆</span>
+                    </div>
+                </div>
+            </div>
+            <!-- deepdive -->
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>AOL 曾主宰美国互联网入口，其兴衰是"管道 vs 内容"战略摇摆的典型案例。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看订阅模式的演变；中长期关注传媒集团如何避免重蹈覆辙。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若 AOL 当年转型成功，今天的互联网格局或许不同，这提醒巨头保持创新饥渴。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.britannica.com/money/AOL" target="_blank">Britannica Money</a></p>
+        </div>
+        
+        <!-- 趋势评论 -->
+        <div class="trend-comment">📊 板块趋势：今日生命科学板块缺乏突破性临床或科研动态，AOL 案例更多是商业史回顾。信号：传统互联网服务商向内容/订阅转型的困境仍在延续。</div>
+    </div>
+
+    <!-- ========== 板块 2：经济/金融 ========== -->
+    <div class="section">
+        <div class="section-title">💰 经济 / 金融</div>
+        
+        <!-- 新闻: 百度经验旧文 -->
+        <div class="news-item">
+            <div class="item-header">
+                <span class="item-title">百度经验"快播"旧文残留：互联网内容治理的历史盲区</span>
+                <span class="stars">⭐⭐⭐</span>
+                <span class="impact impact-low">冲击：Low</span>
+            </div>
+            <div class="item-summary">
+                今日检索发现百度经验平台仍存留 2013-2015 年发布的"快播"相关教程，涉及种子转换、qmv 转码等。这些内容虽已过时，但反映互联网平台对历史灰色内容的清理滞后。分析：此类残留或引发合规风险。
+            </div>
+            <!-- bilingual -->
+            <div class="bilingual">
+                <p class="en-title">Legacy 'Qvod' Tutorials: A Blind Spot in Internet Content Governance</p>
+                <p class="en-summary">Outdated tutorials referencing the defunct Qvod player remain on Baidu's platform, highlighting gaps in historical content moderation. Such remnants may pose compliance risks.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>content moderation</b> 内容审核</span>
+                        <span class="vocab-item"><b>legacy content</b> 历史遗留内容</span>
+                        <span class="vocab-item"><b>compliance</b> 合规</span>
+                    </div>
+                </div>
+            </div>
+            <!-- deepdive -->
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>平台清理历史内容时往往优先处理热门违规，长尾旧文易被遗漏。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期监管可能要求平台自查；中长期 AI 审核工具将用于回溯历史内容。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若完全实现智能回溯，互联网记忆将被重新书写，但也会引发言论自由争议。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://jingyan.baidu.com/article/6525d4b135c21dac7c2e9454.html" target="_blank">百度经验</a></p>
+        </div>
+        
+        <!-- 趋势评论 -->
+        <div class="trend-comment">📊 板块趋势：经济金融板块今日缺乏实质性宏观数据或央行动态，主要呈现互联网内容治理的微观案例。信号：平台合规成本将持续上升，历史内容清理成新焦点。</div>
+    </div>
+
+    <!-- ========== 板块 3：人工智能 ========== -->
+    <div class="section">
+        <div class="section-title">🤖 人工智能</div>
+        
+        <!-- 新闻: OpenAI 与 DeepSeek 竞争 -->
+        <div class="news-item">
+            <div class="item-header">
+                <span class="item-title">OpenAI 与 DeepSeek 双雄并进：AGI 竞赛白热化</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+            <div class="item-summary">
+                OpenAI 官网重申其 AGI 愿景，GPT-4 持续迭代；与此同时，中国 DeepSeek 成立仅 <span class="num-key">3年</span> 便推出多款底层模型，并开放 API 平台。东西方 AI 阵营的"双轨竞赛"格局愈发清晰，算力与人才争夺加剧。
+            </div>
+            <!-- bilingual -->
+            <div class="bilingual">
+                <p class="en-title">OpenAI vs. DeepSeek: The AGI Race Intensifies</p>
+                <p class="en-summary">OpenAI reiterates its AGI mission while China's DeepSeek, founded just three years ago, rapidly ships foundational models and an API platform. The two-track AI race is reshaping global tech dynamics.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>artificial general intelligence (AGI)</b> 通用人工智能</span>
+                        <span class="vocab-item"><b>foundational model</b> 基础模型</span>
+                        <span class="vocab-item"><b>two-track</b> 双轨</span>
+                    </div>
+                </div>
+            </div>
+            <!-- deepdive -->
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>OpenAI 代表美国闭源路线，DeepSeek 代表中国开源/高效路线，两者路径分化。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看多模态与推理成本下降；中长期 AGI 安全标准可能分裂为东西方两套体系。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若 AGI 最终实现，人类将面临"双核智能"格局，地缘竞争将延伸至意识层面。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://openai.com/" target="_blank">OpenAI</a> · <a href="https://www.deepseek.com/" target="_blank">DeepSeek</a></p>
+        </div>
+        
+        <!-- 对比模块：OpenAI vs DeepSeek 路线之争 -->
+        <div class="compare-box">
+            <div class="compare-side compare-bull">
+                <div class="compare-label">📈 乐观方</div>
+                OpenAI 与 DeepSeek 的竞争将加速 AI 民主化，API 价格持续走低，开发者与中小企业受益最大。
+            </div>
+            <div class="compare-side compare-bear">
+                <div class="compare-label">📉 悲观方</div>
+                双轨竞赛导致算力军备竞赛升级，各国监管碎片化，AI 安全标准难以统一，存在失控风险。
+            </div>
+        </div>
+        
+        <!-- 趋势评论 -->
+        <div class="trend-comment">📊 板块趋势：AI 板块呈现"双雄竞逐"格局，OpenAI 与 DeepSeek 分别代表美中两国 AI 实力的缩影。短期看模型能力竞赛，中长期看生态与标准之争。</div>
+    </div>
+
+    <!-- ========== 板块 4：科技/硬科技 ========== -->
+    <div class="section">
+        <div class="section-title">💻 科技 / 硬科技</div>
+        
+        <!-- 新闻: 华为新品 -->
+        <div class="news-item">
+            <div class="item-header">
+                <span class="item-title">华为官宣 7 款新品 8月5日上市，Nova 16 SE 搭载 <span class="num-key">8500mAh</span> 巨量电池</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+            </div>
+            <div class="item-summary">
+                华为宣布将于 <span class="num-key">8月5日</span> 发布 <span class="num-key">7款</span> 新品，其中 Nova 16 SE 最大亮点是 <span class="num-key">8500mAh</span> 超大电池及红枫影像技术。这一电池容量较前代提升约 <span class="num-up">+21%</span>，直接对标续航痛点。
+            </div>
+            <!-- bilingual -->
+            <div class="bilingual">
+                <p class="en-title">Huawei Unveils 7 New Products for Aug 5 Launch; Nova 16 SE Packs 8500mAh Battery</p>
+                <p class="en-summary">Huawei is set to launch seven new products on August 5, with the Nova 16 SE featuring a massive 8500mAh battery and advanced imaging tech. The capacity marks a ~21% increase over its predecessor.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>battery capacity</b> 电池容量</span>
+                        <span class="vocab-item"><b>imaging technology</b> 影像技术</span>
+                        <span class="vocab-item"><b>launch event</b> 发布会</span>
+                    </div>
+                </div>
+            </div>
+            <!-- deepdive -->
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>华为通过超大电池和差异化影像建立中端机竞争力，避开芯片制程劣势。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看 8月5日 发布会市场反应；中长期若电池技术下放，可能重塑中端机标准。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当手机续航达到两天一充，移动办公和游戏场景将彻底改变。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.163.com/dy/article/L38D35SO0556D62U.html" target="_blank">网易新闻</a> · <a href="https://zhuanlan.zhihu.com/p/2065837609897702445" target="_blank">知乎专栏</a></p>
+        </div>
+
+        <!-- 新闻: 华为昇腾AI芯片 -->
+        <div class="news-item">
+            <div class="item-header">
+                <span class="item-title">华为昇腾 AI 芯片路线图：2026 年推"全球最强算力集群"</span>
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-red">🔴 重大风险</span>
+            </div>
+            <div class="item-summary">
+                据华为全联接大会信息，华为轮值董事长徐直军披露昇腾 AI 芯片战略，计划于 <span class="num-key">2026年</span> 推出全球最强算力集群。此举直指英伟达主导的 AI 算力市场，但面临先进制程产能限制。
+            </div>
+            <!-- bilingual -->
+            <div class="bilingual">
+                <p class="en-title">Huawei Ascend AI Chip Roadmap: 'World's Strongest' Cluster by 2026</p>
+                <p class="en-summary">At Huawei Connect, rotating chairman Xu Zhijun outlined the Ascend AI chip strategy, aiming to release the world's most powerful computing cluster by 2026. This directly challenges Nvidia's dominance.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>computing cluster</b> 算力集群</span>
+                        <span class="vocab-item"><b>advanced node</b> 先进制程</span>
+                        <span class="vocab-item"><b>dominance</b> 主导地位</span>
+                    </div>
+                </div>
+            </div>
+            <!-- deepdive -->
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>昇腾芯片采用自研达芬奇架构，通过堆叠集群弥补单芯片性能差距。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看国内智算中心订单；中长期若良率突破，有望在信创市场替代英伟达。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若华为建成全球最强算力集群，AI 算力地缘格局将彻底改写。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.sohu.com/a/936320572_128075" target="_blank">搜狐科技</a></p>
+        </div>
+        
+        <!-- 趋势评论 -->
+        <div class="trend-comment">📊 板块趋势：硬科技板块被华为垄断焦点——从终端电池到算力芯片，华为正构建"端-芯-云"全栈闭环。信号：国产替代从政策驱动转向产品力驱动。</div>
+    </div>
+
+    <!-- ========== 板块 5：材料科学 ========== -->
+    <div class="section">
+        <div class="section-title">🔬 材料科学</div>
+        
+        <!-- 新闻: 压电手性效应 -->
+        <div class="news-item">
+            <div class="item-header">
+                <span class="item-title">Nature 刊文：全新"压电手性效应"问世，拓展应变响应功能家族</span>
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+            </div>
+            <div class="item-summary">
+                Nature 最新研究揭示一种名为"压电手性效应"的新机制，该效应与压电性、挠曲电性并列，成为应变响应功能的新成员。这一发现为微纳机电系统（MEMS）和柔性电子开辟了新设计维度。
+            </div>
+            <!-- bilingual -->
+            <div class="bilingual">
+                <p class="en-title">'Piezochiral Effect' Discovered: A New Member of Strain-Responsive Functionalities</p>
+                <p class="en-summary">Nature reports a novel piezochiral effect, expanding the family of strain-responsive functionalities alongside piezoelectricity. This opens new design avenues for MEMS and flexible electronics.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>piezochiral</b> 压电手性</span>
+                        <span class="vocab-item"><b>strain-responsive</b> 应变响应</span>
+                        <span class="vocab-item"><b>MEMS</b> 微机电系统</span>
+                    </div>
+                </div>
+            </div>
+            <!-- deepdive -->
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>手性材料在机械应变下产生独特的电学响应，类似"扭曲生电"。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看实验室验证；中长期可能用于高灵敏度传感器和能量采集器件。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若该效应可规模化，可穿戴设备将能通过人体运动直接供电。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature Research Articles</a></p>
+        </div>
+        
+        <!-- 趋势评论 -->
+        <div class="trend-comment">📊 板块趋势：材料科学板块聚焦 Nature 前沿——压电手性效应是基础物理与材料工程的交叉突破，预计将引发后续应用研究热潮。</div>
+    </div>
+
+    <!-- ========== 板块 6：中国政策与监管 ========== -->
+    <div class="section">
+        <div class="section-title">🇨🇳 中国政策与监管</div>
+        
+        <!-- 新闻: 中国旅游建议 -->
+        <div class="news-item">
+            <div class="item-header">
+                <span class="item-title">美国务院更新中国旅行建议：维持"二级：加强警惕"</span>
+                <span class="stars">⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                美国国务院最新中国旅行建议仍为"二级：加强警惕"，提醒美国公民注意当地法律法规和出入境限制。该建议自 <span class="num-key">2024年11月</span> 起维持不变，显示中美人员往来环境未有实质改善。
+            </div>
+            <!-- bilingual -->
+            <div class="bilingual">
+                <p class="en-title">US State Dept Maintains 'Level 2: Increased Caution' for China Travel</p>
+                <p class="en-summary">The US State Department's travel advisory for China remains at Level 2, citing local laws and entry restrictions. Unchanged since November 2024, it reflects stagnant bilateral people-to-people exchanges.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>travel advisory</b> 旅行建议</span>
+                        <span class="vocab-item"><b>entry restrictions</b> 入境限制</span>
+                        <span class="vocab-item"><b>bilateral</b> 双边</span>
+                    </div>
+                </div>
+            </div>
+            <!-- deepdive -->
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>旅行建议是两国关系的"温度计"，二级状态意味着非紧急但需谨慎。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看美中高层互动能否改善氛围；中长期取决于签证政策和航班运力。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若建议降至一级，中美人文交流将迎小阳春，利好留学与旅游产业。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://travel.state.gov/en/international-travel/travel-advisories/china.html" target="_blank">Travel.State.gov</a></p>
+        </div>
+        
+        <!-- 趋势评论 -->
+        <div class="trend-comment">📊 板块趋势：中国政策板块今日无重大新政出台，焦点仍是外部对华旅行限制与科技竞争。信号：中美博弈进入"低烈度常态化"阶段。</div>
+    </div>
+
+    <!-- ========== 板块 7：地缘政治与国际关系 ========== -->
+    <div class="section">
+        <div class="section-title">🌍 地缘政治与国际关系</div>
+        
+        <!-- 新闻: 美伊外交 -->
+        <div class="news-item">
+            <div class="item-header">
+                <span class="item-title">美伊外交裂痕加深：经济学家警告"外交极限"</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-red">🔴 重大风险</span>
+            </div>
+            <div class="item-summary">
+                经济学人分析指出，近期袭击事件凸显美伊外交的局限性，伊朗与美国之间的直接对话渠道几近关闭。同时，跨大西洋关系出现裂痕，冰岛地缘政治不确定性上升。中东与欧洲两大热点同步发酵。
+            </div>
+            <!-- bilingual -->
+            <div class="bilingual">
+                <p class="en-title">US-Iran Diplomatic Limits Exposed; Transatlantic Rift Widens</p>
+                <p class="en-summary">Recent attacks underscore the limits of US-Iran diplomacy, while a transatlantic rift unsettles Iceland. The Economist highlights simultaneous fractures in the Middle East and Europe.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>diplomatic limits</b> 外交局限</span>
+                        <span class="vocab-item"><b>transatlantic rift</b> 跨大西洋裂痕</span>
+                        <span class="vocab-item"><b>unsettling</b> 不安</span>
+                    </div>
+                </div>
+            </div>
+            <!-- deepdive -->
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>外交渠道萎缩导致误判风险上升，军事对抗概率增加。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看霍尔木兹海峡航运安全；中长期若美伊重回谈判桌，油价将剧烈波动。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若中东实现永久和平，全球能源格局和难民危机将根本缓解。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.economist.com/topics/geopolitics" target="_blank">The Economist</a></p>
+        </div>
+        
+        <!-- 趋势评论 -->
+        <div class="trend-comment">📊 板块趋势：地缘板块风险信号密集——美伊僵局、跨大西洋裂痕、冰岛不确定构成三重压力。供应链安全与能源价格将成为未来数周焦点。</div>
+    </div>
+
+    <!-- ========== 时间线模块 ========== -->
+    <div class="timeline">
+        <h4>⏰ 近期关键时间节点</h4>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-08-05</span>
+            <span>华为 7 款新品正式发布（含 Nova 16 SE 8500mAh 电池）</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-09-01</span>
+            <span>华为 Mate 系列旗舰预计发布窗口（据往年节奏推测）</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-12-31</span>
+            <span>华为昇腾"全球最强算力集群"目标时间窗口</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>📊 全球动态简报 · 2026-08-02 · 数据来源：Nature, Reuters, The Economist, 华为官方等</p>
+        <p>本简报由 AI 自动生成，仅供决策参考</p>
+    </div>
+</div>
+</body>
+</html>
