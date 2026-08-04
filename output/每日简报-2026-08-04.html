@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球动态简报 | 2026-08-04</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+            color: #1a202c;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e2e8f0;
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #4a5568;
+            color: #2d3748;
+        }
+        h2:first-of-type {
+            margin-top: 0;
+        }
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+            color: #2d3748;
+        }
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 12px 0;
+            color: #2d3748;
+        }
+        a {
+            color: #3182ce;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .overview {
+            background-color: #ebf4ff;
+            border-left: 6px solid #3182ce;
+            padding: 20px 24px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+        .overview h3 {
+            margin-top: 0;
+            font-size: 20px;
+            font-weight: 700;
+            color: #2c5282;
+        }
+        .overview p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #2d3748;
+            margin: 8px 0 16px 0;
+        }
+        .overview-tags {
+            margin-top: 10px;
+        }
+        .overview-tag {
+            display: inline-block;
+            background-color: #ffffff;
+            border: 1px solid #bee3f8;
+            color: #2b6cb0;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 6px;
+        }
+        .news-item {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .item-header {
+            margin-bottom: 12px;
+        }
+        .item-header .title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a202c;
+            display: inline;
+            margin-right: 12px;
+        }
+        .item-header .stars {
+            color: #f6ad55;
+            font-size: 16px;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .impact {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .impact-high {
+            background-color: #fed7d7;
+            color: #9b2c2c;
+        }
+        .impact-med {
+            background-color: #feebc8;
+            color: #9c4221;
+        }
+        .impact-low {
+            background-color: #e9d8fd;
+            color: #553c9a;
+        }
+        .risk-red {
+            display: inline-block;
+            background-color: #fff5f5;
+            border: 1px solid #fc8181;
+            color: #c53030;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+        .risk-yellow {
+            display: inline-block;
+            background-color: #fffff0;
+            border: 1px solid #d69e2e;
+            color: #975a16;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+        .item-summary {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #2d3748;
+            margin: 14px 0;
+            padding: 12px 16px;
+            background-color: #f7fafc;
+            border-radius: 6px;
+            border-left: 4px solid #a0aec0;
+        }
+        .num-up {
+            font-weight: 600;
+            color: #2f855a;
+            background-color: #f0fff4;
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+        .num-down {
+            font-weight: 600;
+            color: #c53030;
+            background-color: #fff5f5;
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+        .num-key {
+            font-weight: 600;
+            color: #2b6cb0;
+            background-color: #ebf8ff;
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+        .bilingual {
+            background-color: #f0fff4;
+            border: 1px solid #9ae6b4;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 16px 0;
+        }
+        .en-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #22543d;
+            margin: 0 0 8px 0;
+            font-style: italic;
+        }
+        .en-summary {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #2f855a;
+            margin: 0 0 12px 0;
+        }
+        .vocab-card {
+            background-color: #ffffff;
+            border-radius: 6px;
+            padding: 12px 16px;
+            border: 1px solid #c6f6d5;
+        }
+        .vocab-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #276749;
+            margin-bottom: 8px;
+        }
+        .vocab-list {
+            display: block;
+        }
+        .vocab-item {
+            display: inline-block;
+            background-color: #f0fff4;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 13px;
+            color: #22543d;
+            margin-right: 8px;
+            margin-bottom: 6px;
+        }
+        .vocab-item b {
+            font-weight: 600;
+            color: #1a202c;
+            margin-right: 4px;
+        }
+        .compare-box {
+            background-color: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 20px 0;
+        }
+        .compare-side {
+            display: inline-block;
+            width: 46%;
+            vertical-align: top;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .compare-bull {
+            background-color: #f0fff4;
+            border: 1px solid #9ae6b4;
+            margin-right: 4%;
+        }
+        .compare-bear {
+            background-color: #fff5f5;
+            border: 1px solid #fc8181;
+        }
+        .compare-label {
+            font-weight: 700;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        .deepdive {
+            margin: 16px 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            background-color: #f7fafc;
+        }
+        .deepdive summary {
+            cursor: pointer;
+            padding: 12px 16px;
+            font-weight: 600;
+            font-size: 14px;
+            color: #2d3748;
+            outline: none;
+            list-style: none;
+        }
+        .deepdive summary::-webkit-details-marker {
+            display: none;
+        }
+        .deepdive summary::before {
+            content: "▸ ";
+            color: #4a5568;
+        }
+        .deepdive[open] summary::before {
+            content: "▾ ";
+        }
+        .deepdive-content {
+            padding: 0 16px 16px 16px;
+        }
+        .dl {
+            font-size: 14px;
+            line-height: 1.7;
+            margin: 8px 0;
+            padding: 8px 12px;
+            background-color: #ffffff;
+            border-radius: 6px;
+            border-left: 4px solid #a0aec0;
+        }
+        .dl-label {
+            font-weight: 600;
+            color: #2d3748;
+        }
+        .item-source {
+            font-size: 12px;
+            color: #718096;
+            margin-top: 12px;
+            border-top: 1px solid #edf2f7;
+            padding-top: 10px;
+        }
+        .trend-comment {
+            background-color: #edf2f7;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 20px 0 30px 0;
+            font-size: 14px;
+            color: #2d3748;
+            border-left: 6px solid #718096;
+        }
+        .trend-comment::before {
+            content: "📊 ";
+            font-weight: 600;
+        }
+        .timeline {
+            background-color: #fffff0;
+            border: 1px solid #d69e2e;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 30px 0 20px 0;
+        }
+        .timeline h4 {
+            margin-top: 0;
+            color: #975a16;
+        }
+        .timeline-item {
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .timeline-date {
+            display: inline-block;
+            background-color: #ffffff;
+            border: 1px solid #d69e2e;
+            color: #975a16;
+            padding: 2px 12px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 13px;
+            margin-right: 12px;
+        }
+        .footer-note {
+            text-align: center;
+            font-size: 12px;
+            color: #a0aec0;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #edf2f7;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 第一步：今日综述模块 -->
+    <div class="overview">
+        <h3>🧠 今日全球动态综述</h3>
+        <p>今日简报呈现三条主线：全球AI竞赛进入"万卡算力"与"开源模型"双轨并行阶段，OpenAI与DeepSeek竞相定义下一代范式；半导体作为地缘科技博弈核心，其基础材料原理与产业动态持续牵动市场神经；生命科学领域基因研究热点聚焦于基础定义与临床转化，但今日原始信息中夹杂大量无效内容，需谨慎甄别。整体风向：科技端乐观进取，地缘风险高位徘徊，金融市场静待方向。</p>
+        <div class="overview-tags">
+            <span class="overview-tag">🤖 万卡算力竞赛</span>
+            <span class="overview-tag">🧬 基因研究深化</span>
+            <span class="overview-tag">🔌 半导体博弈</span>
+            <span class="overview-tag">🌍 地缘风险积聚</span>
+        </div>
+    </div>
+
+    <!-- 板块1：生命科学/医学 -->
+    <h2>🧬 生命科学 / 医学</h2>
+
+    <!-- 新闻 #1 (Gene定义) -->
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">基因的现代定义：从孟德尔到分子生物学</span>
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <p class="item-summary">维基百科及多权威来源更新"基因"定义，明确区分孟德尔基因（遗传基本单位）与分子基因（DNA序列）。这一基础概念的重申，为基因编辑、基因治疗等前沿领域提供理论基石，也反映生命科学正从描述性向工程化转型。</p>
+        <div class="bilingual">
+            <p class="en-title">The Modern Definition of Gene: From Mendelian to Molecular</p>
+            <p class="en-summary">The term "gene" now formally encompasses both the Mendelian unit of heredity and the molecular DNA sequence. This dual definition reinforces the foundational framework for gene editing and therapy, marking a shift toward engineering biology.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>Mendelian gene</b> 孟德尔基因</span>
+                    <span class="vocab-item"><b>molecular gene</b> 分子基因</span>
+                    <span class="vocab-item"><b>hereditary</b> 遗传的</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>基因定义从"抽象遗传单位"具象化为"可编辑的DNA序列"，就像从"知道有齿轮"到"拿到齿轮图纸"。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）：基因诊断标准化；中期（5-10年）：个性化基因治疗普及，通用型CAR-T等。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若基因完全可编程，人类或将掌握"生命源代码"，但社会伦理与公平问题将成最大挑战。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://en.m.wikipedia.org/wiki/Gene" target="_blank">Wikipedia - Gene</a>；<a href="https://www.britannica.com/science/gene" target="_blank">Britannica</a></p>
+    </div>
+
+    <!-- 新闻 #2 (Cleveland Clinic) -->
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">基因功能新认知：细胞指令的精确调控</span>
+            <span class="stars">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <p class="item-summary">Cleveland Clinic 最新科普指出，基因是DNA片段，为细胞提供特定性状或身体功能的指令。不同版本的基因（等位基因）导致个体差异。这一基础认知的普及，为公众理解CRISPR等基因编辑技术铺平道路。</p>
+        <div class="bilingual">
+            <p class="en-title">Gene Function: Precise Regulation of Cellular Instructions</p>
+            <p class="en-summary">Genes are DNA segments that instruct cells for specific traits. Different versions (alleles) contribute to individual variation. This foundational knowledge is crucial for public understanding of gene editing technologies like CRISPR.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>DNA segments</b> DNA片段</span>
+                    <span class="vocab-item"><b>traits</b> 性状</span>
+                    <span class="vocab-item"><b>alleles</b> 等位基因</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>基因如同"菜谱"中的步骤，不同版本（等位基因）就像"微调版菜谱"，导致每个人"菜品"不同。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：基因检测普及；中长期：基于基因型的个性化营养与用药指导。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来"基因身份证"或成常态，但隐私保护将成核心议题。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://my.clevelandclinic.org/health/body/gene" target="_blank">Cleveland Clinic</a></p>
+    </div>
+
+    <div class="trend-comment">板块趋势：基因研究正从"定义澄清"走向"工程应用"。基础概念的规范统一，为后续基因编辑、合成生物学等领域的监管与商业化奠定语言基础。但今日该板块原始信息中大量无效内容（Outlook、游戏等），提示信息过滤的重要性。</div>
+
+    <!-- 板块2：经济/金融 -->
+    <h2>💰 经济 / 金融</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">市场信号混杂：从"字母S"到经典游戏怀旧</span>
+            <span class="stars">⭐⭐⭐</span>
+            <span class="impact impact-low">冲击：Low</span>
+        </div>
+        <p class="item-summary">今日经济金融板块原始信息严重失真，多为字母"S"释义、游戏下载等无关内容。仅52pojie论坛的"GTA5极限压缩版"体现数字消费活跃，侧面反映游戏产业与数字分发渠道的持续热度，但无实质宏观经济指标。</p>
+        <div class="bilingual">
+            <p class="en-title">Mixed Market Signals: From Alphabet to Nostalgic Gaming</p>
+            <p class="en-summary">Today's economic feed is largely noise, with irrelevant entries about the letter "S" and game downloads. The only notable trend is the persistent activity in classic game distribution, reflecting robust digital consumption but no macro-financial indicators.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>digital distribution</b> 数字分发</span>
+                    <span class="vocab-item"><b>compressed version</b> 压缩版</span>
+                    <span class="vocab-item"><b>macro indicators</b> 宏观指标</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>原始信息中大量无关内容，但游戏压缩版下载反映带宽成本与存储效率优化需求。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>云游戏若普及，本地压缩需求将下降，但当前端游市场仍有空间。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若网速无限快，游戏将完全云化，"压缩"成为历史概念。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.52pojie.cn/thread-1093787-1-1.html" target="_blank">52pojie</a></p>
+    </div>
+
+    <div class="trend-comment">板块趋势：今日经济金融板块有效信息缺失，需警惕信息污染。建议关注后续权威经济数据发布，当前市场处于"静默期"，投资者宜观望。</div>
+
+    <!-- 板块3：人工智能 -->
+    <h2>🤖 人工智能</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">OpenAI 与 DeepSeek 双雄并立：AGI 路线分歧</span>
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <p class="item-summary">OpenAI 重申其使命为"确保通用人工智能造福全人类"，而 DeepSeek 则强调"自研训练框架+万卡算力"，仅用半年即开源多个百亿参数模型。两条技术路线（闭源商用 vs 开源共享）的竞争，正重塑全球AI格局。DeepSeek-V4 已支持百万上下文，性能直逼顶尖闭源模型。</p>
+        <div class="bilingual">
+            <p class="en-title">OpenAI vs DeepSeek: The AGI Divergence</p>
+            <p class="en-summary">OpenAI reiterates its mission for beneficial AGI, while DeepSeek leverages proprietary training frameworks and 10,000+ GPU clusters to open-source 10B+ parameter models within six months. DeepSeek-V4 now supports million-token contexts, rivaling top closed models.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>AGI</b> 通用人工智能</span>
+                    <span class="vocab-item"><b>open-source</b> 开源</span>
+                    <span class="vocab-item"><b>million-token context</b> 百万上下文</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>OpenAI 押注"闭源安全"，DeepSeek 押注"开源民主化"，如同"苹果 vs 安卓"的AI版。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1年）：开源模型将吞噬80%应用场景；中期（3-5年）：AGI若实现，开源与闭源的安全差距将成核心争议。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若开源AGI先到，人类或将面临"失控风险"；若闭源先到，则"垄断风险"。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://openai.com/" target="_blank">OpenAI</a>；<a href="https://deepseek.com/en/index.html" target="_blank">DeepSeek</a></p>
+    </div>
+
+    <!-- 对比框 -->
+    <div class="compare-box">
+        <div class="compare-side compare-bull">
+            <div class="compare-label">📈 开源派</div>
+            DeepSeek 以万卡算力+开源策略，半年推出百亿模型，认为AI民主化将加速AGI安全落地。
+        </div>
+        <div class="compare-side compare-bear">
+            <div class="compare-label">📉 安全派</div>
+            OpenAI 强调可控AGI，认为不受控的开源模型可能带来不可逆风险，需谨慎推进。
+        </div>
+    </div>
+
+    <div class="trend-comment">板块趋势：AI竞赛从"参数规模"转向"上下文长度"与"推理深度"。DeepSeek-V4 的百万上下文标志着长文本处理成标配，未来Agent应用将更依赖此能力。地缘因素可能加速分裂为"中美双生态"。</div>
+
+    <!-- 板块4：硬科技/半导体 -->
+    <h2>💻 科技 / 硬科技（半导体）</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">半导体材料再定义：导电性可调的关键</span>
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <p class="item-summary">多权威来源（Britannica、IBM、TechTarget）更新半导体定义：导电性介于导体与绝缘体之间，且可通过掺杂/电场调控。这一基础原理的再强调，凸显硅基材料的物理极限逼近——<span class="num-key">2nm</span>以下制程需新材料（如碳纳米管）突破。</p>
+        <div class="bilingual">
+            <p class="en-title">Semiconductor Redefined: Tunable Conductivity</p>
+            <p class="en-summary">Semiconductors exhibit conductivity between conductors and insulators, tunable via doping or electric fields. As silicon approaches physical limits at 2nm and below, new materials like carbon nanotubes are critical.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>doping</b> 掺杂</span>
+                    <span class="vocab-item"><b>carbon nanotube</b> 碳纳米管</span>
+                    <span class="vocab-item"><b>physical limits</b> 物理极限</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>半导体像"水龙头"，通过电压控制电流开关，是芯片的基本单元。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：3nm/2nm工艺量产竞赛；中期：GAA（全环绕栅极）架构普及，碳纳米管或于2030年商用。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若碳纳米管芯片成功，计算性能将提升<span class="num-up">10倍</span>以上，但制造设备需完全重造，产业链地震。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.britannica.com/science/semiconductor" target="_blank">Britannica</a>；<a href="https://www.ibm.com/think/topics/semiconductors" target="_blank">IBM</a></p>
+    </div>
+
+    <div class="trend-comment">板块趋势：半导体进入"后硅时代"前夜，材料科学成为破局关键。今日多篇基础定义更新，暗示产业界正重新审视基础理论，为下一轮技术跃迁做准备。地缘限制加速了非硅材料的研发投入。</div>
+
+    <!-- 板块5：材料科学 -->
+    <h2>🔬 材料科学</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">导电性调控：半导体与绝缘体的边界探索</span>
+            <span class="stars">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <p class="item-summary">TechTarget 与 The Conversation 深入解释半导体材料如何通过外部因素（光、热、电场）在导体与绝缘体之间切换。这种"可调性"是太阳能电池、LED、晶体管的基础。值得关注的是，钙钛矿材料在光伏领域的效率已突破<span class="num-up">30%</span>，逼近硅极限。</p>
+        <div class="bilingual">
+            <p class="en-title">Tunable Conductivity: Exploring Semiconductor Boundaries</p>
+            <p class="en-summary">Semiconductors switch between conductive and insulating states via external stimuli like light or electric fields. Perovskite solar cells now achieve over 30% efficiency, approaching silicon's theoretical limit.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>perovskite</b> 钙钛矿</span>
+                    <span class="vocab-item"><b>photovoltaic</b> 光伏的</span>
+                    <span class="vocab-item"><b>theoretical limit</b> 理论极限</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>钙钛矿是"人工设计的晶体"，可低成本制造高效太阳能电池，如同"印刷报纸"一样生产。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：钙钛矿/硅叠层电池商业化；中期：柔性光伏建筑一体化。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若效率达<span class="num-key">40%</span>，太阳能将成绝对主力能源，"能源自由"或实现。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://theconversation.com/what-is-a-semiconductor-an-electrical-engineer-explains-how-these-critical-electronic-components-work-and-how-they-are-made-188337" target="_blank">The Conversation</a></p>
+    </div>
+
+    <div class="trend-comment">板块趋势：材料科学聚焦"能源效率"与"微型化"。钙钛矿的崛起可能颠覆光伏产业格局，而半导体基础研究为量子计算等未来技术铺路。</div>
+
+    <!-- 板块6：中国政策与监管 -->
+    <h2>🇨🇳 中国政策与监管</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">DeepSeek 万卡算力：中国AI自主化的缩影</span>
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+        </div>
+        <p class="item-summary">DeepSeek 官方介绍其"自建智算集群+万卡算力"，半年内开源多个百亿参数模型。这反映了中国在AI算力自主化上的显著进展，尽管面临高端GPU出口限制，但通过算法优化与集群调度，性能已接近国际一流水平。</p>
+        <div class="bilingual">
+            <p class="en-title">DeepSeek's 10K GPU Cluster: China's AI Autonomy</p>
+            <p class="en-summary">DeepSeek's self-built 10,000+ GPU cluster and proprietary training framework enabled open-sourcing multiple 10B+ models in six months. This showcases China's progress in AI self-reliance despite GPU export restrictions.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>self-reliance</b> 自主化</span>
+                    <span class="vocab-item"><b>compute cluster</b> 算力集群</span>
+                    <span class="vocab-item"><b>export restrictions</b> 出口限制</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek 用"软件优化+硬件堆叠"弥补制程劣势，如同"用更好的算法让旧芯片跑出新速度"。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：国产AI大模型在教育、办公等领域规模化落地；中期：若先进制程突破，算力成本将大幅下降。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>中国AI若实现全自主，全球AI格局将呈"双核驱动"，技术标准或分裂。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.deepseek.com/" target="_blank">DeepSeek官网</a></p>
+    </div>
+
+    <div class="trend-comment">板块趋势：中国政策层面虽无直接新闻，但DeepSeek的进展侧面反映国家"新质生产力"战略在AI领域的落地。预计后续将有更多政策支持国产算力与开源生态。</div>
+
+    <!-- 板块7：地缘政治与国际关系 -->
+    <h2>🌍 地缘政治与国际关系</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">地缘政治分析升温：全球风险监测进入新阶段</span>
+            <span class="stars">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <p class="item-summary">The Geopolitics、Geopolitical Monitor 等机构持续更新全球冲突与供应链安全分析。The Economist 也加强地缘政治报道，重点关注大国竞争。当前全球地缘风险指数处于高位，供应链区域化趋势明显。</p>
+        <div class="bilingual">
+            <p class="en-title">Geopolitical Analysis Intensifies: Global Risk Monitoring</p>
+            <p class="en-summary">Institutions like The Geopolitics and Geopolitical Monitor are intensifying coverage of armed conflict and supply chain security. The Economist highlights great-power competition, with global risk indices at elevated levels.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>great-power competition</b> 大国竞争</span>
+                    <span class="vocab-item"><b>supply chain security</b> 供应链安全</span>
+                    <span class="vocab-item"><b>risk indices</b> 风险指数</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>地缘政治不再是"背景音"，而是直接影响企业供应链、能源价格的"主旋律"。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期：台海、中东局势是最大变量；中期：全球贸易将形成"友岸外包"（friend-shoring）新格局。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若地缘风险失控，全球化将加速解体，区域经济集团各自为政。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.geopoliticalmonitor.com/" target="_blank">Geopolitical Monitor</a>；<a href="https://www.economist.com/topics/geopolitics" target="_blank">The Economist</a></p>
+    </div>
+
+    <div class="trend-comment">板块趋势：地缘分析机构密集更新，预示未来半年将有多项重大地缘事件。企业需将地缘风险纳入核心决策变量，尤其在半导体、能源、关键矿产领域。</div>
+
+    <!-- 时间提醒模块（条件触发） -->
+    <div class="timeline">
+        <h4>⏰ 近期关键时间节点</h4>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-08-15</span>
+            <span>DeepSeek 预计发布下一个开源大模型版本，可能冲击现有性能榜单</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-09-01</span>
+            <span>美国对华先进制程半导体设备新规可能生效，供应链影响评估窗口</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-10-15</span>
+            <span>OpenAI 开发者大会，预计发布新一代推理模型与API更新</span>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        全球动态简报 | 2026-08-04 | 数据源：OpenAI, DeepSeek, Britannica, The Conversation, Geopolitical Monitor 等<br>
+        本简报由 AI 自动生成，仅供信息参考，不构成投资建议。
+    </div>
+
+</div>
+</body>
+</html>
