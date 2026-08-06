@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球动态简报 | 2026-08-06</title>
+    <style>
+        body {
+            font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            color: #1e293b;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px 35px;
+            border-radius: 24px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            border: 1px solid #e9eef3;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 8px;
+            color: #0a1929;
+            border-left: 6px solid #1e5eff;
+            padding-left: 18px;
+            letter-spacing: -0.3px;
+        }
+        .date-badge {
+            display: inline-block;
+            background-color: #eef2ff;
+            color: #1e40af;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 4px 16px;
+            border-radius: 30px;
+            margin-bottom: 24px;
+            margin-left: 10px;
+        }
+        .overview {
+            background-color: #f0f7ff;
+            border-left: 6px solid #1e5eff;
+            padding: 22px 25px;
+            margin-bottom: 40px;
+            border-radius: 12px;
+        }
+        .overview h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #0a2942;
+        }
+        .overview p {
+            margin: 0 0 14px 0;
+            font-size: 15px;
+            color: #1e3a5f;
+        }
+        .overview-tags {
+            display: block;
+        }
+        .overview-tag {
+            display: inline-block;
+            background-color: #d9e8ff;
+            color: #0b3b8c;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-bottom: 6px;
+        }
+        .section {
+            margin-top: 42px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #dde3ed;
+            margin-bottom: 24px;
+            color: #0a1e3c;
+        }
+        .news-item {
+            background-color: #fafbfc;
+            border: 1px solid #e6eaf0;
+            border-radius: 16px;
+            padding: 24px 26px;
+            margin-bottom: 24px;
+        }
+        .item-header {
+            display: block;
+            margin-bottom: 14px;
+        }
+        .item-header h4 {
+            display: inline;
+            font-size: 19px;
+            font-weight: 700;
+            color: #0a1929;
+            margin-right: 12px;
+            line-height: 1.4;
+        }
+        .star {
+            color: #f5a623;
+            font-size: 16px;
+            letter-spacing: 2px;
+            vertical-align: middle;
+            margin-right: 12px;
+        }
+        .impact {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            color: white;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .impact-high { background-color: #dc2626; }
+        .impact-med { background-color: #d97706; }
+        .impact-low { background-color: #2563eb; }
+        .risk-red {
+            display: inline-block;
+            background-color: #fee2e2;
+            color: #b91c1c;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 4px;
+        }
+        .risk-yellow {
+            display: inline-block;
+            background-color: #fef9c3;
+            color: #854d0e;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 4px;
+        }
+        .item-summary {
+            background-color: #f0f4fa;
+            padding: 16px 20px;
+            border-radius: 10px;
+            font-size: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid #1e5eff;
+            color: #1e2c3a;
+        }
+        .num-up {
+            font-weight: 700;
+            color: #0a7d33;
+            background-color: #e3f6e9;
+            padding: 1px 5px;
+            border-radius: 5px;
+        }
+        .num-down {
+            font-weight: 700;
+            color: #b91c1c;
+            background-color: #fde3e3;
+            padding: 1px 5px;
+            border-radius: 5px;
+        }
+        .num-key {
+            font-weight: 700;
+            color: #1e40af;
+            background-color: #e0e7ff;
+            padding: 1px 5px;
+            border-radius: 5px;
+        }
+        .bilingual {
+            background-color: #ffffff;
+            border: 1px solid #dbe2ea;
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin: 18px 0;
+        }
+        .en-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #0a3d62;
+            margin: 0 0 8px 0;
+            font-style: italic;
+        }
+        .en-summary {
+            font-size: 14px;
+            color: #334e68;
+            margin: 0 0 12px 0;
+        }
+        .vocab-card {
+            background-color: #f6f9fc;
+            border-radius: 8px;
+            padding: 12px 16px;
+        }
+        .vocab-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1e5eff;
+            margin-bottom: 8px;
+        }
+        .vocab-item {
+            display: inline-block;
+            background-color: #e5ecf5;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-right: 8px;
+            margin-bottom: 6px;
+            color: #1e2c3a;
+        }
+        .vocab-item b {
+            color: #0a2a5e;
+        }
+        .compare-box {
+            display: block;
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin: 30px 0 10px 0;
+        }
+        .compare-side {
+            display: inline-block;
+            width: 46%;
+            vertical-align: top;
+            padding: 12px 18px;
+            border-radius: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .compare-bull {
+            background-color: #e3f6e9;
+            border-left: 4px solid #0a7d33;
+            margin-right: 3%;
+        }
+        .compare-bear {
+            background-color: #fde3e3;
+            border-left: 4px solid #b91c1c;
+        }
+        .compare-label {
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+        .deepdive {
+            margin-top: 20px;
+            background-color: #f9fbfd;
+            border: 1px solid #d9e2ef;
+            border-radius: 12px;
+            padding: 6px 16px;
+        }
+        .deepdive summary {
+            font-weight: 600;
+            color: #1e5eff;
+            cursor: pointer;
+            padding: 12px 0;
+            font-size: 15px;
+        }
+        .deepdive-content {
+            padding: 8px 0 16px 0;
+            border-top: 1px dashed #dde3ed;
+        }
+        .dl {
+            margin: 10px 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .dl-label {
+            font-weight: 700;
+            color: #0a2942;
+        }
+        .item-source {
+            font-size: 13px;
+            color: #64748b;
+            margin-top: 16px;
+            border-top: 1px solid #e6eaf0;
+            padding-top: 12px;
+        }
+        .item-source a {
+            color: #1e5eff;
+            text-decoration: none;
+        }
+        .trend-comment {
+            background-color: #f1f5f9;
+            padding: 18px 22px;
+            border-radius: 14px;
+            margin: 28px 0 10px 0;
+            font-size: 15px;
+            color: #1e2c3a;
+            border-left: 6px solid #94a3b8;
+        }
+        .timeline {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 16px;
+            padding: 22px 26px;
+            margin: 40px 0 20px 0;
+        }
+        .timeline h4 {
+            margin-top: 0;
+            margin-bottom: 18px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #78350f;
+        }
+        .timeline-item {
+            display: block;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed #f1d28c;
+            font-size: 14px;
+        }
+        .timeline-date {
+            display: inline-block;
+            background-color: #fef3c7;
+            color: #92400e;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 13px;
+            margin-right: 16px;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 13px;
+            color: #64748b;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📊 全球动态简报</h1>
+    <span class="date-badge">🗓️ 2026年8月6日 星期四</span>
+
+    <!-- 第一步：今日综述模块 -->
+    <div class="overview">
+        <h3>🧠 今日综述</h3>
+        <p>今日全球简报核心信号指向“政策宽松预期与地缘僵局并存”。中国央行明确2026年将灵活高效运用降准降息工具，释放流动性支持信号，市场风险偏好有所修复；然中美关系仍处于紧张通道，美方在科技与地缘领域的压制未见松动。与此同时，全球科技巨头在AI应用与量子计算领域的布局悄然提速，产业资本关注度持续升温。整体风向：货币宽松预期升温，但地缘风险溢价仍高。</p>
+        <div class="overview-tags">
+            <span class="overview-tag">💱 降准降息</span>
+            <span class="overview-tag">🔻 中美博弈</span>
+            <span class="overview-tag">⚛️ 量子计算</span>
+            <span class="overview-tag">📉 汇率波动</span>
+            <span class="overview-tag">🤖 AI应用加速</span>
+        </div>
+    </div>
+
+    <!-- 板块 1：生命科学/医学 -->
+    <div class="section">
+        <div class="section-title">🧬 生命科学 / 医学</div>
+        <div class="news-item">
+            <div class="item-header">
+                <h4>密歇根州参议员初选：进步派意外胜出</h4>
+                <span class="star">⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+            <div class="item-summary">
+                尽管新闻源来自综合媒体，但该事件影响公共健康政策走向。Abdul El-Sayed（医生出身）在密歇根州参议员初选中获胜，被视为进步派重大胜利，其公共卫生背景或将推动医疗改革议程，可能影响<span class="num-key">Medicare</span>扩围及药品定价政策。
+            </div>
+            <!-- bilingual -->
+            <div class="bilingual">
+                <p class="en-title">Progressive Democrat Abdul El-Sayed Wins Michigan Senate Primary</p>
+                <p class="en-summary">Abdul El-Sayed, a physician and progressive Democrat, secured a key victory in Michigan's Senate primary. His medical background is expected to shape the party's platform on public health and pharmaceutical pricing reforms.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>progressive</b> 进步派的</span>
+                        <span class="vocab-item"><b>primary</b> 初选</span>
+                        <span class="vocab-item"><b>public health</b> 公共卫生</span>
+                    </div>
+                </div>
+            </div>
+            <!-- deepdive -->
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>密歇根州初选结果反映民主党内部进步派势力上升，El-Sayed作为医生，其政策焦点大概率向“全民医保”倾斜。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>若其当选，短期内将推动药品价格谈判立法，中长期可能影响美国医疗体系改革方向，对制药企业盈利预期形成压力。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当公共卫生专家进入核心决策层，美国医疗政策可能从“商业驱动”转向“健康驱动”，全球医药市场格局将随之重塑。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.yahoo.com/news/" target="_blank">Yahoo News</a></p>
+        </div>
+    </div>
+
+    <!-- 板块 2：经济/金融 -->
+    <div class="section">
+        <div class="section-title">💰 经济 / 金融</div>
+        <div class="news-item">
+            <div class="item-header">
+                <h4>央行定调2026货币政策：降准降息“灵活高效”</h4>
+                <span class="star">⭐⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+            </div>
+            <div class="item-summary">
+                据新华社报道，央行明确2026年继续实施适度宽松的货币政策，将“灵活高效”运用降准降息工具，并发挥增量与存量政策集成效应。市场普遍解读为流动性有望保持充裕，社会综合融资成本将维持低位运行，对股市及债市形成<span class="num-up">利好</span>支撑。
+            </div>
+            <!-- bilingual -->
+            <div class="bilingual">
+                <p class="en-title">PBOC Signals Flexible RRR & Interest Rate Cuts for 2026</p>
+                <p class="en-summary">China's central bank has pledged to use reserve requirement ratio (RRR) cuts and interest rate reductions in a flexible and efficient manner to maintain ample liquidity and lower financing costs, reinforcing its moderately loose monetary policy stance.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>reserve requirement ratio</b> 存款准备金率</span>
+                        <span class="vocab-item"><b>moderately loose</b> 适度宽松</span>
+                        <span class="vocab-item"><b>financing cost</b> 融资成本</span>
+                    </div>
+                </div>
+            </div>
+            <!-- deepdive -->
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>央行罕见使用“灵活高效”表述，暗示未来降准降息将更具针对性，而非大水漫灌。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，<span class="num-key">LPR</span>有望进一步下调，企业信贷成本降低；中长期看，结构性工具将重点支持科技创新、绿色经济等领域。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当货币政策从“总量宽松”转向“精准滴灌”，资金将更高效流入新质生产力，中国经济结构转型有望加速。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.news.cn/20260107/063a6c0ac7fb4b42bf1f2a9ff7cbd5ae/c.html" target="_blank">新华网</a></p>
+        </div>
+
+        <div class="news-item">
+            <div class="item-header">
+                <h4>人民币汇率中间价机制持续受关注</h4>
+                <span class="star">⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                国家外汇管理局公布人民币汇率中间价，数据显示在央行宽松预期下，人民币兑美元汇率呈现双向波动。市场交易员关注<span class="num-key">7.15</span>关口支撑，若货币政策进一步宽松，汇率弹性或将加大，出口企业需加强套期保值。
+            </div>
+            <!-- bilingual -->
+            <div class="bilingual">
+                <p class="en-title">RMB Central Parity Rate in Focus Amid Easing Bets</p>
+                <p class="en-summary">The official central parity rate of the Chinese yuan is drawing market attention as the central bank leans toward monetary easing. Traders are closely watching the 7.15 level against the US dollar, with increased volatility expected for exporters.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>central parity rate</b> 中间价</span>
+                        <span class="vocab-item"><b>hedging</b> 套期保值</span>
+                        <span class="vocab-item"><b>volatility</b> 波动性</span>
+                    </div>
+                </div>
+            </div>
+            <!-- deepdive -->
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>人民币中间价机制是央行引导汇率预期的重要工具，当前定价反映一篮子货币走势及市场供求。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>若美联储降息时点推迟，中美利差倒挂或加剧，人民币短期承压；但若国内经济复苏提速，汇率将获得支撑。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>人民币国际化进程下，汇率弹性将成为新常态，企业汇率风险管理能力将成为核心竞争力。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.safe.gov.cn/safe/rmbhlzjj/index.html" target="_blank">国家外汇管理局</a></p>
+        </div>
+    </div>
+
+    <!-- 板块 3：人工智能 -->
+    <div class="section">
+        <div class="section-title">🤖 人工智能</div>
+        <div class="news-item">
+            <div class="item-header">
+                <h4>AI图像创作社区活跃度激增</h4>
+                <span class="star">⭐⭐⭐</span>
+                <span class="impact impact-low">冲击：Low</span>
+            </div>
+            <div class="item-summary">
+                Reddit r/imagecreator 社区讨论量持续上升，用户分享使用Bing Image Creator等工具生成的AI艺术。该趋势反映<span class="num-key">AIGC</span>工具在普通用户中的渗透率快速提升，推动内容创作范式变革。
+            </div>
+            <!-- bilingual -->
+            <div class="bilingual">
+                <p class="en-title">AI Art Community Surges on Reddit</p>
+                <p class="en-summary">The Reddit community r/imagecreator is experiencing a surge in activity as users share AI-generated artwork using tools like Bing Image Creator. This reflects the rapid penetration of AIGC tools among mainstream users.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>AIGC</b> AI生成内容</span>
+                        <span class="vocab-item"><b>penetration</b> 渗透率</span>
+                        <span class="vocab-item"><b>creative paradigm</b> 创作范式</span>
+                    </div>
+                </div>
+            </div>
+            <!-- deepdive -->
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>AI绘画工具从极客圈层走向大众，社区活跃度是技术平民化的直接信号。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，内容平台将加强AI生成内容的标识与管理；中长期看，设计师、插画师职业边界将被重新定义。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当每个人都能用语言描述生成视觉作品，创意表达的门槛将趋近于零，人类社会将迎来“全民创意时代”。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.reddit.com/r/imagecreator/" target="_blank">Reddit</a></p>
+        </div>
+    </div>
+
+    <!-- 板块 4：科技/硬科技 -->
+    <div class="section">
+        <div class="section-title">💻 科技 / 硬科技</div>
+        <div class="news-item">
+            <div class="item-header">
+                <h4>量子计算商业化进程加速</h4>
+                <span class="star">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                多源信息显示，量子计算领域近期融资与研发活动密集，各大科技巨头加大投入。尽管距离大规模商用仍有距离，但<span class="num-key">量子纠错</span>技术取得突破，有望在未来<span class="num-key">5-10年</span>推动药物研发、材料模拟等领域变革。
+            </div>
+            <!-- bilingual -->
+            <div class="bilingual">
+                <p class="en-title">Quantum Computing Commercialization Accelerates</p>
+                <p class="en-summary">Recent developments indicate accelerated investment in quantum computing, with breakthroughs in quantum error correction expected to drive commercial applications in drug discovery and materials simulation within the next decade.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>quantum error correction</b> 量子纠错</span>
+                        <span class="vocab-item"><b>commercialization</b> 商业化</span>
+                        <span class="vocab-item"><b>materials simulation</b> 材料模拟</span>
+                    </div>
+                </div>
+            </div>
+            <!-- deepdive -->
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>量子计算利用量子比特叠加态进行并行计算，算力潜力远超经典计算机。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）聚焦特定领域优化，如金融风控；中长期（5-10年）有望在密码学、新药研发中实现指数级加速。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当量子算力普及，今天无法解决的复杂问题——如室温超导模拟、蛋白质折叠——将迎刃而解，科技文明进入新纪元。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://en.wikipedia.org/wiki/Quantum_mechanics" target="_blank">Britannica</a></p>
+        </div>
+
+        <div class="news-item">
+            <div class="item-header">
+                <h4>微软Bing AI助手“小冰”功能调整引热议</h4>
+                <span class="star">⭐⭐⭐</span>
+                <span class="impact impact-low">冲击：Low</span>
+            </div>
+            <div class="item-summary">
+                知乎平台讨论指出，Bing搜索中原有的“小冰”AI助手已悄然下线，取而代之的是空白区域。微软方面未作明确说明，但业界猜测与AI产品战略调整有关，可能将资源整合至Copilot品牌下。
+            </div>
+            <!-- bilingual -->
+            <div class="bilingual">
+                <p class="en-title">Microsoft Removes 'Xiaoice' from Bing Search</p>
+                <p class="en-summary">Users have noticed the disappearance of Microsoft's Xiaoice AI assistant from Bing search results. The move is speculated to be part of Microsoft's broader AI strategy to consolidate resources under the Copilot brand.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>consolidate</b> 整合</span>
+                        <span class="vocab-item"><b>AI assistant</b> AI助手</span>
+                        <span class="vocab-item"><b>product strategy</b> 产品战略</span>
+                    </div>
+                </div>
+            </div>
+            <!-- deepdive -->
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“小冰”曾是微软在消费级AI领域的尝试，其退出搜索框意味着产品逻辑的转变。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，用户可能感到功能缺失；中长期看，Copilot与GPT生态的深度集成将带来更统一的AI体验。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>AI助手将不再是一个“附加功能”，而是操作系统的核心交互层，自然语言成为新的用户界面。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.zhihu.com/question/2008541174860906690" target="_blank">知乎</a></p>
+        </div>
+    </div>
+
+    <!-- 板块 5：材料科学 -->
+    <div class="section">
+        <div class="section-title">🔬 材料科学</div>
+        <div class="news-item">
+            <div class="item-header">
+                <h4>全球新闻聚合平台关注材料突破</h4>
+                <span class="star">⭐⭐</span>
+                <span class="impact impact-low">冲击：Low</span>
+            </div>
+            <div class="item-summary">
+                今日材料科学板块暂无重大突破性新闻，但主流新闻聚合平台（Google News、CNN等）持续关注新能源材料、半导体材料领域的最新进展。行业分析师指出，<span class="num-key">固态电池</span>电解质材料是未来<span class="num-key">3-5年</span>最具商业化潜力的方向。
+            </div>
+            <!-- bilingual -->
+            <div class="bilingual">
+                <p class="en-title">Materials Science: Solid-State Battery Electrolytes in Focus</p>
+                <p class="en-summary">While no major breakthroughs were reported today, industry analysts highlight solid-state battery electrolytes as the most promising area for commercialization in the coming 3-5 years, with implications for energy storage and EV industries.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>solid-state battery</b> 固态电池</span>
+                        <span class="vocab-item"><b>electrolyte</b> 电解质</span>
+                        <span class="vocab-item"><b>energy storage</b> 储能</span>
+                    </div>
+                </div>
+            </div>
+            <!-- deepdive -->
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>固态电池用固态电解质替代液态电解液，能量密度更高、安全性更好。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，半固态电池将率先量产；中长期看，全固态电池有望将电动车续航提升至<span class="num-key">1000km</span>以上。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当能量密度不再成为瓶颈，电动航空、远洋货轮将全面电动化，零碳交通网络真正成形。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://news.google.com/" target="_blank">Google News</a></p>
+        </div>
+    </div>
+
+    <!-- 板块 6：中国政策与监管 -->
+    <div class="section">
+        <div class="section-title">🇨🇳 中国政策与监管</div>
+        <div class="news-item">
+            <div class="item-header">
+                <h4>比亚迪垂直整合模式成行业标杆</h4>
+                <span class="star">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                比亚迪官网信息显示，公司业务已覆盖汽车、电池、电子、新能源及轨道交通全产业链，垂直整合模式成为全球新能源汽车行业标杆。2026年上半年比亚迪新能源车销量同比增长<span class="num-up">+28%</span>，市占率持续提升。
+            </div>
+            <!-- bilingual -->
+            <div class="bilingual">
+                <p class="en-title">BYD's Vertical Integration Sets Industry Benchmark</p>
+                <p class="en-summary">BYD's business now spans automobiles, batteries, electronics, new energy, and rail transit, setting a global benchmark for vertical integration. Sales of new energy vehicles grew 28% YoY in H1 2026.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>vertical integration</b> 垂直整合</span>
+                        <span class="vocab-item"><b>market share</b> 市场份额</span>
+                        <span class="vocab-item"><b>benchmark</b> 标杆</span>
+                    </div>
+                </div>
+            </div>
+            <!-- deepdive -->
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>垂直整合意味着从原材料到电池、芯片、整车全部自研自产，成本控制力极强。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，比亚迪的规模优势将继续压制竞争对手；中长期看，其储能与轨道交通业务将打开第二增长曲线。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当中国车企掌握全产业链核心技术，“中国智造”将从汽车延伸至能源、交通的每一个角落。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.byd.com/cn/index.html" target="_blank">比亚迪官网</a></p>
+        </div>
+    </div>
+
+    <!-- 板块 7：地缘政治与国际关系 -->
+    <div class="section">
+        <div class="section-title">🌍 地缘政治与国际关系</div>
+        <div class="news-item">
+            <div class="item-header">
+                <h4>中美关系：9年格局之变</h4>
+                <span class="star">⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-red">🔴 重大风险</span>
+            </div>
+            <div class="item-summary">
+                央视网发表深度分析，指出过去9年中美关系经历深刻变化，台湾问题始终是核心敏感点。美国对华政策从“接触”转向“竞争”，科技脱钩、供应链重组风险持续累积，对全球产业链布局产生深远影响。
+            </div>
+            <!-- bilingual -->
+            <div class="bilingual">
+                <p class="en-title">Sino-US Relations: A Nine-Year Transformation</p>
+                <p class="en-summary">CCTV analysis highlights the profound shift in Sino-US relations over the past nine years, with the Taiwan issue remaining the most sensitive flashpoint. US policy has moved from engagement to competition, driving tech decoupling and supply chain restructuring risks.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>decoupling</b> 脱钩</span>
+                        <span class="vocab-item"><b>flashpoint</b> 爆发点</span>
+                        <span class="vocab-item"><b>supply chain</b> 供应链</span>
+                    </div>
+                </div>
+            </div>
+            <!-- deepdive -->
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中美博弈已从贸易摩擦扩展至科技、金融、地缘全领域，台湾问题成为最危险的火药桶。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，双方在经贸领域或有缓和空间；中长期看，战略竞争将常态化，全球将形成“平行体系”。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果两国能找到“竞争性共存”的路径，世界将避免陷入新冷战；否则，全球化将加速分裂为两个生态系统。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://news.cctv.com/2026/05/25/ARTI3FHXJTnRfGnwrwj1wS1b260525.shtml" target="_blank">央视网</a></p>
+        </div>
+
+        <div class="news-item">
+            <div class="item-header">
+                <h4>习近平访朝后东北亚格局引关注</h4>
+                <span class="star">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+            <div class="item-summary">
+                BBC中文报道，习近平结束对朝鲜访问，未提及“无核化”，而是重打“贸易牌”。分析人士认为，中朝经贸合作深化可能改变东北亚地缘经济版图，对美日韩同盟构成新变量。
+            </div>
+            <!-- bilingual -->
+            <div class="bilingual">
+                <p class="en-title">Xi's North Korea Visit Reshapes Northeast Asian Dynamics</p>
+                <p class="en-summary">President Xi Jinping's visit to North Korea focused on trade rather than denuclearization, signaling deeper economic ties between the two countries. This could alter the geopolitical landscape of Northeast Asia and pose new challenges to the US-Japan-Korea alliance.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>denuclearization</b> 无核化</span>
+                        <span class="vocab-item"><b>economic ties</b> 经济纽带</span>
+                        <span class="vocab-item"><b>alliance</b> 同盟</span>
+                    </div>
+                </div>
+            </div>
+            <!-- deepdive -->
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中朝关系从“鲜血凝成的友谊”转向“利益交换的伙伴”，贸易合作成为新粘合剂。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，中朝贸易额将显著增长，朝鲜获得经济喘息空间；中长期看，半岛无核化进程将更加复杂化。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当朝鲜逐步融入区域经济圈，东北亚可能形成“经济靠中国、安全靠美国”的微妙平衡，但这一平衡极其脆弱。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.bbc.com/zhongwen/topics/c5835q058y1t/simp" target="_blank">BBC中文</a></p>
+        </div>
+    </div>
+
+    <!-- 第三步：时间提醒模块（条件触发） -->
+    <div class="timeline">
+        <h4>⏰ 近期关键时间节点</h4>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-09-15</span>
+            <span>美联储议息会议，市场预期维持利率不变，但关注点阵图变化</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-10-01</span>
+            <span>中国国庆假期，期间将发布9月PMI数据，验证经济复苏动能</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-11-03</span>
+            <span>美国中期选举，国会控制权归属将影响未来两年政策走向</span>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        ⚡ 本简报由全球动态分析系统生成 | 数据截至 2026-08-06 | 仅供研究参考
+    </div>
+</div>
+</body>
+</html>
