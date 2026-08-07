@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌐 全球动态 | 每日简报</title>
+    <style>
+        body {
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1a2639;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px 35px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        h2 {
+            font-weight: 600;
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 8px;
+            color: #0b1c2c;
+            border-left: 6px solid #2c6e9c;
+            padding-left: 15px;
+        }
+        .date-badge {
+            display: inline-block;
+            background-color: #eef2f6;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #3a5670;
+            margin-bottom: 25px;
+        }
+        /* overview */
+        .overview {
+            background-color: #eef4fa;
+            padding: 22px 25px;
+            border-radius: 10px;
+            margin-bottom: 35px;
+            border-left: 6px solid #1f6f8b;
+        }
+        .overview h3 {
+            margin: 0 0 10px 0;
+            font-weight: 600;
+            font-size: 20px;
+            color: #0f3b5c;
+        }
+        .overview p {
+            margin: 0 0 15px 0;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        .overview-tags {
+            display: block;
+        }
+        .overview-tag {
+            display: inline-block;
+            background-color: #dbe7f3;
+            border-radius: 30px;
+            padding: 5px 14px;
+            font-size: 13px;
+            font-weight: 400;
+            margin-right: 8px;
+            color: #1a3a55;
+        }
+        /* 板块 */
+        .section {
+            margin-top: 40px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            border-bottom: 2px solid #d0dde9;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            color: #1e3d5e;
+        }
+        .news-card {
+            background-color: #fafbfd;
+            border-radius: 10px;
+            padding: 20px 22px;
+            margin-bottom: 20px;
+            border: 1px solid #e4eaf1;
+        }
+        .item-header {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .item-title {
+            font-size: 18px;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 8px;
+            color: #0d2b45;
+        }
+        .stars {
+            display: inline-block;
+            color: #f5b342;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+        .impact {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 30px;
+            margin-right: 6px;
+        }
+        .impact-high {
+            background-color: #fdecea;
+            color: #b33a3a;
+        }
+        .impact-med {
+            background-color: #fff4e0;
+            color: #b26b1a;
+        }
+        .impact-low {
+            background-color: #e7f1e8;
+            color: #2b6e4f;
+        }
+        .risk-red {
+            background-color: #fce4e4;
+            color: #a51b1b;
+            font-size: 12px;
+            font-weight: 400;
+            padding: 3px 8px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-left: 4px;
+        }
+        .risk-yellow {
+            background-color: #fef6dd;
+            color: #8a6d1a;
+            font-size: 12px;
+            font-weight: 400;
+            padding: 3px 8px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-left: 4px;
+        }
+        .item-summary {
+            font-size: 15px;
+            line-height: 1.65;
+            margin-top: 8px;
+            margin-bottom: 15px;
+        }
+        .num-up {
+            background-color: #deefe4;
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 6px;
+            color: #1c6b3c;
+        }
+        .num-down {
+            background-color: #f5dcdc;
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 6px;
+            color: #a12b2b;
+        }
+        .num-key {
+            background-color: #e3e9f2;
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 6px;
+            color: #1d4e7a;
+        }
+        /* bilingual */
+        .bilingual {
+            background-color: #f0f4f8;
+            padding: 15px 18px;
+            border-radius: 8px;
+            margin: 15px 0 15px 0;
+            border-left: 4px solid #7a9bb8;
+        }
+        .en-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 6px 0;
+            color: #1f3c5a;
+            font-style: italic;
+        }
+        .en-summary {
+            margin: 0 0 12px 0;
+            font-size: 14px;
+            color: #2b4a69;
+            line-height: 1.5;
+        }
+        .vocab-card {
+            background-color: #ffffff;
+            border-radius: 6px;
+            padding: 10px 14px;
+            display: inline-block;
+        }
+        .vocab-title {
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 6px;
+            color: #1a3f5e;
+        }
+        .vocab-list {
+            display: block;
+        }
+        .vocab-item {
+            display: inline-block;
+            background-color: #eef1f5;
+            border-radius: 20px;
+            padding: 3px 12px;
+            font-size: 13px;
+            margin-right: 6px;
+            margin-bottom: 4px;
+        }
+        .vocab-item b {
+            font-weight: 600;
+            margin-right: 4px;
+        }
+        /* compare */
+        .compare-box {
+            display: block;
+            background-color: #f8fafc;
+            border: 1px solid #d7e0e8;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .compare-side {
+            display: inline-block;
+            width: 48%;
+            vertical-align: top;
+            font-size: 14px;
+            line-height: 1.5;
+            padding: 8px 12px;
+            box-sizing: border-box;
+        }
+        .compare-bull {
+            background-color: #e5f2e9;
+            border-radius: 8px;
+        }
+        .compare-bear {
+            background-color: #f9e5e5;
+            border-radius: 8px;
+        }
+        .compare-label {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        /* deepdive */
+        .deepdive {
+            margin-top: 15px;
+            border: 1px solid #d4dee8;
+            border-radius: 8px;
+            background-color: #ffffff;
+            padding: 10px 15px;
+        }
+        .deepdive summary {
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            color: #1f4b74;
+            outline: none;
+        }
+        .deepdive-content {
+            margin-top: 12px;
+            border-top: 1px dashed #b9c8d8;
+            padding-top: 12px;
+        }
+        .dl {
+            font-size: 14px;
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        .dl-label {
+            font-weight: 600;
+        }
+        .item-source {
+            font-size: 12px;
+            color: #6f7e91;
+            margin-top: 12px;
+            border-top: 1px solid #eef1f5;
+            padding-top: 10px;
+        }
+        .item-source a {
+            color: #2a6f97;
+            text-decoration: none;
+        }
+        .trend-comment {
+            background-color: #f2f6fa;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            border-left: 4px solid #5b8cb8;
+        }
+        .timeline {
+            background-color: #f7f3e8;
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin: 35px 0 20px 0;
+            border: 1px solid #e7dcc8;
+        }
+        .timeline h4 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-size: 18px;
+            color: #5e4a2b;
+        }
+        .timeline-item {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .timeline-date {
+            display: inline-block;
+            background-color: #e5dac8;
+            border-radius: 30px;
+            padding: 2px 12px;
+            font-weight: 600;
+            margin-right: 12px;
+            color: #3d2f1a;
+            font-size: 13px;
+        }
+        .footer-note {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #8b9aab;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h2>🌍 全球动态 · 每日智报</h2>
+    <div class="date-badge">📅 2026年8月7日 星期五</div>
+
+    <!-- 综述模块 -->
+    <div class="overview">
+        <h3>🧠 今日全球综述</h3>
+        <p>今日简报主线：AI算力基础设施投资狂潮推高半导体价格，形成“芯片通胀”效应，美国头部科技企业年度资本开支预计超<span class="num-key">6500亿美元</span>；马斯克宣布投资<span class="num-key">200亿美元</span>在得州建设TeraFab芯片工厂，重塑美国先进制造版图；存储芯片领域长鑫科技科创板上市引爆产业热潮。地缘层面，中国国务院发布“十五五”知识产权规划，强化科技自主。整体风向：科技制造端极度活跃，金融端警惕通胀，政策端聚焦半导体与AI治理。</p>
+        <div class="overview-tags">
+            <span class="overview-tag">🤖 AI资本开支狂潮</span>
+            <span class="overview-tag">💾 芯片通胀</span>
+            <span class="overview-tag">🏭 200亿芯片厂</span>
+            <span class="overview-tag">🔋 存储芯片爆发</span>
+            <span class="overview-tag">📜 知识产权"十五五"</span>
+        </div>
+    </div>
+
+    <!-- ========== 板块1：生命科学 ========== -->
+    <div class="section">
+        <div class="section-title">🧬 生命科学 / 医学</div>
+        <!-- 新闻1 基因定义 -->
+        <div class="news-card">
+            <div class="item-header">
+                <span class="item-title">基因定义再审视：转录本为基准的现代概念</span>
+                <span class="stars">⭐⭐⭐</span>
+                <span class="impact impact-low">冲击：Low</span>
+            </div>
+            <div class="item-summary">
+                维基百科与Britannica等权威平台更新基因定义，强调“转录的DNA序列”，涵盖非编码RNA基因。这一基础概念虽属科普级更新，但为基因编辑与合成生物学提供更精确的语义框架，影响未来科研交流与教学。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Gene definition evolves: a focus on transcriptional units</p>
+                <p class="en-summary">Recent encyclopedia updates define a gene as a DNA sequence that is transcribed, explicitly including non-coding RNA genes. This shift in terminology helps standardize genomic communication and supports advances in gene therapy and synthetic biology.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>transcribed</b> 转录</span>
+                        <span class="vocab-item"><b>non-coding RNA</b> 非编码RNA</span>
+                        <span class="vocab-item"><b>locus</b> 基因座</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>将基因定义为“被转录的DNA序列”，意味着不编码蛋白质的RNA基因（如miRNA、lncRNA）也正式纳入基因范畴，反映功能基因组学的最新认知。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期影响科研论文术语规范；中长期可能影响基因治疗靶点筛选范围，非编码RNA的潜力被进一步挖掘，预计<span class="num-key">3-5年</span>内相关药物靶点数量增加。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来医生读取的基因组报告将包含非编码调控元件，个体化医疗更加精准，但伴随数据解释的伦理挑战。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://en.wikipedia.org/wiki/Gene" target="_blank">Wikipedia / Britannica</a></p>
+        </div>
+
+        <!-- 新闻2 基因科普 -->
+        <div class="news-card">
+            <div class="item-header">
+                <span class="item-title">Cleveland Clinic：基因功能科普升级，等位基因概念强化</span>
+                <span class="stars">⭐⭐⭐</span>
+                <span class="impact impact-low">冲击：Low</span>
+            </div>
+            <div class="item-summary">
+                克利夫兰诊所发布基因科普，强调等位基因与身体功能的直接关联。在基因编辑技术快速步入临床的当下，公众对基因基础概念的准确认知成为基因疗法的社会基础。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Cleveland Clinic highlights allele function in gene education</p>
+                <p class="en-summary">The health platform explains how different versions of a gene, called alleles, dictate specific traits. This clarity is essential for patients considering genetic testing and personalized medicine.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>allele</b> 等位基因</span>
+                        <span class="vocab-item"><b>hereditary</b> 遗传的</span>
+                        <span class="vocab-item"><b>genome</b> 基因组</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>公共医学机构将复杂的基因概念转化为大众语言，强调“基因-性状”关系，帮助普通人理解精准医疗。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期提升基因检测的接受度；中长期可能增加遗传咨询需求，推动基因数据隐私立法。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>基因知识普及后，社会对基因编辑婴儿等议题的讨论将更加理性，科学与伦理的鸿沟缩小。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://my.clevelandclinic.org/health/body/gene" target="_blank">Cleveland Clinic</a></p>
+        </div>
+
+        <!-- 板块趋势 -->
+        <div class="trend-comment">📊 板块趋势：今日生命科学新闻以基础基因概念更新为主，虽无重大临床突破，但反映出基因编辑与基因治疗加速落地背景下，全球对基因定义与公众认知的重视。基础概念统一有助于监管框架与科研协作。</div>
+    </div>
+
+    <!-- ========== 板块2：经济/金融 ========== -->
+    <div class="section">
+        <div class="section-title">💰 经济 / 金融</div>
+        <!-- 芯片通胀 -->
+        <div class="news-card">
+            <div class="item-header">
+                <span class="item-title">“芯片通胀”来袭：AI基础设施成本飙升</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-yellow">🟡 值得观察</span>
+            </div>
+            <div class="item-summary">
+                报道指出，AI需求推动存储芯片价格暴涨，形成“芯片通胀”现象。美国五大AI公司今年预计在数据中心投入超<span class="num-up">6500亿美元</span>，较2025年近乎翻倍。供给短缺与资本开支扩张形成螺旋，全球电子消费品成本面临上行压力。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Chipflation: the hidden cost of AI infrastructure</p>
+                <p class="en-summary">The surge in AI-driven demand is causing memory chip prices to soar. Top five US AI firms are expected to invest over $650 billion in data centers this year, nearly doubling 2025 levels, creating a potential inflationary spiral for electronics.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>chipflation</b> 芯片通胀</span>
+                        <span class="vocab-item"><b>supply shortage</b> 供给短缺</span>
+                        <span class="vocab-item"><b>capex</b> 资本开支</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>AI算力军备竞赛导致存储芯片（HBM、DDR5）需求爆炸，而产能扩张周期长，造成阶段性供需失衡，芯片价格水涨船高。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（<span class="num-key">6-12个月</span>）芯片价格仍将高位；中长期随着晶圆厂扩产，2027年可能供需平衡，但AI需求可能持续超预期。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若“芯片通胀”传导至消费端，智能手机、汽车电子涨价，可能抑制全球消费需求，倒逼产业创新降本。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.sohu.com/a/1059572454_114765" target="_blank">搜狐财经</a></p>
+        </div>
+
+        <!-- McClean 半导体市场 -->
+        <div class="news-card">
+            <div class="item-header">
+                <span class="item-title">McClean报告：2026全球半导体市场攀升，增长由涨价驱动</span>
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                权威《McClean报告》2026年6月更新版预测，半导体市场进入非典型增长周期，先进逻辑与存储供给短缺共同推高ASP（平均售价）。AI基础设施投资是核心引擎，但涨价驱动而非出货量增长的模式引发可持续性担忧。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">McClean Report: 2026 semiconductor market surge driven by price hikes</p>
+                <p class="en-summary">The latest update highlights severe shortages in advanced logic and memory, pushing average selling prices higher. This unusual growth phase is powered by AI infrastructure investment, but sustainability remains questionable.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>ASP (Average Selling Price)</b> 平均售价</span>
+                        <span class="vocab-item"><b>supply bottleneck</b> 供给瓶颈</span>
+                        <span class="vocab-item"><b>non-cyclical growth</b> 非周期性增长</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>IC Insights的McClean报告指出，2026年半导体市场规模增长主要源于芯片涨价，而非单纯的出货量增加，这是历史上少见的现象。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看涨，晶圆厂利用率高企；但若AI资本开支放缓，或存储厂商大幅扩产，2027年可能面临价格回调风险。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>半导体行业从“数量驱动”转向“价值驱动”，高附加值的先进封装与HBM成为利润核心。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.eet-china.com/mp/a515211.html" target="_blank">EET China</a></p>
+        </div>
+
+        <!-- 对比框：经济/金融 -->
+        <div class="compare-box">
+            <div class="compare-side compare-bull">
+                <div class="compare-label">📈 乐观方</div>
+                AI资本开支强劲，半导体量价齐升，先进制程与存储厂商盈利预期持续上调。
+            </div>
+            <div class="compare-side compare-bear">
+                <div class="compare-label">📉 悲观方</div>
+                通胀传导至消费端，若AI投资回报不及预期，资本开支可能断崖式下滑，芯片库存风险积聚。
+            </div>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：经济新闻聚焦“芯片通胀”与半导体市场量价背离。短期景气度极高，但市场对2027年供需反转存分歧。金融端关注美联储政策如何应对潜在输入性通胀，科技股估值与资本开支高度绑定。</div>
+    </div>
+
+    <!-- ========== 板块3：人工智能 ========== -->
+    <div class="section">
+        <div class="section-title">🤖 人工智能</div>
+        <!-- OpenAI -->
+        <div class="news-card">
+            <div class="item-header">
+                <span class="item-title">OpenAI 重申AGI使命，企业级应用加速</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                OpenAI官网更新研究路线，强调将最终导向AGI（通用人工智能），并展示其技术在企业销售、支持、财务等场景的内部落地。商业化与前沿研究双线推进，AGI时间表仍是行业焦点。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">OpenAI doubles down on AGI mission, enterprise adoption grows</p>
+                <p class="en-summary">OpenAI highlights that its research will eventually lead to artificial general intelligence, while simultaneously deploying its own models across sales, support, and finance operations, demonstrating mature enterprise use cases.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>AGI</b> 通用人工智能</span>
+                        <span class="vocab-item"><b>deployment</b> 部署</span>
+                        <span class="vocab-item"><b>enterprise</b> 企业级</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>OpenAI将AGI作为终极目标，但当下更务实的是将现有模型嵌入内部流程，实现降本增效，同时积累数据飞轮。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期企业级AI应用渗透率提升；中长期若AGI实现，劳动力市场结构将发生根本性变化。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>AGI时代，人类工作定义重塑，AI安全与价值对齐成为全球治理核心议题。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://openai.com/" target="_blank">OpenAI</a></p>
+        </div>
+
+        <!-- DeepSeek -->
+        <div class="news-card">
+            <div class="item-header">
+                <span class="item-title">DeepSeek 成立三年，万卡算力自研框架加速AGI探索</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                深度求索官网显示，公司成立于2023年，凭借自研训练框架与自建智算集群（万卡算力），仅用半年时间即发布多个里程碑模型。中国AI力量在底层创新上的投入引发全球关注。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">DeepSeek: three years on, custom training frameworks and 10k-GPU clusters</p>
+                <p class="en-summary">Since 2023, DeepSeek has leveraged proprietary training frameworks and self-built computing clusters with tens of thousands of GPUs to release multiple milestone models in just half a year, highlighting China's growing AI capabilities.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>proprietary framework</b> 自研框架</span>
+                        <span class="vocab-item"><b>AI cluster</b> 智算集群</span>
+                        <span class="vocab-item"><b>milestone model</b> 里程碑模型</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek强调“长期主义”与AGI好奇心，通过软硬协同优化降低成本，走出一条与OpenAI不同的技术路径。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期DeepSeek-R1等模型在推理成本上具有优势；中长期若算力瓶颈突破，中国大模型生态将更具竞争力。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>全球AI双寡头格局形成，中美在AGI路线上的竞争将定义下一代技术标准。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.deepseek.com/" target="_blank">DeepSeek</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：AI新闻呈现“中美双引擎”特征。OpenAI强化AGI叙事与企业落地，DeepSeek以工程创新与算力自建追赶。AI投资热度不减，但监管与安全讨论同步升温。</div>
+    </div>
+
+    <!-- ========== 板块4：科技/硬科技 ========== -->
+    <div class="section">
+        <div class="section-title">💻 科技 / 硬科技</div>
+        <!-- 马斯克芯片厂 -->
+        <div class="news-card">
+            <div class="item-header">
+                <span class="item-title">马斯克宣布投资200亿美元在得州建设TeraFab AI芯片厂</span>
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-red">🔴 重大风险</span>
+            </div>
+            <div class="item-summary">
+                特斯拉CEO马斯克正式宣布启动TeraFab超级芯片项目，总投资约<span class="num-key">200亿美元</span>，由Tesla、SpaceX与xAI联合建设，首阶段落户得州奥斯汀。目标是将尖端制造带回美国，缓解AI芯片对外依赖。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Musk unveils $20B TeraFab AI chip fab in Texas</p>
+                <p class="en-summary">Elon Musk announced the TeraFab project, a $20 billion advanced AI chip manufacturing base in Austin, Texas, jointly built by Tesla, SpaceX, and xAI, aiming to reshore cutting-edge fabrication.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>reshoring</b> 制造回流</span>
+                        <span class="vocab-item"><b>fab</b> 晶圆厂</span>
+                        <span class="vocab-item"><b>advanced node</b> 先进制程</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>TeraFab项目是马斯克在AI硬件领域的最大赌注，试图整合特斯拉的能源与AI、SpaceX的工程能力，打造美国本土高端芯片制造能力。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（<span class="num-key">1-2年</span>）主要进行厂房建设与设备调试；中长期若成功量产，将降低对台积电/三星的依赖，但面临技术人才与供应链挑战。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>美国“芯片制造复兴”的标志性项目，可能带动得州成为新的硅谷，但同时也加剧全球半导体产业的地缘竞争。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://scdaily.com/post/99320" target="_blank">SC Daily</a></p>
+        </div>
+
+        <!-- 长鑫存储上市 -->
+        <div class="news-card">
+            <div class="item-header">
+                <span class="item-title">长鑫科技科创板上市，存储芯片赛道引爆</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+            </div>
+            <div class="item-summary">
+                长鑫科技（CXMT）正式登陆科创板，单日刷屏存储赛道。作为国内存储芯片龙头，其上市标志着中国在DRAM领域自主化迈出关键一步，同时带动半导体设备与材料产业链关注度飙升。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">CXMT debuts on STAR Market, igniting memory chip sector</p>
+                <p class="en-summary">ChangXin Memory Technologies (CXMT) listed on Shanghai's STAR Market, becoming a landmark for China's DRAM self-sufficiency push. The listing has boosted sentiment across the domestic semiconductor supply chain.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>DRAM</b> 动态随机存取存储器</span>
+                        <span class="vocab-item"><b>STAR Market</b> 科创板</span>
+                        <span class="vocab-item"><b>self-sufficiency</b> 自主可控</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>长鑫科技是中国大陆最大的DRAM制造商，其上市融资将用于扩大产能与研发先进制程（<span class="num-key">17nm</span>及以下）。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期提升国产存储自给率至<span class="num-up">15%</span>以上；中长期若良率与成本控制得当，有望打破三星、SK海力士、美光的垄断格局。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>存储芯片成为大国博弈的焦点，中国资本市场的支持将加速技术追赶，但专利与设备限制仍是瓶颈。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.163.com/dy/media/T1483516375236.html" target="_blank">网易科技</a></p>
+        </div>
+
+        <!-- 半导体基础 -->
+        <div class="news-card">
+            <div class="item-header">
+                <span class="item-title">半导体定义与原理科普：从基础到应用</span>
+                <span class="stars">⭐⭐⭐</span>
+                <span class="impact impact-low">冲击：Low</span>
+            </div>
+            <div class="item-summary">
+                IBM与Britannica等更新半导体科普内容，强调电导率介于导体与绝缘体之间的特性。在芯片产业成为全球战略资源的当下，基础原理的普及有助于公众理解技术瓶颈。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Semiconductor fundamentals: bridging conductor and insulator</p>
+                <p class="en-summary">Educational platforms refresh content on semiconductors, materials with conductivity between conductors and insulators, crucial for modern electronics and the current geopolitical tech race.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>conductivity</b> 电导率</span>
+                        <span class="vocab-item"><b>crystalline solid</b> 晶体</span>
+                        <span class="vocab-item"><b>integrated circuit</b> 集成电路</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>半导体是介于导体与绝缘体之间的材料，通过掺杂可精确控制导电性，是芯片制造的基础。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>随着第三代半导体（碳化硅、氮化镓）兴起，半导体定义持续扩展，应用领域从消费电子延伸至电动车、光伏。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>半导体将成为像钢铁一样的“工业粮食”，其技术迭代速度决定AI与新能源的进步步伐。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.ibm.com/think/topics/semiconductors" target="_blank">IBM</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：硬科技今日聚焦“制造回流”与“存储自主”两大主线。马斯克TeraFab与长鑫上市共同指向全球半导体产业格局重塑，美国强化本土制造，中国加速自主替代，形成双轨竞赛。</div>
+    </div>
+
+    <!-- ========== 板块5：材料科学 ========== -->
+    <div class="section">
+        <div class="section-title">🔬 材料科学</div>
+        <!-- 门窗标准图集 -->
+        <div class="news-card">
+            <div class="item-header">
+                <span class="item-title">12J4-1常用门窗标准图集更新：节能材料成重点</span>
+                <span class="stars">⭐⭐⭐</span>
+                <span class="impact impact-low">冲击：Low</span>
+            </div>
+            <div class="item-summary">
+                河北省12系列建筑标准设计图集12J4-1更新，涵盖铝合金、塑料、木制及玻璃钢、铝塑复合等节能门窗。该标准对建筑节能材料应用提出新要求，推动低碳建材在门窗领域的普及。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">12J4-1 standard update: energy-saving window materials emphasized</p>
+                <p class="en-summary">The updated Hebei provincial standard for common doors and windows highlights aluminum-plastic composite and fiberglass materials, promoting energy efficiency in building envelopes.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>thermal insulation</b> 保温</span>
+                        <span class="vocab-item"><b>composite frame</b> 复合框架</span>
+                        <span class="vocab-item"><b>building envelope</b> 建筑外围护</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是一份地方性建筑标准图集，指导门窗设计与选材，新增多种节能复合材料，符合“双碳”目标下的建筑节能趋势。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期带动节能门窗市场渗透率提升；中长期可能推动上游材料（如玻璃钢型材）产业升级。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>建筑成为“微型发电厂”，门窗集成光伏与智能调光，材料科学赋能碳中和城市。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://max.book118.com/html/2026/0117/6231143052012050.shtm" target="_blank">道客巴巴</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：材料科学领域今日信息量较少，以建筑标准更新为主。反映出材料科学新闻的“慢变量”特征，但节能材料与半导体材料的创新仍是长期产业升级的核心。</div>
+    </div>
+
+    <!-- ========== 板块6：中国政策与监管 ========== -->
+    <div class="section">
+        <div class="section-title">🇨🇳 中国政策与监管</div>
+        <!-- 知识产权规划 -->
+        <div class="news-card">
+            <div class="item-header">
+                <span class="item-title">国务院印发《知识产权保护和运用“十五五”规划》</span>
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+            </div>
+            <div class="item-summary">
+                中国政府网公布，国务院印发《知识产权保护和运用“十五五”规划》，聚焦科技自立自强背景下的知识产权强国建设。规划强调高价值专利培育、技术转移转化及海外维权，为AI、半导体等领域的创新提供制度保障。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">State Council issues 15th Five-Year IP Protection Plan</p>
+                <p class="en-summary">China's State Council released the 15th Five-Year Plan for Intellectual Property Protection and Utilization, emphasizing high-value patents, technology transfer, and overseas enforcement to support self-reliance in key tech sectors.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>intellectual property</b> 知识产权</span>
+                        <span class="vocab-item"><b>technology transfer</b> 技术转移</span>
+                        <span class="vocab-item"><b>self-reliance</b> 自主自强</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“十五五”知识产权规划是未来五年中国创新生态的顶层设计，重点解决“卡脖子”技术的专利布局和成果转化问题。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期加大知识产权保护执法力度；中长期将重塑高校与企业的专利商业化路径，利好硬科技企业。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>中国从专利大国迈向专利强国，知识产权成为国际竞争的核心货币，全球技术标准话语权提升。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.gov.cn/" target="_blank">中国政府网</a></p>
+        </div>
+
+        <!-- 出境入境管理 -->
+        <div class="news-card">
+            <div class="item-header">
+                <span class="item-title">国务院发布出境入境管理新规，便利国际人才流动</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                国务院公布关于出境入境管理的规定，旨在优化签证与居留政策，吸引海外科技人才。在西方技术封锁背景下，中国通过制度型开放对冲“脱钩”风险，增强创新生态的全球吸引力。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">New exit-entry rules to facilitate global talent flow</p>
+                <p class="en-summary">China's State Council issued new regulations on exit and entry administration, streamlining visas and residence permits to attract overseas researchers and entrepreneurs amid tightening Western tech restrictions.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>visa policy</b> 签证政策</span>
+                        <span class="vocab-item"><b>talent mobility</b> 人才流动</span>
+                        <span class="vocab-item"><b>open-door</b> 对外开放</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>新规简化了高层次人才及其家属的居留许可流程，并可能试点更多便利化措施。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期提升外籍人才在华工作便利度；中长期有助于构建全球人才高地，支撑AI、量子等前沿领域。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>人才流动成为地缘竞争下的“润滑剂”，中国以开放姿态吸引全球智慧，打破技术围堵。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.gov.cn/" target="_blank">中国政府网</a></p>
+        </div>
+
+        <!-- 法治宣传教育 -->
+        <div class="news-card">
+            <div class="item-header">
+                <span class="item-title">“九五”法治宣传教育规划启动，聚焦科技伦理与数据安全</span>
+                <span class="stars">⭐⭐⭐</span>
+                <span class="impact impact-low">冲击：Low</span>
+            </div>
+            <div class="item-summary">
+                中共中央、国务院转发《中央宣传部、司法部关于开展法治宣传教育的第九个五年规划（2026-2030年）》，其中可能包含AI治理、数据安全等新兴领域普法内容，体现监管前置化趋势。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">9th Five-Year legal education plan covers tech ethics</p>
+                <p class="en-summary">The new five-year legal awareness campaign is expected to include modules on AI ethics, data security, and intellectual property, reflecting China's proactive approach to tech regulation.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>legal literacy</b> 法律素养</span>
+                        <span class="vocab-item"><b>data security</b> 数据安全</span>
+                        <span class="vocab-item"><b>AI governance</b> AI治理</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>普法规划旨在提升全民法治意识，但新增的科技伦理内容表明中国试图在创新与风险之间寻求平衡。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期提高企业与公众的合规意识；中长期为AI立法奠定社会认知基础。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>法律成为技术发展的“红绿灯”，中国在科技治理领域输出“中国方案”。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="http://www.mwr.gov.cn/zw/zgzygwywj/index.html" target="_blank">水利部转发</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：中国政策聚焦“创新保护”与“开放引才”，通过知识产权规划与出入境便利化，构建利于硬科技突破的制度环境。同时，法治教育涵盖科技伦理，显示监管框架趋于精细化。</div>
+    </div>
+
+    <!-- ========== 板块7：地缘政治与国际关系 ========== -->
+    <div class="section">
+        <div class="section-title">🌍 地缘政治与国际关系</div>
+        <!-- The Economist-->
+        <div class="news-card">
+            <div class="item-header">
+                <span class="item-title">《经济学人》：霍尔木兹海峡依赖度指标更新，能源地缘风险持续</span>
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="impact impact-high">冲击：High</span>
+                <span class="risk-red">🔴 重大风险</span>
+            </div>
+            <div class="item-summary">
+                《经济学人》地缘板块更新霍尔木兹海峡依赖度指标，显示全球能源运输对海峡的依赖“比世界预期的更长”。同时提及某岛屿就重启欧盟关系进行投票，欧洲地缘版图或生变。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Economist: Hormuz dependency longer than expected</p>
+                <p class="en-summary">The Economist's geopolitics section reveals that global reliance on the Strait of Hormuz for energy transit persists longer than anticipated. Meanwhile, an island votes on restarting EU ties, signaling potential European geopolitical shifts.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>chokepoint</b> 咽喉要道</span>
+                        <span class="vocab-item"><b>energy security</b> 能源安全</span>
+                        <span class="vocab-item"><b>referendum</b> 公投</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>霍尔木兹海峡承载全球约<span class="num-key">20%</span>的石油贸易量，地缘摩擦可能导致油价剧烈波动。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期能源价格波动加剧；中长期各国加速能源转型，降低对化石燃料的依赖。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>可再生能源与核能普及后，地缘能源咽喉的“杀伤力”下降，全球权力格局重新洗牌。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.economist.com/topics/geopolitics" target="_blank">The Economist</a></p>
+        </div>
+
+        <!-- Geopolitical Monitor -->
+        <div class="news-card">
+            <div class="item-header">
+                <span class="item-title">地缘监测：供应链安全与武装冲突风险并存</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+                <span class="impact impact-med">冲击：Med</span>
+            </div>
+            <div class="item-summary">
+                Geopolitical Monitor近期分析强调，全球每日面临武装冲突与供应链安全双重压力。半导体、稀土等关键矿产的供应链地缘化趋势明显，跨国企业被迫重构采购策略。
+            </div>
+            <div class="bilingual">
+                <p class="en-title">Geopolitical Monitor: supply chain security and conflict risk</p>
+                <p class="en-summary">Daily analyses highlight the twin threats of armed conflict and supply chain disruptions. Critical minerals and semiconductors are increasingly weaponized, forcing multinationals to redesign sourcing strategies.</p>
+                <div class="vocab-card">
+                    <div class="vocab-title">📖 Key Vocabulary</div>
+                    <div class="vocab-list">
+                        <span class="vocab-item"><b>supply chain resilience</b> 供应链韧性</span>
+                        <span class="vocab-item"><b>critical minerals</b> 关键矿产</span>
+                        <span class="vocab-item"><b>weaponization</b> 武器化</span>
+                    </div>
+                </div>
+            </div>
+            <details class="deepdive">
+                <summary>📖 深度解读</summary>
+                <div class="deepdive-content">
+                    <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>地缘政治分析机构指出，供应链已从经济问题演变为国家安全问题，尤其是半导体、稀土、医药原料。</p>
+                    <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期企业加速“中国+1”或“友岸外包”；中长期全球供应链将形成区域性阵营。</p>
+                    <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>供应链地图重构，国家经济安全边界扩展至海外矿产资源与关键节点。</p>
+                </div>
+            </details>
+            <p class="item-source">来源：<a href="https://www.geopoliticalmonitor.com/" target="_blank">Geopolitical Monitor</a></p>
+        </div>
+
+        <div class="trend-comment">📊 板块趋势：地缘新闻聚焦能源通道与供应链武器化。霍尔木兹风险与关键矿产争夺凸显“资源民族主义”抬头，全球化的“效率优先”正被“安全优先”取代。</div>
+    </div>
+
+    <!-- 时间提醒模块（条件触发） -->
+    <div class="timeline">
+        <h4>⏰ 近期关键时间节点</h4>
+        <div class="timeline-item">
+            <span class="timeline-date">2026年10月</span>
+            <span>上海集成电路产业盛会，长鑫科技等存储产业链企业集中亮相</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026年内</span>
+            <span>TeraFab项目得州厂区动工，预计2028年投产</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2027年</span>
+            <span>“十五五”知识产权规划中期评估，高价值专利考核指标或调整</span>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        ⚡ 简报由全球动态分析系统生成 | 基于2026-08-07公开信息 | 冲击指数反映短线市场影响力
+    </div>
+
+</div>
+</body>
+</html>
