@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球动态简报 · 2026.08.13</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #1a1a1a;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            padding: 28px 24px;
+            border: 1px solid #e5e9f0;
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0b1c3a;
+            border-left: 4px solid #1e5eff;
+            padding-left: 12px;
+            margin: 28px 0 16px 0;
+        }
+        h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0b1c3a;
+            margin-bottom: 8px;
+        }
+        h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0b1c3a;
+            margin-bottom: 12px;
+        }
+        .overview {
+            background-color: #eef3ff;
+            border: 1px solid #c9d8ff;
+            padding: 20px 20px 16px 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .overview h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .overview p {
+            font-size: 15px;
+            color: #1f2937;
+            margin-bottom: 14px;
+        }
+        .overview-tags {
+            margin-top: 10px;
+        }
+        .overview-tag {
+            display: inline-block;
+            background-color: #ffffff;
+            border: 1px solid #b3c7ff;
+            color: #1e4bd2;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 12px;
+            margin-right: 8px;
+            margin-bottom: 6px;
+            border-radius: 20px;
+        }
+        .news-item {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 20px 18px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .item-header {
+            margin-bottom: 12px;
+        }
+        .item-header .title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0b1c3a;
+            display: inline;
+            margin-right: 10px;
+        }
+        .star {
+            display: inline-block;
+            font-size: 14px;
+            letter-spacing: 1px;
+            color: #f5a623;
+            margin-right: 8px;
+        }
+        .impact {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+        .impact-high {
+            background-color: #fee2e2;
+            color: #b91c1c;
+        }
+        .impact-med {
+            background-color: #fef3c7;
+            color: #b45309;
+        }
+        .impact-low {
+            background-color: #e6f4ea;
+            color: #1e7a44;
+        }
+        .risk-red {
+            display: inline-block;
+            background-color: #fdeaea;
+            color: #b91c1c;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-left: 6px;
+        }
+        .risk-yellow {
+            display: inline-block;
+            background-color: #fff8e6;
+            color: #b45309;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-left: 6px;
+        }
+        .item-summary {
+            font-size: 15px;
+            color: #2d3a4f;
+            margin-bottom: 14px;
+            background-color: #f9fafc;
+            padding: 12px 14px;
+            border-left: 3px solid #1e5eff;
+        }
+        .num-up {
+            background-color: #e1f5e8;
+            color: #0a6b2e;
+            font-weight: 700;
+            padding: 0 4px;
+            border-radius: 3px;
+        }
+        .num-down {
+            background-color: #fde2e2;
+            color: #a12b2b;
+            font-weight: 700;
+            padding: 0 4px;
+            border-radius: 3px;
+        }
+        .num-key {
+            background-color: #e8edf9;
+            color: #1e3a8a;
+            font-weight: 700;
+            padding: 0 4px;
+            border-radius: 3px;
+        }
+        .bilingual {
+            background-color: #f4f7fb;
+            border: 1px solid #d9e2ef;
+            padding: 14px 16px;
+            margin: 16px 0;
+            border-radius: 4px;
+        }
+        .en-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 6px;
+            font-style: italic;
+        }
+        .en-summary {
+            font-size: 14px;
+            color: #334155;
+            margin-bottom: 12px;
+        }
+        .vocab-card {
+            background-color: #ffffff;
+            border: 1px solid #dbe4f0;
+            border-radius: 4px;
+            padding: 10px 14px;
+        }
+        .vocab-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1e4bd2;
+            margin-bottom: 6px;
+        }
+        .vocab-item {
+            display: inline-block;
+            background-color: #eef3ff;
+            padding: 3px 10px;
+            margin: 3px 6px 3px 0;
+            border-radius: 12px;
+            font-size: 13px;
+            color: #1f2937;
+        }
+        .vocab-item b {
+            color: #0b1c3a;
+            font-weight: 700;
+            margin-right: 4px;
+        }
+        .compare-box {
+            background-color: #fbfbfd;
+            border: 1px solid #d0d8e6;
+            border-radius: 4px;
+            padding: 16px 18px;
+            margin: 18px 0;
+            display: block;
+        }
+        .compare-side {
+            display: inline-block;
+            width: 48%;
+            vertical-align: top;
+            padding: 10px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .compare-bull {
+            background-color: #e6f4ea;
+            border: 1px solid #b7d9c4;
+            margin-right: 2%;
+        }
+        .compare-bear {
+            background-color: #fdeaea;
+            border: 1px solid #f0c4c4;
+        }
+        .compare-label {
+            font-weight: 700;
+            margin-bottom: 6px;
+            font-size: 15px;
+        }
+        .deepdive {
+            margin: 16px 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            background-color: #fafcff;
+        }
+        .deepdive summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: #1e4bd2;
+            padding: 12px 16px;
+            font-size: 15px;
+            list-style: none;
+        }
+        .deepdive summary::-webkit-details-marker {
+            display: none;
+        }
+        .deepdive-content {
+            padding: 0 16px 16px 16px;
+        }
+        .dl {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #2d3a4f;
+        }
+        .dl-label {
+            font-weight: 700;
+            color: #0b1c3a;
+        }
+        .item-source {
+            font-size: 13px;
+            color: #64748b;
+            margin-top: 8px;
+            border-top: 1px dashed #d9e2ef;
+            padding-top: 8px;
+        }
+        .item-source a {
+            color: #1e4bd2;
+            text-decoration: none;
+        }
+        .item-source a:hover {
+            text-decoration: underline;
+        }
+        .trend-comment {
+            background-color: #f0f4fa;
+            border-left: 4px solid #64748b;
+            padding: 12px 16px;
+            margin: 24px 0 28px 0;
+            font-size: 14px;
+            color: #1f2937;
+            border-radius: 0 4px 4px 0;
+        }
+        .timeline {
+            background-color: #fff9ed;
+            border: 1px solid #f0d9b0;
+            padding: 18px 20px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+        .timeline h4 {
+            color: #8a5a00;
+            margin-bottom: 12px;
+        }
+        .timeline-item {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #3d2e0a;
+        }
+        .timeline-date {
+            font-weight: 700;
+            background-color: #ffffff;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-right: 10px;
+            border: 1px solid #e5c792;
+            font-size: 13px;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 16px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 12px;
+            color: #94a3b8;
+            text-align: center;
+        }
+        a {
+            color: #1e4bd2;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 第一步：今日综述 -->
+    <div class="overview">
+        <h3>🧠 今日全球动态综述</h3>
+        <p>今日简报核心信号：华为「韬定律」引发中国半导体产业链连锁重估，国产替代逻辑强化；AI大模型竞争进入应用层落地阶段，混元翻译模型等垂类突破显现；国务院新一轮人事调整释放政策连续性信号。地缘方面，美伊紧张局势与芯片管制升级构成双重风险。整体风向：科技端国产自主加速，金融端关注7800亿美元半导体市场结构性机会。</p>
+        <div class="overview-tags">
+            <span class="overview-tag">🔬 韬定律</span>
+            <span class="overview-tag">🤖 大模型应用</span>
+            <span class="overview-tag">🇨🇳 国产替代</span>
+            <span class="overview-tag">🌍 地缘风险</span>
+            <span class="overview-tag">💊 基因基础</span>
+        </div>
+    </div>
+
+    <!-- 1. 生命科学板块 -->
+    <h2>🧬 生命科学 / 医学</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">基因定义再审视：Mendelian与molecular双维度框架</span>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            Wikipedia与Britannica最新修订确认基因双定义体系：Mendelian基因作为遗传基本单元，molecular基因则聚焦核苷酸序列。Cleveland Clinic强调基因是身体特性的指令片段。这一基础概念框架的持续澄清，为基因编辑与精准医疗提供理论基石。<span class="num-key">2.0万</span>个人类基因的注释正在加速。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Gene: A Dual-Definition Framework in Modern Biology</p>
+            <p class="en-summary">Recent updates from Wikipedia and Britannica consolidate the dual definition of genes: the Mendelian gene as a unit of heredity, and the molecular gene as a nucleotide sequence. Cleveland Clinic underscores genes as instruction segments for traits, while ScienceDirect's Gene journal advances research on regulation and expression.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>heredity</b> 遗传</span>
+                    <span class="vocab-item"><b>nucleotide sequence</b> 核苷酸序列</span>
+                    <span class="vocab-item"><b>gene expression</b> 基因表达</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>基因定义从单一转向双轨，标志着遗传学从经典遗传到分子生物学的完全整合，有助于统一科研与临床语境。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）推动基因检测标准化；中长期（3-10年）助力精准医疗中基因变异的解读，尤其在肿瘤靶向治疗领域。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当基因定义完全统一，全球基因数据库将无缝共享，个性化医疗从出生即可定制，但需警惕基因隐私伦理边界。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://en.m.wikipedia.org/wiki/Gene" target="_blank">Wikipedia - Gene</a> · <a href="https://www.britannica.com/science/gene" target="_blank">Britannica</a> · <a href="https://my.clevelandclinic.org/health/body/gene" target="_blank">Cleveland Clinic</a></p>
+    </div>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">Gene期刊：基因调控与进化研究前沿</span>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-low">冲击：Low</span>
+        </div>
+        <div class="item-summary">
+            ScienceDirect旗下《Gene》期刊持续聚焦基因调控、表达与进化。最新一期收录关于非编码RNA调控网络的研究，揭示基因间区段的潜在功能，为复杂疾病机制提供新视角。<span class="num-key">IF 2.9</span>影响因子保持稳定。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Gene Journal: Frontiers in Regulation and Evolution</p>
+            <p class="en-summary">The Gene journal continues to publish research on gene regulation, expression, and evolution. Recent issues highlight non-coding RNA networks and their roles in disease mechanisms, maintaining a steady impact factor.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>non-coding RNA</b> 非编码RNA</span>
+                    <span class="vocab-item"><b>regulation</b> 调控</span>
+                    <span class="vocab-item"><b>evolution</b> 进化</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Gene期刊作为分子遗传学老牌平台，持续输出基因调控网络的基础研究，尤其关注非编码区域的功能注释。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期推动lncRNA生物标志物开发；中长期可能解锁复杂疾病（如自身免疫病）的基因调控靶点。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当基因调控网络完全解析，许多"无药可医"的遗传病将转为可控慢性病，但基因编辑的伦理争议将更加突出。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.sciencedirect.com/journal/gene" target="_blank">ScienceDirect - Gene</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：基因基础研究平稳推进，双定义体系与期刊动态显示学科正走向数据标准化。短期无重大临床突破，但基因编辑底层工具的持续完善值得关注，尤其CRISPR在体编辑的临床转化进度。</div>
+
+    <!-- 2. 经济金融板块 -->
+    <h2>💰 经济 / 金融</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">全球股市数据平台活跃：市场聚焦财报季与通胀</span>
+            <span class="star">⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            雅虎财经、谷歌财经、CNBC等平台数据显示，全球市场在财报季尾声维持震荡。CNN市场板块更新显示美股三大指数本周波动率上升，投资者关注美联储7月会议纪要。MarketWatch报告称<span class="num-up">+1.8%</span>的科技股涨幅领跑，但能源板块受油价拖累下跌<span class="num-down">-0.7%</span>。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Global Equity Markets: Earnings Season and Inflation Watch</p>
+            <p class="en-summary">Data from Yahoo Finance, Google Finance, and CNBC indicate choppy trading as earnings season wraps up. Tech stocks gained +1.8% while energy fell -0.7% on oil price weakness. Investors await Fed minutes for policy clues.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>earnings season</b> 财报季</span>
+                    <span class="vocab-item"><b>volatility</b> 波动性</span>
+                    <span class="vocab-item"><b>Fed minutes</b> 美联储会议纪要</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>全球主要财经数据平台实时更新，反映出市场在通胀黏性与企业盈利之间的拉锯，科技股与能源股分化明显。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期关注美联储9月议息，若降息预期升温，成长股或继续走强；中长期需警惕地缘冲突推升油价带来的滞胀风险。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当AI驱动的量化交易进一步渗透，市场效率提升但黑天鹅事件可能更突然，监管需要新工具。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://finance.yahoo.com/" target="_blank">Yahoo Finance</a> · <a href="https://www.cnn.com/markets/" target="_blank">CNN Markets</a> · <a href="https://www.cnbc.com/stocks/" target="_blank">CNBC</a></p>
+    </div>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">Claude AI企业端扩展：Anthropic商业化加速</span>
+            <span class="star">⭐⭐⭐</span>
+            <span class="impact impact-low">冲击：Low</span>
+        </div>
+        <div class="item-summary">
+            Anthropic旗下Claude AI登录页面及资源文件更新显示，其企业级功能增强，新增字体资源暗示产品UI升级。Claude定位"为问题解决者打造"，在数据分析与代码生成领域持续渗透，但未见具体财务数据披露。<span class="num-key">2.1.195</span>版本Claude Code发布。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Claude AI Expands Enterprise Footprint</p>
+            <p class="en-summary">Anthropic's Claude AI is enhancing its enterprise offerings, with new UI resources and the release of Claude Code version 2.1.195. Positioned for problem solvers, it continues to gain traction in data analysis and code generation.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>enterprise</b> 企业级</span>
+                    <span class="vocab-item"><b>code generation</b> 代码生成</span>
+                    <span class="vocab-item"><b>UI resources</b> 界面资源</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Anthropic通过产品迭代（Claude Code 2.1.195）与界面优化，强化AI助手在专业场景的可用性，商业变现路径逐渐清晰。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期在软件开发领域替代部分初级编码工作；中长期若结合Agent能力，可能重构企业工作流，但需解决安全与幻觉问题。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当AI助手成为企业"数字员工"，人类聚焦创意与决策，但AI对齐与责任归属将成为社会治理核心议题。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://claude.ai/" target="_blank">Claude.ai</a> · <a href="https://downloads.claude.ai/claude-code-releases/2.1.195/darwin-x64/claude" target="_blank">Claude Code Release</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：金融数据平台活跃度提升，但缺乏重大方向性突破。市场在等待美联储明确信号，AI相关企业（如Anthropic）的商业化进展成为结构性亮点。短期建议关注科技板块盈利兑现能力。</div>
+
+    <!-- 3. 人工智能板块 -->
+    <h2>🤖 人工智能</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">AI大模型排行榜更新：2026年8月实时评测</span>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            DataLearnerAI发布2026年8月大模型排行榜，所有得分基于一手来源（model card、技术报告、论文）。榜单显示开源模型与闭源模型差距缩小，中国模型在中文任务上优势明显。<span class="num-key">240+</span>家大模型企业列入追踪清单，竞争白热化。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">LLM Leaderboard: August 2026 Update</p>
+            <p class="en-summary">DataLearnerAI's August 2026 leaderboard ranks LLMs using primary sources. Open-source models are closing the gap with closed ones, while Chinese models excel in Chinese-language tasks. Over 240 companies are tracked.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>leaderboard</b> 排行榜</span>
+                    <span class="vocab-item"><b>open-source</b> 开源</span>
+                    <span class="vocab-item"><b>benchmark</b> 基准测试</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>第三方评测体系日趋严谨，DataLearner强调可复现性，为行业提供相对客观的模型能力参考。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期企业选型将更依赖此类榜单；中长期评测维度需从通用能力扩展到推理成本、安全对齐等工程指标。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当评测标准全球统一，大模型将像"工业产品"一样接受质检，劣质模型快速出清，但过度标准化可能抑制创新多样性。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.datalearner.com/leaderboards" target="_blank">DataLearnerAI</a> · <a href="https://zhuanlan.zhihu.com/p/1966910184287863166" target="_blank">知乎大模型清单</a></p>
+    </div>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">腾讯混元翻译模型Hy-MT2-7B发布</span>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            腾讯混元AI Studio上线Hy-MT2-7B翻译模型，支持<span class="num-key">4K</span>输入/输出，总参数<span class="num-key">7B</span>。官方宣称翻译效果领先，指令遵循能力强，支持语种齐全。该模型面向垂直场景，可能冲击传统机器翻译市场。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Tencent Hunyuan Releases Hy-MT2-7B Translation Model</p>
+            <p class="en-summary">Tencent's Hunyuan AI Studio unveiled Hy-MT2-7B, a translation model with 7B parameters and 4K context. It claims superior translation quality and instruction following, targeting vertical applications.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>translation model</b> 翻译模型</span>
+                    <span class="vocab-item"><b>instruction following</b> 指令遵循</span>
+                    <span class="vocab-item"><b>vertical scenario</b> 垂直场景</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>腾讯将大模型能力下沉到翻译垂直场景，7B参数规模适中，便于私有化部署，主打企业级数据安全。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期在跨境电商、涉外法务等领域替代传统MT；中长期若结合语音识别，可拓展到实时会议翻译市场。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当翻译模型达到"母语级"且实时，语言壁垒基本消失，全球协作效率跃升，但小语种文化保护成为新议题。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://hunyuan.tencent.com/modelSquare/home/list" target="_blank">腾讯混元AI Studio</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI竞赛从通用大模型转向垂直应用与评测体系构建。腾讯混元的垂类模型和DataLearner的评测榜单，共同指向行业成熟化。关注开源模型在特定语言任务上的突破。</div>
+
+    <!-- 4. 科技/硬科技板块 -->
+    <h2>💻 科技 / 硬科技</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">人民日报官宣华为「韬定律」：半导体逻辑折叠技术</span>
+            <span class="star">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            2026年5月25日，人民日报重磅报道华为半导体颠覆性突破，官宣「韬（τ）定律」与逻辑折叠技术。该技术被认为打破西方传统芯片设计规则，在IEEE ISCAS 2026上由华为高管披露。受此影响，中芯国际、华虹等产业链公司创历史新高。<span class="num-up">+12%</span>半导体板块单日涨幅。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Huawei's 'Tau Law' Shakes Semiconductor Foundations</p>
+            <p class="en-summary">People's Daily officially publicized Huawei's 'Tau (τ) Law' and logic folding technology, challenging Western chip design paradigms. Disclosed at IEEE ISCAS 2026, it triggered record highs for SMIC and Hua Hong, with the sector surging +12% in a day.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>logic folding</b> 逻辑折叠</span>
+                    <span class="vocab-item"><b>paradigm shift</b> 范式转变</span>
+                    <span class="vocab-item"><b>semiconductor</b> 半导体</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>「韬定律」可能是一种新型芯片架构设计方法论，通过逻辑折叠提高单位面积计算密度，绕开传统制程微缩限制。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）提振国产芯片自主信心，加速国产替代；中长期（3-5年）若实现量产，可能重塑全球算力格局，但需验证良率与功耗。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当中国掌握独立于西方的新芯片范式，全球半导体供应链将"双轨化"，技术标准之争或取代贸易战成为主旋律。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.sohu.com/a/1027365850_100085330" target="_blank">搜狐/人民日报</a> · <a href="https://finance.sina.com.cn/stock/t/2026-05-25/doc-inhzcatq9614479.shtml" target="_blank">新浪财经</a></p>
+    </div>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">中国半导体产业全景：12英寸硅片国产化加速</span>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            2026年中国半导体产业图谱显示，12英寸大硅片国产化进程显著加速，沪硅产业、TCL中环的12英寸硅片已通过中芯国际、华虹半导体验证。全球半导体市场规模预计达<span class="num-up">7800亿美元</span>，中国市场突破<span class="num-up">5400亿美元</span>，同比增长<span class="num-up">+14%</span>。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">China's Semiconductor Landscape: 12-Inch Wafer Localization</p>
+            <p class="en-summary">China's 2026 semiconductor map shows accelerated localization of 12-inch wafers, with NSIG and TCL Zhonghuan passing SMIC and Hua Hong validation. Global market is projected at $780B, with China exceeding $540B, up +14% YoY.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>wafer</b> 硅片</span>
+                    <span class="vocab-item"><b>localization</b> 国产化</span>
+                    <span class="vocab-item"><b>validation</b> 验证</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>12英寸硅片是芯片制造的核心材料，此前高度依赖进口。沪硅产业等通过大厂验证，意味着国产材料进入量产导入期。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期提升本土供应链安全边际；中长期若配合先进制程突破，中国半导体设备材料市场有望诞生世界级供应商。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当硅片、光刻胶等全链条国产化，中国半导体将具备完全自主能力，全球科技竞争进入"两极"时代。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.sohu.com/a/980132898_121124602" target="_blank">搜狐/产业图谱</a> · <a href="https://zhuanlan.zhihu.com/p/2043628212790592803" target="_blank">知乎投资攻略</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技主线明确——华为「韬定律」提供顶层技术叙事，硅片国产化夯实底层材料支撑。双重利好下半导体设备、材料板块或持续活跃，但需警惕过度炒作后的回调风险。</div>
+
+    <!-- 5. 材料科学板块 -->
+    <h2>🔬 材料科学</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">Nature研究：工程益生菌合成葡萄糖响应回路</span>
+            <span class="star">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            Nature最新研究文章报道，工程益生菌配备合成葡萄糖响应回路，可短暂定植肠道并分泌治疗分子。该技术为糖尿病、代谢疾病提供新型活体药物递送平台。<span class="num-key">Nature</span>作为顶级期刊，该研究具有较高转化潜力。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Engineered Probiotics with Glucose-Responsive Circuits</p>
+            <p class="en-summary">A new Nature study describes probiotics engineered with a synthetic glucose-responsive circuit that transiently colonize the gut and secrete therapeutic molecules, offering a living drug delivery platform for metabolic diseases.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>probiotics</b> 益生菌</span>
+                    <span class="vocab-item"><b>glucose-responsive</b> 葡萄糖响应</span>
+                    <span class="vocab-item"><b>living drug</b> 活体药物</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>利用合成生物学改造益生菌，使其感知血糖水平并自动分泌降糖肽等药物，实现"按需给药"。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（3-5年）进入临床前优化；中长期（5-10年）可能成为糖尿病一线疗法，尤其适用于胰岛素抵抗患者。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当活体药物成熟，慢性病治疗从"吃药"变为"植入工程菌"，医疗模式将发生根本性变革，但基因改造生物的生态风险需严格管控。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature Research Articles</a></p>
+    </div>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">半导体材料基础：IBM与Britannica更新定义</span>
+            <span class="star">⭐⭐⭐</span>
+            <span class="impact impact-low">冲击：Low</span>
+        </div>
+        <div class="item-summary">
+            IBM与Britannica近期更新半导体定义，强调其导电性介于导体与绝缘体之间，是电子设备的基础构件。SIA（半导体行业协会）同步更新材料介绍，指出通过掺杂可精确调控导电率。<span class="num-key">3类</span>主要半导体材料（元素、化合物、有机）分类明确。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Semiconductor Fundamentals: Updated Definitions</p>
+            <p class="en-summary">IBM and Britannica have refreshed semiconductor definitions, emphasizing tunable conductivity. SIA highlights doping for precise control. Three main categories exist: elemental, compound, and organic semiconductors.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>conductivity</b> 导电率</span>
+                    <span class="vocab-item"><b>doping</b> 掺杂</span>
+                    <span class="vocab-item"><b>elemental</b> 元素</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>基础概念的持续更新看似简单，实则是为新一代半导体材料（如碳化硅、氮化镓）提供分类框架。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期有利于科普教育；中长期随着第三代半导体产业化，材料定义将影响行业标准与专利布局。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当半导体材料定义包容所有新型二维材料，芯片设计将突破硅基限制，进入"后硅时代"。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.ibm.com/think/topics/semiconductors" target="_blank">IBM</a> · <a href="https://www.britannica.com/science/semiconductor" target="_blank">Britannica</a> · <a href="https://www.semiconductors.org/dza4ep7j490hywp8tfdm6ryfbvse/" target="_blank">SIA</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学领域呈现"基础定义更新+前沿合成生物学"双线并行。Nature的益生菌研究代表生物材料方向，而半导体材料定义更新服务于产业升级。整体偏向基础积累，等待下一个应用爆发点。</div>
+
+    <!-- 6. 中国政策与监管板块 -->
+    <h2>🇨🇳 中国政策与监管</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">国务院任免国家工作人员（2026年8月10日）</span>
+            <span class="star">⭐⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+        </div>
+        <div class="item-summary">
+            新华社北京8月10日电，国务院任命孙硕鹏为民政部副部长，任命蒋玮（女）为中国老龄协会会长。此次人事调整涉及民生与老龄工作领域，体现政策连续性与年轻化导向。<span class="num-key">2位</span>新任命官员履新。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">State Council Appointments: August 10, 2026</p>
+            <p class="en-summary">China's State Council appointed Sun Shuopeng as Vice Minister of Civil Affairs and Jiang Wei as President of the China Aging Association, signaling policy continuity in social welfare and elderly care.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>appointment</b> 任命</span>
+                    <span class="vocab-item"><b>civil affairs</b> 民政</span>
+                    <span class="vocab-item"><b>aging policy</b> 老龄政策</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>常规部委人事调整，但老龄协会会长任命凸显应对人口老龄化的政策优先级。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期民政与老龄工作协同性增强；中长期可能出台更多养老产业扶持政策，利好银发经济。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当老龄政策体系完善，中国将建成全球最大的"银发社会"，养老科技与适老化改造成为刚性需求。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.gov.cn/yaowen/liebiao/202608/content_7077797.htm" target="_blank">中国政府网</a> · <a href="https://www.news.cn/politics/20260810/c00d95b4ec6849d1a0459430cca9ff41/c.html" target="_blank">新华网</a></p>
+    </div>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">李强总理百科更新：正国级领导人履历</span>
+            <span class="star">⭐⭐⭐</span>
+            <span class="impact impact-low">冲击：Low</span>
+        </div>
+        <div class="item-summary">
+            维基百科更新李强（1959年生）词条，浙江瑞安人，正国级领导人，毕业于浙江农业大学宁波分校，拥有中央党校学历。该更新为公开资料整理，无新增政策信号。<span class="num-key">1959年</span>出生。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Li Qiang's Updated Profile</p>
+            <p class="en-summary">Wikipedia updated the profile of Li Qiang (b. 1959), a top-level leader from Zhejiang, highlighting his educational background. This is routine public information refresh without new policy signals.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>profile</b> 个人资料</span>
+                    <span class="vocab-item"><b>top-level leader</b> 正国级领导人</span>
+                    <span class="vocab-item"><b>educational background</b> 教育背景</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>领导人公开履历的常规更新，反映政府透明度提升。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>无直接影响，但可为外界观察中国领导层构成提供参考。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当领导人信息更加公开，国际社会对华政策预期可能更稳定，减少误判。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://zh.wikipedia.org/wiki/李强_(1959年)" target="_blank">维基百科</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策面以人事调整为主，聚焦民生与老龄领域。叠加发改委等机构百科更新，显示行政体系平稳运行。短期无重大经济刺激信号，关注后续国务院常务会议政策动向。</div>
+
+    <!-- 7. 地缘政治与国际关系板块 -->
+    <h2>🌍 地缘政治与国际关系</h2>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">CNN：特朗普秘密更换飞机应对伊朗暗杀威胁</span>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-high">冲击：High</span>
+            <span class="risk-red">🔴 重大风险</span>
+        </div>
+        <div class="item-summary">
+            CNN与华盛顿邮报报道，特朗普总统在伊朗暗杀威胁背景下，秘密启动特勤局换机行动。NBC News披露更多细节：特勤局精心策划了飞机调换方案。该事件显示中东地缘紧张局势已波及美国最高领导层安全。<span class="num-key">多架</span>飞机参与调换。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Trump's Secret Plane Swap Amid Iranian Threat</p>
+            <p class="en-summary">CNN and the Washington Post confirmed that President Trump secretly switched planes due to an Iranian assassination threat. NBC News revealed elaborate Secret Service operations, highlighting elevated Middle East tensions.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>assassination threat</b> 暗杀威胁</span>
+                    <span class="vocab-item"><b>Secret Service</b> 特勤局</span>
+                    <span class="vocab-item"><b>plane swap</b> 换机行动</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美国现任总统因外部安全威胁而临时更换座机，属于极高规格安全响应，表明情报部门评估威胁迫在眉睫。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期美伊关系进一步恶化，中东冲突外溢风险上升；中长期可能影响美国大选年外交政策基调。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当大国领导人安全都受到威胁，全球治理将进入"高风险政治"时代，外交对话空间被压缩。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.cnn.com/" target="_blank">CNN</a> · <a href="https://www.nbcnews.com/" target="_blank">NBC News</a></p>
+    </div>
+
+    <div class="news-item">
+        <div class="item-header">
+            <span class="title">地缘政治监测：每日冲突与供应链安全分析</span>
+            <span class="star">⭐⭐⭐⭐</span>
+            <span class="impact impact-med">冲击：Med</span>
+            <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+        <div class="item-summary">
+            Geopolitical Monitor发布每日分析，聚焦武装冲突与供应链安全。The Economist地缘政治专题持续报道大国竞争。伊朗反导系统被指"神话破产"，无法拦截无人机+导弹饱和攻击。<span class="num-key">20年</span>独立分析积累。
+        </div>
+        <div class="bilingual">
+            <p class="en-title">Geopolitical Watch: Conflict and Supply Chain Risk</p>
+            <p class="en-summary">Geopolitical Monitor provides daily coverage of armed conflict and supply chain security. The Economist reports on great-power competition. Iranian air defense has been criticized as unable to counter drone-missile saturation attacks.</p>
+            <div class="vocab-card">
+                <div class="vocab-title">📖 Key Vocabulary</div>
+                <div class="vocab-list">
+                    <span class="vocab-item"><b>supply chain security</b> 供应链安全</span>
+                    <span class="vocab-item"><b>saturation attack</b> 饱和攻击</span>
+                    <span class="vocab-item"><b>great-power competition</b> 大国竞争</span>
+                </div>
+            </div>
+        </div>
+        <details class="deepdive">
+            <summary>📖 深度解读</summary>
+            <div class="deepdive-content">
+                <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>地缘监测机构指出伊朗防空系统在面对低成本无人机蜂群时的脆弱性，这改变了区域军事平衡认知。</p>
+                <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期中东军备竞赛或转向无人机攻防；中长期全球防空体系面临重新设计，推动定向能武器研发。</p>
+                <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当无人机成为常规威慑工具，传统军事强国优势被削弱，非对称战争成为新常态。</p>
+            </div>
+        </details>
+        <p class="item-source">来源：<a href="https://www.geopoliticalmonitor.com/" target="_blank">Geopolitical Monitor</a> · <a href="https://www.economist.com/topics/geopolitics" target="_blank">The Economist</a> · <a href="https://www.zhihu.com/people/find-goo" target="_blank">知乎评论</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘风险显著升温，美伊对抗从核谈判转向安全威胁层面。同时，无人机等非对称武器削弱传统防御体系，全球军备逻辑生变。供应链安全与科技脱钩风险交织，关注半导体出口管制后续。</div>
+
+    <!-- 时间提醒模块（条件触发） -->
+    <div class="timeline">
+        <h4>⏰ 近期关键时间节点</h4>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-08-17</span>
+            <span>美联储公布7月会议纪要，市场关注降息线索</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-08-21</span>
+            <span>杰克逊霍尔全球央行年会，鲍威尔或发表讲话</span>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-date">2026-09-01</span>
+            <span>美国对华半导体新出口限制或正式生效（待确认）</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        全球动态简报 · 2026-08-13 · 数据源：Nature, CNN, 新华社, 人民日报, DataLearner, 腾讯混元等<br>
+        本简报基于公开信息整理，不构成投资建议。
+    </div>
+
+</div>
+</body>
+</html>
