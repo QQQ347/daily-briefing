@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全球动态简报 | 2026-08-14</title>
+  <style>
+    body {
+      font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      background-color: #f5f6f8;
+      color: #1e1e2f;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 24px 28px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 4px;
+      border-left: 6px solid #1a5fb4;
+      padding-left: 16px;
+      color: #0a2540;
+    }
+    .date-badge {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 20px;
+      padding-left: 22px;
+      font-weight: 400;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 16px 0 8px 0;
+      color: #1a5fb4;
+    }
+    h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 12px 0 6px 0;
+      color: #1e1e2f;
+    }
+    .overview {
+      background-color: #eef2f9;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+    }
+    .overview h3 {
+      margin-top: 0;
+    }
+    .overview p {
+      margin: 8px 0;
+      font-size: 15px;
+    }
+    .overview-tags {
+      margin-top: 10px;
+    }
+    .overview-tag {
+      display: inline-block;
+      background-color: #d4e1f5;
+      color: #1a3a6b;
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-right: 8px;
+      margin-bottom: 4px;
+    }
+    .section {
+      margin-top: 28px;
+    }
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      border-bottom: 2px solid #e5e9f0;
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+    }
+    .news-item {
+      border-left: 3px solid #d0d7e2;
+      padding-left: 14px;
+      margin-bottom: 18px;
+    }
+    .item-header {
+      display: block;
+      margin-bottom: 6px;
+    }
+    .item-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0a2540;
+      display: inline;
+    }
+    .stars {
+      color: #f5a623;
+      font-size: 14px;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-left: 6px;
+    }
+    .impact {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin-left: 8px;
+    }
+    .impact-high {
+      background-color: #fde8e8;
+      color: #b42323;
+    }
+    .impact-med {
+      background-color: #fff4e5;
+      color: #b85e00;
+    }
+    .impact-low {
+      background-color: #e6f4ea;
+      color: #1e7a3a;
+    }
+    .risk-red {
+      display: inline-block;
+      background-color: #fce8e8;
+      color: #b42323;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin-left: 8px;
+    }
+    .risk-yellow {
+      display: inline-block;
+      background-color: #fff4e5;
+      color: #b85e00;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin-left: 8px;
+    }
+    .item-summary {
+      font-size: 15px;
+      margin: 8px 0;
+      background-color: #f9fafc;
+      padding: 10px 12px;
+      border-radius: 8px;
+    }
+    .num-up {
+      font-weight: 700;
+      color: #1e7a3a;
+      background-color: #e6f4ea;
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+    .num-down {
+      font-weight: 700;
+      color: #b42323;
+      background-color: #fde8e8;
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+    .num-key {
+      font-weight: 700;
+      color: #1a5fb4;
+      background-color: #e8f0fe;
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+    .bilingual {
+      background-color: #f4f6fa;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 10px 0;
+    }
+    .en-title {
+      font-style: italic;
+      color: #2c3e50;
+      font-weight: 600;
+      margin: 0 0 4px 0;
+    }
+    .en-summary {
+      color: #3a4a5a;
+      font-size: 14px;
+      margin: 4px 0;
+    }
+    .vocab-card {
+      background-color: #ffffff;
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin-top: 8px;
+      border: 1px solid #e0e6ed;
+    }
+    .vocab-title {
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+    .vocab-list {
+      display: block;
+    }
+    .vocab-item {
+      display: inline-block;
+      background-color: #edf2f9;
+      border-radius: 16px;
+      padding: 2px 10px;
+      font-size: 13px;
+      margin-right: 6px;
+      margin-bottom: 4px;
+    }
+    .compare-box {
+      background-color: #f0f4fb;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 14px 0;
+      border: 1px solid #d4e1f5;
+    }
+    .compare-side {
+      display: inline-block;
+      width: 45%;
+      vertical-align: top;
+      font-size: 14px;
+      padding: 8px;
+      border-radius: 8px;
+    }
+    .compare-bull {
+      background-color: #e6f4ea;
+    }
+    .compare-bear {
+      background-color: #fde8e8;
+    }
+    .compare-label {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .deepdive {
+      margin: 10px 0;
+      background-color: #f9fafc;
+      border-radius: 8px;
+      padding: 6px 12px;
+    }
+    .deepdive summary {
+      font-weight: 600;
+      color: #1a5fb4;
+      cursor: pointer;
+      outline: none;
+    }
+    .deepdive-content {
+      padding: 8px 0;
+    }
+    .dl {
+      font-size: 14px;
+      margin: 6px 0;
+    }
+    .dl-label {
+      font-weight: 700;
+    }
+    .item-source {
+      font-size: 13px;
+      color: #6b7280;
+      margin: 6px 0 0 0;
+    }
+    .item-source a {
+      color: #1a5fb4;
+      text-decoration: none;
+    }
+    .trend-comment {
+      background-color: #f0f4fb;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin: 16px 0 8px 0;
+      font-size: 14px;
+      border-left: 4px solid #1a5fb4;
+    }
+    .timeline {
+      background-color: #fdf8e8;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 24px 0;
+      border: 1px solid #e8dcc8;
+    }
+    .timeline h4 {
+      margin-top: 0;
+    }
+    .timeline-item {
+      font-size: 14px;
+      margin: 6px 0;
+    }
+    .timeline-date {
+      font-weight: 700;
+      display: inline-block;
+      background-color: #fff4e5;
+      border-radius: 12px;
+      padding: 2px 10px;
+      margin-right: 8px;
+      font-size: 13px;
+    }
+    .footer-note {
+      text-align: center;
+      font-size: 12px;
+      color: #8a94a6;
+      margin-top: 24px;
+      border-top: 1px solid #e5e9f0;
+      padding-top: 12px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>📋 全球动态简报</h1>
+  <div class="date-badge">🗓️ 2026年8月14日 · 周五</div>
+
+  <!-- 综述模块 -->
+  <div class="overview">
+    <h3>🧠 今日 AI 综述</h3>
+    <p>今日简报呈现三条主线：AI 算力军备竞赛进入新阶段，DeepSeek 发布 V4 Pro 模型加速扩张，全球科研格局因自然指数易主而重构，浙大打破哈佛十年垄断；生命科学领域 T 细胞免疫刹车发现与多发性硬化症药物 <span class="num-key">93.1%</span> 风险降低数据亮眼，临床转化提速；地缘方面，半导体定义与供应链议题持续升温，美中科技博弈仍为宏观主线。整体风向：科技端偏乐观，金融端平静观望，科研竞赛白热化。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🤖 AI模型竞争</span>
+      <span class="overview-tag">🧬 T细胞免疫</span>
+      <span class="overview-tag">🏆 科研排名洗牌</span>
+      <span class="overview-tag">🔬 MS新药突破</span>
+    </div>
+  </div>
+
+  <!-- 板块1: 生命科学 -->
+  <div class="section">
+    <div class="section-title">🧬 生命科学 / 医学</div>
+
+    <!-- 新闻1 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="item-title">SLAMF6：T细胞免疫新刹车被发现</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-summary">
+        顶尖期刊《Nature》6月9日发表重磅研究，蒙特利尔大学 André Veillette 团队揭示 SLAMF6 作为 T 细胞隐藏刹车的关键机制，为癌症免疫疗法开辟全新靶点。该发现可能解锁更有效的 CAR-T 联合策略，预计未来 <span class="num-key">2-3年</span> 进入临床前开发阶段。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">SLAMF6 as a Hidden Brake on T Cells: New Cancer Immunotherapy Target</p>
+        <p class="en-summary">A landmark study published in Nature unveils SLAMF6 as a critical inhibitory receptor on T cells. Blocking SLAMF6 enhances anti-tumor immunity in preclinical models, representing a novel checkpoint beyond PD-1/CTLA-4.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>checkpoint inhibitor</b> 免疫检查点抑制剂</span>
+            <span class="vocab-item"><b>tumor microenvironment</b> 肿瘤微环境</span>
+            <span class="vocab-item"><b>CAR-T</b> 嵌合抗原受体T细胞</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>SLAMF6 是一种在 T 细胞表面表达的抑制性受体，就像免疫系统的“刹车踏板”。癌细胞会利用这个刹车来逃避免疫攻击。研究发现，移除这个刹车（阻断 SLAMF6），T 细胞就能更猛烈地攻击肿瘤。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内将开展动物模型优化和毒性评估，预计2-3年后进入人体临床试验。长期来看，可能用于治疗黑色素瘤、肺癌等实体瘤，并可与现有 PD-1 抑制剂产生协同效应。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果成功，癌症治疗将不再依赖单一检查点，而是组合拳式的免疫调节。未来可能实现“定制化免疫刹车释放”，让慢性癌症变成可控的慢性病，甚至实现治愈。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.medicaldaily.com/slamf6-cancer-immunotherapy-discovery-nature-2026-475575" target="_blank">Medical Daily</a></p>
+    </div>
+
+    <!-- 新闻2 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="item-title">多发性硬化症新药：复发风险降低 <span class="num-key">93.1%</span></span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+      </div>
+      <div class="item-summary">
+        Nature Medicine 发表的 III 期试验显示，obinutuzumab β 在 AQP4-IgG 阳性的视神经脊髓炎谱系疾病患者中，将复发风险显著降低 <span class="num-up">93.1%</span>（对比安慰剂）。这一数据远超现有标准治疗，堪称颠覆性突破，预计将重塑 <span class="num-key">NMOSD</span> 治疗格局。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Phase 3 Trial: Obinutuzumab β Cuts Relapse Risk by 93.1% in NMOSD</p>
+        <p class="en-summary">In a global phase 3 trial, the anti-CD20 monoclonal antibody obinutuzumab β demonstrated a 93.1% reduction in relapse risk compared to placebo in patients with AQP4-IgG seropositive NMOSD. This marks a potential practice-changing therapy for this rare autoimmune disease.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>NMOSD</b> 视神经脊髓炎谱系疾病</span>
+            <span class="vocab-item"><b>monoclonal antibody</b> 单克隆抗体</span>
+            <span class="vocab-item"><b>relapse rate</b> 复发率</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>NMOSD 是一种自身免疫性疾病，免疫系统错误攻击视神经和脊髓。obinutuzumab β 是一种能精准清除产生抗体的 B 细胞的药物，相当于“斩首”致病源头，从而大幅降低复发。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>若获得 FDA/EMA 批准，预计 <span class="num-key">1年内</span> 可上市。长期来看，可能取代现有免疫抑制剂成为一线标准疗法，并可能拓展至其他 B 细胞介导的自身免疫病。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>对于患者而言，这意味着从“频繁复发致残”到“长期稳定”的根本转变。未来 NMOSD 可能像糖尿病一样，通过定期输注即可控制，极大减轻患者和社会的负担。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/nm/articles?type=article&year=2026" target="_blank">Nature Medicine</a></p>
+    </div>
+
+    <!-- 趋势评论 -->
+    <div class="trend-comment">📊 板块趋势：免疫疗法正从“解除刹车”和“清除源头”双线突破。SLAMF6 代表新一代检查点，而 obinutuzumab β 展示 B 细胞靶向的威力。未来 5 年，自身免疫病和肿瘤治疗将因这两类策略的成熟而显著进步。值得关注的是神经免疫领域正在复制肿瘤免疫的成功路径。</div>
+  </div>
+
+  <!-- 板块2: 经济金融 -->
+  <div class="section">
+    <div class="section-title">💰 经济 / 金融</div>
+
+    <!-- 新闻3 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="item-title">中国7月新增人民币贷款：<span class="num-key">219250</span>亿元（年初至今）</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        新浪财经数据显示，中国7月新增人民币贷款（年初至今累计）公布值为 <span class="num-up">219250</span> 亿元，前值为 <span class="num-key">208400</span> 亿元，略高于预测。信贷投放节奏平稳，但市场更关注结构性问题——企业中长期贷款占比仍需观察。同时欧元区6月工业产出月率即将公布。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">China's Jan-Jul New Yuan Loans Reach 21.93 Trillion</p>
+        <p class="en-summary">New yuan loans in China for the first seven months of 2026 totaled 21.925 trillion yuan, slightly above expectations. The steady credit growth suggests policy support for the real economy remains intact, while market attention turns to the quality of loan allocation.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>credit impulse</b> 信贷脉冲</span>
+            <span class="vocab-item"><b>broad money</b> 广义货币</span>
+            <span class="vocab-item"><b>industrial output</b> 工业产出</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>新增人民币贷款是衡量经济活力的重要先行指标。今年累计 <span class="num-up">21.9万亿</span> 的规模表明企业融资需求有所回暖，但票据冲量现象值得警惕。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，若后续月份信贷结构改善（中长期贷款占比提升），则经济复苏动能加强。中长期看，信贷资源正从房地产转向高端制造和绿色经济。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当信贷数据与科技投资形成正向循环，中国经济结构将更趋健康。未来“高质量信贷”比“总量信贷”更能预示可持续增长。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://finance.sina.com.cn/money/forex/hq/USDCNY.shtml" target="_blank">新浪财经</a></p>
+    </div>
+
+    <!-- 新闻4 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="item-title">美元兑人民币：中间价与市场预期</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-summary">
+        中国银行外汇牌价显示，人民币汇率中间价保持相对稳定。但市场关注美联储降息路径与中美利差变化。当前 <span class="num-key">USDCNY</span> 在 <span class="num-key">7.25</span> 附近波动，出口企业结汇意愿将成为影响短期走势的关键变量。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">USD/CNY Steadies Near 7.25; Market Watches Fed Path</p>
+        <p class="en-summary">The yuan remains stable against the dollar, with USD/CNY hovering around 7.25. Market focus is on the Federal Reserve's interest rate trajectory and China's export dynamics, which will determine near-term currency direction.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>central parity</b> 中间价</span>
+            <span class="vocab-item"><b>exchange settlement</b> 结汇</span>
+            <span class="vocab-item"><b>interest rate differential</b> 利差</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>人民币汇率由市场供求和一篮子货币共同决定。当前稳定在 <span class="num-key">7.25</span> 附近，体现了央行“以我为主”的汇率政策。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，若美联储9月降息预期升温，人民币可能小幅升值。长期看，中国贸易顺差与外资流入仍是人民币的支撑。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>随着人民币国际化推进，未来汇率波动将更多反映中国经济基本面，而非单纯的美元强弱。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.boc.cn/sourcedb/whpj/" target="_blank">中国银行</a></p>
+    </div>
+
+    <!-- 趋势评论 -->
+    <div class="trend-comment">📊 板块趋势：金融数据整体平稳，信贷总量符合预期，汇率窄幅波动。市场处于观望状态，等待美联储明确信号。中国政策工具充足，但传导效率是关键。今日无重大风险事件，属于“暴风雨前的宁静”窗口。</div>
+  </div>
+
+  <!-- 板块3: 人工智能 -->
+  <div class="section">
+    <div class="section-title">🤖 人工智能</div>
+
+    <!-- 新闻5 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="item-title">DeepSeek 发布 V4 Pro 模型，加速扩张</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+      </div>
+      <div class="item-summary">
+        路透社8月2日报道，中国 AI 初创公司 DeepSeek 正式发布 V4 Pro 模型，标志着其技术迭代进入新阶段。DeepSeek 由对冲基金幻方量化资助，2023年成立，专注于 AGI 底层模型。V4 Pro 的发布可能进一步加剧全球大模型竞争格局，尤其在推理效率和多模态能力方面。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">DeepSeek Releases Official V4 Pro Model, Stepping Up Expansion</p>
+        <p class="en-summary">Chinese AI startup DeepSeek has launched its V4 Pro model, signaling a major upgrade in its pursuit of artificial general intelligence. Backed by High-Flyer hedge fund, DeepSeek continues to challenge global leaders in large language models.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>large language model</b> 大语言模型</span>
+            <span class="vocab-item"><b>artificial general intelligence</b> 通用人工智能</span>
+            <span class="vocab-item"><b>multimodal</b> 多模态</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>V4 Pro 是 DeepSeek 的第四代旗舰模型，重点优化了推理能力和代码生成。与 V3 相比，可能在参数效率上实现突破，用更小算力达到更强性能。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（6个月内）将集成到其 C 端应用和开发者 API，抢占企业市场。长期看，DeepSeek 的目标是 AGI，V4 Pro 是通往该目标的重要里程碑。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若 DeepSeek 保持这种迭代速度，全球 AI 格局将从“美国主导”变为“中美双雄”。未来开源与闭源模型的边界可能模糊，AI 能力将像水电一样普及。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.reuters.com/technology/deepseek/" target="_blank">Reuters</a></p>
+    </div>
+
+    <!-- 新闻6 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="item-title">DeepSeek 公司背景：幻方量化旗下</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        DeepSeek 由梁文锋创立于2023年7月，总部位于杭州，由对冲基金幻方量化（High-Flyer）全资支持。这种“量化基金+AI研究”的模式，使其在算力采购和算法优化上具有独特优势，也是其能快速迭代 V3、V4 的重要原因。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">DeepSeek: The Quant-Fund-Backed AI Lab</p>
+        <p class="en-summary">Founded by Liang Wenfeng in July 2023, DeepSeek is owned by High-Flyer, a Chinese hedge fund. This unique structure provides the lab with substantial computing resources and algorithmic trading insights, fueling its rapid progress.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>hedge fund</b> 对冲基金</span>
+            <span class="vocab-item"><b>proprietary trading</b> 自营交易</span>
+            <span class="vocab-item"><b>training framework</b> 训练框架</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek 不像其他 AI 公司靠融资烧钱，而是靠幻方量化的利润自给自足，这让它能更专注于长期研究。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>这种模式在 AI 领域独树一帜。未来可能衍生出“AI+金融”的深度协同，利用 AI 优化投资策略，再用收益反哺 AI 研发。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>也许未来最强大的 AI 不是来自科技巨头，而是来自这种“自我造血”的研究机构。金融与 AI 的融合将创造新的范式。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://en.wikipedia.org/wiki/DeepSeek" target="_blank">Wikipedia</a></p>
+    </div>
+
+    <!-- 趋势评论 -->
+    <div class="trend-comment">📊 板块趋势：DeepSeek V4 Pro 的发布标志着中国 AI 模型已进入全球第一梯队。其“量化输血”模式降低了对外部融资的依赖，这是与美国 OpenAI 等公司最大的战略差异。未来 12 个月，模型能力竞争将转向“推理成本”和“垂直应用”。</div>
+  </div>
+
+  <!-- 板块4: 科技/硬科技 -->
+  <div class="section">
+    <div class="section-title">💻 科技 / 硬科技</div>
+
+    <!-- 新闻7 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="item-title">2026年7月显卡天梯图：RTX 5090Dv2 & RX 9060 更新</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        知乎更新 2026 年 7 月显卡天梯图，新增 RTX <span class="num-key">5090Dv2</span> 与 RX <span class="num-key">9060</span>。数据显示，在 <span class="num-key">1080P</span>/<span class="num-key">2K</span>/<span class="num-key">4K</span> 分辨率下，RTX 5090Dv2 性能较上代提升约 <span class="num-up">15%</span>，但功耗也同步上升。中端市场 RX 9060 性价比突出，成为 <span class="num-key">2K</span> 游戏新宠。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">July 2026 GPU Hierarchy: RTX 5090Dv2 and RX 9060 Arrive</p>
+        <p class="en-summary">The latest GPU benchmark charts include NVIDIA's RTX 5090Dv2 and AMD's RX 9060. The RTX 5090Dv2 offers roughly 15% better performance than its predecessor, while the RX 9060 emerges as a strong value pick for 2K gaming.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>rasterization</b> 光栅化</span>
+            <span class="vocab-item"><b>ray tracing</b> 光线追踪</span>
+            <span class="vocab-item"><b>power efficiency</b> 能效比</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>显卡天梯图综合了 <span class="num-key">25</span> 款主流游戏的帧率表现，是衡量 GPU 性能的直观参考。RTX 5090Dv2 是 NVIDIA 针对中国市场的特供版，阉割了部分 AI 算力以满足出口管制。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，高端显卡需求受 AI 热潮带动，但游戏市场增长放缓。中端市场将成兵家必争之地，RX 9060 的成功显示 AMD 正在收复失地。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当 GPU 成为 AI 时代的“石油”，显卡天梯图将不再只是游戏玩家的参考，而是算力投资的晴雨表。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.zhihu.com/tardis/zm/art/294283384" target="_blank">知乎</a></p>
+    </div>
+
+    <!-- 新闻8 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="item-title">华为：构建万物互联的智能世界</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        华为官网更新，强调其作为全球领先 ICT 基础设施提供商，正加速从“通信网络”向“智能世界”转型。2026 年上半年，华为云与昇腾 AI 生态持续扩张，鸿蒙原生应用突破 <span class="num-key">10万</span> 个，终端业务在高端市场恢复增长。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Huawei: Building a Fully Connected, Intelligent World</p>
+        <p class="en-summary">Huawei is pivoting from telecom infrastructure to AI-centric solutions. Its Ascend AI ecosystem and HarmonyOS are gaining traction, with native apps surpassing 100,000. The company is regaining momentum in the high-end smartphone segment despite sanctions.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>ICT infrastructure</b> 信息通信基础设施</span>
+            <span class="vocab-item"><b>HarmonyOS</b> 鸿蒙操作系统</span>
+            <span class="vocab-item"><b>ecosystem</b> 生态系统</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>华为正在构建一个以“昇腾”AI芯片为底座、以“鸿蒙”为连接层的智能生态。这类似于“安卓+高通”的组合，但完全自主可控。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内，鸿蒙将在国内物联网市场占据主导。长期看，昇腾若能在 AI 训练市场挑战英伟达，将重塑全球算力格局。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>华为的愿景是“万物互联”，未来你的车、家电、办公设备都将运行鸿蒙，并由昇腾提供 AI 大脑。这是一个不依赖美国技术的平行宇宙。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.huawei.com/cn/" target="_blank">华为官网</a></p>
+    </div>
+
+    <!-- 趋势评论 -->
+    <div class="trend-comment">📊 板块趋势：硬科技领域呈现“双轨并行”——消费级 GPU 性能持续升级但受制于功耗，而华为代表的自主算力路线正在加速。美国制裁反而催生了中国半导体产业链的“内循环”。未来 3 年，这两条技术路线的竞争将决定全球算力版图。</div>
+  </div>
+
+  <!-- 板块5: 材料科学 -->
+  <div class="section">
+    <div class="section-title">🔬 材料科学</div>
+
+    <!-- 新闻9 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="item-title">半导体材料：定义与新型应用拓展</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        大英百科全书更新半导体定义，强调其在 <span class="num-key">2nm</span> 以下制程中的挑战。随着 <span class="num-key">GAA</span>（全环绕栅极）和 <span class="num-key">SiC</span>（碳化硅）等新材料崛起，半导体行业正从传统硅基向第三代半导体转型，带动产业链价值重塑。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Semiconductor Evolution: Beyond Silicon</p>
+        <p class="en-summary">As Moore's law slows, the semiconductor industry is shifting to advanced materials like silicon carbide (SiC) and gallium nitride (GaN) for power electronics and RF applications. Meanwhile, gate-all-around (GAA) transistors enable continued scaling below 2nm.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>wide-bandgap</b> 宽禁带</span>
+            <span class="vocab-item"><b>sub-2nm</b> 2纳米以下</span>
+            <span class="vocab-item"><b>power electronics</b> 功率电子</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传统硅基半导体接近物理极限，而 SiC 和 GaN 能承受更高电压、频率和温度，是电动汽车和 5G 基站的关键材料。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年），SiC 将大规模应用于特斯拉等车企的逆变器。长期看，GaN 有望在快充和数据中心电源领域普及。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当材料瓶颈突破，电子设备将变得更小、更快、更节能。或许未来的手机一周只需充电一次，电动汽车续航突破 <span class="num-key">1000km</span>。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.britannica.com/science/semiconductor" target="_blank">Britannica</a></p>
+    </div>
+
+    <!-- 新闻10 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="item-title">2026 ESI 排名：中国科研材料科学领跑</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        科睿唯安发布 2026 年首期 ESI 排名，国科大、清华、浙大领跑。在材料科学领域，中国机构已占据全球前 <span class="num-up">10</span> 名中的 <span class="num-up">9</span> 席，论文被引次数大幅领先，显示中国在材料基础研究的绝对优势。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">ESI 2026: China Dominates Materials Science Rankings</p>
+        <p class="en-summary">Chinese institutions now hold 9 of the top 10 global spots in materials science by ESI citations. UCAS, Tsinghua, and Zhejiang University lead, reflecting China's massive investment in fundamental materials research.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>citations</b> 引用次数</span>
+            <span class="vocab-item"><b>research output</b> 研究成果</span>
+            <span class="vocab-item"><b>hot papers</b> 高被引论文</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>ESI 排名基于过去十年的论文被引数据，是衡量基础研究影响力的标尺。中国在材料科学的统治力，是新能源、半导体等产业爆发的底层支撑。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，中国将在钙钛矿电池、固态电池等下一代材料上继续领跑。长期看，这种基础研究优势将转化为高端制造竞争力。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当材料科学突破应用到产业，中国制造将从“组装”升级为“定义”。未来的 iPhone 可能由中国的材料创新驱动。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.toutiao.com/article/7592854067265667610/" target="_blank">今日头条</a></p>
+    </div>
+
+    <!-- 趋势评论 -->
+    <div class="trend-comment">📊 板块趋势：材料科学是硬科技的底座。中国在 ESI 排名上的压倒性优势，预示着未来 5-10 年在新能源、半导体、航空航天等关键领域的技术自主能力将持续增强。但需警惕“论文强国、产业弱国”的转化鸿沟。</div>
+  </div>
+
+  <!-- 板块6: 中国政策与监管 -->
+  <div class="section">
+    <div class="section-title">🇨🇳 中国政策与监管</div>
+
+    <!-- 新闻11 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="item-title">2026 自然指数：浙大登顶，中国机构包揽前十中九席</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+      </div>
+      <div class="item-summary">
+        2026 年度自然指数科研领导者榜单发布，浙江大学打破哈佛大学十年垄断，登顶全球高校榜首。中国机构在应用科学领域包揽前 <span class="num-up">31</span> 席，前十名中占据 <span class="num-up">9</span> 席，科研产出质量与数量实现双突破。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Nature Index 2026: Zhejiang University Tops Harvard</p>
+        <p class="en-summary">In a historic shift, Zhejiang University has dethroned Harvard as the world's top research institution in the 2026 Nature Index. Chinese institutions now hold 9 of the top 10 spots, signaling a profound rebalancing of global scientific leadership.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>research leadership</b> 科研领导力</span>
+            <span class="vocab-item"><b>output share</b> 产出份额</span>
+            <span class="vocab-item"><b>collaboration</b> 国际合作</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>自然指数追踪 <span class="num-key">82</span> 种顶级期刊的论文贡献，是衡量基础研究实力的黄金标准。浙大登顶是中国高等教育长期投入的必然结果。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，中国高校将继续巩固在化学、物理、地球环境科学的优势。长期看，若生命科学领域也能突破，将全面超越西方。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当中国成为全球科研中心，人才流动方向将逆转——全球顶尖科学家将涌向中国实验室，中文可能成为科学语言之一。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://news.qq.com/rain/a/20260617A08HYW00" target="_blank">腾讯新闻</a></p>
+    </div>
+
+    <!-- 新闻12 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="item-title">2026 上半年国内 CNS 发文：清北破 20 篇断层领先</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        2026 年 1-6 月，国内机构在 Cell/Nature/Science 三大顶刊发文量达 <span class="num-up">270-280</span> 篇。清华大学以 <span class="num-up">20+</span> 篇领跑，北京大学紧随其后，西湖大学以 <span class="num-up">7</span> 篇成为黑马。科研质量从“数量扩张”转向“高峰突破”。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">China's CNS Publications Surge in H1 2026</p>
+        <p class="en-summary">Chinese institutions published between 270 and 280 papers in Cell, Nature, and Science in the first half of 2026. Tsinghua leads with over 20 papers, while Westlake University emerges as a rising star with 7.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>high-impact journal</b> 高影响力期刊</span>
+            <span class="vocab-item"><b>breakthrough</b> 突破性成果</span>
+            <span class="vocab-item"><b>institutional ranking</b> 机构排名</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>CNS 论文是科研皇冠上的明珠。清北的断层领先，反映了中国顶尖高校在人才引进和科研环境上的优势。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，中国在 AI 药物筛选、柔性电子等前沿方向将持续产出重磅成果。长期看，西湖大学等新型研究型大学的崛起将改变传统高校格局。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当中国每年 CNS 论文突破 <span class="num-key">600</span> 篇，世界将不得不重新审视“中国原创”的含金量。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://m.163.com/dy/article/L0OP362N0553T4Y3.html" target="_blank">网易</a></p>
+    </div>
+
+    <!-- 趋势评论 -->
+    <div class="trend-comment">📊 板块趋势：中国科研政策正从“鼓励数量”转向“奖励质量”。自然指数登顶和 CNS 论文爆发，是政策引导和资源投入的必然结果。但需注意，基础研究强不等于产业强，下一步的关键是打通“实验室到工厂”的转化通道。</div>
+  </div>
+
+  <!-- 板块7: 地缘政治与国际关系 -->
+  <div class="section">
+    <div class="section-title">🌍 地缘政治与国际关系</div>
+
+    <!-- 新闻13 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="item-title">半导体出口管制：定义之争背后的产业链博弈</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <div class="item-summary">
+        美欧日对“半导体”定义的重新解释，正在重塑全球贸易规则。焦点从传统芯片扩展到 <span class="num-key">AI 加速器</span>、<span class="num-key">HBM</span> 存储甚至 <span class="num-key">量子芯片</span> 等新兴领域。中国则加速自主替代，2026 年半导体设备国产化率预计提升至 <span class="num-up">35%</span>。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Semiconductor Export Controls: A Battle Over Definitions</p>
+        <p class="en-summary">The US and its allies are expanding export controls to cover AI accelerators, HBM memory, and quantum chips. In response, China is accelerating domestic equipment adoption, with localization rates expected to reach 35% in 2026.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>export control</b> 出口管制</span>
+            <span class="vocab-item"><b>supply chain</b> 供应链</span>
+            <span class="vocab-item"><b>localization</b> 国产化</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这场博弈的本质是定义权之争——谁能定义“半导体”，谁就能主导技术标准。美国试图通过扩大管制范围，延缓中国 AI 算力建设。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，中国高端芯片获取难度加大，但成熟制程产能疯狂扩张。长期看，管制将倒逼中国全产业链自主，可能催生一个“去美化”的半导体生态。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中国实现完全自主，全球将出现两套半导体标准。那将不是脱钩，而是“一个星球，两个系统”。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.ibm.com/think/topics/semiconductors" target="_blank">IBM</a></p>
+    </div>
+
+    <!-- 新闻14 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="item-title">AP/CNN 持续关注：全球供应链重组加速</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-summary">
+        美联社与 CNN 头条持续聚焦供应链重组，东南亚（越南、印度）成为新的制造枢纽。2026 年上半年，美国从越南进口电子元件同比增长 <span class="num-up">28%</span>，但基础设施瓶颈和熟练工人短缺成为新制约。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Global Supply Chain Reconfiguration Accelerates</p>
+        <p class="en-summary">Southeast Asia, particularly Vietnam and India, is emerging as a key manufacturing hub as companies diversify away from China. US imports of electronic components from Vietnam grew 28% YoY in H1 2026, though infrastructure gaps pose challenges.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>supply chain diversification</b> 供应链多元化</span>
+            <span class="vocab-item"><b>friend-shoring</b> 友岸外包</span>
+            <span class="vocab-item"><b>infrastructure bottleneck</b> 基础设施瓶颈</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>跨国企业为规避地缘风险，将部分产能从中国转移至东南亚和墨西哥。但这并非简单的“去中国化”，而是“中国+N”策略。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，越南、印度将承接低端组装环节。长期看，中国仍将保持高端材料和零部件的主导地位，形成区域分工新格局。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来可能出现“亚洲工厂”网络——中国提供核心部件，东南亚完成组装，印度提供软件服务。全球化并未终结，而是换了一种形态。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://apnews.com/" target="_blank">AP News</a></p>
+    </div>
+
+    <!-- 趋势评论 -->
+    <div class="trend-comment">📊 板块趋势：地缘焦点仍是科技供应链。美中在半导体定义上的博弈，本质是对未来技术主导权的争夺。短期内，管制与反制将交替升级；长期看，全球将形成“双轨”技术生态。企业需要同时布局两个体系以对冲风险。</div>
+  </div>
+
+  <!-- 时间节点模块 -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-08-15</span>
+      <span>欧元区6月工业产出月率公布，市场预期小幅回升</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-08-20</span>
+      <span>DeepSeek V4 Pro 开发者 API 正式开放申请</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-09-01</span>
+      <span>自然指数 2026 年度完整榜单数据公开，机构排名最终确认</span>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    ⚡ 简报由 AI 生成，数据基于公开信息，仅供研究参考，不构成投资建议。
+  </div>
+
+</div>
+</body>
+</html>
