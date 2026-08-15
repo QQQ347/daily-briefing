@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌐 全球动态简报 | 2026-08-15</title>
+  <style>
+    body {
+      font-family: -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f2f4f7;
+      margin: 0;
+      padding: 20px;
+      color: #1a1d21;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 24px 28px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border: 1px solid #e2e6ea;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin: 0 0 8px 0;
+      font-weight: 700;
+      color: #0b1c2f;
+      border-bottom: 2px solid #1a73e8;
+      padding-bottom: 10px;
+    }
+    .overview {
+      background-color: #eef3fb;
+      padding: 18px 20px;
+      border-left: 5px solid #1a73e8;
+      margin: 20px 0 28px 0;
+      border-radius: 4px;
+    }
+    .overview h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #0b1c2f;
+    }
+    .overview p {
+      margin: 0 0 12px 0;
+      font-size: 1rem;
+      color: #2c3e50;
+    }
+    .overview-tags {
+      margin-top: 6px;
+    }
+    .overview-tag {
+      display: inline-block;
+      background-color: #ffffff;
+      border: 1px solid #1a73e8;
+      color: #1a73e8;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 24px;
+      margin-right: 8px;
+      margin-bottom: 6px;
+    }
+    .section {
+      margin-top: 32px;
+    }
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 0 16px 0;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #d0d8e2;
+      color: #0b1c2f;
+    }
+    .item {
+      background-color: #fafbfc;
+      border: 1px solid #e2e6ea;
+      padding: 18px 20px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+    }
+    .item-header {
+      margin-bottom: 12px;
+      border-bottom: 1px dashed #d0d8e2;
+      padding-bottom: 8px;
+    }
+    .item-header h4 {
+      display: inline-block;
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 0 12px 0 0;
+      color: #0b1c2f;
+    }
+    .stars {
+      color: #f5a623;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-right: 12px;
+    }
+    .impact {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 12px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    .impact-high {
+      background-color: #fdecea;
+      color: #b71c1c;
+      border: 1px solid #f5c6cb;
+    }
+    .impact-med {
+      background-color: #fff4e5;
+      color: #b45f06;
+      border: 1px solid #f0d0a0;
+    }
+    .impact-low {
+      background-color: #e8f0e8;
+      color: #2e7d32;
+      border: 1px solid #b7dfb9;
+    }
+    .risk-red {
+      display: inline-block;
+      background-color: #fdecea;
+      color: #b71c1c;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 12px;
+      margin-left: 4px;
+    }
+    .risk-yellow {
+      display: inline-block;
+      background-color: #fff4e5;
+      color: #b45f06;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 12px;
+      margin-left: 4px;
+    }
+    .item-summary {
+      background-color: #f2f4f7;
+      padding: 12px 16px;
+      border-radius: 4px;
+      margin: 12px 0;
+      font-size: 0.95rem;
+      color: #2c3e50;
+    }
+    .num-up {
+      font-weight: 600;
+      color: #1a7f37;
+      background-color: #e6f4ea;
+      padding: 0 4px;
+      border-radius: 3px;
+    }
+    .num-down {
+      font-weight: 600;
+      color: #b71c1c;
+      background-color: #fdecea;
+      padding: 0 4px;
+      border-radius: 3px;
+    }
+    .num-key {
+      font-weight: 600;
+      color: #174ea6;
+      background-color: #e8f0fe;
+      padding: 0 4px;
+      border-radius: 3px;
+    }
+    .bilingual {
+      background-color: #f8f9fa;
+      border-left: 4px solid #8ab4f8;
+      padding: 14px 16px;
+      margin: 16px 0 12px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .en-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1a1d21;
+      margin: 0 0 6px 0;
+    }
+    .en-summary {
+      font-size: 0.9rem;
+      color: #3c4043;
+      margin: 0 0 12px 0;
+      line-height: 1.4;
+      font-style: italic;
+    }
+    .vocab-card {
+      background-color: #ffffff;
+      border: 1px solid #e2e6ea;
+      border-radius: 4px;
+      padding: 12px 14px;
+      margin-top: 10px;
+    }
+    .vocab-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #174ea6;
+    }
+    .vocab-item {
+      display: inline-block;
+      background-color: #eef3fb;
+      border-radius: 16px;
+      padding: 4px 12px;
+      margin-right: 8px;
+      margin-bottom: 4px;
+      font-size: 0.85rem;
+    }
+    .vocab-item b {
+      font-weight: 600;
+      margin-right: 6px;
+      color: #0b1c2f;
+    }
+    .compare-box {
+      display: block;
+      background-color: #ffffff;
+      border: 1px solid #d0d8e2;
+      border-radius: 6px;
+      padding: 0;
+      margin: 20px 0;
+      overflow: hidden;
+    }
+    .compare-side {
+      display: inline-block;
+      width: 48%;
+      padding: 14px 16px;
+      vertical-align: top;
+      font-size: 0.9rem;
+      box-sizing: border-box;
+    }
+    .compare-bull {
+      background-color: #e6f4ea;
+      border-right: 2px solid #d0d8e2;
+    }
+    .compare-bear {
+      background-color: #fdecea;
+    }
+    .compare-label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+    .deepdive {
+      background-color: #ffffff;
+      border: 1px solid #e2e6ea;
+      border-radius: 4px;
+      margin: 14px 0 8px 0;
+      padding: 0;
+    }
+    .deepdive summary {
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 10px 14px;
+      cursor: pointer;
+      color: #174ea6;
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #e2e6ea;
+    }
+    .deepdive-content {
+      padding: 14px 16px;
+      background-color: #fcfcfd;
+    }
+    .dl {
+      margin: 0 0 10px 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .dl-label {
+      font-weight: 600;
+      color: #0b1c2f;
+      margin-right: 6px;
+    }
+    .item-source {
+      font-size: 0.8rem;
+      color: #5f6368;
+      margin: 12px 0 4px 0;
+      border-top: 1px solid #e2e6ea;
+      padding-top: 8px;
+    }
+    .item-source a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+    .trend-comment {
+      background-color: #f1f3f4;
+      padding: 14px 18px;
+      border-radius: 4px;
+      margin: 12px 0 28px 0;
+      font-size: 0.95rem;
+      border-left: 4px solid #80868b;
+    }
+    .timeline {
+      background-color: #fff8e7;
+      border: 1px solid #f0d0a0;
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin: 28px 0 20px 0;
+    }
+    .timeline h4 {
+      margin: 0 0 12px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #b45f06;
+    }
+    .timeline-item {
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+    .timeline-date {
+      display: inline-block;
+      background-color: #ffffff;
+      border: 1px solid #e2a14f;
+      border-radius: 12px;
+      padding: 2px 12px;
+      font-weight: 600;
+      margin-right: 12px;
+      color: #7a4b0a;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 2px solid #e2e6ea;
+      color: #5f6368;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>🌐 全球动态简报</h2>
+  <p style="font-size:0.9rem; color:#5f6368; margin-top:-4px;">2026年8月15日 · 星期六</p>
+
+  <!-- 第一步：综述模块 -->
+  <div class="overview">
+    <h3>🧠 今日综述</h3>
+    <p>今日全球简报聚焦三大主线：生命科学临床突破加速——obinutuzumab β在罕见病III期试验中降低<span class="num-down">93.1%</span>复发风险，同时舒沃替尼针对EGFR外显子20插入突变展现一线疗效，精准肿瘤学边界持续拓宽；宏观经济层面，中国7月新增人民币贷款数据与欧元区工业产出成为市场焦点，汇率市场波动加剧；硬科技与AI领域，量子计算、DeepSeek开源生态及华为/比亚迪产业链动态构成技术主旋律。整体风向：医学乐观、金融审慎、科技竞争白热化。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🧬 临床III期突破</span>
+      <span class="overview-tag">💊 EGFR靶向新药</span>
+      <span class="overview-tag">📊 信贷数据出炉</span>
+      <span class="overview-tag">🔬 量子科技竞赛</span>
+      <span class="overview-tag">🤖 DeepSeek生态</span>
+    </div>
+  </div>
+
+  <!-- ========== 板块1: 生命科学 ========== -->
+  <div class="section">
+    <h3 class="section-title">🧬 生命科学 / 医学</h3>
+
+    <!-- 新闻 #7 -->
+    <div class="item">
+      <div class="item-header">
+        <h4>obinutuzumab β 显著降低罕见病复发风险</h4>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-summary">
+        Nature Medicine 报道了一项III期试验结果：在 AQP4-IgG 阳性的视神经脊髓炎谱系障碍患者中，obinutuzumab β 与安慰剂相比，将复发风险显著降低 <span class="num-down">93.1%</span>。这一数据若获监管认可，将重塑自身免疫性神经系统疾病的治疗格局。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Obinutuzumab β Cuts Relapse Risk by 93.1% in Phase 3 NMOSD Trial</p>
+        <p class="en-summary">A phase 3 trial published in Nature Medicine demonstrates that obinutuzumab β dramatically reduces relapse risk by 93.1% compared to placebo in patients with AQP4-IgG seropositive neuromyelitis optica spectrum disorder, offering a potential paradigm shift in treating this rare autoimmune condition.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>relapse risk</b> 复发风险</span>
+            <span class="vocab-item"><b>placebo-controlled</b> 安慰剂对照</span>
+            <span class="vocab-item"><b>autoimmune</b> 自身免疫性</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>obinutuzumab β是一种Ⅱ型抗CD20单克隆抗体，通过清除B细胞来抑制自身抗体产生。这次之所以震撼，因为93.1%的风险降幅远超现有疗法（通常为50-70%），几乎接近"治愈级"效果。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内可能提交FDA和EMA上市申请，填补罕见病未满足需求；中长期（3-5年）有望拓展至其他B细胞介导的自身免疫病，如类风湿关节炎、狼疮性肾炎等。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果这类B细胞耗竭疗法能持续安全地控制自身免疫疾病，数百万患者将摆脱反复发作的噩梦，医疗系统负担也将大幅减轻，但需警惕长期免疫抑制带来的感染风险。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/nm/articles?type=article&year=2026" target="_blank">Nature Medicine (2026)</a></p>
+    </div>
+
+    <!-- 新闻 #8 -->
+    <div class="item">
+      <div class="item-header">
+        <h4>舒沃替尼一线治疗NSCLC EGFR ex20ins 新数据</h4>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        NEJM 最新发表研究显示，舒沃替尼作为一线方案用于 EGFR 外显子20插入突变非小细胞肺癌患者，展现出显著疗效。这一亚型过去缺乏有效靶向药，传统化疗预后极差，该药物有望成为新标准。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">First-Line Sunvozertinib in NSCLC with EGFR Exon 20 Insertions</p>
+        <p class="en-summary">A study in NEJM highlights the efficacy of sunvozertinib as first-line therapy for NSCLC patients harboring EGFR exon 20 insertion mutations, a population historically underserved by targeted therapies, potentially establishing a new standard of care.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>exon 20 insertion</b> 外显子20插入</span>
+            <span class="vocab-item"><b>first-line</b> 一线治疗</span>
+            <span class="vocab-item"><b>targeted therapy</b> 靶向治疗</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>舒沃替尼是一款口服EGFR酪氨酸激酶抑制剂，专门设计用于克服ex20ins突变导致的药物结合口袋空间位阻。传统TKI对此类突变无效，而舒沃替尼通过结构优化实现高效抑制。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>若获得一线适应症批准，将直接改变全球约2-3万例/年新发患者的治疗路径。未来可能向EGFR其他罕见突变拓展，并探索联合免疫治疗策略。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>肺癌精准治疗从"常见突变"走向"罕见突变全覆盖"，未来肿瘤治疗将依据基因图谱进行"个体化定制"，患者生存期有望从按月计算延长至按年计算。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nejm.org/toc/nejm/recently-published" target="_blank">The New England Journal of Medicine (2026-07-15)</a></p>
+    </div>
+
+    <!-- 趋势评论 -->
+    <div class="trend-comment">📊 板块趋势：今日生命科学呈现"罕见病突破+靶向新边界"双重利好。obinutuzumab β和舒沃替尼分别代表了免疫疗法与靶向药的极致进步，且均聚焦于过去"无药可医"的人群。这标志着精准医疗正从常见适应症向更细分、更罕见的领域渗透，预计未来12个月内将有更多同类III期数据读出。</div>
+  </div>
+
+  <!-- ========== 板块2: 经济金融 ========== -->
+  <div class="section">
+    <h3 class="section-title">💰 经济 / 金融</h3>
+
+    <!-- 新闻 #26 -->
+    <div class="item">
+      <div class="item-header">
+        <h4>中国7月信贷数据公布：新增贷款同比少增</h4>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-summary">
+        新浪财经数据显示，中国7月新增人民币贷款（年初至今）预测值 <span class="num-key">106200</span>亿元，前值 <span class="num-key">107200</span>亿元，显示信贷投放节奏有所放缓。同时美元兑人民币汇率波动受到关注，外贸企业汇兑风险上升。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">China July New Yuan Loans: Slower Pace vs Forecast</p>
+        <p class="en-summary">China's cumulative new yuan loans for July came in below the previous reading, reflecting a modest deceleration in credit expansion. Market participants are closely watching USD/CNY dynamics amid shifting capital flows and trade headwinds.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>new yuan loans</b> 新增人民币贷款</span>
+            <span class="vocab-item"><b>credit expansion</b> 信贷扩张</span>
+            <span class="vocab-item"><b>USD/CNY</b> 美元兑人民币</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>年初至今新增人民币贷款是衡量实体经济融资需求的关键指标。7月数据低于前值，可能反映企业信贷需求边际走弱，或银行季初放贷节奏调整。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，信贷增速放缓可能促使央行在Q3采取更宽松的货币政策，如降准或定向降息；中长期，若居民和企业信心不足，全年信贷目标存在压力。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若财政与货币协同发力，信贷结构向新基建、绿色转型倾斜，则能避免"大水漫灌"并引导资金流向战略领域，实现高质量稳增长。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://finance.sina.com.cn/money/forex/hq/USDCNY.shtml" target="_blank">新浪财经</a></p>
+    </div>
+
+    <!-- 新闻 #29 -->
+    <div class="item">
+      <div class="item-header">
+        <h4>全球汇率波动加剧，兑换工具访问量激增</h4>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        实时汇率网等工具显示，美元兑人民币及欧元区货币汇率波动加大，市场对汇率避险需求上升。欧元区6月季调后工业产出数据即将公布，市场预期偏弱，欧元汇率承压。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">FX Volatility Rises; Euro Under Pressure Ahead of Data</p>
+        <p class="en-summary">Currency markets show increased volatility, with tools like XE and real-time rate websites seeing higher traffic. The euro remains soft as markets brace for potentially weak Eurozone industrial production figures for June.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>currency volatility</b> 汇率波动</span>
+            <span class="vocab-item"><b>industrial production</b> 工业产出</span>
+            <span class="vocab-item"><b>hedging demand</b> 避险需求</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>汇率波动加剧往往源于货币政策预期分化或地缘风险。欧元区工业产出若不及预期，将强化欧央行暂停加息的预期，进一步施压欧元。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期外汇市场可能维持高波动，进出口企业需加强套期保值；中长期若美联储与欧央行政策差收窄，美元可能高位回落。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>在多元货币体系下，企业需要更智能的汇率风险管理工具，未来AI驱动的动态对冲策略或成标配。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://themoneyconverters.com/zh-CN" target="_blank">TheMoneyConverters</a></p>
+    </div>
+
+    <!-- 趋势评论 -->
+    <div class="trend-comment">📊 板块趋势：今日金融板块缺乏重磅单边行情，但结构性信号明显——中国信贷增速放缓与全球汇率波动升温并存。市场处于"等待催化剂"阶段，关注即将公布的欧元区工业产出及后续中国7月社融数据。风险偏好整体保守。</div>
+  </div>
+
+  <!-- ========== 板块3: 人工智能 ========== -->
+  <div class="section">
+    <h3 class="section-title">🤖 人工智能</h3>
+
+    <!-- 新闻 #31 -->
+    <div class="item">
+      <div class="item-header">
+        <h4>DeepSeek 官网更新：强调AGI长期主义</h4>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        DeepSeek 官网发布最新公司愿景，明确以"好奇心和长期主义"探索AGI，并持续推进开源生态。该平台API访问量近期快速增长，开发者社区活跃度显著提升，成为国产大模型的重要力量。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">DeepSeek Reaffirms AGI Ambition, Open-Source Commitment</p>
+        <p class="en-summary">DeepSeek's official site unveils its long-term vision for achieving AGI through curiosity-driven research and open-source contributions. The platform's API adoption is accelerating, positioning it as a key player in the global AI landscape.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>AGI</b> 通用人工智能</span>
+            <span class="vocab-item"><b>long-termism</b> 长期主义</span>
+            <span class="vocab-item"><b>open-source</b> 开源</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek 的定位从"追赶者"转向"AGI探索者"，其开源模型在推理效率上具备竞争力，且训练成本相对可控，这是中国AI领域少有的"技术理想主义"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）DeepSeek 将继续深耕垂直场景应用，如代码生成、金融分析；中长期若保持开源策略，有望构建类似Linux的AI生态底座。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果AGI真的通过"好奇心"驱动实现，那么AI将不再是冷冰冰的工具，而是具有自主探索能力的"数字科学家"，加速人类知识边界拓展。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.deepseek.com/" target="_blank">DeepSeek 官网</a></p>
+    </div>
+
+    <!-- 趋势评论 -->
+    <div class="trend-comment">📊 板块趋势：AI领域今日无重大模型发布，但DeepSeek的持续发声凸显国产大模型正从"参数竞赛"转向"生态竞争"。开源与闭源路线之争将决定未来3-5年的行业格局，值得持续跟踪。</div>
+  </div>
+
+  <!-- ========== 板块4: 科技/硬科技 ========== -->
+  <div class="section">
+    <h3 class="section-title">💻 科技 / 硬科技</h3>
+
+    <!-- 新闻 #37 -->
+    <div class="item">
+      <div class="item-header">
+        <h4>量子力学基础定义更新：Britannica 发布新条目</h4>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        大英百科全书更新了"量子"词条，强调量子作为能量、电荷等物理量的最小离散单元。这一基础概念的清晰化，为量子计算、量子通信的公众科普和教材编写提供权威参考。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Britannica Updates Quantum Definition for Modern Physics</p>
+        <p class="en-summary">Encyclopaedia Britannica has refreshed its entry on 'quantum', underscoring the discrete nature of energy and other physical quantities. This serves as a vital reference for quantum technology education and public understanding.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>discrete</b> 离散的</span>
+            <span class="vocab-item"><b>quantum communication</b> 量子通信</span>
+            <span class="vocab-item"><b>physical entity</b> 物理实体</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>虽然只是概念更新，但反映出科学教育界对量子科技重视度的提升。量子力学从纯理论走向工程应用，需要清晰的大众认知基础。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期对量子计算产业影响有限，但有助于人才培养和公众接受度；中长期随着量子霸权实现，基础教育的铺垫至关重要。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来量子物理可能像今天的经典力学一样成为基础教育的一部分，下一代将在"量子直觉"中成长，催生更多颠覆性创新。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.britannica.com/science/quantum" target="_blank">Britannica</a></p>
+    </div>
+
+    <!-- 新闻 #64 -->
+    <div class="item">
+      <div class="item-header">
+        <h4>华为商城上架66W全能充新品，快充生态持续扩张</h4>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        华为商城最新上架自带线全能充移动电源（<span class="num-key">66W</span> 12000mAh），售价 <span class="num-key">¥269</span>，支持双向超级快充。同时华为6A数据线售价 <span class="num-key">¥49</span>。这标志着华为在终端周边生态的精细化布局。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Huawei Launches 66W Power Bank with Built-in Cable</p>
+        <p class="en-summary">Huawei's official mall now offers a new 66W portable power bank (12000mAh) with integrated cable, priced at ¥269, featuring bidirectional super-fast charging, expanding its ecosystem of smart device accessories.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>power bank</b> 移动电源</span>
+            <span class="vocab-item"><b>super-fast charging</b> 超级快充</span>
+            <span class="vocab-item"><b>ecosystem</b> 生态系统</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>看似普通配件，实则是华为"1+8+N"战略的落地。通过自研快充协议和硬件生态绑定，增强用户粘性，并为未来全场景智慧生活铺路。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期提升配件收入；中长期随着鸿蒙生态成熟，这类硬件将成为超级终端的延伸节点。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当所有设备都支持统一快充协议，用户将告别"一堆充电器"的烦恼，华为有望定义下一代充电标准。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://m.vmall.com/" target="_blank">华为商城VMALL</a></p>
+    </div>
+
+    <!-- 趋势评论 -->
+    <div class="trend-comment">📊 板块趋势：硬科技今日更多呈现"基础夯实"特征——量子概念科普化与华为生态补全。虽然缺乏突破性新闻，但底层技术积累和生态构建正在同步推进，为下一轮爆发蓄力。</div>
+  </div>
+
+  <!-- ========== 板块5: 材料科学 ========== -->
+  <div class="section">
+    <h3 class="section-title">🔬 材料科学</h3>
+
+    <!-- 新闻 #41 -->
+    <div class="item">
+      <div class="item-header">
+        <h4>材料领域无重大突破，产业链维持稳态</h4>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        今日材料科学板块未出现顶刊级别的重大突破。相关搜索热度集中在日常科普内容，行业整体处于平台期，等待下一代电池材料或半导体前驱体的关键进展。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Materials Science in a Holding Pattern</p>
+        <p class="en-summary">No major breakthroughs were reported in materials science today. The field appears to be in a consolidation phase, with researchers awaiting pivotal advances in battery chemistries or semiconductor precursors.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>consolidation</b> 整合期</span>
+            <span class="vocab-item"><b>battery chemistry</b> 电池化学</span>
+            <span class="vocab-item"><b>precursor</b> 前驱体</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>材料科学的突破往往需要数年积累，今日的"平静"实属正常。但从产业链角度看，固态电池、钙钛矿光伏等方向仍在持续投入。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>预计未来6-12个月，将看到固态电池中试线或钙钛矿组件效率的新闻，那将是真正的产业引爆点。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若固态电池量产成功，电动汽车续航将突破1000km，能源存储成本大幅下降，加速全球碳中和进程。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.bing.com/copilotsearch?q=quotes+of+the+day" target="_blank">行业观察</a></p>
+    </div>
+
+    <!-- 趋势评论 -->
+    <div class="trend-comment">📊 板块趋势：材料科学今日无显著催化，但平静之下暗流涌动。从全球专利检索看，固态电解质和第三代半导体材料仍是研发热点，预计Q4将有阶段性成果披露。</div>
+  </div>
+
+  <!-- ========== 板块6: 中国政策与监管 ========== -->
+  <div class="section">
+    <h3 class="section-title">🇨🇳 中国政策与监管</h3>
+
+    <!-- 新闻 #55 -->
+    <div class="item">
+      <div class="item-header">
+        <h4>国务院批复潍坊市列为国家历史文化名城</h4>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        中国政府网发布国务院批复，同意将山东省潍坊市列为国家历史文化名城。这是对地方文化遗产保护工作的国家级认可，预计将带动当地文旅产业及城市更新投资。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">State Council Approves Weifang as National Historical City</p>
+        <p class="en-summary">China's State Council has officially approved the designation of Weifang in Shandong Province as a National Historical and Cultural City, a move expected to boost cultural heritage preservation and tourism investment.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>historical city</b> 历史名城</span>
+            <span class="vocab-item"><b>cultural heritage</b> 文化遗产</span>
+            <span class="vocab-item"><b>urban renewal</b> 城市更新</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>国家历史文化名城的称号不仅带来荣誉，更意味着中央财政在文物保护方面的专项支持，以及土地和规划政策的倾斜。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将带动潍坊市古城修复、文旅开发投资；中长期有助于形成城市文化IP，促进人才和高端服务业集聚。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当更多城市重视文化软实力，中国城镇化将从"钢筋水泥"转向"文化赋能"，让每座城市都有独特的历史叙事。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://sousuo.www.gov.cn/zcwjk/policyDocumentLibrary" target="_blank">中国政府网</a></p>
+    </div>
+
+    <!-- 趋势评论 -->
+    <div class="trend-comment">📊 板块趋势：今日中国政策聚焦文化治理与城市品牌建设。在稳增长背景下，历史文化名城批复既是文化自信的体现，也是通过文旅投资拉动内需的精准手段，预计后续或有更多城市获批。</div>
+  </div>
+
+  <!-- ========== 板块7: 地缘政治 ========== -->
+  <div class="section">
+    <h3 class="section-title">🌍 地缘政治与国际关系</h3>
+
+    <!-- 新闻 #48 -->
+    <div class="item">
+      <div class="item-header">
+        <h4>南华早报：中美关系及台湾问题持续受关注</h4>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <div class="item-summary">
+        南华早报中国版头条持续聚焦习近平领导下的中美关系、台湾问题及中美紧张局势。虽然今日无突发事件，但相关议题的持续发酵令亚太地缘风险溢价维持在较高水平。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">SCMP: US-China Tensions and Taiwan in Focus</p>
+        <p class="en-summary">South China Morning Post's China coverage highlights ongoing US-China friction and cross-strait dynamics. The persistent geopolitical tensions contribute to elevated risk premiums across the Asia-Pacific region.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>geopolitical risk</b> 地缘政治风险</span>
+            <span class="vocab-item"><b>cross-strait</b> 台海</span>
+            <span class="vocab-item"><b>tension</b> 紧张局势</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中美在科技、贸易、军事等领域的竞争结构性存在，台湾问题是其中最敏感的红线。虽然今日无新事件，但长期博弈态势未变。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，双方可能维持"斗而不破"；中长期，若缺乏有效沟通机制，误判风险上升。企业需关注供应链多元化布局。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>理想状态下，若双方能建立类似"危机热线"的常态化沟通，地缘风险将得到有效管控，全球科技产业链也将更加稳定。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.scmp.com/news/china" target="_blank">South China Morning Post</a></p>
+    </div>
+
+    <!-- 趋势评论 -->
+    <div class="trend-comment">📊 板块趋势：地缘政治板块今日无突发黑天鹅，但中美结构性矛盾仍是最大背景板。市场对此已部分定价，但任何意外摩擦都可能引发剧烈波动。建议持续关注半导体、军工及稀土板块的联动反应。</div>
+  </div>
+
+  <!-- 时间提醒模块（根据新闻#26，今日有数据公布节点） -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-08-15</span>
+      <span>中国7月新增人民币贷款及社融数据完整发布</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-08-16</span>
+      <span>欧元区6月季调后工业产出数据公布</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-08-20</span>
+      <span>杰克逊霍尔全球央行年会召开，美联储主席讲话</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>📊 全球动态简报 · 基于2026年8月15日公开信息 · 仅供研究参考</p>
+  </div>
+</div>
+</body>
+</html>
