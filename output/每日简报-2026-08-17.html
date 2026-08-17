@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球动态每日简报 | 2026年8月17日</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background-color: #f5f6fa;
+    margin: 0;
+    padding: 20px;
+    color: #2d3436;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  }
+  h1 {
+    text-align: center;
+    color: #1e3799;
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: 700;
+  }
+  .date-sub {
+    text-align: center;
+    color: #636e72;
+    font-size: 14px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #1e3799;
+    padding-bottom: 15px;
+  }
+  .overview {
+    background-color: #f0f3ff;
+    border-left: 5px solid #1e3799;
+    padding: 20px 25px;
+    margin-bottom: 30px;
+    border-radius: 0 8px 8px 0;
+  }
+  .overview h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #1e3799;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .overview p {
+    margin: 0 0 15px 0;
+    line-height: 1.8;
+    font-size: 15px;
+    color: #2d3436;
+  }
+  .overview-tags {
+    margin-top: 10px;
+  }
+  .overview-tag {
+    display: inline-block;
+    background-color: #1e3799;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 13px;
+    margin-right: 8px;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  .section {
+    margin-bottom: 35px;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #1e3799;
+    padding: 8px 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+  .news-item {
+    background-color: #fafafa;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    padding: 20px 22px;
+    margin-bottom: 20px;
+    border-left: 4px solid #0984e3;
+  }
+  .item-header {
+    margin-bottom: 12px;
+  }
+  .item-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e3799;
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+  .stars {
+    color: #f39c12;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  .impact {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 8px;
+  }
+  .impact-high {
+    background-color: #ff7675;
+    color: #ffffff;
+  }
+  .impact-med {
+    background-color: #fdcb6e;
+    color: #2d3436;
+  }
+  .impact-low {
+    background-color: #55efc4;
+    color: #2d3436;
+  }
+  .risk-red {
+    background-color: #d63031;
+    color: #ffffff;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 8px;
+  }
+  .risk-yellow {
+    background-color: #f39c12;
+    color: #ffffff;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 8px;
+  }
+  .item-summary {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #2d3436;
+    margin-bottom: 12px;
+  }
+  .num-up {
+    background-color: #d4edda;
+    color: #155724;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+  .num-down {
+    background-color: #f8d7da;
+    color: #721c24;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+  .num-key {
+    background-color: #fff3cd;
+    color: #856404;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+  .bilingual {
+    background-color: #eef5fb;
+    border-radius: 6px;
+    padding: 15px 18px;
+    margin-bottom: 12px;
+  }
+  .en-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0984e3;
+    margin: 0 0 8px 0;
+    font-style: italic;
+  }
+  .en-summary {
+    font-size: 13px;
+    color: #2d3436;
+    line-height: 1.6;
+    margin: 0 0 10px 0;
+  }
+  .vocab-card {
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 10px 14px;
+    border: 1px solid #dfe6e9;
+  }
+  .vocab-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e3799;
+    margin-bottom: 6px;
+  }
+  .vocab-list {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .vocab-item {
+    display: inline-block;
+    margin-right: 15px;
+    background-color: #f0f3ff;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .compare-box {
+    background-color: #ffffff;
+    border: 2px solid #1e3799;
+    border-radius: 8px;
+    margin: 15px 0;
+    overflow: hidden;
+  }
+  .compare-side {
+    display: inline-block;
+    width: 48%;
+    padding: 12px 15px;
+    vertical-align: top;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .compare-bull {
+    background-color: #d4edda;
+    border-right: 1px solid #1e3799;
+  }
+  .compare-bear {
+    background-color: #f8d7da;
+  }
+  .compare-label {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  .deepdive {
+    margin-top: 10px;
+    border: 1px solid #dfe6e9;
+    border-radius: 6px;
+    background-color: #fafafa;
+  }
+  .deepdive summary {
+    cursor: pointer;
+    padding: 10px 15px;
+    font-weight: 600;
+    color: #1e3799;
+    font-size: 14px;
+    outline: none;
+  }
+  .deepdive-content {
+    padding: 10px 18px 15px 18px;
+    border-top: 1px solid #dfe6e9;
+  }
+  .dl {
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 8px 0;
+  }
+  .dl-label {
+    font-weight: 700;
+    color: #1e3799;
+  }
+  .item-source {
+    font-size: 12px;
+    color: #636e72;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  .item-source a {
+    color: #0984e3;
+    text-decoration: none;
+  }
+  .trend-comment {
+    background-color: #f0f3ff;
+    border-left: 4px solid #0984e3;
+    padding: 12px 18px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #2d3436;
+    margin-top: 15px;
+    border-radius: 0 6px 6px 0;
+    font-weight: 600;
+  }
+  .timeline {
+    background-color: #fff3cd;
+    border: 1px solid #f0c040;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 30px 0;
+  }
+  .timeline h4 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #856404;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .timeline-item {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .timeline-date {
+    display: inline-block;
+    background-color: #856404;
+    color: #ffffff;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 13px;
+    margin-right: 10px;
+  }
+  .footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #dfe6e9;
+    color: #636e72;
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🌐 全球动态每日简报</h1>
+  <div class="date-sub">2026年8月17日 · 周一</div>
+
+  <!-- 第一步：今日综述模块 -->
+  <div class="overview">
+    <h3>🧠 今日全球动态综述</h3>
+    <p>今日简报呈现三大主线：中国创新药进入"量质齐升"阶段，上半年国产新靶点创新药获批数量超去年全年，对外授权规模接近去年水平；半导体领域华为"韬定律"与逻辑折叠技术引发产业链连锁反应，国产AI芯片市场份额突破<span class="num-up">41%</span>；材料科学迎来产业化分水岭，固态电池与钙钛矿电池双双进入商业化元年。整体风向：中国科技自主化进程加速，金融端观望情绪浓厚，地缘风险持续积累。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">💊 创新药爆发</span>
+      <span class="overview-tag">🔧 华为芯片突破</span>
+      <span class="overview-tag">🔋 固态电池元年</span>
+      <span class="overview-tag">☀️ 钙钛矿免税</span>
+      <span class="overview-tag">📊 AI算力国产化</span>
+    </div>
+  </div>
+
+  <!-- 板块 1：生命科学 -->
+  <div class="section">
+    <div class="section-title">🧬 生命科学 / 医学</div>
+
+    <!-- 新闻 1 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-title">上半年国产创新药获批数量超去年全年，新靶点突破显著</div>
+      <p class="item-summary">国家药监局数据显示，2026年上半年获批<span class="num-key">38个</span>1类创新药，其中新靶点、新机制药物数量已超2025年全年水平。2025年全年获批<span class="num-up">76个</span>品种创历史新高，但新靶点仅<span class="num-key">11个</span>。今年上半年自主研发的放射性创新药打破近<span class="num-key">30年</span>核医学肿瘤显像诊断空白。</p>
+      <div class="bilingual">
+        <p class="en-title">China's domestic innovative drug approvals surge past last year's total in H1 2026</p>
+        <p class="en-summary">According to the National Medical Products Administration (NMPA), 38 Class 1 innovative drugs were approved in the first half of 2026, with new-target and new-mechanism drugs exceeding the full-year 2025 count. A self-developed radiopharmaceutical broke a 30-year gap in nuclear medicine tumor imaging diagnostics.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>Class 1 innovative drug</b> 1类创新药</span>
+            <span class="vocab-item"><b>radiopharmaceutical</b> 放射性药物</span>
+            <span class="vocab-item"><b>NMPA</b> 国家药监局</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国创新药从"跟随式创新"向"源头创新"转型，新靶点获批数量激增意味着不再只是做me-too药物，而是开始发现全新生物学机制。好比以前是"抄作业"，现在开始"自己出题"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期来看，放射性创新药将直接改善肿瘤早期诊断率；中期（1-3年），新靶点药物有望在肿瘤免疫、罕见病领域形成国际竞争力；长期（3-10年），中国创新药出海授权规模将持续扩大。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果这一趋势持续，中国将从"全球药房"转变为"全球药研中心"，在肿瘤、神经退行性疾病等领域输出原创治疗方案，重塑全球医药创新版图。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.chinanews.com.cn/cj/2026/07-13/10658139.shtml" target="_blank">中国新闻网</a></p>
+    </div>
+
+    <!-- 新闻 2 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-title">中国创新药对外授权规模接近去年全年，国际化提速</div>
+      <p class="item-summary">在昌平生命科学论坛上，国家药监局披露：2026年上半年中国创新药对外授权（License-out）总金额已接近2025年全年水平。2025年全年对外授权项目总金额达<span class="num-up">数百亿美元</span>，标志着中国创新药企从"引进来"转向"走出去"。</p>
+      <div class="bilingual">
+        <p class="en-title">China's innovative drug out-licensing approaches last year's total</p>
+        <p class="en-summary">At the Changping Life Sciences Forum, the NMPA revealed that China's innovative drug out-licensing deals in H1 2026 have nearly matched the full-year 2025 value. This marks a pivotal shift from "import-driven" to "export-driven" innovation in China's pharmaceutical industry.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>out-licensing</b> 对外授权</span>
+            <span class="vocab-item"><b>License-out</b> 授权出海</span>
+            <span class="vocab-item"><b>global expansion</b> 全球化拓展</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>License-out是指中国药企将药物海外开发权授权给跨国药企，收取首付款+里程碑付款+销售分成。这相当于"技术出口"，证明中国创新药质量获国际认可。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，更多中国药企将获得现金流反哺研发；中期看，部分药物将在海外完成III期临床并上市；长期看，中国可能诞生自己的跨国药企巨头。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来5-10年，"中国创新药"将成为全球医药投资的关键词，海外患者将用上中国研发的"first-in-class"药物，中国在全球医药产业链中的话语权大幅提升。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://finance.cctv.cn/2026/07/13/ARTI7QOGfiLCdFXfPaMygck7260713.shtml" target="_blank">央视网财经</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国创新药进入"量质齐升"阶段，新靶点占比提升与License-out规模扩大形成良性循环。但需关注：全球医药监管趋严、地缘政治对技术出口的影响，以及创新药企估值泡沫风险。整体看，中国生命科学产业正从"跟跑"转向"并跑"。</div>
+  </div>
+
+  <!-- 板块 2：经济/金融 -->
+  <div class="section">
+    <div class="section-title">💰 经济 / 金融</div>
+
+    <!-- 新闻 3 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-title">人民币汇率保持稳定，市场聚焦美联储政策信号</div>
+      <p class="item-summary">美元兑人民币汇率近期维持在<span class="num-key">7.15-7.25</span>区间震荡，中国银行外汇牌价显示人民币中间价保持稳定。市场关注美联储下一步利率决策，全球汇率市场进入观望期。XE数据显示全球<span class="num-key">3000+</span>家公司依赖商业级汇率API进行风险管理。</p>
+      <div class="bilingual">
+        <p class="en-title">USD/CNY remains stable amid Fed policy uncertainty</p>
+        <p class="en-summary">The USD/CNY exchange rate has been trading in a narrow range of 7.15-7.25, with the PBOC maintaining a stable midpoint fix. Markets are closely watching the Federal Reserve's next rate decision, while global currency markets enter a wait-and-see phase.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>exchange rate</b> 汇率</span>
+            <span class="vocab-item"><b>midpoint fix</b> 中间价</span>
+            <span class="vocab-item"><b>monetary policy</b> 货币政策</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>汇率稳定是宏观经济"压舱石"。人民币兑美元维持在7.2附近，反映中国出口竞争力与资本流动的平衡状态。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，美联储若降息，人民币可能升值至7.0-7.1；若维持高利率，人民币将继续承压。中期看，中国制造业升级将支撑汇率基本面。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果人民币国际化持续推进，未来跨境贸易结算中人民币占比将显著提升，汇率波动对实体经济的影响将逐步弱化。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://finance.sina.com.cn/money/forex/hq/USDCNY.shtml" target="_blank">新浪财经</a></p>
+    </div>
+
+    <!-- 新闻 4 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-title">全球货币市场进入"多极竞争"时代</div>
+      <p class="item-summary">随着全球贸易格局重构，货币市场呈现多元化趋势。XE数据显示全球货币转换日均交易量持续攀升，人民币在跨境支付中的份额稳步提升至<span class="num-up">4.8%</span>（SWIFT数据），美元份额降至<span class="num-down">47.2%</span>，欧元、日元等主要货币保持稳定。</p>
+      <div class="bilingual">
+        <p class="en-title">Global currency markets enter a multipolar era</p>
+        <p class="en-summary">As global trade patterns shift, currency markets are diversifying. RMB's share in cross-border payments has risen to 4.8% (SWIFT data), while USD share has declined to 47.2%. This marks a structural shift toward a multipolar currency landscape.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>multipolar</b> 多极化的</span>
+            <span class="vocab-item"><b>cross-border payment</b> 跨境支付</span>
+            <span class="vocab-item"><b>currency diversification</b> 货币多元化</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>全球货币格局从"美元单极"走向"多极竞争"。人民币国际化提速、数字货币兴起、地缘政治推动去美元化，都是这一趋势的推手。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，美元仍占主导；中期（3-5年），人民币、欧元、数字货币将形成"三足鼎立"格局；长期看，单一货币霸权将不复存在。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来跨境支付可能像"选择航空公司"一样自由，企业可根据贸易伙伴、风险偏好选择结算货币，全球金融体系将更加多元和韧性。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.xe.com/zh-cn/currencyconverter/" target="_blank">XE 实时汇率</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：今日经济金融板块信息密度较低，主要围绕汇率稳定与货币多元化两大主题。核心信号是：全球金融体系正处于"再平衡"阶段，人民币国际化稳步推进，但短期内美元主导地位难以撼动。投资者需关注美联储政策转向时点。</div>
+  </div>
+
+  <!-- 板块 3：人工智能 -->
+  <div class="section">
+    <div class="section-title">🤖 人工智能</div>
+
+    <!-- 新闻 5 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-title">国产AI芯片市场份额突破41%，华为昇腾引领算力国产化</div>
+      <p class="item-summary">2026年国产AI芯片市场报告显示，国产AI加速卡市场份额已达<span class="num-up">41%</span>。华为昇腾占据<span class="num-key">43%</span>的先进产能份额，寒武纪占<span class="num-key">11%</span>。DeepSeek已迁移至华为昇腾算力底座，标志国产AI算力生态初步成型。</p>
+      <div class="bilingual">
+        <p class="en-title">Domestic AI chips reach 41% market share in China</p>
+        <p class="en-summary">China's domestic AI accelerator market share has reached 41% in 2026, with Huawei Ascend capturing 43% of advanced capacity and Cambricon taking 11%. DeepSeek's migration to the Ascend platform signals a maturing domestic AI computing ecosystem.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>AI accelerator</b> AI加速卡</span>
+            <span class="vocab-item"><b>computing power</b> 算力</span>
+            <span class="vocab-item"><b>ecosystem</b> 生态系统</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>国产AI芯片从"备胎"变"主力"，41%的份额意味着中国AI算力不再依赖英伟达。华为昇腾通过架构创新绕开先进制程限制，用"堆叠+互连"实现等效性能提升。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，国产AI芯片将首先满足国内大模型训练需求；中期（1-3年），有望进入互联网、金融、政务等商用市场；长期看，中国AI算力将实现完全自主可控。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果国产AI芯片性能持续逼近国际顶尖水平，全球AI算力格局将从"一家独大"变为"双雄并立"，中国AI应用创新将不再受制于人。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://aichipfront.com/market-analysis/china-ai-chip-market-2026" target="_blank">AI Chip Front</a></p>
+    </div>
+
+    <!-- 新闻 6 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-title">15家国产AI芯片公司争夺同一条产线，"产能饥饿游戏"开打</div>
+      <p class="item-summary">2026年国产AI芯片进入"产能为王"阶段。华为豪取中芯<span class="num-key">43%</span>先进产能，寒武纪占<span class="num-key">11%</span>，其余<span class="num-key">15家</span>公司争夺剩余份额。决定胜负的不再是技术，而是产能分配权。</p>
+      <div class="bilingual">
+        <p class="en-title">15 Chinese AI chip firms fight for limited production capacity</p>
+        <p class="en-summary">In 2026, China's AI chip industry has entered a "capacity-first" phase. Huawei has secured 43% of SMIC's advanced capacity, Cambricon 11%, leaving 15 other companies to compete for the remainder. The key differentiator is no longer technology but production capacity allocation.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>production capacity</b> 产能</span>
+            <span class="vocab-item"><b>capacity allocation</b> 产能分配</span>
+            <span class="vocab-item"><b>supply bottleneck</b> 供给瓶颈</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>先进制程产能是稀缺资源，中芯国际的产能成为"兵家必争之地"。华为凭借技术成熟度和订单规模获得优先权，小公司面临"有芯片设计、无产能生产"的困境。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，产能集中度将进一步提升，行业洗牌加速；中期看，随着中芯、华虹扩产，产能紧张将缓解；长期看，产能分配将从"关系驱动"转向"市场化定价"。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果产能问题解决，中国AI芯片将进入"百花齐放"阶段，不同场景（训练、推理、边缘）都有专用芯片，形成完整的产品矩阵。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.tmtpost.com/8051488.html" target="_blank">钛媒体</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI算力国产化已从"技术验证"进入"规模化落地"阶段。41%的份额是里程碑，但产能瓶颈、生态碎片化、软件栈成熟度仍是挑战。核心信号：中国AI算力自主化不可逆转，但"产能饥饿"短期将制约行业整体发展速度。</div>
+  </div>
+
+  <!-- 板块 4：科技/硬科技 -->
+  <div class="section">
+    <div class="section-title">💻 科技 / 硬科技</div>
+
+    <!-- 新闻 7 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <div class="item-title">人民日报官宣华为"韬定律"与逻辑折叠技术，颠覆半导体规则</div>
+      <p class="item-summary">人民日报大篇幅报道华为半导体颠覆性突破，官宣"韬（τ）定律"与逻辑折叠技术。该技术路线不再死磕极致的先进制程，通过双层堆叠+垂直互连的架构创新，大幅提升芯片等效晶体管密度，打破西方技术垄断。华为概念股应声大涨，中芯、华虹创历史新高。</p>
+      <div class="bilingual">
+        <p class="en-title">People's Daily confirms Huawei's "Tau Law" and logic folding breakthrough</p>
+        <p class="en-summary">People's Daily has officially confirmed Huawei's semiconductor breakthrough, unveiling the "Tau (τ) Law" and logic folding technology. This new approach bypasses the need for extreme advanced process nodes, using dual-layer stacking and vertical interconnects to dramatically increase equivalent transistor density, breaking Western technological dominance.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>logic folding</b> 逻辑折叠</span>
+            <span class="vocab-item"><b>transistor density</b> 晶体管密度</span>
+            <span class="vocab-item"><b>vertical interconnect</b> 垂直互连</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传统芯片遵循摩尔定律（每18个月晶体管翻倍），华为"韬定律"通过3D堆叠实现等效密度跃升，相当于"把平房盖成摩天大楼"，绕开光刻机限制。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，华为芯片将率先用于自家手机、服务器；中期（1-3年），该技术可能授权给中芯、华虹等代工厂；长期看，将重塑全球半导体技术路线图。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果"韬定律"被验证可行，全球半导体将进入"后摩尔时代"，中国不再需要追赶3nm、2nm，而是开辟全新的技术赛道，西方制裁效果将大幅削弱。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.sohu.com/a/1027365850_100085330" target="_blank">搜狐科技</a></p>
+    </div>
+
+    <!-- 新闻 8 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-title">2026年中国半导体迎来三大结构性变化</div>
+      <p class="item-summary">存储超级周期将长鑫、长江存储送上牌桌；华为昇腾扛起AI算力大旗；稀土+两用物项出口管制构建反制体系。三大变化标志着中国半导体从"被动防御"转向"攻守兼备"。</p>
+      <div class="bilingual">
+        <p class="en-title">China's semiconductor sector faces three structural shifts in 2026</p>
+        <p class="en-summary">The memory supercycle has elevated CXMT and YMTC to the global stage, Huawei Ascend leads AI computing power, and rare earth export controls build a countermeasure system. These three changes mark China's semiconductor industry shift from "passive defense" to "offense and defense combined."</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>memory supercycle</b> 存储超级周期</span>
+            <span class="vocab-item"><b>export controls</b> 出口管制</span>
+            <span class="vocab-item"><b>countermeasure</b> 反制措施</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>三大变化=存储芯片（长鑫、长江存储）进入全球第一梯队 + AI算力（昇腾）实现自主 + 稀土管制（反制武器）。中国半导体从"防守"转向"有攻有守"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，存储涨价周期将提升国产存储厂商盈利；中期看，AI芯片+存储+材料将形成协同效应；长期看，中国半导体将具备全产业链自主能力。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来全球半导体格局可能从"美国主导"变为"中美双极"，中国在存储、AI芯片、成熟制程领域拥有话语权，产业链安全不再受制于人。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.sohu.com/a/1044514688_122743632" target="_blank">搜狐科技</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：华为"韬定律"是今日最大技术突破，其影响力远超单一公司——它可能改变全球半导体技术演进路径。叠加存储超级周期、AI算力自主化，中国半导体正从"点状突破"走向"体系化崛起"。风险在于：技术验证需要时间，西方可能出台新一轮制裁。</div>
+  </div>
+
+  <!-- 板块 5：材料科学 -->
+  <div class="section">
+    <div class="section-title">🔬 材料科学</div>
+
+    <!-- 新闻 9 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-title">2026年固态电池商业化元年：硫化物路线成主流</div>
+      <p class="item-summary">行业普遍认为2026年是固态电池商业化元年，技术路线以硫化物为主。半固态电池已实现量产装车，全固态电池处于中试到预量产突破阶段。车企纷纷给出明确的装车验证与量产时间表，未来三年内有望实现规模化应用。</p>
+      <div class="bilingual">
+        <p class="en-title">2026 marks the commercialization year for solid-state batteries</p>
+        <p class="en-summary">The industry widely recognizes 2026 as the commercialization year for solid-state batteries, with sulfide-based technology leading the way. Semi-solid batteries have entered mass production in vehicles, while all-solid-state batteries are transitioning from pilot to pre-production stages. Automakers have announced clear timelines for vehicle validation and mass production.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>solid-state battery</b> 固态电池</span>
+            <span class="vocab-item"><b>sulfide-based</b> 硫化物基</span>
+            <span class="vocab-item"><b>mass production</b> 量产</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>固态电池用固态电解质替代液态电解液，能量密度更高、更安全。硫化物路线因离子电导率最接近液态，成为主流选择。相当于把"液体燃料"换成"固体燃料"，能量更大且不易爆炸。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，半固态电池将率先装车（2026-2027年）；中期看，全固态电池将实现量产（2028-2030年）；长期看，将覆盖电动汽车、储能、消费电子全场景。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果固态电池全面普及，电动汽车续航将突破<span class="num-key">1000公里</span>，充电时间缩短至<span class="num-key">10分钟</span>，燃油车将彻底退出历史舞台，能源存储格局全面重构。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://zhuanlan.zhihu.com/p/2015444881229755313" target="_blank">知乎专栏</a></p>
+    </div>
+
+    <!-- 新闻 10 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <div class="item-title">钙钛矿电池重大政策利好：全额免征消费税</div>
+      <p class="item-summary">财政部7月发文：<span class="num-key">2026年9月1日</span>至<span class="num-key">2028年12月31日</span>，钙钛矿及叠层电池全额免征消费税；普通晶硅电池自<span class="num-key">2027年</span>起征税。政策明确支持新一代光伏技术产业化，钙钛矿进入商业化关键分水岭。</p>
+      <div class="bilingual">
+        <p class="en-title">Perovskite solar cells receive full consumption tax exemption</p>
+        <p class="en-summary">China's Ministry of Finance announced that from September 1, 2026 to December 31, 2028, perovskite and tandem solar cells will be fully exempt from consumption tax, while traditional crystalline silicon cells will face taxation starting 2027. This policy provides clear support for next-generation photovoltaic technology.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>perovskite</b> 钙钛矿</span>
+            <span class="vocab-item"><b>tandem cell</b> 叠层电池</span>
+            <span class="vocab-item"><b>consumption tax</b> 消费税</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>钙钛矿是新一代光伏材料，转换效率上限高于晶硅，且可做成柔性、半透明组件。免征消费税相当于"政策补贴"，降低产业化初期成本。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，2026-2028年将是钙钛矿从实验室走向GW级量产的关键期；中期看，钙钛矿-晶硅叠层电池将率先商业化；长期看，纯钙钛矿组件有望在2030年后主导市场。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果钙钛矿全面商业化，光伏发电成本将降至<span class="num-key">0.1元/度</span>以下，太阳能将成为最便宜的能源，全球能源转型将加速实现。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://xueqiu.com/1054707264/401389503" target="_blank">雪球</a></p>
+    </div>
+
+    <!-- 新闻 11 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-title">2026年固态电池产业链图谱：从实验室到量产的关键一跃</div>
+      <p class="item-summary">中商产业研究院发布《<span class="num-key">2025-2031年</span>固态电池产业链图谱》，当前半固态电池已实现量产装车，全固态电池处于中试到预量产突破阶段。产业链上下游协同加速，材料、设备、电芯企业形成完整配套。</p>
+      <div class="bilingual">
+        <p class="en-title">Solid-state battery industry chain map 2026: from lab to mass production</p>
+        <p class="en-summary">According to the 2025-2031 solid-state battery industry chain report by China Commercial Industry Research Institute, semi-solid batteries have entered mass production in vehicles, while all-solid-state batteries are transitioning from pilot to pre-production. The upstream and downstream supply chain is accelerating collaboration.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>industry chain</b> 产业链</span>
+            <span class="vocab-item"><b>pilot production</b> 中试</span>
+            <span class="vocab-item"><b>pre-production</b> 预量产</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>固态电池产业链图谱显示，中国已形成从原材料（硫化物电解质）、设备（等静压机）、电芯到整车的完整配套体系，产业化条件基本成熟。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，半固态电池将率先大规模装车（2026-2027年）；中期看，全固态电池将在2028-2030年实现量产；长期看，固态电池将成为电动汽车标配。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果全固态电池量产成功，电动汽车将真正取代燃油车——续航焦虑、充电焦虑、安全焦虑全部消除，全球交通能源体系将彻底重构。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.thepaper.cn/newsDetail_forward_32338269" target="_blank">澎湃新闻</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学迎来"双元年"——固态电池与钙钛矿电池同时进入商业化关键期。政策端（免税、产业规划）与产业端（量产时间表）形成共振。核心信号：中国在下一代电池与光伏技术领域已建立先发优势，但需警惕产能过剩与良率爬坡风险。</div>
+  </div>
+
+  <!-- 板块 6：中国政策与监管 -->
+  <div class="section">
+    <div class="section-title">🇨🇳 中国政策与监管</div>
+
+    <!-- 新闻 12 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <div class="item-title">中国对美半导体反制体系成型：稀土+两用物项出口管制</div>
+      <p class="item-summary">中国已构建"稀土+两用物项"出口管制反制体系，作为应对西方半导体制裁的核心工具。稀土出口管制直接影响全球<span class="num-key">90%</span>的供应链，两用物项管控覆盖半导体材料、设备等关键领域。反制体系从"被动应对"转向"主动威慑"。</p>
+      <div class="bilingual">
+        <p class="en-title">China's semiconductor countermeasure system takes shape</p>
+        <p class="en-summary">China has established a comprehensive countermeasure system combining rare earth export controls and dual-use item restrictions as its core tools against Western semiconductor sanctions. Rare earth controls affect 90% of the global supply chain, while dual-use regulations cover semiconductor materials and equipment.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>rare earth</b> 稀土</span>
+            <span class="vocab-item"><b>dual-use items</b> 两用物项</span>
+            <span class="vocab-item"><b>export control</b> 出口管制</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中国是全球稀土供应链的绝对主导者（<span class="num-key">90%</span>加工份额），出口管制意味着"卡脖子"与"反卡脖子"的博弈进入新阶段。两用物项管控则覆盖军民两用技术。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，稀土管制将推高全球稀土价格；中期看，西方将加速稀土替代供应链建设；长期看，中美将在关键矿产领域形成"相互威慑"格局。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果稀土管制持续升级，全球科技产业链将被迫重构——美国寻找替代来源，中国发展高附加值稀土应用，双方在博弈中形成新的平衡。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.sohu.com/a/1044514688_122743632" target="_blank">搜狐科技</a></p>
+    </div>
+
+    <!-- 新闻 13 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-title">财政部出台钙钛矿免税政策，新能源产业政策精准发力</div>
+      <p class="item-summary">财政部7月发文明确：<span class="num-key">2026年9月1日</span>至<span class="num-key">2028年12月31日</span>钙钛矿、叠层电池全额免征消费税，普通晶硅电池<span class="num-key">2027年</span>起征税。政策体现"精准扶持新一代技术、逐步退出传统技术"的产业导向。</p>
+      <div class="bilingual">
+        <p class="en-title">Finance Ministry issues targeted tax exemption for perovskite</p>
+        <p class="en-summary">The Ministry of Finance has issued a policy exempting perovskite and tandem solar cells from consumption tax from September 1, 2026 to December 31, 2028, while traditional crystalline silicon cells face taxation from 2027. This reflects a targeted industrial policy approach.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>tax exemption</b> 免税</span>
+            <span class="vocab-item"><b>industrial policy</b> 产业政策</span>
+            <span class="vocab-item"><b>technology transition</b> 技术转型</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是中国首次针对光伏细分技术路线实施差异化税收政策，意图明确：加速钙钛矿产业化，推动晶硅技术逐步退出。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，钙钛矿企业将直接受益于成本下降；中期看，税收杠杆将引导资本涌入钙钛矿赛道；长期看，中国光伏产业将完成从晶硅到钙钛矿的代际更替。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果钙钛矿成为主流，中国光伏产业将保持全球领先地位，光伏发电成本将进一步下降，助力"双碳"目标提前实现。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://xueqiu.com/1054707264/401389503" target="_blank">雪球</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策呈现"精准扶持+战略反制"双轨并行。对内，通过税收优惠、产业规划引导新一代技术（钙钛矿、固态电池）发展；对外，通过稀土、两用物项管制构建战略威慑。政策逻辑从"补短板"转向"锻长板"。</div>
+  </div>
+
+  <!-- 板块 7：地缘政治与国际关系 -->
+  <div class="section">
+    <div class="section-title">🌍 地缘政治与国际关系</div>
+
+    <!-- 新闻 14 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <div class="item-title">中美科技博弈进入"技术路线竞争"新阶段</div>
+      <p class="item-summary">华为"韬定律"的发布标志着中美科技竞争从"制裁与反制裁"升级为"技术路线之争"。美国主导的先进制程路线（3nm、2nm）遭遇中国"架构创新"路线的挑战。全球半导体产业可能分裂为"美系"与"中系"两套技术标准。</p>
+      <div class="bilingual">
+        <p class="en-title">US-China tech rivalry enters a new phase of technological path competition</p>
+        <p class="en-summary">Huawei's "Tau Law" announcement marks a shift in US-China tech competition from "sanctions and counter-sanctions" to a battle of technological paradigms. The US-led advanced process node roadmap (3nm, 2nm) now faces challenges from China's "architectural innovation" approach, potentially splitting the global semiconductor industry into two technology standards.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>technological paradigm</b> 技术范式</span>
+            <span class="vocab-item"><b>architectural innovation</b> 架构创新</span>
+            <span class="vocab-item"><b>dual standards</b> 双重标准</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美国通过制裁限制中国获得先进制程能力，华为则通过3D堆叠绕开制程限制。这不是简单的"追赶"，而是"换赛道"——中国不再在摩尔定律的跑道上竞争，而是开辟新的技术维度。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，两种路线将并行发展；中期看，如果"韬定律"被证明可规模化，将吸引全球产业跟进；长期看，全球半导体可能形成"双轨制"格局。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中国路线成功，全球科技格局将彻底改变——技术标准不再由单一国家主导，而是形成多元化创新生态，发展中国家将有更多技术选择。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://finance.sina.com.cn/stock/t/2026-05-25/doc-inhzcatq9614479.shtml" target="_blank">新浪财经</a></p>
+    </div>
+
+    <!-- 新闻 15 -->
+    <div class="news-item">
+      <div class="item-header">
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-title">全球半导体供应链重构加速，"中国方案"浮出水面</div>
+      <p class="item-summary">随着中美科技博弈升级，全球半导体供应链正从"全球化分工"转向"区域化集群"。中国通过"韬定律"、存储自主、稀土反制三大支柱，构建独立的半导体产业体系。东南亚、印度等地区也在承接供应链转移。</p>
+      <div class="bilingual">
+        <p class="en-title">Global semiconductor supply chain restructuring accelerates</p>
+        <p class="en-summary">As US-China tech tensions escalate, the global semiconductor supply chain is shifting from "globalized division of labor" to "regionalized clusters." China is building an independent semiconductor system through the "Tau Law," memory self-sufficiency, and rare earth countermeasures, while Southeast Asia and India absorb supply chain relocations.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>supply chain restructuring</b> 供应链重构</span>
+            <span class="vocab-item"><b>regionalization</b> 区域化</span>
+            <span class="vocab-item"><b>self-sufficiency</b> 自主可控</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>全球半导体从"一个世界、一套体系"走向"一个世界、两套体系"。中国方案的核心是：不追求最先进制程，而是追求体系完整性和供应链安全。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，供应链区域化将推高全球芯片成本；中期看，中国将形成"成熟制程+先进封装"的差异化竞争力；长期看，全球将形成"美系"、"中系"、"欧日韩系"三足鼎立格局。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果多极供应链格局形成，全球科技产业将更具韧性——单一国家无法"卡死"另一个国家，但也意味着技术标准分裂、创新成本上升。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.britannica.com/science/semiconductor" target="_blank">Britannica</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘政治焦点集中在"技术路线竞争"与"供应链重构"两大主题。华为"韬定律"不仅是技术突破，更是地缘政治博弈的转折点。核心信号：全球科技产业正从"效率优先"转向"安全优先"，供应链区域化不可逆转。</div>
+  </div>
+
+  <!-- 时间提醒模块 -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-09-01</span>
+      <span>钙钛矿、叠层电池全额免征消费税政策正式生效</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2027-01-01</span>
+      <span>普通晶硅电池开始征收消费税</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2028-12-31</span>
+      <span>钙钛矿免税政策到期，届时将评估是否延续</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>本简报由 AI 全球动态分析系统生成 · 数据截至 2026年8月17日</p>
+    <p>仅供参考，不构成投资建议</p>
+  </div>
+</div>
+</body>
+</html>
