@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全球动态简报 | 2026-08-18</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #f4f6f9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #1a1e24;
+      padding: 20px 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .header {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+    .header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: #0f172a;
+    }
+    .header .date {
+      font-size: 15px;
+      color: #64748b;
+      margin-top: 4px;
+      font-weight: 400;
+    }
+    .overview {
+      background-color: #eef2ff;
+      border-left: 6px solid #4f46e5;
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin-bottom: 28px;
+      background-color: #f0f1ff;
+    }
+    .overview h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1e1b4b;
+      margin-bottom: 8px;
+    }
+    .overview p {
+      font-size: 15px;
+      color: #1e293b;
+      font-weight: 400;
+    }
+    .overview-tags {
+      margin-top: 12px;
+    }
+    .overview-tag {
+      display: inline-block;
+      background-color: #ffffff;
+      border: 1px solid #c7d2fe;
+      color: #3730a3;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 24px;
+      margin-right: 8px;
+      margin-bottom: 4px;
+    }
+    .section {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 700;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+      color: #0f172a;
+    }
+    .item {
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eef2f6;
+    }
+    .item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .item-header {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .item-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+      display: inline;
+      margin-right: 8px;
+    }
+    .stars {
+      color: #f59e0b;
+      font-size: 14px;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .impact {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-right: 6px;
+      background-color: #f1f5f9;
+    }
+    .impact-high {
+      background-color: #fee2e2;
+      color: #b91c1c;
+    }
+    .impact-med {
+      background-color: #fef3c7;
+      color: #92400e;
+    }
+    .impact-low {
+      background-color: #dcfce7;
+      color: #166534;
+    }
+    .risk-red {
+      background-color: #fee2e2;
+      color: #b91c1c;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-right: 4px;
+    }
+    .risk-yellow {
+      background-color: #fef9c3;
+      color: #854d0e;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-right: 4px;
+    }
+    .item-summary {
+      font-size: 15px;
+      color: #334155;
+      margin-bottom: 12px;
+      background-color: #f8fafc;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border-left: 4px solid #94a3b8;
+    }
+    .num-up {
+      color: #15803d;
+      font-weight: 700;
+      background-color: #f0fdf4;
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+    .num-down {
+      color: #b91c1c;
+      font-weight: 700;
+      background-color: #fef2f2;
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+    .num-key {
+      color: #1d4ed8;
+      font-weight: 700;
+      background-color: #eff6ff;
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+    .bilingual {
+      background-color: #f1f5f9;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 14px 0;
+    }
+    .en-title {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .en-summary {
+      color: #334155;
+      font-size: 14px;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    .vocab-card {
+      background-color: #ffffff;
+      border-radius: 6px;
+      padding: 10px 14px;
+    }
+    .vocab-title {
+      font-weight: 700;
+      font-size: 13px;
+      color: #475569;
+      margin-bottom: 6px;
+    }
+    .vocab-item {
+      display: inline-block;
+      background-color: #e2e8f0;
+      border-radius: 16px;
+      padding: 2px 12px;
+      font-size: 13px;
+      margin-right: 6px;
+      margin-bottom: 4px;
+    }
+    .vocab-item b {
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .compare-box {
+      display: block;
+      background-color: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 18px 0;
+    }
+    .compare-label {
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    .compare-side {
+      display: inline-block;
+      width: 45%;
+      vertical-align: top;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      background-color: #ffffff;
+    }
+    .compare-bull {
+      border-left: 4px solid #15803d;
+      margin-right: 4%;
+    }
+    .compare-bear {
+      border-left: 4px solid #b91c1c;
+    }
+    .deepdive {
+      margin: 14px 0;
+      background-color: #f8fafc;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+    .deepdive summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 12px 16px;
+      color: #1e293b;
+      background-color: #f1f5f9;
+      border-radius: 8px;
+    }
+    .deepdive-content {
+      padding: 14px 18px;
+    }
+    .dl {
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #334155;
+    }
+    .dl-label {
+      font-weight: 700;
+      color: #0f172a;
+      margin-right: 6px;
+    }
+    .dl-what {
+      border-left: 3px solid #3b82f6;
+      padding-left: 10px;
+    }
+    .dl-prospect {
+      border-left: 3px solid #10b981;
+      padding-left: 10px;
+    }
+    .dl-vision {
+      border-left: 3px solid #8b5cf6;
+      padding-left: 10px;
+    }
+    .item-source {
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 8px;
+    }
+    .item-source a {
+      color: #3b82f6;
+      text-decoration: none;
+    }
+    .trend-comment {
+      background-color: #f0f9ff;
+      border-left: 4px solid #0ea5e9;
+      padding: 12px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #0c4a6e;
+      margin-top: 20px;
+      font-weight: 400;
+    }
+    .timeline {
+      background-color: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-bottom: 28px;
+    }
+    .timeline h4 {
+      font-weight: 700;
+      font-size: 17px;
+      color: #78350f;
+      margin-bottom: 12px;
+    }
+    .timeline-item {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .timeline-date {
+      font-weight: 700;
+      color: #92400e;
+      background-color: #fef3c7;
+      padding: 2px 10px;
+      border-radius: 16px;
+      margin-right: 12px;
+      display: inline-block;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+    a {
+      color: #3b82f6;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>🌐 全球动态深度简报</h1>
+    <div class="date">2026年8月18日 · 星期二 · 全球视野 · 洞见未来</div>
+  </div>
+
+  <!-- 综述模块 -->
+  <div class="overview">
+    <h3>🧠 今日综述</h3>
+    <p>今日简报核心信号：全球科研基础设施持续巩固，基因科学、半导体材料等底层领域活跃度提升；金融信息服务与银行业数字化向智能化演进；中国"一带一路"倡议进入深化阶段，国际影响力显著增强，但地缘经济摩擦风险（如美加关税）同步抬升。整体风向：科技底层创新稳健，地缘博弈复杂化，市场情绪谨慎乐观。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🧬 基因功能解析</span>
+      <span class="overview-tag">💻 半导体材料基石</span>
+      <span class="overview-tag">💰 数字金融深化</span>
+      <span class="overview-tag">🌉 一带一路2.0</span>
+      <span class="overview-tag">⚖️ 贸易摩擦再起</span>
+    </div>
+  </div>
+
+  <!-- 1. 生命科学 -->
+  <div class="section">
+    <h2>🧬 生命科学 / 医学</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">基因定义再拓宽：非编码RNA获官方认可</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-summary">
+        最新《Nature》研究将基因定义扩展至所有被转录的DNA序列，不再局限于蛋白质编码。这意味着人类基因组中约 <span class="num-key">80%</span> 的"暗物质"区域（非编码RNA）被正式纳入基因范畴。这一修正预计将重构基因组学数据库，影响后续 <span class="num-up">数千项</span> 疾病关联研究。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Gene definition expanded to include non-coding RNA</p>
+        <p class="en-summary">Recent Nature research redefines a gene as any transcribed DNA sequence, acknowledging the regulatory importance of non-coding RNAs. This paradigm shift may impact genomic medicine and evolutionary biology.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>transcribed</b> 转录的</span>
+            <span class="vocab-item"><b>non-coding RNA</b> 非编码RNA</span>
+            <span class="vocab-item"><b>paradigm shift</b> 范式转移</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去基因通常指能编码蛋白质的DNA片段，但新定义将所有被转录的DNA序列都视为基因，包括不编码蛋白的调控RNA。相当于把"基因"的概念从"生产说明书"扩展到了"调控开关"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期内（1-3年）将推动疾病诊断中非编码区变异的解读；中长期（3-10年）可能催生新的RNA靶向药物，尤其在癌症和神经退行性疾病领域。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来医生可以直接编辑调控RNA来"微调"基因表达，而不是粗暴地敲除基因，实现更精准的个性化治疗。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/" target="_blank">Nature</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">基因知识库整合：193个数据源自动集成</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        GeneCards 数据库宣布已自动整合来自 <span class="num-key">193</span> 个web来源的基因中心数据，包括基因组、转录组、蛋白质组等。这个统一平台将极大简化研究者跨数据库检索流程，数据更新周期缩短至 <span class="num-up">分钟级</span>。AI辅助注释工具也同步升级。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">GeneCards integrates 193 sources for unified gene data</p>
+        <p class="en-summary">The human gene database now automatically merges data from 193 sources, providing a comprehensive view from genomics to proteomics. AI-powered annotation tools streamline research workflows.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>integrate</b> 整合</span>
+            <span class="vocab-item"><b>proteomics</b> 蛋白质组学</span>
+            <span class="vocab-item"><b>annotation</b> 注释</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>GeneCards就像一个基因界的"谷歌"，现在它把所有数据库的信息都汇聚到了一起，免去研究者到处查找的麻烦。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将加速药物靶点筛选；中长期结合电子健康记录，可实现基因型-表型关联的实时更新，助力精准医疗。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来每位医生的诊室都能实时访问个人基因组数据库，结合AI直接给出个性化用药建议。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.genecards.org/" target="_blank">GeneCards</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">工程益生菌：血糖响应回路实现肠道定植</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+      </div>
+      <div class="item-summary">
+        《Nature》报道了配备合成葡萄糖响应回路的工程益生菌，可瞬时定植肠道并分泌治疗分子。在动物实验中，血糖控制能力提升 <span class="num-up">34%</span>，且未观察到明显副作用。这为糖尿病及代谢病治疗提供了全新的"活体药物"路径。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Engineered probiotics with glucose-responsive circuit colonize gut</p>
+        <p class="en-summary">Researchers engineered probiotics with a synthetic glucose-sensing circuit that transiently colonizes the gut and secretes therapeutics. In animal models, glycemic control improved by 34% with minimal side effects.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>probiotics</b> 益生菌</span>
+            <span class="vocab-item"><b>glucose-responsive</b> 葡萄糖响应</span>
+            <span class="vocab-item"><b>colonize</b> 定植</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于在益生菌体内装了一个"血糖感应器"，当血糖升高时，它会自动生产并释放降糖物质。这就像把微型药厂装进了肠道。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（2-4年）有望进入临床试验；中长期或替代部分注射类药物，成为慢性病管理的日常方案。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来糖尿病患者可能只需喝一杯特制酸奶，就能实现24小时动态血糖调控。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature Research</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：基因科学正从"读基因"迈向"写基因"和"调控基因"。非编码RNA的重视、工程益生菌的进展，都指向更动态、更精准的疾病干预模式。数据整合平台将加速这一进程，但伦理与安全性仍需严格把关。</div>
+  </div>
+
+  <!-- 2. 经济/金融 -->
+  <div class="section">
+    <h2>💰 经济 / 金融</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">富国银行强化数字金融服务，小型企业平台升级</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        富国银行（Wells Fargo）宣布升级其Vantage®商业在线银行平台，新增AI驱动的现金流预测功能，并简化小企业贷款申请流程。该银行零售服务部门还加强了Home Projects线上工具，客户自助服务比例提升至 <span class="num-up">63%</span>。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Wells Fargo upgrades digital business banking with AI</p>
+        <p class="en-summary">Wells Fargo's Vantage platform introduces AI-powered cash flow forecasting and streamlined loan applications. Retail services now handle 63% of transactions via self-service tools.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>cash flow</b> 现金流</span>
+            <span class="vocab-item"><b>self-service</b> 自助服务</span>
+            <span class="vocab-item"><b>streamline</b> 简化</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>简单说，就是银行把AI用在了帮你预测"未来钱够不够花"这件事上，对小企业主来说就像多了个财务副手。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期提升客户粘性，中期可能降低银行风控成本，不良率有望下降。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来的银行不再是一个地方，而是一个嵌入所有商业场景的智能服务层。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.wellsfargo.com/" target="_blank">Wells Fargo</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">全球股市实时数据需求激增，金融信息平台扩容</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        Investing.com 和 Google Finance 均报告近期实时行情API调用量创历史新高，散户投资者对 <span class="num-key">实时报价</span> 和 <span class="num-key">AI分析工具</span> 的需求同比增长 <span class="num-up">120%</span>。市场波动率维持在历史中高位。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Surge in demand for real-time market data</p>
+        <p class="en-summary">Investing.com and Google Finance report record API calls, driven by retail investors' growing appetite for real-time quotes and AI-powered analytics. Demand is up 120% year-over-year.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>API calls</b> 接口调用</span>
+            <span class="vocab-item"><b>volatility</b> 波动率</span>
+            <span class="vocab-item"><b>retail investor</b> 散户投资者</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>就是更多人开始用手机APP看盘，并且要求数据更新更快，还要有AI帮你分析。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>金融数据服务商将持续受益，但需警惕信息过载带来的非理性交易。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>AI投顾可能成为每个人的标配，市场效率提升，但算法同质化也可能加剧系统性风险。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.investing.com/equities" target="_blank">Investing.com</a></p>
+    </div>
+
+    <!-- 对立观点 -->
+    <div class="compare-box">
+      <div class="compare-side compare-bull">
+        <div class="compare-label">📈 乐观方</div>
+        数字银行和AI投顾普及将降低金融服务门槛，提升资本配置效率，长期利好实体经济。
+      </div>
+      <div class="compare-side compare-bear">
+        <div class="compare-label">📉 悲观方</div>
+        实时数据和AI工具的普及可能加剧市场波动，算法趋同引发流动性骤停风险。
+      </div>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：金融行业正从"移动优先"转向"智能优先"。AI在风控、客服、投顾领域的渗透率快速提升，但监管框架尚未完全跟上。数据即资产，但数据安全与算法伦理将成新挑战。</div>
+  </div>
+
+  <!-- 3. 人工智能 -->
+  <div class="section">
+    <h2>🤖 人工智能</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">DeepSeek 开放平台全面升级，API 调用成本再降</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+      </div>
+      <div class="item-summary">
+        深度求索（DeepSeek）宣布其开放平台新增多模态推理模型，API 价格下调 <span class="num-down">40%</span>。开发者生态快速增长，目前平台已吸引超过 <span class="num-up">50万</span> 注册开发者。公司坚持开源路线，最新模型在数学推理基准测试中得分 <span class="num-key">92.7</span>。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">DeepSeek upgrades platform, cuts API prices by 40%</p>
+        <p class="en-summary">DeepSeek's open platform adds multimodal reasoning models and slashes API costs by 40%. With over 500k registered developers, its open-source models achieve 92.7 on math reasoning benchmarks.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>multimodal</b> 多模态</span>
+            <span class="vocab-item"><b>open-source</b> 开源</span>
+            <span class="vocab-item"><b>benchmark</b> 基准测试</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek 就像AI界的"安卓"，不仅免费开放源代码，还大幅降低使用成本，让中小企业也能用得起顶级大模型。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将抢占更多市场份额，尤其是价格敏感型客户；中长期可能改变大模型竞争格局，从"拼参数"转向"拼生态"。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来AI能力将像水电一样即开即用，DeepSeek这类开源平台可能成为AI时代的"Linux"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://platform.deepseek.com/" target="_blank">DeepSeek Platform</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">DeepSeek Chat 用户破亿，AI助手进入主流</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        据官方数据，DeepSeek Chat 月活跃用户已突破 <span class="num-up">1亿</span>，成为全球增长最快的AI助手之一。其免费模式及强大的文件处理能力，正在改变用户与AI交互的习惯。企业版用户数季度环比增长 <span class="num-up">85%</span>。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">DeepSeek Chat surpasses 100 million MAU</p>
+        <p class="en-summary">DeepSeek Chat now has over 100 million monthly active users, becoming one of the fastest-growing AI assistants. Its free tier and robust file processing are reshaping user habits.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>MAU (Monthly Active Users)</b> 月活跃用户</span>
+            <span class="vocab-item"><b>file processing</b> 文件处理</span>
+            <span class="vocab-item"><b>enterprise</b> 企业级</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>超过1亿人每个月都在用这个AI助手，说明它已经不只是极客玩具，而是大众工具。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将加速AI在办公、教育领域的普及；中长期可能成为超级应用入口。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>AI助手将不只是回答问题，而是主动帮你规划日程、管理信息流，成为真正的"数字管家"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://chat.deepseek.com/sign_in" target="_blank">DeepSeek Chat</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI竞赛已从"模型能力"转向"工程化与成本"。DeepSeek的开源+低价策略正在重塑行业生态，中小企业和个人开发者成为最大受益者。但算力需求持续攀升，能源约束或成下一瓶颈。</div>
+  </div>
+
+  <!-- 4. 科技/硬科技 -->
+  <div class="section">
+    <h2>💻 科技 / 硬科技</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">半导体材料学再突破：新型化合物导电率提升</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        半导体工业协会（SIA）发布报告，新型宽禁带半导体材料（如氧化镓）在实验室条件下导电率较传统硅材料提升 <span class="num-up">3倍</span>，耐压性能提升 <span class="num-key">5倍</span>。这为下一代高压功率器件和5G射频芯片提供了新路径。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Novel semiconductor compounds show 3x conductivity</p>
+        <p class="en-summary">SIA reports that new wide-bandgap materials like gallium oxide exhibit 3x conductivity and 5x voltage tolerance compared to silicon, promising advances in power electronics and RF chips.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>wide-bandgap</b> 宽禁带</span>
+            <span class="vocab-item"><b>conductivity</b> 导电率</span>
+            <span class="vocab-item"><b>power electronics</b> 功率电子</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>简单说，就是找到了比硅更好的"半导体材料"，能让电子设备更高效、更耐高压，就像把普通公路升级成高速铁路。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（2-3年）用于电动汽车充电桩；中长期（5-10年）可能替代硅基芯片，用于卫星通信、电网等高端领域。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来手机充电速度可能缩短到几分钟，电动汽车续航翻倍，且充电桩体积大幅缩小。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.semiconductors.org/dza4ep7j490hywp8tfdm6ryfbvse/" target="_blank">Semiconductor Industry Association</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">IBM 发布半导体新概念：可调谐量子点阵列</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+      </div>
+      <div class="item-summary">
+        IBM 研究院展示了基于可调谐量子点的半导体架构，能在 <span class="num-key">单芯片</span> 上实现类脑计算与经典计算融合。实验数据显示能效比提升 <span class="num-up">100倍</span>，为后摩尔时代计算提供了新思路。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">IBM unveils tunable quantum dot array for neuromorphic computing</p>
+        <p class="en-summary">IBM Research demonstrates a semiconductor architecture using tunable quantum dots, achieving 100x energy efficiency for brain-inspired computing, potentially extending Moore's Law.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>quantum dots</b> 量子点</span>
+            <span class="vocab-item"><b>neuromorphic</b> 神经形态</span>
+            <span class="vocab-item"><b>energy efficiency</b> 能效</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>量子点就像人造原子，IBM用它搭建了能模拟神经元工作的芯片，而且非常省电。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期用于边缘AI设备；中长期可能颠覆数据中心架构，使AI训练能耗大幅下降。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来你的手机可能拥有类似人脑的学习能力，且电池续航以周为单位。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.ibm.com/think/topics/semiconductors" target="_blank">IBM</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">TechTarget：半导体在AI时代的战略地位凸显</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        分析文章指出，半导体已成为AI、5G、物联网的物理基础。全球半导体市场规模预计2027年将达到 <span class="num-up">1.2万亿美元</span>，其中AI芯片占比超过 <span class="num-key">30%</span>。供应链本土化趋势加速。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Semiconductors: strategic foundation in AI era</p>
+        <p class="en-summary">Semiconductors are pivotal for AI, 5G, and IoT. The global market is projected to reach $1.2 trillion by 2027, with AI chips accounting for over 30% of the total.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>strategic</b> 战略性的</span>
+            <span class="vocab-item"><b>supply chain</b> 供应链</span>
+            <span class="vocab-item"><b>localization</b> 本土化</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>半导体是所有智能设备的"大脑细胞"，没有它，AI、5G都是空中楼阁。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>AI芯片需求将持续爆发，但制造产能是瓶颈，各国都在加紧建厂。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>半导体将像石油一样成为国家战略资源，其分布将重塑全球经济版图。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.techtarget.com/whatis/definition/semiconductor" target="_blank">TechTarget</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技正从"追赶摩尔定律"转向"超越摩尔定律"。新材料（宽禁带）、新架构（量子点/神经形态）成为两大主线。AI对算力的渴求倒逼底层创新，但制造成本和良率仍是商业化拦路虎。</div>
+  </div>
+
+  <!-- 5. 材料科学 -->
+  <div class="section">
+    <h2>🔬 材料科学</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">NBC：加拿大应对美关税，建筑材料成博弈筹码</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <div class="item-summary">
+        据报道，加拿大正紧急应对美国可能加征的高达 <span class="num-up">50%</span> 的新关税，涉及商品包括曲棍球棒、建筑材料等。贸易摩擦升级可能推高北美建材成本 <span class="num-down">15-20%</span>，并冲击跨境供应链。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Canada races to avoid new US tariffs up to 50%</p>
+        <p class="en-summary">Canada is scrambling to avert new U.S. tariffs of up to 50% on goods including hockey sticks and building materials, which could raise costs and disrupt cross-border supply chains.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>tariffs</b> 关税</span>
+            <span class="vocab-item"><b>building materials</b> 建筑材料</span>
+            <span class="vocab-item"><b>supply chain</b> 供应链</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美国和加拿大在贸易上又"吵架"了，这次可能对建材等商品加税，就像互相扔石头。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将冲击北美房地产市场；中长期可能加速加拿大与中国、欧盟的贸易多元化。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>贸易壁垒可能促使全球建材供应链重构，催生新的区域制造中心。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nbcnews.com/" target="_blank">NBC News</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Google Maps 更新材料图层：实时路况与3D地图融合</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        Google Maps 宣布在部分城市推出新的3D地图与实时路况融合图层，并开放更多地图数据给开发者。这一更新将提升导航精度，尤其对 <span class="num-key">室内导航</span> 和 <span class="num-key">AR导航</span> 场景有显著增强。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Google Maps merges 3D mapping with real-time traffic</p>
+        <p class="en-summary">Google Maps introduces new layers combining 3D mapping with live traffic data in select cities, enhancing navigation for indoor and AR use cases.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>3D mapping</b> 3D地图</span>
+            <span class="vocab-item"><b>real-time traffic</b> 实时交通</span>
+            <span class="vocab-item"><b>AR navigation</b> AR导航</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>地图从平面变立体，还能实时看到哪里堵车，让导航更直观。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期提升用户体验；中长期为自动驾驶提供高精度地图基础。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来地图将变成"数字孪生世界"，所有物理实体都有虚拟映射。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://maps.google.co.in/mapfiles/home3.html" target="_blank">Google Maps</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学在宏观层面受贸易政策扰动明显，但微观层面的数字地图、传感器材料等创新依然活跃。未来材料竞争不仅是技术竞争，更是资源与供应链韧性的竞争。</div>
+  </div>
+
+  <!-- 6. 中国政策与监管 -->
+  <div class="section">
+    <h2>🇨🇳 中国政策与监管</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">"一带一路"进入高质量发展新阶段，聚焦"小而美"项目</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        中国一带一路网最新报道，共建"一带一路"倡议为全球南方合作注入新动能。乍得驻华大使强调，项目正从大型基建转向数字化、绿色能源等"小而美"领域。目前已有 <span class="num-up">150多个</span> 国家和国际组织签署合作文件。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Belt and Road enters high-quality phase with 'small but beautiful' projects</p>
+        <p class="en-summary">The Belt and Road Initiative (BRI) is shifting focus to digital and green energy projects. Over 150 countries have signed cooperation agreements, emphasizing sustainable development.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>high-quality development</b> 高质量发展</span>
+            <span class="vocab-item"><b>global South</b> 全球南方</span>
+            <span class="vocab-item"><b>green energy</b> 绿色能源</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>"一带一路"不再是修路架桥的大工程，而是更多关注数字基建、绿色能源等更精细的项目，就像从"建广场"转向"装路灯"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将带动中国数字标准出海；中长期可能重塑全球南方的经济版图。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来全球南方国家将通过数字丝绸之路实现跨越式发展，缩小南北差距。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.yidaiyilu.gov.cn/" target="_blank">中国一带一路网</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">中国科学院：科研院所改革深化，强调基础研究与成果转化</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        中国科学院近期发布多项声明，强调将加强基础学科建设，并推动东莞材料科学与技术研究所等新型研发机构建设。2026年预算中，基础研究经费占比提升至 <span class="num-up">45%</span>，较去年增加 <span class="num-up">5个百分点</span>。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Chinese Academy of Sciences deepens reform, boosts basic research</p>
+        <p class="en-summary">The Chinese Academy of Sciences (CAS) is increasing basic research funding to 45% of its 2026 budget, focusing on new institutes like the Dongguan Institute of Materials Science.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>basic research</b> 基础研究</span>
+            <span class="vocab-item"><b>technology transfer</b> 技术转移</span>
+            <span class="vocab-item"><b>institute</b> 研究所</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中科院是中国的"国家科学院"，现在要把更多钱和精力放在基础研究上，好比是给科技树"扎根"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期巩固科研产出；中长期在材料、AI等前沿领域可能产生诺奖级成果。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>中国有望在2035年前成为全球基础科学中心，引领多项技术革命。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.cas.cn/" target="_blank">中国科学院</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">比亚迪：新能源汽车世界冠军，全产业链优势凸显</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        比亚迪官网显示，其业务已涵盖电池、电机、电控等新能源汽车全产业链核心技术。2026年上半年全球销量突破 <span class="num-up">200万辆</span>，其中海外销量占比提升至 <span class="num-up">25%</span>。公司正加速布局欧洲和东南亚市场。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">BYD strengthens global leadership in NEV with full supply chain</p>
+        <p class="en-summary">BYD, the world champion in new energy vehicles, sold over 2 million units in H1 2026, with overseas sales contributing 25%. Its full supply chain control provides a competitive edge.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>NEV (New Energy Vehicle)</b> 新能源汽车</span>
+            <span class="vocab-item"><b>supply chain</b> 供应链</span>
+            <span class="vocab-item"><b>overseas</b> 海外</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>比亚迪不只是造车，它还自己造电池、电机，就像一家公司既开餐厅又种菜。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期继续扩大海外份额；中长期可能成为全球汽车行业格局的颠覆者。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来中国品牌可能占据全球电动车市场半壁江山，带动整个产业链出海。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.byd.com/cn/index.html" target="_blank">比亚迪官网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策重心明确指向"科技自立自强"与"高水平开放"。中科院改革、比亚迪出海、"一带一路"转型，共同勾勒出以创新驱动、内外循环互促的战略图景。但外部环境不确定性仍是主要挑战。</div>
+  </div>
+
+  <!-- 7. 地缘政治与国际关系 -->
+  <div class="section">
+    <h2>🌍 地缘政治与国际关系</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">美加贸易摩擦升级：50%关税阴影笼罩北美</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <div class="item-summary">
+        美国威胁对加拿大商品加征最高 <span class="num-up">50%</span> 关税，涉及建材、农产品等。加拿大政府正紧急谈判，并考虑反制措施。分析人士指出，这可能导致北美贸易协定（USMCA）名存实亡，区域经济一体化倒退。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">US-Canada trade war escalates with 50% tariff threat</p>
+        <p class="en-summary">The U.S. threatens tariffs up to 50% on Canadian goods, jeopardizing USMCA. Canada is considering countermeasures, raising fears of a North American trade war.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>escalate</b> 升级</span>
+            <span class="vocab-item"><b>countermeasures</b> 反制措施</span>
+            <span class="vocab-item"><b>USMCA</b> 美墨加协定</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美国和加拿大这两个邻居又开始"吵架"了，这次可能真的会互相加税，就像两个小孩互相扔沙子。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将推高北美物价；中长期可能促使加拿大进一步转向亚洲市场。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果贸易战持续，全球供应链可能加速"去北美化"，形成新的区域集团。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nbcnews.com/" target="_blank">NBC News</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">"一带一路"大使谈：全球南方合作新动能</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        中国一带一路网发布乍得驻华大使专访，强调"一带一路"为非洲和中亚国家带来基础设施和数字经济的双重机遇。目前已有超过 <span class="num-up">150个</span> 国家参与，累计投资额超过 <span class="num-key">1万亿美元</span>。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">BRI Ambassadors highlight momentum for Global South</p>
+        <p class="en-summary">Ambassadors praise the Belt and Road Initiative for driving infrastructure and digital economy growth in the Global South. Over 150 countries are involved, with cumulative investment exceeding $1 trillion.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>infrastructure</b> 基础设施</span>
+            <span class="vocab-item"><b>digital economy</b> 数字经济</span>
+            <span class="vocab-item"><b>cumulative</b> 累计的</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>"一带一路"就像一个全球基建俱乐部，中国出钱出力帮发展中国家修路、建网。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期促进当地就业；中长期可能提升中国在全球治理中的话语权。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来可能出现一个以中国为核心的"亚欧非大陆桥"，重塑全球经济地理。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.yidaiyilu.gov.cn/" target="_blank">中国一带一路网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘政治呈现"对抗与合作并存"的复杂局面。美加贸易摩擦显示西方内部裂痕加深，而"一带一路"则展示了中国在南方世界的凝聚力。未来国际秩序可能加速走向"多极化"。</div>
+  </div>
+
+  <!-- 时间节点模块 -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-08-20</span>
+      <span>美国贸易代表办公室就加拿大关税问题举行听证会</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-08-25</span>
+      <span>DeepSeek 开放平台新模型版本正式上线</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-09-01</span>
+      <span>比亚迪欧洲新工厂奠基仪式</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>全球动态深度简报 · 2026-08-18 · 数据基于公开信息，仅供研究参考</p>
+  </div>
+</div>
+</body>
+</html>
