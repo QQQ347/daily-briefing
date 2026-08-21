@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌐 全球动态简报 | 2026-08-21</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #f2f4f8;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      padding: 24px 16px;
+      color: #1a1d21;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 32px 28px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+    .date {
+      color: #6b7280;
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 24px;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 16px;
+    }
+    /* overview */
+    .overview {
+      background-color: #f0f4ff;
+      border-left: 6px solid #2563eb;
+      padding: 20px 24px;
+      margin-bottom: 32px;
+      border-radius: 0 12px 12px 0;
+    }
+    .overview h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #1e3a8a;
+    }
+    .overview p {
+      font-size: 15px;
+      color: #1f2937;
+      margin-bottom: 14px;
+    }
+    .overview-tags {
+      margin-top: 4px;
+    }
+    .overview-tag {
+      display: inline-block;
+      background-color: #ffffff;
+      border: 1px solid #bfdbfe;
+      color: #1e40af;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-right: 8px;
+      margin-bottom: 6px;
+    }
+    /* section */
+    .section {
+      margin-bottom: 40px;
+    }
+    .section-header {
+      font-size: 22px;
+      font-weight: 700;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+      color: #111827;
+    }
+    .news-item {
+      background-color: #fafbfc;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 20px;
+    }
+    .item-header {
+      margin-bottom: 12px;
+      border-bottom: 1px dashed #d1d5db;
+      padding-bottom: 12px;
+    }
+    .item-header h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+      display: inline;
+      margin-right: 12px;
+    }
+    .stars {
+      color: #f59e0b;
+      letter-spacing: 2px;
+      font-size: 14px;
+      display: inline-block;
+      margin-right: 12px;
+    }
+    .impact {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 12px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    .impact-high {
+      background-color: #fee2e2;
+      color: #b91c1c;
+    }
+    .impact-med {
+      background-color: #fef3c7;
+      color: #92400e;
+    }
+    .impact-low {
+      background-color: #dcfce7;
+      color: #166534;
+    }
+    .risk-red {
+      background-color: #fee2e2;
+      color: #b91c1c;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 12px;
+      display: inline-block;
+      margin-right: 8px;
+    }
+    .risk-yellow {
+      background-color: #fef9c3;
+      color: #854d0e;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 12px;
+      display: inline-block;
+    }
+    .item-summary {
+      font-size: 15px;
+      color: #374151;
+      margin-bottom: 14px;
+      padding: 8px 0;
+    }
+    .num-up {
+      background-color: #d1fae5;
+      color: #065f46;
+      font-weight: 700;
+      padding: 0 6px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .num-down {
+      background-color: #fee2e2;
+      color: #991b1b;
+      font-weight: 700;
+      padding: 0 6px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .num-key {
+      background-color: #e0e7ff;
+      color: #3730a3;
+      font-weight: 700;
+      padding: 0 6px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .bilingual {
+      background-color: #f8fafc;
+      border-left: 4px solid #3b82f6;
+      padding: 14px 18px;
+      margin: 16px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .en-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1e3a8a;
+      margin-bottom: 6px;
+      font-style: italic;
+    }
+    .en-summary {
+      font-size: 14px;
+      color: #334155;
+      margin-bottom: 10px;
+    }
+    .vocab-card {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-top: 8px;
+    }
+    .vocab-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+    .vocab-list {
+      display: block;
+    }
+    .vocab-item {
+      display: inline-block;
+      background-color: #eef2ff;
+      border-radius: 16px;
+      padding: 2px 10px;
+      font-size: 13px;
+      margin-right: 8px;
+      margin-bottom: 4px;
+    }
+    .vocab-item b {
+      color: #4338ca;
+    }
+    .deepdive {
+      margin: 16px 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      background-color: #ffffff;
+    }
+    .deepdive summary {
+      cursor: pointer;
+      font-weight: 600;
+      padding: 12px 16px;
+      color: #1e3a8a;
+      font-size: 14px;
+    }
+    .deepdive-content {
+      padding: 0 16px 16px;
+      border-top: 1px solid #f0f0f0;
+    }
+    .dl {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+    .dl-label {
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .item-source {
+      font-size: 13px;
+      color: #6b7280;
+      margin-top: 12px;
+      border-top: 1px solid #f0f0f0;
+      padding-top: 10px;
+    }
+    .item-source a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    .item-source a:hover {
+      text-decoration: underline;
+    }
+    /* compare box */
+    .compare-box {
+      background-color: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 20px 0;
+      display: block;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+    .compare-side {
+      display: inline-block;
+      width: 48%;
+      vertical-align: top;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+    .compare-bull {
+      background-color: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      margin-right: 2%;
+    }
+    .compare-bear {
+      background-color: #fef2f2;
+      border: 1px solid #fecaca;
+    }
+    .compare-label {
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+    .trend-comment {
+      background-color: #f9fafb;
+      border-left: 4px solid #6b7280;
+      padding: 12px 18px;
+      margin-top: 16px;
+      font-size: 14px;
+      color: #1f2937;
+      border-radius: 0 8px 8px 0;
+    }
+    /* timeline */
+    .timeline {
+      background-color: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 32px 0;
+    }
+    .timeline h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #92400e;
+      margin-bottom: 12px;
+    }
+    .timeline-item {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    .timeline-date {
+      display: inline-block;
+      background-color: #ffffff;
+      border: 1px solid #fcd34d;
+      padding: 2px 12px;
+      border-radius: 20px;
+      font-weight: 700;
+      color: #78350f;
+      margin-right: 12px;
+      font-size: 13px;
+    }
+    .footer {
+      margin-top: 24px;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 16px;
+      font-size: 13px;
+      color: #6b7280;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      .container { padding: 20px 16px; }
+      .compare-side { width: 100%; display: block; margin-bottom: 10px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <h1>🌐 全球动态简报</h1>
+  <div class="date">📅 2026年8月21日 · 周五 · 第34周</div>
+
+  <!-- 第一步：综述模块 -->
+  <div class="overview">
+    <h3>🧠 今日全球综述</h3>
+    <p>今日简报聚焦三大主线：一，全球大模型竞争进入"多极格局"，国际闭源旗舰与国产双强（DeepSeek等）差距显著缩小，AI 应用成本快速下探；二，人民币汇率中间价上调，中国资产吸引力回升，但美联储政策不确定性仍压制风险偏好；三，地缘政治层面，美伊对峙升级与供应链安全成为焦点，能源与航运风险溢价走高。整体风向：科技端强韧，金融端谨慎，地缘风险积聚。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🤖 多极大模型格局</span>
+      <span class="overview-tag">💰 人民币升值动能</span>
+      <span class="overview-tag">🔴 美伊博弈加剧</span>
+      <span class="overview-tag">📉 供应链安全焦虑</span>
+      <span class="overview-tag">🧬 基因工具平民化</span>
+    </div>
+  </div>
+
+  <!-- 板块 1：生命科学/医学 -->
+  <div class="section">
+    <div class="section-header">🧬 生命科学 / 医学</div>
+
+    <!-- 新闻 1 -->
+    <div class="news-item">
+      <div class="item-header">
+        <h4>GeneCards 数据库升级：整合<span class="num-key">193</span>个数据源</h4>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-summary">
+        人类基因数据库 GeneCards 完成重大更新，自动整合来自<span class="num-key">193</span>个权威来源的基因数据。这一升级显著提升了基因-疾病关联检索效率，对罕见病研究和药物靶点发现具有重要支撑作用，标志着生物信息学基础设施的进一步成熟。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">GeneCards Enhances Integration of 193 Global Genomic Sources</p>
+        <p class="en-summary">GeneCards, a leading human gene database, has upgraded its platform by automatically integrating data from 193 web sources. This enhances the accuracy of gene-disease associations and accelerates translational research in rare diseases and pharmacogenomics.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>genomic integration</b> 基因组整合</span>
+            <span class="vocab-item"><b>rare disease</b> 罕见病</span>
+            <span class="vocab-item"><b>drug target</b> 药物靶点</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>GeneCards 是免费的人类基因百科全书，此次升级相当于把193个图书馆合并成一个智能搜索引擎，找基因与疾病的关系更快了。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）将助力罕见病诊断率提升；中长期（3-5年）可能结合AI预测基因突变致病性，加速个体化用药。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来医生输入患者基因序列，即可自动匹配全球所有已知变异和药物反应，真正实现"基因导航"式精准医疗。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.genecards.org/" target="_blank">GeneCards.org</a></p>
+    </div>
+
+    <!-- 新闻 2 -->
+    <div class="news-item">
+      <div class="item-header">
+        <h4>Nature 发布 CO₂ 富集实验元分析：非洲草原碳汇潜力存变数</h4>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <div class="item-summary">
+        顶级期刊 Nature 最新研究结合 CO₂ 富集实验元分析与<span class="num-key">30年</span>南部非洲稀树草原观测数据，发现土壤固碳效应被高估。该研究对全球碳汇模型和气候政策具有重要修正意义，碳信用市场或面临重新定价。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Meta-analysis Reveals Overestimated Carbon Sink in African Savannas</p>
+        <p class="en-summary">A new Nature study combining CO₂ enrichment experiments with 30 years of field data from southern African savannas challenges previous estimates of soil carbon sequestration, with major implications for climate models and carbon credit markets.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>carbon sequestration</b> 碳固存</span>
+            <span class="vocab-item"><b>meta-analysis</b> 元分析</span>
+            <span class="vocab-item"><b>savanna ecosystem</b> 稀树草原生态</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去认为CO₂升高会让草原长更多草、土壤存更多碳，但30年数据显示土壤微生物分解加速，碳储存“入不敷出”。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）影响碳信用项目开发，尤其是非洲草原碳汇项目；中长期（5-10年）将调整全球碳预算，推动更保守的碳核算标准。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来气候政策可能从“种树固碳”转向“土壤微生物管理”，催生新一批生物技术公司。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature Research Articles</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：生命科学领域今日聚焦“数据基建”与“碳循环修正”。GeneCards 强化基因数据整合，而 Nature 研究则对生态碳汇模型发出警示。两者共同指向：科学研究正从“发现”走向“验证与修正”，数据质量与长期观测成为关键。</div>
+  </div>
+
+  <!-- 板块 2：经济/金融 -->
+  <div class="section">
+    <div class="section-header">💰 经济 / 金融</div>
+
+    <!-- 新闻 3 -->
+    <div class="news-item">
+      <div class="item-header">
+        <h4>人民币兑美元中间价上调<span class="num-up">51点</span> 报<span class="num-key">6.7854</span></h4>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        8月18日人民币兑美元中间价报<span class="num-key">6.7854</span>，较前一交易日上调<span class="num-up">51个基点</span>，创近期新高。市场分析认为，中国出口韧性与外资流入推升人民币升值预期，但美联储政策路径仍构成主要外部扰动。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">PBoC Sets Yuan Midpoint at 6.7854, Strongest in Weeks</p>
+        <p class="en-summary">The People's Bank of China fixed the daily yuan midpoint at 6.7854 per dollar, up 51 basis points, signaling official support for a stronger yuan amid resilient exports and capital inflows. Fed policy remains the key external risk.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>midpoint rate</b> 中间价</span>
+            <span class="vocab-item"><b>capital inflow</b> 资本流入</span>
+            <span class="vocab-item"><b>external headwind</b> 外部逆风</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中间价是央行每日给出的“官方参考价”，上调51点表示官方引导人民币升值，通常反映出口强劲或美元走弱。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）人民币或维持稳中偏强，利好进口企业；但若美联储超预期加息，可能逆转走势。中长期看，人民币国际化进程稳步推进。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>随着人民币汇率弹性增强，跨境贸易结算中人民币份额可能进一步提升，逐步撼动美元霸权。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://finance.sina.com.cn/money/forex/hq/USDCNY.shtml" target="_blank">新浪财经</a></p>
+    </div>
+
+    <!-- 新闻 4 -->
+    <div class="news-item">
+      <div class="item-header">
+        <h4>债券交易员着手对冲<span class="num-key">2027</span>年美联储政策转向风险</h4>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <div class="item-summary">
+        据市场消息，债券交易员开始提前布局，对冲<span class="num-key">2027</span>年美联储可能出现的政策转向。当前利率期货显示市场预期2027年前存在降息空间，但通胀黏性令交易员对久期风险保持警惕，收益率曲线控制工具再度成为讨论焦点。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Bond Traders Hedge Against 2027 Fed Policy Shift</p>
+        <p class="en-summary">Bond traders are increasingly positioning for a potential Federal Reserve policy pivot in 2027, with rate futures pricing in possible cuts. Sticky inflation keeps duration risk in focus, and yield curve control tools are back in the conversation.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>duration risk</b> 久期风险</span>
+            <span class="vocab-item"><b>yield curve control</b> 收益率曲线控制</span>
+            <span class="vocab-item"><b>policy pivot</b> 政策转向</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>交易员正在为“美联储2027年可能降息或转向宽松”提前投保，通过利率期货和期权对冲利率下行风险。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2个季度）市场波动可能加剧；中长期（2027年）若美联储真转向，全球资产定价锚将重构，新兴市场或迎资本回流。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>2027年若美联储重启宽松，叠加AI技术革命，可能开启新一轮全球信用扩张周期。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://finance.sina.com.cn/money/forex/hq/USDCNY.shtml" target="_blank">新浪财经</a></p>
+    </div>
+
+    <!-- 对比框：经济预期分化 -->
+    <div class="compare-box">
+      <div class="compare-side compare-bull">
+        <div class="compare-label">📈 乐观方</div>
+        人民币中间价上调，出口韧性强劲，中国资产吸引力回升，国际资本加速流入亚洲。
+      </div>
+      <div class="compare-side compare-bear">
+        <div class="compare-label">📉 悲观方</div>
+        美联储政策不确定性高悬，市场对2027年转向的“过度交易”可能引发流动性踩踏，债市波动率上升。
+      </div>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：金融市场呈现“中国资产修复”与“美联储迷雾”并存的格局。人民币升值信号积极，但债市交易员已开始为2027年政策转向定价，显示市场正在提前博弈宏观拐点。短期波动率料维持高位。</div>
+  </div>
+
+  <!-- 板块 3：人工智能 -->
+  <div class="section">
+    <div class="section-header">🤖 人工智能</div>
+
+    <!-- 新闻 5 -->
+    <div class="news-item">
+      <div class="item-header">
+        <h4>全球大模型格局洗牌：国际闭源旗舰 + 国产双强 + 欧美开源生力军</h4>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+      </div>
+      <div class="item-summary">
+        截至2026年5月的行业分析显示，全球大模型已从“闭源三强垄断”演变为“国际闭源旗舰 + 国产双强 + 欧美开源生力军”的多极格局。DeepSeek、阿里等国产模型在<span class="num-key">10B</span>以下规模达到SOTA水平，开源模型与闭源差距缩小至<span class="num-key">12个月</span>以内，AI应用成本大幅下探。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Global LLM Landscape Shifts to Multipolar Competition</p>
+        <p class="en-summary">By mid-2026, the large language model market has evolved from a closed-source oligopoly to a multipolar landscape featuring international flagships, Chinese leaders like DeepSeek, and strong open-source communities in the US and Europe. Open-source models now trail closed-source by less than 12 months, driving down inference costs.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>multipolar</b> 多极的</span>
+            <span class="vocab-item"><b>open-source</b> 开源</span>
+            <span class="vocab-item"><b>SOTA</b> 最先进水平</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>以前大模型只有少数几家闭源巨头玩，现在中国、欧洲的开源模型追得非常快，差距从18个月缩到12个月以内。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）企业部署AI成本将再降<span class="num-down">50%</span>以上，中小公司也能用上顶级模型；中长期（3-5年）端侧小模型（<10B）将全面普及，AI应用进入“千行百业”阶段。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来每个开发者都能像调用API一样调用顶尖AI能力，AI从“奢侈品”变为“水电煤”，颠覆软件行业商业模式。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://jishuzhan.net/article/2060536648215113730" target="_blank">技术栈</a></p>
+    </div>
+
+    <!-- 新闻 6 -->
+    <div class="news-item">
+      <div class="item-header">
+        <h4>DeepSeek 持续迭代：视觉感知与复杂推理能力受关注</h4>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        国内大模型DeepSeek最新版本在<span class="num-key">视觉感知</span>、<span class="num-key">复杂推理</span>和<span class="num-key">人类对齐</span>方面表现卓越，官方宣称其<span class="num-key">10B</span>以下规模模型为SOTA，可媲美更大参数模型。这标志着中国AI在高效小模型赛道领跑全球。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">DeepSeek Achieves SOTA in Sub-10B Model Category</p>
+        <p class="en-summary">DeepSeek's latest model demonstrates exceptional performance in visual perception, complex reasoning, and human alignment, achieving state-of-the-art results in the sub-10B parameter category. This positions Chinese AI as a leader in efficient small models.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>visual perception</b> 视觉感知</span>
+            <span class="vocab-item"><b>human alignment</b> 人类对齐</span>
+            <span class="vocab-item"><b>parameter efficiency</b> 参数效率</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek用<10B参数实现了别人100B参数的效果，好比用小排量发动机跑出超跑速度，靠的是算法创新。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）端侧AI（手机、PC、汽车）将大规模部署这类小模型；中长期（3-5年）将推动AI从云端走向终端，隐私计算与实时响应能力大幅提升。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来你的手机就能离线运行个人AI助手，无需上传数据到云端，真正实现“AI随身，隐私无忧”。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://zhuanlan.zhihu.com/p/670574382" target="_blank">知乎专栏</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI领域今日关键词是“多极”与“高效”。大模型竞争从拼参数转向拼效率，国产模型在10B以下赛道实现领跑。开源生态的快速追赶将加速AI应用爆发，但也可能加剧算力过剩担忧。</div>
+  </div>
+
+  <!-- 板块 4：科技/硬科技 -->
+  <div class="section">
+    <div class="section-header">💻 科技 / 硬科技</div>
+
+    <!-- 新闻 7 -->
+    <div class="news-item">
+      <div class="item-header">
+        <h4>华为：构建万物互联智能世界，鸿蒙生态加速扩张</h4>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        华为重申“构建万物互联智能世界”愿景，其消费者业务涵盖手机、笔记本、平板、穿戴设备、智慧屏等全场景生态。在芯片受限背景下，华为通过软件生态（鸿蒙OS）与硬件创新（如云锦工艺手机）维持高端市场竞争力，市场关注其下一代芯片突破进展。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Huawei Expands HarmonyOS Ecosystem Amid Chip Constraints</p>
+        <p class="en-summary">Huawei continues to push its "Fully Connected Intelligent World" vision, expanding the HarmonyOS ecosystem across phones, PCs, wearables, and smart screens. Despite chip restrictions, software innovation and premium design maintain its competitive edge in high-end segments.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>ecosystem</b> 生态系统</span>
+            <span class="vocab-item"><b>chip restriction</b> 芯片限制</span>
+            <span class="vocab-item"><b>smart screen</b> 智慧屏</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>华为在无法获得最先进制程芯片的情况下，用软件生态（鸿蒙）+ 系统优化 + 设计创新来弥补硬件差距。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）鸿蒙OS或将覆盖更多IoT设备，形成“1+8+N”全场景战略；中长期（3-5年）若国产芯片取得突破，华为手机有望重回全球第一梯队。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来万物互联时代，华为或成为“智能世界操作系统”的定义者，与苹果、谷歌三分天下。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.huawei.com/cn/" target="_blank">华为官网</a></p>
+    </div>
+
+    <!-- 新闻 8 -->
+    <div class="news-item">
+      <div class="item-header">
+        <h4>比亚迪：新能源汽车世界冠军，全产业链核心技术自研</h4>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        比亚迪持续巩固全球新能源汽车冠军地位，业务覆盖电池、电机、电控等全产业链核心技术。旗下多款车型（汉、宋、秦、海豹等）热销全球，并布局云轨、商用车等领域。市场关注其海外工厂扩张和固态电池量产时间表。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">BYD Solidifies Global NEV Leadership with Full-Stack Self-Developed Tech</p>
+        <p class="en-summary">BYD maintains its world champion position in new energy vehicles, with in-house technology across batteries, motors, and electronic controls. Multiple models are popular globally, and the company is expanding overseas factories while advancing solid-state battery R&D.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>new energy vehicle (NEV)</b> 新能源汽车</span>
+            <span class="vocab-item"><b>solid-state battery</b> 固态电池</span>
+            <span class="vocab-item"><b>full-stack</b> 全栈自研</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>比亚迪是目前全球唯一掌握电池、电机、电控、车规级芯片全产业链的车企，成本控制能力极强。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）海外市场（东南亚、欧洲）将成为新增长引擎；中长期（3-5年）固态电池若量产，将彻底改写电动车续航和安全性标准。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来汽车不仅是交通工具，更是“移动储能站”，比亚迪的电池技术可参与电网调峰，重构能源体系。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.byd.com/cn/index.html" target="_blank">比亚迪官网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技领域中国力量凸显。华为与比亚迪分别代表“被制裁下的创新突围”和“全产业链成本碾压”，两者均指向中国科技自主化进程加速。半导体与电池技术仍是核心博弈点。</div>
+  </div>
+
+  <!-- 板块 5：材料科学 -->
+  <div class="section">
+    <div class="section-header">🔬 材料科学</div>
+
+    <!-- 新闻 9 -->
+    <div class="news-item">
+      <div class="item-header">
+        <h4>PVC 材料论坛：塑料行业竞争力持续提升，回收技术成焦点</h4>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        意大利PVC论坛发布行业报告指出，PVC作为全球最 versatile 的塑料之一，在建筑、医疗、汽车领域需求稳步增长。论坛重点讨论了循环经济下的PVC回收技术突破，以及欧洲新法规对含氯材料的影响。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">PVC Industry Forum Highlights Recycling Innovation</p>
+        <p class="en-summary">The Italian PVC Forum reports steady demand growth for PVC across construction, medical, and automotive sectors. Key focus is on advanced recycling technologies and the impact of new European regulations on chlorinated materials.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>circular economy</b> 循环经济</span>
+            <span class="vocab-item"><b>recycling technology</b> 回收技术</span>
+            <span class="vocab-item"><b>chlorinated material</b> 含氯材料</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>PVC是建筑管道、电线电缆的重要材料，但环保争议大。论坛聚焦如何通过化学回收让PVC变“绿色材料”。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）机械回收产能将扩张；中长期（3-5年）化学回收（解聚）技术有望商业化，解决PVC含氯难回收痛点。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来建筑垃圾中的PVC可100%重新变为新管道，实现“从管道到管道”的闭环。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.pvcforum.it/" target="_blank">PVC Forum</a></p>
+    </div>
+
+    <!-- 新闻 10 -->
+    <div class="news-item">
+      <div class="item-header">
+        <h4>芯片材料科普：从晶圆到封装，先进制程材料需求升级</h4>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        多家科普平台详解芯片制造流程，强调从硅晶圆、光刻胶到封装材料的全链条技术壁垒。随着制程推进至<span class="num-key">2nm</span>以下，新型材料（高k金属栅极、钴/钌互连）成为突破关键，材料创新在芯片产业中的权重持续上升。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Advanced Chip Materials: From Wafer to 2nm Node</p>
+        <p class="en-summary">As chip manufacturing advances to 2nm and beyond, novel materials such as high-k metal gates and cobalt/ruthenium interconnects become critical. Material innovation is increasingly central to semiconductor progress.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>high-k dielectric</b> 高k介质</span>
+            <span class="vocab-item"><b>interconnect</b> 互连</span>
+            <span class="vocab-item"><b>lithography</b> 光刻</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>芯片越做越小，传统材料（铜、二氧化硅）到了物理极限，需要新材料的“接力”。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）2nm制程量产将拉动高纯材料需求；中长期（3-5年）GAA（全环绕栅极）等架构变革将催生一批新供应商。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>材料科学将成为半导体“卡脖子”环节的破局关键，中国在第三代半导体材料上的布局或改变竞争格局。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://baike.baidu.com/item/芯片/32249" target="_blank">百度百科</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学今日信息偏“基础科普”，但背后映射出两大趋势：一是传统材料（PVC）的绿色转型压力；二是先进芯片材料的技术攻坚。材料创新正从“辅助角色”走向“核心引擎”。</div>
+  </div>
+
+  <!-- 板块 6：中国政策与监管 -->
+  <div class="section">
+    <div class="section-header">🇨🇳 中国政策与监管</div>
+
+    <!-- 新闻 11 -->
+    <div class="news-item">
+      <div class="item-header">
+        <h4>外汇管理局更新人民币汇率中间价，市场化改革持续深化</h4>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <div class="item-summary">
+        国家外汇管理局更新人民币汇率中间价，涵盖澳门元、马来西亚林吉特、俄罗斯卢布、韩元等<span class="num-key">多币种</span>。中间价机制透明度提升，反映央行“以市场供求为基础、参考一篮子货币”的定价逻辑，人民币国际化基础设施进一步完善。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">SAFE Updates Yuan Midpoint Mechanism for Multiple Currencies</p>
+        <p class="en-summary">China's State Administration of Foreign Exchange (SAFE) updated its yuan midpoint pricing mechanism, covering a broad basket including Macau pataca, Malaysian ringgit, Russian ruble, and Korean won. This enhances transparency and supports the internationalization of the renminbi.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>currency basket</b> 货币篮子</span>
+            <span class="vocab-item"><b>exchange rate mechanism</b> 汇率机制</span>
+            <span class="vocab-item"><b>internationalization</b> 国际化</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>央行每天公布的人民币中间价，参考一篮子货币（不只是美元），这次更新让更多货币纳入定价体系。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）人民币汇率弹性增强，跨境贸易结算更便利；中长期（3-5年）人民币在IMF SDR篮子中的权重可能进一步提升。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来人民币成为亚洲主要结算货币，与美元、欧元形成“三足鼎立”格局。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.safe.gov.cn/safe/rmbhlzjj/index.html" target="_blank">国家外汇管理局</a></p>
+    </div>
+
+    <!-- 新闻 12 -->
+    <div class="news-item">
+      <div class="item-header">
+        <h4>中国银行外汇牌价系统升级，现汇/现钞卖出价细分</h4>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <div class="item-summary">
+        中国银行外汇牌价系统自2011年10月升级后，将“卖出价”细分为“现汇卖出价”和“现钞卖出价”。这一细分提高了汇率报价的精准度，反映了银行间外汇市场结构的成熟化，对企业和个人换汇决策具有指导意义。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Bank of China Refines FX Quotation System</p>
+        <p class="en-summary">Bank of China's foreign exchange quotation system now distinguishes between cash and remittance selling rates, improving pricing precision. This reflects the maturation of China's FX market structure and aids corporate and individual currency exchange decisions.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>spot/remittance rate</b> 现汇/现钞汇率</span>
+            <span class="vocab-item"><b>quotation system</b> 报价系统</span>
+            <span class="vocab-item"><b>FX market structure</b> 外汇市场结构</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>以前银行卖给你外汇只有一个价，现在分“现汇”（电子转账）和“现钞”（现金），价格不同，更精细。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）个人外汇交易成本更透明；中长期（3-5年）随着人民币国际化，外汇产品将更加多元化。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来个人换汇就像买卖股票一样便捷，汇率风险对冲工具走进寻常百姓家。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.boc.cn/sourcedb/whpj/" target="_blank">中国银行</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策面聚焦金融基础设施精细化。汇率中间价机制与银行报价系统的升级，显示监管层在推进“高质量发展”的同时，注重市场化工具建设。这为人民币国际化及资本账户开放奠定制度基础。</div>
+  </div>
+
+  <!-- 板块 7：地缘政治与国际关系 -->
+  <div class="section">
+    <div class="section-header">🌍 地缘政治与国际关系</div>
+
+    <!-- 新闻 13 -->
+    <div class="news-item">
+      <div class="item-header">
+        <h4>CNN：特朗普施压伊朗经济与石油出口，中东局势再升温</h4>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <div class="item-summary">
+        据CNN分析，美国前总统特朗普正通过经济制裁和限制石油出口对伊朗施压。此举已导致霍尔木兹海峡通行风险上升，国际油价波动加剧，全球供应链面临新的不确定性，地缘风险溢价显著抬升。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Trump Intensifies Economic Pressure on Iran's Oil Exports</p>
+        <p class="en-summary">CNN analysis indicates renewed US pressure on Iran's economy and oil sales, raising risks in the Strait of Hormuz and increasing volatility in global energy markets. Supply chain uncertainty and geopolitical risk premiums are on the rise.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>economic sanctions</b> 经济制裁</span>
+            <span class="vocab-item"><b>Strait of Hormuz</b> 霍尔木兹海峡</span>
+            <span class="vocab-item"><b>risk premium</b> 风险溢价</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美国通过限制伊朗卖油来施压，伊朗可能封锁霍尔木兹海峡报复，全球30%的石油都要经过这里。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）油价波动加大，航运保险费率上涨；中长期（1-2年）若冲突升级，全球通胀将再度抬头，美联储降息空间进一步收窄。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>中东持续动荡可能加速全球能源转型，光伏、核能等替代能源投资将获得更强政策支持。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.cnn.com/" target="_blank">CNN</a></p>
+    </div>
+
+    <!-- 新闻 14 -->
+    <div class="news-item">
+      <div class="item-header">
+        <h4>FBI挫败ISIS-inspired袭击纽约国会大厦图谋</h4>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <div class="item-summary">
+        美国FBI宣布挫败一起受ISIS启发的、针对纽约州议会大厦的炸弹袭击阴谋。35岁的嫌疑人Jessica Bowie被指控向线人透露爆炸计划。此事件凸显美国本土恐怖主义威胁仍存，安保级别提升，市场避险情绪或升温。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">FBI Thwarts ISIS-Inspired Plot to Bomb NY Capitol</p>
+        <p class="en-summary">The FBI foiled an alleged ISIS-inspired plot to bomb the New York State Capitol. Jessica Bowie, 35, is accused of revealing the plan to a confidential source. The incident highlights persistent domestic terror threats and may heighten market risk aversion.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>foil a plot</b> 挫败阴谋</span>
+            <span class="vocab-item"><b>confidential source</b> 线人</span>
+            <span class="vocab-item"><b>domestic terrorism</b> 本土恐怖主义</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>FBI通过线人提前发现并阻止了一起炸弹袭击，属于“事前防范”的典型成功案例。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2周）美国安保级别提升，但金融市场影响有限；中长期（1-3年）社交平台极端内容监管或将加强，科技公司面临更大合规压力。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来AI情报分析可提前识别极端化倾向，将恐怖袭击扼杀在“思想萌芽”阶段，但也会引发隐私担忧。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nbcnews.com/" target="_blank">NBC News</a></p>
+    </div>
+
+    <!-- 对比框：地缘风险对市场影响分歧 -->
+    <div class="compare-box">
+      <div class="compare-side compare-bull">
+        <div class="compare-label">📈 乐观方</div>
+        地缘事件多为“噪音”，FBI成功挫败袭击显示安保有效，市场风险偏好有望快速修复。
+      </div>
+      <div class="compare-side compare-bear">
+        <div class="compare-label">📉 悲观方</div>
+        美伊对峙叠加本土恐袭威胁，能源与避险资产将持续获得资金流入，全球风险资产承压。
+      </div>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘政治风险显著升温，美伊博弈与本土恐怖威胁形成“双重压力”。能源价格、航运保险和避险资产（黄金、美元）短期将获支撑，而全球风险资产（股市、高收益债）波动加剧。</div>
+  </div>
+
+  <!-- 时间节点模块 -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-08-18</span>
+      <span>人民币中间价上调51点，已反映在市场中</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-08-21</span>
+      <span>今日：全球动态简报发布，关注美联储官员讲话</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-09-01</span>
+      <span>美国8月非农就业数据发布，影响9月加息预期</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-09-15</span>
+      <span>中国8月经济数据（工业增加值、社零）发布</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-09-21</span>
+      <span>美联储FOMC议息会议，市场预期维持利率不变</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    数据来源：Nature, GeneCards, 新浪财经, 知乎, 华为, 比亚迪, CNN, NBC, SAFE, 中国银行 等<br>
+    编译时间：2026-08-21 · 本简报仅供内部参考，不构成投资建议
+  </div>
+
+</div>
+</body>
+</html>
