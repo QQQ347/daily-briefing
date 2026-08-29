@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌍 全球动态简报 | 2026-08-29</title>
+  <style>
+    body {
+      background-color: #f5f6f8;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 16px;
+      color: #1a1a1a;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+    }
+    .date-badge {
+      display: inline-block;
+      background-color: #eef2f5;
+      color: #2c3e50;
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      border: 1px solid #dce3e8;
+    }
+    .overview {
+      background-color: #ffffff;
+      border-left: 6px solid #1a5fb4;
+      padding: 20px 24px;
+      margin-bottom: 30px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      border-radius: 0 8px 8px 0;
+    }
+    .overview h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0b3b6e;
+    }
+    .overview p {
+      margin: 0 0 16px 0;
+      font-size: 1rem;
+      color: #2d3748;
+    }
+    .overview-tags {
+      margin-top: 8px;
+    }
+    .overview-tag {
+      display: inline-block;
+      background-color: #e8edf3;
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-right: 8px;
+      color: #1a5fb4;
+    }
+    .section {
+      margin-bottom: 36px;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      border-bottom: 3px solid #1a5fb4;
+      padding-bottom: 6px;
+      margin-bottom: 18px;
+      margin-top: 30px;
+      display: inline-block;
+    }
+    .news-item {
+      background-color: #ffffff;
+      padding: 18px 20px 20px 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+      border: 1px solid #eef0f3;
+    }
+    .item-header {
+      display: block;
+      margin-bottom: 12px;
+    }
+    .item-header h4 {
+      display: inline;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-right: 12px;
+      color: #0b2e4f;
+    }
+    .badge-star {
+      display: inline-block;
+      color: #b8860b;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      margin-right: 10px;
+    }
+    .impact {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    .impact-high {
+      background-color: #c0392b;
+      color: #ffffff;
+    }
+    .impact-med {
+      background-color: #e67e22;
+      color: #ffffff;
+    }
+    .impact-low {
+      background-color: #7f8c8d;
+      color: #ffffff;
+    }
+    .risk-red {
+      display: inline-block;
+      background-color: #c0392b;
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 20px;
+      vertical-align: middle;
+    }
+    .risk-yellow {
+      display: inline-block;
+      background-color: #f1c40f;
+      color: #1a1a1a;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 20px;
+      vertical-align: middle;
+    }
+    .item-summary {
+      background-color: #f9fafb;
+      padding: 14px 16px;
+      border-radius: 6px;
+      margin: 12px 0;
+      font-size: 0.98rem;
+      border-left: 4px solid #d3dce6;
+    }
+    .num-up {
+      background-color: #e1f0e8;
+      color: #1e7e4a;
+      font-weight: 700;
+      padding: 0 4px;
+      border-radius: 4px;
+      font-size: 0.95em;
+    }
+    .num-down {
+      background-color: #fce9e9;
+      color: #b03a2e;
+      font-weight: 700;
+      padding: 0 4px;
+      border-radius: 4px;
+      font-size: 0.95em;
+    }
+    .num-key {
+      background-color: #eef0f3;
+      color: #2c3e50;
+      font-weight: 700;
+      padding: 0 4px;
+      border-radius: 4px;
+      font-size: 0.95em;
+    }
+    .bilingual {
+      background-color: #f4f7fb;
+      padding: 16px 18px;
+      border-radius: 8px;
+      margin: 14px 0;
+      border: 1px solid #dce6f0;
+    }
+    .en-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a3e5c;
+      margin: 0 0 8px 0;
+    }
+    .en-summary {
+      font-size: 0.92rem;
+      color: #2d3e4f;
+      margin: 0 0 12px 0;
+      font-style: italic;
+    }
+    .vocab-card {
+      background-color: #ffffff;
+      border-radius: 6px;
+      padding: 12px 14px;
+      border: 1px solid #e2e8f0;
+    }
+    .vocab-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #1a5fb4;
+      margin-bottom: 6px;
+    }
+    .vocab-list {
+      display: block;
+    }
+    .vocab-item {
+      display: inline-block;
+      background-color: #edf2f7;
+      padding: 3px 12px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      margin-right: 8px;
+      margin-bottom: 4px;
+    }
+    .vocab-item b {
+      font-weight: 700;
+      margin-right: 4px;
+    }
+    .compare-box {
+      display: block;
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 18px;
+      margin: 18px 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .compare-side {
+      display: inline-block;
+      width: 46%;
+      vertical-align: top;
+      padding: 10px 12px;
+      font-size: 0.92rem;
+      border-radius: 6px;
+    }
+    .compare-bull {
+      background-color: #e9f5ef;
+      border-left: 4px solid #1e7e4a;
+      margin-right: 4%;
+    }
+    .compare-bear {
+      background-color: #fdeeee;
+      border-left: 4px solid #b03a2e;
+    }
+    .compare-label {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .deepdive {
+      margin: 14px 0 10px 0;
+      background-color: #fcfcfc;
+      border: 1px solid #eef0f3;
+      border-radius: 6px;
+      padding: 4px 14px;
+    }
+    .deepdive summary {
+      font-weight: 700;
+      color: #1a5fb4;
+      cursor: pointer;
+      font-size: 0.95rem;
+      padding: 6px 0;
+    }
+    .deepdive-content {
+      padding: 8px 0 12px 0;
+    }
+    .dl {
+      margin: 8px 0;
+      font-size: 0.95rem;
+    }
+    .dl-label {
+      font-weight: 700;
+      color: #2c3e50;
+    }
+    .item-source {
+      font-size: 0.85rem;
+      color: #7f8c8d;
+      margin-top: 12px;
+      border-top: 1px dashed #e2e8f0;
+      padding-top: 10px;
+    }
+    .item-source a {
+      color: #1a5fb4;
+      text-decoration: none;
+    }
+    .item-source a:hover {
+      text-decoration: underline;
+    }
+    .trend-comment {
+      background-color: #eef3f9;
+      padding: 14px 18px;
+      border-radius: 6px;
+      margin: 18px 0 28px 0;
+      font-size: 0.95rem;
+      border-left: 5px solid #2c6ba0;
+      color: #1a2e3f;
+    }
+    .timeline {
+      background-color: #fffbe6;
+      border: 1px solid #f0e0b6;
+      padding: 20px 24px;
+      border-radius: 10px;
+      margin: 28px 0 20px 0;
+    }
+    .timeline h4 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-weight: 700;
+      color: #7a5c00;
+    }
+    .timeline-item {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+    .timeline-date {
+      display: inline-block;
+      background-color: #f7ecd0;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      margin-right: 12px;
+      color: #4d3a00;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 2px solid #dce3e8;
+      font-size: 0.85rem;
+      color: #6b7a88;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🌍 全球动态简报</h1>
+<span class="date-badge">📅 2026年8月29日 · 星期六</span>
+
+<!-- 第一步：今日综述 -->
+<div class="overview">
+  <h3>🧠 今日全球综述</h3>
+  <p>今日简报呈现三条主线：固态电池与钙钛矿光伏双双迎来产业化拐点，中国在新能源材料领域加速领跑；Google I/O 2026 发布百余项 AI 更新，大模型竞争进入"智能体"爆发期；央行层面中澳续签本币互换协议，全球金融合作在分化中寻求稳定锚点。整体风向：科技端偏乐观，材料端政策红利明确，地缘风险仍存但短期可控。</p>
+  <div class="overview-tags">
+    <span class="overview-tag">🔋 固态电池元年</span>
+    <span class="overview-tag">☀️ 钙钛矿免税</span>
+    <span class="overview-tag">🤖 AI智能体爆发</span>
+    <span class="overview-tag">🔄 中澳货币互换</span>
+  </div>
+</div>
+
+<!-- ============ 板块 1：生命科学/医学 ============ -->
+<div class="section">
+  <span class="section-title">🧬 生命科学 / 医学</span>
+
+  <!-- 新闻 #2 -->
+  <div class="news-item">
+    <div class="item-header">
+      <h4>蝙蝠适应病毒机制新发现</h4>
+      <span class="badge-star">⭐⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      一项发表于《Nature》的突破性研究对鼠耳蝠（Myotis）进行比较与功能分析，揭示了其独特的病毒适应模式。该发现为理解蝙蝠携带病毒却不发病的机制提供了全新视角，或为人类抗病毒药物开发提供进化层面的指导。
+    </div>
+
+    <!-- 英语学习模块 -->
+    <div class="bilingual">
+      <p class="en-title">Unique virus adaptation patterns uncovered in Myotis bats</p>
+      <p class="en-summary">A new Nature study using comparative and functional genomics of Myotis bats identifies unique adaptations that allow them to tolerate viral infections without severe disease. These insights could inform novel antiviral strategies for humans.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>comparative genomics</b> 比较基因组学</span>
+          <span class="vocab-item"><b>viral tolerance</b> 病毒耐受</span>
+          <span class="vocab-item"><b>evolutionary adaptation</b> 进化适应</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 深度解读 -->
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>蝙蝠是多种病毒的天然宿主，但自身很少发病。这项研究通过比较不同蝙蝠物种的基因组，找到了与病毒免疫相关的关键基因变异，相当于找到了蝙蝠的"抗病毒开关"。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）内可能促进广谱抗病毒药物的靶点筛选；中长期（3-10年）有望在疫苗设计中模拟蝙蝠的免疫耐受机制，提升疫苗安全性。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果完全破解蝙蝠的免疫密码，人类或许能开发出"一针防百病"的超级疫苗，并在大流行病暴发初期快速建立防线。</p>
+      </div>
+    </details>
+
+    <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature Research Articles</a></p>
+  </div>
+
+  <!-- 板块趋势评论 -->
+  <div class="trend-comment">📊 板块趋势：今日生命科学领域以基础研究突破为主，Nature 发表的蝙蝠适应机制研究代表了病毒学与进化生物学的交叉前沿。该领域正从"现象描述"走向"机制干预"，未来转化潜力值得持续追踪。</div>
+</div>
+
+<!-- ============ 板块 2：经济/金融 ============ -->
+<div class="section">
+  <span class="section-title">💰 经济 / 金融</span>
+
+  <!-- 新闻 #17 -->
+  <div class="news-item">
+    <div class="item-header">
+      <h4>中澳央行续签双边本币互换协议</h4>
+      <span class="badge-star">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      中国人民银行与澳大利亚央行续签双边本币互换协议，规模保持稳定。此举在美元利率高企背景下强化了双边本币结算机制，为两国贸易投资提供流动性支持，也是人民币国际化稳步推进的又一注脚。
+    </div>
+
+    <div class="bilingual">
+      <p class="en-title">PBC and RBA renew bilateral local currency swap agreement</p>
+      <p class="en-summary">The People's Bank of China and the Reserve Bank of Australia have renewed their bilateral local currency swap agreement, reinforcing financial cooperation and supporting bilateral trade settlement amid global monetary tightening.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>bilateral swap</b> 双边互换</span>
+          <span class="vocab-item"><b>liquidity support</b> 流动性支持</span>
+          <span class="vocab-item"><b>currency internationalization</b> 货币国际化</span>
+        </div>
+      </div>
+    </div>
+
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>本币互换协议相当于两国央行之间建立的"货币应急储备池"，在需要时可以用本国货币换取对方货币，稳定市场信心。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期有助于降低中澳贸易的汇率风险；中长期看，若更多国家加入本币互换网络，美元在全球贸易结算中的占比可能逐步被稀释。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当主要经济体之间形成密集的本币互换网络，全球金融体系将从"单极美元"走向"多极货币"，国际支付将更加多元和稳健。</p>
+      </div>
+    </details>
+
+    <p class="item-source">来源：<a href="https://www.pbc.gov.cn/" target="_blank">中国人民银行官网</a></p>
+  </div>
+
+  <!-- 板块趋势评论 -->
+  <div class="trend-comment">📊 板块趋势：央行层面操作以"稳"为主，中澳续签互换协议体现了区域内金融合作韧性。在 G7 国家通胀黏性仍存的背景下，人民币国际化的步伐虽缓但持续。</div>
+</div>
+
+<!-- ============ 板块 3：人工智能 ============ -->
+<div class="section">
+  <span class="section-title">🤖 人工智能</span>
+
+  <!-- 新闻 #22 -->
+  <div class="news-item">
+    <div class="item-header">
+      <h4>Google I/O 2026：发布百余项 AI 更新</h4>
+      <span class="badge-star">⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+    </div>
+    <div class="item-summary">
+      本周 Google I/O 2026 大会（5月20日）集中发布新款模型、智能体（Agent）与开发者工具，覆盖搜索、创作、编程等多场景。Google 强调"智能体优先"战略，AI 从"回答问题"迈向"主动执行任务"的阶段。
+    </div>
+
+    <div class="bilingual">
+      <p class="en-title">Google I/O 2026: 100+ AI announcements, agent-first strategy</p>
+      <p class="en-summary">At Google I/O 2026, the company unveiled new models, agents, and tools to help users build, search, create, and discover. The event highlighted a major shift toward agentic AI, where systems not only generate content but also autonomously complete tasks.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>agentic AI</b> 智能体AI</span>
+          <span class="vocab-item"><b>multimodal model</b> 多模态模型</span>
+          <span class="vocab-item"><b>developer tools</b> 开发者工具</span>
+        </div>
+      </div>
+    </div>
+
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>如果把传统 AI 比作"高级检索工具"，智能体（Agent）更像是"数字员工"——它能理解目标、分解任务、调用工具并交付结果。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）内智能体将在客服、编程辅助、数据分析等领域快速落地；中长期（3-5年）可能重塑工作流，企业软件从"记录系统"变为"执行系统"。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当智能体成为常态，每个人都可以拥有一个"AI 秘书团"——处理邮件、管理日程、辅助决策，人类的创造力将更多投入到战略与创新层面。</p>
+      </div>
+    </details>
+
+    <p class="item-source">来源：<a href="https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/" target="_blank">Google 官方博客</a></p>
+  </div>
+
+  <!-- 板块趋势评论 -->
+  <div class="trend-comment">📊 板块趋势：AI 竞争焦点从"模型参数"转向"智能体能力与生态"。Google I/O 的密集发布表明，头部厂商正加速将 AI 嵌入真实工作流，2026 下半年智能体应用将迎来落地竞赛。</div>
+</div>
+
+<!-- ============ 板块 4：科技/硬科技 ============ -->
+<div class="section">
+  <span class="section-title">💻 科技 / 硬科技</span>
+
+  <!-- 新闻 #31 -->
+  <div class="news-item">
+    <div class="item-header">
+      <h4>钙钛矿电池政策红利：全额免征消费税</h4>
+      <span class="badge-star">⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      财政部7月发文：自<span class="num-key">2026.9.1</span>至<span class="num-key">2028.12.31</span>，钙钛矿及叠层电池全额免征消费税；而普通晶硅电池自<span class="num-key">2027</span>年起开始征税。政策导向明确，钙钛矿产业化商业化红利期正式开启。
+    </div>
+
+    <div class="bilingual">
+      <p class="en-title">China exempts perovskite solar cells from consumption tax</p>
+      <p class="en-summary">China's Ministry of Finance announced a full consumption tax exemption for perovskite and tandem solar cells from September 1, 2026, through December 31, 2028. In contrast, traditional silicon cells will be taxed starting in 2027, signaling strong policy support for next-gen PV.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>consumption tax</b> 消费税</span>
+          <span class="vocab-item"><b>perovskite cell</b> 钙钛矿电池</span>
+          <span class="vocab-item"><b>tandem structure</b> 叠层结构</span>
+        </div>
+      </div>
+    </div>
+
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>钙钛矿是新一代光伏材料，转换效率上限比晶硅更高，且可做成柔性、半透明形态。免税政策相当于国家为这条新技术路线"开绿灯"。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）钙钛矿中试线将加速扩张，叠层电池商业化进程提前；中长期（3-5年）有望在 BIPV（光伏建筑一体化）、车顶光伏等场景大规模替代晶硅。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当钙钛矿成本降至晶硅以下，光伏将无处不在——窗户、车顶、甚至衣服都能发电，分布式能源将真正走进千家万户。</p>
+      </div>
+    </details>
+
+    <p class="item-source">来源：<a href="https://xueqiu.com/1054707264/401389503" target="_blank">雪球 · 钙钛矿研究进展</a></p>
+  </div>
+
+  <!-- 板块趋势评论 -->
+  <div class="trend-comment">📊 板块趋势：硬科技领域政策驱动特征明显，钙钛矿免税政策为新能源材料注入强心针。同时，芯片基础知识的科普热也反映出公众对半导体产业链的关注度持续升温。</div>
+</div>
+
+<!-- ============ 板块 5：材料科学 ============ -->
+<div class="section">
+  <span class="section-title">🔬 材料科学</span>
+
+  <!-- 新闻 #34 -->
+  <div class="news-item">
+    <div class="item-header">
+      <h4>奇瑞发布"犀牛S"全固态电池：600Wh/kg</h4>
+      <span class="badge-star">⭐⭐⭐⭐</span>
+      <span class="impact impact-high">冲击：High</span>
+    </div>
+    <div class="item-summary">
+      奇瑞汽车在"2026电池之夜"宣布自研"犀牛S"全固态电池，能量密度达<span class="num-key">600Wh/kg</span>，支持<span class="num-key">5分钟</span>快充。行业普遍将<span class="num-key">2026</span>视为固态电池商业化元年，半固态已量产，全固态进入装车验证阶段。
+    </div>
+
+    <div class="bilingual">
+      <p class="en-title">Chery unveils solid-state battery with 600Wh/kg</p>
+      <p class="en-summary">Chery announced its "Rhino S" all-solid-state battery with an energy density of 600Wh/kg and 5-minute fast charging capability. The industry considers 2026 the first year of solid-state battery commercialization, with semi-solid already in production and full solid-state entering vehicle validation.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>energy density</b> 能量密度</span>
+          <span class="vocab-item"><b>solid-state electrolyte</b> 固态电解质</span>
+          <span class="vocab-item"><b>fast charging</b> 快充</span>
+        </div>
+      </div>
+    </div>
+
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传统锂电池使用液态电解液，而固态电池用固态电解质替代，能量密度更高、更安全。600Wh/kg 意味着同等重量下续航里程可以翻倍。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）半固态电池将率先量产上车；全固态预计在<span class="num-key">2027</span>年小批量，<span class="num-key">2030</span>年前后大规模普及。飞行汽车、长续航重卡将是核心受益场景。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当固态电池成熟，电动车续航焦虑将彻底成为历史。更重要的是，高能量密度电池将解锁电动飞机、远洋电动船等全新交通形态。</p>
+      </div>
+    </details>
+
+    <p class="item-source">来源：<a href="https://news.qq.com/rain/a/20260319A04VNP00" target="_blank">腾讯新闻 · 固态电池产业化</a></p>
+  </div>
+
+  <!-- 板块趋势评论 -->
+  <div class="trend-comment">📊 板块趋势：固态电池从"实验室故事"走向"工厂产线"，2026 年成为中试验证关键年。同时清华张强团队在聚合物电解质领域的 Nature 论文为锂电池能量密度突破提供了另一条技术路径，材料创新呈现多点开花态势。</div>
+</div>
+
+<!-- ============ 板块 6：中国政策与监管 ============ -->
+<div class="section">
+  <span class="section-title">🇨🇳 中国政策与监管</span>
+
+  <!-- 新闻 #17 + #31 结合 -->
+  <div class="news-item">
+    <div class="item-header">
+      <h4>央行发布7月金融市场运行数据</h4>
+      <span class="badge-star">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+    </div>
+    <div class="item-summary">
+      中国人民银行发布<span class="num-key">2026年7月</span>金融市场运行情况，整体流动性合理充裕。同时潘功胜行长会见澳门银行公会代表团，释放金融高水平开放信号，跨境金融合作有望进一步深化。
+    </div>
+
+    <div class="bilingual">
+      <p class="en-title">PBC releases July financial market data, signals further opening</p>
+      <p class="en-summary">The People's Bank of China published financial market statistics for July 2026, indicating adequate liquidity. Governor Pan Gongsheng also met with the Macau Bankers Association, signaling continued high-level financial opening and deeper cross-border cooperation.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>financial market data</b> 金融市场数据</span>
+          <span class="vocab-item"><b>liquidity</b> 流动性</span>
+          <span class="vocab-item"><b>cross-border finance</b> 跨境金融</span>
+        </div>
+      </div>
+    </div>
+
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>央行定期发布的金融市场运行情况是观察中国货币政策和资金面的"晴雨表"。本次数据发布节奏正常，未见明显异常波动。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期央行大概率维持稳健的货币政策基调；中长期看，与澳门金融合作深化将强化人民币在粤港澳大湾区的循环使用。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>随着中国金融市场制度型开放稳步推进，人民币资产有望成为全球投资者资产配置中更重要的"压舱石"。</p>
+      </div>
+    </details>
+
+    <p class="item-source">来源：<a href="https://www.pbc.gov.cn/" target="_blank">中国人民银行</a></p>
+  </div>
+
+  <!-- 板块趋势评论 -->
+  <div class="trend-comment">📊 板块趋势：中国政策端呈现"稳货币+宽财政+强产业"的组合。央行维持流动性合理充裕，财政部对钙钛矿的定向免税则体现了对硬科技的精准扶持，政策合力正在形成。</div>
+</div>
+
+<!-- ============ 板块 7：地缘政治与国际关系 ============ -->
+<div class="section">
+  <span class="section-title">🌍 地缘政治与国际关系</span>
+
+  <!-- 新闻 #43 -->
+  <div class="news-item">
+    <div class="item-header">
+      <h4>中国在太平洋岛国影响力出现调整</h4>
+      <span class="badge-star">⭐⭐⭐⭐</span>
+      <span class="impact impact-med">冲击：Med</span>
+      <span class="risk-yellow">🟡 值得观察</span>
+    </div>
+    <div class="item-summary">
+      据《经济学人》分析，中国在太平洋岛国的影响力近期呈现收缩态势，而美国盟友体系内的信任裂痕也在扩大。地缘政治格局在亚太地区正经历微妙再平衡，小国"选边"压力加大。
+    </div>
+
+    <div class="bilingual">
+      <p class="en-title">China's influence in Pacific island states in retreat</p>
+      <p class="en-summary">According to The Economist, Chinese influence among Pacific island nations is showing signs of retreat, while trust within America's alliance system is eroding. The geopolitical landscape in the Asia-Pacific is undergoing a subtle rebalancing, increasing pressure on smaller states.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>sphere of influence</b> 势力范围</span>
+          <span class="vocab-item"><b>alliance credibility</b> 联盟信誉</span>
+          <span class="vocab-item"><b>rebalancing</b> 再平衡</span>
+        </div>
+      </div>
+    </div>
+
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>太平洋岛国地处中美博弈前沿，中国此前通过"一带一路"和基础设施投资扩大影响力，但近期部分项目推进放缓，同时美国加强外交接触。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期岛国可能采取"对冲"策略，同时与中美保持合作；中长期若美国国内政治不稳，盟友信任裂痕可能进一步削弱其在亚太的号召力。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>一个"多极化的太平洋"正在形成——岛国不再是"后院"，而是真正拥有自主选择权的行为体，气候合作与海洋治理将成为新的博弈焦点。</p>
+      </div>
+    </details>
+
+    <p class="item-source">来源：<a href="https://www.economist.com/topics/geopolitics" target="_blank">The Economist</a></p>
+  </div>
+
+  <!-- 板块趋势评论 -->
+  <div class="trend-comment">📊 板块趋势：地缘政治层面，今日信号偏"分化与再平衡"。美国盟友体系内部摩擦增多，而中国在部分区域的布局进入调整期。短期内，印太地区的小国外交将更加活跃，风险与机遇并存。</div>
+</div>
+
+<!-- ============ 时间节点模块 ============ -->
+<div class="timeline">
+  <h4>⏰ 近期关键时间节点</h4>
+  <div class="timeline-item">
+    <span class="timeline-date">2026-09-01</span>
+    <span>钙钛矿及叠层电池消费税全额免征政策正式生效</span>
+  </div>
+  <div class="timeline-item">
+    <span class="timeline-date">2026-12-31</span>
+    <span>钙钛矿免税政策首个阶段截止（2028年12月31日到期）</span>
+  </div>
+  <div class="timeline-item">
+    <span class="timeline-date">2027-01-01</span>
+    <span>普通晶硅电池开始征收消费税，光伏技术路线切换加速</span>
+  </div>
+</div>
+
+<div class="footer">
+  全球动态简报 · 2026-08-29 · 基于公开信息整理，仅供研究参考
+</div>
+
+</body>
+</html>
