@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全球动态简报 | 2026-09-06</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #f4f6f9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1a2639;
+      padding: 24px 16px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      border-left: 6px solid #0d6efd;
+      padding-left: 14px;
+    }
+    .subhead {
+      color: #5f6b7a;
+      font-size: 14px;
+      margin-bottom: 24px;
+      padding-left: 20px;
+    }
+    /* overview */
+    .overview {
+      background-color: #eef3fb;
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 28px;
+    }
+    .overview h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .overview p {
+      font-size: 15px;
+      color: #2c3e50;
+    }
+    .overview-tags {
+      margin-top: 12px;
+    }
+    .overview-tag {
+      display: inline-block;
+      background-color: #d4e2fc;
+      color: #0b3b8c;
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-right: 8px;
+      margin-bottom: 4px;
+    }
+    /* 板块样式 */
+    .section {
+      margin-top: 28px;
+    }
+    .section-title {
+      font-size: 19px;
+      font-weight: 700;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e6eaf0;
+      margin-bottom: 20px;
+    }
+    /* 新闻卡片 */
+    .news-card {
+      background-color: #fafbfd;
+      border: 1px solid #e9edf3;
+      border-radius: 12px;
+      padding: 18px 18px 12px 18px;
+      margin-bottom: 18px;
+    }
+    .item-header {
+      margin-bottom: 8px;
+    }
+    .item-title {
+      font-size: 17px;
+      font-weight: 700;
+      display: inline;
+      color: #0b2b4f;
+    }
+    .badge-group {
+      margin-top: 6px;
+    }
+    .badge {
+      display: inline-block;
+      background-color: #eef1f5;
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-right: 8px;
+      color: #2c3e50;
+    }
+    .impact {
+      font-weight: 700;
+      margin-right: 8px;
+    }
+    .impact-high {
+      color: #b02a37;
+    }
+    .impact-med {
+      color: #b86b00;
+    }
+    .impact-low {
+      color: #1e6f5c;
+    }
+    .risk-red {
+      background-color: #fce4e4;
+      color: #b02a37;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .risk-yellow {
+      background-color: #fff3cd;
+      color: #664d03;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .item-summary {
+      font-size: 15px;
+      margin: 12px 0 10px 0;
+      color: #2f3b4c;
+    }
+    .num-up {
+      background-color: #e1f7e7;
+      color: #0b6e38;
+      font-weight: 700;
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+    .num-down {
+      background-color: #fee7e7;
+      color: #b02a37;
+      font-weight: 700;
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+    .num-key {
+      background-color: #eef1f5;
+      color: #1a2639;
+      font-weight: 700;
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+    /* bilingual */
+    .bilingual {
+      background-color: #f2f6fc;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 12px 0 10px 0;
+    }
+    .en-title {
+      font-weight: 700;
+      font-size: 15px;
+      color: #0d3b66;
+      margin-bottom: 6px;
+    }
+    .en-summary {
+      font-size: 14px;
+      color: #1e3a5f;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+    .vocab-card {
+      background-color: #e4ecf9;
+      border-radius: 6px;
+      padding: 8px 10px;
+    }
+    .vocab-title {
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+    .vocab-item {
+      display: inline-block;
+      background-color: #ffffff;
+      border-radius: 20px;
+      padding: 2px 8px;
+      font-size: 12px;
+      margin-right: 6px;
+      margin-bottom: 3px;
+    }
+    /* compare box */
+    .compare-box {
+      display: block;
+      background-color: #f3f2e9;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 16px 0 16px 0;
+      border-left: 4px solid #d4a72c;
+    }
+    .compare-side {
+      display: inline-block;
+      width: 45%;
+      vertical-align: top;
+      font-size: 14px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin: 0 6px 6px 0;
+    }
+    .compare-bull {
+      border-top: 3px solid #1e8e5a;
+    }
+    .compare-bear {
+      border-top: 3px solid #c0392b;
+    }
+    .compare-label {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    /* deepdive */
+    .deepdive {
+      margin: 12px 0 8px 0;
+      background-color: #f7f9fc;
+      border-radius: 8px;
+      padding: 4px 8px;
+    }
+    .deepdive summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      color: #1f3a6b;
+      padding: 6px 0;
+    }
+    .deepdive-content {
+      padding: 8px 0 8px 0;
+    }
+    .dl {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .dl-label {
+      font-weight: 700;
+    }
+    /* source */
+    .item-source {
+      font-size: 12px;
+      color: #6c7a89;
+      margin-top: 8px;
+      border-top: 1px dashed #dce2ea;
+      padding-top: 8px;
+    }
+    .item-source a {
+      color: #0d6efd;
+      text-decoration: none;
+    }
+    /* 趋势评论 */
+    .trend-comment {
+      background-color: #f0f4fa;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin: 16px 0 8px 0;
+      font-size: 14px;
+      border-left: 4px solid #0d6efd;
+    }
+    /* timeline */
+    .timeline {
+      background-color: #fdf8e7;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-top: 24px;
+      border: 1px solid #f0dfb8;
+    }
+    .timeline h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .timeline-item {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .timeline-date {
+      display: inline-block;
+      background-color: #e7d9b8;
+      border-radius: 20px;
+      padding: 2px 10px;
+      font-weight: 600;
+      margin-right: 12px;
+      font-size: 13px;
+    }
+    .footer-note {
+      margin-top: 24px;
+      font-size: 12px;
+      color: #7e8b9a;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 综述模块 -->
+  <div class="overview">
+    <h3>🧠 今日全球动态综述</h3>
+    <p>今日信号聚焦于中美高层互动预期升温，白宫确认国宴邀请习近平，同时美中科技战持续外溢至贸易与制裁合规领域。AI产业进入“多模态混合”与“智能体竞争”新阶段，OpenAI与Nvidia领跑突破。生命科学领域突破奖授予基因编辑先驱，临床转化加速。整体风向：地缘政治风险与科技机遇并存，经济展现韧性但合规压力陡增。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🇨🇳 中美高层外交</span>
+      <span class="overview-tag">🤖 GPT-6.5时代</span>
+      <span class="overview-tag">🧬 基因编辑获奖</span>
+      <span class="overview-tag">💼 出口管制合规</span>
+      <span class="overview-tag">📊 贸易韧性</span>
+    </div>
+  </div>
+
+  <!-- 板块：生命科学/医学 -->
+  <div class="section">
+    <div class="section-title">🧬 生命科学 / 医学</div>
+
+    <!-- 新闻1 -->
+    <div class="news-card">
+      <div class="item-header">
+        <span class="item-title">2026科学突破奖：基因编辑与AAV疗法获最高荣誉</span>
+        <div class="badge-group">
+          <span class="badge">⭐⭐⭐⭐⭐</span>
+          <span class="impact impact-high">冲击：High</span>
+          <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        被誉为“科学界奥斯卡”的2026年突破奖揭晓，AAV基因疗法与CRISPR基因编辑先驱获奖。单项奖金高达<span class="num-key">300万美元</span>，凸显基因医学临床转化的里程碑意义。这是基因编辑领域连续第三年获得顶级科学奖项，预计将加速罕见病疗法研发管线扩张。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">2026 Breakthrough Prize: Gene Editing & AAV Therapies Take Center Stage</p>
+        <p class="en-summary">The 2026 Breakthrough Prize honored pioneers of AAV gene therapy and CRISPR gene editing, each receiving a $3 million award. This recognition underscores the accelerating clinical translation of genetic medicine.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>gene editing</b> 基因编辑</span>
+            <span class="vocab-item"><b>AAV vector</b> 腺相关病毒载体</span>
+            <span class="vocab-item"><b>clinical translation</b> 临床转化</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>突破奖旨在奖励顶尖基础科学，本次聚焦基因编辑工具箱与递送系统，好比授予“基因剪刀”与“精准货车”的发明者。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）：更多体内基因疗法进入临床III期；中期（3-10年）：有望覆盖镰刀型贫血、某些遗传性失明等数十种单基因病。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来基因缺陷可能在出生前被修正，家庭遗传病史成为历史。但伦理与可及性鸿沟将成核心社会议题。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://news.qq.com/rain/a/20260419A066S000" target="_blank">腾讯新闻 / Breakthrough Prize</a></p>
+    </div>
+
+    <!-- 新闻2 -->
+    <div class="news-card">
+      <div class="item-header">
+        <span class="item-title">未来科学大奖揭晓，华人科学家主导多项突破</span>
+        <div class="badge-group">
+          <span class="badge">⭐⭐⭐⭐</span>
+          <span class="impact impact-med">冲击：Med</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        有“中国诺贝尔奖”之称的未来科学大奖于8月中旬揭晓，奖励涵盖生命科学、物质科学等领域。获奖者包括在<span class="num-key">单细胞测序</span>与新型<span class="num-key">碳纳米材料</span>方面做出开创性贡献的学者，展示中国基础科研的快速崛起。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Future Science Prize 2026 Announced: Celebrating Chinese Scientific Leadership</p>
+        <p class="en-summary">The 2026 Future Science Prize recognized breakthroughs in single-cell sequencing and carbon nanomaterials. The award highlights China's growing influence in fundamental research.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>single-cell sequencing</b> 单细胞测序</span>
+            <span class="vocab-item"><b>carbon nanomaterial</b> 碳纳米材料</span>
+            <span class="vocab-item"><b>fundamental research</b> 基础研究</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>未来科学大奖是大中华区最具影响力的民间科学奖项，常被视为诺奖风向标。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>单细胞测序推动肿瘤微环境精准分型；纳米材料可能革新柔性电子与高效催化。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当基础研究转化为国产创新药与尖端材料，中国将从“制造大国”转型“科学强国”。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.sohu.com/a/1062700316_121106842" target="_blank">搜狐科技</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：基因编辑连续获重磅奖项，资本与人才将进一步涌入。CRISPR赛道从科研走向产业化，未来三年关键看体内递送效率与脱靶控制。中国科学家在单细胞领域逐渐领跑，但原创底层工具仍待突破。</div>
+  </div>
+
+  <!-- 板块：经济/金融 -->
+  <div class="section">
+    <div class="section-title">💰 经济 / 金融</div>
+
+    <!-- 新闻1 -->
+    <div class="news-card">
+      <div class="item-header">
+        <span class="item-title">麦肯锡：2025年全球贸易未现萎缩，展现惊人韧性</span>
+        <div class="badge-group">
+          <span class="badge">⭐⭐⭐⭐⭐</span>
+          <span class="impact impact-med">冲击：Med</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        麦肯锡全球研究院更新报告指出，尽管中美关税上调，2025年全球贸易量并未收缩，美国进口与出口均小幅增长。但贸易“地理几何”正在重塑，友岸外包与近岸化趋势明显，<span class="num-key">供应链重组</span>成本约占总贸易额<span class="num-key">3%</span>。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">McKinsey: Global Trade Showed Resilience in 2025 Despite Tariffs</p>
+        <p class="en-summary">Global trade defied dire predictions in 2025. US imports and exports both grew modestly, yet the geometry of trade is shifting toward regional blocs, increasing structural costs by roughly 3%.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>friend-shoring</b> 友岸外包</span>
+            <span class="vocab-item"><b>supply chain reconfiguration</b> 供应链重构</span>
+            <span class="vocab-item"><b>trade resilience</b> 贸易韧性</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>全球贸易没有像悲观者预测那样崩溃，而是像水流遇到岩石般改变路径。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>墨西哥、越南等中转国受益；跨国企业不得不建立“双轨供应链”增加成本。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来可能出现“板块化全球化”——美洲、欧洲、亚洲内部贸易紧密，跨板块流动减少，效率与安全重新平衡。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.mckinsey.com/~/media/mckinsey/mckinsey+global+institute/our+research/geopolitics+and+the+geometry+of+global+trade+2026+update/geopolitics-and-the-geometry-of-global-trade-2026-update.pdf" target="_blank">麦肯锡全球研究院</a></p>
+    </div>
+
+    <!-- 新闻2 -->
+    <div class="news-card">
+      <div class="item-header">
+        <span class="item-title">中美贸易月度报告：跨国企业面临双重合规挑战</span>
+        <div class="badge-group">
+          <span class="badge">⭐⭐⭐⭐</span>
+          <span class="impact impact-high">冲击：High</span>
+          <span class="risk-red">🔴 重大风险</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        2026年7月贸易数据显示，美中在出口管制与投资限制上呈现“逐月加码”态势。多家跨国企业反映，同时满足两国法规的合规成本上升<span class="num-up">+40%</span>。半导体、AI、量子计算成为管制重叠区。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">US-China Trade Monthly: Compliance Burden Intensifies for MNCs</p>
+        <p class="en-summary">The July 2026 report highlights escalating export controls and overlapping sanctions, raising compliance costs by 40% for multinationals. Semiconductors and AI are the most affected sectors.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>export controls</b> 出口管制</span>
+            <span class="vocab-item"><b>compliance burden</b> 合规负担</span>
+            <span class="vocab-item"><b>overlapping sanctions</b> 重叠制裁</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中美各自建立“合规围墙”，跨国企业如同在两道高压电网间行走。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>企业需要建立独立的中美合规团队，甚至拆分业务线。半导体设备、EDA工具是重灾区。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>技术世界可能彻底分裂成“美系”与“中系”两套标准，全球科技企业必须选边站。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.mondaq.com/unitedstates/export-controls-trade-investment-sanctions/1819084/us-china-trade-monthly-july-2026" target="_blank">Mondaq</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：贸易数据比预期乐观，但合规风险陡增。企业利润被合规成本侵蚀，金融机构也在收紧对涉中业务的风险定价。未来半年，出口管制清单更新频率将是关键观察指标。</div>
+  </div>
+
+  <!-- 板块：人工智能 -->
+  <div class="section">
+    <div class="section-title">🤖 人工智能</div>
+
+    <!-- 新闻1 -->
+    <div class="news-card">
+      <div class="item-header">
+        <span class="item-title">OpenAI发布GPT-6 Astra，宣布“AGI时代”开启</span>
+        <div class="badge-group">
+          <span class="badge">⭐⭐⭐⭐⭐</span>
+          <span class="impact impact-high">冲击：High</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        9月3日OpenAI正式发布GPT-6 Astra，声称推理能力较GPT-5.6提升<span class="num-up">+180%</span>，多模态理解接近人类专家水平。OpenAI首席执行官称“AGI时代序幕已拉开”，但业界对安全对齐仍存疑虑。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">OpenAI Launches GPT-6 Astra, Declaring Dawn of AGI Era</p>
+        <p class="en-summary">GPT-6 Astra demonstrates a 180% reasoning improvement over GPT-5.6, with near-expert multimodal understanding. OpenAI frames this as the beginning of the AGI era.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>artificial general intelligence</b> 通用人工智能</span>
+            <span class="vocab-item"><b>multimodal reasoning</b> 多模态推理</span>
+            <span class="vocab-item"><b>safety alignment</b> 安全对齐</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>GPT-6像一位通晓各学科知识、能快速推理的“数字博士”。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期赋能科研辅助、高级编程；长期可能重塑白领知识工作，但需谨慎处理错误信息与滥用。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若AGI安全可控，人类或迎来“超级助手”时代。但失控风险可能导致社会信任危机。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://bizfreak.co.jp/blog/1jw6w-0ft6k" target="_blank">BizFreak / AI News</a></p>
+    </div>
+
+    <!-- 新闻2 -->
+    <div class="news-card">
+      <div class="item-header">
+        <span class="item-title">Google DeepMind 发布 Muse Spark 1.3 + Gemini 3.8 Flash</span>
+        <div class="badge-group">
+          <span class="badge">⭐⭐⭐⭐</span>
+          <span class="impact impact-med">冲击：Med</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        9月3-4日Google DeepMind密集发布模型更新：Gemini 3.8 Flash主打低延迟边缘应用，Muse Spark 1.3专注生成式视频与3D内容。两大模型均强调端侧运行效率，模型参数压缩比达<span class="num-key">12:1</span>。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Google DeepMind Unveils Gemini 3.8 Flash and Muse Spark 1.3</p>
+        <p class="en-summary">DeepMind's latest models target on-device AI and generative video. Gemini 3.8 Flash achieves a 12:1 compression ratio, enabling real-time mobile applications.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>on-device AI</b> 端侧AI</span>
+            <span class="vocab-item"><b>model compression</b> 模型压缩</span>
+            <span class="vocab-item"><b>generative video</b> 生成式视频</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是AI从“云端巨人”走向“口袋精灵”的关键一步。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>手机、汽车、IoT设备将获得强大本地智能，隐私性更强。视频生成将进入专业创作领域。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来每个人的终端都是“私人AI工作室”，但深度伪造检测将成刚需。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://tech-noisy.com/2026/09/05/ai-daily-news-2026-09-04/" target="_blank">Tech-Noisy</a></p>
+    </div>
+
+    <!-- 新闻3 -->
+    <div class="news-card">
+      <div class="item-header">
+        <span class="item-title">OpenAI启动“Daybreak”网络防御计划</span>
+        <div class="badge-group">
+          <span class="badge">⭐⭐⭐⭐</span>
+          <span class="impact impact-med">冲击：Med</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        9月4日OpenAI宣布“Daybreak for Frontline”计划，利用AI agent自动检测并修复软件零日漏洞。试点期间发现漏洞速度较传统方法提升<span class="num-up">+350%</span>，引起网络安全界高度关注。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">OpenAI Launches 'Daybreak' Cyber Defense Initiative</p>
+        <p class="en-summary">The Daybreak program uses autonomous AI agents to identify zero-day vulnerabilities. In pilot tests, it discovered flaws 350% faster than traditional methods.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>zero-day exploit</b> 零日漏洞</span>
+            <span class="vocab-item"><b>autonomous agent</b> 自主智能体</span>
+            <span class="vocab-item"><b>cyber defense</b> 网络防御</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>让AI担任“网络哨兵”，全天候扫描代码漏洞。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>安全运维将从“人工响应”转向“AI自动化”，但恶意利用风险需严格管控。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来的网络攻击可能变成“AI对AI”的军备竞赛，人类只做最终决策。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://tech-noisy.com/2026/09/05/ai-daily-news-2026-09-04/" target="_blank">Tech-Noisy / OpenAI</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI竞赛从“参数竞赛”转向“应用与安全”双线并行。OpenAI、DeepMind等头部玩家加速布局端侧与防御场景。值得注意的是，中国DeepSeek等公司虽未见今日重大发布，但生态持续扩张。未来监管将聚焦自动化智能体的责任归属。</div>
+  </div>
+
+  <!-- 板块：科技/硬科技 -->
+  <div class="section">
+    <div class="section-title">💻 科技 / 硬科技</div>
+
+    <!-- 新闻1 -->
+    <div class="news-card">
+      <div class="item-header">
+        <span class="item-title">Nvidia与华为竞逐智能终端芯片，2nm工艺成焦点</span>
+        <div class="badge-group">
+          <span class="badge">⭐⭐⭐⭐</span>
+          <span class="impact impact-high">冲击：High</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        据行业消息，Nvidia下一代消费级GPU将采用<span class="num-key">2nm</span>工艺，预计能效提升<span class="num-up">+45%</span>。同时华为海思正加速推进自家先进封装与芯片堆叠技术，以应对先进制程限制。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Nvidia and Huawei Race on 2nm Chips, Advanced Packaging</p>
+        <p class="en-summary">Nvidia's next-gen GPUs will adopt 2nm process, improving energy efficiency by 45%. Meanwhile, Huawei accelerates advanced packaging to circumvent process restrictions.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>2nm process</b> 2纳米制程</span>
+            <span class="vocab-item"><b>advanced packaging</b> 先进封装</span>
+            <span class="vocab-item"><b>chip stacking</b> 芯片堆叠</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>芯片制程微缩接近物理极限，先进封装成为新的性能突破口。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>2nm将在2027年量产，而华为的堆叠技术可能在成熟制程上实现高性能替代。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来芯片性能不再靠“单核”而靠“系统级集成”，算力将像水电一样即取即用。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.huawei.com/cn/" target="_blank">华为官网 / 行业综合</a></p>
+    </div>
+
+    <!-- 新闻2 -->
+    <div class="news-card">
+      <div class="item-header">
+        <span class="item-title">2026开年全球硬科技突破密集，量子与6G领跑</span>
+        <div class="badge-group">
+          <span class="badge">⭐⭐⭐⭐</span>
+          <span class="impact impact-med">冲击：Med</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        综合报道显示，2026年1-2月全球涌现几十项硬科技突破，涵盖量子计算、6G、可控核聚变、AI芯片等。中国在量子通信与新能源领域表现突出，被部分媒体评价为“领跑全球创新”。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Global Hard-Tech Breakthroughs in Early 2026: Quantum & 6G Lead</p>
+        <p class="en-summary">In the first two months of 2026, dozens of breakthroughs emerged in quantum computing, 6G, and fusion. China excels in quantum communication and new energy.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>quantum communication</b> 量子通信</span>
+            <span class="vocab-item"><b>6G network</b> 第六代网络</span>
+            <span class="vocab-item"><b>nuclear fusion</b> 核聚变</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是底层技术的“寒武纪大爆发”，各国都在抢占下一代技术制高点。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>6G预计2030年商用，量子计算将在5年内实现特定问题纠错优势。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当量子计算+AI+6G融合，数字世界与物理世界的边界将被彻底打破。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.toutiao.com/article/7609345177082004002/" target="_blank">今日头条综合</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技进入“多线突破”阶段，但地缘限制让技术路线出现分流：一方追求极致制程，另一方用架构创新绕行。半导体产业将出现“一个世界，两套系统”的格局。</div>
+  </div>
+
+  <!-- 板块：材料科学 -->
+  <div class="section">
+    <div class="section-title">🔬 材料科学</div>
+
+    <!-- 新闻1 -->
+    <div class="news-card">
+      <div class="item-header">
+        <span class="item-title">碳纳米材料获未来科学大奖，柔性电子或迎突破</span>
+        <div class="badge-group">
+          <span class="badge">⭐⭐⭐⭐</span>
+          <span class="impact impact-med">冲击：Med</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        2026未来科学大奖物质科学奖授予碳纳米材料领域，获奖者开发出高纯度<span class="num-key">单手性碳纳米管</span>制备技术，纯度超<span class="num-up">99.9%</span>。该材料有望用于超低功耗晶体管与柔性显示屏。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Carbon Nanotube Breakthrough Wins Future Science Prize</p>
+        <p class="en-summary">The prize honors a technique for producing single-chirality carbon nanotubes with 99.9% purity, enabling low-power transistors and flexible displays.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>single-chirality</b> 单手性</span>
+            <span class="vocab-item"><b>carbon nanotube</b> 碳纳米管</span>
+            <span class="vocab-item"><b>flexible display</b> 柔性显示</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>碳纳米管如同“超级细导线”，能大幅降低芯片功耗。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期用于传感器；中长期可能取代硅，制造可弯曲的电子皮肤。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来手机可以像纸一样折叠，植入式医疗电子与人体无缝融合。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.sohu.com/a/1062700316_121106842" target="_blank">搜狐科技</a></p>
+    </div>
+
+    <!-- 新闻2 -->
+    <div class="news-card">
+      <div class="item-header">
+        <span class="item-title">Nature刊文：新型固态电解质实现室温超离子电导</span>
+        <div class="badge-group">
+          <span class="badge">⭐⭐⭐⭐⭐</span>
+          <span class="impact impact-high">冲击：High</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        Nature最新研究报道一种新型固态电解质材料，在室温下离子电导率达<span class="num-key">25 mS/cm</span>，较传统氧化物提升<span class="num-up">+200%</span>。这为高能量密度固态电池的商业化扫清一大障碍。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Nature: New Solid Electrolyte Enables Record Ion Conductivity</p>
+        <p class="en-summary">A novel solid electrolyte achieves 25 mS/cm at room temperature, 200% higher than conventional oxides, paving the way for high-density solid-state batteries.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>solid electrolyte</b> 固态电解质</span>
+            <span class="vocab-item"><b>ionic conductivity</b> 离子电导率</span>
+            <span class="vocab-item"><b>solid-state battery</b> 固态电池</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>固态电池如同把“液体燃料”换成“固体燃料”，更安全、能量更密。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>电动汽车续航有望突破<span class="num-key">1000公里</span>，2028年前后或小批量装车。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>充电焦虑成为历史，储能成本下降将加速光伏、风电普及。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/" target="_blank">Nature</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学进入“精准调控”时代，无论是碳纳米管的纯度控制还是固态电解质的离子通道设计，都强调原子级工程。这些技术是新能源与下一代半导体的共同基石。</div>
+  </div>
+
+  <!-- 板块：中国政策与监管 -->
+  <div class="section">
+    <div class="section-title">🇨🇳 中国政策与监管</div>
+
+    <!-- 新闻1 -->
+    <div class="news-card">
+      <div class="item-header">
+        <span class="item-title">国家科技奖励大会举行，现“27年来首次”改革</span>
+        <div class="badge-group">
+          <span class="badge">⭐⭐⭐⭐⭐</span>
+          <span class="impact impact-high">冲击：High</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        2026年7月国家科学技术奖励大会召开，宣布“27年来首次”调整奖励结构：增设<span class="num-key">青年科技奖</span>与<span class="num-key">企业创新奖</span>，强调基础研究与产业转化并重。最高奖奖金提高至<span class="num-key">1000万元</span>。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">China's National Science Awards Undergo First Reform in 27 Years</p>
+        <p class="en-summary">China restructured its top science awards, adding youth and enterprise innovation categories. The top prize money increased to 10 million yuan.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>science award reform</b> 科技奖励改革</span>
+            <span class="vocab-item"><b>basic research</b> 基础研究</span>
+            <span class="vocab-item"><b>industrial application</b> 产业应用</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>国家将科研指挥棒从“论文数量”转向“实际贡献”。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>青年科学家将获得更多资源，企业牵头项目比例上升。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>中国创新体系从“跟跑”转向“并跑”，产生更多原创性、颠覆性技术。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.toutiao.com/article/7662275038322704930/" target="_blank">今日头条</a></p>
+    </div>
+
+    <!-- 新闻2 -->
+    <div class="news-card">
+      <div class="item-header">
+        <span class="item-title">华为鸿蒙AI手机密集发布，终端生态加速自主</span>
+        <div class="badge-group">
+          <span class="badge">⭐⭐⭐⭐</span>
+          <span class="impact impact-med">冲击：Med</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        华为官网与商城更新显示，Mate/Pura系列新机预装鸿蒙AI 5.0，强调端侧大模型与星闪连接技术。华为终端出货量在2026年Q2同比增长<span class="num-up">+68%</span>，国内高端市场占有率回升至<span class="num-key">24%</span>。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Huawei's HarmonyOS AI Phones Drive Ecosystem Self-Reliance</p>
+        <p class="en-summary">Huawei's new phones feature HarmonyOS AI 5.0 with on-device LLMs. Shipments grew 68% YoY in Q2 2026, regaining 24% share in China's high-end market.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>on-device LLM</b> 端侧大模型</span>
+            <span class="vocab-item"><b>ecosystem</b> 生态</span>
+            <span class="vocab-item"><b>high-end market share</b> 高端市场份额</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>华为摆脱对安卓的依赖，打造完全自主的软件+硬件闭环。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>鸿蒙生态设备数已超<span class="num-key">9亿</span>，未来将向物联网、车载系统延伸。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>中国消费电子形成“鸿蒙+麒麟”双引擎，不再受外部断供掣肘。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://consumer.huawei.com/cn/phones/" target="_blank">华为消费者业务官网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策正强力引导“科技自立”，从奖励机制到终端生态，全链条推动自主创新。同时，对基础研究的重视程度提高，预示着未来5-10年原始创新将明显增多。</div>
+  </div>
+
+  <!-- 板块：地缘政治与国际关系 -->
+  <div class="section">
+    <div class="section-title">🌍 地缘政治与国际关系</div>
+
+    <!-- 新闻1 -->
+    <div class="news-card">
+      <div class="item-header">
+        <span class="item-title">特朗普确认白宫设国宴招待习近平，中美互动升温</span>
+        <div class="badge-group">
+          <span class="badge">⭐⭐⭐⭐⭐</span>
+          <span class="impact impact-high">冲击：High</span>
+          <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        据VOA中文报道，特朗普总统确认将在白宫以国宴规格招待习近平主席。据报中国大型经贸代表团或随行，可能探讨关税减免与采购协议。这是自<span class="num-key">2017年</span>以来首次正式国宴级会晤。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Trump Confirms State Banquet for Xi Jinping at White House</p>
+        <p class="en-summary">President Trump confirmed a state dinner for China's leader Xi Jinping, possibly accompanied by a large trade delegation. Talks may cover tariff relief and procurement deals.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>state banquet</b> 国宴</span>
+            <span class="vocab-item"><b>trade delegation</b> 贸易代表团</span>
+            <span class="vocab-item"><b>tariff relief</b> 关税减免</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是全球最重要双边关系的“破冰”信号，外交象征意义巨大。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>若达成部分关税豁免，将利好两国股市与全球供应链。但技术管制分歧仍深。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>两个超级大国找到“竞争性共存”模式，世界或从“对抗”转向“谈判”。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.voachinese.com/z/1776" target="_blank">美国之音中文网</a></p>
+    </div>
+
+    <!-- 新闻2 -->
+    <div class="news-card">
+      <div class="item-header">
+        <span class="item-title">2026地缘风险展望：冲突、制裁与市场波动</span>
+        <div class="badge-group">
+          <span class="badge">⭐⭐⭐⭐</span>
+          <span class="impact impact-high">冲击：High</span>
+          <span class="risk-red">🔴 重大风险</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        Convex地缘风险报告指出，2026年全球面临<span class="num-key">38个</span>活跃冲突点，为冷战结束以来最高。制裁数量同比增加<span class="num-up">+22%</span>，涉及国家超<span class="num-key">45个</span>。市场波动率指数（VIX）均值预测上调至<span class="num-key">24</span>。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">2026 Geopolitical Risk Outlook: High Conflict & Sanctions</p>
+        <p class="en-summary">The report identifies 38 active conflict zones, the highest since the Cold War. Sanctions grew 22% YoY, impacting over 45 countries. VIX forecast raised to 24.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>conflict zone</b> 冲突区域</span>
+            <span class="vocab-item"><b>sanctions regime</b> 制裁制度</span>
+            <span class="vocab-item"><b>volatility index</b> 波动率指数</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>世界进入“多危机”常态，地缘摩擦与金融风险交织。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>航运保险、能源价格、粮食安全将持续承压，避险资产需求上升。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若多边机制失效，区域安全组织将扮演更重要角色，全球治理碎片化加剧。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://convextrade.com/outlook/geopolitics" target="_blank">Convex Trade</a></p>
+    </div>
+
+    <!-- 新闻3 -->
+    <div class="news-card">
+      <div class="item-header">
+        <span class="item-title">美中战略竞争：经济治国术重塑全球金融格局</span>
+        <div class="badge-group">
+          <span class="badge">⭐⭐⭐⭐</span>
+          <span class="impact impact-med">冲击：Med</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        ICLG报告分析，美国利用金融制裁与美元霸权作为对华竞争核心工具。2026年，超过<span class="num-key">30家</span>中资企业被列入实体清单，涉及AI、生物科技领域。全球银行正加速开发替代SWIFT系统。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">US-China Strategic Competition Reshapes Global Finance</p>
+        <p class="en-summary">The US increasingly uses financial sanctions as leverage. Over 30 Chinese firms were added to the entity list in 2026. Banks are accelerating SWIFT alternatives.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>economic statecraft</b> 经济治国术</span>
+            <span class="vocab-item"><b>entity list</b> 实体清单</span>
+            <span class="vocab-item"><b>SWIFT alternative</b> SWIFT替代系统</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>美元武器化迫使各国寻找“金融备胎”。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>人民币跨境支付系统（CIPS）交易量上升<span class="num-up">+35%</span>，多边央行数字货币桥项目扩容。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来可能出现“数字货币双极”体系，美元地位受到挑战但短期难被取代。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://iclg.com/practice-areas/sanctions/01-u-s-china-strategic-competition-and-the-impact-of-economic-statecraft-on-global-financial-institutions-and-corporates" target="_blank">ICLG</a></p>
+    </div>
+
+    <!-- compare-box 对立观点 -->
+    <div class="compare-box">
+      <div class="compare-side compare-bull">
+        <div class="compare-label">📈 乐观方</div>
+        中美国宴外交或缓和关税，全球贸易韧性超预期，2026年经济“软着陆”概率上升。
+      </div>
+      <div class="compare-side compare-bear">
+        <div class="compare-label">📉 悲观方</div>
+        制裁数量创纪录，技术脱钩不可逆，金融体系碎片化将推高全球通胀与波动。
+      </div>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘政治出现“外交通道打开，技术围堵加深”的背离现象。短期看国宴外交带来交易性机会，但长期结构性竞争未变。企业必须做好“双轨运营”准备。</div>
+  </div>
+
+  <!-- 时间线模块 -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-09-15</span>
+      <span>白宫国宴筹备窗口，中美经贸磋商可能公布初步成果</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-10-01</span>
+      <span>美国商务部或更新实体清单（季度审查）</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-11-03</span>
+      <span>美国中期选举，影响下阶段对华政策基调</span>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    — 全球动态简报 · 基于公开信息整理，不构成投资建议 —
+  </div>
+
+</div>
+</body>
+</html>
