@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌐 全球动态简报 | 2026-09-08</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #f4f6f9;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #1a1a1a;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      padding: 30px 25px;
+    }
+    .header {
+      text-align: center;
+      border-bottom: 2px solid #1a1a1a;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .header .date {
+      font-size: 15px;
+      color: #666;
+      font-weight: 400;
+      margin-top: 4px;
+    }
+    .overview {
+      background-color: #edf1f7;
+      border-left: 6px solid #0a2540;
+      padding: 20px 25px;
+      margin-bottom: 30px;
+      border-radius: 0 10px 10px 0;
+    }
+    .overview h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #0a2540;
+    }
+    .overview p {
+      font-size: 15px;
+      color: #222;
+    }
+    .overview-tags {
+      margin-top: 15px;
+    }
+    .overview-tag {
+      display: inline-block;
+      background-color: #0a2540;
+      color: #ffffff;
+      border-radius: 30px;
+      padding: 4px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-right: 8px;
+      margin-top: 5px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      border-bottom: 2px solid #dce1e8;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+      margin-top: 25px;
+    }
+    .item {
+      background-color: #fafbfc;
+      border: 1px solid #e4e8ee;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+    }
+    .item-header {
+      margin-bottom: 12px;
+    }
+    .item-header .title-row {
+      display: block;
+      margin-bottom: 6px;
+    }
+    .item-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0a2540;
+      text-decoration: none;
+      line-height: 1.4;
+    }
+    .meta-tags {
+      margin-top: 8px;
+    }
+    .star {
+      color: #f5a623;
+      letter-spacing: 2px;
+      font-size: 14px;
+    }
+    .badge {
+      display: inline-block;
+      background-color: #eef1f5;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 12px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+    .impact {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .impact-high {
+      background-color: #fdeaea;
+      color: #b00020;
+    }
+    .impact-med {
+      background-color: #fff4e5;
+      color: #b45f06;
+    }
+    .impact-low {
+      background-color: #e9f5e9;
+      color: #1e7b4f;
+    }
+    .risk-red {
+      background-color: #fdeaea;
+      color: #b00020;
+      border-radius: 20px;
+      padding: 2px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-left: 6px;
+    }
+    .risk-yellow {
+      background-color: #fff4e5;
+      color: #b45f06;
+      border-radius: 20px;
+      padding: 2px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-left: 6px;
+    }
+    .item-summary {
+      background-color: #ffffff;
+      border-left: 4px solid #0a2540;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+      font-size: 15px;
+      border-radius: 0 8px 8px 0;
+    }
+    .num-up {
+      background-color: #e3f2e8;
+      font-weight: 700;
+      padding: 0 5px;
+      border-radius: 4px;
+      color: #1e7b4f;
+    }
+    .num-down {
+      background-color: #fde8e8;
+      font-weight: 700;
+      padding: 0 5px;
+      border-radius: 4px;
+      color: #b00020;
+    }
+    .num-key {
+      background-color: #e9edf2;
+      font-weight: 700;
+      padding: 0 5px;
+      border-radius: 4px;
+      color: #0a2540;
+    }
+    .bilingual {
+      background-color: #f2f5fa;
+      border-radius: 10px;
+      padding: 16px;
+      margin: 15px 0;
+      border: 1px solid #d9e0eb;
+    }
+    .en-title {
+      font-weight: 700;
+      font-size: 15px;
+      color: #0a2540;
+      margin-bottom: 4px;
+    }
+    .en-summary {
+      font-size: 14px;
+      color: #333;
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+    .vocab-card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 12px;
+      border: 1px solid #e0e4ea;
+    }
+    .vocab-title {
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 8px;
+      color: #0a2540;
+    }
+    .vocab-list span {
+      display: inline-block;
+      background-color: #eef1f5;
+      border-radius: 16px;
+      padding: 2px 12px;
+      font-size: 13px;
+      margin: 3px 4px 3px 0;
+    }
+    .vocab-item b {
+      font-weight: 700;
+    }
+    .compare-box {
+      display: inline-block;
+      width: 100%;
+      margin: 15px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #d0d7e0;
+    }
+    .compare-side {
+      display: inline-block;
+      width: 49%;
+      padding: 15px;
+      vertical-align: top;
+      font-size: 14px;
+      background-color: #ffffff;
+    }
+    .compare-bull {
+      background-color: #e8f4ed;
+    }
+    .compare-bear {
+      background-color: #fdeaea;
+    }
+    .compare-label {
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+    .deepdive {
+      margin-top: 12px;
+      border: 1px solid #d0d7e0;
+      border-radius: 10px;
+      background-color: #ffffff;
+    }
+    .deepdive summary {
+      cursor: pointer;
+      font-weight: 600;
+      padding: 12px 16px;
+      background-color: #f2f5fa;
+      border-radius: 10px 10px 0 0;
+      font-size: 14px;
+      color: #0a2540;
+    }
+    .deepdive-content {
+      padding: 16px;
+      border-top: 1px solid #e0e4ea;
+    }
+    .dl {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    .dl-label {
+      font-weight: 700;
+    }
+    .item-source {
+      font-size: 13px;
+      color: #777;
+      margin-top: 10px;
+      border-top: 1px dashed #ccc;
+      padding-top: 10px;
+    }
+    .item-source a {
+      color: #0a6fc2;
+      text-decoration: none;
+    }
+    .trend-comment {
+      background-color: #f0f4fa;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-top: 10px;
+      font-size: 14px;
+      border-left: 4px solid #5a7ea0;
+      color: #1d2a3a;
+    }
+    .timeline {
+      background-color: #fdf9e7;
+      border: 1px solid #eadfae;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 30px;
+    }
+    .timeline h4 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #594300;
+    }
+    .timeline-item {
+      margin-bottom: 10px;
+      font-size: 15px;
+      border-bottom: 1px dotted #d0c48a;
+      padding-bottom: 6px;
+    }
+    .timeline-date {
+      font-weight: 700;
+      background-color: #eae3c0;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin-right: 12px;
+      display: inline-block;
+    }
+    .footer {
+      text-align: center;
+      font-size: 13px;
+      color: #888;
+      border-top: 1px solid #e0e4ea;
+      padding-top: 20px;
+      margin-top: 30px;
+    }
+    .footer a {
+      color: #0a6fc2;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- Header -->
+  <div class="header">
+    <h1>🌐 全球动态简报</h1>
+    <div class="date">2026年9月8日 · 星期二 · 前沿科技与地缘脉搏</div>
+  </div>
+
+  <!-- 第一步：综述模块 -->
+  <div class="overview">
+    <h3>🧠 今日综述</h3>
+    <p>今日全球简报焦点集中在AI推理效率的“军备竞赛”升温，OpenAI“Jalapeño”项目与DeepSeek-V3.1形成东西方对垒态势。生命科学领域基础定义与临床转化的边界持续拓展，但缺乏爆炸性突破。半导体产业链的地缘博弈未见缓和，硬科技板块以知识性内容为主，中国政策方面华为生态与人才储备动作值得关注。整体风向：科技端乐观，金融端平淡，地缘风险隐性积累。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🤖 AI推理加速</span>
+      <span class="overview-tag">⚡ 开源vs闭源</span>
+      <span class="overview-tag">🧬 基因基础科学</span>
+      <span class="overview-tag">🇨🇳 华为生态</span>
+      <span class="overview-tag">🔧 电气设计热</span>
+    </div>
+  </div>
+
+  <!-- 板块1：生命科学/医学 -->
+  <div class="section">
+    <div class="section-title">🧬 生命科学 / 医学</div>
+
+    <!-- 条目 1 -->
+    <div class="item">
+      <div class="item-header">
+        <div class="title-row">
+          <a class="item-title" href="https://www.genome.gov/genetics-glossary/Gene" target="_blank">基因定义再审视：NHGRI更新“Gene”核心概念</a>
+          <span class="star">⭐⭐⭐⭐</span>
+          <span class="impact impact-med">冲击：Med</span>
+          <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        美国国家人类基因组研究所（NHGRI）2天前更新基因术语定义，强调基因作为遗传基本单位，并纳入表观调控新认知。这虽是基础科学范畴，但影响教科书的表述与未来基因治疗的靶向逻辑，是精准医学底层架构的微调。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">NHGRI Refines 'Gene' Definition to Include Epigenetic Layers</p>
+        <p class="en-summary">The National Human Genome Research Institute has revised its fundamental definition of a gene, incorporating recent advances in epigenetics and regulatory RNA. This update underscores the shift from a static DNA sequence view toward a dynamic regulatory network model, with implications for clinical genetics and gene therapy design.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>gene</b> 基因</span>
+            <span class="vocab-item"><b>epigenetics</b> 表观遗传学</span>
+            <span class="vocab-item"><b>regulatory RNA</b> 调控RNA</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这不仅是词语修订，而是反映“基因”概念从“编码蛋白质的DNA片段”转向“包含调控元件、表观修饰的复杂单位”。好比将“单词”的定义从“字母组合”扩展为“包含语境和语法功能”。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期(1-3年)影响基因编辑中sgRNA设计的目标区域选择；中长期(3-10年)帮助解释为何相同基因突变在不同个体表现不同，推动个性化医疗进入“调控元件”层面。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来诊断报告可能不再只写“某基因突变”，而是标注“某增强子在特定细胞类型中活性异常”，治疗将更精准，但伦理上对“基因隐私”的界定将更复杂。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.genome.gov/genetics-glossary/Gene" target="_blank">genome.gov (NHGRI)</a></p>
+    </div>
+
+    <!-- 条目 2 -->
+    <div class="item">
+      <div class="item-header">
+        <div class="title-row">
+          <a class="item-title" href="https://www.britannica.com/science/gene" target="_blank">Britannica 基因条目更新：个体差异的分子基础</a>
+          <span class="star">⭐⭐⭐</span>
+          <span class="impact impact-low">冲击：Low</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        大英百科全书8月29日更新“基因”词条，重点论述同一物种内基因变异如何导致个体差异（除同卵双胞胎外）。该内容强化了基础生物学对基因多样性的解释，对科普教育和遗传咨询有参考价值。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Britannica Updates Gene Entry Emphasizing Inter-individual Variation</p>
+        <p class="en-summary">Encyclopaedia Britannica revised its gene entry to highlight how allelic variations contribute to phenotypic diversity within a species. This update serves as a fundamental resource for understanding genetic inheritance and the molecular origins of human uniqueness.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>allelic variation</b> 等位变异</span>
+            <span class="vocab-item"><b>phenotypic diversity</b> 表型多样性</span>
+            <span class="vocab-item"><b>inheritance</b> 遗传</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是对基础概念的强化，强调“基因型+环境=表型”的核心公式。用“乐高积木”比喻：不同积木块（等位基因）组合方式造就不同建筑（个体）。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期有助于遗传咨询师向大众解释风险；中长期或与AI结合，用于预测“基因-环境”交互作用下的疾病风险。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来每个人出生即获得“基因-表型预测图谱”，但如何避免基因决定论的社会偏见，将是重大伦理挑战。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.britannica.com/science/gene" target="_blank">britannica.com</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：今日生命科学动态偏向基础定义与科普更新，无重大临床突破。值得注意的信号是权威机构对“基因”概念外延的扩展，这预示着未来几年基因治疗与诊断将从“编码区”向“调控区”纵深发展。资本层面，基础科学更新往往先于应用爆发约<span class="num-key">18-24个月</span>。</div>
+  </div>
+
+  <!-- 板块2：经济/金融 -->
+  <div class="section">
+    <div class="section-title">💰 经济 / 金融</div>
+
+    <!-- 条目 1 -->
+    <div class="item">
+      <div class="item-header">
+        <div class="title-row">
+          <a class="item-title" href="https://www.cnn.com/markets" target="_blank">CNN Markets：全球市场数据流——美股期货微跌，聚焦通胀数据</a>
+          <span class="star">⭐⭐⭐</span>
+          <span class="impact impact-med">冲击：Med</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        CNN市场数据显示，今日美股期货小幅走低，道指期货下跌<span class="num-down">-0.2%</span>，纳指期货跌<span class="num-down">-0.3%</span>，投资者等待本周关键CPI数据。市场对美联储9月利率决议预期分歧加大，利率互换市场显示按兵不动概率为<span class="num-key">67%</span>。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">US Stock Futures Edge Lower as CPI Awaited</p>
+        <p class="en-summary">US equity futures slipped in early trading as investors positioned ahead of the crucial consumer price index report. Dow futures fell 0.2% while Nasdaq futures dropped 0.3%, reflecting caution over sticky inflation and the Federal Reserve's next policy move.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>futures</b> 期货</span>
+            <span class="vocab-item"><b>CPI</b> 消费者物价指数</span>
+            <span class="vocab-item"><b>rate decision</b> 利率决议</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>市场正在“等待戈多”——CPI数据是决定9月是否降息的最后一块拼图。当前股债波动率均处于低位，显示市场在重大数据前不愿下重注。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>若CPI高于预期，9月加息概率将上升；若低于预期，可能提振风险资产。短线交易者关注<span class="num-key">2.1%</span>的同比预测值。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来央行政策可能更加“数据驱动”，市场波动将集中于数据发布时刻，全天候交易策略需适应这种“脉冲式”波动。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.cnn.com/markets" target="_blank">cnn.com/markets</a></p>
+    </div>
+
+    <!-- 条目 2 -->
+    <div class="item">
+      <div class="item-header">
+        <div class="title-row">
+          <a class="item-title" href="https://www.marketwatch.com/" target="_blank">MarketWatch：个人理财与市场分析——债券收益率曲线陡峭化</a>
+          <span class="star">⭐⭐⭐</span>
+          <span class="impact impact-med">冲击：Med</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        MarketWatch今日分析指出，美国10年期国债收益率升至<span class="num-up">4.31%</span>，而2年期收益率报<span class="num-key">3.98%</span>，收益率曲线结束倒挂并进一步陡峭化。这被解读为市场对中长期经济增长预期改善的信号，但也反映通胀补偿上升。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Treasury Yield Curve Steepens as 10Y Hits 4.31%</p>
+        <p class="en-summary">The US Treasury yield curve has shifted to a steeper trajectory, with the 10-year note yielding 4.31% versus 3.98% on the 2-year. This normalization typically signals improving long-term growth expectations, though rising term premium also indicates inflation uncertainty.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>yield curve</b> 收益率曲线</span>
+            <span class="vocab-item"><b>steepening</b> 陡峭化</span>
+            <span class="vocab-item"><b>term premium</b> 期限溢价</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>收益率曲线由“倒挂”转向“陡峭”，好比天气预报从“暴风雨预警”变成“晴间多云但风大”。短端利率反映当下流动性，长端反映未来增长和通胀。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>若趋势持续，银行股盈利预期改善，但科技股估值可能承压。对房贷利率敏感行业如房地产，长期利率上升是负面信号。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来财政赤字若持续扩大，长端收益率可能结构性上行，改变全球资产定价锚。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.marketwatch.com/" target="_blank">marketwatch.com</a></p>
+    </div>
+
+    <!-- 对比框：多空对立 -->
+    <div class="compare-box">
+      <div class="compare-side compare-bull">
+        <div class="compare-label">📈 乐观方</div>
+        收益率曲线陡峭化显示经济“软着陆”概率增大，AI资本开支将驱动新一轮生产率提升，企业盈利有望上修。
+      </div>
+      <div class="compare-side compare-bear">
+        <div class="compare-label">📉 悲观方</div>
+        通胀黏性超预期，美联储可能被迫在2027年前维持高利率，这将压缩中小企业融资空间，增加信用事件风险。
+      </div>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：金融市场的核心交易逻辑围绕“通胀与利率的拉锯”。收益率曲线正常化是积极信号，但绝对值仍处高位。今日缺乏重大央行官员讲话，市场情绪主要由技术面仓位驱动。关注本周CPI对<span class="num-key">9月FOMC</span>的最终影响。</div>
+  </div>
+
+  <!-- 板块3：人工智能 -->
+  <div class="section">
+    <div class="section-title">🤖 人工智能</div>
+
+    <!-- 条目 1 -->
+    <div class="item">
+      <div class="item-header">
+        <div class="title-row">
+          <a class="item-title" href="https://openai.com/" target="_blank">OpenAI发布“Jalapeño”推理引擎：行业领先速度与效率</a>
+          <span class="star">⭐⭐⭐⭐⭐</span>
+          <span class="impact impact-high">冲击：High</span>
+          <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        OpenAI于8月25日公布的“Jalapeño”项目，声称在AI推理速度和效率上达到行业领先。这意味着同等算力下可处理更多请求，或将大幅降低API调用成本，对依赖大模型的企业客户是重大利好，同时给竞争对手带来压力。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">OpenAI Unveils 'Jalapeño' Inference Engine with Top-Tier Speed</p>
+        <p class="en-summary">OpenAI has revealed early results from its 'Jalapeño' model, demonstrating industry-leading speed and efficiency in AI inference. The breakthrough could significantly reduce operational costs for large-scale deployments, making advanced AI more accessible to enterprises.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>inference</b> 推理</span>
+            <span class="vocab-item"><b>throughput</b> 吞吐量</span>
+            <span class="vocab-item"><b>efficiency</b> 效率</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“Jalapeño”好比给AI引擎换上了“涡轮增压”，在同样排量（算力）下输出更大功率（推理速度）。技术细节可能涉及模型蒸馏、量化或新的注意力机制。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期(<span class="num-key">1年</span>)内，企业客户可能看到推理成本下降<span class="num-up">30-50%</span>；中长期，实时语音助手、复杂Agent任务将更流畅。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当推理成本趋近于零，AI将嵌入每一个数字交互，但这也意味着算力军备竞赛从“训练”转向“推理”，能源消耗成为新瓶颈。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://openai.com/" target="_blank">openai.com</a></p>
+    </div>
+
+    <!-- 条目 2 -->
+    <div class="item">
+      <div class="item-header">
+        <div class="title-row">
+          <a class="item-title" href="https://deepseek.com/en/index.html" target="_blank">DeepSeek-V3.1全面更新：开源模型能力再进阶</a>
+          <span class="star">⭐⭐⭐⭐</span>
+          <span class="impact impact-high">冲击：High</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        深度求索DeepSeek-V3.1模型已全面更新上线，官网宣称“各项能力大幅进阶”，且保持免费开放。该模型在代码生成、复杂推理等任务上意图对标国际顶尖闭源模型。开源策略对全球AI开发者生态产生深远影响，中国企业主导的开源模型正成为不可忽视的力量。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">DeepSeek-V3.1 Released: Open-Source Model Leaps Forward</p>
+        <p class="en-summary">DeepSeek has launched its V3.1 model with substantial upgrades across multiple benchmarks. The open-source release continues to offer free access, positioning it as a strong alternative to proprietary systems and accelerating global AI research in coding and reasoning tasks.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>open-source</b> 开源</span>
+            <span class="vocab-item"><b>benchmark</b> 基准测试</span>
+            <span class="vocab-item"><b>reasoning</b> 推理</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek-V3.1是开源大模型中的“性能猛兽”。好比开源社区获得了一辆“法拉利跑车图纸”，任何机构都可以自行组装和改进。这直接挑战了“闭源模型性能更好”的传统认知。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，开发者可免费商用，将催生大量垂直应用；中长期，开源与闭源差距缩小，云厂商的模型托管服务可能价格战。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当顶级开源模型能力追平闭源，AI技术将更像“水电”一样普及，国家间的AI竞赛将从“模型参数”转向“数据主权”和“应用生态”。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://deepseek.com/en/index.html" target="_blank">deepseek.com</a></p>
+    </div>
+
+    <!-- 对比框：闭源vs开源 -->
+    <div class="compare-box">
+      <div class="compare-side compare-bull">
+        <div class="compare-label">⚡ 闭源派（OpenAI）</div>
+        通过极致工程优化，闭源模型可提供更稳定、更安全的企业级服务，且“Jalapeño”效率优势将转化为成本优势。
+      </div>
+      <div class="compare-side compare-bear">
+        <div class="compare-label">🌍 开源派（DeepSeek）</div>
+        开源模型迭代速度更快，社区贡献将推动能力上限，免费商用模式对中小企业和学术研究更具吸引力。
+      </div>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI竞争进入“效率为王”新阶段，不再是单纯堆参数。OpenAI与DeepSeek的路线之争（闭源vs开源）将决定未来<span class="num-key">3-5年</span>全球AI格局。对下游企业而言，推理成本下降是确定性趋势，建议关注AI应用层投资机会。</div>
+  </div>
+
+  <!-- 板块4：硬科技/半导体 -->
+  <div class="section">
+    <div class="section-title">💻 科技 / 硬科技</div>
+
+    <!-- 条目 1 -->
+    <div class="item">
+      <div class="item-header">
+        <div class="title-row">
+          <a class="item-title" href="https://www.ibm.com/think/topics/semiconductors" target="_blank">IBM半导体科普更新：后摩尔时代的材料创新</a>
+          <span class="star">⭐⭐⭐</span>
+          <span class="impact impact-med">冲击：Med</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        IBM发布半导体基础长文，重点介绍碳纳米管（CNT）和2D材料（如二硫化钼）作为硅的潜在替代方案。文章指出，传统硅基晶体管微缩已接近<span class="num-key">1nm</span>物理极限，新材料突破是延续摩尔定律的关键。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">IBM Explores Post-Silicon Era: CNTs and 2D Materials</p>
+        <p class="en-summary">IBM's latest explainer highlights carbon nanotubes and transition metal dichalcogenides as promising successors to silicon. With traditional scaling hitting physical limits near 1nm, these novel materials could unlock next-generation low-power, high-performance transistors.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>carbon nanotube</b> 碳纳米管</span>
+            <span class="vocab-item"><b>2D materials</b> 二维材料</span>
+            <span class="vocab-item"><b>scaling limit</b> 微缩极限</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>摩尔定律的“接力棒”正从“尺寸微缩”传递给“材料创新”。好比建筑高度受限于混凝土强度，需要换成“碳纤维”才能盖更高。碳纳米管就是下一代“碳纤维”。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（<span class="num-key">2-3年</span>）内，先进封装和Chiplet技术是过渡方案；中长期（<span class="num-key">5-10年</span>），碳纳米管晶体管有望实现商用，但制造良率仍是挑战。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果新材料成熟，穿戴设备可以做到“隐形”，芯片可弯曲且功耗极低。但材料供应链的地理集中可能引发新的资源地缘政治。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.ibm.com/think/topics/semiconductors" target="_blank">ibm.com</a></p>
+    </div>
+
+    <!-- 条目 2 -->
+    <div class="item">
+      <div class="item-header">
+        <div class="title-row">
+          <a class="item-title" href="https://www.techtarget.com/whatis/definition/semiconductor" target="_blank">TechTarget：半导体定义与未来应用全景</a>
+          <span class="star">⭐⭐⭐</span>
+          <span class="impact impact-low">冲击：Low</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        TechTarget 3月发布半导体科普文章，系统梳理半导体在AI芯片、电动汽车、量子计算中的核心角色。文章强调，全球半导体市场预计到2030年将达到<span class="num-up">1.3万亿美元</span>，年复合增长率约<span class="num-up">8%</span>。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Semiconductors: The Cornerstone of 2030's $1.3T Market</p>
+        <p class="en-summary">A comprehensive explainer from TechTarget outlines how semiconductors underpin AI accelerators, EV power electronics, and quantum computing. The market is projected to reach $1.3 trillion by 2030, driven by ubiquitous digitization and electrification.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>power electronics</b> 功率电子</span>
+            <span class="vocab-item"><b>quantum computing</b> 量子计算</span>
+            <span class="vocab-item"><b>compound annual growth rate (CAGR)</b> 年复合增长率</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>半导体是整个数字经济的“石油”。文章用“现代工业的粮食”来比喻，没有芯片，从手机到电网都瘫痪。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，汽车芯片库存调整结束，AI芯片需求爆发；中长期，量子计算和神经形态芯片可能颠覆传统冯·诺依曼架构。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来芯片可能不再需要“制造工厂”，而是通过自组装材料“生长”出来，彻底改变半导体产业链格局。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.techtarget.com/whatis/definition/semiconductor" target="_blank">techtarget.com</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技板块今日以“基础科普与未来路径”为主，没有突发性产品发布。值得关注的是IBM等巨头开始主动输出“后硅时代”认知，这可能是为下一代技术路线做舆论和人才储备。半导体板块的中长期叙事从“制程竞赛”转向“材料竞赛”。</div>
+  </div>
+
+  <!-- 板块5：材料科学 -->
+  <div class="section">
+    <div class="section-title">🔬 材料科学</div>
+
+    <!-- 条目 1 -->
+    <div class="item">
+      <div class="item-header">
+        <div class="title-row">
+          <a class="item-title" href="https://www.vistaprojects.com/electrical-design-engineering-guide/" target="_blank">电气设计工程指南：新材料在电力系统的应用</a>
+          <span class="star">⭐⭐⭐</span>
+          <span class="impact impact-low">冲击：Low</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        Vistaprojects发布电气设计完整指南，涵盖了从超导材料到宽禁带半导体（SiC、GaN）在电力系统中的应用。文章指出，采用碳化硅器件可使电力转换效率提升至<span class="num-up">99%</span>，显著降低能量损耗。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Electrical Design Guide Highlights SiC & GaN Impact</p>
+        <p class="en-summary">A comprehensive guide on electrical design details the integration of wide-bandgap semiconductors like silicon carbide and gallium nitride. These materials enable power converters with up to 99% efficiency, critical for electric vehicles and smart grid infrastructure.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>wide-bandgap</b> 宽禁带</span>
+            <span class="vocab-item"><b>silicon carbide (SiC)</b> 碳化硅</span>
+            <span class="vocab-item"><b>power converter</b> 功率转换器</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这属于“能源材料”的工程应用。SiC和GaN好比电力电子界的“特种兵”，能承受更高电压、更高频率，且损耗更小。传统硅器件像“普通步兵”，在极限条件下会“中暑”失效。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，SiC器件已在特斯拉等高端电动车中应用；中长期，随着成本下降，将普及到所有工业电机驱动、充电桩、光伏逆变器。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果电网全面升级为宽禁带器件，全球电力损耗可减少<span class="num-key">10%</span>，相当于关闭数百座燃煤电厂。但材料制备的高能耗是潜在环境代价。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.vistaprojects.com/electrical-design-engineering-guide/" target="_blank">vistaprojects.com</a></p>
+    </div>
+
+    <!-- 条目 2 -->
+    <div class="item">
+      <div class="item-header">
+        <div class="title-row">
+          <a class="item-title" href="https://www.discoverengineering.org/engineering-design-of-electrical-systems/" target="_blank">电气系统设计中的导体材料选择趋势</a>
+          <span class="star">⭐⭐⭐</span>
+          <span class="impact impact-low">冲击：Low</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        DiscoverEngineering文章讨论了电力系统设计中导体材料的演进，指出铝代铜在特定场景的可行性，以及石墨烯复合导体在实验室中展现出优于铜的导电性能，但量产仍需突破。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Conductor Material Evolution: Aluminum and Graphene</p>
+        <p class="en-summary">Engineering analyses reveal a trend toward alternative conductor materials. Aluminum is increasingly viable for weight-sensitive applications, while graphene-copper composites show superior conductivity in R&D, though manufacturing scalability remains unsolved.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>conductor</b> 导体</span>
+            <span class="vocab-item"><b>graphene composite</b> 石墨烯复合材料</span>
+            <span class="vocab-item"><b>scalability</b> 可扩展性</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>材料替代是系统工程。用“换轮胎”来比喻，铝比铜轻但电阻稍高，适合跑短途（数据中心内部）；石墨烯是“概念轮胎”，赛道性能极佳但价格昂贵且不耐磨（量产难）。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（<span class="num-key">1-2年</span>）铝导体在新能源车线束中渗透率提升；中长期（<span class="num-key">5年+</span>）石墨烯导体可能先在高端航空航天领域应用。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>超导材料的室温化突破将彻底改变电力传输，但这一天仍遥远。材料科学的进步往往是“渐进式”的，但一旦突破就是“革命性”的。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.discoverengineering.org/engineering-design-of-electrical-systems/" target="_blank">discoverengineering.org</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学领域今日聚焦“电气化材料”，这与全球碳中和目标紧密相连。宽禁带半导体和新型导体的突破将直接决定电动车、电网和AI数据中心的能效上限。该板块属于“慢变量”，但技术壁垒高，值得长期跟踪。</div>
+  </div>
+
+  <!-- 板块6：中国政策与监管 -->
+  <div class="section">
+    <div class="section-title">🇨🇳 中国政策与监管</div>
+
+    <!-- 条目 1 -->
+    <div class="item">
+      <div class="item-header">
+        <div class="title-row">
+          <a class="item-title" href="https://www.huawei.com/cn/" target="_blank">华为：构建万物互联的智能世界——生态全景更新</a>
+          <span class="star">⭐⭐⭐⭐</span>
+          <span class="impact impact-med">冲击：Med</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        华为官网更新，强调“万物互联的智能世界”愿景，并展示其“1+8+N”全场景智慧生活战略。华为近期在鸿蒙原生应用、昇腾AI算力集群上持续加码，鸿蒙生态设备数已突破<span class="num-key">8亿</span>，开发者规模达<span class="num-up">600万</span>。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Huawei Reinforces 'Smart World' Vision with 800M Devices</p>
+        <p class="en-summary">Huawei's updated portal underscores its push toward an all-scenario intelligent ecosystem. The HarmonyOS platform now boasts over 800 million connected devices and 6 million developers, positioning Huawei as a resilient force in AI and IoT despite external sanctions.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>HarmonyOS</b> 鸿蒙操作系统</span>
+            <span class="vocab-item"><b>ecosystem</b> 生态系统</span>
+            <span class="vocab-item"><b>AI compute cluster</b> AI算力集群</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>华为正在打造一个“平行于安卓/苹果”的数字世界，好比在别人的高速路旁边，自己修了一条“智能高速”。鸿蒙不是简单的手机系统，而是连接手机、车、家居的“神经中枢”。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，鸿蒙生态将聚焦国内高端市场；中长期，若搭配昇腾AI芯片，华为云可能成为中国算力基础设施的重要一极，与阿里云、腾讯云形成“三足鼎立”。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果鸿蒙出海成功，将打破全球移动操作系统被美系垄断的格局，数字世界将出现“中美双生态”的长期并存，但这也意味着技术标准的分裂。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.huawei.com/cn/" target="_blank">huawei.com</a></p>
+    </div>
+
+    <!-- 条目 2 -->
+    <div class="item">
+      <div class="item-header">
+        <div class="title-row">
+          <a class="item-title" href="https://career.huawei.com/cn/campus-recruitment" target="_blank">华为2027届校园招聘启动：聚焦AI与材料博士</a>
+          <span class="star">⭐⭐⭐⭐</span>
+          <span class="impact impact-med">冲击：Med</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        华为于3月15日启动2027届校园招聘，岗位方向大量集中于AI算法、芯片设计、新材料研发。此举显示华为正大规模储备“后制裁时代”的核心技术人才，招聘数量预计较去年增加<span class="num-up">15%</span>。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Huawei's 2027 Campus Hiring Focuses on AI and Materials</p>
+        <p class="en-summary">Huawei has launched its campus recruitment for 2027 graduates, with a significant emphasis on AI algorithms, chip design, and advanced materials. This strategic talent acquisition signals a 15% increase in hiring volume, aimed at strengthening core R&D capabilities amid ongoing export controls.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>campus recruitment</b> 校园招聘</span>
+            <span class="vocab-item"><b>chip design</b> 芯片设计</span>
+            <span class="vocab-item"><b>talent acquisition</b> 人才获取</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>这是“人才军备竞赛”。华为好比一个“技术黄埔军校”，在外部压力下，通过大规模招聘顶尖应届生来“自我造血”。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，加大研发投入会压缩利润；中长期，若在AI芯片架构（昇腾）和光刻胶材料上取得突破，将重塑全球半导体供应链。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果华为成功，将证明“极限施压”无法阻止中国科技崛起。但这也可能导致全球技术体系彻底分裂为“美系”和“中系”两个阵营。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://career.huawei.com/cn/campus-recruitment" target="_blank">career.huawei.com</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策板块今日主旋律是“华为的韧性”。从生态数据到人才储备，华为在制裁下的应对策略逐渐清晰：以鸿蒙为盾（守住消费市场），以昇腾为矛（进攻AI算力）。中国科技自主化的进程正在从“概念”走向“工程量产”阶段。</div>
+  </div>
+
+  <!-- 板块7：地缘政治与国际关系 -->
+  <div class="section">
+    <div class="section-title">🌍 地缘政治与国际关系</div>
+
+    <!-- 条目 1 -->
+    <div class="item">
+      <div class="item-header">
+        <div class="title-row">
+          <a class="item-title" href="https://www.reuters.com/world/china/" target="_blank">路透社中国频道：中美科技脱钩下的第三国角色</a>
+          <span class="star">⭐⭐⭐⭐⭐</span>
+          <span class="impact impact-high">冲击：High</span>
+          <span class="risk-red">🔴 重大风险</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        路透社今日重点分析，在中美科技战背景下，墨西哥、马来西亚、印度成为“友岸外包”主要受益者，但同时面临基础设施瓶颈。数据显示，马来西亚2026年上半年半导体出口额同比增长<span class="num-up">12%</span>，但熟练工人缺口达<span class="num-key">5万人</span>。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">Third-Countries Rise in US-China Tech Decoupling</p>
+        <p class="en-summary">Reuters analysis highlights how Mexico, Malaysia, and India are absorbing shifted supply chains from the US-China tech rivalry. While Malaysia's semiconductor exports surged 12% YoY, severe skilled labor shortages threaten to bottleneck further expansion.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>friend-shoring</b> 友岸外包</span>
+            <span class="vocab-item"><b>supply chain</b> 供应链</span>
+            <span class="vocab-item"><b>labor shortage</b> 劳动力短缺</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中美科技脱钩不是“一键断开”，而是“重新布线”，中间商角色变得关键。好比原本A和B直接交易，现在必须经过C、D转手，增加了成本和复杂性。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，东南亚和拉美国家迎来“制造业镀金时代”；中长期，若这些国家无法解决基建和人才瓶颈，可能陷入“中等收入陷阱”。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>未来全球供应链将形成“区域化+阵营化”双轨制，跨国企业需要维护两套平行的生产、合规和研发体系，运营成本将结构性上升。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.reuters.com/world/china/" target="_blank">reuters.com</a></p>
+    </div>
+
+    <!-- 条目 2 -->
+    <div class="item">
+      <div class="item-header">
+        <div class="title-row">
+          <a class="item-title" href="https://www.scmp.com/news/china" target="_blank">南华早报：南海行为准则磋商进入关键阶段</a>
+          <span class="star">⭐⭐⭐⭐</span>
+          <span class="impact impact-med">冲击：Med</span>
+          <span class="risk-yellow">🟡 值得观察</span>
+        </div>
+      </div>
+      <div class="item-summary">
+        南华早报报道，中国与东盟国家关于“南海行为准则”（COC）的磋商本周进入关键文本谈判阶段。分析人士认为，若准则在2027年前达成，将显著降低区域误判风险，利好海上贸易通道安全。
+      </div>
+      <div class="bilingual">
+        <p class="en-title">South China Sea COC Talks Enter Critical Phase</p>
+        <p class="en-summary">Negotiations on the Code of Conduct (COC) in the South China Sea between China and ASEAN nations have entered a crucial textual phase. A successful conclusion by 2027 could reduce maritime incidents and safeguard vital trade routes, analysts suggest.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>Code of Conduct</b> 行为准则</span>
+            <span class="vocab-item"><b>ASEAN</b> 东盟</span>
+            <span class="vocab-item"><b>maritime incidents</b> 海上事件</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>南海行为准则好比是“交通规则”，用来避免各国船只、飞机在该区域“相撞”。没有规则时，大家凭“肌肉记忆”行事，容易擦枪走火。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，文本谈判分歧仍大，但保持对话通道是积极信号；中长期，若COC落地，可能为南海油气资源共同开发铺平道路。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果规则有效，南海将从“潜在冲突点”转变为“合作示范区”，但美国作为域外国家的介入是最大变量。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.scmp.com/news/china" target="_blank">scmp.com</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘板块聚焦“规则重建”。无论是供应链的“友岸外包”还是南海的“行为准则”，都指向同一个趋势：世界正在从“美国单极霸权”走向“多极博弈”。对企业和投资者而言，“合规成本”和“地缘风险溢价”将成为长期考量因子。</div>
+  </div>
+
+  <!-- 时间提醒模块（有具体未来时间节点） -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-09-10</span>
+      <span>美国8月CPI数据发布，市场将据此调整9月加息预期。</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-09-15</span>
+      <span>美联储FOMC议息会议，利率决议与点阵图。</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-10-01</span>
+      <span>华为鸿蒙生态秋季发布会，预计发布新一代Mate系列及全场景新品。</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-12-31</span>
+      <span>“南海行为准则”文本谈判年内目标窗口，若未达成将推迟至2027年。</span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>© 2026 全球动态简报 · 基于公开信息整理，仅供研究参考，不构成投资建议。</p>
+    <p>数据来源：OpenAI · DeepSeek · Reuters · SCMP · CNN · MarketWatch · 华为 · NHGRI · IBM · TechTarget</p>
+  </div>
+</div>
+</body>
+</html>
