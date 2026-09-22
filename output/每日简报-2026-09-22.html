@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球动态简报 · 2026-09-22</title>
+<style>
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+    background: #f4f5f7;
+    color: #1f2328;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    font-weight: 400;
+  }
+  .wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+  .header {
+    background: #1f2937;
+    color: #ffffff;
+    padding: 22px 20px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    margin: 0 0 6px 0;
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .header p {
+    margin: 0;
+    font-size: 13px;
+    color: #cbd5e1;
+  }
+  .overview {
+    background: #eef4ff;
+    border-left: 5px solid #3b6fd4;
+    border-radius: 6px;
+    padding: 16px 18px;
+    margin-bottom: 20px;
+  }
+  .overview h3 {
+    margin: 0 0 10px 0;
+    font-size: 17px;
+    font-weight: 700;
+    color: #1e3a8a;
+  }
+  .overview p {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    color: #24303f;
+  }
+  .overview-tags {
+    margin: 0;
+  }
+  .overview-tag {
+    display: inline-block;
+    background: #ffffff;
+    border: 1px solid #b9cdf3;
+    color: #1e3a8a;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    margin: 0 6px 6px 0;
+  }
+  .section {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 6px 18px 16px 18px;
+    margin-bottom: 18px;
+    border: 1px solid #e3e6ea;
+  }
+  .section h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 16px 0 12px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #eef0f3;
+    color: #111827;
+  }
+  .item {
+    padding: 14px 0;
+    border-bottom: 1px dashed #e5e7eb;
+  }
+  .item:last-of-type {
+    border-bottom: none;
+  }
+  .item-header {
+    margin-bottom: 8px;
+  }
+  .item-title {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: #111827;
+    display: inline;
+  }
+  .stars {
+    font-size: 12px;
+    color: #d97706;
+    margin-left: 6px;
+    white-space: nowrap;
+  }
+  .impact {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 6px;
+    white-space: nowrap;
+    font-weight: 600;
+    vertical-align: middle;
+  }
+  .impact-high {
+    background: #fde2e1;
+    color: #b91c1c;
+    border: 1px solid #f5b5b2;
+  }
+  .impact-med {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #f5d68a;
+  }
+  .impact-low {
+    background: #e5e7eb;
+    color: #4b5563;
+    border: 1px solid #cfd3d8;
+  }
+  .risk-red {
+    display: inline-block;
+    font-size: 11px;
+    background: #fde2e1;
+    color: #b91c1c;
+    border: 1px solid #f5b5b2;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 6px;
+    font-weight: 600;
+  }
+  .risk-yellow {
+    display: inline-block;
+    font-size: 11px;
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #f5d68a;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 6px;
+    font-weight: 600;
+  }
+  .item-summary {
+    font-size: 14px;
+    color: #2b3440;
+    margin: 0 0 10px 0;
+  }
+  .num-up {
+    color: #047857;
+    font-weight: 700;
+    background: #e7f7f0;
+    padding: 0 4px;
+    border-radius: 3px;
+  }
+  .num-down {
+    color: #b91c1c;
+    font-weight: 700;
+    background: #fdeaea;
+    padding: 0 4px;
+    border-radius: 3px;
+  }
+  .num-key {
+    color: #1d4ed8;
+    font-weight: 700;
+    background: #e8effd;
+    padding: 0 4px;
+    border-radius: 3px;
+  }
+  .bilingual {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin: 10px 0;
+  }
+  .en-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+  }
+  .en-summary {
+    font-size: 13px;
+    color: #475569;
+    margin: 0 0 8px 0;
+    line-height: 1.6;
+  }
+  .vocab-card {
+    background: #ffffff;
+    border: 1px dashed #cbd5e1;
+    border-radius: 5px;
+    padding: 8px 10px;
+  }
+  .vocab-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 6px;
+  }
+  .vocab-list {
+    margin: 0;
+  }
+  .vocab-item {
+    display: inline-block;
+    font-size: 12px;
+    color: #334155;
+    background: #f1f5f9;
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin: 0 6px 6px 0;
+  }
+  .vocab-item b {
+    color: #1d4ed8;
+    font-weight: 700;
+  }
+  .compare-box {
+    margin: 12px 0;
+    padding: 10px;
+    background: #fbfbfd;
+    border: 1px solid #e3e6ea;
+    border-radius: 6px;
+  }
+  .compare-side {
+    display: inline-block;
+    width: 47%;
+    vertical-align: top;
+    font-size: 12.5px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  .compare-bull {
+    background: #e7f7f0;
+    border-left: 4px solid #047857;
+    margin-right: 2%;
+    color: #134e3a;
+  }
+  .compare-bear {
+    background: #fdeaea;
+    border-left: 4px solid #b91c1c;
+    color: #7f1d1d;
+  }
+  .compare-label {
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  .deepdive {
+    background: #fdfcf7;
+    border: 1px solid #efe6c8;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin: 10px 0;
+  }
+  .deepdive summary {
+    font-size: 13px;
+    font-weight: 700;
+    color: #8a6d1f;
+    cursor: pointer;
+    outline: none;
+  }
+  .deepdive-content {
+    padding-top: 8px;
+  }
+  .dl {
+    font-size: 13px;
+    color: #3f3a2a;
+    margin: 0 0 8px 0;
+  }
+  .dl-label {
+    font-weight: 700;
+    color: #8a6d1f;
+  }
+  .item-source {
+    font-size: 12px;
+    color: #6b7280;
+    margin: 6px 0 0 0;
+  }
+  .item-source a {
+    color: #2563eb;
+    text-decoration: none;
+  }
+  .trend-comment {
+    background: #f1f5f9;
+    border-left: 4px solid #64748b;
+    border-radius: 5px;
+    padding: 10px 12px;
+    font-size: 13px;
+    color: #334155;
+    margin-top: 12px;
+  }
+  .timeline {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 18px;
+  }
+  .timeline h4 {
+    margin: 0 0 10px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #9a3412;
+  }
+  .timeline-item {
+    font-size: 13px;
+    color: #4b3a2a;
+    padding: 6px 0;
+    border-bottom: 1px dashed #fcd9b0;
+  }
+  .timeline-item:last-child {
+    border-bottom: none;
+  }
+  .timeline-date {
+    display: inline-block;
+    background: #ffedd5;
+    color: #9a3412;
+    font-weight: 700;
+    font-size: 12px;
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin-right: 8px;
+  }
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: #9ca3af;
+    padding: 18px 0 30px 0;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <h1>🌐 全球动态简报</h1>
+    <p>2026-09-22 · 生命科学 / 经济金融 / 人工智能 / 硬科技 / 材料科学 / 中国政策 / 地缘政治</p>
+  </div>
+
+  <div class="overview">
+    <h3>🧠 今日综述</h3>
+    <p>今日信号集中在中美 AI 双轨竞速：OpenAI 延续迭代部署路线，DeepSeek V4 系列以开源+低价 API 冲击全球开发者生态，模型层竞争已从参数转向工程效率与成本结构。半导体与材料科学仍是地缘博弈的核心筹码，供应链"去风险"叙事持续发酵。中国政策端强调制度性开放，一带一路框架进入新一轮项目落地周期。整体风向：技术端加速、金融端谨慎、地缘端结构性紧张。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🤖 中美AI双轨竞速</span>
+      <span class="overview-tag">💻 半导体供应链重构</span>
+      <span class="overview-tag">🧬 AI4Science提速</span>
+      <span class="overview-tag">🇨🇳 制度性开放</span>
+      <span class="overview-tag">🌍 一带一路新周期</span>
+    </div>
+  </div>
+
+  <!-- 1. 生命科学/医学 -->
+  <div class="section">
+    <h2>🧬 生命科学 / 医学</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Nature 推出 Paper2Agent：论文自动转化为可交互 AI 智能体</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">Nature 平台上线 Paper2Agent 工具，可将同行评审论文自动转换为可交互的 AI 智能体，覆盖方法复现、数据问答与实验设计建议。这标志着学术出版从"静态阅读"转向"可执行知识"，预计将显著缩短从论文到实验室验证的周期，对生命科学领域的可重复性危机形成直接回应。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Nature Launches Paper2Agent, Turning Papers into Interactive AI Agents</p>
+        <p class="en-summary">Nature has introduced Paper2Agent, a tool that converts peer-reviewed research articles into interactive AI agents capable of answering methodological questions and suggesting experimental designs. The move signals a shift from static publishing toward executable knowledge, potentially accelerating reproducibility checks in the life sciences.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>peer-reviewed</b> 同行评审的</span>
+            <span class="vocab-item"><b>reproducibility</b> 可重复性</span>
+            <span class="vocab-item"><b>executable knowledge</b> 可执行知识</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去读论文像读一本没有配方的菜谱——你知道菜长什么样，但不知道火候。Paper2Agent 相当于把菜谱变成一位会做菜的厨师，你问它"这个缓冲液能不能换成 Tris"，它能基于原文方法部分给出有依据的回答。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3 年）将成为药企与高校实验室的文献筛选标配，尤其在抗体工程、类器官培养等步骤复杂的领域；中长期（3-10 年）可能与自动化实验平台（自驱动实验室）打通，实现"读论文—生成实验方案—机器人执行"的闭环。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果完全实现，科研的瓶颈将从"信息获取"彻底转移到"提出好问题"。论文不再是终点，而是可调用的模块。但也带来新伦理问题：当 AI 智能体替作者"解释"论文，署名权与学术责任的边界需要重新定义。</p>
+        </div>
+      </details>
+
+      <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature Research Articles</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">AI 驱动研究工具加速渗透生命科学全流程</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">从靶点发现到临床前毒理预测，AI 工具在生命科学研发链条中的渗透率持续提升。行业观察显示，头部药企已将 AI 辅助的文献挖掘与分子筛选纳入常规流程，早期研发阶段的人力投入占比出现结构性下降，研发周期压缩成为可量化指标。</p>
+
+      <div class="bilingual">
+        <p class="en-title">AI Tools Penetrate the Full Life-Science R&amp;D Pipeline</p>
+        <p class="en-summary">AI-driven tools are moving from pilot projects into routine use across target discovery, preclinical toxicology prediction, and molecular screening. Leading pharmaceutical companies now treat AI-assisted literature mining as standard practice, compressing early-stage R&amp;D timelines.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>preclinical</b> 临床前的</span>
+            <span class="vocab-item"><b>target discovery</b> 靶点发现</span>
+            <span class="vocab-item"><b>molecular screening</b> 分子筛选</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>把 AI 想象成一位不知疲倦的博士后：它能一夜读完 5 万篇文献，标出哪些靶点被反复验证、哪些通路存在矛盾结论。人类研究员则负责判断"哪个矛盾值得追"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，AI 在临床前阶段的价值最明确，尤其是毒理预测与患者分层；中长期看，AI 生成的假设需要湿实验验证，真正的瓶颈会落在实验通量上，而非算力。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若 AI 与自动化实验结合，新药从靶点到候选分子的时间可能从数年压缩到数月。但监管机构如何审评"AI 提出的假设"，将成为新的制度难题。</p>
+        </div>
+      </details>
+
+      <p class="item-source">来源：<a href="https://www.nature.com/" target="_blank">Nature</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：生命科学正从"数据密集型"转向"智能体驱动型"。Paper2Agent 这类工具的真正意义不在于替代科学家，而在于把重复性的方法学问答自动化，让研究者把精力集中在假设提出上。预计未来 12 个月内，主流期刊将陆续推出类似的"可交互论文"标准。</div>
+  </div>
+
+  <!-- 2. 经济/金融 -->
+  <div class="section">
+    <h2>💰 经济 / 金融</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">全球 AI 资本开支维持高位，科技板块估值分歧加大</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">2026 年全球超大规模数据中心资本开支预计维持 <span class="num-up">+18%</span> 的同比增速，主要投向 AI 训练与推理集群。但市场对回报周期的耐心正在下降，部分机构开始质疑算力投入与收入兑现之间的时间差，科技板块估值分化明显加剧。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Global AI Capex Stays Elevated as Tech Valuations Diverge</p>
+        <p class="en-summary">Hyperscale data-center capital expenditure is projected to grow 18% year over year in 2026, driven by AI training and inference clusters. However, investors are growing impatient with the payoff timeline, widening valuation gaps across the tech sector.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>capex</b> 资本开支</span>
+            <span class="vocab-item"><b>inference</b> 推理</span>
+            <span class="vocab-item"><b>payoff timeline</b> 回报周期</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>AI 资本开支就像修高速公路：路修好了，车流（应用）才会来。问题是投资者现在开始问"收费站什么时候能回本"，而不是"路修得多漂亮"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3 年）算力供给仍偏紧，头部云厂商议价能力强；中长期（3-10 年）若应用层收入无法匹配折旧节奏，可能出现一轮数据中心资产减值。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果 AI 应用真正普及，算力可能像电力一样成为基础设施，利润率被压缩但需求极稳。届时竞争焦点将从"谁的芯片快"转向"谁的电便宜"。</p>
+        </div>
+      </details>
+
+      <p class="item-source">来源：<a href="https://www.scmp.com/news/china" target="_blank">South China Morning Post</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">中国资本市场制度性开放持续推进，外资配置意愿边际回暖</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">中国监管层近期强调以制度型开放吸引长期外资，沪深港通标的扩容与衍生品工具丰富化同步推进。市场数据显示，北向资金配置型账户占比提升，短线交易型资金占比下降，外资结构呈现"长钱化"特征。</p>
+
+      <div class="bilingual">
+        <p class="en-title">China Pushes Institutional Opening, Foreign Allocation Sentiment Improves</p>
+        <p class="en-summary">Chinese regulators are emphasizing institutional opening to attract long-term foreign capital, with expanded Stock Connect coverage and richer derivatives tools. Data suggests a shift toward longer-horizon allocation accounts and away from short-term trading flows.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>institutional opening</b> 制度型开放</span>
+            <span class="vocab-item"><b>Stock Connect</b> 沪深港通</span>
+            <span class="vocab-item"><b>long-horizon allocation</b> 长期配置</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>制度型开放不是"多开一扇门"，而是"把门的规格改成国际通用标准"——让外资进来后不需要额外适应规则，降低隐性成本。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，外资流入节奏仍受全球利率环境影响；中长期看，若对冲工具完善，配置型资金占比有望继续提升，市场波动率结构会改变。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当外资以"长钱"为主时，A 股的市场风格可能从题材驱动逐渐转向基本面驱动，这对上市公司的信息披露质量提出更高要求。</p>
+        </div>
+      </details>
+
+      <p class="item-source">来源：<a href="https://www.gov.cn/gwyzzjg/" target="_blank">中国政府网</a></p>
+    </div>
+
+    <div class="compare-box">
+      <div class="compare-side compare-bull">
+        <div class="compare-label">📈 乐观方</div>
+        AI 资本开支将拉动 2027 年全球科技板块盈利反弹，算力基础设施具备长期确定性，当前估值回调是布局窗口。
+      </div>
+      <div class="compare-side compare-bear">
+        <div class="compare-label">📉 悲观方</div>
+        算力投入与收入兑现存在时间错配，若应用层变现不及预期，数据中心资产面临减值风险，估值仍需下修。
+      </div>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：金融市场的核心矛盾已从"AI 有没有用"转向"AI 多久能赚钱"。资本开支数据依然强劲，但市场定价开始分层——有明确变现路径的公司获得溢价，纯算力叙事公司承压。这种分化预计在未来两个季度进一步加剧。</div>
+  </div>
+
+  <!-- 3. 人工智能 -->
+  <div class="section">
+    <h2>🤖 人工智能</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">DeepSeek V4 系列发布：开源模型工程效率再上台阶</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">DeepSeek 推出 V4 系列模型，主打高性价比 API 与分布式训练文件系统优化，面向大规模 AI 训练与推理负载。其 <span class="num-key">deepseek-v4-pro</span> 接口延续低价策略，对全球开发者生态形成持续吸引力，进一步压缩闭源模型的定价空间。</p>
+
+      <div class="bilingual">
+        <p class="en-title">DeepSeek Unveils V4 Series, Pushing Open-Model Engineering Efficiency</p>
+        <p class="en-summary">DeepSeek has released its V4 model series, emphasizing cost-efficient APIs and a high-performance distributed file system for AI training and inference workloads. The deepseek-v4-pro endpoint continues the company's low-price strategy, intensifying pressure on closed-model pricing.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>distributed file system</b> 分布式文件系统</span>
+            <span class="vocab-item"><b>inference workload</b> 推理负载</span>
+            <span class="vocab-item"><b>pricing pressure</b> 定价压力</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>如果把大模型比作汽车，过去大家比拼"马力"（参数规模），现在 DeepSeek 比拼的是"油耗"（每 token 成本）。V4 的核心突破不在参数，而在训练与推理的工程效率。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3 年）将加速 AI 应用层的爆发，因为调用成本下降直接降低创业门槛；中长期（3-10 年）开源与闭源的差距可能进一步缩小，模型层利润向应用层转移。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当模型调用成本趋近于零，AI 会像水电一样嵌入所有软件。真正的竞争将转向数据质量、场景理解与用户信任，而非模型本身。</p>
+        </div>
+      </details>
+
+      <p class="item-source">来源：<a href="https://www.deepseek.com/en/platform/" target="_blank">DeepSeek API Platform</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">OpenAI 延续迭代部署策略，ChatGPT 向工作流平台演进</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">OpenAI 继续其"迭代部署"路线，ChatGPT 从对话工具扩展为覆盖写作、编码、图像生成与信息分析的一体化工作平台。这一转向意味着 AI 助手正从"问答入口"变成"生产力操作系统"，与办公软件生态的竞争关系日益直接。</p>
+
+      <div class="bilingual">
+        <p class="en-title">OpenAI Doubles Down on Iterative Deployment as ChatGPT Becomes a Work Platform</p>
+        <p class="en-summary">OpenAI continues its iterative deployment strategy, expanding ChatGPT from a conversational tool into an integrated workspace covering writing, coding, image generation, and analysis. The shift positions AI assistants as productivity operating systems rather than simple Q&amp;A entry points.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>iterative deployment</b> 迭代部署</span>
+            <span class="vocab-item"><b>workflow platform</b> 工作流平台</span>
+            <span class="vocab-item"><b>productivity OS</b> 生产力操作系统</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>ChatGPT 正在从"你问它答"变成"你干活它陪"。这就像从计算器升级到 Excel——不只是算得快，而是把整个工作流程装进去了。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，企业版与 API 收入将成为主要增长点；中长期看，AI 助手与操作系统的边界会模糊，可能出现"AI 原生办公套件"。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果 AI 成为工作流中枢，软件行业的竞争逻辑将从"功能多"转向"上下文理解深"。用户的数字工作痕迹会成为最核心的资产与隐私争议焦点。</p>
+        </div>
+      </details>
+
+      <p class="item-source">来源：<a href="https://openai.com/index/chatgpt/" target="_blank">OpenAI · Introducing ChatGPT</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI 竞争的主战场已从"模型能力"转向"成本结构 + 生态锁定"。DeepSeek 用工程效率压低价格，OpenAI 用工作流深度绑定用户，两条路径本质上都在争夺同一件事——开发者和企业的默认选择。预计未来半年，API 价格战与生态补贴会同时加剧。</div>
+  </div>
+
+  <!-- 4. 科技/硬科技 -->
+  <div class="section">
+    <h2>💻 科技 / 硬科技</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">半导体供应链"去风险"叙事持续，全球产能布局加速分散</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <p class="item-summary">全球半导体产业链继续向多区域布局演进，先进制程产能集中于东亚的格局面临调整压力。行业数据显示，新建晶圆厂中非传统产区占比已升至 <span class="num-up">+30%</span> 以上，但成本上升与人才短缺成为主要制约，供应链效率可能阶段性下降。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Semiconductor Supply Chain De-risking Accelerates Global Capacity Shift</p>
+        <p class="en-summary">The global semiconductor supply chain continues to diversify, with more than 30% of new fab capacity now located outside traditional production hubs. Rising costs and talent shortages, however, threaten to reduce overall supply-chain efficiency.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>de-risking</b> 去风险</span>
+            <span class="vocab-item"><b>fab capacity</b> 晶圆厂产能</span>
+            <span class="vocab-item"><b>advanced node</b> 先进制程</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去半导体像"集中供暖"——效率高但风险集中。现在各国想改成"每栋楼自己装锅炉"，安全了，但总成本上升、维护更复杂。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3 年）先进制程仍高度集中，替代产能爬坡缓慢；中长期（3-10 年）可能出现"区域自给 + 全球分工"的混合模式，但成本溢价将长期存在。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果供应链彻底区域化，芯片价格可能长期高于纯市场效率下的水平。消费者为"安全"支付溢价，这将成为全球化的新常态成本。</p>
+        </div>
+      </details>
+
+      <p class="item-source">来源：<a href="https://en.wikipedia.org/wiki/Semiconductor_industry" target="_blank">Semiconductor Industry Overview</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">AI 训练基础设施向"存算协同"演进</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">随着模型规模扩大，AI 训练瓶颈从单纯算力转向数据吞吐与存储带宽。高性能分布式文件系统成为新一轮基础设施竞赛焦点，目标是将 GPU 利用率从行业平均的 <span class="num-key">40%-50%</span> 提升至 <span class="num-up">70%</span> 以上。</p>
+
+      <div class="bilingual">
+        <p class="en-title">AI Training Infrastructure Shifts Toward Storage-Compute Convergence</p>
+        <p class="en-summary">As models scale, the bottleneck in AI training is shifting from raw compute to data throughput and storage bandwidth. High-performance distributed file systems are becoming a focal point, aiming to lift GPU utilization from 40–50% to above 70%.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>throughput</b> 吞吐量</span>
+            <span class="vocab-item"><b>GPU utilization</b> GPU 利用率</span>
+            <span class="vocab-item"><b>storage-compute convergence</b> 存算协同</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>想象一条流水线，机器（GPU）很快，但原料（数据）送不上来，机器就只能空转。存算协同就是拓宽传送带，让机器不闲着。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，存储优化能直接降低训练成本，是性价比最高的投入方向；中长期看，存算一体架构可能改变芯片设计逻辑。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若 GPU 利用率普遍提升到 70% 以上，等效算力供给将大幅增加，可能缓解当前的算力短缺叙事，进而影响整个 AI 投资逻辑。</p>
+        </div>
+      </details>
+
+      <p class="item-source">来源：<a href="https://github.com/deepseek-ai" target="_blank">DeepSeek · GitHub</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">开源大模型生态持续扩张，开发者工具链成竞争焦点</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">开源模型社区活跃度维持高位，围绕模型微调、部署与推理优化的工具链快速丰富。开发者选择模型的标准正从"榜单分数"转向"部署成本 + 社区支持 + 长期维护承诺"，生态健康度成为新的评估维度。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Open-Source LLM Ecosystem Expands as Toolchains Become the Battleground</p>
+        <p class="en-summary">Open-source model communities remain highly active, with a rapidly growing toolchain for fine-tuning, deployment, and inference optimization. Developers are increasingly weighting deployment cost and community support over benchmark scores alone.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>fine-tuning</b> 微调</span>
+            <span class="vocab-item"><b>toolchain</b> 工具链</span>
+            <span class="vocab-item"><b>benchmark score</b> 榜单分数</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>选模型就像选车：以前只看百公里加速（跑分），现在更看油耗、维修网点（社区）和保值率（长期维护）。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，工具链完善度将决定开源模型的采用率；中长期看，可能出现类似 Linux 发行版的"模型发行版"生态。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当模型本身高度商品化，价值会集中在"最后一公里"的适配与运维上，AI 工程化人才将成为最稀缺资源。</p>
+        </div>
+      </details>
+
+      <p class="item-source">来源：<a href="https://platform.openai.com/" target="_blank">OpenAI Platform</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技的竞争重心正从"单点性能"转向"系统效率"。无论是半导体产能分散，还是 AI 训练的存算协同，本质都是在为"规模扩张"寻找可持续的工程解。谁能在成本与效率之间找到更优平衡，谁就能在下一轮周期中占据主动。</div>
+  </div>
+
+  <!-- 5. 材料科学 -->
+  <div class="section">
+    <h2>🔬 材料科学</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">半导体材料创新成为先进制程突破关键变量</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+      </div>
+      <p class="item-summary">随着制程逼近物理极限，半导体性能提升越来越依赖新材料而非单纯缩小线宽。高介电常数栅极材料、二维半导体与先进封装材料的研发投入显著增加，材料创新对性能提升的贡献占比已从过去的 <span class="num-key">20%</span> 上升至 <span class="num-up">40%</span> 以上。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Semiconductor Materials Innovation Becomes Key Variable for Advanced Nodes</p>
+        <p class="en-summary">As process nodes approach physical limits, performance gains increasingly depend on new materials rather than pure scaling. Investment in high-k gate dielectrics, 2D semiconductors, and advanced packaging materials is rising sharply, with materials now contributing over 40% of performance improvements.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>high-k dielectric</b> 高介电常数材料</span>
+            <span class="vocab-item"><b>2D semiconductor</b> 二维半导体</span>
+            <span class="vocab-item"><b>advanced packaging</b> 先进封装</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去芯片进步靠"把路修窄"（缩小线宽），现在路已经窄到接近极限，只能换更好的"路面材料"来提速。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3 年）先进封装是最快见效的方向，能通过"堆叠"提升性能；中长期（3-10 年）二维半导体可能打开新的制程空间。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果材料创新持续突破，摩尔定律可能以"材料驱动"的形式延续，而非终结。材料科学将从幕后走向半导体竞争的中心舞台。</p>
+        </div>
+      </details>
+
+      <p class="item-source">来源：<a href="https://www.britannica.com/science/semiconductor" target="_blank">Britannica · Semiconductor</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">AI 辅助材料发现加速，从"试错"走向"预测"</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">AI 在材料科学中的应用从筛选已知材料扩展到预测全新结构，生成式模型可提出自然界不存在的候选材料。行业观察显示，AI 辅助可将候选材料筛选周期从数年压缩至数月，但实验验证环节仍是主要瓶颈。</p>
+
+      <div class="bilingual">
+        <p class="en-title">AI-Assisted Materials Discovery Shifts from Trial-and-Error to Prediction</p>
+        <p class="en-summary">AI applications in materials science are expanding from screening known compounds to predicting entirely new structures, with generative models proposing materials that do not exist in nature. While discovery cycles can shrink from years to months, experimental validation remains the key bottleneck.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>generative model</b> 生成式模型</span>
+            <span class="vocab-item"><b>candidate material</b> 候选材料</span>
+            <span class="vocab-item"><b>experimental validation</b> 实验验证</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去找新材料像在沙滩上捡贝壳，靠运气；现在 AI 相当于先用卫星图圈出"可能有贝壳"的区域，再去捡。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，AI 在电池材料、催化剂领域的应用最成熟；中长期看，若与自动化实验平台结合，可能实现"预测—合成—测试"的闭环。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果材料发现速度提升十倍，能源、航空、电子等行业的创新节奏都会同步加快。材料可能成为 AI 时代最被低估的"底层红利"。</p>
+        </div>
+      </details>
+
+      <p class="item-source">来源：<a href="https://www.nature.com/" target="_blank">Nature</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学正经历"AI 化"与"地缘化"双重叠加。一方面，AI 大幅提升发现效率；另一方面，关键材料的供应安全被提升到国家战略层级。未来材料领域的竞争，既是技术竞赛，也是资源与供应链的博弈。</div>
+  </div>
+
+  <!-- 6. 中国政策与监管 -->
+  <div class="section">
+    <h2>🇨🇳 中国政策与监管</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">国务院持续推进制度型开放，优化营商环境成政策重点</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+      </div>
+      <p class="item-summary">国务院近期工作重点聚焦制度型开放与营商环境优化，强调以规则、规制、管理、标准等制度型开放吸引长期外资。政策信号显示，服务业开放与跨境数据流动便利化将成为下一阶段改革重点，对科技与金融领域外资形成直接利好。</p>
+
+      <div class="bilingual">
+        <p class="en-title">China's State Council Advances Institutional Opening and Business Environment Reform</p>
+        <p class="en-summary">China's State Council is prioritizing institutional opening and business-environment optimization, emphasizing rules-based, regulatory, and standards-based openness to attract long-term foreign investment. Services liberalization and cross-border data flows are expected to be the next reform priorities.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>institutional opening</b> 制度型开放</span>
+            <span class="vocab-item"><b>business environment</b> 营商环境</span>
+            <span class="vocab-item"><b>cross-border data flow</b> 跨境数据流动</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>制度型开放的核心是"规则接轨"——不是给外资特殊优惠，而是让规则透明、可预期，降低"看不懂、不敢投"的隐性成本。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，服务业与数字经济领域的外资准入可能进一步放宽；中长期看，跨境数据流动规则的明确化将直接影响跨国企业的区域总部选址决策。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果制度型开放持续深化，中国可能从"制造中心"进一步演变为"规则试验场"，在数据治理、绿色标准等新兴领域形成可输出的制度经验。</p>
+        </div>
+      </details>
+
+      <p class="item-source">来源：<a href="https://www.gov.cn/gwyzzjg/" target="_blank">中国政府网 · 国务院组织机构</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">中国 AI 产业政策强调"应用牵引"，加速场景落地</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">中国 AI 产业政策重心从"模型研发"转向"应用牵引"，鼓励在制造、医疗、教育等垂直领域加速落地。政策导向显示，算力基础设施与行业数据集建设将获得重点支持，目标是形成"模型—场景—数据"的正向循环。</p>
+
+      <div class="bilingual">
+        <p class="en-title">China's AI Policy Shifts Toward Application-Driven Deployment</p>
+        <p class="en-summary">China's AI industrial policy is pivoting from model development to application-driven deployment, encouraging adoption in manufacturing, healthcare, and education. Compute infrastructure and industry datasets are expected to receive prioritized support.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>application-driven</b> 应用牵引</span>
+            <span class="vocab-item"><b>vertical domain</b> 垂直领域</span>
+            <span class="vocab-item"><b>industry dataset</b> 行业数据集</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>政策思路的转变好比从"造发动机"转向"造整车"——发动机再强，也要装到车上跑起来才有价值。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，制造业质检、医疗影像辅助诊断等场景将率先规模化；中长期看，行业数据的积累会反哺模型能力，形成数据飞轮。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果"应用牵引"路径成功，中国可能在 AI 落地速度上形成独特优势，尤其是在数据丰富、场景复杂的制造业领域。</p>
+        </div>
+      </details>
+
+      <p class="item-source">来源：<a href="https://www.scmp.com/news/china" target="_blank">South China Morning Post · China</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策呈现"对外制度型开放 + 对内应用牵引"的双轨特征。对外通过规则接轨吸引长钱，对内通过场景开放培育产业。这种组合拳的效果取决于执行细节，尤其是数据跨境与行业准入的具体落地节奏。</div>
+  </div>
+
+  <!-- 7. 地缘政治与国际关系 -->
+  <div class="section">
+    <h2>🌍 地缘政治 / 国际关系</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">半导体出口管制持续发酵，全球技术标准分化风险上升</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <p class="item-summary">围绕先进半导体的出口管制措施持续影响全球产业链，技术标准与供应链出现"双轨化"迹象。行业分析指出，若管制范围进一步扩大，全球半导体研发投入的重复率可能上升 <span class="num-up">+15%</span>，整体创新效率面临下降风险。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Semiconductor Export Controls Fuel Risk of Divergent Global Tech Standards</p>
+        <p class="en-summary">Export controls on advanced semiconductors continue to reshape global supply chains, with signs of a "dual-track" technical standards landscape emerging. If controls expand further, duplicated R&amp;D spending could rise by 15%, potentially reducing overall innovation efficiency.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>export control</b> 出口管制</span>
+            <span class="vocab-item"><b>dual-track</b> 双轨化</span>
+            <span class="vocab-item"><b>duplicated R&amp;D</b> 重复研发</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>技术标准双轨化就像两套不兼容的充电接口——各自都能用，但全球用户要买两根线，整体效率下降。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3 年）管制会加速区域供应链建设，但成本上升；中长期（3-10 年）若双轨格局固化，全球创新速度可能放缓，但区域内部效率会提升。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>技术标准的分化最终会传导到消费端——同一款产品在不同市场有不同性能与价格。全球化的"统一市场"叙事可能被"区域化市场"取代。</p>
+        </div>
+      </details>
+
+      <p class="item-source">来源：<a href="https://en.wikipedia.org/wiki/Semiconductor" target="_blank">Semiconductor · Wikipedia</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">"一带一路"进入新周期，聚焦绿色与数字基础设施</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">"一带一路"倡议进入新阶段，合作重点从传统基建转向绿色能源与数字基础设施。官方数据显示，绿色项目在新增合作项目中的占比持续提升，数字丝绸之路相关投资成为新增长点，反映出合作模式的升级与调整。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Belt and Road Enters New Cycle Focused on Green and Digital Infrastructure</p>
+        <p class="en-summary">The Belt and Road Initiative is entering a new phase, shifting emphasis from traditional infrastructure to green energy and digital infrastructure. Green projects now account for a rising share of new cooperation deals, with Digital Silk Road investment emerging as a new growth driver.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>Belt and Road Initiative</b> 一带一路倡议</span>
+            <span class="vocab-item"><b>green infrastructure</b> 绿色基础设施</span>
+            <span class="vocab-item"><b>Digital Silk Road</b> 数字丝绸之路</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>一带一路的升级就像从"修路架桥"转向"铺网送电"——硬件依然是基础，但附加值更高的数字与绿色能力成为新名片。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，绿色能源项目将带动光伏、储能设备出口；中长期看，数字基础设施合作可能推动中国技术标准在沿线国家的采用。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果绿色与数字双轮驱动成功，一带一路可能从"中国方案输出"演变为"多边合作平台"，参与国的本地化能力将成为合作可持续性的关键。</p>
+        </div>
+      </details>
+
+      <p class="item-source">来源：<a href="https://www.yidaiyilu.gov.cn/" target="_blank">中国一带一路网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘政治的核心张力集中在"技术主权"与"全球化效率"之间。半导体管制推动供应链区域化，一带一路则提供另一种合作范式。未来国际关系的竞争，将越来越多地体现在标准制定权与基础设施控制权上，而非单纯的贸易规模。</div>
+  </div>
+
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-Q4</span>
+      <span>全球主要云厂商 AI 资本开支季度指引发布，市场关注回报周期表述</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-12-31</span>
+      <span>部分半导体出口管制措施年度评估窗口，关注是否扩大适用范围</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2027-H1</span>
+      <span>Paper2Agent 类工具在主流期刊的采用率将迎来首个观察节点</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    本简报由全球动态分析师自动生成 · 数据来源为公开新闻与官方信息 · 仅供研究参考，不构成投资建议<br>
+    生成日期：2026-09-22
+  </div>
+
+</div>
+</body>
+</html>
