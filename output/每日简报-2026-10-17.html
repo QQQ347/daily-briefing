@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球动态每日简报 · 2026-10-17</title>
+<style>
+  body { margin: 0; padding: 0; background: #f4f5f7; font-family: -apple-system, "PingFang SC", "Microsoft YaHei", Arial, sans-serif; color: #22252a; line-height: 1.7; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 18px 14px 40px 14px; }
+  .header { background: #1b2a4a; color: #ffffff; padding: 22px 20px; border-radius: 8px; margin-bottom: 18px; }
+  .header h1 { margin: 0 0 6px 0; font-size: 22px; font-weight: 700; }
+  .header p { margin: 0; font-size: 13px; color: #c3cde0; }
+  .overview { background: #ffffff; border-left: 5px solid #1b2a4a; border-radius: 6px; padding: 16px 18px; margin-bottom: 22px; }
+  .overview h3 { margin: 0 0 10px 0; font-size: 17px; font-weight: 700; color: #1b2a4a; }
+  .overview p { margin: 0 0 12px 0; font-size: 14px; }
+  .overview-tags { }
+  .overview-tag { display: inline-block; background: #e8edf6; color: #1b2a4a; font-size: 12px; padding: 4px 10px; border-radius: 12px; margin: 0 6px 6px 0; font-weight: 600; }
+  .section { background: #ffffff; border-radius: 8px; padding: 16px 18px 6px 18px; margin-bottom: 20px; }
+  .section h2 { font-size: 18px; margin: 0 0 14px 0; padding-bottom: 8px; border-bottom: 2px solid #e8edf6; color: #1b2a4a; font-weight: 700; }
+  .item { border-bottom: 1px dashed #dfe3ea; padding-bottom: 14px; margin-bottom: 16px; }
+  .item:last-child { border-bottom: none; }
+  .item-header { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+  .stars { color: #e0a800; font-size: 13px; font-weight: 400; }
+  .impact { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px; margin-left: 6px; font-weight: 600; vertical-align: middle; }
+  .impact-high { background: #fde2e1; color: #b3261e; }
+  .impact-med { background: #fff3d6; color: #8a6100; }
+  .impact-low { background: #e3f1e6; color: #216b34; }
+  .risk-red { display: inline-block; font-size: 11px; background: #fde2e1; color: #b3261e; padding: 2px 8px; border-radius: 10px; margin-left: 6px; font-weight: 600; }
+  .risk-yellow { display: inline-block; font-size: 11px; background: #fff3d6; color: #8a6100; padding: 2px 8px; border-radius: 10px; margin-left: 6px; font-weight: 600; }
+  .item-summary { font-size: 14px; margin: 0 0 10px 0; }
+  .num-up { color: #1a7f37; font-weight: 700; }
+  .num-down { color: #c62828; font-weight: 700; }
+  .num-key { color: #1b5fa8; font-weight: 700; }
+  .bilingual { background: #f7f9fc; border-radius: 6px; padding: 10px 12px; margin-bottom: 10px; }
+  .en-title { font-size: 13px; font-weight: 700; color: #1b2a4a; margin: 0 0 6px 0; }
+  .en-summary { font-size: 13px; color: #4a5260; margin: 0 0 10px 0; }
+  .vocab-card { background: #ffffff; border-radius: 5px; padding: 8px 10px; }
+  .vocab-title { font-size: 12px; font-weight: 700; color: #1b2a4a; margin-bottom: 6px; }
+  .vocab-item { display: inline-block; font-size: 12px; background: #eef2f8; color: #3a4252; padding: 3px 8px; border-radius: 4px; margin: 0 5px 5px 0; }
+  .vocab-item b { color: #1b2a4a; }
+  details.deepdive { background: #f7f9fc; border-radius: 6px; padding: 8px 12px; margin-bottom: 10px; }
+  details.deepdive summary { cursor: pointer; font-size: 13px; font-weight: 700; color: #1b5fa8; }
+  .deepdive-content { padding-top: 8px; }
+  .dl { font-size: 13px; margin: 0 0 8px 0; }
+  .dl-label { font-weight: 700; color: #1b2a4a; }
+  .item-source { font-size: 12px; color: #8a919e; margin: 0; }
+  .item-source a { color: #1b5fa8; text-decoration: none; }
+  .trend-comment { background: #eef2f8; border-left: 4px solid #1b5fa8; border-radius: 5px; padding: 10px 12px; font-size: 13px; margin: 4px 0 16px 0; }
+  .compare-box { margin: 6px 0 16px 0; }
+  .compare-side { display: inline-block; width: 48%; vertical-align: top; border-radius: 6px; padding: 10px 12px; font-size: 13px; box-sizing: border-box; }
+  .compare-bull { background: #e3f1e6; border-left: 4px solid #1a7f37; }
+  .compare-bear { background: #fde2e1; border-left: 4px solid #c62828; margin-left: 2%; }
+  .compare-label { font-weight: 700; margin-bottom: 6px; }
+  .timeline { background: #1b2a4a; color: #ffffff; border-radius: 8px; padding: 16px 18px; margin-bottom: 20px; }
+  .timeline h4 { margin: 0 0 12px 0; font-size: 16px; font-weight: 700; }
+  .timeline-item { font-size: 13px; padding: 7px 0; border-bottom: 1px solid #34466e; }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-date { display: inline-block; background: #34466e; border-radius: 4px; padding: 2px 8px; margin-right: 8px; font-weight: 700; font-size: 12px; }
+  .footer { text-align: center; font-size: 12px; color: #8a919e; padding: 10px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <h1>🌐 全球动态每日简报</h1>
+    <p>2026年10月17日 · 7 大板块 · 高密度情报精选</p>
+  </div>
+
+  <div class="overview">
+    <h3>🧠 今日综述</h3>
+    <p>今日信号高度集中于政策与产业两条主线：中国工信部密集落地“十五五”中小企业规划与“人工智能+信息通信”三年实施意见，政策从扶持总量转向精准提质；美股AI板块情绪修复，但债务结构隐忧未消，市场呈“指数回暖、信用承压”的分裂格局。AI侧OpenAI首次公开模型对齐披露框架，治理制度化提速，而DeepSeek V4系列持续迭代，中美模型竞赛进入工程化阶段。整体风向：政策端强驱动，科技端中性偏乐观，金融端谨慎。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">📜 十五五政策落地</span>
+      <span class="overview-tag">🤖 AI治理制度化</span>
+      <span class="overview-tag">📈 美股情绪修复</span>
+      <span class="overview-tag">⚙️ 模型工程化竞赛</span>
+      <span class="overview-tag">🟡 信用风险观察</span>
+    </div>
+  </div>
+
+  <!-- 板块1 生命科学 -->
+  <div class="section">
+    <h2>🧬 生命科学 / 医学</h2>
+
+    <div class="item">
+      <div class="item-header">基因概念再定义：从“遗传单位”走向“可调控信息系统” <span class="stars">⭐⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span></div>
+      <p class="item-summary">Britannica 于 <span class="num-key">2026-10-10</span> 更新基因词条，强调基因是占据染色体固定位点（locus）的遗传信息单元。当前学术共识正从静态“遗传颗粒”转向动态调控网络视角，基因表达受多层表观修饰影响，这为精准医学与靶向干预提供了新的理论支点。</p>
+      <div class="bilingual">
+        <p class="en-title">Gene Concept Reframed: From Hereditary Unit to Regulatable Information System</p>
+        <p class="en-summary">The classical definition of a gene as a fixed locus of hereditary information is being expanded into a dynamic regulatory network view. Modern genetics emphasizes that gene expression is modulated by multiple epigenetic layers, reshaping the theoretical foundation of precision medicine.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>locus</b> 基因座</span>
+            <span class="vocab-item"><b>epigenetic</b> 表观遗传的</span>
+            <span class="vocab-item"><b>gene expression</b> 基因表达</span>
+            <span class="vocab-item"><b>hereditary unit</b> 遗传单位</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去教科书把基因比作“一本说明书的固定条目”，现在学界更倾向把它看作“可被开关调节的调光器”——同一段DNA在不同环境下表达强度完全不同。突破点在于把“位置”与“功能”解耦，承认调控层才是决定表型的关键。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年），表观遗传标志物将进入肿瘤早筛与用药伴随诊断；中期（3-10年），基于调控元件的碱基编辑有望治疗镰状细胞病等单基因病；长期看，可编程表达调控或成为抗衰老干预的核心工具。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若基因调控完全可编程，医学将从“治病”转向“调状态”，人类或可主动调节代谢、免疫与认知表现。但随之而来的是伦理红线：可遗传的调控改造将模糊治疗与增强的边界。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.britannica.com/science/gene" target="_blank">Britannica</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">美国退伍军人长期照护体系分层：三大项目覆盖路径明确 <span class="stars">⭐⭐⭐</span><span class="impact impact-low">冲击：Low</span></div>
+      <p class="item-summary">美国退伍军人事务部（VA）长照体系形成 Community Living Centers、社区护理与州退伍军人之家三层结构，<span class="num-key">2026</span> 年政策明确：住宿型机构的食宿费用通常不由VA承担，资格取决于伤残等级与收入水平。这反映老龄化社会中“医疗支付”与“生活照护支付”边界日益清晰。</p>
+      <div class="bilingual">
+        <p class="en-title">VA Long-Term Care System Clarifies Three-Tier Coverage Pathways</p>
+        <p class="en-summary">The U.S. Department of Veterans Affairs operates long-term care through Community Living Centers, community nursing homes, and state veterans homes. Eligibility hinges on documented disability ratings and income, while room and board in residential settings is generally not covered.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>long-term care</b> 长期照护</span>
+            <span class="vocab-item"><b>eligibility</b> 资格条件</span>
+            <span class="vocab-item"><b>room and board</b> 食宿费用</span>
+            <span class="vocab-item"><b>disability rating</b> 伤残等级</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>可以把它理解为“医保卡不包住酒店钱”——VA负责医疗护理部分，但住哪、吃什么往往要自付或另寻补贴。三层体系本质是按护理强度与支付主体做切分。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，居家与社区护理将承接更多需求；中期看，商业长护险与政府补贴的衔接产品会加速出现；长期看，智能监护设备将降低机构照护依赖度。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若长护照护实现“医疗-生活”一体化支付，老龄化社会的家庭负担将显著下降，但也可能推高财政刚性支出，形成新的代际分配矛盾。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://usmilitary.org/va-community-living-centers/" target="_blank">USMilitary.org</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：生命科学今日呈现“基础概念重构 + 支付体系细化”双线并行。基因调控视角的普及为精准医疗铺路，而长照分层则暴露老龄化支付压力。基础研究热度不减，但临床与支付端的落地节奏仍是瓶颈。</div>
+  </div>
+
+  <!-- 板块2 经济金融 -->
+  <div class="section">
+    <h2>💰 经济 / 金融</h2>
+
+    <div class="item">
+      <div class="item-header">美股反弹：道指跳涨，AI焦虑暂缓，美债收益率下行 <span class="stars">⭐⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span></div>
+      <p class="item-summary">美股在AI板块情绪修复带动下走高，道指跳涨，标普与纳指收窄跌幅，美债收益率同步下行。市场对“新云服务商”高杠杆资产负债表的担忧仍在，个股抛售凸显投资者开始从“叙事定价”转向“现金流定价”，估值分化加剧。</p>
+      <div class="bilingual">
+        <p class="en-title">U.S. Stocks Rebound as AI Jitters Fade and Treasury Yields Sink</p>
+        <p class="en-summary">The Dow jumped while the S&amp;P 500 and Nasdaq trimmed losses as AI-related anxiety eased and Treasury yields declined. A sell-off in a debt-heavy neo-cloud provider underscored investor concerns over balance-sheet quality and a shift from narrative-driven to cash-flow-driven valuation.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>jitters</b> 市场焦虑</span>
+            <span class="vocab-item"><b>Treasury yield</b> 美债收益率</span>
+            <span class="vocab-item"><b>balance sheet</b> 资产负债表</span>
+            <span class="vocab-item"><b>sell-off</b> 抛售</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“新云服务商”指专为AI算力租赁而生的新兴云厂商，它们靠借债买GPU建机房，类似“贷款买出租车跑网约车”。一旦租金回报不及预期，债务压力立刻显性化。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年），算力租赁行业将出现第一轮洗牌，弱者被并购或出清；中期（3-10年），具备电力与机房资源的重资产玩家将胜出；长期看，算力或像电力一样成为公用事业化基础设施。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若算力彻底公用事业化，AI创业门槛将大幅降低，创新重心从“谁有卡”转向“谁有场景”。但若债务泡沫破裂，可能重演一轮“光纤泡沫”式的产能过剩与资本蒸发。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://finance.yahoo.com/markets/live/stock-market-today-dow-sp-500-rise-nasdaq-trims-losses-as-treasury-yields-sink-153611834.html" target="_blank">Yahoo Finance</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">中国“两新”政策2026年优化：支持范围、补贴标准、实施机制三线精准发力 <span class="stars">⭐⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span></div>
+      <p class="item-summary">国家发改委解读显示，<span class="num-key">2026</span> 年“两新”（大规模设备更新与消费品以旧换新）政策呈现“精准发力、提质增效”特征，重点向中小企业、绿色转型与新技术新产品新场景倾斜。政策从“广覆盖补贴”转向“结构性引导”，财政资金使用效率成为考核核心。</p>
+      <div class="bilingual">
+        <p class="en-title">China Refines "Two New" Policy for 2026 with Targeted Subsidies and Green Focus</p>
+        <p class="en-summary">China's 2026 "Two New" policy—covering large-scale equipment renewal and consumer trade-ins—shifts from broad subsidies toward structural guidance. Support is prioritized for small and medium enterprises, green transition, and new technology scenarios, with fiscal efficiency as a key evaluation metric.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>trade-in</b> 以旧换新</span>
+            <span class="vocab-item"><b>equipment renewal</b> 设备更新</span>
+            <span class="vocab-item"><b>fiscal efficiency</b> 财政效率</span>
+            <span class="vocab-item"><b>structural guidance</b> 结构性引导</span>
+          </div>
+        </div>
+      </details>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“两新”可以理解为“给企业和家庭换新设备发红包”，但2026年版红包不再撒胡椒面，而是精准投给真正有升级需求、能带动绿色与数字化的主体。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，工业母机、节能家电、新能源商用车将直接受益；中期看，补贴退坡后能否形成自发更新周期是关键；长期看，设备更新将与碳核算体系挂钩，形成“绿色溢价”市场。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若更新周期与碳市场打通，企业换设备不仅省钱还能卖碳指标，制造业将出现“越绿色越赚钱”的正循环，但也需警惕补贴依赖症与骗补风险。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.ndrc.gov.cn/wsdwhfz/202602/t20260214_1403822.html" target="_blank">国家发展改革委</a></p>
+    </div>
+
+    <div class="compare-box">
+      <div class="compare-side compare-bull">
+        <div class="compare-label">📈 乐观方</div>
+        美股AI情绪修复、美债收益率下行，流动性压力缓解，科技板块盈利兑现支撑指数中枢上移。
+      </div>
+      <div class="compare-side compare-bear">
+        <div class="compare-label">📉 悲观方</div>
+        新云服务商高杠杆资产负债表暴露信用风险，估值从叙事转向现金流，高负债算力玩家或引发连锁抛售。
+      </div>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：金融板块呈现“指数回暖、信用分层”的分裂格局。表面看风险偏好回升，实质是资金在AI叙事与现金流之间重新定价。中国“两新”政策则从需求侧补贴转向结构性引导，财政纪律趋严，短期刺激边际减弱但质量提升。</div>
+  </div>
+
+  <!-- 板块3 人工智能 -->
+  <div class="section">
+    <h2>🤖 人工智能</h2>
+
+    <div class="item">
+      <div class="item-header">OpenAI 发布模型失准追踪与披露框架，AI治理进入制度化阶段 <span class="stars">⭐⭐⭐⭐⭐</span><span class="impact impact-high">冲击：High</span><span class="risk-yellow">🟡 值得观察</span></div>
+      <p class="item-summary">OpenAI 公布用于追踪、调查与披露“模型失准”（model misalignment）的新框架，标志头部实验室首次将内部安全流程产品化、可审计化。此举回应监管与公众对前沿模型行为不可控的担忧，也为行业建立可比较的安全披露标准提供模板，治理竞争正成为模型竞争的第二战场。</p>
+      <div class="bilingual">
+        <p class="en-title">OpenAI Unveils Framework for Tracking and Disclosing Model Misalignment</p>
+        <p class="en-summary">OpenAI released a framework for tracking, investigating, and disclosing instances of model misalignment, marking a shift toward auditable safety processes at frontier labs. The move responds to regulatory and public concerns over unpredictable model behavior and may set a comparable disclosure benchmark for the industry.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>misalignment</b> 失准/目标偏离</span>
+            <span class="vocab-item"><b>disclosure</b> 披露</span>
+            <span class="vocab-item"><b>auditable</b> 可审计的</span>
+            <span class="vocab-item"><b>frontier lab</b> 前沿实验室</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“模型失准”指模型行为偏离设计意图，好比员工不听指挥自作主张。新框架相当于给模型装了“行车记录仪+事故报告制度”，出问题能追溯、能公开。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年），安全披露将成为大模型商用采购的准入门槛；中期（3-10年），第三方审计机构与安全评级体系将兴起；长期看，AI安全或像财务审计一样成为强制合规成本。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若披露制度成熟，AI系统将拥有类似“食品安全标签”的信任基础设施，用户可查模型行为记录。但也可能出现“披露套利”——只报小问题掩盖大问题，监管博弈将长期存在。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://x.com/OpenAI" target="_blank">OpenAI / X</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">DeepSeek V4 系列开放 API 平台，主打企业效率与产品构建 <span class="stars">⭐⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span></div>
+      <p class="item-summary">DeepSeek 官网显示其 API 平台已上线 <span class="num-key">V4</span> 系列，定位企业效率提升与新产品工作流构建，延续开源与低成本路线。在中美模型竞赛中，DeepSeek 以工程化落地与开放生态形成差异化，企业侧渗透速度成为关键观察指标。</p>
+      <div class="bilingual">
+        <p class="en-title">DeepSeek Opens V4 API Platform Targeting Enterprise Efficiency</p>
+        <p class="en-summary">DeepSeek has launched its V4 series on its API platform, positioning the models for enterprise efficiency and new product workflows. The open, cost-efficient approach differentiates DeepSeek in the U.S.-China model race, with enterprise adoption speed as the key metric to watch.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>API platform</b> 接口平台</span>
+            <span class="vocab-item"><b>open-source</b> 开源的</span>
+            <span class="vocab-item"><b>workflow</b> 工作流</span>
+            <span class="vocab-item"><b>adoption</b> 采用率</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>API平台相当于“模型批发市场”，企业按调用量付费接入。DeepSeek的打法是用更低价格和开放权重吸引开发者，类似“薄利多销+开源引流”。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，中小企业和开发者将快速迁移至低成本模型；中期看，垂直行业微调生态将繁荣；长期看，模型层利润或被压缩，价值向应用与数据层转移。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若低成本开源模型成为主流，AI能力将像自来水一样普及，创新门槛骤降。但头部实验室的算力优势仍难撼动，行业或形成“开源普惠+闭源尖端”的双层结构。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.deepseek.com/en/platform/" target="_blank">DeepSeek API Platform</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI板块今日呈现“治理制度化 + 工程化落地”双轮驱动。OpenAI 把安全披露做成标准动作，DeepSeek 把模型做成企业工具，一个向上游规则要话语权，一个向下游场景要渗透率。竞争焦点正从参数规模转向可信度与可用性。</div>
+  </div>
+
+  <!-- 板块4 硬科技 -->
+  <div class="section">
+    <h2>💻 科技 / 硬科技</h2>
+
+    <div class="item">
+      <div class="item-header">中国工信部发布《“人工智能+信息通信”创新发展实施意见（2026—2028年）》 <span class="stars">⭐⭐⭐⭐⭐</span><span class="impact impact-high">冲击：High</span></div>
+      <p class="item-summary">工信部印发 <span class="num-key">2026—2028</span> 年“人工智能+信息通信”实施意见（工信部通信〔2026〕121号），推动AI与网络基础设施深度融合。政策指向网络智能化运维、算网协同与新型通信服务，标志“AI+通信”从试点走向三年期系统部署，运营商与设备商迎来结构性机会。</p>
+      <div class="bilingual">
+        <p class="en-title">China's MIIT Issues Three-Year Plan for AI-Integrated ICT Development</p>
+        <p class="en-summary">The Ministry of Industry and Information Technology released a 2026–2028 implementation guideline for integrating artificial intelligence with information and communications technology. The plan targets intelligent network operations, computing-network synergy, and new communication services, marking a shift from pilots to systematic deployment.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>implementation guideline</b> 实施意见</span>
+            <span class="vocab-item"><b>computing-network synergy</b> 算网协同</span>
+            <span class="vocab-item"><b>intelligent operations</b> 智能运维</span>
+            <span class="vocab-item"><b>deployment</b> 部署</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>可以理解为给通信网络装上“AI大脑”——基站会自己调优、故障会自己预警、算力会自己调度。突破点是把AI从应用层下沉到网络基础设施层。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年），智能运维与网络节能将率先商用；中期（3-10年），算网调度平台或成为新型基础设施；长期看，6G时代AI原生网络将成标配。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若AI原生网络成熟，通信服务将从“卖流量”转向“卖智能能力”，运营商角色重塑。但也带来网络自主决策的安全与责任归属难题。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.gov.cn/zhengce/zhengceku/202606/content_7071755.htm" target="_blank">中国政府网</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">工信部印发《信息通信行业发展“十五五”规划》 <span class="stars">⭐⭐⭐⭐⭐</span><span class="impact impact-high">冲击：High</span></div>
+      <p class="item-summary">工信部规〔2026〕188号文件发布信息通信行业“十五五”规划，覆盖 <span class="num-key">2026—2030</span> 年，统筹网络建设、算力布局与安全体系。规划强调基础设施前瞻布局与产业链自主可控，为未来五年通信投资定调，设备、光纤光缆与卫星通信链条受益预期明确。</p>
+      <div class="bilingual">
+        <p class="en-title">MIIT Releases 15th Five-Year Plan for ICT Industry</p>
+        <p class="en-summary">The MIIT issued the 15th Five-Year Plan for the information and communications industry covering 2026–2030. The plan coordinates network construction, computing layout, and security systems, emphasizing forward-looking infrastructure and supply-chain autonomy.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>Five-Year Plan</b> 五年规划</span>
+            <span class="vocab-item"><b>supply-chain autonomy</b> 产业链自主</span>
+            <span class="vocab-item"><b>infrastructure</b> 基础设施</span>
+            <span class="vocab-item"><b>computing layout</b> 算力布局</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>五年规划相当于行业“五年施工图”，明确钱往哪投、路往哪修。此次把算力与安全并列，意味着通信网不再只是“管道”，而是“算力+连接+安全”的复合体。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，光纤光缆与数据中心建设订单回暖；中期看，卫星互联网与低空通信成新增长点；长期看，空天地一体化网络将重塑覆盖边界。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若空天地一体化落地，偏远地区与海洋将实现无缝覆盖，数字鸿沟显著缩小。但频谱资源与轨道资源的国际争夺也将更激烈。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_456511e63be14508aa5b0d113af559fe.html" target="_blank">工业和信息化部</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">微软 Azure VMware Solution 新增 AV48 节点规格，落地日本东部区域 <span class="stars">⭐⭐⭐</span><span class="impact impact-low">冲击：Low</span></div>
+      <p class="item-summary">微软宣布 Azure VMware Solution 的 <span class="num-key">AV48</span> SKU 在日本东部区域可用，面向需要更高密度虚拟化负载的企业客户。此举延续云厂商在亚太的本地化算力布局，反映企业上云从“迁移”转向“现代化重构”的需求升级。</p>
+      <div class="bilingual">
+        <p class="en-title">Azure VMware Solution Adds AV48 Node Size in Japan East</p>
+        <p class="en-summary">Microsoft announced the availability of the AV48 SKU for Azure VMware Solution in the Japan East region, targeting enterprises with higher-density virtualization workloads. The move reflects cloud providers' localized capacity expansion in Asia-Pacific and a shift from migration to modernization.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>node size</b> 节点规格</span>
+            <span class="vocab-item"><b>virtualization</b> 虚拟化</span>
+            <span class="vocab-item"><b>workload</b> 工作负载</span>
+            <span class="vocab-item"><b>modernization</b> 现代化改造</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>AV48相当于“更大号的云上虚拟机主机”，让企业把原本跑在本地机房的重型系统整体搬到云上而不用重构。SKU即“规格型号”。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，日本制造业与金融业上云加速；中期看，混合云管理工具需求上升；长期看，云厂商竞争将从价格转向合规与本地化服务。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若企业核心系统全面上云，IT运维将像用电一样按需付费，但也带来数据主权与跨境合规的长期博弈。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://techcommunity.microsoft.com/blog/azuremigrationblog/azure-vmware-solution-now-available-in-the-new-av48-node-size-in-japan-east-/4404236" target="_blank">Microsoft Tech Community</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技今日由中国政策主导，“AI+通信”与“十五五”规划形成组合拳，基础设施投资方向明确。海外侧微软的节点扩容属常规迭代，反映云厂商亚太本地化竞争持续。整体看，通信与算力基础设施正成为政策与资本的交汇点。</div>
+  </div>
+
+  <!-- 板块5 材料科学 -->
+  <div class="section">
+    <h2>🔬 材料科学</h2>
+
+    <div class="item">
+      <div class="item-header">中国科学院东莞材料科学与技术研究所成立，聚焦材料前沿 <span class="stars">⭐⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span></div>
+      <p class="item-summary">由中国科学院、广东省与东莞市政府共建的中国科学院东莞材料科学与技术研究所于 <span class="num-key">2025-12-06</span> 成立，<span class="num-key">2026</span> 年进入实质运行阶段。该所定位材料科学与技术前沿，依托大湾区制造业基础推动成果转化，标志国家战略科技力量在材料领域的区域化布局加速。</p>
+      <div class="bilingual">
+        <p class="en-title">CAS Establishes Dongguan Institute of Materials Science and Technology</p>
+        <p class="en-summary">The Chinese Academy of Sciences, Guangdong Province, and Dongguan City jointly established the CAS Dongguan Institute of Materials Science and Technology. Positioned at the materials frontier and backed by Greater Bay Area manufacturing, the institute aims to accelerate technology transfer.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>materials science</b> 材料科学</span>
+            <span class="vocab-item"><b>technology transfer</b> 成果转化</span>
+            <span class="vocab-item"><b>Greater Bay Area</b> 大湾区</span>
+            <span class="vocab-item"><b>frontier</b> 前沿</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>材料是所有硬科技的“面粉”，芯片、电池、航空件都靠它。新研究所相当于在大湾区建了个“面粉研发+烘焙试验”一体基地，缩短从实验室到工厂的距离。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，电子材料与新能源材料将率先受益；中期看，半导体关键材料国产替代提速；长期看，材料基因组与AI辅助设计将大幅缩短研发周期。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若材料研发实现“AI设计+自动合成”闭环，新材料从概念到量产或从十年缩短至两三年，制造业创新节奏将被彻底改写。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://baike.baidu.com/item/中国科学院/271375" target="_blank">百度百科</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">半导体材料基础研究持续升温，导电性可调原理仍是产业基石 <span class="stars">⭐⭐⭐</span><span class="impact impact-low">冲击：Low</span></div>
+      <p class="item-summary">半导体作为导电性介于导体与绝缘体之间的材料，其可调导电特性构成现代电子工业基础。近期科普与产业资料密集更新，反映在芯片管制与供应链重组背景下，公众与资本对半导体材料原理与产业逻辑的关注度显著上升。</p>
+      <div class="bilingual">
+        <p class="en-title">Semiconductor Materials Fundamentals Remain the Bedrock of Electronics</p>
+        <p class="en-summary">Semiconductors, with conductivity between conductors and insulators, underpin modern electronics. Renewed public and investor interest in semiconductor fundamentals reflects heightened attention to chip supply chains amid export controls and restructuring.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>conductivity</b> 导电性</span>
+            <span class="vocab-item"><b>insulator</b> 绝缘体</span>
+            <span class="vocab-item"><b>supply chain</b> 供应链</span>
+            <span class="vocab-item"><b>export control</b> 出口管制</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>半导体就像“可开关的水管”，加电压就通、不加就断，无数个这样的开关组合成芯片里的逻辑电路。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，第三代半导体（碳化硅、氮化镓）在新能源车与快充放量；中期看，先进封装材料需求激增；长期看，二维材料或突破硅基极限。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若二维材料商业化成功，芯片可在更低功耗下继续微缩，摩尔定律或迎来“第二春”，但量产良率与成本仍是拦路虎。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.britannica.com/science/semiconductor" target="_blank">Britannica</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学今日以“机构布局 + 基础认知”为主。东莞研究所的成立体现国家力量向大湾区材料转化端倾斜，而半导体材料科普热度上升则折射供应链焦虑。材料作为硬科技底座，其战略价值正被重新定价。</div>
+  </div>
+
+  <!-- 板块6 中国政策 -->
+  <div class="section">
+    <h2>🇨🇳 中国政策与监管</h2>
+
+    <div class="item">
+      <div class="item-header">十部门联合印发《促进中小企业发展“十五五”规划》 <span class="stars">⭐⭐⭐⭐⭐</span><span class="impact impact-high">冲击：High</span></div>
+      <p class="item-summary">工信部、发改委、科技部、财政部、央行等 <span class="num-key">十部门</span> 联合印发《促进中小企业发展“十五五”规划》，覆盖融资、创新、市场准入与数字化转型。多部门协同意味着中小企业支持从“单点补贴”升级为“系统性制度供给”，专精特新培育仍是主线。</p>
+      <div class="bilingual">
+        <p class="en-title">Ten Chinese Ministries Jointly Issue 15th Five-Year Plan for SME Development</p>
+        <p class="en-summary">Ten ministries, including MIIT, NDRC, and the PBOC, jointly issued the 15th Five-Year Plan for SME development, covering financing, innovation, market access, and digital transformation. The multi-ministry approach upgrades SME support from isolated subsidies to systemic institutional supply.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>SME</b> 中小企业</span>
+            <span class="vocab-item"><b>institutional supply</b> 制度供给</span>
+            <span class="vocab-item"><b>market access</b> 市场准入</span>
+            <span class="vocab-item"><b>specialized and sophisticated</b> 专精特新</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去扶持中小企业像“发救济粮”，现在更像“修水利+建市场”——既解决融资难，也解决准入难、转型难。十部门联手意味着政策不再各自为战。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，专精特新企业融资环境改善；中期看，中小企业数字化转型服务市场扩容；长期看，大中小企业融通发展格局将成形。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若制度供给到位，中小企业将从“生存型”转向“创新型”，成为就业与创新的双引擎。但政策落地的地方执行差异仍是最大变量。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_80ce437ddf6b42c2915d30bc8876dde2.html" target="_blank">工业和信息化部</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">国务院1月政策密集出台：提振消费、扩大有效投资成主线 <span class="stars">⭐⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span></div>
+      <p class="item-summary">国务院 <span class="num-key">2026年1月</span> 密集出台多项重要政策，国务院常务会议研究提振消费与扩大有效投资举措。政策组合拳指向内需修复与投资效率提升，与“两新”政策形成呼应，稳增长基调下财政与消费政策协同性增强。</p>
+      <div class="bilingual">
+        <p class="en-title">China's State Council Rolls Out Dense Policy Package in January 2026</p>
+        <p class="en-summary">The State Council issued multiple policies in January 2026, with executive meetings focused on boosting consumption and expanding effective investment. The package aligns with the "Two New" policy, strengthening coordination between fiscal and consumption measures under a pro-growth stance.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>effective investment</b> 有效投资</span>
+            <span class="vocab-item"><b>domestic demand</b> 内需</span>
+            <span class="vocab-item"><b>policy package</b> 政策组合拳</span>
+            <span class="vocab-item"><b>pro-growth</b> 稳增长</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“有效投资”强调投出去的钱要能产生真实回报，而非重复建设。政策组合拳相当于“一边发消费券，一边修有用的路”。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，服务消费与设备更新受益；中期看，投资效率考核将更严格；长期看，内需驱动型增长模式逐步确立。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若消费与投资形成正循环，中国经济抗外部冲击能力将显著增强，但居民收入预期修复仍是关键前提。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.gov.cn/zhengce/202601/content_7056655.htm" target="_blank">中国政府网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策今日呈现“规划密集落地”特征，从中小企业“十五五”到信息通信“十五五”，再到“AI+通信”三年意见，形成中长期制度框架。政策逻辑从总量刺激转向结构优化与制度供给，执行力与地方落地差异将是后续观察重点。</div>
+  </div>
+
+  <!-- 板块7 地缘政治 -->
+  <div class="section">
+    <h2>🌍 地缘政治与国际关系</h2>
+
+    <div class="item">
+      <div class="item-header">半导体供应链成地缘博弈核心，出口管制与自主可控双线推进 <span class="stars">⭐⭐⭐⭐</span><span class="impact impact-high">冲击：High</span><span class="risk-red">🔴 重大风险</span></div>
+      <p class="item-summary">半导体作为现代经济基石，持续处于出口管制与供应链重组的风暴中心。各国加速推进本土产能与关键材料自主，全球分工从“效率优先”转向“安全优先”，成本上升与产能重复建设风险同步累积，产业链区域化趋势难以逆转。</p>
+      <div class="bilingual">
+        <p class="en-title">Semiconductor Supply Chains at the Center of Geopolitical Contest</p>
+        <p class="en-summary">Semiconductors remain at the epicenter of export controls and supply-chain restructuring. Countries are accelerating domestic capacity and materials autonomy, shifting global division of labor from efficiency-first to security-first, with rising costs and duplicative capacity as key risks.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>export control</b> 出口管制</span>
+            <span class="vocab-item"><b>autonomy</b> 自主可控</span>
+            <span class="vocab-item"><b>division of labor</b> 分工</span>
+            <span class="vocab-item"><b>duplicative capacity</b> 重复产能</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>芯片产业链像一条跨国接力赛，设计在美国、制造在东亚、设备在荷兰日本。现在各国都想“自己跑完全程”，接力赛变成各自修跑道。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，设备与材料国产替代加速；中期看，全球产能过剩与价格战风险上升；长期看，或形成“中美双轨”技术生态。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若双轨生态固化，全球创新效率将下降，但技术多样性可能提升。最坏情形是标准分裂导致产品互不兼容，消费者承担代价。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.semiconductors.org/dza4ep7j490hywp8tfdm6ryfbvse/" target="_blank">Semiconductor Industry Association</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">中美AI与通信规则竞争升温，治理标准成新博弈场 <span class="stars">⭐⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span><span class="risk-yellow">🟡 值得观察</span></div>
+      <p class="item-summary">随着OpenAI推出模型失准披露框架、中国发布“AI+信息通信”三年意见，中美在AI治理与通信标准上的规则竞争同步升温。技术竞争正从产品层延伸至标准与治理话语权，谁先形成可输出的规则体系，谁就掌握生态主导权。</p>
+      <div class="bilingual">
+        <p class="en-title">U.S.-China Rule Competition Extends to AI Governance and Telecom Standards</p>
+        <p class="en-summary">As OpenAI rolls out a misalignment disclosure framework and China issues a three-year AI-ICT plan, rule competition between the two countries is intensifying. Tech rivalry is expanding from products to standards and governance discourse, with ecosystem leadership at stake.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>governance</b> 治理</span>
+            <span class="vocab-item"><b>standard-setting</b> 标准制定</span>
+            <span class="vocab-item"><b>discourse power</b> 话语权</span>
+            <span class="vocab-item"><b>ecosystem</b> 生态</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>规则竞争好比“谁来定游戏规则”。产品卖得好只是一时，标准被广泛采用才能长期收租。AI安全披露与通信标准正是新的规则入口。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，企业需同时适配多套合规标准；中期看，区域化标准联盟将出现；长期看，全球统一标准难度加大，互认机制成关键。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若治理标准分裂，跨国AI服务将面临“入关即改造”的合规成本，创新扩散放缓。反之，若形成互认，全球AI市场将更高效但需让渡部分主权。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://openai.com/" target="_blank">OpenAI</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘政治焦点从贸易关税转向技术与规则。半导体供应链安全化推高成本，AI治理标准竞争则决定未来生态话语权。两条线索交汇于“技术主权”这一核心命题，短期摩擦加剧，长期分化风险上升。</div>
+  </div>
+
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026—2028</span>
+      <span>《“人工智能+信息通信”创新发展实施意见》三年实施周期</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026—2030</span>
+      <span>信息通信行业“十五五”规划执行期，基础设施投资定调</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026年内</span>
+      <span>“两新”政策优化措施落地，补贴范围与标准调整执行</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">持续观察</span>
+      <span>美股AI算力租赁企业债务与现金流状况，信用风险窗口</span>
+    </div>
+  </div>
+
+  <div class="footer">本简报由全球动态分析系统生成 · 2026-10-17 · 仅供信息参考</div>
+
+</div>
+</body>
+</html>
