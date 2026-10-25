@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球动态简报 · 2026-10-25</title>
+<style>
+  body { font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: #f4f5f7; color: #1f2328; margin: 0; padding: 16px; line-height: 1.65; }
+  .container { max-width: 880px; margin: 0 auto; }
+  .header { background: #1a2b4c; color: #ffffff; padding: 20px 24px; border-radius: 10px; margin-bottom: 16px; }
+  .header h1 { margin: 0 0 6px 0; font-size: 22px; font-weight: 700; }
+  .header p { margin: 0; font-size: 13px; color: #c8d3e6; }
+  .overview { background: #ffffff; border-left: 5px solid #2f5fa8; border-radius: 8px; padding: 16px 20px; margin-bottom: 18px; }
+  .overview h3 { margin: 0 0 10px 0; font-size: 17px; font-weight: 700; color: #1a2b4c; }
+  .overview p { margin: 0 0 12px 0; font-size: 14px; }
+  .overview-tags { }
+  .overview-tag { display: inline-block; background: #e8eef9; color: #2f5fa8; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 12px; margin: 0 6px 6px 0; }
+  .section { background: #ffffff; border-radius: 10px; padding: 18px 20px; margin-bottom: 18px; }
+  .section-title { font-size: 18px; font-weight: 700; color: #1a2b4c; margin: 0 0 14px 0; padding-bottom: 8px; border-bottom: 2px solid #e8eef9; }
+  .item { border: 1px solid #e6e9ee; border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; background: #fcfcfd; }
+  .item-header { margin-bottom: 8px; }
+  .item-title { font-size: 15px; font-weight: 700; color: #14213d; }
+  .stars { color: #e0a800; font-size: 13px; margin-left: 6px; }
+  .impact { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-left: 8px; vertical-align: middle; }
+  .impact-high { background: #fde2e1; color: #b42318; }
+  .impact-med { background: #fff3d6; color: #8a5a00; }
+  .impact-low { background: #e3f2e6; color: #1e6b34; }
+  .risk-red { display: inline-block; font-size: 11px; font-weight: 600; background: #fde2e1; color: #b42318; padding: 2px 8px; border-radius: 10px; margin-left: 6px; }
+  .risk-yellow { display: inline-block; font-size: 11px; font-weight: 600; background: #fff3d6; color: #8a5a00; padding: 2px 8px; border-radius: 10px; margin-left: 6px; }
+  .item-summary { font-size: 14px; margin: 0 0 10px 0; }
+  .num-up { color: #1e6b34; font-weight: 700; }
+  .num-down { color: #b42318; font-weight: 700; }
+  .num-key { color: #2f5fa8; font-weight: 700; }
+  .bilingual { background: #f5f8fc; border-radius: 6px; padding: 10px 12px; margin-bottom: 10px; }
+  .en-title { font-size: 13px; font-weight: 700; color: #1a2b4c; margin: 0 0 6px 0; }
+  .en-summary { font-size: 13px; color: #3d4654; margin: 0 0 8px 0; }
+  .vocab-card { background: #ffffff; border: 1px solid #e0e6ef; border-radius: 6px; padding: 8px 10px; }
+  .vocab-title { font-size: 12px; font-weight: 700; color: #2f5fa8; margin-bottom: 6px; }
+  .vocab-item { display: inline-block; font-size: 12px; background: #eef3fa; color: #33415c; padding: 3px 8px; border-radius: 8px; margin: 0 6px 6px 0; }
+  .vocab-item b { color: #1a2b4c; }
+  .deepdive { background: #fbfaf5; border: 1px solid #ece5d2; border-radius: 6px; padding: 8px 12px; margin-bottom: 10px; }
+  .deepdive summary { cursor: pointer; font-size: 13px; font-weight: 700; color: #7a5c12; }
+  .deepdive-content { margin-top: 8px; }
+  .dl { font-size: 13px; margin: 0 0 8px 0; }
+  .dl-label { font-weight: 700; color: #7a5c12; }
+  .item-source { font-size: 12px; color: #6b7280; margin: 0; }
+  .item-source a { color: #2f5fa8; text-decoration: none; }
+  .compare-box { margin: 12px 0; }
+  .compare-side { display: inline-block; width: 48%; vertical-align: top; font-size: 13px; padding: 10px 12px; border-radius: 8px; box-sizing: border-box; }
+  .compare-bull { background: #e8f5ec; border-left: 4px solid #1e6b34; margin-right: 2%; }
+  .compare-bear { background: #fdeceb; border-left: 4px solid #b42318; }
+  .compare-label { font-weight: 700; margin-bottom: 6px; }
+  .trend-comment { background: #f0f4fa; border-radius: 6px; padding: 10px 14px; font-size: 13px; color: #33415c; margin-top: 4px; }
+  .timeline { background: #1a2b4c; color: #ffffff; border-radius: 10px; padding: 16px 20px; margin-bottom: 18px; }
+  .timeline h4 { margin: 0 0 12px 0; font-size: 16px; font-weight: 700; }
+  .timeline-item { font-size: 13px; padding: 6px 0; border-bottom: 1px solid #33456b; }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-date { display: inline-block; font-weight: 700; color: #ffd166; margin-right: 10px; }
+  .footer { text-align: center; font-size: 12px; color: #8a93a3; padding: 12px 0 24px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>🌍 全球动态简报</h1>
+    <p>2026年10月25日 · 七大板块 · 高密度情报速览</p>
+  </div>
+
+  <div class="overview">
+    <h3>🧠 今日综述</h3>
+    <p>今日信号集中在"技术主权"与"算力路线分叉"两条主线：中国量子芯片与国产 DUV 光刻同步推进，西方设备封锁的边际效力正在下降；光子量子计算首次接入先进光刻制程，意味着量子硬件开始借用成熟半导体工业体系。金融端信息噪声较大，权威数据稀缺，需谨慎对待。整体风向：硬科技偏乐观，监管与地缘风险持续积累。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">⚛️ 量子芯片投产</span>
+      <span class="overview-tag">🔦 国产光刻突围</span>
+      <span class="overview-tag">💡 光子量子×ASML</span>
+      <span class="overview-tag">🧪 半导体材料基础</span>
+      <span class="overview-tag">⚠️ 信息质量偏低</span>
+    </div>
+  </div>
+
+  <!-- 生命科学 -->
+  <div class="section">
+    <h2 class="section-title">🧬 生命科学 / 医学</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">CDC 首次确认美国旅行相关新冠病例：疫情外溢监测的起点</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">CDC 确认美国首例 <span class="num-key">2019-nCoV</span> 旅行相关病例，患者有武汉旅行史。该病例标志着病毒跨境传播监测体系正式启动，也为后续机场筛查、接触者追踪与联邦应急响应提供了首个实证样本。</p>
+      <div class="bilingual">
+        <p class="en-title">CDC Confirms First Travel-Related Case of 2019 Novel Coronavirus in the United States</p>
+        <p class="en-summary">The CDC confirmed the first travel-associated case of 2019-nCoV in the United States, in a patient with a history of travel to Wuhan. The case marked the activation of cross-border surveillance and became the index event for federal screening and contact-tracing protocols.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>travel-related case</b> 旅行相关病例</span>
+            <span class="vocab-item"><b>surveillance</b> 监测</span>
+            <span class="vocab-item"><b>contact tracing</b> 接触者追踪</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于在国境线上装了一只"烟雾报警器"——单个病例本身不可怕，可怕的是它证明病毒已经具备跨洲移动能力。突破点在于把"未知肺炎"纳入法定报告传染病监测网。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，机场体温筛查与健康申报成为标配；中期看，基因组测序共享网络（如 GISAID）将把新病原发现周期从数周压缩到数天；长期看， wastewater surveillance（污水监测）可能成为城市级预警基础设施。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若全球监测网完全成熟，新发传染病或在社区传播前就被拦截，代价是隐私与出行自由的持续让渡——公共卫生与公民权利的边界将成为长期政治议题。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://stacks.cdc.gov/view/cdc/84535" target="_blank">CDC Stacks</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">新冠住院率与患者特征：COVID-NET 监测网络的早期画像</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">COVID-NET 对住院病例的监测显示，住院人群以 <span class="num-key">65 岁以上</span>老年人及基础病患者为主，重症集中度高。该数据为分诊资源调配、疫苗优先接种排序提供了关键流行病学依据，也揭示年龄是最强的风险分层变量。</p>
+      <div class="bilingual">
+        <p class="en-title">Hospitalization Rates and Characteristics of Patients Hospitalized with COVID-19</p>
+        <p class="en-summary">COVID-NET surveillance characterized hospitalized COVID-19 patients, showing that adults aged 65 and older and those with underlying conditions accounted for the majority of severe cases. The findings informed triage planning and priority vaccination strategies.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>hospitalization rate</b> 住院率</span>
+            <span class="vocab-item"><b>underlying condition</b> 基础疾病</span>
+            <span class="vocab-item"><b>risk stratification</b> 风险分层</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于给疫情画一张"人口地图"——不是数有多少人感染，而是看谁病得最重。突破点在于用标准化住院监测替代零散病例报告。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期用于疫苗与抗病毒药物的优先分配；中期可与电子病历打通，实现实时重症预警；长期看，这类网络将成为流感、RSV 等多病原共监测的通用底座。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当住院数据实时可视，医院或能提前两周预判挤兑风险，医疗系统从"被动应对"转为"主动调度"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.cdc.gov/mmwr/volumes/69/wr/mm6915e3.htm" target="_blank">CDC MMWR</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">SARS-CoV-2 致死病例的病理与发病机制：从病毒到多器官损伤</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">尸检病理研究揭示，重症致死并非单纯病毒直接杀伤，而是 <span class="num-key">弥漫性肺泡损伤</span>叠加免疫失调与微血栓形成。这一发现把治疗重心从"抗病毒"扩展到"抗炎+抗凝"双轨，直接影响了重症救治指南的改写。</p>
+      <div class="bilingual">
+        <p class="en-title">Pathology and Pathogenesis of SARS-CoV-2 Associated with Fatal Cases</p>
+        <p class="en-summary">Autopsy-based pathology revealed that fatal COVID-19 involves diffuse alveolar damage compounded by immune dysregulation and microthrombosis, rather than direct viral cytopathology alone. The findings shifted critical care toward combined antiviral, anti-inflammatory and anticoagulant strategies.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>diffuse alveolar damage</b> 弥漫性肺泡损伤</span>
+            <span class="vocab-item"><b>immune dysregulation</b> 免疫失调</span>
+            <span class="vocab-item"><b>microthrombosis</b> 微血栓形成</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于给重症患者做"事故现场勘查"——不是找凶手（病毒），而是看房子怎么塌的（肺泡、血管、免疫系统三重崩溃）。突破点是把新冠重新定义为"血管病"而非单纯"肺病"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期推动抗凝方案进入重症标准路径；中期看，"长新冠"的微血管机制研究将受益；长期看，器官芯片与类器官模型或替代部分尸检研究。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果微血栓机制被彻底阐明，同一套抗炎抗凝逻辑或可迁移至流感重症、脓毒症，改写整个危重症医学的底层假设。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://wwwnc.cdc.gov/eid/article/26/9/20-2095_article" target="_blank">CDC EID</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：本板块原始素材均为 2020—2023 年历史文献，非今日新增动态。其价值在于"方法遗产"——监测网络、风险分层、病理机制三套工具已被制度化，成为后续新发传染病应对的默认基础设施。需注意：今日无真正意义上的生命科学前沿进展，读者不应将其误读为最新疫情信号。</div>
+  </div>
+
+  <!-- 经济金融 -->
+  <div class="section">
+    <h2 class="section-title">💰 经济 / 金融</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">全球市场数据平台密集更新：实时行情基础设施成为竞争焦点</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">Yahoo Finance、CNN Markets、Google Finance、MarketWatch 等平台持续迭代实时报价与组合管理功能。表面是产品更新，实质是 <span class="num-key">零售投资者</span>信息获取成本趋近于零，行情数据的商品化正在压缩传统券商的信息溢价。</p>
+      <div class="bilingual">
+        <p class="en-title">Real-Time Market Data Platforms Intensify Competition on Retail Infrastructure</p>
+        <p class="en-summary">Major finance portals including Yahoo Finance, CNN Markets and MarketWatch continue to expand real-time quotes and portfolio tools. The commoditization of market data is eroding the information premium historically captured by traditional brokerages.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>real-time quote</b> 实时报价</span>
+            <span class="vocab-item"><b>portfolio management</b> 组合管理</span>
+            <span class="vocab-item"><b>commoditization</b> 商品化</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于把"行情终端"从华尔街交易台搬进每个人的手机——过去要付费订阅的 Level 2 数据，如今免费可得。突破点不在技术，而在分发渠道。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，券商佣金与数据订阅收入继续承压；中期看，AI 投顾将把"数据"升级为"决策建议"；长期看，监管对散户信息公平性的要求会上升。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当所有人拥有同等行情，超额收益只能来自更快的信息解读与更强的纪律——市场或从"信息不对称"转向"认知不对称"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://finance.yahoo.com/" target="_blank">Yahoo Finance</a> / <a href="https://www.marketwatch.com/" target="_blank">MarketWatch</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">二级市场收藏品交易平台化：StockX 模式向"另类资产"延伸</span>
+        <span class="stars">⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">StockX 等平台把球鞋、卡牌、手袋、腕表纳入标准化撮合与鉴定体系，实质是为非标资产建立 <span class="num-key">价格发现机制</span>。这类"类金融化"交易扩大了零售投资者的资产谱系，但也放大了流动性与真伪风险。</p>
+      <div class="bilingual">
+        <p class="en-title">Platformization of Collectibles Trading Extends the Alternative-Asset Frontier</p>
+        <p class="en-summary">Platforms such as StockX standardize authentication and matching for sneakers, trading cards and watches, effectively building price-discovery mechanisms for non-standard assets. The trend broadens retail portfolios while amplifying liquidity and authenticity risks.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>price discovery</b> 价格发现</span>
+            <span class="vocab-item"><b>authentication</b> 鉴定</span>
+            <span class="vocab-item"><b>alternative asset</b> 另类资产</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于给"收藏品"装上股票交易所的撮合引擎——过去靠圈内口碑定价，现在靠公开成交记录定价。突破点是把鉴定与结算标准化。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，卡牌与腕表品类成交额继续放大；中期看，或出现收藏品指数与衍生品；长期看，监管对"类证券化"交易的界定将成为关键变量。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若收藏品真正金融化，年轻人可能把球鞋当"小额资产配置"，但泡沫破裂时的社会情绪冲击也会同样真实。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://stockx.com/" target="_blank">StockX</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：本板块原始素材质量偏低，多为门户首页与无关条目（海军制服、绳结教程等），缺乏可核验的宏观数据与政策事件。唯一可提炼的信号是"金融信息基础设施商品化"与"另类资产平台化"两条慢变量。建议读者对今日金融板块保持低置信度，等待权威数据源补充。</div>
+  </div>
+
+  <!-- 人工智能 -->
+  <div class="section">
+    <h2 class="section-title">🤖 人工智能</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">光子量子计算接入先进光刻：Xanadu 与 ASML 的跨界合作</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">光子量子计算公司 Xanadu 与光刻设备巨头 ASML 于 <span class="num-key">9 月 10 日</span>宣布合作，共同开发面向光子量子硬件的先进光刻工艺。这标志着量子计算开始借用成熟半导体制造体系，从"实验室手工搭建"迈向"晶圆级量产"，是量子产业化路径的关键转折。</p>
+      <div class="bilingual">
+        <p class="en-title">Xanadu and ASML Partner to Advance Lithography for Photonic Quantum Hardware</p>
+        <p class="en-summary">Photonic quantum computing firm Xanadu and semiconductor equipment giant ASML announced a collaboration to co-develop advanced lithography processes for photonic quantum hardware. The partnership signals a shift of quantum computing from lab-scale assembly toward wafer-level manufacturability.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>photonic quantum computing</b> 光子量子计算</span>
+            <span class="vocab-item"><b>lithography</b> 光刻</span>
+            <span class="vocab-item"><b>wafer-level manufacturability</b> 晶圆级可制造性</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于让"量子芯片"去用造手机芯片的流水线——过去光子量子器件靠实验室手工对准，良率极低；现在借用 ASML 的光刻精度，把光学元件刻在晶圆上，一致性大幅提升。突破点在于"制造工艺"而非"量子比特数"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3 年）看，光子芯片良率与集成度提升，模块化量子样机出现；中期（3-5 年）看，量子-经典混合数据中心试点；长期（5-10 年）看，若容错光子量子机落地，将冲击密码学与药物分子模拟。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若量子硬件真能借半导体工业规模化，算力或出现"第二次摩尔式曲线"，但同时也意味着现有 RSA 加密体系面临系统性重估，全球网络安全架构需提前迁移到后量子密码。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.sohu.com/a/1074790801_122948228" target="_blank">搜狐科技</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">AI 驱动的科学发现：WEE1 靶点研究揭示静息细胞再入周期机制</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">《Nature》刊发研究，实验与建模数据表明 <span class="num-key">WEE1</span> 激酶可促进静息细胞重新进入细胞周期。该机制对肿瘤耐药与组织再生均有直接意义，也体现了计算建模与实验数据融合的"AI 辅助科学"范式正在主流期刊站稳脚跟。</p>
+      <div class="bilingual">
+        <p class="en-title">WEE1 Promotes Re-entry of Quiescent Cells into the Cell Cycle</p>
+        <p class="en-summary">Experimental and modelling data published in Nature indicate that WEE1 kinase promotes the re-entry of quiescent cells into the cell cycle. The finding carries implications for tumor dormancy and tissue regeneration, and exemplifies the integration of computational modelling with wet-lab evidence.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>quiescent cell</b> 静息细胞</span>
+            <span class="vocab-item"><b>cell cycle re-entry</b> 细胞周期再进入</span>
+            <span class="vocab-item"><b>kinase</b> 激酶</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于找到细胞"休眠开关"的一个关键齿轮——静息细胞像睡着的人，WEE1 被发现能把它叫醒。突破点在于把"唤醒"从被动观察变成可干预的分子靶点。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，WEE1 抑制剂在耐药肿瘤中的联用试验加速；中期看，或用于促进受损组织再生；长期看，若可控唤醒休眠癌细胞，可减少"治疗后复发"这一最大难题。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果人类能精确控制细胞的"睡眠—醒来"，肿瘤休眠疗法与器官再生将共享同一套工具箱，医学从"杀灭"转向"调度"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature Research Articles</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：今日 AI 板块的实质进展不在"大模型参数"，而在"AI 进入物理世界"——一边是量子硬件借光刻工艺落地，一边是计算建模深度嵌入生命科学发现。两条线共同指向同一判断：AI 的下一阶段竞争点是"与实体产业接口的厚度"，而非单纯的模型规模。</div>
+  </div>
+
+  <!-- 硬科技 -->
+  <div class="section">
+    <h2 class="section-title">💻 科技 / 硬科技</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">中国首条量子芯片产线正式投产：绕开 EUV 的路线尝试</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">有报道称中国首条量子芯片产线正式投产，强调在西方 EUV 光刻机封锁背景下开辟新路径。需注意量子芯片与传统硅基逻辑芯片并非同一赛道，<span class="num-key">不能简单等同于"绕过光刻限制"</span>；但其产线化意义在于验证了超导/光子器件的工程化能力。</p>
+      <div class="bilingual">
+        <p class="en-title">China's First Quantum Chip Production Line Enters Operation</p>
+        <p class="en-summary">Reports indicate that China's first quantum chip production line has begun operation, framed as a path around Western EUV lithography restrictions. Quantum chips, however, occupy a different technological track from silicon logic chips, so the claim of bypassing lithography limits warrants cautious interpretation.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>quantum chip</b> 量子芯片</span>
+            <span class="vocab-item"><b>production line</b> 产线</span>
+            <span class="vocab-item"><b>technological track</b> 技术赛道</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于在"公路被封"时另修一条"铁路"——量子芯片不追求把晶体管刻得更小，而是用超导或光子器件承载量子态。突破点在于工程化产线，而非制程节点。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，量子比特一致性与良率是核心瓶颈；中期看，量子云服务与专用量子模拟器先行落地；长期看，通用容错量子机仍需 5-10 年。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若量子产线真能规模化，全球算力格局或出现"非硅基"分支，但短期内它无法替代手机与服务器里的硅芯片——舆论需警惕概念炒作。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.sohu.com/a/954008110_122541827" target="_blank">搜狐</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">国产 DUV 光刻机：成熟制程自主化、先进制程追赶化</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">行业分析指出，中国 <span class="num-key">28nm</span> 光刻机已实现量产，但核心部件国产化率仍是短板；国产 DUV 对 ASML 的冲击将先体现在中国成熟制程的新增订单与服务市场，更深层替代仍需设备与材料体系协同突破。</p>
+      <div class="bilingual">
+        <p class="en-title">China's Domestic DUV Lithography: Mature-Node Autonomy and Advanced-Node Catch-Up</p>
+        <p class="en-summary">Industry analysis indicates that China has achieved mass production of 28nm lithography tools, though core component localization remains a bottleneck. Domestic DUV systems are expected to first erode ASML's order and service share in China's mature-node segment.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>mature node</b> 成熟制程</span>
+            <span class="vocab-item"><b>localization rate</b> 国产化率</span>
+            <span class="vocab-item"><b>core component</b> 核心部件</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于"能造整车，但发动机仍靠进口"——DUV 整机突破不等于供应链自主，光源、物镜、双工件台才是真正的护城河。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，成熟制程国产替代加速，汽车与工业芯片受益；中期看，零部件国产化率提升决定成本曲线；长期看，EUV 仍是分水岭，短期内难以跨越。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若国产 DUV 全面成熟，全球成熟制程芯片价格或长期承压，"芯片白菜价"从消费电子蔓延至工业领域，但也可能引发新一轮贸易摩擦。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://klaroinvest.com/zh-Hans/blog/china-duv-lithography-asml/" target="_blank">Klaro Research</a> / <a href="https://zhuanlan.zhihu.com/p/1893697649976268139" target="_blank">知乎专栏</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">本源量子第三代超导量子计算系统上线</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">安徽本源量子宣布第三代超导量子计算系统正式上线，称其为国内最先进量子计算机。核心看点在于 <span class="num-key">量子比特数量与相干时间</span>的同步提升，但与国际头部厂商的容错指标仍有差距，实际应用仍以专用模拟为主。</p>
+      <div class="bilingual">
+        <p class="en-title">Origin Quantum Deploys Third-Generation Superconducting Quantum System</p>
+        <p class="en-summary">Anhui-based Origin Quantum announced the launch of its third-generation superconducting quantum computing system, described as China's most advanced quantum computer. The key metrics are qubit count and coherence time, though a gap with leading international fault-tolerant benchmarks persists.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>superconducting qubit</b> 超导量子比特</span>
+            <span class="vocab-item"><b>coherence time</b> 相干时间</span>
+            <span class="vocab-item"><b>fault tolerance</b> 容错</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于"量子计算机的第三代样机"——比特更多、更稳，但离"能算有用的问题"还有距离。突破点在于系统集成与工程稳定性。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期用于量子化学模拟与组合优化演示；中期看，量子云平台向科研机构开放；长期看，容错量子机仍需材料与纠错码双重突破。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若中国在超导与光子两条路线同时推进，全球量子竞赛或形成"双轨并行"格局，标准制定权成为新战场。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://zhuanlan.zhihu.com/p/676463181" target="_blank">知乎专栏</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">半导体的基础定义与产业地位：从材料科学到现代电子工业</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">多家权威科普源重申半导体的核心定义：导电性介于导体与绝缘体之间，通过 <span class="num-key">掺杂</span>精确调控载流子浓度。这一基础认知在当前"芯片主权"叙事中被反复引用，提醒公众：产业竞争的底层是材料与工艺，而非单一设备。</p>
+      <div class="bilingual">
+        <p class="en-title">Semiconductors: Definition, Doping and Industrial Significance</p>
+        <p class="en-summary">Authoritative references reiterate that semiconductors exhibit conductivity between conductors and insulators, with carrier concentration precisely controlled through doping. The fundamentals underscore that chip competition ultimately rests on materials and process engineering.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>doping</b> 掺杂</span>
+            <span class="vocab-item"><b>carrier concentration</b> 载流子浓度</span>
+            <span class="vocab-item"><b>conductivity</b> 导电性</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于"电子工业的土壤"——没有可精确调控导电性的材料，就没有晶体管、没有芯片。突破点在于把"掺杂"从经验工艺变成原子级精确控制。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，第三代半导体（碳化硅、氮化镓）在电动车与快充放量；中期看，二维材料与氧化物半导体进入试产；长期看，材料创新或成为后摩尔时代的主战场。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若新材料体系成熟，芯片性能提升将不再依赖"制程微缩"，全球半导体竞争逻辑从"设备封锁"转向"材料专利"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.ibm.com/think/topics/semiconductors" target="_blank">IBM Think</a> / <a href="https://www.britannica.com/science/semiconductor" target="_blank">Britannica</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技板块呈现"三条腿走路"——量子计算借产线化提速、国产 DUV 在成熟制程蚕食份额、基础材料研究支撑长期竞争。判断：短期看设备与订单，中期看零部件国产化率，长期看材料体系。舆论层面需警惕"量子芯片=绕过光刻"的简化叙事。</div>
+  </div>
+
+  <!-- 材料科学 -->
+  <div class="section">
+    <h2 class="section-title">🔬 材料科学</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">《Nature》最新研究：WEE1 与细胞周期调控的交叉学科启示</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">《Nature》最新研究文章显示，实验与建模数据共同支持 WEE1 在静息细胞再入周期中的作用。该成果横跨分子生物学与计算建模，体现了顶级期刊对"数据+模型"双证据链的偏好，也为材料-生物交叉（如生物相容传感）提供方法参照。</p>
+      <div class="bilingual">
+        <p class="en-title">Nature Research Articles Highlight Integrated Experimental and Modelling Evidence</p>
+        <p class="en-summary">A recent Nature research article integrates experimental and modelling data to establish WEE1's role in cell-cycle re-entry. The publication reflects the journal's preference for dual evidence chains combining wet-lab work with computational prediction.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>modelling data</b> 建模数据</span>
+            <span class="vocab-item"><b>evidence chain</b> 证据链</span>
+            <span class="vocab-item"><b>interdisciplinary</b> 交叉学科</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于"两条腿走路的科学"——一条腿做实验，一条腿跑模型，两条腿都站得住才发顶刊。突破点在于方法论而非单一发现。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，更多生物材料研究将采用"模型先行、实验验证"流程；中期看，AI 生成假设成为常规；长期看，材料设计与药物发现共享同一套计算基础设施。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当"计算+实验"成为默认范式，科研周期或从数年压缩到数月，但也带来"可复现性危机"的新挑战。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">半导体材料基础再审视：掺杂工艺决定器件性能上限</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">科普与百科源重申，半导体器件性能取决于在 <span class="num-key">精确条件</span>下的掺杂控制。在先进制程逼近物理极限的当下，材料层面的原子级精度（如单原子掺杂、界面工程）正成为延续性能提升的关键变量。</p>
+      <div class="bilingual">
+        <p class="en-title">Revisiting Semiconductor Fundamentals: Doping Precision Sets Device Performance Ceiling</p>
+        <p class="en-summary">Reference sources reiterate that device performance hinges on precisely controlled doping conditions. As advanced nodes approach physical limits, atomic-scale precision in doping and interface engineering becomes the key lever for continued performance gains.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>interface engineering</b> 界面工程</span>
+            <span class="vocab-item"><b>atomic-scale precision</b> 原子级精度</span>
+            <span class="vocab-item"><b>physical limit</b> 物理极限</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于"在米粒上雕花"——掺杂就是往硅里精确塞入杂质原子，塞多塞少直接决定芯片快慢与功耗。突破点是从微米级控制走向原子级控制。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，先进封装与 Chiplet 缓解制程压力；中期看，二维材料与新型栅极堆叠进入试产；长期看，材料创新或接棒摩尔定律。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若原子级制造成熟，"制程节点"这一概念本身可能失效，芯片性能由材料组合而非线宽定义。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://en.m.wikipedia.org/wiki/Semiconductor" target="_blank">Wikipedia</a> / <a href="https://sciencenotes.org/semiconductor-definition-examples-types-uses/" target="_blank">Science Notes</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学板块今日缺乏真正的"新材料突破"新闻，主要为方法论文献与基础科普。可提炼的判断是：材料创新正从"发现新物质"转向"原子级精确调控"，这与硬科技板块的制程焦虑形成呼应——设备受限时，材料与工艺成为替代性突破口。</div>
+  </div>
+
+  <!-- 中国政策 -->
+  <div class="section">
+    <h2 class="section-title">🇨🇳 中国政策与监管</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">半导体自主化政策组合拳：从设备攻关到产线落地</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">从国产 DUV 量产到量子芯片产线投产，中国半导体政策呈现"成熟制程自主化、先进制程追赶化、前沿技术探索化"三段式路径。政策重心正从"补贴研发"转向"打通产线与供应链"，但核心零部件与材料仍是最大约束。</p>
+      <div class="bilingual">
+        <p class="en-title">China's Semiconductor Self-Reliance Policy: From Equipment Breakthroughs to Production Lines</p>
+        <p class="en-summary">China's semiconductor policy is evolving along a three-track path: autonomy in mature nodes, catch-up in advanced nodes, and exploration of frontier technologies. The policy focus is shifting from R&D subsidies toward building production lines and supply chains.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>self-reliance</b> 自主化</span>
+            <span class="vocab-item"><b>supply chain</b> 供应链</span>
+            <span class="vocab-item"><b>R&D subsidy</b> 研发补贴</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于"修一条从矿山到整车的完整产业链"——不只是造出样机，而是让每个环节都能稳定供货。突破点在于从"点突破"转向"链协同"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，成熟制程设备与材料订单向国内厂商倾斜；中期看，汽车与工业芯片国产化率显著提升；长期看，EUV 与高端材料仍是"卡脖子"环节。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若供应链全面自主，全球芯片价格体系或重构，但也可能加剧"技术阵营化"，形成两套并行标准。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.reuters.com/world/china/" target="_blank">Reuters China</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">新能源汽车产业政策延续：比亚迪等龙头受益于全链条支持</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">比亚迪官网与集团资料显示，其业务横跨汽车、电子、新能源与轨道交通，是政策全链条支持的典型样本。产业政策从"购置补贴"转向"基础设施+出口+技术标准"，龙头企业竞争优势进一步固化。</p>
+      <div class="bilingual">
+        <p class="en-title">China's NEV Policy Extends to Full-Chain Support, Benefiting Industry Leaders</p>
+        <p class="en-summary">BYD's corporate profile illustrates full-chain policy support spanning vehicles, electronics, new energy and rail transit. Industrial policy has shifted from purchase subsidies toward infrastructure, exports and technical standards, entrenching leaders' advantages.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>NEV (new energy vehicle)</b> 新能源汽车</span>
+            <span class="vocab-item"><b>purchase subsidy</b> 购置补贴</span>
+            <span class="vocab-item"><b>technical standard</b> 技术标准</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于"从卖车补贴转向修路、建桩、定规则"——政策不再直接降价，而是改善使用环境与出口通道。突破点在于政策工具的切换。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，充电网络与出口物流投资加码；中期看，中国车企在东南亚与欧洲本地化建厂；长期看，标准输出成为新的竞争维度。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若中国主导的充电与电池标准被广泛采纳，全球汽车产业的话语权将从"品牌"转向"标准"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.bydglobal.com/cn/index.html" target="_blank">比亚迪集团官网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策正从"单点补贴"转向"系统能力建设"——半导体看产线与供应链，新能源看基础设施与标准输出。共同逻辑是：在外部限制下，用国内市场规模换取产业链纵深。风险在于核心零部件与高端设备的对外依赖仍未根本缓解。</div>
+  </div>
+
+  <!-- 地缘政治 -->
+  <div class="section">
+    <h2 class="section-title">🌍 地缘政治与国际关系</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">技术出口管制与供应链重组：地缘风险分析持续升温</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <p class="item-summary">地缘风险分析机构持续聚焦武装冲突、供应链与航运安全三大议题。在半导体领域，出口管制正从"设备清单"扩展到"服务与零部件"，供应链重组成本上升，企业被迫在效率与安全之间重新权衡。</p>
+      <div class="bilingual">
+        <p class="en-title">Export Controls and Supply-Chain Reconfiguration Drive Geopolitical Risk Premium</p>
+        <p class="en-summary">Geopolitical risk monitors continue to focus on armed conflict, supply chains and shipping security. In semiconductors, export controls are expanding from equipment lists to services and components, forcing firms to trade efficiency for security.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>export control</b> 出口管制</span>
+            <span class="vocab-item"><b>supply-chain reconfiguration</b> 供应链重组</span>
+            <span class="vocab-item"><b>risk premium</b> 风险溢价</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于"把全球化的传送带切成几段"——过去追求最低成本，现在优先"可控"。突破点在于管制工具从商品延伸到服务与维护。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，设备维护与零部件许可成为新摩擦点；中期看，区域化产能布局加速；长期看，两套技术标准并行的可能性上升。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若技术阵营化固化，全球创新速度或放缓，但区域内部协同可能加深——世界从"一个市场"变成"几个生态"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.geopoliticalmonitor.com/" target="_blank">Geopolitical Monitor</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">欧洲社会抗议与政治极化：内部治理压力外溢至对外政策</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">据法国内政部数据，法国多地爆发大规模抗议，数十万人上街。社会不满与政治极化相互强化，削弱欧洲在贸易、产业补贴与对外技术管制上的政策一致性，为全球供应链谈判增加不确定性。</p>
+      <div class="bilingual">
+        <p class="en-title">European Social Protests and Political Polarization Spill Over into Foreign Policy</p>
+        <p class="en-summary">France's Interior Ministry reported hundreds of thousands of protesters across the country. Domestic discontent and political polarization are weakening Europe's policy coherence on trade, industrial subsidies and technology controls.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>political polarization</b> 政治极化</span>
+            <span class="vocab-item"><b>policy coherence</b> 政策一致性</span>
+            <span class="vocab-item"><b>industrial subsidy</b> 产业补贴</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于"家里吵架，出门谈判就没底气"——内部社会矛盾削弱对外谈判的统一立场。突破点在于识别"内政—外交"的传导链条。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，欧盟产业补贴决策更易被成员国政治绑架；中期看，对外技术管制执行力度或打折；长期看，欧洲在全球科技竞争中的协调能力面临考验。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若欧洲无法形成统一产业政策，全球科技格局或从"美中欧三角"演变为"美中双核+欧洲跟随"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.cnn.com/" target="_blank">CNN</a> / <a href="https://apnews.com/" target="_blank">AP News</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘板块的核心变量是"管制工具的服务化"与"欧洲内部治理的外溢"。前者让供应链重组更彻底，后者让西方阵营的政策协调更困难。两者叠加，意味着未来 12 个月全球科技供应链的不确定性仍将高位运行。</div>
+  </div>
+
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-09-10</span>
+      <span>Xanadu 与 ASML 宣布光刻工艺合作（已发生，后续里程碑待披露）</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-Q4</span>
+      <span>国产 DUV 光刻机新增订单与服务市场数据待观察</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2027-01</span>
+      <span>《Nature》WEE1 相关后续临床前验证研究预期跟进</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">持续跟踪</span>
+      <span>美对华半导体出口管制清单是否扩展至服务与零部件</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    本简报基于公开来源整理，部分原始素材为历史文献或低置信度门户页面，已在正文标注。投资与政策判断请以权威机构发布为准。
+  </div>
+
+</div>
+</body>
+</html>
