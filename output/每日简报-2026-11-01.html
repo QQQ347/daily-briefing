@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球动态每日简报 · 2026-11-01</title>
+<style>
+  body { margin: 0; padding: 0; background: #f4f5f7; font-family: -apple-system, "PingFang SC", "Microsoft YaHei", Arial, sans-serif; color: #1f2328; line-height: 1.65; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 18px 14px 40px 14px; }
+  .header { background: #1a2233; color: #ffffff; padding: 22px 20px; border-radius: 10px; margin-bottom: 18px; }
+  .header h1 { margin: 0 0 6px 0; font-size: 24px; font-weight: 700; letter-spacing: 0.5px; }
+  .header p { margin: 0; font-size: 13px; color: #aab4c6; }
+  .overview { background: #ffffff; border-left: 5px solid #2f6fdb; border-radius: 8px; padding: 16px 18px; margin-bottom: 22px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .overview h3 { margin: 0 0 10px 0; font-size: 17px; font-weight: 700; color: #1a2233; }
+  .overview p { margin: 0 0 12px 0; font-size: 14px; color: #333a45; }
+  .overview-tags { margin: 0; }
+  .overview-tag { display: inline-block; background: #e8eefb; color: #2f6fdb; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 12px; margin: 0 6px 6px 0; }
+  .section { background: #ffffff; border-radius: 8px; padding: 16px 18px 6px 18px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .section-title { font-size: 18px; font-weight: 700; color: #1a2233; margin: 0 0 4px 0; padding-bottom: 10px; border-bottom: 2px solid #eef0f4; }
+  .item { padding: 14px 0 6px 0; border-bottom: 1px dashed #e3e6eb; }
+  .item:last-child { border-bottom: none; }
+  .item-header { margin-bottom: 8px; }
+  .item-title { font-size: 15.5px; font-weight: 700; color: #16202f; margin: 0 0 7px 0; }
+  .badge { display: inline-block; font-size: 11.5px; font-weight: 600; padding: 2px 8px; border-radius: 4px; margin: 0 6px 4px 0; }
+  .stars { background: #fff6e0; color: #b57b00; }
+  .impact { color: #ffffff; }
+  .impact-high { background: #c0392b; }
+  .impact-med { background: #d68910; }
+  .impact-low { background: #7f8c8d; }
+  .risk-red { background: #fdecea; color: #c0392b; }
+  .risk-yellow { background: #fef8e3; color: #a07800; }
+  .item-summary { font-size: 14px; color: #333a45; margin: 0 0 10px 0; }
+  .num-up { color: #1e8e4a; font-weight: 700; }
+  .num-down { color: #c0392b; font-weight: 700; }
+  .num-key { color: #2f6fdb; font-weight: 700; }
+  .bilingual { background: #f7f9fc; border-radius: 6px; padding: 11px 13px; margin: 0 0 10px 0; }
+  .en-title { font-size: 13.5px; font-weight: 700; color: #1a2233; margin: 0 0 5px 0; }
+  .en-summary { font-size: 12.5px; color: #4a5261; margin: 0 0 9px 0; }
+  .vocab-card { background: #ffffff; border: 1px solid #e3e8f0; border-radius: 5px; padding: 8px 10px; }
+  .vocab-title { font-size: 12px; font-weight: 700; color: #2f6fdb; margin-bottom: 6px; }
+  .vocab-item { display: inline-block; font-size: 12px; color: #444b57; background: #eef2f9; border-radius: 4px; padding: 2px 8px; margin: 0 5px 5px 0; }
+  .vocab-item b { color: #1a2233; }
+  .deepdive { background: #fbfbfc; border: 1px solid #e6e9ee; border-radius: 6px; padding: 9px 12px; margin: 0 0 10px 0; }
+  .deepdive summary { font-size: 13px; font-weight: 700; color: #2f6fdb; cursor: pointer; outline: none; }
+  .deepdive-content { padding-top: 8px; }
+  .dl { font-size: 13px; color: #3a414c; margin: 0 0 8px 0; }
+  .dl-label { font-weight: 700; color: #1a2233; }
+  .item-source { font-size: 12px; color: #8a919c; margin: 0 0 6px 0; }
+  .item-source a { color: #2f6fdb; text-decoration: none; }
+  .compare-box { margin: 12px 0 14px 0; }
+  .compare-side { display: inline-block; vertical-align: top; width: 48%; box-sizing: border-box; padding: 10px 12px; border-radius: 6px; font-size: 12.5px; margin-right: 2%; }
+  .compare-bull { background: #eaf7ef; border-left: 4px solid #1e8e4a; color: #1d5c38; }
+  .compare-bear { background: #fdeeec; border-left: 4px solid #c0392b; color: #7d2a20; }
+  .compare-label { font-weight: 700; margin-bottom: 4px; font-size: 12.5px; }
+  .trend-comment { background: #f2f5fa; border-left: 4px solid #6b7a99; border-radius: 5px; padding: 10px 13px; font-size: 13px; color: #3a414c; margin: 10px 0 14px 0; }
+  .timeline { background: #1a2233; color: #ffffff; border-radius: 8px; padding: 16px 18px; margin-bottom: 20px; }
+  .timeline h4 { margin: 0 0 12px 0; font-size: 15px; font-weight: 700; color: #ffffff; }
+  .timeline-item { font-size: 13px; color: #d3dae6; padding: 7px 0; border-bottom: 1px solid #2c3850; }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-date { display: inline-block; background: #2f6fdb; color: #ffffff; font-weight: 700; font-size: 11.5px; padding: 2px 9px; border-radius: 10px; margin-right: 9px; }
+  .footer { text-align: center; font-size: 12px; color: #8a919c; padding: 16px 0 0 0; }
+  @media (max-width: 600px) {
+    .compare-side { width: 100%; margin-right: 0; margin-bottom: 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <h1>🌍 全球动态每日简报</h1>
+    <p>2026年11月1日 · 星期日 · 覆盖生命科学 / 金融 / AI / 硬科技 / 材料 / 中国政策 / 地缘</p>
+  </div>
+
+  <div class="overview">
+    <h3>🧠 今日综述</h3>
+    <p>今日信源质量整体偏弱，多为门户首页与聚合页，硬新闻密度不足，需以“信号识别”而非“事件确认”方式阅读。可提取的主线有三：一是 AI 前沿模型迭代加速，DeepSeek V4 系列与 OpenAI 生态同步推进，模型能力竞争进入“代理化”阶段；二是中国电动车出海叙事出现分化，欧洲关税压力与巴西、匈牙利产能布局并行，股价与销量背离值得警惕；三是地缘与政策信息以分析型信源为主，缺乏可核验的一手公告。整体风向：科技端活跃但噪声大，金融端信息空心化，风险判断应保持保守。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🤖 模型代理化竞争</span>
+      <span class="overview-tag">🚗 中国EV出海分化</span>
+      <span class="overview-tag">📉 信源质量偏低</span>
+      <span class="overview-tag">🔍 安全漏洞治理</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">🧬 生命科学 / 医学</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <p class="item-title">AI 辅助漏洞治理向生物医药基础设施渗透，开源安全成研发前置条件</p>
+        <span class="badge stars">⭐⭐⭐</span>
+        <span class="badge impact impact-med">冲击：Med</span>
+        <span class="badge risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">OpenAI 披露其 “Patch the Planet” 计划中，模型协助研究者在开源项目 PHP 中发现关键安全缺陷。对生物医药而言，大量实验室信息管理系统与临床数据管道依赖开源栈，此类漏洞直接威胁 <span class="num-key">临床试验</span> 数据完整性，安全审计正从 IT 议题上升为科研合规议题。</p>
+      <div class="bilingual">
+        <p class="en-title">AI-Assisted Vulnerability Hunting Reaches Biomedical Infrastructure</p>
+        <p class="en-summary">OpenAI reported that its models helped researchers uncover critical security flaws in PHP under the Patch the Planet initiative. Because clinical trial pipelines and laboratory information systems rely heavily on open-source stacks, such vulnerabilities pose a direct threat to data integrity and regulatory compliance.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>vulnerability</b> 漏洞</span>
+            <span class="vocab-item"><b>open-source stack</b> 开源技术栈</span>
+            <span class="vocab-item"><b>data integrity</b> 数据完整性</span>
+            <span class="vocab-item"><b>regulatory compliance</b> 监管合规</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于给科研机构的“水电管网”做体检——平时看不见，一旦漏水，整栋楼的实验数据都可能被污染。AI 在这里扮演的是不知疲倦的巡检工，能比人工更快找出隐蔽裂缝。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年），药企与 CRO 将把 AI 漏洞扫描纳入供应商准入清单；中期（3-10年），临床试验数据平台可能出现“安全即服务”的第三方认证市场。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若全面落地，科研数据泄露与篡改事件将大幅下降，但也会带来新问题——AI 发现漏洞的速度快于人类修补速度，形成“补丁赤字”，安全责任归属需要新的法律框架。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://x.com/OpenAI" target="_blank">OpenAI 官方 X 账号</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <p class="item-title">AI 大模型进入科研工作流，生命科学文献与实验设计环节首当其冲</p>
+        <span class="badge stars">⭐⭐⭐</span>
+        <span class="badge impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">DeepSeek 平台文档显示其 V4 系列已支持文件读取、长任务处理与本地文件编辑，定位为可后台运行的通用助手。此类能力在生命科学场景中可直接用于文献综述、<span class="num-key">实验方案</span> 草拟与数据整理，科研效率提升的同时也带来引用准确性与可复现性争议。</p>
+      <div class="bilingual">
+        <p class="en-title">Large Models Move Into Scientific Workflows</p>
+        <p class="en-summary">DeepSeek's V4 series now supports local file editing, long-horizon task handling and background execution. In life sciences, these capabilities map directly onto literature review, protocol drafting and data curation, raising fresh concerns over citation accuracy and reproducibility.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>literature review</b> 文献综述</span>
+            <span class="vocab-item"><b>protocol drafting</b> 方案草拟</span>
+            <span class="vocab-item"><b>reproducibility</b> 可复现性</span>
+            <span class="vocab-item"><b>long-horizon task</b> 长周期任务</span>
+          </div>
+        </div>
+      </details>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>把大模型想象成一位“永不疲倦的研究助理”，能一口气读完几百篇论文并整理成表格。突破点不在单次问答，而在于它能连续工作数小时、直接操作本地文件。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，课题组用它做文献初筛与格式整理；中期，可能出现“AI 实验设计助手”并通过机构内部合规审查；长期，论文署名与贡献认定规则需重写。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>科研产出速度可能翻倍，但“AI 幻觉引用”若流入期刊，将污染整个知识体系。学术界或将被迫建立 AI 使用声明与引用溯源标准。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.deepseek.com/en/platform/" target="_blank">DeepSeek 官方平台</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：生命科学今日缺乏一手临床或顶刊成果，主线是“AI 工具向科研基础设施下沉”。安全与可复现性成为两条隐性风险线，建议持续跟踪监管机构对 AI 辅助科研的合规表态。</div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">💰 经济 / 金融</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <p class="item-title">财经门户首页信息空心化，实时行情聚合平台成主要入口</p>
+        <span class="badge stars">⭐⭐⭐</span>
+        <span class="badge impact impact-low">冲击：Low</span>
+        <span class="badge risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">Yahoo Finance、Google Finance、CNN Markets、MarketWatch、Investing.com 等平台今日均以首页或功能页形式出现，缺乏具体指数与个股数据。Investing.com 已上线 <span class="num-key">AI 分析</span> 与付费数据产品 InvestingPro，反映财经信息服务正从“行情展示”转向“AI 解读 + 订阅变现”。</p>
+      <div class="bilingual">
+        <p class="en-title">Financial Portals Shift From Quotes to AI-Driven Insight</p>
+        <p class="en-summary">Major finance portals surfaced only landing pages today, with no verifiable index or equity figures. Investing.com has rolled out AI analysis alongside its premium InvestingPro tier, signaling a shift from raw quote display toward subscription-based interpretation.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>real-time quote</b> 实时报价</span>
+            <span class="vocab-item"><b>subscription model</b> 订阅模式</span>
+            <span class="vocab-item"><b>premium data</b> 付费数据</span>
+            <span class="vocab-item"><b>market commentary</b> 市场评论</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去财经网站卖的是“数字”，现在卖的是“对数字的解释”。就像从卖体温计变成卖医生诊断，附加值更高，但也更容易夹带主观判断。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，AI 快评将成标配；中期，监管可能要求 AI 生成的投资建议标注来源与免责；长期，个性化投研助手或替代部分初级分析师工作。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>信息获取成本趋近于零，但“注意力”与“判断力”成为稀缺资源，普通投资者需更强的信息甄别能力，否则容易被算法叙事裹挟。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.investing.com/" target="_blank">Investing.com</a> · <a href="https://finance.yahoo.com/" target="_blank">Yahoo Finance</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <p class="item-title">中国电动车板块股价与销量背离，投资者热情降温</p>
+        <span class="badge stars">⭐⭐⭐⭐</span>
+        <span class="badge impact impact-high">冲击：High</span>
+        <span class="badge risk-red">🔴 重大风险</span>
+      </div>
+      <p class="item-summary">纽约时报中文网报道，比亚迪股价较去年 5 月高点已明显下跌，尽管其销量仍居全球电动车前列。市场担忧从“增长故事”转向“利润率与价格战”，中国电动车板块整体估值承压，<span class="num-down">股价回落</span> 与 <span class="num-up">销量增长</span> 形成罕见背离。</p>
+      <div class="bilingual">
+        <p class="en-title">China EV Stocks Diverge From Sales Momentum</p>
+        <p class="en-summary">BYD shares have fallen well below their May peak even as the company retains a leading global sales position. Investors are rotating away from growth narratives toward margin durability and price-war risk, pressuring valuations across the Chinese EV complex.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>valuation pressure</b> 估值压力</span>
+            <span class="vocab-item"><b>price war</b> 价格战</span>
+            <span class="vocab-item"><b>margin durability</b> 利润率韧性</span>
+            <span class="vocab-item"><b>growth narrative</b> 增长叙事</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>好比一家餐厅客流创新高，但每桌客单价在降、折扣越打越狠，老板赚的钱反而变少。资本市场看的是“每辆车赚多少”，而不只是“卖了多少辆”。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，价格战延续将压制毛利率；中期，海外产能（匈牙利、巴西）落地可改善单车利润；长期，行业整合不可避免，尾部品牌出清。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若中国车企成功在海外本地化生产并建立品牌溢价，全球汽车产业格局将重写；但若只剩价格武器，则可能重演家电行业“高份额低利润”的老路。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://cn.nytimes.com/business/20260224/china-electric-vehicle-troubles/" target="_blank">纽约时报中文网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：金融信息端今日“有平台无数据”，可核验性低；真正有信息量的是中国电动车板块的估值重估信号。建议将“销量—利润—估值”三角作为后续跟踪框架，而非单看交付量。</div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">🤖 人工智能</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <p class="item-title">DeepSeek V4 系列上线 API 平台，主打长任务与本地文件操作</p>
+        <span class="badge stars">⭐⭐⭐⭐</span>
+        <span class="badge impact impact-high">冲击：High</span>
+        <span class="badge risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">DeepSeek 官方平台显示 V4 系列已开放 API，模型标识为 <span class="num-key">deepseek-v4-pro</span>，支持后台运行、本地文件编辑与复杂长任务处理。这标志国产模型从“对话能力”竞争转向“代理执行能力”竞争，价格策略仍以性价比为核心卖点。</p>
+      <div class="bilingual">
+        <p class="en-title">DeepSeek V4 Series Opens API With Agentic Capabilities</p>
+        <p class="en-summary">DeepSeek has opened API access to its V4 series, listed as deepseek-v4-pro, emphasizing background execution, local file editing and complex long-horizon tasks. The release marks a shift from conversational benchmarks toward agentic execution, with pricing still positioned as a core differentiator.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>agentic capability</b> 代理执行能力</span>
+            <span class="vocab-item"><b>API access</b> 接口开放</span>
+            <span class="vocab-item"><b>background execution</b> 后台运行</span>
+            <span class="vocab-item"><b>cost-performance</b> 性价比</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>从“会聊天的助手”升级为“会干活的实习生”——不仅能回答问题，还能自己打开文件、改代码、跑完一整套流程再交差。突破点在于连续执行与工具调用。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，开发者用它做自动化脚本与文档处理；中期，企业级代理工作流（客服、运维、报表）加速落地；长期，模型即“数字员工”，按任务计费成为主流商业模式。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若代理能力成熟，白领工作将被拆解为“可委托任务包”，生产力大幅提升，但就业结构与责任归属（AI 出错谁负责）将成为社会核心议题。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.deepseek.com/en/platform/" target="_blank">DeepSeek 官方平台</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <p class="item-title">OpenAI 持续推进“研究与部署”双轨，安全议题与能力扩张同步</p>
+        <span class="badge stars">⭐⭐⭐⭐</span>
+        <span class="badge impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">OpenAI 官网重申其研究终将指向通用人工智能（AGI），并以“确保 AGI 惠及全人类”为使命表述。结合其 Patch the Planet 安全项目，可见头部实验室正试图把“能力发布”与“安全叙事”绑定，以缓解监管与公众疑虑。</p>
+      <div class="bilingual">
+        <p class="en-title">OpenAI Balances Capability Release With Safety Narrative</p>
+        <p class="en-summary">OpenAI restated its long-term pursuit of artificial general intelligence while framing its mission around broad benefit. Coupled with security-focused initiatives such as Patch the Planet, the company is binding capability launches to safety messaging to ease regulatory and public concern.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>artificial general intelligence</b> 通用人工智能</span>
+            <span class="vocab-item"><b>dual-track</b> 双轨</span>
+            <span class="vocab-item"><b>safety narrative</b> 安全叙事</span>
+            <span class="vocab-item"><b>public concern</b> 公众疑虑</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>像一家车企既发布更快的跑车，又同时强调刹车系统升级。能力与安全被放在同一张宣传单上，既是技术路线，也是公关策略。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，安全评估报告或成发布标配；中期，第三方审计机构兴起；长期，AGI 治理可能走向国际条约框架。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若安全与能力真正同步，AI 发展将更稳健；但若安全沦为“合规装饰”，一旦出现重大事故，公众信任可能瞬间崩塌，行业将面临强监管回摆。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://openai.com/" target="_blank">OpenAI 官网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI 竞争焦点已从“参数与榜单”转向“代理执行与安全治理”。国产模型以性价比与工程化能力切入，海外头部以叙事与生态护城河应对。下一阶段的胜负手在于企业级工作流的真实渗透率。</div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">💻 科技 / 硬科技</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <p class="item-title">中国车企加速海外建厂，匈牙利与巴西成关键落点</p>
+        <span class="badge stars">⭐⭐⭐⭐</span>
+        <span class="badge impact impact-high">冲击：High</span>
+        <span class="badge risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">纽约时报报道，比亚迪宣布在匈牙利建厂，长城汽车与比亚迪亦在巴西布局产能，而福特、奔驰等则在部分市场收缩。中国车企以“本地化生产 + 性价比车型”绕开贸易壁垒，欧洲与美国传统车企面临 <span class="num-key">结构性竞争</span> 压力。</p>
+      <div class="bilingual">
+        <p class="en-title">Chinese Automakers Localize Production in Hungary and Brazil</p>
+        <p class="en-summary">BYD has announced a Hungarian plant, while Great Wall Motor and BYD are building capacity in Brazil as Ford and Mercedes retreat from certain markets. Localized production plus affordable EVs allows Chinese firms to circumvent trade barriers, intensifying structural pressure on legacy automakers.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>localized production</b> 本地化生产</span>
+            <span class="vocab-item"><b>trade barrier</b> 贸易壁垒</span>
+            <span class="vocab-item"><b>capacity building</b> 产能建设</span>
+            <span class="vocab-item"><b>legacy automaker</b> 传统车企</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去是“把车运过去卖”，现在是“把工厂搬过去造”。这就像从出口水果变成在当地租地种果树，既省运费，也避开进口限制。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，工厂建设期资本开支高企；中期，本地供应链与就业带来政治好感；长期，中国车企可能成为欧洲电动车市场的主要供给方之一。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>全球汽车产业或形成“中国技术 + 本地制造”的新分工，但也可能引发更隐蔽的非关税壁垒（补贴审查、数据合规），竞争从关税战转向规则战。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nytimes.com/2023/12/22/business/byd-china-hungary.html" target="_blank">The New York Times</a> · <a href="https://www.nytimes.com/2025/07/21/climate/china-brazil-electric-vehicles.html" target="_blank">The New York Times</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <p class="item-title">欧盟对中国电动车补贴调查延续，关税风险仍悬而未决</p>
+        <span class="badge stars">⭐⭐⭐⭐</span>
+        <span class="badge impact impact-high">冲击：High</span>
+        <span class="badge risk-red">🔴 重大风险</span>
+      </div>
+      <p class="item-summary">纽约时报中文网指出，比亚迪等中国车企在欧洲市场的快速增长已促使欧盟对中国政府补贴展开调查，可能导致 <span class="num-key">关税</span> 征收。政策不确定性成为车企估值的重要折价因子，也推动企业加快本地化以对冲风险。</p>
+      <div class="bilingual">
+        <p class="en-title">EU Subsidy Probe Keeps Tariff Risk Alive for Chinese EVs</p>
+        <p class="en-summary">Rapid European expansion by BYD and peers prompted an EU investigation into Chinese state subsidies, potentially leading to tariffs. The unresolved policy overhang acts as a valuation discount and accelerates localization as a hedging strategy.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>subsidy probe</b> 补贴调查</span>
+            <span class="vocab-item"><b>tariff imposition</b> 关税征收</span>
+            <span class="vocab-item"><b>policy overhang</b> 政策悬置</span>
+            <span class="vocab-item"><b>hedging strategy</b> 对冲策略</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于一场“价格是否公平”的裁判。欧盟怀疑中国车企因补贴而拥有不公平成本优势，若裁定成立，进口车将被加税。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，关税落地将抬高终端售价、压缩份额；中期，本地建厂可部分规避；长期，中欧可能在 WTO 框架下寻求妥协。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若贸易摩擦长期化，全球电动车将分裂为区域化市场，消费者面临更高价格，绿色转型成本上升，气候目标与产业保护之间矛盾加剧。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://cn.nytimes.com/business/20240220/byd-china-electric-vehicle/" target="_blank">纽约时报中文网</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <p class="item-title">搜索引擎与浏览器生态摩擦：ESPN 记分板在 Chrome 失效引发讨论</p>
+        <span class="badge stars">⭐⭐⭐</span>
+        <span class="badge impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">Reddit 社区反映 ESPN 记分板在 Chrome 浏览器中出现布局失效，属前端兼容性问题的长期案例。此类“小故障”折射出 Web 生态碎片化：浏览器内核更新、广告拦截与第三方脚本冲突，持续消耗开发者与用户的 <span class="num-key">兼容成本</span>。</p>
+      <div class="bilingual">
+        <p class="en-title">Browser Fragmentation Costs Persist in Web Ecosystem</p>
+        <p class="en-summary">Users reported that ESPN's scoreboard widget fails to render properly in Chrome, a long-standing front-end compatibility issue. Such glitches illustrate ongoing ecosystem fragmentation where browser updates, ad blockers and third-party scripts keep imposing compatibility costs.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>compatibility</b> 兼容性</span>
+            <span class="vocab-item"><b>fragmentation</b> 碎片化</span>
+            <span class="vocab-item"><b>third-party script</b> 第三方脚本</span>
+            <span class="vocab-item"><b>rendering</b> 渲染</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>像同一把钥匙开不同年代的门，锁芯稍有变化就打不开。网页在不同浏览器上的表现差异，就是这种“锁芯不统一”的问题。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，开发者依赖自动化测试覆盖多浏览器；中期，Web 标准组织推动更强一致性；长期，AI 生成前端代码可能进一步放大兼容性风险。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若标准统一，用户体验将更顺滑；但若平台各自为政，互联网可能重回“割裂的封闭花园”，开放 Web 的价值被削弱。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.reddit.com/r/chrome/comments/8cxw6u/espn_scoreboard_malfunction_in_chrome/" target="_blank">Reddit r/chrome</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <p class="item-title">Norton 安全搜索迁移至 Bing，搜索入口格局再调整</p>
+        <span class="badge stars">⭐⭐⭐</span>
+        <span class="badge impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">Norton 官方支持文档显示，其安全搜索已由原有引擎迁移至 Bing 驱动，用户搜索结果可能出现差异。搜索入口的“后台切换”往往不被察觉，却直接影响信息分发与广告生态，<span class="num-key">默认设置</span> 的权力再次凸显。</p>
+      <div class="bilingual">
+        <p class="en-title">Norton Safe Search Migrates to Bing Backend</p>
+        <p class="en-summary">Norton's support documentation confirms that its safe search is now powered by Bing, which may alter user results. Such backend switches go largely unnoticed yet directly shape information distribution and advertising economics, highlighting the power of defaults.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>safe search</b> 安全搜索</span>
+            <span class="vocab-item"><b>backend migration</b> 后台迁移</span>
+            <span class="vocab-item"><b>information distribution</b> 信息分发</span>
+            <span class="vocab-item"><b>default setting</b> 默认设置</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>用户以为自己在用 A 品牌的搜索，实际上结果来自 B 引擎。就像点了某家餐厅的外卖，其实是隔壁厨房做的。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，用户几乎无感；中期，监管可能要求明确标注搜索服务提供方；长期，AI 搜索或彻底改变“结果页”形态。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当搜索由少数引擎垄断，信息多样性下降；若 AI 直接给答案而非链接，内容创作者的流量与商业模式将被彻底重构。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://support.norton.com/sp/en/us/home/current/solutions/v20260924164739815" target="_blank">Norton 官方支持</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技主线仍是“中国制造出海 + 贸易规则博弈”，而 Web 生态的兼容性与默认入口问题则是被低估的长期变量。前者影响产业格局，后者影响信息权力。</div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">🔬 材料科学</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <p class="item-title">Bing 测试“基于浏览历史的关联搜索”，搜索个性化再进一步</p>
+        <span class="badge stars">⭐⭐⭐</span>
+        <span class="badge impact impact-low">冲击：Low</span>
+        <span class="badge risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">Search Engine Roundtable 报道，Bing 正在测试“基于浏览历史的关联搜索”，与 Google 此前的做法类似。该功能通过用户行为数据优化推荐，但也引发 <span class="num-key">隐私</span> 与“信息茧房”担忧，材料科学等专业领域的检索结果可能被非专业兴趣稀释。</p>
+      <div class="bilingual">
+        <p class="en-title">Bing Tests Browsing-History-Based Related Searches</p>
+        <p class="en-summary">Bing is testing related searches derived from users' browsing history, echoing earlier Google experiments. While the feature improves recommendation relevance, it raises privacy and filter-bubble concerns, potentially diluting specialist queries in fields such as materials science.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>related search</b> 关联搜索</span>
+            <span class="vocab-item"><b>browsing history</b> 浏览历史</span>
+            <span class="vocab-item"><b>filter bubble</b> 信息茧房</span>
+            <span class="vocab-item"><b>personalization</b> 个性化</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>搜索引擎开始“猜你想搜什么”，依据是你之前看过什么。就像书店店员根据你上次买的书推荐新书，贴心但也可能让你只看到同一类书。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，普通用户检索效率提升；中期，专业用户可能转向垂直数据库；长期，监管或要求个性化推荐可关闭、可解释。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若个性化过度，公共知识空间将被切成无数小房间，科学共识的形成更难；反之，若透明可控，个性化可成为高效学习工具。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.seroundtable.com/bing-related-searches-based-on-your-browsing-42302.html" target="_blank">Search Engine Roundtable</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <p class="item-title">材料科学领域今日信源缺失，检索噪声掩盖真实进展</p>
+        <span class="badge stars">⭐⭐</span>
+        <span class="badge impact impact-low">冲击：Low</span>
+        <span class="badge risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">今日材料科学板块的原始信源多为 Bing 搜索帮助页与相关搜索说明，缺乏顶刊论文或产业公告。这一“信源空洞”本身是信号：材料科学的重大突破往往发表于 Nature/Science 等期刊，日常新闻流中反而稀缺，需以 <span class="num-key">周度/月度</span> 节奏跟踪。</p>
+      <div class="bilingual">
+        <p class="en-title">Materials Science Coverage Sparse in Daily News Flow</p>
+        <p class="en-summary">Today's materials science inputs consist mainly of search-engine help pages rather than peer-reviewed papers or industry announcements. This source vacuum is itself informative: major breakthroughs typically appear in top journals, requiring weekly or monthly rather than daily tracking.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>peer-reviewed</b> 同行评审</span>
+            <span class="vocab-item"><b>source vacuum</b> 信源空洞</span>
+            <span class="vocab-item"><b>breakthrough</b> 突破</span>
+            <span class="vocab-item"><b>tracking cadence</b> 跟踪节奏</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>材料科学像“慢火炖汤”，成果不常上热搜，但一旦突破（如新型电池材料、超导）会重塑整个产业。日常新闻里看不到，不代表没有在炖。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，关注固态电池、钙钛矿光伏的产业化节点；中期，AI 辅助材料筛选（如 GNoME 类方法）将缩短发现周期；长期，材料突破决定能源与半导体天花板。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若室温超导或高能量密度电池成真，电网、交通、算力成本将被重写；但也要警惕资本对“材料概念”的过度炒作。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.bing.com/RelatedSearch" target="_blank">Bing 相关搜索</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学今日无实质进展，但“AI + 材料发现”与“搜索个性化影响科研检索”两条暗线值得记录。建议建立顶刊周度扫描机制，避免被日常噪声误导。</div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">🇨🇳 中国政策与监管</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <p class="item-title">中国电动车出海进入“规则适配期”，本地化与合规成政策关键词</p>
+        <span class="badge stars">⭐⭐⭐⭐</span>
+        <span class="badge impact impact-high">冲击：High</span>
+        <span class="badge risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">从匈牙利建厂到巴西布局，中国车企的出海逻辑正从“产品出口”转向“规则适配”：需应对欧盟补贴调查、数据合规、本地就业与供应链审查。政策层面，<span class="num-key">本地化率</span> 与 <span class="num-key">技术转让</span> 边界将成为谈判焦点。</p>
+      <div class="bilingual">
+        <p class="en-title">Chinese EV Expansion Enters a Rule-Adaptation Phase</p>
+        <p class="en-summary">From Hungary to Brazil, Chinese automakers are shifting from product exports to rule adaptation, navigating EU subsidy probes, data compliance, local employment and supply-chain scrutiny. Localization ratios and technology-transfer boundaries are emerging as key negotiation points.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>rule adaptation</b> 规则适配</span>
+            <span class="vocab-item"><b>localization ratio</b> 本地化率</span>
+            <span class="vocab-item"><b>technology transfer</b> 技术转让</span>
+            <span class="vocab-item"><b>supply-chain scrutiny</b> 供应链审查</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去出海是“把货卖出去”，现在是“把规则读懂、把关系理顺”。就像进别人家做客，不仅要带礼物，还要遵守主人家的规矩。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，合规团队与游说投入增加；中期，本地合资或成主流模式；长期，中国车企可能参与当地标准制定。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若规则适配成功，中国制造将从“价格优势”升级为“制度嵌入”；若失败，则可能被排除在主要市场之外，产能过剩压力回流国内。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://cn.nytimes.com/business/20240220/byd-china-electric-vehicle/" target="_blank">纽约时报中文网</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <p class="item-title">国产 AI 平台加速开放接口，监管与创新平衡受关注</p>
+        <span class="badge stars">⭐⭐⭐</span>
+        <span class="badge impact impact-med">冲击：Med</span>
+        <span class="badge risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">DeepSeek 等国产 AI 平台持续开放 API 与开发者资源，推动应用生态扩张。与此同时，模型能力越强、开放越广，内容安全、数据跨境与算法备案的监管要求也越具体，<span class="num-key">备案制</span> 与 <span class="num-key">安全评估</span> 成为上线前置条件。</p>
+      <div class="bilingual">
+        <p class="en-title">Domestic AI Platforms Expand APIs Amid Regulatory Balance</p>
+        <p class="en-summary">Chinese AI platforms such as DeepSeek continue opening APIs and developer resources to grow their ecosystems. As capabilities and openness expand, content safety, cross-border data and algorithm filing requirements become more specific, with registration and security assessments acting as pre-launch gates.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>algorithm filing</b> 算法备案</span>
+            <span class="vocab-item"><b>security assessment</b> 安全评估</span>
+            <span class="vocab-item"><b>cross-border data</b> 数据跨境</span>
+            <span class="vocab-item"><b>content safety</b> 内容安全</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>开放 API 就像开商场，商户越多越热闹，但消防、治安、卫生检查也必须跟上。备案与评估就是这套“检查制度”。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，合规成本抬高中小开发者门槛；中期，持牌与备案成为竞争壁垒；长期，监管沙盒或催生更规范的创新。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若监管与创新形成良性循环，中国 AI 应用生态将更具规模优势；若合规过重，可能抑制长尾创新，形成“大厂通吃”格局。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.deepseek.com/en/platform/" target="_blank">DeepSeek 官方平台</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策主线围绕“出海规则适配”与“AI 开放监管”两条线展开。前者关乎制造业全球化的可持续性，后者决定 AI 应用生态的活力与边界，二者都需要在开放与安全之间寻找动态平衡。</div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">🌍 地缘政治与国际关系</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <p class="item-title">地缘分析机构聚焦供应链与武装冲突风险，信息以分析型为主</p>
+        <span class="badge stars">⭐⭐⭐</span>
+        <span class="badge impact impact-med">冲击：Med</span>
+        <span class="badge risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">The Geopolitics、Geopolitical Monitor 等机构今日内容聚焦武装冲突、供应链与地缘风险分析，The Economist 地缘栏目亦以大国竞争为主线。整体呈现“分析多、事实少”的特征，<span class="num-key">20 年</span> 独立风险覆盖成为部分机构的差异化定位。</p>
+      <div class="bilingual">
+        <p class="en-title">Geopolitical Analysis Centers on Supply Chains and Conflict Risk</p>
+        <p class="en-summary">Outlets such as The Geopolitics and Geopolitical Monitor focus on armed conflict, supply chains and geopolitical risk, while The Economist frames coverage around great-power competition. The flow is analysis-heavy and fact-light, with long-track-record independent risk coverage serving as a differentiator.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>geopolitical risk</b> 地缘政治风险</span>
+            <span class="vocab-item"><b>great-power competition</b> 大国竞争</span>
+            <span class="vocab-item"><b>supply chain</b> 供应链</span>
+            <span class="vocab-item"><b>armed conflict</b> 武装冲突</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>地缘分析像天气预报——不是告诉你今天下不下雨，而是提示未来几天哪片云可能变成风暴。它提供的是概率与情景，而非确定事实。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，企业将地缘风险纳入供应链选址；中期，风险定价工具（保险、对冲）更成熟；长期，地缘与技术标准深度绑定。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若分析能力普及，决策者或能更早预警冲突；但若分析被用于制造恐慌或操纵市场，信息本身也会成为武器。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.geopoliticalmonitor.com/" target="_blank">Geopolitical Monitor</a> · <a href="https://www.economist.com/topics/geopolitics" target="_blank">The Economist</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <p class="item-title">贸易壁垒与本地化生产交织，全球化进入“区域化重组”阶段</p>
+        <span class="badge stars">⭐⭐⭐⭐</span>
+        <span class="badge impact impact-high">冲击：High</span>
+        <span class="badge risk-red">🔴 重大风险</span>
+      </div>
+      <p class="item-summary">欧盟补贴调查与中国车企海外建厂并行，折射出全球化正从“效率优先”转向“安全与规则优先”。供应链被拆分为区域板块，企业需同时应对关税、补贴审查与数据合规，<span class="num-key">区域化</span> 成为新的成本结构变量。</p>
+      <div class="bilingual">
+        <p class="en-title">Globalization Reorganizes Around Regional Blocs</p>
+        <p class="en-summary">The EU subsidy probe and Chinese overseas plant construction together signal a shift from efficiency-first globalization toward security-and-rules-first arrangements. Supply chains are being split into regional blocks, forcing firms to manage tariffs, subsidy reviews and data compliance simultaneously.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>regionalization</b> 区域化</span>
+            <span class="vocab-item"><b>subsidy review</b> 补贴审查</span>
+            <span class="vocab-item"><b>cost structure</b> 成本结构</span>
+            <span class="vocab-item"><b>efficiency-first</b> 效率优先</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去全球像一条最优路线的高速公路，现在被分成几个收费不同的路段，每段都要重新算过路费。企业不得不在多个区域同时布点。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期，企业增加“冗余产能”；中期，区域贸易协定重要性上升；长期，全球通胀中枢可能因效率损失而抬升。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若区域化失控，世界可能回到高壁垒的板块经济，消费者承担更高价格；若规则协调成功，则可能形成“竞争中有合作”的新均衡。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://cn.nytimes.com/business/20240220/byd-china-electric-vehicle/" target="_blank">纽约时报中文网</a> · <a href="https://thegeopolitics.com/" target="_blank">The Geopolitics</a></p>
+    </div>
+
+    <div class="compare-box">
+      <div class="compare-side compare-bull">
+        <div class="compare-label">📈 乐观方</div>
+        本地化建厂可创造就业、贴近市场，长期看中国车企将从“出口商”升级为“全球制造商”，贸易摩擦反而加速其全球化成熟。
+      </div>
+      <div class="compare-side compare-bear">
+        <div class="compare-label">📉 悲观方</div>
+        补贴调查与关税风险短期难消，本地化资本开支高企、回报周期长，叠加国内价格战，车企利润与现金流承压，估值折价将持续。
+      </div>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘主线是“效率全球化”让位于“规则全球化”。企业竞争从产品成本延伸到合规能力与制度嵌入能力，区域化重组将长期抬升全球经济运行成本。</div>
+  </div>
+
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">持续跟踪</span>
+      <span>欧盟对中国电动车补贴调查进展，关税裁定时点未明，需关注官方公告</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">中期</span>
+      <span>比亚迪匈牙利工厂建设与投产节奏，影响欧洲本地化供给能力</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">周度</span>
+      <span>DeepSeek V4 系列 API 价格与能力更新，关注企业级代理工作流落地案例</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    本简报基于公开信源整理，部分来源为门户首页与聚合页，信息可核验性有限，不构成投资建议。<br>
+    生成时间：2026-11-01 · 全球动态每日简报
+  </div>
+
+</div>
+</body>
+</html>
