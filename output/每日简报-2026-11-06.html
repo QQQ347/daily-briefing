@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球动态简报 · 2026-11-06</title>
+<style>
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f4f5f7; color: #1f2328; margin: 0; padding: 16px; line-height: 1.7; font-size: 15px; }
+  .container { max-width: 860px; margin: 0 auto; }
+  h1 { font-size: 22px; font-weight: 700; margin: 0 0 4px 0; }
+  .date-line { color: #6b7280; font-size: 13px; margin-bottom: 18px; }
+  .overview { background: #eef4ff; border-left: 5px solid #2f6feb; padding: 16px 18px; margin-bottom: 26px; border-radius: 6px; }
+  .overview h3 { margin: 0 0 8px 0; font-size: 17px; font-weight: 700; }
+  .overview p { margin: 0 0 12px 0; font-size: 14.5px; }
+  .overview-tags { }
+  .overview-tag { display: inline-block; background: #ffffff; border: 1px solid #c7d8f7; color: #1d4ed8; font-size: 12.5px; padding: 3px 10px; border-radius: 12px; margin: 0 6px 6px 0; font-weight: 600; }
+  .section { margin-bottom: 30px; }
+  .section-title { font-size: 18px; font-weight: 700; padding: 8px 0 8px 10px; border-left: 5px solid #333; margin-bottom: 14px; }
+  .item { background: #ffffff; border-radius: 8px; padding: 16px 18px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.07); }
+  .item-header { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+  .stars { color: #e8a300; font-size: 13px; font-weight: 400; margin-left: 6px; }
+  .impact { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 4px; margin-left: 6px; font-weight: 600; vertical-align: middle; }
+  .impact-high { background: #fde2e1; color: #b42318; }
+  .impact-med { background: #fff4d6; color: #8a5a00; }
+  .impact-low { background: #e6f4ea; color: #1e6b3a; }
+  .risk-red { display: inline-block; font-size: 12px; background: #fde2e1; color: #b42318; padding: 2px 8px; border-radius: 4px; margin-left: 6px; font-weight: 600; }
+  .risk-yellow { display: inline-block; font-size: 12px; background: #fff4d6; color: #8a5a00; padding: 2px 8px; border-radius: 4px; margin-left: 6px; font-weight: 600; }
+  .item-summary { font-size: 14.5px; margin: 0 0 12px 0; }
+  .num-up { color: #1a7f37; font-weight: 700; }
+  .num-down { color: #c62828; font-weight: 700; }
+  .num-key { color: #1d4ed8; font-weight: 700; }
+  .bilingual { background: #f7f8fa; border-radius: 6px; padding: 12px 14px; margin-bottom: 12px; }
+  .en-title { font-weight: 700; font-size: 14px; margin: 0 0 6px 0; color: #222; }
+  .en-summary { font-size: 13.5px; color: #444; margin: 0 0 10px 0; }
+  .vocab-card { }
+  .vocab-title { font-size: 12.5px; font-weight: 700; color: #555; margin-bottom: 6px; }
+  .vocab-item { display: inline-block; background: #ffffff; border: 1px solid #e3e6ea; border-radius: 10px; font-size: 12px; padding: 2px 9px; margin: 0 5px 5px 0; color: #333; }
+  .vocab-item b { color: #1d4ed8; }
+  .compare-box { margin: 12px 0; }
+  .compare-side { display: inline-block; vertical-align: top; width: 47%; font-size: 13px; padding: 10px 12px; border-radius: 6px; margin-right: 2%; box-sizing: border-box; }
+  .compare-bull { background: #e6f4ea; border-left: 4px solid #1a7f37; }
+  .compare-bear { background: #fde2e1; border-left: 4px solid #c62828; }
+  .compare-label { font-weight: 700; margin-bottom: 4px; }
+  .deepdive { background: #fbfbfc; border: 1px solid #e3e6ea; border-radius: 6px; padding: 8px 12px; margin-bottom: 10px; }
+  .deepdive summary { cursor: pointer; font-weight: 700; font-size: 13.5px; color: #1d4ed8; }
+  .deepdive-content { padding-top: 8px; }
+  .dl { font-size: 13.5px; margin: 0 0 8px 0; }
+  .dl-label { font-weight: 700; }
+  .dl-what { }
+  .dl-prospect { }
+  .dl-vision { }
+  .item-source { font-size: 12px; color: #6b7280; margin: 0; }
+  .item-source a { color: #1d4ed8; text-decoration: none; }
+  .trend-comment { background: #f0f2f5; border-left: 4px solid #6b7280; padding: 10px 14px; font-size: 13.5px; border-radius: 4px; color: #333; }
+  .timeline { background: #fff8e6; border: 1px solid #f0d9a0; border-radius: 8px; padding: 16px 18px; margin-bottom: 24px; }
+  .timeline h4 { margin: 0 0 12px 0; font-size: 16px; font-weight: 700; }
+  .timeline-item { font-size: 13.5px; margin-bottom: 8px; }
+  .timeline-date { display: inline-block; background: #f0d9a0; color: #6b4e00; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 4px; margin-right: 8px; }
+  .footer { text-align: center; font-size: 12px; color: #9aa0a6; padding: 20px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>🌐 全球动态简报</h1>
+<div class="date-line">2026年11月6日 · 星期五 · 高密度信息版</div>
+
+<div class="overview">
+  <h3>🧠 今日综述</h3>
+  <p>今日信息中真正具备决策价值的信号集中在两条主线：一是半导体出口管制体系在 2026 年持续外溢，从美国 BIS 单边禁令扩展到欧盟、台湾等多法域协同，全球供应链正被动走向"区块化"；二是钙钛矿光伏从实验室效率竞赛转入稳定性与吉瓦级量产的经济性验证，<span class="num-key">35.5%</span> 叠层纪录与 <span class="num-key">26.61%</span> 认证效率同框出现，产业化窗口明显前移。金融端人民币汇率资讯密集但缺乏实质增量，属噪音。整体风向：硬科技与材料端偏乐观，地缘与监管端风险持续积累。</p>
+  <div class="overview-tags">
+    <span class="overview-tag">🔴 芯片管制多法域化</span>
+    <span class="overview-tag">☀️ 钙钛矿量产拐点</span>
+    <span class="overview-tag">🧪 稳定性成新战场</span>
+    <span class="overview-tag">🏭 供应链区块化</span>
+    <span class="overview-tag">📊 信息噪音偏高</span>
+  </div>
+</div>
+
+<!-- 1. 生命科学 -->
+<div class="section">
+  <div class="section-title">🧬 生命科学 / 医学</div>
+
+  <div class="item">
+    <div class="item-header">钙钛矿-生物界面交叉研究受关注，稳定性方法论向生物器件迁移<span class="stars">⭐⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span><span class="risk-yellow">🟡 值得观察</span></div>
+    <p class="item-summary">Nature 系列综述指出，钙钛矿材料在<strong>湿、热、光</strong>三重应力下的降解机理研究已形成较成熟方法论，其中关于<strong>离子迁移</strong>与<strong>界面钝化</strong>的框架正被借鉴到<strong>生物电子界面</strong>与<strong>植入式传感器</strong>的长期稳定性设计中，跨领域迁移尚处早期。</p>
+    <div class="bilingual">
+      <p class="en-title">Perovskite Stability Frameworks Migrate Toward Bioelectronic Interfaces</p>
+      <p class="en-summary">Review articles in the Nature portfolio argue that degradation mechanisms established for halide perovskites — particularly ion migration and interfacial passivation — offer a transferable methodology for long-term stability engineering of implantable bioelectronic sensors. The cross-domain transfer remains at an early stage.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>ion migration</b> 离子迁移</span>
+          <span class="vocab-item"><b>interfacial passivation</b> 界面钝化</span>
+          <span class="vocab-item"><b>implantable sensor</b> 植入式传感器</span>
+          <span class="vocab-item"><b>degradation mechanism</b> 降解机理</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>钙钛矿太阳能电池的"短命"问题，本质是材料在潮湿、高温、光照下内部离子乱跑、界面被腐蚀。科学家为此发明了一整套"防跑冒滴漏"的工程方法。现在有人提出：人体内的植入式电子器件同样面临湿、热、离子环境，这套方法论或许能直接借用。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）看，更多是论文层面的方法论引用，难有产品；中期（3-10年）若落地，可能出现在<strong>长期植入的神经刺激器</strong>、<strong>连续血糖监测贴片</strong>等场景，核心价值是把器件寿命从数月拉长到数年。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果界面稳定性工程真正成熟，未来的医疗植入物可能像"终身免维护"的零件一样工作，患者不再需要反复手术更换电池与封装，医疗成本结构会被彻底改写。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.nature.com/articles/s41578-026-00917-3" target="_blank">Nature Reviews Materials</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">绿色能源转型中的卤化物钙钛矿：技术经济可行性首次系统评估<span class="stars">⭐⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span><span class="risk-yellow">🟡 值得观察</span></div>
+    <p class="item-summary">Nature Sustainability 发表综述，首次系统评估钙钛矿<strong>大规模制造</strong>的技术与经济可行性，指出规模化瓶颈不在效率而在<strong>良率</strong>、<strong>封装成本</strong>与<strong>铅管理合规</strong>，并给出吉瓦级产线的成本敏感度区间。</p>
+    <div class="bilingual">
+      <p class="en-title">Techno-Economic Feasibility of GW-Scale Halide Perovskite Manufacturing Assessed</p>
+      <p class="en-summary">A Nature Sustainability review delivers the first systematic techno-economic appraisal of large-scale halide perovskite manufacturing. It concludes that the binding constraints are yield, encapsulation cost and lead-management compliance rather than conversion efficiency, and maps cost sensitivity across gigawatt-scale production lines.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>techno-economic appraisal</b> 技术经济评估</span>
+          <span class="vocab-item"><b>yield</b> 良率</span>
+          <span class="vocab-item"><b>encapsulation</b> 封装</span>
+          <span class="vocab-item"><b>lead-management compliance</b> 铅管理合规</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去十年钙钛矿的新闻都是"效率又破纪录"，但效率高不等于能赚钱。这篇综述相当于给这个行业做了一次"开厂可行性测算"：设备多贵、良率要多高才不亏、封装占多少成本、含铅材料怎么合规处置。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）会直接影响国内钙钛矿产线的投资决策口径，从"追效率"转向"追良率与度电成本"；中期（3-10年）若封装成本下降，钙钛矿叠层有望在<strong>分布式屋顶</strong>与<strong>大型地面电站</strong>两个市场同时铺开。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果钙钛矿真的把光伏成本再压一个台阶，能源的边际成本会进一步趋近于零，电力在总能耗中的占比将持续攀升，整个工业体系的电气化进程会被加速。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.nature.com/articles/s41893-026-01844-5" target="_blank">Nature Sustainability</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：生命科学与材料科学的边界正在模糊，"稳定性工程"成为跨领域通用语言。真正的价值不在于单点突破，而在于方法论的可迁移性——这是本轮交叉研究最值得跟踪的隐性红利。</div>
+</div>
+
+<!-- 2. 经济金融 -->
+<div class="section">
+  <div class="section-title">💰 经济 / 金融</div>
+
+  <div class="item">
+    <div class="item-header">人民币兑美元中间价资讯密集，市场关注 <span class="num-key">7.0</span> 关口心理位<span class="stars">⭐⭐⭐</span><span class="impact impact-low">冲击：Low</span><span class="risk-yellow">🟡 值得观察</span></div>
+    <p class="item-summary">11月5日中国央行公布人民币兑美元汇率中间价，多家汇率平台数据显示离岸与在岸价差收窄，市场对 <span class="num-key">7.0</span> 整数关口的心理关注度上升。当日 <span class="num-key">1</span> 人民币约兑 <span class="num-key">0.14997</span> 美元，折算美元兑人民币约 <span class="num-key">6.67</span>，显示人民币阶段性偏强。</p>
+    <div class="bilingual">
+      <p class="en-title">RMB Central Parity Draws Attention as Markets Eye the 7.0 Psychological Level</p>
+      <p class="en-summary">China's central bank published the daily USD/CNY central parity on November 5, with currency platforms showing a narrowing spread between onshore and offshore rates. Market attention is converging on the 7.0 round-number threshold as a psychological anchor for directional expectations.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>central parity</b> 中间价</span>
+          <span class="vocab-item"><b>onshore / offshore</b> 在岸 / 离岸</span>
+          <span class="vocab-item"><b>psychological level</b> 心理关口</span>
+          <span class="vocab-item"><b>spread</b> 价差</span>
+        </div>
+      </div>
+    </div>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>汇率中间价可以理解为央行每天给出的"官方参考价"，市场价围绕它波动。当在岸价和离岸价差距变小，说明市场分歧收敛，预期更一致。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3个月）看，若人民币维持偏强，进口成本压力缓解，但对出口企业结汇节奏形成扰动；中期看，汇率稳定性对跨境资本流动与外资配置意愿的影响更为关键。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果人民币汇率长期保持双向波动而非单边趋势，中国企业出海与外资入华都会更依赖"对冲工具"而非"押注方向"，这会倒逼国内金融衍生品市场加速成熟。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.boc.cn/sourcedb/whpj/index.html" target="_blank">中国银行外汇牌价</a> · <a href="https://finance.sina.com.cn/money/forex/hq/USDCNY.shtml" target="_blank">新浪财经</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">汇率信息平台化，实时数据服务成个人投资者基础设施<span class="stars">⭐⭐⭐</span><span class="impact impact-low">冲击：Low</span></div>
+    <p class="item-summary">Wise、实时汇率网等平台持续强化"中间市场汇率"可视化，个人用户获取跨境汇兑信息的门槛显著降低。这类工具化服务的普及，正在把过去机构专属的汇率透明度下沉到 <span class="num-key">C</span> 端，但同时也放大了短期噪音对预期的干扰。</p>
+    <div class="bilingual">
+      <p class="en-title">Currency Data Platforms Democratize FX Transparency for Retail Users</p>
+      <p class="en-summary">Platforms such as Wise and real-time FX aggregators are pushing mid-market rate transparency down to retail users, lowering the barrier to cross-border financial information. The trade-off is that short-term noise now propagates faster into household expectations.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>mid-market rate</b> 中间市场汇率</span>
+          <span class="vocab-item"><b>democratize</b> 使大众化</span>
+          <span class="vocab-item"><b>cross-border</b> 跨境的</span>
+          <span class="vocab-item"><b>noise propagation</b> 噪音传导</span>
+        </div>
+      </div>
+    </details>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>以前换汇要跑银行看牌价，现在打开手机就能看到"真实中间价"和各家银行报价的差距。信息变透明了，但也意味着每一次小数点跳动都会被放大解读。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，跨境旅游、留学、海淘人群受益最直接；中期看，这类工具会与支付、汇款深度整合，形成"信息+交易"闭环。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当汇率信息完全透明且实时，跨境消费的心理门槛会大幅下降，"全球比价"成为日常习惯，本地价格体系将承受更直接的全球竞争压力。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://wise.com/zh-cn/currency-converter/usd-to-cny-rate" target="_blank">Wise 汇率工具</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：今日金融信息以汇率工具与牌价数据为主，缺乏宏观政策增量，属于"高密度低信息量"的一天。真正值得跟踪的是人民币阶段性偏强对出口结汇与跨境资本的二阶影响，而非日内点位本身。</div>
+</div>
+
+<!-- 3. 人工智能 -->
+<div class="section">
+  <div class="section-title">🤖 人工智能</div>
+
+  <div class="item">
+    <div class="item-header">AI 算力虚拟化路线受关注，Intel GPU Flex 系列虚拟化指南发布<span class="stars">⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span><span class="risk-yellow">🟡 值得观察</span></div>
+    <p class="item-summary">Intel 发布数据中心 GPU Flex 系列虚拟化技术指南，围绕 <strong>SR-IOV</strong> 与 <strong>Passthrough</strong> 两种 GPU 虚拟化路径给出部署范式。在 AI 推理算力紧张背景下，<strong>GPU 切分与多租户复用</strong>成为降低单位推理成本的关键工程手段，指南的实操价值高于其技术新颖度。</p>
+    <div class="bilingual">
+      <p class="en-title">Intel Publishes Virtualization Guide for Data Center GPU Flex Series</p>
+      <p class="en-summary">Intel released a virtualization guide for its Data Center GPU Flex Series, detailing SR-IOV and passthrough deployment patterns. With inference capacity tight, GPU partitioning and multi-tenant reuse have become key engineering levers for reducing per-inference cost.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>SR-IOV</b> 单根I/O虚拟化</span>
+          <span class="vocab-item"><b>passthrough</b> 直通模式</span>
+          <span class="vocab-item"><b>multi-tenant reuse</b> 多租户复用</span>
+          <span class="vocab-item"><b>per-inference cost</b> 单次推理成本</span>
+        </div>
+      </div>
+    </details>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>一块 GPU 很贵，但很多推理任务用不满它的全部算力。虚拟化就是把这整块"大蛋糕"切成几份分给不同用户，或者干脆整块直通给一个虚拟机跑满。前者省钱，后者性能好，各有取舍。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）会直接改善云厂商的推理资源利用率，尤其在<strong>中小模型批量推理</strong>场景；中期看，GPU 切分能力会成为云服务定价分层的核心变量。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果算力能被像水电一样细粒度计量和切分，AI 应用的门槛会进一步塌陷，小团队也能以极低成本跑起自己的推理服务，算力垄断的护城河将被削弱。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://cdrdv2-public.intel.com/774119/intel-data-center-gpuflexseries-virtualization-guide.pdf" target="_blank">Intel 技术文档</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">AI 相关搜索噪音显著，信息筛选成本上升<span class="stars">⭐⭐</span><span class="impact impact-low">冲击：Low</span><span class="risk-yellow">🟡 值得观察</span></div>
+    <p class="item-summary">今日 AI 类原始信息中，大量条目实为游戏攻略、字母歌等内容，与人工智能无关，反映出<strong>关键词抓取</strong>在泛化查询下的信噪比问题。对分析师而言，这意味着<strong>源质量校验</strong>环节的必要性上升，而非 AI 行业本身出现新变化。</p>
+    <div class="bilingual">
+      <p class="en-title">Signal-to-Noise Ratio Degrades in AI-Tagged News Feeds</p>
+      <p class="en-summary">A large share of items tagged as AI-related today were in fact game guides and children's content, revealing keyword-capture weaknesses in generalized queries. The implication for analysts is a rising need for source-quality verification rather than any substantive shift in the AI industry itself.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>signal-to-noise ratio</b> 信噪比</span>
+          <span class="vocab-item"><b>keyword capture</b> 关键词抓取</span>
+          <span class="vocab-item"><b>source verification</b> 来源校验</span>
+          <span class="vocab-item"><b>generalized query</b> 泛化查询</span>
+        </div>
+      </div>
+    </details>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>就像用"苹果"搜索，会同时搜到水果和手机品牌。AI 这类高频词在抓取时极易混入无关内容，导致简报出现"看起来很多、实际没料"的假繁荣。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，自动化简报系统需要引入来源白名单与主题分类器；中期看，AI 辅助的事实核查会成为信息生产链条的标准工序。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当信息生产全面 AI 化，真正的稀缺资源不再是"信息"，而是"可信度"。谁能提供可验证的信源链路，谁就掌握下一代内容分发的话语权。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.google.com/" target="_blank">原始抓取结果（多源）</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：今日 AI 板块实质增量有限，唯一有工程价值的是 GPU 虚拟化路线的落地文档。行业层面未见新模型或新融资信号，说明当前处于"能力消化期"而非"能力爆发期"。</div>
+</div>
+
+<!-- 4. 硬科技 -->
+<div class="section">
+  <div class="section-title">💻 科技 / 硬科技</div>
+
+  <div class="item">
+    <div class="item-header">半导体基础定义类内容集中出现，产业教育需求上升<span class="stars">⭐⭐⭐</span><span class="impact impact-low">冲击：Low</span></div>
+    <p class="item-summary">IBM、Britannica、TechTarget 等来源集中出现半导体定义与科普内容，涵盖<strong>掺杂</strong>、<strong>PN 结</strong>、<strong>导电性介于导体与绝缘体之间</strong>等基础概念。这类内容的集中出现，往往对应产业外溢期的人才与资本教育需求上升。</p>
+    <div class="bilingual">
+      <p class="en-title">Foundational Semiconductor Content Surges, Signaling Industry Education Demand</p>
+      <p class="en-summary">Definitional and educational semiconductor content from IBM, Britannica and TechTarget appeared in clusters, covering doping, PN junctions and conductivity between conductors and insulators. Such clustering typically accompanies periods of industry spillover when talent and capital education demand rises.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>doping</b> 掺杂</span>
+          <span class="vocab-item"><b>PN junction</b> PN结</span>
+          <span class="vocab-item"><b>conductivity</b> 导电性</span>
+          <span class="vocab-item"><b>industry spillover</b> 产业外溢</span>
+        </div>
+      </div>
+    </details>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>半导体就是"可被控制地导电"的材料，通过掺杂人为制造出导电能力的差异，从而做出开关——这就是所有芯片的物理基础。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，科普内容激增更多反映公众与资本关注度；中期看，真正的产业信号应看设备招标、产能利用率与人才薪酬，而非定义词条热度。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当半导体知识像编程一样成为通识，未来的产业竞争将从"谁掌握工艺"扩展到"谁掌握跨学科人才池"，教育体系会被倒逼重构。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.ibm.com/think/topics/semiconductors" target="_blank">IBM Think</a> · <a href="https://www.britannica.com/science/semiconductor" target="_blank">Britannica</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">华为 ICT 基础设施叙事持续，终端与云协同仍是主线<span class="stars">⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span><span class="risk-yellow">🟡 值得观察</span></div>
+    <p class="item-summary">华为官网与商城信息显示，公司继续以"构建万物互联的智能世界"为定位，覆盖<strong>ICT 基础设施</strong>、<strong>智能终端</strong>与<strong>云服务</strong>三大板块。在外部管制压力持续的背景下，其<strong>端-管-云协同</strong>路线的战略确定性反而上升，但具体产品级增量信息有限。</p>
+    <div class="bilingual">
+      <p class="en-title">Huawei Sustains ICT Infrastructure Narrative With Device-Cloud Synergy</p>
+      <p class="en-summary">Huawei's corporate and storefront messaging continues to center on a "fully connected, intelligent world," spanning ICT infrastructure, smart devices and cloud services. Amid persistent external controls, the strategic certainty of its device-network-cloud synergy has arguably increased, though product-level incremental disclosures remain limited.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>ICT infrastructure</b> ICT基础设施</span>
+          <span class="vocab-item"><b>device-cloud synergy</b> 端云协同</span>
+          <span class="vocab-item"><b>strategic certainty</b> 战略确定性</span>
+          <span class="vocab-item"><b>incremental disclosure</b> 增量披露</span>
+        </div>
+      </div>
+    </details>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>华为的路线可以理解为"不把鸡蛋放在一个篮子里"：芯片受限，就把网络设备、终端、云服务捆成一个生态，用系统能力对冲单点短板。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，国内市场与"一带一路"沿线是主要增量；中期看，若自研算力与操作系统生态成熟，端云协同会形成较强的替换成本壁垒。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果"端-管-云"一体化真的跑通，未来的智能世界可能不是由单一芯片或单一模型定义，而是由"系统集成能力"定义，这会重写科技公司的竞争维度。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.huawei.com/cn/" target="_blank">华为官网</a> · <a href="https://www.vmall.com/" target="_blank">华为商城</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">半导体供应链追踪机构活跃，出口管制成常态化监测对象<span class="stars">⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span><span class="risk-yellow">🟡 值得观察</span></div>
+    <p class="item-summary">SupplyICs 等机构持续追踪美国 BIS、欧盟两用物项等主要法域的半导体出口管制演进，形成常态化监测体系。这意味着<strong>管制已成为产业分析的固定变量</strong>，企业合规部门从"应对事件"转向"持续运营"。</p>
+    <div class="bilingual">
+      <p class="en-title">Export Controls Become a Standing Variable in Semiconductor Supply Chain Analysis</p>
+      <p class="en-summary">Tracking outfits such as SupplyICs now monitor semiconductor export controls across U.S. BIS and EU dual-use regimes on a continuous basis. Export controls have thus shifted from episodic events to a standing variable, pushing corporate compliance functions from reactive response toward continuous operations.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>dual-use</b> 两用物项</span>
+          <span class="vocab-item"><b>standing variable</b> 常态化变量</span>
+          <span class="vocab-item"><b>compliance function</b> 合规职能</span>
+          <span class="vocab-item"><b>reactive response</b> 被动应对</span>
+        </div>
+      </div>
+    </details>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去企业把出口管制当成"偶发事件"来处理，现在要像看天气预报一样天天盯着，因为它直接决定了哪些货能卖、卖给谁。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，合规成本上升会挤压中小厂商利润；中期看，具备全球合规能力的头部企业反而获得相对优势，行业集中度可能提升。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果管制长期化，全球半导体可能演化为"两套标准、两套供应链"，效率损失将由全球消费者共同承担，但区域内的技术自主性会显著增强。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://supplyics.com/insights/supply-chain/semiconductor-geopolitics-mid-2026-export-control-frontiers/" target="_blank">SupplyICs</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：硬科技板块今日信息偏"基础层"——定义、官网叙事、监测体系，缺少产品级突破。但这恰恰说明产业进入深水区：竞争焦点从"发布新品"转向"合规能力与系统集成"。</div>
+</div>
+
+<!-- 5. 材料科学 -->
+<div class="section">
+  <div class="section-title">🔬 材料科学</div>
+
+  <div class="item">
+    <div class="item-header">钙钛矿叠层电池效率达 <span class="num-key">35.5%</span>，吉瓦级产线进入视野<span class="stars">⭐⭐⭐⭐</span><span class="impact impact-high">冲击：High</span><span class="risk-yellow">🟡 值得观察</span></div>
+    <p class="item-summary">钙钛矿光伏从 2009 年的 <span class="num-key">3.8%</span> 实验室效率，推进至叠层 <span class="num-key">35.5%</span> 纪录，并已出现吉瓦级产线规划。效率曲线与产能曲线首次同步上行，标志着该技术从"论文明星"进入"产业化验证"阶段，但稳定性仍是最大变量。</p>
+    <div class="bilingual">
+      <p class="en-title">Perovskite Tandem Hits 35.5% Record as Gigawatt-Scale Lines Come Into View</p>
+      <p class="en-summary">Perovskite photovoltaics have advanced from a 3.8% laboratory curiosity in 2009 to a 35.5% tandem record, with gigawatt-scale production lines now being planned. For the first time, the efficiency curve and the capacity curve are rising in tandem, marking a shift from academic stardom to industrial validation.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>tandem cell</b> 叠层电池</span>
+          <span class="vocab-item"><b>gigawatt-scale</b> 吉瓦级</span>
+          <span class="vocab-item"><b>industrial validation</b> 产业化验证</span>
+          <span class="vocab-item"><b>efficiency curve</b> 效率曲线</span>
+        </div>
+      </div>
+    </details>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传统硅电池效率已接近理论天花板，钙钛矿可以"叠"在硅上面，两层各吸收不同波段的阳光，相当于把"单层滤网"换成"双层滤网"，效率自然更高。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）看，叠层组件会先在<strong>高端分布式市场</strong>试水；中期（3-10年）若稳定性达标，<strong>地面电站</strong>将是大规模放量场景，度电成本有望再降一档。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果光伏效率再提升三分之一，同等土地面积发电量大幅增加，沙漠、屋顶、建筑立面的能源价值会被重新定价，"能源就地生产"成为城市常态。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://energy-solutions.co/articles/sub/perovskite-solar-cells-efficiency-explained" target="_blank">Energy Solutions</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">铯掺杂策略实现 <span class="num-key">26.61%</span> 认证效率，发表于 Nature Energy<span class="stars">⭐⭐⭐⭐⭐</span><span class="impact impact-high">冲击：High</span><span class="risk-yellow">🟡 值得观察</span></div>
+    <p class="item-summary">研究团队通过新型化合物设计促进<strong>铯离子掺入</strong>，实现 <span class="num-key">26.61%</span> 的认证效率，成果发表于 Nature Energy。该路径的核心价值不在数字本身，而在于<strong>掺杂工艺的可重复性</strong>，这是量产良率的关键前提。</p>
+    <div class="bilingual">
+      <p class="en-title">Cesium-Doping Strategy Delivers 26.61% Certified Efficiency in Nature Energy</p>
+      <p class="en-summary">A research team achieved a certified efficiency of 26.61% by designing a novel compound that facilitates cesium incorporation, published in Nature Energy. The significance lies less in the headline number than in the reproducibility of the doping process — a prerequisite for manufacturing yield.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>cesium doping</b> 铯掺杂</span>
+          <span class="vocab-item"><b>certified efficiency</b> 认证效率</span>
+          <span class="vocab-item"><b>reproducibility</b> 可重复性</span>
+          <span class="vocab-item"><b>manufacturing yield</b> 量产良率</span>
+        </div>
+      </div>
+    </details>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>钙钛矿晶体里"掺"进少量铯离子，可以让结构更稳定、缺陷更少。难点在于铯不容易均匀掺进去，这次是用一种新化合物当"搬运工"，让掺杂变得可控可复制。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，该工艺会被同行快速跟进验证；中期看，若能在<strong>大面积组件</strong>上保持同等掺杂均匀性，将直接推动中试线效率爬坡。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>材料科学的进步往往是"看不见的革命"——一种掺杂工艺的成熟，可能让整个光伏产业的成本曲线再下移一次，最终体现在每个家庭的电费账单上。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://techxplore.com/news/2026-04-perovskite-solar-cells-certified-efficiency.html" target="_blank">TechXplore / Nature Energy</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">钙钛矿实验室效率突破 <span class="num-key">33%</span>，超越硅基单结<span class="stars">⭐⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span></div>
+    <p class="item-summary">多份行业报告显示，钙钛矿在实验室条件下效率已超 <span class="num-key">33%</span>，超过硅基单结电池的理论与实测水平。但报告同时强调，<strong>实验室效率与组件效率之间存在显著折损</strong>，从 <span class="num-key">33%</span> 到量产组件通常要打较大折扣。</p>
+    <div class="bilingual">
+      <p class="en-title">Lab Perovskite Efficiency Exceeds 33%, Surpassing Single-Junction Silicon</p>
+      <p class="en-summary">Industry reports indicate perovskite efficiencies above 33% under laboratory conditions, exceeding single-junction silicon benchmarks. The same reports stress a substantial gap between cell-level and module-level performance, with significant derating expected in mass production.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>single-junction</b> 单结</span>
+          <span class="vocab-item"><b>module-level performance</b> 组件级性能</span>
+          <span class="vocab-item"><b>derating</b> 折损/降额</span>
+          <span class="vocab-item"><b>benchmark</b> 基准</span>
+        </div>
+      </div>
+    </details>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>实验室里指甲盖大小的电池做到 33%，不代表一整块两米长的组件也能做到。面积变大后，均匀性、缺陷、封装损失都会吃掉效率，这就是"折损"。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，投资者需要警惕"实验室数字"被过度营销；中期看，真正决定成败的是<strong>大面积沉积工艺</strong>与<strong>封装材料</strong>的成熟度。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果折损能被压缩到很小，光伏行业的"实验室-工厂"鸿沟会消失，研发到量产的周期将从十年缩短到三五年，技术迭代节奏全面加快。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.greenfueljournal.com/post/perovskite-solar-cell-revolution-2026-part-i" target="_blank">Green Fuel Journal</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：钙钛矿今日呈现"纪录密集、方向一致"的格局——效率、认证、产线三条线同时推进。但所有报告都指向同一个瓶颈：稳定性与大面积工艺。谁能解决"从 33% 到量产"的折损，谁就拿到下一轮产业主导权。</div>
+</div>
+
+<!-- 6. 中国政策 -->
+<div class="section">
+  <div class="section-title">🇨🇳 中国政策与监管</div>
+
+  <div class="item">
+    <div class="item-header">中国国际进口博览会吸引更多世界 500 强企业<span class="stars">⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span><span class="risk-yellow">🟡 值得观察</span></div>
+    <p class="item-summary">中国网报道，进博会吸引更多<strong>世界 500 强企业</strong>与行业领袖参展，显示跨国企业对中国市场的配置意愿仍在。在外部管制与供应链重组压力下，进博会的"信心指标"意义大于"成交指标"意义。</p>
+    <div class="bilingual">
+      <p class="en-title">CIIE Draws More Fortune Global 500 Companies and Industry Leaders</p>
+      <p class="en-summary">China's import expo is attracting a growing number of Fortune Global 500 companies and industry leaders, signaling that multinationals retain allocation appetite for the Chinese market. Amid external controls and supply chain restructuring, the expo functions more as a confidence indicator than a transaction metric.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>import expo</b> 进口博览会</span>
+          <span class="vocab-item"><b>Fortune Global 500</b> 世界500强</span>
+          <span class="vocab-item"><b>allocation appetite</b> 配置意愿</span>
+          <span class="vocab-item"><b>confidence indicator</b> 信心指标</span>
+        </div>
+      </div>
+    </details>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>进博会本质是一个"开放姿态的展示窗口"。企业来参展，不一定当场下单，但愿意来，说明还不想放弃这个市场。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，参展结构比成交额更值得关注——哪些行业在加码、哪些在观望；中期看，外资的"参展意愿"能否转化为"投资意愿"，取决于营商环境与政策确定性。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果进博会从"年度盛会"变成"常态化开放机制"，中国市场的吸引力将从"规模红利"升级为"制度红利"，这对全球资本配置逻辑是根本性改变。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.china.org.cn/?home" target="_blank">China.org.cn</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">人民币汇率中间价机制持续运行，政策透明度受关注<span class="stars">⭐⭐⭐</span><span class="impact impact-low">冲击：Low</span></div>
+    <p class="item-summary">央行每日公布汇率中间价，中国银行等机构同步更新外汇牌价体系，将"卖出价"细分为<strong>现汇卖出价</strong>与<strong>现钞卖出价</strong>。机制的稳定运行本身即是政策信号，表明汇率管理仍以<strong>预期引导</strong>为主。</p>
+    <div class="bilingual">
+      <p class="en-title">Central Parity Mechanism Runs Steadily as Policy Transparency Draws Attention</p>
+      <p class="en-summary">The central bank publishes the daily central parity while Bank of China and peers update their FX quotation systems, splitting sell rates into cash and spot categories. The steady operation of the mechanism is itself a policy signal that exchange-rate management remains expectation-guided.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>central parity mechanism</b> 中间价机制</span>
+          <span class="vocab-item"><b>spot / cash rate</b> 现汇 / 现钞价</span>
+          <span class="vocab-item"><b>expectation guidance</b> 预期引导</span>
+          <span class="vocab-item"><b>quotation system</b> 报价体系</span>
+        </div>
+      </div>
+    </details>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中间价是"官方参考价"，现汇价是账户间转账用的价，现钞价是拿现金换的价——后者通常更贵，因为银行要承担保管和运输成本。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，机制稳定有助于抑制单边贬值预期；中期看，汇率弹性的提升需要配套的衍生品市场与跨境资本流动管理工具。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果汇率机制进一步市场化，企业的汇率风险管理将从"猜方向"转向"买保险"，这会催生一个更成熟的金融服务业态。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.boc.cn/sourcedb/whpj/index.html" target="_blank">中国银行</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：中国政策端今日以"开放信号"与"机制稳定"为主，缺少新的监管增量。进博会的参展结构值得持续跟踪，它是观察外资真实态度的低成本高频指标。</div>
+</div>
+
+<!-- 7. 地缘政治 -->
+<div class="section">
+  <div class="section-title">🌍 地缘政治与国际关系</div>
+
+  <div class="item">
+    <div class="item-header">2026 芯片出口管制重塑全球半导体版图，三股政策力量汇聚<span class="stars">⭐⭐⭐⭐</span><span class="impact impact-high">冲击：High</span><span class="risk-red">🔴 重大风险</span></div>
+    <p class="item-summary">2026 年三股政策力量汇聚：美国<strong>域外出口禁令</strong>扩展、台湾首次将相关行为<strong>刑事化</strong>、欧盟两用物项规则收紧。管制从"单点限制"演变为"多法域协同网络"，全球半导体供应链被动走向<strong>区块化</strong>，合规成本系统性上升。</p>
+    <div class="bilingual">
+      <p class="en-title">Three Converging Policy Moves Redraw the Global Semiconductor Map in 2026</p>
+      <p class="en-summary">Three converging policy moves are reshaping semiconductors in 2026: a sweeping U.S. extraterritorial export ban, Taiwan's first-ever criminalization of related conduct, and tightening EU dual-use rules. Controls have evolved from point restrictions into a multi-jurisdictional network, pushing supply chains toward bloc formation.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>extraterritorial ban</b> 域外禁令</span>
+          <span class="vocab-item"><b>criminalization</b> 刑事化</span>
+          <span class="vocab-item"><b>bloc formation</b> 区块化</span>
+          <span class="vocab-item"><b>multi-jurisdictional</b> 多法域的</span>
+        </div>
+      </div>
+    </details>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去是美国一家在管，现在变成"美国管、台湾判刑、欧盟立规"三管齐下。企业只要有一条供应链碰到红线，就可能同时违反三个法域的规定。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）看，转口贸易与第三地设厂会成为规避焦点，但监管会同步跟进；中期（3-10年）看，全球可能形成两套并行的技术标准与供应链体系。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果技术体系彻底分裂，创新速度可能因重复研发而放缓，但区域内的技术自主性会显著提升。全球化的"效率红利"将被"安全红利"部分替代。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://informedclearly.com/en/geopolitics/59402/chip-export-controls-semiconductor-map-2026" target="_blank">Informed Clearly</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">BIS 于 2026 年 2 月扩大半导体出口管制，被称"最广泛一轮"<span class="stars">⭐⭐⭐⭐</span><span class="impact impact-high">冲击：High</span><span class="risk-red">🔴 重大风险</span></div>
+    <p class="item-summary">美国工业与安全局（BIS）于 2026 年 2 月扩大半导体出口管制，被业界称为<strong>史上最广泛一轮</strong>。管制范围从先进制程向<strong>设备、零部件、软件与人才</strong>延伸，形成"全链条覆盖"，对全球供应链的切割效应持续外溢。</p>
+    <div class="bilingual">
+      <p class="en-title">BIS Expands Semiconductor Export Controls in February 2026 in What Industry Calls the Broadest Round Yet</p>
+      <p class="en-summary">The U.S. Bureau of Industry and Security broadened semiconductor export controls in February 2026 in what industry observers describe as the broadest round to date. Coverage extends from advanced nodes to equipment, components, software and personnel, creating full-chain restrictions with persistent spillover effects.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>Bureau of Industry and Security</b> 工业与安全局</span>
+          <span class="vocab-item"><b>advanced node</b> 先进制程</span>
+          <span class="vocab-item"><b>full-chain restriction</b> 全链条限制</span>
+          <span class="vocab-item"><b>spillover effect</b> 外溢效应</span>
+        </div>
+      </div>
+    </details>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>以前管制主要盯"芯片本身"，现在连造芯片的机器、修机器的零件、设计用的软件、甚至懂技术的人都被纳入，等于把整条产业链都装进了监管笼子。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，设备与零部件企业的合规压力最大；中期看，被限制方会加速<strong>国产替代</strong>与<strong>第三地产能布局</strong>，全球产能分布将更分散。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果全链条管制成为常态，"技术主权"将从政治口号变成企业战略的核心 KPI，CEO 的决策桌上会多出一张"地缘风险地图"。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://informedclearly.com/en/trade-war/57163/chip-fragmentation-export-controls-2026" target="_blank">Informed Clearly</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-header">2026 出口管制聚焦"两用风险"与"再出口"，法律合规复杂度上升<span class="stars">⭐⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span><span class="risk-yellow">🟡 值得观察</span></div>
+    <p class="item-summary">法律分析指出，2026 年半导体出口管制的核心争议集中在<strong>两用风险评估</strong>与<strong>再出口/转售</strong>环节。企业面临的不是"能不能卖"，而是"卖给谁、转给谁、最终用途是什么"的<strong>穿透式审查</strong>，合规判断难度显著上升。</p>
+    <div class="bilingual">
+      <p class="en-title">Dual-Use Risk and Re-Export Scrutiny Define 2026 Semiconductor Compliance</p>
+      <p class="en-summary">Legal analysis indicates that the core disputes in 2026 semiconductor export controls center on dual-use risk assessment and re-export or resale channels. Firms face not a binary sell-or-not question but penetrating scrutiny of end users, onward transfers and ultimate end use.</p>
+      <div class="vocab-card">
+        <div class="vocab-title">📖 Key Vocabulary</div>
+        <div class="vocab-list">
+          <span class="vocab-item"><b>dual-use risk</b> 两用风险</span>
+          <span class="vocab-item"><b>re-export</b> 再出口</span>
+          <span class="vocab-item"><b>end user</b> 最终用户</span>
+          <span class="vocab-item"><b>penetrating scrutiny</b> 穿透式审查</span>
+        </div>
+      </div>
+    </details>
+    <details class="deepdive">
+      <summary>📖 深度解读</summary>
+      <div class="deepdive-content">
+        <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>一颗芯片既能做手机也能做导弹，这就是"两用"。监管要问的不是"你卖不卖"，而是"这东西最后到底进了谁的手、用来干什么"。</p>
+        <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，分销商与贸易商是风险最集中的环节；中期看，区块链式的溯源追踪技术可能成为合规基础设施的标配。</p>
+        <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果每颗芯片都能被全程溯源，全球贸易将进入"可验证时代"，灰色转口空间被压缩，但隐私与商业机密保护会成为新的博弈焦点。</p>
+      </div>
+    </details>
+    <p class="item-source">来源：<a href="https://www.jdsupra.com/legalnews/semiconductor-export-controls-in-2026-3333817/" target="_blank">JD Supra</a></p>
+  </div>
+
+  <div class="trend-comment">📊 板块趋势：地缘政治板块今日信息高度聚焦——全部指向半导体出口管制的"多法域化、全链条化、穿透化"。这不是短期扰动，而是全球科技产业底层规则的长期重写，企业战略必须把"合规"从成本项提升为竞争项。</div>
+</div>
+
+<!-- 时间节点 -->
+<div class="timeline">
+  <h4>⏰ 近期关键时间节点</h4>
+  <div class="timeline-item">
+    <span class="timeline-date">2026-11-05</span>
+    <span>中国央行公布人民币兑美元汇率中间价，市场关注 7.0 关口</span>
+  </div>
+  <div class="timeline-item">
+    <span class="timeline-date">2026-11 上旬</span>
+    <span>中国国际进口博览会期间，世界 500 强企业参展结构为外资态度高频观察窗口</span>
+  </div>
+  <div class="timeline-item">
+    <span class="timeline-date">持续进行</span>
+    <span>BIS 2026 年 2 月扩大后的半导体出口管制持续执行，企业合规审查常态化</span>
+  </div>
+  <div class="timeline-item">
+    <span class="timeline-date">中期观察</span>
+    <span>钙钛矿吉瓦级产线规划落地进度与大面积组件效率折损数据发布</span>
+  </div>
+</div>
+
+<div class="footer">本简报由自动抓取与人工筛选结合生成 · 仅供信息参考，不构成投资建议 · 2026-11-06</div>
+
+</div>
+</body>
+</html>
