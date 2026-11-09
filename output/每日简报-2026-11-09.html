@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球动态每日简报 · 2026-11-09</title>
+<style>
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, sans-serif;
+    background-color: #f2f3f5;
+    color: #1f2328;
+    margin: 0;
+    padding: 16px;
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 22px 20px 30px 20px;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    color: #111418;
+  }
+  .subtitle {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 18px;
+    display: block;
+  }
+  .overview {
+    background-color: #eef4fb;
+    border-left: 4px solid #2f6fbf;
+    border-radius: 6px;
+    padding: 14px 16px;
+    margin-bottom: 26px;
+  }
+  .overview h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #1d4e8f;
+  }
+  .overview p {
+    font-size: 14px;
+    margin: 0 0 12px 0;
+    color: #2c3440;
+  }
+  .overview-tags {
+    display: block;
+  }
+  .overview-tag {
+    display: inline-block;
+    background-color: #ffffff;
+    border: 1px solid #b9cfe8;
+    color: #1d4e8f;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 12px;
+    margin: 0 6px 6px 0;
+  }
+  .section {
+    margin-bottom: 30px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #111418;
+    border-bottom: 2px solid #e3e6ea;
+    padding-bottom: 8px;
+    margin: 0 0 16px 0;
+  }
+  .item {
+    border: 1px solid #e3e6ea;
+    border-radius: 8px;
+    padding: 14px 15px;
+    margin-bottom: 16px;
+    background-color: #fcfcfd;
+  }
+  .item-header {
+    margin-bottom: 8px;
+  }
+  .item-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111418;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .stars {
+    font-size: 12px;
+    color: #d99a00;
+    margin-right: 8px;
+    display: inline-block;
+  }
+  .impact {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .impact-high {
+    background-color: #fde2e1;
+    color: #b42318;
+  }
+  .impact-med {
+    background-color: #fff3d6;
+    color: #9a6700;
+  }
+  .impact-low {
+    background-color: #e6f4ea;
+    color: #1e7b45;
+  }
+  .risk-red {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    background-color: #fde2e1;
+    color: #b42318;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+  }
+  .risk-yellow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    background-color: #fff3d6;
+    color: #9a6700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+  }
+  .item-summary {
+    font-size: 14px;
+    color: #2c3440;
+    margin: 0 0 10px 0;
+  }
+  .num-up {
+    color: #1e7b45;
+    font-weight: 700;
+  }
+  .num-down {
+    color: #b42318;
+    font-weight: 700;
+  }
+  .num-key {
+    color: #1d4e8f;
+    font-weight: 700;
+  }
+  .bilingual {
+    background-color: #f5f7fa;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .en-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1d4e8f;
+    margin: 0 0 6px 0;
+  }
+  .en-summary {
+    font-size: 13px;
+    color: #4a5563;
+    margin: 0 0 8px 0;
+  }
+  .vocab-card {
+    background-color: #ffffff;
+    border: 1px solid #e3e6ea;
+    border-radius: 5px;
+    padding: 8px 10px;
+  }
+  .vocab-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #6b7280;
+    margin-bottom: 6px;
+  }
+  .vocab-list {
+    display: block;
+  }
+  .vocab-item {
+    display: inline-block;
+    font-size: 12px;
+    color: #2c3440;
+    background-color: #eef4fb;
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin: 0 6px 6px 0;
+  }
+  .vocab-item b {
+    color: #1d4e8f;
+    font-weight: 700;
+  }
+  .deepdive {
+    background-color: #fbfbfc;
+    border: 1px dashed #cfd4da;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+  }
+  .deepdive summary {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1d4e8f;
+    cursor: pointer;
+    outline: none;
+  }
+  .deepdive-content {
+    padding-top: 8px;
+  }
+  .dl {
+    font-size: 13px;
+    color: #2c3440;
+    margin: 0 0 8px 0;
+  }
+  .dl-label {
+    font-weight: 700;
+    color: #111418;
+  }
+  .item-source {
+    font-size: 12px;
+    color: #6b7280;
+    margin: 0;
+  }
+  .item-source a {
+    color: #2f6fbf;
+    text-decoration: none;
+  }
+  .compare-box {
+    border: 1px solid #e3e6ea;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 14px;
+    background-color: #fcfcfd;
+  }
+  .compare-side {
+    display: inline-block;
+    vertical-align: top;
+    width: 46%;
+    font-size: 13px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+  }
+  .compare-bull {
+    background-color: #e6f4ea;
+    color: #1e5c36;
+    margin-right: 2%;
+  }
+  .compare-bear {
+    background-color: #fde2e1;
+    color: #8a1c14;
+  }
+  .compare-label {
+    font-weight: 700;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .trend-comment {
+    background-color: #f0f2f5;
+    border-left: 3px solid #8a94a3;
+    border-radius: 0 6px 6px 0;
+    padding: 10px 13px;
+    font-size: 13px;
+    color: #3a424d;
+    margin-top: 4px;
+  }
+  .timeline {
+    background-color: #fff8e6;
+    border: 1px solid #f0dcae;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 24px;
+  }
+  .timeline h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #8a6200;
+    margin: 0 0 10px 0;
+  }
+  .timeline-item {
+    font-size: 13px;
+    color: #4a3c14;
+    margin-bottom: 8px;
+  }
+  .timeline-date {
+    display: inline-block;
+    font-weight: 700;
+    background-color: #ffffff;
+    border: 1px solid #f0dcae;
+    border-radius: 4px;
+    padding: 1px 8px;
+    margin-right: 8px;
+    color: #8a6200;
+  }
+  .footer {
+    font-size: 12px;
+    color: #8a94a3;
+    text-align: center;
+    border-top: 1px solid #e3e6ea;
+    padding-top: 14px;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>🌐 全球动态每日简报</h1>
+  <span class="subtitle">2026年11月9日 · 星期日 · 高密度信息精选</span>
+
+  <div class="overview">
+    <h3>🧠 今日综述</h3>
+    <p>今日简报呈现三条主线：中国大模型资本叙事骤然升温，月之暗面与 DeepSeek 估值双双跃升，AI 一级市场进入"诸神之战"；生命科学端乙肝功能性治愈与个体化肿瘤疫苗同步推进临床，转化节奏加快；地缘层面"一带一路"产供链韧性报告与供应链重构叙事形成对冲，全球产业链仍处再平衡通道。整体风向：科技与资本端偏乐观，地缘与监管端保持审慎。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🤖 中国大模型估值重估</span>
+      <span class="overview-tag">🧬 乙肝功能性治愈</span>
+      <span class="overview-tag">💉 个体化肿瘤疫苗</span>
+      <span class="overview-tag">🔗 产供链韧性</span>
+      <span class="overview-tag">💱 人民币汇率稳定</span>
+    </div>
+  </div>
+
+  <!-- ============ 1. 生命科学 ============ -->
+  <div class="section">
+    <h2 class="section-title">🧬 生命科学 / 医学</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Bepirovirsen 治疗慢性乙肝 III 期结果登上 NEJM</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">NEJM 刊出 Bepirovirsen 治疗慢性乙型肝炎的 III 期结果，这是反义寡核苷酸路线在乙肝功能性治愈方向的关键验证。若功能性治愈率显著优于核苷类药物，将改写全球约 <span class="num-key">2.5 亿</span>慢性感染者的一线治疗逻辑，并为"停药后长期缓解"提供新范式。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Phase 3 Results of Bepirovirsen for Chronic Hepatitis B Published in NEJM</p>
+        <p class="en-summary">The New England Journal of Medicine has published Phase 3 data on bepirovirsen, an antisense oligonucleotide targeting chronic hepatitis B. The trial evaluates functional cure rates, a long-sought endpoint that could reshape first-line treatment for an estimated 250 million chronic carriers worldwide.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>antisense oligonucleotide</b> 反义寡核苷酸</span>
+            <span class="vocab-item"><b>functional cure</b> 功能性治愈</span>
+            <span class="vocab-item"><b>chronic hepatitis B</b> 慢性乙型肝炎</span>
+            <span class="vocab-item"><b>endpoint</b> 终点指标</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>把乙肝病毒想象成在肝细胞里"刻录"了一份无法删除的模板，核苷类药物只能压制复制、不能清空模板。Bepirovirsen 是反义寡核苷酸，相当于精准"剪掉"病毒 RNA 的指令书，目标是让表面抗原降到检测不到的水平——即功能性治愈。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）可能获批用于特定亚群，与核苷类药物联用形成"压制+清除"组合；中期（3-10年）若联合免疫调节剂，有望把功能性治愈率从个位数推向两位数，惠及数千万患者，并显著降低肝硬化与肝癌负担。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若乙肝实现可规模化治愈，全球公共卫生将少一个"终身服药"的沉重标签，中低收入国家的肝病负担与药物支出结构将被重写；同时也将推动反义核酸平台向其他慢性病毒感染扩展。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2515131" target="_blank">The New England Journal of Medicine</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">ESMO 2026：个体化淋巴结靶向疫苗 II 期随机数据亮相</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">Nature Medicine 报道 ESMO 2026 上公布的随机 II 期试验，评估"即用型"淋巴结靶向疫苗方案。个体化肿瘤疫苗正从概念验证走向随机对照，<span class="num-key">II 期</span>随机设计意味着监管路径更清晰，但样本量与随访时长仍是后续关键变量。</p>
+
+      <div class="bilingual">
+        <p class="en-title">ESMO 2026: Randomized Phase 2 Data for Off-the-Shelf Lymph Node-Targeted Vaccine</p>
+        <p class="en-summary">Nature Medicine highlights a randomized Phase 2 trial presented at ESMO Congress 2026 evaluating an off-the-shelf, lymph node-targeted vaccine strategy. The shift from proof-of-concept to randomized design signals a clearer regulatory pathway, though sample size and follow-up duration remain critical variables.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>off-the-shelf</b> 即用型/现货型</span>
+            <span class="vocab-item"><b>lymph node-targeted</b> 淋巴结靶向</span>
+            <span class="vocab-item"><b>randomized trial</b> 随机试验</span>
+            <span class="vocab-item"><b>regulatory pathway</b> 监管路径</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>把疫苗想成"通缉令"，传统疫苗把通缉令贴在全身，淋巴结靶向则直接把通缉令送到免疫系统的"指挥中心"淋巴结，让 T 细胞更快识别肿瘤特征。"即用型"意味着不必为每位患者单独定制，成本和周期大幅下降。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）可能在术后辅助治疗场景率先读出无复发生存数据；中期（3-10年）若与 PD-1 抑制剂联用，有望成为部分实体瘤的标准辅助方案，并把个体化疫苗从"奢侈品"变为"可规模化产品"。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果肿瘤疫苗能像流感疫苗一样批量生产并按瘤种配型，癌症治疗的重心将从"晚期抢救"前移到"术后防复发"，医疗支出结构与社会心理预期都会被重塑。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/nm/articles?type=article&year=2026" target="_blank">Nature Medicine</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">百万人级 GWAS 揭示人格特质的遗传贡献</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">Nature Medicine 研究亮点栏目报道一项覆盖 <span class="num-key">超 100 万人</span>的全基因组关联研究，系统刻画人格特质的遗传结构。结论指向"高度多基因、单一位点效应微弱"，对行为遗传学的可解释边界给出更克制的量化答案。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Million-Scale GWAS Maps Genetic Contributions to Personality Traits</p>
+        <p class="en-summary">A genome-wide association study involving more than one million individuals reveals the polygenic architecture underlying personality traits. The findings underscore that individual variants carry tiny effect sizes, tempering claims about genetic determinism in behavioral science.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>GWAS</b> 全基因组关联研究</span>
+            <span class="vocab-item"><b>polygenic</b> 多基因的</span>
+            <span class="vocab-item"><b>effect size</b> 效应量</span>
+            <span class="vocab-item"><b>behavioral genetics</b> 行为遗传学</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>GWAS 相当于在全基因组里做"海选"，找出与某特征统计相关的位点。百万人级样本把噪声压到最低，结论是人格由成千上万个微小位点叠加而成，没有任何"单基因决定性格"的捷径。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）主要影响心理学研究的方法论与可重复性标准；中期（3-10年）可能用于精神疾病风险分层与药物靶点发现，但绝不会用于个体层面的性格预测。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>这项研究最大的价值或许是"祛魅"——它用最硬的数据提醒社会，人的性格不是被基因写死的剧本，伦理与教育讨论应建立在概率而非宿命之上。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://preview-www.nature.com/nm/articles?type=research-highlight&year=2026" target="_blank">Nature Medicine · Research Highlights</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：本板块呈现"两条腿走路"——反义核酸在慢性病毒感染上冲击功能性治愈，肿瘤疫苗则从个体化走向即用型。共同信号是：疗法设计正从"压制症状"转向"清除根源"，但 II 期到 III 期的样本与随访鸿沟仍是最大不确定性。</div>
+  </div>
+
+  <!-- ============ 2. 经济金融 ============ -->
+  <div class="section">
+    <h2 class="section-title">💰 经济 / 金融</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">人民币中间价维持窄幅波动，外汇市场预期平稳</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">国家外汇管理局与中国银行牌价数据显示，人民币对主要货币中间价延续窄幅整理，美元兑人民币在合理均衡区间内双向波动。市场对汇率"稳中偏强"的预期未变，跨境资金流动压力边际缓和，但外部利率路径仍是最大扰动项。</p>
+
+      <div class="bilingual">
+        <p class="en-title">RMB Central Parity Holds Range as FX Expectations Stabilize</p>
+        <p class="en-summary">Data from SAFE and Bank of China show the RMB central parity trading within a narrow band against major currencies. Two-way volatility persists around a broadly balanced level, with cross-border capital flow pressure easing modestly, though external rate paths remain the dominant swing factor.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>central parity</b> 中间价</span>
+            <span class="vocab-item"><b>two-way volatility</b> 双向波动</span>
+            <span class="vocab-item"><b>cross-border capital flow</b> 跨境资金流动</span>
+            <span class="vocab-item"><b>balanced level</b> 均衡水平</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中间价可以理解为每天汇率的"锚"，由一篮子因素决定，市场价围绕它上下浮动。窄幅波动说明买卖力量接近平衡，没有单边押注的拥挤交易。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）汇率大概率维持区间震荡，出口企业套保需求上升；中期（3-10年）人民币国际化与跨境结算占比提升，将逐步降低对单一货币波动的敏感度。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若人民币在贸易结算与储备货币中的份额稳步抬升，全球企业财务部门的"汇率风险管理"将从被动对冲转向主动多币种配置，亚洲时段的定价权也会随之增强。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.safe.gov.cn/safe/rmbhlzjj/index.html" target="_blank">国家外汇管理局</a> · <a href="https://www.boc.cn/sourcedb/whpj/" target="_blank">中国银行外汇牌价</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">全球股市数据平台活跃度上升，投资者转向高频数据自服务</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">Yahoo Finance、MarketWatch、StockAnalysis 等平台数据显示，覆盖 <span class="num-key">超 15 万</span>只全球股票与基金的查询需求持续增长。散户与机构同步转向"自服务式"数据工具，信息获取的民主化正在压缩传统卖方研究的溢价空间。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Retail and Institutional Investors Shift Toward Self-Service Market Data</p>
+        <p class="en-summary">Platforms aggregating over 150,000 global stocks and funds report rising engagement as investors increasingly rely on self-service data tools. The trend is compressing the information premium historically commanded by sell-side research.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>self-service data</b> 自服务数据</span>
+            <span class="vocab-item"><b>sell-side research</b> 卖方研究</span>
+            <span class="vocab-item"><b>information premium</b> 信息溢价</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去看行情要靠券商终端，现在一个网页就能拉出全球股票的价格、财务与统计。数据门槛的下降，相当于把"专业望远镜"变成了"人手一副"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）数据平台竞争转向 AI 摘要与筛选；中期（3-10年）投研价值链将重新分工，人类分析师的价值集中在判断与叙事，而非数据搬运。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当所有人都能低成本获取同等数据，市场超额收益的来源会进一步向"解读能力"和"纪律性"集中，信息不对称型套利空间被持续压缩。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://stockanalysis.com/" target="_blank">StockAnalysis.com</a> · <a href="https://finance.yahoo.com/" target="_blank">Yahoo Finance</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">中国银行牌价系统持续优化，现汇与现钞价差透明化</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">中国银行外汇牌价页面显示，系统自 <span class="num-key">2011 年</span>起将"卖出价"细分为现汇与现钞两类，价差透明度持续提升。对个人购汇与企业结算而言，现钞与现汇的选择直接影响 <span class="num-key">0.1%-0.5%</span> 量级的成本差异。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Bank of China Refines FX Quote Transparency Between Spot and Cash Rates</p>
+        <p class="en-summary">Bank of China's FX quotation system has separated cash and spot selling rates since 2011, improving transparency. For retail purchasers and corporate settlement, the choice between cash and spot can shift costs by roughly 0.1% to 0.5%.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>spot rate</b> 现汇价</span>
+            <span class="vocab-item"><b>cash rate</b> 现钞价</span>
+            <span class="vocab-item"><b>FX quotation</b> 外汇牌价</span>
+            <span class="vocab-item"><b>settlement</b> 结算</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>现汇是账户里的外币数字，现钞是能拿在手上的纸币。银行处理现钞要承担运输、保管与清点成本，因此现钞价通常更"贵"，这个价差就是隐形成本。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）个人购汇更倾向电子化现汇；中期（3-10年）跨境支付数字化将让现钞需求进一步下降，价差本身可能逐步收窄。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果未来跨境支付像发消息一样即时且低成本，外汇"牌价"这一概念可能从大众视野中淡出，只保留在机构间市场的技术层面。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.boc.cn/sourcedb/whpj/index_1.html" target="_blank">中国银行 · 金融市场</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：金融端的共同信号是"透明化"与"自服务化"——汇率牌价更细、行情数据更易得，信息不对称的红利正在消退。对投资者而言，优势将从"谁先拿到数据"转向"谁更能约束自己的判断"。</div>
+  </div>
+
+  <!-- ============ 3. 人工智能 ============ -->
+  <div class="section">
+    <h2 class="section-title">🤖 人工智能</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">月之暗面 Kimi K3 发布 2.8 万亿参数模型，估值达 315 亿美元</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">月之暗面发布 <span class="num-key">2.8 万亿</span>参数模型 Kimi K3，并以 <span class="num-key">315 亿美元</span>估值完成新一轮融资。参数规模与估值同步跃升，标志着国产开源大模型进入"资本+算力"双密集竞争阶段，但商业化闭环仍是估值叙事的最大缺口。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Moonshot AI Releases 2.8-Trillion-Parameter Kimi K3 at $31.5B Valuation</p>
+        <p class="en-summary">Moonshot AI has unveiled Kimi K3, a 2.8-trillion-parameter model, alongside a funding round valuing the company at $31.5 billion. The scale-up signals that China's open-source model race has entered a capital- and compute-intensive phase, though the path to monetization remains the key gap in the valuation narrative.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>parameter</b> 参数</span>
+            <span class="vocab-item"><b>valuation</b> 估值</span>
+            <span class="vocab-item"><b>open-source model</b> 开源模型</span>
+            <span class="vocab-item"><b>monetization</b> 商业化变现</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>参数可以理解为模型的"神经元连接数"，2.8 万亿意味着模型容量极大，能容纳更复杂的语言与推理模式。但参数越多，训练与推理成本越高，就像造了一台马力巨大的发动机，油耗同样惊人。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）重点在推理成本优化与 MoE 稀疏化，让大模型"跑得起"；中期（3-10年）若能在 Agent、编程与企业知识库场景形成付费闭环，估值才有基本面支撑。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果超大模型成为像电网一样的基础设施，真正的赢家可能不是模型公司，而是把模型嵌入千行百业的应用层；届时"参数规模"会像"发动机排量"一样，不再是消费者关心的指标。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.huxiu.com/article/4876050.html" target="_blank">虎嗅</a> · <a href="https://www.sohu.com/a/1056922055_639898" target="_blank">搜狐科技</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">DeepSeek 以 740 亿美元估值推进第二轮融资</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">DeepSeek 以 <span class="num-key">740 亿美元</span>估值推进第二轮融资，延续其"开源+低价"路线带来的市场声量。资本对"低成本高效训练"叙事的追捧，正在重塑国产大模型的估值坐标系，但也放大了对单一技术路线的押注风险。</p>
+
+      <div class="bilingual">
+        <p class="en-title">DeepSeek Pursues Second Funding Round at $74 Billion Valuation</p>
+        <p class="en-summary">DeepSeek is advancing a second funding round at a $74 billion valuation, extending the momentum built on its open-source, low-cost strategy. Investor appetite for efficient-training narratives is reshaping valuation benchmarks for Chinese foundation models, while concentrating risk on a single technical pathway.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>funding round</b> 融资轮次</span>
+            <span class="vocab-item"><b>efficient training</b> 高效训练</span>
+            <span class="vocab-item"><b>benchmark</b> 基准/标杆</span>
+            <span class="vocab-item"><b>concentrated risk</b> 集中风险</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DeepSeek 的路线可以类比"用更少的油跑更远的路"——通过架构与训练效率优化，在有限算力下逼近头部模型表现。资本市场为这种"性价比叙事"给出了高溢价。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）开源生态扩张与 API 价格战并行；中期（3-10年）若能在企业私有化部署与国产算力适配上形成壁垒，估值才有可持续性。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果高效训练路线被广泛复制，AI 算力的"军备竞赛"逻辑会被削弱，行业从"堆卡"转向"堆算法"，这对算力受限地区是一次结构性机会。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.163.com/dy/article/KSBEMHIA055040N3.html" target="_blank">网易科技</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">大模型实时榜单高频刷新，Gemini 4 Carbon 居文本对话榜首</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">多家排行榜显示，Gemini 4 Carbon（High）在文本对话维度位列榜首，榜单每 <span class="num-key">4 小时</span>更新一次，覆盖 <span class="num-key">100 个</span>在榜模型。评测频率的提升意味着"榜首"的半衰期越来越短，模型竞争正从"发布即定胜负"转向持续迭代。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Live Leaderboards Refresh Every Four Hours as Gemini 4 Carbon Tops Chat Ranking</p>
+        <p class="en-summary">Real-time leaderboards now refresh every four hours across roughly 100 ranked models, with Gemini 4 Carbon (High) leading the text-chat category. The accelerating cadence means the half-life of any top ranking is shrinking, shifting competition from launch-day benchmarks to continuous iteration.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>leaderboard</b> 排行榜</span>
+            <span class="vocab-item"><b>half-life</b> 半衰期</span>
+            <span class="vocab-item"><b>continuous iteration</b> 持续迭代</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>排行榜就像模型的"月考成绩单"，过去几个月更新一次，现在几小时刷新一次。频率提升说明模型迭代速度已经快到"季度榜单"失去意义。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）榜单将成为产品选型的动态参考，但单一榜单的权威性会被稀释；中期（3-10年）行业可能转向按任务场景细分的评测体系，而非一个总榜。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当模型能力每几周就洗牌一次，"选哪个模型"会像"今天用什么搜索引擎"一样成为动态习惯，用户忠诚度将更多绑定在生态与工作流上，而非单点分数。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.ai-club.cn/rank/arena" target="_blank">AI Club 实时榜单</a> · <a href="https://www.datalearner.com/leaderboards" target="_blank">DataLearnerAI</a></p>
+    </div>
+
+    <div class="compare-box">
+      <div class="compare-side compare-bull">
+        <div class="compare-label">📈 乐观方</div>
+        中国大模型估值重估反映真实技术追赶，开源+低价路线已形成全球影响力，资本涌入将加速算力与人才聚集，商业化只是时间问题。
+      </div>
+      <div class="compare-side compare-bear">
+        <div class="compare-label">📉 悲观方</div>
+        315 亿与 740 亿美元估值对应的是尚未验证的付费闭环，参数竞赛推高成本，价格战压缩毛利，估值对流动性环境高度敏感。
+      </div>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI 板块的核心矛盾已从"能不能做出来"转向"能不能赚回来"。模型能力持续刷新，但资本叙事的兑现窗口正在收窄；未来 12 个月，付费转化率与推理成本曲线将比参数规模更能决定估值。</div>
+  </div>
+
+  <!-- ============ 4. 科技/硬科技 ============ -->
+  <div class="section">
+    <h2 class="section-title">💻 科技 / 硬科技</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">半导体基础研究热度不减，材料与器件边界持续外扩</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">半导体作为电导率介于导体与绝缘体之间的材料，其研究重心正从传统硅基向宽禁带与异质集成延伸。行业共识是：制程微缩逼近 <span class="num-key">2nm</span> 后，材料创新对性能提升的贡献权重将持续上升，器件与材料的耦合设计成为新战场。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Semiconductor Research Shifts Toward Wide-Bandgap and Heterogeneous Integration</p>
+        <p class="en-summary">As scaling approaches the 2nm node, semiconductor research is pivoting from conventional silicon toward wide-bandgap materials and heterogeneous integration. Materials innovation is taking on a larger share of performance gains, making co-design of devices and materials the new frontier.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>wide-bandgap</b> 宽禁带</span>
+            <span class="vocab-item"><b>heterogeneous integration</b> 异质集成</span>
+            <span class="vocab-item"><b>scaling</b> 制程微缩</span>
+            <span class="vocab-item"><b>co-design</b> 协同设计</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>半导体像一扇"可开关的门"，电压控制电流通过与否。制程越小，门越精细，但逼近物理极限后，继续缩小越来越难，于是转向换材料、换结构。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）先进封装与 Chiplet 成为性能提升主力；中期（3-10年）碳化硅、氮化镓在功率与射频领域加速渗透，硅光与异质集成在数据中心落地。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果材料创新成为主导，半导体竞争格局将从"谁有最先进光刻机"部分转向"谁掌握材料与封装工艺"，产业话语权可能重新分配。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.ibm.com/think/topics/semiconductors" target="_blank">IBM Think</a> · <a href="https://www.britannica.com/science/semiconductor" target="_blank">Britannica</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">量子计算从"确定的未来"走向工程化验证期</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">量子计算被业界概括为"先进半导体是过去、AI 是当下、量子是确定的未来"。当前阶段的核心任务已从展示量子比特数量，转向纠错、相干时间与门保真度等工程指标，商业化时间表仍存分歧。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Quantum Computing Enters an Engineering Validation Phase</p>
+        <p class="en-summary">Quantum computing is shifting from qubit-count demonstrations toward engineering metrics such as error correction, coherence time, and gate fidelity. Commercialization timelines remain contested, with the field's near-term value concentrated in cryptography and materials simulation.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>qubit</b> 量子比特</span>
+            <span class="vocab-item"><b>error correction</b> 纠错</span>
+            <span class="vocab-item"><b>coherence time</b> 相干时间</span>
+            <span class="vocab-item"><b>gate fidelity</b> 门保真度</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>经典比特是"0 或 1"的开关，量子比特可以同时处于 0 和 1 的叠加态，像一枚旋转的硬币。但硬币极易受干扰，纠错就是让旋转保持稳定的技术。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）量子密钥分发在特定网络先行落地；中期（3-10年）若纠错取得突破，量子优势将在材料模拟与药物分子计算上显现，金融与物流优化次之。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果容错量子计算真正实现，现有公钥密码体系需全面迁移，全球网络安全基础设施将迎来一次"换锁"级别的系统性升级。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://learn.microsoft.com/zh-cn/azure/quantum/overview-understanding-quantum-computing" target="_blank">Microsoft Learn · Azure Quantum</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">华为持续强化"万物互联"定位，终端与 ICT 双线推进</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">华为官网与商城信息显示，公司持续以"构建万物互联的智能世界"为定位，覆盖手机、PC、平板、穿戴与智慧屏等全品类终端，并同步推进 ICT 基础设施。终端生态与算力底座的协同，是其区别于纯终端厂商的关键差异点。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Huawei Reinforces "Fully Connected, Intelligent World" Positioning Across Devices and ICT</p>
+        <p class="en-summary">Huawei continues to position itself around building a fully connected, intelligent world, spanning smartphones, PCs, tablets, wearables, and smart screens while advancing ICT infrastructure. The synergy between device ecosystem and computing foundation differentiates it from pure-play handset makers.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>ICT infrastructure</b> ICT 基础设施</span>
+            <span class="vocab-item"><b>device ecosystem</b> 终端生态</span>
+            <span class="vocab-item"><b>pure-play</b> 单一业务型</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>可以把华为理解为"既造路又造车"——ICT 基础设施是路，终端是车。路和车由同一家公司设计，协同优化的空间比单纯卖硬件的厂商更大。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）终端生态与国产算力适配是重点；中期（3-10年）若鸿蒙生态在车机与工业场景形成规模，软硬一体的溢价会更明显。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果"万物互联"真正落地，家庭、汽车与办公设备将共享同一套智能底座，用户不再"使用设备"，而是"生活在网络里"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.huawei.com/cn/" target="_blank">华为官网</a> · <a href="https://www.vmall.com/" target="_blank">华为商城</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Apple 新品线延续端侧 AI 与轻薄化双主线</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">Apple 官网信息显示，iPhone 17 搭载 <span class="num-key">A19</span> 芯片与 <span class="num-key">6.3 英寸</span>ProMotion 屏，iPhone Air 主打轻薄，iPhone 17e 无线充电提升至 <span class="num-key">15W</span>（前代 <span class="num-key">7.5W</span>）。端侧算力与工业设计仍是其差异化主轴。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Apple's New Lineup Doubles Down on On-Device AI and Thin Design</p>
+        <p class="en-summary">Apple's latest lineup features the A19 chip and a 6.3-inch ProMotion display on iPhone 17, a slim iPhone Air, and wireless charging upgraded to 15W on iPhone 17e from 7.5W. On-device compute and industrial design remain the core differentiators.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>on-device AI</b> 端侧 AI</span>
+            <span class="vocab-item"><b>ProMotion display</b> 自适应刷新率屏</span>
+            <span class="vocab-item"><b>wireless charging</b> 无线充电</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>端侧 AI 指模型直接跑在手机上，不必把数据传到云端。好处是响应快、隐私好，代价是受限于手机芯片的算力与散热。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）端侧模型聚焦语音、图像与输入法场景；中期（3-10年）若端云协同成熟，手机将成为个人 AI 的主入口，而非单纯的算力终端。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当端侧 AI 足够强，个人数据可以完全不出设备，"隐私"将从产品卖点变成默认架构，云端厂商的商业模式也会随之调整。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.apple.com/uk/iphone-17/" target="_blank">Apple · iPhone 17</a> · <a href="https://www.apple.com/in/iphone-air/" target="_blank">Apple · iPhone Air</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技的竞争焦点正从"单点参数"转向"系统协同"——芯片靠封装与材料续命，量子靠纠错工程化，终端靠端侧 AI 与生态。谁能在材料、算力与场景之间建立闭环，谁就掌握下一轮定价权。</div>
+  </div>
+
+  <!-- ============ 5. 材料科学 ============ -->
+  <div class="section">
+    <h2 class="section-title">🔬 材料科学</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">材料科学作为交叉学科枢纽，地位持续上升</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">材料科学以"组成—结构—工艺—性质—性能"的关联为核心，正成为连接物理、化学、生物与工程的枢纽学科。在半导体、能源与生物医用材料三大方向，材料创新已成为下游产业性能突破的前置条件，学科交叉属性愈发突出。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Materials Science Consolidates Its Role as an Interdisciplinary Hub</p>
+        <p class="en-summary">Materials science, centered on the relationships among composition, structure, processing, properties, and performance, is increasingly the connective tissue linking physics, chemistry, biology, and engineering. In semiconductors, energy, and biomedical materials, materials innovation has become a precondition for downstream performance breakthroughs.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>interdisciplinary</b> 交叉学科的</span>
+            <span class="vocab-item"><b>composition</b> 组成</span>
+            <span class="vocab-item"><b>processing</b> 工艺</span>
+            <span class="vocab-item"><b>biomedical materials</b> 生物医用材料</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>材料科学像"菜谱学"：同样的食材（组成），切法（结构）和火候（工艺）不同，做出的菜（性能）天差地别。它的价值在于把"配方"变成可复现的工程能力。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）电池材料与半导体封装材料是投入热点；中期（3-10年）AI 辅助材料发现将把"试错周期"从数年压缩到数月，生物可降解与固态电解质有望规模化。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果 AI 把材料发现变成"按需设计"，人类可能迎来一轮类似塑料与硅那样的基础材料革命，能源、医疗与制造的底层成本结构都会被重写。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://zh.wikipedia.org/wiki/材料科学" target="_blank">维基百科 · 材料科学</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">学术期刊与开放平台推动材料研究传播加速</span>
+        <span class="stars">⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">汉斯出版社等开放获取平台持续扩容材料科学期刊矩阵，强调思想创新与学术繁荣。开放获取模式降低了跨机构阅读门槛，但也带来版面费与质量分层的争议，学术传播的"量增质控"矛盾日益突出。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Open-Access Platforms Expand Materials Science Journal Coverage</p>
+        <p class="en-summary">Open-access publishers continue to expand materials science journal portfolios, lowering cross-institutional reading barriers while raising concerns over article processing charges and quality stratification. The tension between volume growth and quality control is becoming more pronounced.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>open access</b> 开放获取</span>
+            <span class="vocab-item"><b>article processing charge</b> 版面费</span>
+            <span class="vocab-item"><b>quality stratification</b> 质量分层</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>开放获取指论文免费向所有人开放，成本由作者或机构承担。它像"免费公园"，人人可进，但维护费用需要有人买单。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）更多资助机构将强制开放获取；中期（3-10年）预印本+同行评议的混合模式可能成为主流，期刊品牌价值向"评审质量"集中。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果学术传播彻底开放，发展中国家的研究者能以近乎零成本参与前沿对话，全球科研的"地理不平等"有望被实质性削弱。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.hanspub.org/Journal/MS.html" target="_blank">汉斯出版社 · 材料科学期刊</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学的"上游化"趋势明确——下游产业的性能天花板越来越取决于材料突破。同时，学术传播的开放化正在改变知识流动速度，但质量分层问题提示：信息可得性提升不等于判断力提升。</div>
+  </div>
+
+  <!-- ============ 6. 中国政策与监管 ============ -->
+  <div class="section">
+    <h2 class="section-title">🇨🇳 中国政策与监管</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">外汇牌价与中间价机制持续透明化，服务实体与个人购汇</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">国家外汇管理局与中国银行持续完善人民币汇率中间价与牌价发布机制，覆盖澳门元、林吉特、卢布、兰特、韩元等 <span class="num-key">十余种</span>货币。监管导向清晰：以更高透明度稳定预期，降低企业套保与个人购汇的信息成本。</p>
+
+      <div class="bilingual">
+        <p class="en-title">China Refines FX Central Parity and Quotation Mechanisms for Greater Transparency</p>
+        <p class="en-summary">SAFE and Bank of China continue to improve RMB central parity and quotation publication, covering more than a dozen currencies including the Macanese pataca, ringgit, ruble, rand, and won. The regulatory intent is clear: stabilize expectations through transparency and lower information costs for corporate hedging and retail FX purchases.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>central parity</b> 中间价</span>
+            <span class="vocab-item"><b>hedging</b> 套期保值</span>
+            <span class="vocab-item"><b>transparency</b> 透明度</span>
+            <span class="vocab-item"><b>expectation management</b> 预期管理</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中间价机制像"天气预报+交通规则"的结合：既给出参考价，也设定波动区间，让市场在可预期范围内运行，避免单边恐慌。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）政策重点在稳预期与防超调；中期（3-10年）随着跨境人民币结算扩大，中间价的"锚"作用将更多服务于贸易与投资便利化。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果人民币在区域贸易中成为主要计价货币，企业财务部门将不再把汇率视为"风险"而是"变量"，主动的多币种资金管理会成为标准能力。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.safe.gov.cn/safe/rmbhlzjj/index.html" target="_blank">国家外汇管理局</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">AI 大模型融资与估值监管关注度上升</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">随着月之暗面 <span class="num-key">315 亿美元</span>、DeepSeek <span class="num-key">740 亿美元</span>估值进入公众视野，AI 一级市场的估值合理性与信息披露成为监管与舆论关注焦点。政策取向预计在"鼓励创新"与"防范泡沫"之间寻求平衡。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Regulatory Scrutiny Grows Over AI Model Valuations and Funding Disclosure</p>
+        <p class="en-summary">As Moonshot AI's $31.5 billion and DeepSeek's $74 billion valuations enter public view, the reasonableness of primary-market pricing and disclosure practices are drawing regulatory and public attention. Policy is expected to balance innovation incentives against bubble-prevention concerns.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>primary market</b> 一级市场</span>
+            <span class="vocab-item"><b>disclosure</b> 信息披露</span>
+            <span class="vocab-item"><b>bubble prevention</b> 防泡沫</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>一级市场估值是投资机构对未上市公司给出的"预判价"，不像股价那样有公开交易验证，因此更容易出现叙事驱动的溢价。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）信息披露要求可能趋严，估值方法将更强调收入与算力成本；中期（3-10年）行业或形成分层，头部靠生态变现，长尾靠垂直场景生存。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果估值体系从"讲故事"转向"看现金流"，AI 行业会经历一次去泡沫化的优胜劣汰，真正具备工程化能力的团队将获得更长期的支持。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.huxiu.com/article/4876050.html" target="_blank">虎嗅</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">"一带一路"贸易投资报告强调产供链韧性</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">商务部国际贸易经济合作研究院发布《中国"一带一路"贸易投资发展报告2024—2025》，指出中国与共建国家的产供链韧性持续显现。报告为外部"脱钩"风险提供了缓冲叙事，但项目回报与债务可持续性仍是长期考题。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Belt and Road Trade and Investment Report Highlights Supply Chain Resilience</p>
+        <p class="en-summary">The Chinese Academy of International Trade and Economic Cooperation released its 2024-2025 report on Belt and Road trade and investment, noting sustained supply chain resilience between China and partner countries. The findings offer a buffer narrative against decoupling risks, though project returns and debt sustainability remain long-term concerns.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>supply chain resilience</b> 供应链韧性</span>
+            <span class="vocab-item"><b>decoupling</b> 脱钩</span>
+            <span class="vocab-item"><b>debt sustainability</b> 债务可持续性</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>产供链韧性指供应链在冲击下"不断链、能回弹"的能力。共建"一带一路"相当于多修几条备用通道，让货物与中间品不必只走一条路。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）中间品贸易与陆海新通道是重点；中期（3-10年）若本币结算与本地化生产深化，区域供应链的"去单点依赖"会更明显。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果区域产供链形成多中心网络，全球制造业的抗冲击能力将整体提升，但也可能带来标准碎片化与合规成本上升的新问题。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.yidaiyilu.gov.cn/p/06PKIGS0.html" target="_blank">中国一带一路网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策端呈现"稳预期+促创新+强韧性"三线并行：汇率机制以透明化稳预期，AI 领域在鼓励与审慎间找平衡，对外则以产供链韧性对冲外部不确定性。政策工具箱更精细，但执行层面的落地节奏是关键变量。</div>
+  </div>
+
+  <!-- ============ 7. 地缘政治 ============ -->
+  <div class="section">
+    <h2 class="section-title">🌍 地缘政治与国际关系</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">"一带一路"成中美产供链"脱钩"风险的缓冲路径</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+<footer><p>每日全球重要动态简报 · 由 DeepSeek AI 自动生成 · v2 深度解读版</p></footer>
+</body>
+</html>
