@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球动态每日简报 · 2026-11-10</title>
+<style>
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f4f5f7; color: #1f2328; margin: 0; padding: 0; line-height: 1.7; }
+  .container { max-width: 860px; margin: 0 auto; padding: 16px; }
+  .header { background: #1a2b4c; color: #ffffff; padding: 24px 20px; border-radius: 8px; margin-bottom: 18px; }
+  .header h1 { margin: 0 0 6px 0; font-size: 24px; font-weight: 700; }
+  .header p { margin: 0; font-size: 13px; color: #c3cfe2; }
+  .overview { background: #ffffff; border-left: 5px solid #1a2b4c; padding: 18px 20px; border-radius: 6px; margin-bottom: 22px; }
+  .overview h3 { margin: 0 0 10px 0; font-size: 17px; font-weight: 700; color: #1a2b4c; }
+  .overview p { margin: 0 0 12px 0; font-size: 14px; }
+  .overview-tags { }
+  .overview-tag { display: inline-block; background: #e8edf5; color: #1a2b4c; font-size: 12px; padding: 4px 10px; border-radius: 12px; margin: 0 6px 6px 0; font-weight: 600; }
+  .section { background: #ffffff; border-radius: 8px; padding: 18px 20px; margin-bottom: 22px; }
+  .section-title { font-size: 18px; font-weight: 700; color: #1a2b4c; border-bottom: 2px solid #e8edf5; padding-bottom: 10px; margin: 0 0 16px 0; }
+  .item { border-bottom: 1px dashed #e0e3e8; padding-bottom: 16px; margin-bottom: 16px; }
+  .item:last-child { border-bottom: none; }
+  .item-header { margin-bottom: 8px; }
+  .item-title { font-size: 15px; font-weight: 700; color: #111418; margin-right: 8px; }
+  .stars { color: #e6a700; font-size: 12px; }
+  .impact { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 6px; }
+  .impact-high { background: #fde8e8; color: #b42318; }
+  .impact-med { background: #fff4e0; color: #a15c00; }
+  .impact-low { background: #e8f5ec; color: #1e7a3c; }
+  .risk-red { display: inline-block; font-size: 11px; font-weight: 700; color: #b42318; margin-left: 6px; }
+  .risk-yellow { display: inline-block; font-size: 11px; font-weight: 700; color: #a15c00; margin-left: 6px; }
+  .item-summary { font-size: 14px; margin: 0 0 10px 0; }
+  .num-up { color: #1e7a3c; font-weight: 700; }
+  .num-down { color: #b42318; font-weight: 700; }
+  .num-key { color: #1a4fa0; font-weight: 700; }
+  .bilingual { background: #f7f9fc; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+  .en-title { font-size: 13px; font-weight: 700; color: #1a2b4c; margin: 0 0 6px 0; }
+  .en-summary { font-size: 13px; color: #3d4652; margin: 0 0 10px 0; }
+  .vocab-card { background: #ffffff; border-radius: 5px; padding: 8px 10px; }
+  .vocab-title { font-size: 12px; font-weight: 700; color: #1a2b4c; margin-bottom: 6px; }
+  .vocab-item { display: inline-block; font-size: 12px; color: #3d4652; background: #eef2f8; border-radius: 4px; padding: 3px 8px; margin: 0 5px 5px 0; }
+  .vocab-item b { color: #1a2b4c; }
+  .compare-box { margin: 14px 0; }
+  .compare-side { display: inline-block; width: 47%; vertical-align: top; font-size: 13px; padding: 10px 12px; border-radius: 6px; box-sizing: border-box; }
+  .compare-bull { background: #e8f5ec; color: #1e5c33; margin-right: 4%; }
+  .compare-bear { background: #fde8e8; color: #8a1c14; }
+  .compare-label { font-weight: 700; margin-bottom: 4px; font-size: 13px; }
+  .deepdive { background: #fbfbfd; border: 1px solid #e6e9ef; border-radius: 6px; padding: 8px 12px; margin-bottom: 10px; }
+  .deepdive summary { font-size: 13px; font-weight: 700; color: #1a4fa0; cursor: pointer; }
+  .deepdive-content { padding-top: 8px; }
+  .dl { font-size: 13px; margin: 0 0 8px 0; }
+  .dl-label { font-weight: 700; color: #1a2b4c; }
+  .item-source { font-size: 12px; color: #6b7280; margin: 0; }
+  .item-source a { color: #1a4fa0; text-decoration: none; }
+  .trend-comment { background: #1a2b4c; color: #dbe4f2; font-size: 13px; padding: 12px 16px; border-radius: 6px; margin-top: 6px; }
+  .timeline { background: #ffffff; border-radius: 8px; padding: 18px 20px; margin-bottom: 22px; border-top: 4px solid #e6a700; }
+  .timeline h4 { margin: 0 0 12px 0; font-size: 16px; font-weight: 700; color: #1a2b4c; }
+  .timeline-item { font-size: 13px; padding: 8px 0; border-bottom: 1px dashed #e0e3e8; }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-date { display: inline-block; background: #fff4e0; color: #a15c00; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 4px; margin-right: 10px; }
+  .footer { text-align: center; font-size: 12px; color: #8a919c; padding: 18px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>🌍 全球动态每日简报</h1>
+    <p>2026年11月10日 · 星期二 · 高密度情报版</p>
+  </div>
+
+  <div class="overview">
+    <h3>🧠 今日综述</h3>
+    <p>今日信息面呈现"技术加速、监管收紧、地缘博弈"三线并行：DeepSeek V4 系列以 <span class="num-key">1M</span> 上下文与极低缓存价格重塑大模型成本曲线，OpenAI 以"Patch the Planet"计划将 AI 攻防推向基础设施层；中国国家数据局推进"十五五"数据要素制度设计，数据确权与流通进入落地期；地缘端，美国众议院三大委员会就英伟达对华业务传唤黄仁勋作证，芯片管制与产业游说正面碰撞。整体风向：AI 端偏进取，监管端趋严，地缘风险持续累积。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🤖 大模型价格战</span>
+      <span class="overview-tag">🔐 AI 安全攻防</span>
+      <span class="overview-tag">📊 数据要素确权</span>
+      <span class="overview-tag">🔴 芯片管制听证</span>
+      <span class="overview-tag">⛓️ 供应链重组</span>
+    </div>
+  </div>
+
+  <!-- 1. 生命科学 -->
+  <div class="section">
+    <h2 class="section-title">🧬 生命科学 / 医学</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Nature 刊发原子探针断层扫描研究：以氘示踪氢，首次给出晶格间隙位实验证据</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">《Nature》最新研究以氘作为氢的替代示踪剂，利用原子探针断层扫描（APT）在原子尺度直接观测间隙位分布，为长期缺乏直接实验证据的氢脆与储氢机理提供关键支撑。该方法的 <span class="num-key">原子级</span> 分辨率有望外溢至材料、能源与生物大分子结构解析。</p>
+      <div class="bilingual">
+        <p class="en-title">Atom Probe Tomography Provides First Direct Evidence for Interstitial Sites Using Deuterium as a Hydrogen Proxy</p>
+        <p class="en-summary">A Nature study used deuterium as a proxy for hydrogen and applied atom probe tomography to obtain experimental evidence for interstitial occupancy at the atomic scale. The approach addresses a long-standing gap in hydrogen embrittlement and hydrogen storage research, where direct observation had remained elusive.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>atom probe tomography</b> 原子探针断层扫描</span>
+            <span class="vocab-item"><b>deuterium</b> 氘</span>
+            <span class="vocab-item"><b>interstitial site</b> 间隙位</span>
+            <span class="vocab-item"><b>hydrogen embrittlement</b> 氢脆</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>氢原子太小、太轻，常规显微手段"看不见"它藏在金属晶格的哪个缝隙里。研究团队用更重的同位素氘"顶替"氢，再用 APT 逐原子剥离成像，相当于给晶格做了 CT 扫描，第一次"拍到"了间隙位。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）可用于氢脆机理验证与储氢合金筛选；中期（3-10年）有望指导抗氢脆高强钢、燃料电池双极板与固态储氢材料设计，缩短材料迭代周期。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若氢能产业链的材料瓶颈被系统性破解，绿氢储运成本或大幅下探，重工业脱碳路径将真正打通，能源地缘格局随之重排。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature · Research Articles</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">海洋矿物镁补充剂受关注：Aquamin 类海水源镁的生物利用度讨论升温</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">围绕海水衍生矿物镁（Aquamin-Mg）的科普与产品信息集中出现，主打 <span class="num-key">200mg</span> 剂量与更高溶解度。当前证据多来自厂商与科普渠道，缺乏大规模随机对照试验支撑，消费者需警惕营销话术与功效夸大。</p>
+      <div class="bilingual">
+        <p class="en-title">Marine-Derived Magnesium Supplements Draw Attention, but Evidence Remains Limited</p>
+        <p class="en-summary">Marine magnesium products derived from seawater are being marketed for higher solubility and bioavailability, typically at 200 mg doses. Most supporting claims originate from commercial and科普 channels rather than large randomized controlled trials, warranting cautious interpretation.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>bioavailability</b> 生物利用度</span>
+            <span class="vocab-item"><b>randomized controlled trial</b> 随机对照试验</span>
+            <span class="vocab-item"><b>dietary supplement</b> 膳食补充剂</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>所谓"海洋镁"，是从海水中提取的镁源，常与阿拉伯胶等载体复配，宣称吸收更好。本质仍是镁补充剂，差异在于原料来源与剂型工艺。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，功能性食品赛道将继续扩容；中长期需靠独立临床数据说话，否则难逃"概念溢价"。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若补充剂行业普遍建立第三方功效验证体系，"海洋矿物"将从营销标签升级为可信品类。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://scienceinsights.org/what-is-aquamin-magnesium-marine-minerals-explained/" target="_blank">Science Insights</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：生命科学今日呈现"硬核方法学突破 + 消费级概念炒作"的两极分化。APT 氘示踪属于底层工具革新，价值在于打开原子尺度观测窗口；而海洋镁类产品则提醒我们，健康消费领域的证据门槛仍待抬高。</div>
+  </div>
+
+  <!-- 2. 经济金融 -->
+  <div class="section">
+    <h2 class="section-title">💰 经济 / 金融</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">人民币中间价与外汇牌价更新，市场聚焦美元兑人民币走势</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">2026年11月10日，中国央行公布人民币汇率中间价，中国银行同步更新现汇/现钞买卖价。市场关注美元兑人民币在 <span class="num-key">7</span> 关口附近的波动，以及跨境资本流动对四季度外贸结算的影响。</p>
+      <div class="bilingual">
+        <p class="en-title">PBOC Fixing and FX Quotes Updated as Markets Watch USD/CNY</p>
+        <p class="en-summary">The People's Bank of China released its daily central parity rate on November 10, 2026, with Bank of China updating spot and cash quotes. Traders are monitoring USD/CNY fluctuations near the 7 level and their implications for cross-border capital flows and Q4 trade settlement.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>central parity rate</b> 中间价</span>
+            <span class="vocab-item"><b>spot exchange rate</b> 即期汇率</span>
+            <span class="vocab-item"><b>cross-border capital flow</b> 跨境资本流动</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中间价是每日开盘前的"官方参考价"，由做市商报价加权得出，现汇价则是实际可成交价。两者之差反映市场供需与预期偏离。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，若美元指数维持强势，人民币或承压；中期取决于出口韧性与美联储路径。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若人民币跨境结算占比持续提升，汇率波动的外溢效应将被部分内部化，企业汇率风险管理工具需求上升。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.boc.cn/sourcedb/whpj/" target="_blank">中国银行 · 外汇牌价</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">全球市场数据平台密集更新，投资者转向高频行情与AI辅助分析</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">Yahoo Finance、MarketWatch、StockAnalysis 等平台持续更新全球 <span class="num-key">150,000+</span> 标的行情，投资者对实时数据与AI辅助研判的依赖加深。信息过载背景下，数据质量与解读能力成为新的分水岭。</p>
+      <div class="bilingual">
+        <p class="en-title">Market Data Platforms Expand Coverage as Investors Lean on AI-Assisted Analysis</p>
+        <p class="en-summary">Major financial data platforms now cover over 150,000 global instruments with real-time quotes. Investors increasingly rely on AI-assisted interpretation, raising the bar for data quality and analytical literacy amid information overload.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>real-time quote</b> 实时报价</span>
+            <span class="vocab-item"><b>information overload</b> 信息过载</span>
+            <span class="vocab-item"><b>portfolio management</b> 投资组合管理</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>行情平台从"看价格"升级为"给判断"，AI 开始承担筛选、归因与预警角色，相当于给投资者配了一位不知疲倦的研究助理。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，AI 研报与舆情监控将成标配；中长期，投研流程将被重构，人类更多负责框架与风控。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若AI研判普及，市场反应速度加快，超额收益窗口收窄，"信息差套利"模式将加速退场。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://stockanalysis.com/" target="_blank">StockAnalysis.com</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：金融信息端正在经历"数据 democratization（民主化）"与"解读能力稀缺化"的同步演进——数据人人可得，判断力反而更值钱。汇率与跨境结算仍是四季度外贸企业的核心变量。</div>
+  </div>
+
+  <!-- 3. 人工智能 -->
+  <div class="section">
+    <h2 class="section-title">🤖 人工智能</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">DeepSeek V4 系列开放平台上线：<span class="num-key">1M</span> 上下文，缓存命中输入低至 <span class="num-key">0.025</span> 元/百万 tokens</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">DeepSeek 开放平台推出 V4 系列 API，支持 <span class="num-key">1M</span> 超长上下文，缓存命中输入价 <span class="num-key">0.025</span> 元/百万 tokens、未命中 <span class="num-key">3</span> 元、输出 <span class="num-key">6</span> 元，自动缓存机制显著压低长文档场景成本。价格战进一步向"上下文长度 × 单价"双维度延伸，开发者迁移成本下降。</p>
+      <div class="bilingual">
+        <p class="en-title">DeepSeek V4 API Launches with 1M Context and Aggressive Caching Pricing</p>
+        <p class="en-summary">DeepSeek released its V4 API series featuring a 1M-token context window, with cached input priced at 0.025 yuan per million tokens and uncached input at 3 yuan. Automatic caching substantially lowers costs for long-document workloads, intensifying competition on both context length and unit price.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>context window</b> 上下文窗口</span>
+            <span class="vocab-item"><b>cache hit</b> 缓存命中</span>
+            <span class="vocab-item"><b>token pricing</b> token 定价</span>
+            <span class="vocab-item"><b>inference cost</b> 推理成本</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>上下文窗口就像模型的"工作记忆"，1M 意味着可一次读完数百页文档。缓存命中则类似"记住上次读过的段落"，重复调用时只收极低费用，把长文档问答的边际成本压到近乎可忽略。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年），法律合同审阅、代码库级理解、长视频字幕分析等场景将快速铺开；中期看，Agent 多轮记忆成本下降将催生"常驻型助手"。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若超长上下文与缓存成为行业标配，"个人知识库即服务"或成新基础设施，信息检索范式从"搜索"转向"对话式全量理解"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.deepseek.com/platform/" target="_blank">DeepSeek · API 开放平台</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">OpenAI "Patch the Planet" 计划：AI 协助发现 PHP 关键安全漏洞</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <p class="item-summary">OpenAI 披露其"Patch the Planet"计划中，模型协助研究人员在开源语言 PHP 中发现关键安全缺陷。AI 从"写代码"走向"找漏洞"，攻防天平可能倾斜，同时也引发"AI 是否会被用于自动化攻击"的 <span class="num-key">双用途</span> 担忧。</p>
+      <div class="bilingual">
+        <p class="en-title">OpenAI's Patch the Planet Initiative Uses AI to Surface Critical PHP Vulnerabilities</p>
+        <p class="en-summary">OpenAI reported that its models helped researchers identify critical security flaws in PHP, an open-source language, under the Patch the Planet initiative. The development signals AI's shift from code generation to vulnerability discovery, raising dual-use concerns about automated offensive capabilities.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>vulnerability discovery</b> 漏洞发现</span>
+            <span class="vocab-item"><b>dual-use</b> 双用途</span>
+            <span class="vocab-item"><b>open-source codebase</b> 开源代码库</span>
+            <span class="vocab-item"><b>responsible disclosure</b> 负责任披露</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>把 AI 当作"不知疲倦的代码审计员"，逐行扫描开源项目寻找逻辑漏洞与内存安全问题，比人工审计更快覆盖海量代码。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，关键基础设施的开源依赖将迎来一轮"AI 体检"；中期需建立披露与修复的协同机制，否则漏洞信息可能被滥用。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若攻防双方都用 AI，网络安全将进入"算法对算法"的军备竞赛，防御方的响应速度成为胜负手。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://x.com/OpenAI" target="_blank">OpenAI · 官方账号</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">大模型评测榜单更新：ARC-AGI-2、SWE-bench 等基准成新竞技场</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">Datalearner 等平台聚合 ARC-AGI-2、HLE、AIME 2025、SWE-bench Verified、τ²-Bench 等基准，覆盖综合、数学、编程多维度排名，数据更新至 <span class="num-key">2026-11-09</span>。评测从"刷分"转向"任务完成度"，反映行业对真实能力的关注。</p>
+      <div class="bilingual">
+        <p class="en-title">Model Leaderboards Shift Toward Task-Completion Benchmarks</p>
+        <p class="en-summary">Aggregated leaderboards now track ARC-AGI-2, HLE, AIME 2025, SWE-bench Verified and τ²-Bench across reasoning, math and coding. The shift from raw scores to task completion reflects growing emphasis on real-world capability rather than benchmark gaming.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>benchmark</b> 基准测试</span>
+            <span class="vocab-item"><b>leaderboard</b> 排行榜</span>
+            <span class="vocab-item"><b>task completion</b> 任务完成度</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>基准测试是模型的"统一考卷"，但考卷会被针对性训练"背题"。SWE-bench 类任务要求真正改代码、跑测试，更难作弊。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，企业选型将更依赖任务级评测；中长期，动态、防污染的评测体系将成为刚需。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若评测能真实反映生产力，模型采购将从"看参数"转向"看交付"，AI 预算的 ROI 核算更透明。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.datalearner.com/leaderboards" target="_blank">Datalearner · 大模型评测排行榜</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI 竞争已从"参数规模"转向"上下文长度 × 单位成本 × 真实任务能力"的三维竞赛。DeepSeek 以价格与长上下文抢开发者，OpenAI 以安全攻防拓展应用边界，两条路线共同推高行业门槛。</div>
+  </div>
+
+  <!-- 4. 硬科技 -->
+  <div class="section">
+    <h2 class="section-title">💻 科技 / 硬科技</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">半导体基础定义与产业科普热度回升，芯片自主话题持续发酵</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">从 Wikipedia 到 IBM、Britannica，半导体与集成电路的基础科普内容密集出现，反映公众对"芯片是什么、卡在哪"的关注度上升。在出口管制背景下，<span class="num-key">材料—设备—设计—制造</span> 全链条认知成为产业共识的基础。</p>
+      <div class="bilingual">
+        <p class="en-title">Semiconductor Literacy Rises as Supply-Chain Sovereignty Takes Center Stage</p>
+        <p class="en-summary">A wave of foundational explainers on semiconductors and integrated circuits reflects growing public interest in chip technology. Amid export controls, literacy across materials, equipment, design and fabrication is becoming a prerequisite for informed industrial policy debate.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>semiconductor</b> 半导体</span>
+            <span class="vocab-item"><b>integrated circuit</b> 集成电路</span>
+            <span class="vocab-item"><b>supply-chain sovereignty</b> 供应链自主</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>半导体是导电性介于导体与绝缘体之间的材料，通过掺杂与光刻"雕刻"出晶体管，进而组成芯片。它是现代电子工业的"地基"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，成熟制程扩产与设备国产化是主线；中长期，先进封装与Chiplet或成绕开制程限制的路径。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若供应链区域化固化，全球芯片成本结构将重塑，"效率优先"让位于"安全优先"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.ibm.com/think/topics/semiconductors" target="_blank">IBM · What is a Semiconductor</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">量子计算科普与产业讨论同步升温："确定的未来"叙事强化</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">从百度百科到 IBM 中文站，量子计算的定义、原理与产业前景内容密集更新，"先进半导体是过去、AI 是当下、量子是未来"的叙事被反复引用。量子比特的 <span class="num-key">概率性</span> 输出与干涉效应仍是理解门槛。</p>
+      <div class="bilingual">
+        <p class="en-title">Quantum Computing Narratives Intensify as Educational Content Expands</p>
+        <p class="en-summary">Educational and industry content on quantum computing is expanding rapidly, framing it as the long-term answer to computing bottlenecks. Probabilistic qubit measurement and interference effects remain key conceptual barriers for newcomers.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>qubit</b> 量子比特</span>
+            <span class="vocab-item"><b>superposition</b> 叠加态</span>
+            <span class="vocab-item"><b>interference effect</b> 干涉效应</span>
+            <span class="vocab-item"><b>quantum advantage</b> 量子优势</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>经典比特是"0 或 1"，量子比特可同时处于叠加态，通过干涉让正确答案的概率被放大，从而在特定问题上实现指数级加速。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，量子纠错与专用模拟是重点；中长期，药物分子模拟、材料设计、密码学是潜在落点。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若容错量子计算机落地，现有公钥密码体系需全面迁移，全球网络安全基础设施将迎来一次"大换锁"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.ibm.com/cn-zh/think/topics/quantum-computing" target="_blank">IBM · 什么是量子计算</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">华为、比亚迪等中国硬科技企业官网内容更新，终端与新能源双线推进</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">华为商城更新 <span class="num-key">100W</span> 自带线移动电源（<span class="num-key">20000mAh</span>）等消费电子新品，比亚迪官网持续展示王朝、海洋全系车型。中国硬科技企业在终端与新能源两条主线保持产品节奏，供应链本土化程度持续提升。</p>
+      <div class="bilingual">
+        <p class="en-title">Huawei and BYD Maintain Product Cadence Across Devices and New Energy Vehicles</p>
+        <p class="en-summary">Huawei's VMALL listed a 100W 20,000 mAh power bank, while BYD continued showcasing its Dynasty and Ocean vehicle lines. Both companies sustain product launch rhythms across consumer electronics and new energy vehicles, with localization deepening.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>product cadence</b> 产品节奏</span>
+            <span class="vocab-item"><b>new energy vehicle</b> 新能源汽车</span>
+            <span class="vocab-item"><b>localization</b> 本土化</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>华为以 ICT 基础设施与消费终端双轮驱动，比亚迪以垂直整合覆盖电池、电机、电控与整车，二者都是"链主型"企业。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，快充与智能座舱是差异化焦点；中长期，出海与本地化建厂决定天花板。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若中国新能源与智能终端形成"技术—标准—生态"闭环，全球产业分工将出现新的重心。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.vmall.com/" target="_blank">华为商城 VMALL</a> · <a href="https://www.byd.com/cn/index.html" target="_blank">比亚迪官网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技叙事正从"单点突破"转向"体系能力"——半导体是地基，量子是远期期权，终端与新能源是现金流。三者的共同点是：都高度依赖供应链韧性与长期资本投入。</div>
+  </div>
+
+  <!-- 5. 材料科学 -->
+  <div class="section">
+    <h2 class="section-title">🔬 材料科学</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">原子尺度表征方法受关注：APT 与氘示踪打开材料微观世界</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">材料表征领域对原子探针断层扫描（APT）的关注度上升，其 <span class="num-key">原子级</span> 三维重构能力与氘示踪结合，可揭示轻元素在晶格中的真实位置。该组合方法对储氢、催化、半导体掺杂等方向具有通用价值。</p>
+      <div class="bilingual">
+        <p class="en-title">Atomic-Scale Characterization Gains Traction with APT and Deuterium Tracing</p>
+        <p class="en-summary">Atom probe tomography is drawing renewed attention for its atomic-resolution 3D reconstruction capability. Combined with deuterium tracing, it reveals the true positions of light elements in crystal lattices, with broad relevance to hydrogen storage, catalysis and semiconductor doping.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>characterization</b> 表征</span>
+            <span class="vocab-item"><b>3D reconstruction</b> 三维重构</span>
+            <span class="vocab-item"><b>doping</b> 掺杂</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>APT 把样品"一层一层"剥离并记录每个原子的位置，最后拼出三维原子地图，相当于给材料做"原子级CT"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，掺杂分布与界面偏析研究将受益；中长期，或成为新材料研发的标准工具链一环。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若表征与AI逆向设计结合，"设计—验证"闭环周期将从年缩短到月，材料创新进入快车道。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature · Research Articles</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">全球科技媒体与材料资讯平台内容聚合，跨领域信息流加速</span>
+        <span class="stars">⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">Google News、CNN、NYT 等平台持续聚合全球科技与材料资讯，信息流速加快但噪音同步上升。材料科学作为"长周期、高门槛"领域，尤其需要专业信源过滤与同行评议背书。</p>
+      <div class="bilingual">
+        <p class="en-title">Cross-Domain News Aggregation Accelerates but Raises Signal-to-Noise Concerns</p>
+        <p class="en-summary">Aggregators such as Google News and major outlets continue to accelerate cross-domain information flow, though noise rises in tandem. For long-cycle, high-barrier fields like materials science, professional filtering and peer review remain essential.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>signal-to-noise ratio</b> 信噪比</span>
+            <span class="vocab-item"><b>peer review</b> 同行评议</span>
+            <span class="vocab-item"><b>information aggregation</b> 信息聚合</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>聚合平台像"信息自来水"，打开就有，但水质参差。材料领域的突破往往藏在论文附录里，而非标题中。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，专业垂类信源价值上升；中长期，AI 摘要与溯源工具或成标配。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若每条信息都可溯源到原始数据，科学传播的可信度将显著提升。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://news.google.com/" target="_blank">Google News</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学的进展往往是"沉默的"，但其外溢效应最长。表征工具的每一次升级，都会在未来数年里改变多个产业的技术路线选择。</div>
+  </div>
+
+  <!-- 6. 中国政策 -->
+  <div class="section">
+    <h2 class="section-title">🇨🇳 中国政策与监管</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">国家数据局推进"十五五"数据要素制度设计，数据基础制度加速落地</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">国家数据局发布"奋进十五五"系列新闻，聚焦数据基础制度、数据要素市场与数据标准规范。政策重心从"建机构"转向"建规则"，数据确权、流通交易与收益分配的制度框架进入实质性推进阶段。</p>
+      <div class="bilingual">
+        <p class="en-title">China's National Data Administration Advances Data-Element Rules for the 15th Five-Year Plan</p>
+        <p class="en-summary">The National Data Administration is advancing foundational data institutions, market mechanisms and standards as part of the 15th Five-Year Plan. The policy focus is shifting from institution-building to rule-making, covering data rights, trading and revenue distribution.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>data element</b> 数据要素</span>
+            <span class="vocab-item"><b>data rights confirmation</b> 数据确权</span>
+            <span class="vocab-item"><b>revenue distribution</b> 收益分配</span>
+            <span class="vocab-item"><b>data governance</b> 数据治理</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>数据要素就是把数据当作"可交易的生产资料"。要交易，先得说清"这数据归谁、能怎么用、赚了怎么分"，这就是确权与分配制度。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，数据交易所与公共数据授权运营将提速；中长期，数据资产入表、质押融资等金融化路径或逐步打开。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若数据流通规则成熟，中小企业可凭数据资产获得融资，数字经济的"毛细血管"将被激活。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nda.gov.cn/sjj/index_pc.html" target="_blank">国家数据局</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">党的二十一大代表选举工作部署，政策周期进入衔接期</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">中共中央发出通知，部署党的二十一大代表选举工作，标志政策周期进入衔接阶段。市场关注"十五五"规划与新一轮改革议程的衔接节奏，产业政策预期趋于稳定。</p>
+      <div class="bilingual">
+        <p class="en-title">Party Congress Delegate Election Deployment Signals Policy Transition Period</p>
+        <p class="en-summary">The CPC Central Committee issued a notice deploying delegate elections for the 21st Party Congress, marking a transition in the policy cycle. Markets are watching how the 15th Five-Year Plan aligns with the new reform agenda, with industrial policy expectations stabilizing.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>delegate election</b> 代表选举</span>
+            <span class="vocab-item"><b>policy cycle</b> 政策周期</span>
+            <span class="vocab-item"><b>reform agenda</b> 改革议程</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>重大会议前的代表选举是制度性程序，通常伴随政策方向的酝酿与定调，是观察中长期政策重心的窗口。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，政策以稳为主；中长期，科技创新、数据要素、绿色转型仍是主线。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若政策连续性得到强化，企业长期投资决策的不确定性将下降，资本开支意愿有望回升。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nda.gov.cn/sjj/index_pc.html" target="_blank">国家数据局 · 新闻发布</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策端呈现"制度细化 + 周期衔接"的双重特征。数据要素是最具增量的改革方向，其制度设计将直接影响AI产业的数据供给与合规成本。</div>
+  </div>
+
+  <!-- 7. 地缘政治 -->
+  <div class="section">
+    <h2 class="section-title">🌍 地缘政治与国际关系</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">美众议院三大委员会传唤黄仁勋作证，聚焦英伟达对华业务</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <p class="item-summary">美国众议院三个重要委员会主席联名致函英伟达 CEO 黄仁勋，要求其赴国会作证，说明对华业务与国家安全关切。此举标志芯片管制从"行政限制"延伸至"立法审查"，企业合规与商业利益的张力公开化。</p>
+      <div class="bilingual">
+        <p class="en-title">Three House Committees Summon Nvidia CEO Jensen Huang Over China Business</p>
+        <p class="en-summary">Chairs of three major U.S. House committees jointly requested Nvidia CEO Jensen Huang testify before Congress regarding the company's China business and national security concerns. The move extends chip controls from administrative restrictions to legislative scrutiny, exposing tensions between compliance and commercial interests.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>testify before Congress</b> 赴国会作证</span>
+            <span class="vocab-item"><b>export control</b> 出口管制</span>
+            <span class="vocab-item"><b>national security review</b> 国家安全审查</span>
+            <span class="vocab-item"><b>compliance</b> 合规</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>国会听证是立法机构的"公开问询"，企业高管需就业务合规性作出说明。它虽不直接下禁令，但会塑造后续立法与舆论环境。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，英伟达对华产品线或进一步收紧；中长期，芯片管制的"立法化"将提高政策可预期性，但也降低灵活性。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若管制长期化，全球AI算力版图将分裂为多个区域生态，算力成本与创新速度出现分化。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.voachinese.com/z/1776" target="_blank">美国之音中文网 · 美中关系</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">中美落实元首会晤八点共识，建设性战略稳定关系受关注</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">2026年9月23日至25日，习近平对美国进行国事访问，两国元首就中美建设性战略稳定关系及重大国际地区问题达成八点成果共识。当前市场关注共识的落地节奏，尤其是经贸与科技领域的后续安排。</p>
+      <div class="bilingual">
+        <p class="en-title">China and U.S. Move to Implement Eight-Point Consensus on Strategic Stability</p>
+        <p class="en-summary">During President Xi Jinping's state visit to the United States from September 23 to 25, 2026, the two heads of state reached an eight-point consensus on a constructive strategic stability relationship. Markets are now watching implementation, especially in trade and technology.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>state visit</b> 国事访问</span>
+            <span class="vocab-item"><b>strategic stability</b> 战略稳定</span>
+            <span class="vocab-item"><b>consensus</b> 共识</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>"战略稳定"意味着双方在竞争中设置护栏，避免误判升级。八点共识是框架性文件，具体落地需靠工作组逐项推进。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，经贸对话机制恢复；中长期，科技竞争的结构性矛盾仍难根本缓解。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若护栏机制有效，全球供应链的"断点"将减少，企业跨境布局的不确定性下降。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.mfa.gov.cn/web/wjdt_674879/gjldrhd_674881/202609/t20260926_12031616.shtml" target="_blank">中华人民共和国外交部</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">"一带一路"投资合作数据持续更新，共建国家成外贸新支点</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">中国一带一路网与商务部持续更新对共建国家投资合作情况，涵盖 <span class="num-key">2025</span> 年多期数据。在全球贸易碎片化背景下，共建国家市场成为中国外贸与产能合作的重要缓冲带。</p>
+      <div class="bilingual">
+        <p class="en-title">Belt and Road Investment Data Updates Highlight Partner Markets as Trade Buffer</p>
+        <p class="en-summary">Official platforms continue to update investment and cooperation data with Belt and Road partner countries across multiple 2025 periods. Amid global trade fragmentation, these markets serve as an important buffer for China's exports and capacity cooperation.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>Belt and Road</b> 一带一路</span>
+            <span class="vocab-item"><b>capacity cooperation</b> 产能合作</span>
+            <span class="vocab-item"><b>trade fragmentation</b> 贸易碎片化</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>共建国家多为新兴市场，基建与产能合作既输出中国设备与标准，也带回资源与市场，形成双向循环。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，绿色能源与数字基建项目占比上升；中长期，本币结算与多边金融合作或深化。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若区域价值链成型，全球贸易的"中心—外围"结构将被多中心网络部分替代。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.yidaiyilu.gov.cn/" target="_blank">中国一带一路网</a></p>
+    </div>
+
+    <div class="compare-box">
+      <div class="compare-side compare-bull">
+        <div class="compare-label">📈 乐观方</div>
+        中美八点共识与对话机制恢复，为科技与经贸设置"护栏"，企业跨境布局不确定性下降，供应链断点有望减少。
+      </div>
+      <div class="compare-side compare-bear">
+        <div class="compare-label">📉 悲观方</div>
+        众议院传唤黄仁勋作证，显示芯片管制正从行政层延伸至立法层，技术脱钩的结构性趋势难因共识而逆转。
+      </div>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘格局呈现"高层稳、执行紧"的特征——元首共识提供框架，但立法与监管层面的收紧仍在推进。企业需同时管理"政策预期"与"合规现实"两套账本。</div>
+  </div>
+
+  <!-- 时间节点 -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-11 中旬</span>
+      <span>美国众议院委员会就英伟达对华业务举行听证，黄仁勋作证安排待定</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-Q4</span>
+      <span>中国"十五五"数据要素相关制度文件进入密集征求意见与发布期</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-12</span>
+      <span>中美八点共识项下经贸工作组后续磋商窗口</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    本简报由全球动态分析系统自动生成 · 2026-11-10 · 仅供信息参考，不构成投资建议
+  </div>
+
+</div>
+</body>
+</html>
