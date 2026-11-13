@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球动态每日简报 · 2026-11-13</title>
+<style>
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f4f5f7; margin: 0; padding: 16px; color: #1a1a1a; line-height: 1.7; }
+  .container { max-width: 860px; margin: 0 auto; }
+  .header { background: #1a2b4a; color: #ffffff; padding: 20px 24px; border-radius: 8px; margin-bottom: 16px; }
+  .header h1 { margin: 0 0 6px 0; font-size: 22px; font-weight: 700; }
+  .header p { margin: 0; font-size: 13px; color: #c3cede; }
+  .overview { background: #ffffff; border-left: 5px solid #1a2b4a; padding: 18px 22px; border-radius: 8px; margin-bottom: 20px; }
+  .overview h3 { margin: 0 0 10px 0; font-size: 17px; font-weight: 700; }
+  .overview p { margin: 0 0 12px 0; font-size: 14px; }
+  .overview-tags { }
+  .overview-tag { display: inline-block; background: #eef2f8; color: #1a2b4a; font-size: 12px; padding: 4px 10px; border-radius: 12px; margin: 0 6px 6px 0; font-weight: 600; }
+  .section { background: #ffffff; border-radius: 8px; padding: 18px 22px; margin-bottom: 20px; }
+  .section-title { font-size: 18px; font-weight: 700; margin: 0 0 16px 0; padding-bottom: 8px; border-bottom: 2px solid #e4e8ee; }
+  .item { padding: 14px 0; border-bottom: 1px dashed #dfe4ea; }
+  .item:last-of-type { border-bottom: none; }
+  .item-header { margin-bottom: 8px; }
+  .item-title { font-size: 15px; font-weight: 700; display: block; margin-bottom: 6px; }
+  .stars { color: #d99a00; font-size: 13px; margin-right: 8px; }
+  .impact { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 700; margin-right: 6px; color: #ffffff; }
+  .impact-high { background: #c0392b; }
+  .impact-med { background: #d68910; }
+  .impact-low { background: #7f8c8d; }
+  .risk-red { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 700; background: #fdecea; color: #c0392b; margin-right: 6px; }
+  .risk-yellow { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 700; background: #fef5e7; color: #b9770e; margin-right: 6px; }
+  .item-summary { font-size: 14px; margin: 0 0 10px 0; }
+  .num-up { color: #1e8449; font-weight: 700; }
+  .num-down { color: #c0392b; font-weight: 700; }
+  .num-key { color: #1a5276; font-weight: 700; }
+  .bilingual { background: #f7f9fc; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+  .en-title { font-size: 13px; font-weight: 700; color: #1a2b4a; margin: 0 0 6px 0; }
+  .en-summary { font-size: 13px; color: #34495e; margin: 0 0 10px 0; }
+  .vocab-card { background: #ffffff; border-radius: 5px; padding: 8px 10px; }
+  .vocab-title { font-size: 12px; font-weight: 700; color: #7f8c8d; margin-bottom: 6px; }
+  .vocab-item { display: inline-block; font-size: 12px; background: #eef2f8; padding: 3px 8px; border-radius: 10px; margin: 0 6px 6px 0; }
+  .vocab-item b { color: #1a2b4a; }
+  .compare-box { margin: 14px 0; }
+  .compare-side { display: inline-block; width: 46%; vertical-align: top; padding: 12px 14px; border-radius: 6px; font-size: 13px; }
+  .compare-bull { background: #eafaf1; border-left: 4px solid #1e8449; margin-right: 4%; }
+  .compare-bear { background: #fdecea; border-left: 4px solid #c0392b; }
+  .compare-label { font-weight: 700; margin-bottom: 6px; font-size: 13px; }
+  .deepdive { background: #fbfbfb; border: 1px solid #e4e8ee; border-radius: 6px; padding: 8px 14px; margin-bottom: 10px; }
+  .deepdive summary { cursor: pointer; font-size: 13px; font-weight: 700; color: #1a5276; }
+  .deepdive-content { padding-top: 8px; }
+  .dl { font-size: 13px; margin: 0 0 8px 0; }
+  .dl-label { font-weight: 700; color: #1a2b4a; }
+  .item-source { font-size: 12px; color: #7f8c8d; margin: 0; }
+  .item-source a { color: #2471a3; text-decoration: none; }
+  .trend-comment { background: #eef2f8; border-radius: 6px; padding: 12px 14px; font-size: 13px; color: #1a2b4a; margin-top: 14px; font-weight: 600; }
+  .timeline { background: #ffffff; border-radius: 8px; padding: 18px 22px; margin-bottom: 20px; border-left: 5px solid #d68910; }
+  .timeline h4 { margin: 0 0 12px 0; font-size: 16px; font-weight: 700; }
+  .timeline-item { font-size: 13px; padding: 8px 0; border-bottom: 1px dashed #dfe4ea; }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-date { display: inline-block; font-weight: 700; color: #b9770e; background: #fef5e7; padding: 2px 10px; border-radius: 4px; margin-right: 10px; font-size: 12px; }
+  .footer { text-align: center; font-size: 12px; color: #95a5a6; padding: 16px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>🌍 全球动态每日简报</h1>
+    <p>2026年11月13日 · 生命科学 / 经济金融 / 人工智能 / 硬科技 / 材料科学 / 中国政策 / 地缘政治</p>
+  </div>
+
+  <div class="overview">
+    <h3>🧠 今日综述</h3>
+    <p>今日简报呈现三条主线：基因治疗从"个例突破"迈向"平台化标准疗法"，CRISPR 体内编辑与碱基编辑同步进入关键临床节点；AI 与机器人领域并购在经历数年冷却后强势回归，成为 2026 年资本市场最明确的复苏信号；与此同时，微软 365 全球性宕机暴露超大规模云服务的单点脆弱性，而美国国会就 AI 芯片对华出口向英伟达施压，使科技供应链的地缘政治化进一步加深。整体风向：生物医药偏乐观、资本市场回暖、基础设施与地缘风险持续积累。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🧬 基因治疗平台化</span>
+      <span class="overview-tag">🤝 AI并购复苏</span>
+      <span class="overview-tag">☁️ 云服务单点脆弱</span>
+      <span class="overview-tag">🔴 芯片出口施压</span>
+      <span class="overview-tag">📈 资本风险偏好回升</span>
+    </div>
+  </div>
+
+  <!-- 板块1 生命科学 -->
+  <div class="section">
+    <h2 class="section-title">🧬 生命科学 / 医学</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">CRISPR 体内编辑Ⅲ期告捷：Intellia 遗传性血管水肿发作率降 87%</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">Intellia 于 2026 年 4 月公布，采用 LNP 递送 CRISPR-Cas9 在体内编辑 KLKB1 基因，Ⅲ 期数据显示遗传性血管水肿发作降低 <span class="num-up">87%</span>，<span class="num-up">62%</span> 患者 6 个月内零发作。这是体内基因编辑首次在Ⅲ期达到统计学与临床双重终点，标志着该技术从"离体细胞疗法"转向"一次性体内注射"。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Intellia's In Vivo CRISPR-Cas9 Hits Phase III Endpoint in Hereditary Angioedema</p>
+        <p class="en-summary">Intellia reported that its lipid-nanoparticle-delivered CRISPR-Cas9 therapy targeting KLKB1 reduced hereditary angioedema attacks by 87% in a Phase III trial, with 62% of patients attack-free over six months. The result marks the first late-stage success for in vivo gene editing delivered systemically.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>in vivo editing</b> 体内编辑</span>
+            <span class="vocab-item"><b>lipid nanoparticle</b> 脂质纳米颗粒</span>
+            <span class="vocab-item"><b>angioedema</b> 血管水肿</span>
+            <span class="vocab-item"><b>attack-free</b> 无发作</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去 CRISPR 疗法多是把细胞取出体外改造再输回（如 Casgevy 治镰刀型贫血），流程重、成本高。体内编辑则像"打一针疫苗"——用脂质纳米颗粒把编辑工具直接送进肝脏，关掉致病基因开关。突破点在于递送效率与肝脏靶向性终于达到临床可用水平。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）将推动遗传性血管水肿、转甲状腺素蛋白淀粉样变等肝脏表达类疾病的一次性疗法上市；中期（3-10年）有望扩展至心血管（降 Lp(a)）、代谢病领域，单次给药替代终身服药。落地时间线取决于长期安全性随访与定价模式。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若体内编辑全面成熟，"慢性病终身服药"这一概念将被重写——许多遗传病变成"打一针治愈"。但随之而来的是天价一次性定价、医保支付难题，以及"可遗传编辑"边界的社会伦理争论。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://zhuanlan.zhihu.com/p/2062868392575513526" target="_blank">知乎 · 2026 基因编辑临床进展综述</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">碱基编辑与眼科突破并进：CTX310 降 Lp(a) 达 73%，EDIT-101 眼科见效</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">2026 年 CRISPR 临床全景显示，CTX310 使脂蛋白(a) 降低 <span class="num-up">73%</span>，NTLA-2001 冲刺Ⅲ期，EDIT-101 在眼科适应症取得突破，BEAM 碱基编辑管线同步推进。截至 2026 年中，全球在研 CRISPR 临床试验已超 <span class="num-key">70</span> 项，适应症从血液病扩展至心血管、眼科与代谢领域。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Base Editing and Ocular Programs Broaden the CRISPR Pipeline</p>
+        <p class="en-summary">CTX310 lowered lipoprotein(a) by 73% while EDIT-101 showed signals in ocular disease, with more than 70 CRISPR trials now underway globally by mid-2026. The field is diversifying from hematologic disorders into cardiovascular, ophthalmic and metabolic indications.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>base editing</b> 碱基编辑</span>
+            <span class="vocab-item"><b>lipoprotein(a)</b> 脂蛋白(a)</span>
+            <span class="vocab-item"><b>indication</b> 适应症</span>
+            <span class="vocab-item"><b>pipeline</b> 研发管线</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>碱基编辑是 CRISPR 的"精细版"——不切断双链 DNA，而是像用橡皮擦改错别字一样，把单个碱基 A 改成 G、C 改成 T，大幅降低脱靶与染色体异常风险。眼科 EDIT-101 则利用眼睛"免疫豁免"特性，局部注射即可验证编辑效果。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，降 Lp(a) 若在Ⅲ期复制 73% 降幅，将打开一个全球数千万人的心血管预防市场；中期看，碱基编辑有望攻克点突变类遗传病（如某些地中海贫血亚型）。眼科路径则可能成为基因编辑"低风险试验田"。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当编辑精度达到单碱基级别，"预防性基因微调"或成高端医疗选项——出生即修正心血管风险基因。这将带来"基因优化"与"自然平等"的深刻伦理分野。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://17jilu.com/?p=205955" target="_blank">2026年CRISPR基因编辑临床试验最新进展</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：基因治疗正从"个案奇迹"转向"平台化标准疗法"，体内递送、碱基编辑、眼科局部给药三条技术路线同时进入关键临床期。资本与监管的关注点已从"能不能编辑"转向"定价与长期安全性"，商业化落地成为下一阶段主战场。</div>
+  </div>
+
+  <!-- 板块2 经济金融 -->
+  <div class="section">
+    <h2 class="section-title">💰 经济 / 金融</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">2026 并购市场强势回归：AI 与机器人成最热赛道</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">经历数年并购与大型 IPO 意愿冷却后，2026 年并购市场明显复苏，AI 与机器人成为最受追捧的收购标的。Solganick 报告显示，2026 年 1-5 月 AI 领域并购交易活跃度显著抬升，买方从科技巨头扩展至产业资本与私募基金，估值溢价同步走高。</p>
+
+      <div class="bilingual">
+        <p class="en-title">M&amp;A Roars Back in 2026, With AI and Robotics Leading the Charge</p>
+        <p class="en-summary">After several years of subdued dealmaking and IPO appetite, 2026 has seen a clear resurgence in mergers and acquisitions, with AI and robotics assets commanding the highest premiums. Buyers now span tech giants, industrial capital and private equity.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>M&amp;A</b> 并购</span>
+            <span class="vocab-item"><b>valuation premium</b> 估值溢价</span>
+            <span class="vocab-item"><b>deal appetite</b> 交易意愿</span>
+            <span class="vocab-item"><b>private equity</b> 私募股权</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>并购（M&amp;A）是企业通过收购或合并快速获取技术、团队与市场份额的手段。AI 与机器人成为热门标的，本质是大厂"买时间"——自研太慢，直接收购已跑通产品的团队，比内部孵化更快卡位。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-2年）AI 应用层与机器人硬件整合将出现多起十亿美元级交易；中期看，产业资本将主导"AI+制造"垂直整合。风险在于高溢价收购后的整合失败率与反垄断审查趋严。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若并购潮持续，AI 能力将加速向少数巨头集中，"技术寡头"格局或重塑创业生态——初创公司的终极目标从"独立上市"变成"被巨头收购"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://seekingalpha.com/article/4962467-whos-buying-future-of-ai-robotics-2026-mergers-and-acquistiions-report" target="_blank">Seeking Alpha · 2026 AI &amp; Robotics M&amp;A Report</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">央行征信修复政策落地：一次性信用修复≠征信洗白</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">中国人民银行征信中心发布一次性信用修复政策及常见问题解答，强调"一次性信用修复≠征信洗白"，并提示识别相关骗局套路。政策旨在为符合条件的个人提供有限度的信用修复通道，同时防范中介借"洗白征信"名义实施诈骗，保护征信权益。</p>
+
+      <div class="bilingual">
+        <p class="en-title">PBOC Credit Bureau Clarifies One-Time Credit Repair Policy</p>
+        <p class="en-summary">The People's Bank of China Credit Reference Center issued guidance on a one-time credit repair policy, stressing that repair is not equivalent to erasing bad records. The move aims to offer a limited remediation channel while warning against fraudsters promising to "clean" credit histories.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>credit reference</b> 征信</span>
+            <span class="vocab-item"><b>credit repair</b> 信用修复</span>
+            <span class="vocab-item"><b>fraud scheme</b> 诈骗套路</span>
+            <span class="vocab-item"><b>remediation</b> 补救</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>征信记录是个人借贷、房贷的"经济身份证"。信用修复政策允许符合条件的个人对特定不良记录进行有限修复，但绝非"一键洗白"——它更像"纠错通道"而非"删除按钮"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期将刺激消费信贷与房贷需求小幅回暖；中期看，征信体系精细化有助于降低金融机构风控成本。需警惕中介以"包洗白"名义收取高额费用。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若征信体系进一步数字化、透明化，个人信用将真正成为"可修复的资产"，而非终身污点，推动更包容的普惠金融生态。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="http://www.pbccrc.org.cn/" target="_blank">中国人民银行征信中心</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：资本市场风险偏好明显回升，并购成为 AI 时代企业扩张的主要路径；国内金融监管则更强调"精准修复、防范套利"。一边是进攻性的资本扩张，一边是防守性的风险治理，构成当前金融生态的双重节奏。</div>
+  </div>
+
+  <!-- 板块3 人工智能 -->
+  <div class="section">
+    <h2 class="section-title">🤖 人工智能</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">大模型评测榜更新：ARC-AGI-2、SWE-bench 成新竞技场</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">DataLearnerAI 于 2026 年 11 月更新大模型实时评测榜，聚合 ARC-AGI-2、HLE、AIME 2025、SWE-bench Verified、τ²-Bench 等基准，覆盖综合、数学、编程等多维排名。评测重心从"知识问答"转向"推理与真实工程能力"，SWE-bench 类编程基准成为区分模型实用性的关键指标。</p>
+
+      <div class="bilingual">
+        <p class="en-title">LLM Leaderboards Shift Focus to Reasoning and Real-World Coding</p>
+        <p class="en-summary">DataLearnerAI's November 2026 leaderboard aggregates ARC-AGI-2, HLE, AIME 2025, SWE-bench Verified and τ²-Bench, reflecting a shift from knowledge recall to reasoning and engineering capability. SWE-bench-style coding benchmarks are increasingly the key differentiator of practical utility.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>benchmark</b> 基准测试</span>
+            <span class="vocab-item"><b>reasoning</b> 推理能力</span>
+            <span class="vocab-item"><b>leaderboard</b> 排行榜</span>
+            <span class="vocab-item"><b>real-world coding</b> 真实编程</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>大模型"跑分"过去靠记忆型问答，如今转向需要多步推理、工具调用、真实代码修复的硬任务。ARC-AGI-2 考"抽象推理"，SWE-bench 考"能不能真的修好 GitHub 上的 bug"——更接近实际生产力。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，编程与 Agent 能力将成为企业采购的核心决策依据；中期看，评测将向"端到端任务完成率"演进。需警惕刷榜与评测集污染问题。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当模型在 SWE-bench 上接近人类工程师水平，软件开发的组织形态将被重构——"一个产品经理 + 若干 AI Agent"或成标准团队配置。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.datalearner.com/leaderboards" target="_blank">DataLearnerAI 大模型排行榜</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">开源 Agent 框架竞争升温：DeepSeek Harness 等工具链加速成型</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">DeepSeek 推出开源 AI Agent 框架 Harness，提供智能体运行环境，GitHub 已累积 <span class="num-key">46</span> 个仓库。开源 Agent 工具链的成熟，意味着"模型能力"正向下沉淀为"可复用基础设施"，开发者生态竞争从模型参数转向工程易用性与部署成本。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Open-Source Agent Frameworks Heat Up as Toolchains Mature</p>
+        <p class="en-summary">DeepSeek released Harness, an open-source AI agent framework providing an execution environment for autonomous agents, with 46 repositories now on GitHub. The maturation of open agent toolchains shifts competition from raw model parameters toward engineering usability and deployment cost.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>agent framework</b> 智能体框架</span>
+            <span class="vocab-item"><b>open source</b> 开源</span>
+            <span class="vocab-item"><b>toolchain</b> 工具链</span>
+            <span class="vocab-item"><b>deployment</b> 部署</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Agent 框架就像"给大模型配的手脚和工具箱"——让模型能调用搜索、写代码、操作软件，自主完成多步任务。开源意味着任何开发者都能低成本搭建自己的 AI 助手。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，开源框架将催生大量垂直行业 Agent（客服、运维、数据分析）；中期看，Agent 编排与安全沙箱将成为企业级刚需。竞争焦点是稳定性与生态插件丰富度。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当 Agent 框架像今天的 Web 框架一样普及，"软件"将由人类与智能体协作编写，个人开发者也能组建"AI 团队"完成复杂项目。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://github.com/deepseek-ai" target="_blank">DeepSeek · GitHub</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI 竞争正从"比模型大小"转向"比工程落地"——评测看真实任务完成率，生态看开源工具链成熟度。谁能把模型能力封装成低门槛、可复用的基础设施，谁就能占据开发者心智。</div>
+  </div>
+
+  <!-- 板块4 硬科技 -->
+  <div class="section">
+    <h2 class="section-title">💻 科技 / 硬科技</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">微软 365 全球性宕机：Outlook、Teams 受影响，近 13 万份故障报告</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <p class="item-summary">2026 年 11 月 13 日，微软 365 发生全球性宕机，Outlook、Teams、Word、Excel 等服务大面积受影响。故障监测平台 Down Detector 记录到近 <span class="num-key">130,000</span> 份问题报告，故障呈全球性分布，企业与个人用户均受波及，具体修复时间尚待官方确认。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Global Microsoft 365 Outage Disrupts Outlook and Teams Worldwide</p>
+        <p class="en-summary">A global Microsoft 365 outage on November 13, 2026 disrupted Outlook, Teams, Word and Excel, with nearly 130,000 problem reports logged on Down Detector. The disruption affected both enterprise and consumer users worldwide, with restoration timelines still unconfirmed.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>outage</b> 服务中断</span>
+            <span class="vocab-item"><b>service disruption</b> 服务中断</span>
+            <span class="vocab-item"><b>downtime</b> 停机时间</span>
+            <span class="vocab-item"><b>restoration</b> 恢复</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>超大规模云服务的"单点脆弱性"——全球数亿人依赖同一套云基础设施，一旦核心组件（如身份认证、路由）出问题，就会像"总开关跳闸"一样波及全部服务。此次宕机正是这种集中化风险的现实写照。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，企业将加速"多云/混合云"与本地备份策略；中期看，监管可能推动关键数字基础设施的冗余与透明度要求。SLA 赔偿与信任损失是直接成本。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若数字基础设施高度集中于少数云厂商，"一次故障瘫痪半个经济体"的风险将持续放大。未来或出现"云服务公共事业化"监管，如同电力、水务一样被要求强制冗余。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.theguardian.com/technology/2026/nov/13/microsoft-outage-outlook-teams-word-excel-reports" target="_blank">The Guardian · Microsoft Outage Report</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">硅光与晶圆级测试突破：光栅耦合器省下 2 分贝，晶圆免划片测试</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">国内芯片产业动态显示，光栅耦合器技术取得进展，使光垂直进出芯片，晶圆无需划片即可完成测试，晶圆级测试节省的时间折算到光栅耦合器上为 <span class="num-key">2 分贝</span> 的性能收益。该突破对硅光芯片的量产良率与测试成本具有直接意义，是光互连规模化的关键工艺环节。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Grating Coupler Breakthrough Enables Wafer-Level Optical Testing</p>
+        <p class="en-summary">Advances in grating couplers allow light to enter and exit chips vertically, enabling wafer-level testing without dicing and yielding a 2 dB performance gain. The breakthrough directly benefits the yield and test cost of silicon photonics chips, a key enabler of optical interconnect scaling.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>grating coupler</b> 光栅耦合器</span>
+            <span class="vocab-item"><b>wafer-level testing</b> 晶圆级测试</span>
+            <span class="vocab-item"><b>silicon photonics</b> 硅光</span>
+            <span class="vocab-item"><b>yield</b> 良率</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>硅光芯片用光而非电传输数据，速度更快、功耗更低。但光要"进出"芯片需要耦合器——传统方式要先把晶圆切成小片才能测，费时费钱。光栅耦合器让光垂直进出，整片晶圆直接测，等于"不拆包装就能验货"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，将显著降低硅光芯片测试成本、提升量产良率；中期看，是数据中心光互连、CPO（共封装光学）规模化的关键工艺。落地取决于耦合损耗与封装良率的进一步优化。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当硅光芯片像今天的电子芯片一样廉价量产，数据中心内部将全面"光进铜退"，AI 算力集群的带宽瓶颈有望被彻底打开。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.21ic.com/chip/" target="_blank">21IC 中国芯</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">华为持续构建"万物互联"ICT 底座，端侧生态加速</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">华为官网持续强调"构建万物互联的智能世界"定位，覆盖 ICT 基础设施与智能终端两大板块。在外部芯片限制持续的背景下，华为以端侧生态、鸿蒙系统与行业数字化方案作为差异化路径，终端产品线保持多品类覆盖。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Huawei Doubles Down on a Fully Connected, Intelligent World</p>
+        <p class="en-summary">Huawei continues to position itself around building a fully connected, intelligent world, spanning ICT infrastructure and smart devices. Amid sustained external chip restrictions, the company leans on its device ecosystem, HarmonyOS and industry digitalization as differentiation.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>ICT infrastructure</b> ICT基础设施</span>
+            <span class="vocab-item"><b>ecosystem</b> 生态</span>
+            <span class="vocab-item"><b>digitalization</b> 数字化</span>
+            <span class="vocab-item"><b>differentiation</b> 差异化</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>"万物互联"指手机、汽车、家电、工业设备全部联网协同。华为的策略是"硬件+系统+云"一体化，用鸿蒙把自家终端连成生态，绕开对单一芯片供应链的依赖。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，鸿蒙生态设备数量与开发者规模是关键指标；中期看，行业数字化（矿山、港口、制造）是更稳定的收入来源。挑战在于海外市场准入与高端芯片供给。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若端侧生态成熟，用户将在"一个系统"下无缝切换手机、车机、家居，形成与安卓、iOS 并列的第三大生态极。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.huawei.com/cn/" target="_blank">华为官网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技呈现"冰火两重天"——一边是云服务集中化带来的系统性脆弱（微软宕机），一边是硅光、端侧生态等底层工艺与生态的稳步突破。基础设施的可靠性与自主可控，正成为比单纯性能更受关注的竞争维度。</div>
+  </div>
+
+  <!-- 板块5 材料科学 -->
+  <div class="section">
+    <h2 class="section-title">🔬 材料科学</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">"十五五"新材料规划：机器学习赋能材料研发，效率可提升数倍</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">"十五五"新材料产业发展规划聚焦高性能复合材料、高性能碳纤维、轻量化材料等方向，明确利用机器学习算法预测新材料性能、优化配方与工艺参数，可有效缩短研发周期、降低研发成本，研发效率有望提升数倍。AI for Science 正从概念走向材料工业的实际生产力工具。</p>
+
+      <div class="bilingual">
+        <p class="en-title">China's 15th Five-Year Plan Puts Machine Learning at the Core of Materials R&amp;D</p>
+        <p class="en-summary">China's new materials plan for the 15th Five-Year period targets high-performance composites, carbon fiber and lightweight materials, while explicitly deploying machine learning to predict properties and optimize formulations. The approach is expected to shorten R&amp;D cycles and multiply efficiency.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>composite</b> 复合材料</span>
+            <span class="vocab-item"><b>carbon fiber</b> 碳纤维</span>
+            <span class="vocab-item"><b>formulation</b> 配方</span>
+            <span class="vocab-item"><b>R&amp;D cycle</b> 研发周期</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传统材料研发靠"试错"——合成上百种配方逐一测试，耗时数年。机器学习则像"配方预言机"：用已有数据训练模型，先预测哪种配方可能最优，再只做少量实验验证，大幅减少试错。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，碳纤维、轻量化合金等方向将率先受益；中期看，AI+高通量实验+自动合成机器人将形成"自主材料实验室"。瓶颈在于高质量材料数据的积累与共享。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若"AI 材料学家"成熟，新材料的发现周期可能从十年缩短到一两年，直接加速航空航天、新能源电池、半导体的性能跃迁。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://finance.sina.com.cn/roll/2025-11-14/doc-infxkany4486356.shtml" target="_blank">新浪财经 · "十五五"新材料产业发展规划</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">新材料中试平台建设指南推进：打通"实验室到产线"最后一公里</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">工信部推进《新材料中试平台建设指南（2024—2027年）》，重点解决新材料从实验室成果到规模化生产的"中试"瓶颈。中试平台被视为材料产业化的关键环节，可显著降低企业量产风险与试错成本，是新材料产业化的"最后一公里"。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Pilot-Scale Platforms Bridge the Lab-to-Fab Gap for New Materials</p>
+        <p class="en-summary">China's Ministry of Industry and Information Technology is advancing a 2024-2027 guide for pilot-scale testing platforms for new materials, targeting the bottleneck between lab results and mass production. Such platforms are seen as critical to lowering scale-up risk and trial-and-error costs.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>pilot-scale</b> 中试规模</span>
+            <span class="vocab-item"><b>scale-up</b> 放大生产</span>
+            <span class="vocab-item"><b>mass production</b> 规模化生产</span>
+            <span class="vocab-item"><b>bottleneck</b> 瓶颈</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中试就是"小批量试产"——实验室做出一克材料很容易，但放大到一吨、保证性能稳定却极难。中试平台就是专门帮企业跨过这道坎的"共享试验工厂"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，将降低中小材料企业的量产门槛；中期看，形成区域共享的中试网络可加速产业化。关键在于平台运营的可持续性与知识产权保护。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若中试网络成熟，"实验室成果睡大觉"的现象将大幅减少，新材料从论文到产品的周期被系统性压缩。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://wap.miit.gov.cn/jgsj/ycls/xcl/index.html" target="_blank">工业和信息化部 · 新材料</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学的竞争正从"发现新材料"转向"加速产业化"——AI 缩短研发端周期，中试平台打通量产端瓶颈。两端协同，构成新材料从实验室到市场的完整加速链条。</div>
+  </div>
+
+  <!-- 板块6 中国政策 -->
+  <div class="section">
+    <h2 class="section-title">🇨🇳 中国政策与监管</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">国办发文：适应 AI 技术发展，构建就业友好型发展方式</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">中国政府网发布国办关于适应人工智能技术发展、助力构建就业友好型发展方式的意见，同时中办国办部署推动科技创新和产业创新融合。政策信号明确：在 AI 加速替代部分岗位的背景下，将"就业友好"纳入技术发展框架，强调技术进步与就业稳定的平衡。</p>
+
+      <div class="bilingual">
+        <p class="en-title">China Issues Guidance on AI-Driven Employment-Friendly Development</p>
+        <p class="en-summary">China's State Council General Office issued guidance on adapting to AI development while building an employment-friendly growth model, alongside measures to integrate technological and industrial innovation. The policy signals a push to balance AI-driven efficiency gains with job stability.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>employment-friendly</b> 就业友好</span>
+            <span class="vocab-item"><b>industrial innovation</b> 产业创新</span>
+            <span class="vocab-item"><b>displacement</b> 岗位替代</span>
+            <span class="vocab-item"><b>policy guidance</b> 政策指引</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去政策多强调"AI 要发展"，此次把"就业友好"写进发展框架，等于给 AI 应用加了一道"社会影响评估"——技术可以提效，但不能以大规模失业为代价。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，将催生 AI 技能培训、转岗支持等配套政策；中期看，企业部署 AI 时可能需评估岗位影响。落地难点在于如何量化"就业友好"。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若"就业友好型 AI"成为标准，未来技术评估将同时看效率与社会成本，AI 发展从"唯速度论"转向"包容性增长"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.gov.cn/" target="_blank">中国政府网</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">科技创新与产业创新融合：中办国办联合部署</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">中办、国办联合部署推动科技创新和产业创新深度融合，强调科研成果向产业应用转化。政策延续"科技—产业—金融"良性循环思路，重点解决"实验室成果转化率低"的老问题，与新材料中试平台、AI 产业化等方向形成政策合力。</p>
+
+      <div class="bilingual">
+        <p class="en-title">China Moves to Deepen Integration of Tech and Industrial Innovation</p>
+        <p class="en-summary">The General Offices of the CPC Central Committee and the State Council jointly deployed measures to deepen the integration of technological and industrial innovation, emphasizing the translation of research into industrial application. The policy reinforces the "science-industry-finance" virtuous cycle.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>integration</b> 融合</span>
+            <span class="vocab-item"><b>translation</b> 转化</span>
+            <span class="vocab-item"><b>virtuous cycle</b> 良性循环</span>
+            <span class="vocab-item"><b>industrial application</b> 产业应用</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>"科技与产业融合"就是别让论文躺在期刊里——让高校实验室的成果能变成工厂里的产品。核心是打通从"科研立项"到"市场销售"的整条链条。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，产学研合作项目与转化基金将增多；中期看，科技成果转化收益分配机制改革是关键。需警惕"重申报、轻落地"的形式主义。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若转化链条真正打通，中国将从"论文大国"迈向"技术产业化强国"，科研成果的经济价值被系统性释放。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.gov.cn/" target="_blank">中国政府网 · 最新政策</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策呈现"技术加速 + 社会托底"的双轨思路——一手推动 AI 与产业创新融合，一手强调就业友好与成果转化。政策重心从"要不要发展"转向"如何发展得更稳、更可持续"。</div>
+  </div>
+
+  <!-- 板块7 地缘政治 -->
+  <div class="section">
+    <h2 class="section-title">🌍 地缘政治与国际关系</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">美国众议院三大委员会联名致函黄仁勋，要求赴国会就芯片出口作证</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <p class="item-summary">因担心国家安全，美国众议院三个重要委员会主席于 11 月 4 日联名致函英伟达 CEO 黄仁勋，要求其赴国会作证，说明对华 AI 芯片出口相关问题。此举标志着美国国会对 AI 芯片出口管制的审查进一步升级，英伟达对华业务面临更大的合规与政治压力。</p>
+
+      <div class="bilingual">
+        <p class="en-title">US House Committees Summon Nvidia CEO Jensen Huang Over China Chip Exports</p>
+        <p class="en-summary">Three US House committee chairs sent a joint letter to Nvidia CEO Jensen Huang demanding he testify before Congress on AI chip exports to China, citing national security concerns. The move signals escalating congressional scrutiny of export controls and heightened compliance pressure on Nvidia's China business.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>export controls</b> 出口管制</span>
+            <span class="vocab-item"><b>testify</b> 作证</span>
+            <span class="vocab-item"><b>national security</b> 国家安全</span>
+            <span class="vocab-item"><b>compliance</b> 合规</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>国会传唤企业 CEO 作证，通常是"立法前施压"信号——议员们想借此推动更严格的芯片出口法案。对英伟达而言，这意味着"卖不卖、卖什么"不再只是商业决策，而是政治议题。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，英伟达对华特供芯片的规格与销量可能再受限制；中期看，美国或出台更细化的 AI 芯片分级管制。全球 AI 算力供应链将进一步"阵营化"。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若芯片管制持续升级，全球 AI 发展可能分裂为两套技术体系，算力成为新的"战略资源"，如同石油之于 20 世纪。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.voachinese.com/z/1776" target="_blank">美国之音中文网 · 美中关系</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">中美关系：民间交流愿望不变，官方强调青少年相知相亲</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">中国外交部双边关系页面显示，习近平表示无论形势如何变化，中美两国人民交流合作的愿望不会改变，两国青少年相知相亲的情谊不会改变。在科技管制趋紧的背景下，官方释放"民间交流稳定"信号，人文交流成为双边关系的缓冲带。</p>
+
+      <div class="bilingual">
+        <p class="en-title">China Stresses People-to-People Ties as a Stabilizer in US Relations</p>
+        <p class="en-summary">China's Foreign Ministry highlighted that people-to-people exchanges and youth ties between China and the US remain unchanged regardless of shifting circumstances. Amid tightening tech controls, cultural exchange is positioned as a buffer in the bilateral relationship.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>people-to-people exchange</b> 人文交流</span>
+            <span class="vocab-item"><b>bilateral relations</b> 双边关系</span>
+            <span class="vocab-item"><b>buffer</b> 缓冲</span>
+            <span class="vocab-item"><b>stabilizer</b> 稳定器</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>在政治与科技摩擦加剧时，"人文交流"常被用作关系的"减震器"——官方层面谈不拢，民间往来仍可维持基本互信与沟通渠道。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，留学、旅游、学术交流有望逐步恢复；中期看，人文交流能否对冲科技脱钩仍存不确定性。关键在签证与航班等实际便利化措施。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若民间交流持续，或能在"技术竞争"之外保留一条"理解通道"，避免双边关系全面滑向对抗。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.mfa.gov.cn/web/gjhdq_676201/gj_676203/bmz_679954/1206_680528/sbgx_680532/" target="_blank">中华人民共和国外交部 · 双边关系</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘政治呈现"官方强硬、民间缓和"的双层结构——芯片出口管制持续升级，国会施压科技巨头；而人文交流被作为稳定器加以维护。科技供应链的阵营化与民间交流的韧性，构成中美关系的两条并行主线。</div>
+  </div>
+
+  <!-- 时间节点 -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-11-13（今日）</span>
+      <span>微软 365 全球性宕机，Outlook / Teams 等服务恢复时间待官方确认</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">近期（国会排期）</span>
+      <span>英伟达 CEO 黄仁勋赴美国国会就 AI 芯片对华出口作证，具体日期待定</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026 Q4—2027</span>
+      <span>Intellia 体内 CRISPR 疗法Ⅲ期数据完整披露与上市申报推进</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2024—2027</span>
+      <span>《新材料中试平台建设指南》实施周期，中试网络持续落地</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    全球动态每日简报 · 2026-11-13 · 内容基于公开来源整理，仅供信息参考，不构成投资建议
+  </div>
+
+</div>
+</body>
+</html>
