@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球动态每日简报 · 2026-11-18</title>
+<style>
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f4f5f7;
+    color: #1f2328;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px;
+    background: #ffffff;
+  }
+  header.brief-header {
+    border-bottom: 3px solid #1f2328;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+  header.brief-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+  }
+  header.brief-header .meta {
+    font-size: 13px;
+    color: #6b7280;
+    font-weight: 400;
+  }
+  .overview {
+    background: #eef4ff;
+    border: 1px solid #c9dcff;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
+  }
+  .overview h3 {
+    margin: 0 0 10px 0;
+    font-size: 17px;
+    font-weight: 700;
+    color: #1d4ed8;
+  }
+  .overview p {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    color: #1f2328;
+  }
+  .overview-tags {
+    margin-top: 6px;
+  }
+  .overview-tag {
+    display: inline-block;
+    background: #ffffff;
+    border: 1px solid #93b4f5;
+    color: #1d4ed8;
+    border-radius: 14px;
+    padding: 3px 12px;
+    font-size: 12px;
+    margin: 0 6px 6px 0;
+    font-weight: 600;
+  }
+  .section {
+    margin-bottom: 30px;
+  }
+  .section-title {
+    font-size: 19px;
+    font-weight: 700;
+    border-left: 5px solid #1d4ed8;
+    padding-left: 10px;
+    margin: 0 0 14px 0;
+  }
+  .news-item {
+    background: #fbfbfc;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 16px;
+  }
+  .item-header {
+    margin-bottom: 8px;
+  }
+  .item-header h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    line-height: 1.5;
+  }
+  .stars {
+    color: #d97706;
+    font-size: 13px;
+    margin-right: 8px;
+    letter-spacing: 1px;
+  }
+  .impact {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .impact-high {
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fca5a5;
+  }
+  .impact-med {
+    background: #fef3c7;
+    color: #b45309;
+    border: 1px solid #fcd34d;
+  }
+  .impact-low {
+    background: #dcfce7;
+    color: #15803d;
+    border: 1px solid #86efac;
+  }
+  .risk-red {
+    display: inline-block;
+    background: #b91c1c;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin-right: 6px;
+  }
+  .risk-yellow {
+    display: inline-block;
+    background: #f59e0b;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin-right: 6px;
+  }
+  .item-summary {
+    font-size: 14px;
+    margin: 8px 0 12px 0;
+    color: #374151;
+  }
+  .num-up {
+    color: #15803d;
+    font-weight: 700;
+  }
+  .num-down {
+    color: #b91c1c;
+    font-weight: 700;
+  }
+  .num-key {
+    color: #1d4ed8;
+    font-weight: 700;
+  }
+  .bilingual {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 6px;
+    padding: 12px;
+    margin: 12px 0;
+  }
+  .en-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0c4a6e;
+    margin: 0 0 6px 0;
+  }
+  .en-summary {
+    font-size: 13px;
+    color: #334155;
+    margin: 0 0 10px 0;
+    font-style: italic;
+  }
+  .vocab-card {
+    background: #ffffff;
+    border: 1px solid #e0f2fe;
+    border-radius: 6px;
+    padding: 10px;
+  }
+  .vocab-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0369a1;
+    margin-bottom: 8px;
+  }
+  .vocab-item {
+    display: inline-block;
+    background: #e0f2fe;
+    border-radius: 4px;
+    padding: 3px 9px;
+    font-size: 12px;
+    margin: 0 6px 6px 0;
+    color: #0c4a6e;
+  }
+  .vocab-item b {
+    font-weight: 700;
+    color: #075985;
+  }
+  .compare-box {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 14px 0;
+  }
+  .compare-side {
+    display: inline-block;
+    width: 46%;
+    vertical-align: top;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  .compare-bull {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    margin-right: 3%;
+  }
+  .compare-bear {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+  }
+  .compare-label {
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  .deepdive {
+    background: #fafafa;
+    border: 1px dashed #d1d5db;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin: 12px 0;
+  }
+  .deepdive summary {
+    font-size: 13px;
+    font-weight: 700;
+    color: #4b5563;
+    cursor: pointer;
+    outline: none;
+  }
+  .deepdive-content {
+    margin-top: 10px;
+  }
+  .dl {
+    font-size: 13px;
+    color: #374151;
+    margin: 0 0 10px 0;
+  }
+  .dl-label {
+    font-weight: 700;
+    color: #1f2328;
+  }
+  .item-source {
+    font-size: 12px;
+    color: #6b7280;
+    margin: 8px 0 0 0;
+  }
+  .item-source a {
+    color: #1d4ed8;
+    text-decoration: none;
+  }
+  .trend-comment {
+    background: #f3f4f6;
+    border-left: 4px solid #6b7280;
+    border-radius: 4px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #374151;
+    margin-top: 6px;
+  }
+  .timeline {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 24px 0;
+  }
+  .timeline h4 {
+    margin: 0 0 12px 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #92400e;
+  }
+  .timeline-item {
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: #374151;
+  }
+  .timeline-date {
+    display: inline-block;
+    background: #f59e0b;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 12px;
+    border-radius: 4px;
+    padding: 2px 10px;
+    margin-right: 10px;
+  }
+  footer.brief-footer {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 14px;
+    margin-top: 28px;
+    font-size: 12px;
+    color: #9ca3af;
+    text-align: center;
+  }
+  .notice {
+    background: #fff7ed;
+    border: 1px solid #fdba74;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: #9a3412;
+    margin-bottom: 20px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="brief-header">
+    <h1>🌐 全球动态每日简报</h1>
+    <div class="meta">2026年11月18日 · 星期三 · 高密度信息版</div>
+  </header>
+
+  <div class="notice">
+    ⚠️ 数据源说明：今日检索结果中，经济金融、人工智能、硬科技、材料科学、中国政策、地缘政治等多个板块的原始抓取内容为噪声数据（如字母"S"词条、游泳教程、邮箱登录页、2016年美国大选结果等），不具备新闻价值。本简报已剔除全部噪声条目，仅基于可验证的有效信源（沙利文蓝皮书、IGI CRISPR 临床试验追踪、Nature 官网研究动态、华为官方信息等）构建内容，并对缺失板块作趋势性研判，明确标注信息缺口。
+  </div>
+
+  <!-- ============ 今日综述 ============ -->
+  <div class="overview">
+    <h3>🧠 今日综述</h3>
+    <p>今日有效信源高度集中于生命科学一端：基因疗法在监管完善与资本回流下进入商业化兑现期，CRISPR 个性化婴儿疗法成为临床范式突破口，而 Nature 最新结构生物学成果则为基因复制机制补上关键拼图。与之形成反差的是，金融、AI、地缘等板块今日信源严重缺失，这本身就是一个信号——信息供给的失衡往往先于资本注意力的失衡。整体风向：生物科技偏乐观，宏观与地缘端处于信息真空，需警惕"看不见的风险"。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🧬 基因疗法商业化</span>
+      <span class="overview-tag">👶 个性化CRISPR</span>
+      <span class="overview-tag">🔬 结构生物学补图</span>
+      <span class="overview-tag">📡 信源失衡预警</span>
+      <span class="overview-tag">🇨🇳 中国基因治疗全景</span>
+    </div>
+  </div>
+
+  <!-- ============ 板块一：生命科学/医学 ============ -->
+  <div class="section">
+    <h2 class="section-title">🧬 生命科学 / 医学</h2>
+
+    <div class="news-item">
+      <div class="item-header">
+        <h4>沙利文发布《2026年全球基因疗法行业发展蓝皮书》，中国被列为独立全景章节 <span class="stars">⭐⭐⭐⭐</span></h4>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">
+        弗若斯特沙利文（Frost &amp; Sullivan）发布年度基因疗法蓝皮书，系统梳理技术突破、监管完善、资本投入与商业化落地四条主线，并首次将中国基因治疗行业作为独立全景章节呈现。报告定位为产业"路线图"而非单纯市场测算，意味着<span class="num-key">基因治疗</span>已从概念验证阶段进入<span class="num-key">产业化定价</span>阶段，中国市场的支付能力与审批节奏将成为全球估值模型的关键变量。
+      </p>
+
+      <div class="bilingual">
+        <p class="en-title">Frost &amp; Sullivan Releases 2026 Global Gene Therapy Industry Blue Book</p>
+        <p class="en-summary">Frost &amp; Sullivan has published its annual Blue Book on the global gene therapy sector, mapping four drivers: technological breakthroughs, regulatory maturation, capital inflows, and commercial rollout. For the first time, China's gene therapy landscape is presented as a standalone chapter, signaling that the domestic market's reimbursement capacity and approval cadence are now material inputs to global valuation models.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>gene therapy</b> 基因治疗</span>
+            <span class="vocab-item"><b>regulatory maturation</b> 监管成熟</span>
+            <span class="vocab-item"><b>commercial rollout</b> 商业化落地</span>
+            <span class="vocab-item"><b>reimbursement capacity</b> 支付能力</span>
+            <span class="vocab-item"><b>valuation model</b> 估值模型</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>蓝皮书本质是产业"体检报告+天气预报"。如果把基因治疗比作一条刚通车的高速公路，蓝皮书就是同时标注了路况（技术成熟度）、收费站（监管与支付）、车流量（资本）和目的地（商业化场景）的四维地图。其突破点在于把中国从"附录"提升为"独立章节"，说明中国不再是全球产业的跟随者，而是定价链上的一环。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）：血友病、β-地中海贫血等单基因遗传病的商业化放量，中国本土企业有望在<span class="num-key">3-5个</span>适应症上实现国产替代。中长期（3-10年）：体内编辑（in vivo）替代体外编辑（ex vivo），治疗成本从百万级降至十万级，适应症从罕见病扩展至心血管、神经退行性疾病。落地时间线取决于支付端——医保谈判与商业保险的衔接速度是最大变量。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果基因治疗真正实现"一次给药、终身治愈"，医疗体系将从"慢病管理"转向"一次性买断健康"，药企商业模式、保险公司精算模型乃至医保基金的跨年度平衡都将被重构。伦理层面，"可编辑的生命"会催生新的社会分层焦虑——谁能负担得起治愈。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.frostchina.com/content/insight/detail/6aa2230c23e6657ec690aeaa" target="_blank">Frost &amp; Sullivan 中国</a> · <a href="https://finance.sina.com.cn/cj/2026-09-13/doc-inirrxsc0627823.shtml" target="_blank">新浪财经</a></p>
+    </div>
+
+    <div class="news-item">
+      <div class="item-header">
+        <h4>CRISPR 临床试验 2026 更新：罕见遗传病婴儿"按需定制"疗法取得重大成功 <span class="stars">⭐⭐⭐⭐⭐</span></h4>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">
+        创新基因组学研究所（IGI）发布的 2026 年 CRISPR 临床试验追踪显示，针对罕见遗传病婴儿"按需开发"的个性化疗法取得重大成功，为临床路径打开新范式。这一模式把药物开发周期从"通用药物 <span class="num-key">10-15年</span>"压缩至"个体化 <span class="num-key">数月级</span>"，本质是把制药从"批量生产"推向"单件定制"，监管框架面临根本性挑战。
+      </p>
+
+      <div class="bilingual">
+        <p class="en-title">CRISPR Clinical Trials 2026: Bespoke Therapies for Infants Deliver Landmark Success</p>
+        <p class="en-summary">The Innovative Genomics Institute's 2026 clinical trial tracker reports major success in bespoke CRISPR therapies developed on demand for infants with rare genetic disorders. The model compresses development timelines from a decade-plus for conventional drugs to mere months for individual patients, fundamentally challenging existing regulatory frameworks built around mass-produced medicines.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>bespoke therapy</b> 定制疗法</span>
+            <span class="vocab-item"><b>on-demand development</b> 按需开发</span>
+            <span class="vocab-item"><b>rare genetic disorder</b> 罕见遗传病</span>
+            <span class="vocab-item"><b>regulatory framework</b> 监管框架</span>
+            <span class="vocab-item"><b>n-of-1 trial</b> 单例试验</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>传统药物是"为一百万人做一双鞋"，个性化 CRISPR 是"为一个孩子量脚定做"。医生先对患儿测序定位致病突变，再在实验室设计专属编辑方案，经快速安全评估后给药。突破点不在编辑技术本身，而在于把"研发—生产—伦理审查—给药"整条链条压缩到数月，且成功落地。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）：更多单例（n-of-1）疗法获批，监管机构将建立"平台化审批"通道，即一次审批编辑平台、后续个体化方案走快速备案。中长期（3-10年）：个性化疗法从罕见病扩展至常见病的难治亚型，成本因平台复用而大幅下降。具体例子：脊髓性肌萎缩症（SMA）的个体化修正、特定代谢缺陷病的新生儿期干预。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果每个新生儿都能在出生时完成基因组筛查并获得"可定制解药"，医学将从"治疗疾病"转向"消除疾病倾向"。但这也带来尖锐的公平性问题：定制疗法天然昂贵，可能先服务于少数人，形成"基因治疗鸿沟"。伦理上，"为一个人修改人类基因组"的边界需要全球共识。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://innovativegenomics.org/zh-CN/新闻/crispr-临床试验-2026/" target="_blank">Innovative Genomics Institute (IGI)</a></p>
+    </div>
+
+    <div class="news-item">
+      <div class="item-header">
+        <h4>Nature 最新研究：CMG 解旋酶直接招募 PRIMPOL 完成前导链再引发 <span class="stars">⭐⭐⭐⭐⭐</span></h4>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">
+        《Nature》最新研究论文揭示，CMG 解旋酶可直接招募 PRIMPOL 参与前导链再引发（repriming），补上了 DNA 复制压力应答机制中的关键一环。这一发现对理解<span class="num-key">复制叉停滞</span>与基因组不稳定性具有基础性意义，并为肿瘤靶向治疗提供新的潜在干预节点——癌细胞高度依赖复制压力应答通路存活。
+      </p>
+
+      <div class="bilingual">
+        <p class="en-title">Nature Study: CMG Helicase Directly Recruits PRIMPOL for Leading-Strand Repriming</p>
+        <p class="en-summary">A newly published Nature research article shows that the CMG helicase directly recruits PRIMPOL to perform leading-strand repriming, filling a critical gap in the DNA replication stress response machinery. The finding deepens understanding of replication fork stalling and genomic instability, and highlights a potential intervention node for oncology therapeutics that exploit cancer cells' dependence on replication stress pathways.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>helicase</b> 解旋酶</span>
+            <span class="vocab-item"><b>repriming</b> 再引发</span>
+            <span class="vocab-item"><b>replication fork</b> 复制叉</span>
+            <span class="vocab-item"><b>genomic instability</b> 基因组不稳定性</span>
+            <span class="vocab-item"><b>replication stress</b> 复制压力</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>DNA 复制像一列在双轨上疾驰的火车，遇到障碍（DNA 损伤）时必须"绕行"再回到轨道。PRIMPOL 就是负责"临时铺轨"的工程队，而 CMG 解旋酶此前被认为是"车头"，现在发现它还兼任"调度员"，直接呼叫工程队。突破点在于揭示了调度信号是物理性直接招募，而非间接信号传导。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）：为 PARP 抑制剂之外的合成致死靶点提供理论依据，PRIMPOL 高表达的肿瘤（如部分乳腺癌、卵巢癌）可能成为新药方向。中长期（3-10年）：组合疗法设计——同时抑制 PRIMPOL 通路与常规化疗，迫使癌细胞复制崩溃。具体例子：铂类耐药肿瘤的增敏策略、放疗联合 PRIMPOL 抑制剂。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>基础研究的价值往往在十年后才显现。如果人类能精确操控复制压力应答，就等于掌握了癌细胞的"应急电源开关"——关掉它，癌细胞在化疗打击下无处可逃。但同样的开关也保护正常细胞的基因组稳定，如何做到选择性，是未来十年的核心难题。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature Research Articles</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：今日生命科学板块呈现"应用端兑现 + 基础端补图"的双轮格局。基因疗法蓝皮书代表产业资本开始用估值模型而非科学叙事来定价；个性化 CRISPR 代表临床范式从"通用药"转向"单件定制"；Nature 结构生物学成果则为基础机制持续供能。三者共同指向一个判断：生物科技的竞争焦点正从"能不能做"转向"能不能付得起、批得快"。</div>
+  </div>
+
+  <!-- ============ 板块二：经济/金融 ============ -->
+  <div class="section">
+    <h2 class="section-title">💰 经济 / 金融</h2>
+
+    <div class="news-item">
+      <div class="item-header">
+        <h4>【信源缺口说明】今日经济金融板块有效信源缺失，原始抓取内容为字母词条与游泳教程等噪声数据 <span class="stars">⭐⭐</span></h4>
+        <span class="impact impact-low">冲击：Low</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">
+        今日经济金融板块的原始检索结果全部为无关内容（字母 "S" 的维基词条、自由泳教学视频、批发服装网站等），无一条具备新闻价值。本简报拒绝以噪声填充版面。需明确提示：<span class="num-key">信息真空本身即风险信号</span>——当某一板块连续出现信源缺失，往往意味着该领域正处于重大事件前的静默期，或检索链路出现系统性偏差，建议读者交叉验证其他渠道。
+      </p>
+
+      <div class="bilingual">
+        <p class="en-title">Source Gap Notice: No Valid Economic or Financial News Retrieved Today</p>
+        <p class="en-summary">All raw search results for the economy and finance section today were irrelevant noise, including Wikipedia entries for the letter "S", freestyle swimming tutorials, and wholesale apparel sites. This briefing declines to pad the section with non-news. An information vacuum is itself a risk signal, often preceding major announcements or indicating a systemic retrieval bias.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>information vacuum</b> 信息真空</span>
+            <span class="vocab-item"><b>retrieval bias</b> 检索偏差</span>
+            <span class="vocab-item"><b>cross-verification</b> 交叉验证</span>
+            <span class="vocab-item"><b>noise data</b> 噪声数据</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>信息真空不是"没有新闻"，而是"该有的新闻没被捕捉到"。就像雷达屏幕上突然一片空白，可能是真的没有飞机，也可能是雷达坏了。对金融板块而言，后者的概率更高，因为全球市场每天都有央行操作、财报、资金流动发生，完全静默不符合常理。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3天）：建议读者直接查阅央行官网、交易所公告、主流财经通讯社以补全信息。中期（1-3周）：若信源缺口持续，需警惕检索链路的结构性问题，可能影响后续简报的完整性判断。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>在信息过载时代，"知道什么不知道"比"知道什么"更重要。一个诚实的简报应当敢于说"今天这块我没数据"，而不是用游泳教程凑数。这种克制，恰恰是信息产品质量的分水岭。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.reuters.com/markets/" target="_blank">Reuters Markets（建议交叉验证）</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：本板块今日无有效新闻，仅作信源质量提示。从产业侧观察，基因疗法蓝皮书的发布间接反映一级市场对生物科技赛道的资本关注度回升，但缺乏二级市场数据佐证，暂不下结论。建议读者以央行、交易所官方渠道为准。</div>
+  </div>
+
+  <!-- ============ 板块三：人工智能 ============ -->
+  <div class="section">
+    <h2 class="section-title">🤖 人工智能</h2>
+
+    <div class="news-item">
+      <div class="item-header">
+        <h4>【信源缺口说明】今日 AI 板块原始抓取为 eBay 社区问答与 DeepSeek 登录页，无有效产品/研究动态 <span class="stars">⭐⭐</span></h4>
+        <span class="impact impact-low">冲击：Low</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">
+        今日 AI 板块检索结果主要为 eBay 物流问答、虚假运单号讨论，以及 DeepSeek 官网登录页与 API 平台入口，均不构成新闻。值得注意的是，DeepSeek 相关页面反复出现"后台运行、本地文件编辑、长复杂任务处理"等功能描述，暗示其产品线正向<span class="num-key">Agent 化</span>方向演进，但缺乏官方发布信息，不宜过度解读。
+      </p>
+
+      <div class="bilingual">
+        <p class="en-title">Source Gap Notice: AI Section Yields Only Community Forums and Login Pages</p>
+        <p class="en-summary">Today's AI retrieval returned mostly eBay community threads on shipping and tracking scams, plus DeepSeek's sign-in and API platform pages. Recurring product copy referencing background execution, local file editing, and long-horizon task handling hints at an agentic product direction, but without official announcements this remains speculative and should not be over-interpreted.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>agentic</b> 智能体化的</span>
+            <span class="vocab-item"><b>long-horizon task</b> 长周期任务</span>
+            <span class="vocab-item"><b>product copy</b> 产品文案</span>
+            <span class="vocab-item"><b>speculative</b> 推测性的</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>把 AI 产品从"问答机器人"升级为"能自己干活的助手"，业内称为 Agent 化。就像从"计算器"进化到"会计"——不只是算数，还能自己找发票、填报表、跑流程。DeepSeek 页面上的功能描述若属实，意味着国产大模型正从"对话层"下沉到"执行层"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）：Agent 化产品在编程、文档处理、数据分析场景率先落地，企业级订阅成为主要变现方式。中长期（3-10年）：Agent 之间协作形成"数字劳动力市场"，人类角色转向目标设定与结果审核。具体例子：自动化的合规审查、跨系统的供应链调度。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果 Agent 真正可靠，白领工作的组织方式将被重写——不再是"人用工具"，而是"人管团队（含数字员工）"。这也带来责任归属难题：当 Agent 自主决策出错，谁负责？法律与保险体系需要同步进化。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.deepseek.com/en/platform/" target="_blank">DeepSeek API Platform（仅作产品线索，非新闻）</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI 板块今日无实质新闻，仅能从产品页面文案中捕捉到"Agent 化"的微弱信号。结合生命科学板块的个性化疗法趋势，一个跨板块的共性正在浮现：无论是药物还是 AI，都在从"通用批量"走向"个体定制"。这或许是 2026 年最值得追踪的底层范式迁移。</div>
+  </div>
+
+  <!-- ============ 板块四：科技/硬科技 ============ -->
+  <div class="section">
+    <h2 class="section-title">💻 科技 / 硬科技</h2>
+
+    <div class="news-item">
+      <div class="item-header">
+        <h4>华为官网信息显示其定位"构建万物互联的智能世界"，ICT 基础设施与终端双线并进 <span class="stars">⭐⭐⭐</span></h4>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">
+        华为官网及商城信息显示，公司自 <span class="num-key">1987年</span>创立以来持续定位为全球领先的 ICT 基础设施与智能终端提供商，业务覆盖手机、PC、平板、穿戴、音频、智慧屏及 IoT 全品类。官网同期挂出 <span class="num-key">2026年9月</span>启动的校园招聘信息，显示其在智能网络方向持续加码人才储备。需注意，以上为官网常设信息，非当日新闻事件。
+      </p>
+
+      <div class="bilingual">
+        <p class="en-title">Huawei's Official Positioning: Building a Fully Connected, Intelligent World</p>
+        <p class="en-summary">Huawei's corporate site reiterates its positioning as a leading global provider of ICT infrastructure and smart devices, spanning phones, PCs, tablets, wearables, audio, smart screens, and IoT. A campus recruitment drive launched in September 2026 points to continued talent investment in intelligent networking. These are standing corporate materials rather than same-day news events.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>ICT infrastructure</b> ICT 基础设施</span>
+            <span class="vocab-item"><b>smart devices</b> 智能终端</span>
+            <span class="vocab-item"><b>campus recruitment</b> 校园招聘</span>
+            <span class="vocab-item"><b>intelligent networking</b> 智能网络</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>华为的"万物互联"战略可以理解为：不只卖设备，而是卖"设备之间的连接能力"。手机、汽车、家电、工厂设备都成为网络节点，华为提供底层管道与操作系统。突破点在于从"卖硬件"转向"卖生态入口"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）：鸿蒙生态设备数量持续扩张，车机与家居场景成为增长引擎。中长期（3-10年）：若智能网络与算力基础设施协同成熟，华为有望在工业互联网领域形成平台级壁垒。具体例子：智能制造产线、车路协同、能源网络调度。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果"万物互联"完全实现，家庭、工厂、城市将共享一套神经系统，效率提升的同时也带来单点故障的放大风险——一个协议漏洞可能影响整座城市。安全与开放之间的平衡，将是这类生态的终极考题。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.huawei.com/cn/" target="_blank">华为官网</a> · <a href="https://career.huawei.com/cn/campus-recruitment" target="_blank">华为校园招聘</a></p>
+    </div>
+
+    <div class="news-item">
+      <div class="item-header">
+        <h4>【信源缺口说明】硬科技板块原始抓取为 Quantum 品牌页、2016 年美国大选结果与 Gmail 登录页 <span class="stars">⭐⭐</span></h4>
+        <span class="impact impact-low">冲击：Low</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">
+        今日硬科技板块检索结果混杂了 Quantum 存储公司官网、Quantum Fiber 宽带服务页、<span class="num-key">2016年</span>华盛顿州大选结果、Gmail 登录页等无关内容，无有效硬科技新闻。唯一可提取的微弱信号是 Quantum Fiber 页面提及 <span class="num-key">Wi-Fi 7</span> 技术部署，反映宽带接入侧的技术迭代仍在推进，但缺乏具体数据支撑。
+      </p>
+
+      <div class="bilingual">
+        <p class="en-title">Source Gap Notice: Hardware Section Returns Brand Pages and Legacy Election Data</p>
+        <p class="en-summary">The hardware technology section today returned a mix of corporate brand pages, broadband service portals, 2016 Washington state election results, and email login screens, with no substantive news. The only faint signal is a reference to Wi-Fi 7 deployment on a fiber broadband page, indicating continued access-network upgrades, though without supporting data.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>access network</b> 接入网</span>
+            <span class="vocab-item"><b>fiber broadband</b> 光纤宽带</span>
+            <span class="vocab-item"><b>deployment</b> 部署</span>
+            <span class="vocab-item"><b>substantive news</b> 实质性新闻</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Wi-Fi 7 是新一代无线局域网标准，核心提升在于多链路聚合与更低时延，相当于把单车道公路升级为多车道高速。它本身不是"新闻"，但它的普及速度是观察家庭与企业网络升级节奏的窗口。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）：Wi-Fi 7 路由器在高端市场渗透，8K 视频、云游戏、XR 设备受益。中长期（3-10年）：与 5G/6G 协同形成"无缝接入"体验，推动工业无线化。具体例子：无线工厂产线、全屋智能。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当无线网络快到"感觉不到存在"，人类对"连接"的感知会消失，就像今天没人会想"电从哪里来"。这种隐形化是技术成熟的终极标志，也是依赖风险的极致形态。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.quantumfiber.com/" target="_blank">Quantum Fiber（仅作技术线索）</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技板块今日信源质量差，仅能从华为官网与宽带服务页中提取"生态化"与"无线升级"两条微弱线索。结合 AI 板块的 Agent 化信号，可以判断：硬科技的竞争正从"单点性能"转向"系统协同"，谁能把设备、网络、算力串成一体，谁就掌握入口。</div>
+  </div>
+
+  <!-- ============ 板块五：材料科学 ============ -->
+  <div class="section">
+    <h2 class="section-title">🔬 材料科学</h2>
+
+    <div class="news-item">
+      <div class="item-header">
+        <h4>Nature 官网研究动态：结构生物学与生化研究持续产出，材料类原始信源今日缺失 <span class="stars">⭐⭐⭐⭐</span></h4>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">
+        《Nature》官网最新研究文章列表显示，近期发表以结构生物学与生物化学成果为主（如 CMG 解旋酶招募 PRIMPOL 机制），材料科学方向的原始论文信源今日未能有效抓取。需说明：Nature 作为 <span class="num-key">1869年</span>创刊的多学科顶刊，其材料类成果通常以"间隔发布"形式出现，单日缺失不代表领域降温。
+      </p>
+
+      <div class="bilingual">
+        <p class="en-title">Nature Research Feed: Structural Biology Dominates, Materials Sources Missing Today</p>
+        <p class="en-summary">Nature's latest research article feed is dominated by structural biology and biochemistry papers, including the CMG helicase–PRIMPOL repriming study. No substantive materials science papers were captured today. As a multidisciplinary journal founded in 1869, Nature publishes materials research in intervals, so a single-day gap does not indicate a cooling field.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>multidisciplinary</b> 多学科的</span>
+            <span class="vocab-item"><b>structural biology</b> 结构生物学</span>
+            <span class="vocab-item"><b>biochemistry</b> 生物化学</span>
+            <span class="vocab-item"><b>publication interval</b> 发布间隔</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>材料科学是"造物"的学问——从电池正极到半导体衬底，从超导薄膜到生物相容支架。它的成果往往不显眼，却是所有硬件进步的底层。今日信源缺失，如同看不到地基施工，但楼还在往上盖。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）：固态电池、钙钛矿光伏、宽禁带半导体是三大热点，产业化节奏决定新能源与算力的成本曲线。中长期（3-10年）：AI 辅助材料发现（材料基因组）将把"试错"变为"预测"，新材料从实验室到量产的周期有望从 <span class="num-key">10-20年</span> 压缩至 <span class="num-key">5年以内</span>。具体例子：AI 筛选的电解质、高通量计算的催化剂。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果材料发现能像软件迭代一样快，人类解决能源、算力、医疗问题的速度将被整体提速一个数量级。材料是"沉默的杠杆"，撬动它，整个文明的天花板都会抬高。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature Research Articles</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学今日无直接新闻，但从 Nature 的发表结构可看出，生物与材料两大方向的"注意力分配"并不均衡。需提醒：材料突破往往滞后于需求爆发 3-5 年，今日的"沉默"可能是明日"卡脖子"或"解卡"的伏笔，值得持续跟踪固态电池与宽禁带半导体两条主线。</div>
+  </div>
+
+  <!-- ============ 板块六：中国政策与监管 ============ -->
+  <div class="section">
+    <h2 class="section-title">🇨🇳 中国政策与监管</h2>
+
+    <div class="news-item">
+      <div class="item-header">
+        <h4>沙利文蓝皮书设中国独立章节，基因治疗监管与支付体系成全球关注焦点 <span class="stars">⭐⭐⭐⭐</span></h4>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">
+        在沙利文《2026年全球基因疗法行业发展蓝皮书》中，中国基因治疗行业被作为独立全景章节呈现，涵盖技术突破、监管完善、资本投入与商业化落地。这一安排意味着国际产业研究机构已将中国的<span class="num-key">审批节奏</span>与<span class="num-key">支付能力</span>视为全球基因治疗估值模型的关键变量。对国内而言，监管科学化与医保衔接将是下一阶段的核心命题。
+      </p>
+
+      <div class="bilingual">
+        <p class="en-title">China's Gene Therapy Sector Gets Standalone Chapter in Global Blue Book</p>
+        <p class="en-summary">Frost &amp; Sullivan's 2026 Blue Book dedicates a standalone chapter to China's gene therapy industry, covering technology, regulation, capital, and commercialization. The move signals that international research houses now treat China's approval cadence and reimbursement capacity as key variables in global gene therapy valuation. Domestically, regulatory science and medical insurance linkage will be the central agenda.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>approval cadence</b> 审批节奏</span>
+            <span class="vocab-item"><b>regulatory science</b> 监管科学</span>
+            <span class="vocab-item"><b>medical insurance linkage</b> 医保衔接</span>
+            <span class="vocab-item"><b>standalone chapter</b> 独立章节</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>把中国单列一章，相当于在全球产业地图上给中国画了一个"加粗标注"。过去中国常被写在"其他地区"里，现在成了独立坐标。这背后是本土临床试验数量、在研管线数量与商业化案例的实质性增长。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）：更多基因治疗产品进入国内临床与审评通道，附条件批准路径可能进一步细化。中长期（3-10年）：若医保与商业保险形成"分层支付"（罕见病专项基金 + 商保补充），中国市场将从"价格洼地"变为"规模高地"。具体例子：血友病、地贫的国产基因疗法定价与放量。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果中国能在基因治疗上实现"可负担的创新"，将为全球中低收入国家提供一条不同于欧美高价模式的路径。这不仅是产业竞争，更是全球健康治理话语权的重新分配。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.frostchina.com/content/insight/detail/6aa2230c23e6657ec690aeaa" target="_blank">Frost &amp; Sullivan 中国</a></p>
+    </div>
+
+    <div class="news-item">
+      <div class="item-header">
+        <h4>【信源缺口说明】中国政策板块原始抓取为维基百科"China"词条与《Gator Boys》剧集页面 <span class="stars">⭐⭐</span></h4>
+        <span class="impact impact-low">冲击：Low</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">
+        今日中国政策板块检索结果为维基百科、大英百科的"China"国别词条，以及《Gator Boys》真人秀的流媒体页面，均非政策新闻。唯一可用的信源是路透社中国频道入口，但未抓取到具体报道内容。需明确：<span class="num-key">政策板块的信息缺口</span>对投资者判断影响最大，建议直接查阅国务院、发改委、工信部、药监局等官方发布渠道。
+      </p>
+
+      <div class="bilingual">
+        <p class="en-title">Source Gap Notice: China Policy Section Returns Encyclopedia Entries and TV Show Pages</p>
+        <p class="en-summary">Today's China policy retrieval returned encyclopedia country entries and streaming pages for a reality TV show, none of which constitute policy news. Only a Reuters China section entry was captured without article content. Policy information gaps carry the highest investor impact, so official channels from the State Council, NDRC, MIIT, and NMPA should be consulted directly.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>policy information gap</b> 政策信息缺口</span>
+            <span class="vocab-item"><b>official channel</b> 官方渠道</span>
+            <span class="vocab-item"><b>State Council</b> 国务院</span>
+            <span class="vocab-item"><b>investor impact</b> 投资者影响</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>政策板块的信息缺口，就像开车时导航突然失灵——路还在，但你不知道前方是否封路。对市场而言，政策的不确定性溢价会直接反映在估值折价上。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3天）：建议以官方发布为准，重点关注药监局审评动态与医保目录调整窗口。中期（1-3周）：若信源缺口持续，需审视检索策略，避免形成"信息盲区惯性"。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>在信息时代，最大的风险不是坏消息，而是"没有消息"。一个成熟的决策者，应当把"信息可得性"本身纳入风险评估框架。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.reuters.com/world/china/" target="_blank">Reuters China（建议交叉验证）</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策板块今日仅有一条有效信号——基因治疗被纳入全球蓝皮书的独立章节，反映中国在生物医药监管与产业化上的国际能见度提升。其余内容为信源缺口。结合生命科学板块判断，中国在基因治疗领域正从"跟随者"向"定价参与者"转变，监管科学化是下一阶段的关键变量。</div>
+  </div>
+
+  <!-- ============ 板块七：地缘政治与国际关系 ============ -->
+  <div class="section">
+    <h2 class="section-title">🌍 地缘政治与国际关系</h2>
+
+    <div class="news-item">
+      <div class="item-header">
+        <h4>【信源缺口说明】地缘政治板块原始抓取为半导体定义词条与 Disney+ 登录页，无实质国际关系动态 <span class="stars">⭐⭐</span></h4>
+        <span class="impact impact-low">冲击：Low</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">
+        今日地缘政治板块检索结果为维基百科、IBM、大英百科的"半导体"定义词条，以及 Disney+ 的登录与账户帮助页面，均非国际关系新闻。唯一可提取的微弱线索是半导体词条被高频命中，侧面反映<span class="num-key">半导体</span>仍是地缘叙事的核心关键词。但无具体政策、谈判或冲突事件可供分析，本简报拒绝臆测。
+      </p>
+
+      <div class="bilingual">
+        <p class="en-title">Source Gap Notice: Geopolitics Section Returns Semiconductor Definitions and Streaming Logins</p>
+        <p class="en-summary">Today's geopolitics retrieval returned semiconductor definition entries from Wikipedia, IBM, and Britannica, plus Disney+ login and billing help pages, none of which constitute international relations news. The high frequency of semiconductor keyword hits suggests the topic remains central to geopolitical narratives, but without concrete policy, negotiation, or conflict events, no substantive analysis is possible.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>geopolitical narrative</b> 地缘叙事</span>
+            <span class="vocab-item"><b>semiconductor supply chain</b> 半导体供应链</span>
+            <span class="vocab-item"><b>keyword frequency</b> 关键词频率</span>
+            <span class="vocab-item"><b>speculation</b> 臆测</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>半导体之所以成为地缘关键词，是因为它同时是"经济商品"和"战略物资"。就像石油在20世纪的地位，芯片在21世纪既是贸易品，也是国家实力的度量衡。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）：出口管制、产能本土化、技术联盟将继续主导议程。中长期（3-10年）：全球可能形成"两套并行"的半导体生态，成本上升但供应韧性增强。具体例子：先进制程的区域化布局、成熟制程的产能过剩风险。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果技术生态真的分裂为两套体系，创新速度可能因重复投入而放缓，但系统韧性会提升。人类将面临一个古老的两难：效率与安全，究竟哪个更值得付出代价。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.reuters.com/world/" target="_blank">Reuters World（建议交叉验证）</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘政治板块今日无有效新闻，仅能从关键词命中频率推断半导体仍是核心议题。需强调：地缘风险的特点是"低频率、高冲击"，信息真空期恰恰是风险积累期。建议读者不要因今日无新闻而放松对出口管制、技术联盟等议题的跟踪。</div>
+  </div>
+
+  <!-- ============ 时间提醒模块 ============ -->
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-09 起</span>
+      <span>华为 2026 年校园招聘已启动，智能网络方向持续招募（官网信息，非当日事件）</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">持续跟踪</span>
+      <span>沙利文《2026年全球基因疗法行业发展蓝皮书》全文获取通道开放，建议关注中国章节细节</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">持续跟踪</span>
+      <span>IGI CRISPR 临床试验追踪页持续更新，个性化婴儿疗法后续数据值得关注</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">待确认</span>
+      <span>经济金融、AI、硬科技、材料、中国政策、地缘板块今日信源缺失，建议以官方渠道交叉验证后补全</span>
+    </div>
+  </div>
+
+  <footer class="brief-footer">
+    本简报基于公开信源整理，已剔除全部噪声数据，对信源缺口作明确标注。内容仅供信息参考，不构成投资建议。<br>
+    生成时间：2026-11-18 · 全球动态每日简报
+  </footer>
+
+</div>
+</body>
+</html>
