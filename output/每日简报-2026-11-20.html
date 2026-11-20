@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球动态每日简报 · 2026-11-20</title>
+<style>
+  body { margin: 0; padding: 0; background: #f4f5f7; font-family: -apple-system, "PingFang SC", "Microsoft YaHei", Arial, sans-serif; color: #1f2328; line-height: 1.7; }
+  .container { max-width: 860px; margin: 0 auto; padding: 20px 16px 40px 16px; }
+  .header { background: #1a2b4a; color: #ffffff; padding: 24px 20px; border-radius: 8px; margin-bottom: 18px; }
+  .header h1 { margin: 0 0 6px 0; font-size: 24px; font-weight: 700; }
+  .header p { margin: 0; font-size: 13px; color: #c9d4e6; }
+  .overview { background: #ffffff; border-left: 6px solid #1a2b4a; border-radius: 8px; padding: 18px 20px; margin-bottom: 22px; }
+  .overview h3 { margin: 0 0 10px 0; font-size: 17px; font-weight: 700; color: #1a2b4a; }
+  .overview p { margin: 0 0 12px 0; font-size: 14px; }
+  .overview-tags { }
+  .overview-tag { display: inline-block; background: #eef1f6; color: #1a2b4a; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 12px; margin: 0 6px 6px 0; }
+  .section { margin-bottom: 26px; }
+  .section-title { font-size: 18px; font-weight: 700; color: #1a2b4a; border-bottom: 2px solid #d8dee8; padding-bottom: 8px; margin-bottom: 14px; }
+  .item { background: #ffffff; border-radius: 8px; padding: 16px 18px; margin-bottom: 14px; border: 1px solid #e3e7ee; }
+  .item-header { margin-bottom: 10px; }
+  .item-title { font-size: 16px; font-weight: 700; color: #111827; display: block; margin-bottom: 8px; }
+  .stars { font-size: 12px; color: #e0a800; margin-right: 8px; }
+  .impact { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+  .impact-high { background: #fde2e1; color: #b42318; }
+  .impact-med { background: #fdf0d5; color: #9a6700; }
+  .impact-low { background: #e6f0e9; color: #1e6b3a; }
+  .risk-red { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; background: #fde2e1; color: #b42318; margin-right: 6px; }
+  .risk-yellow { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; background: #fdf0d5; color: #9a6700; margin-right: 6px; }
+  .item-summary { font-size: 14px; margin: 0 0 12px 0; }
+  .num-up { color: #1e6b3a; font-weight: 700; }
+  .num-down { color: #b42318; font-weight: 700; }
+  .num-key { color: #1a4fa0; font-weight: 700; }
+  .bilingual { background: #f7f9fc; border: 1px dashed #c9d4e6; border-radius: 6px; padding: 12px 14px; margin-bottom: 12px; }
+  .en-title { font-size: 13px; font-weight: 700; color: #1a2b4a; margin: 0 0 6px 0; }
+  .en-summary { font-size: 12.5px; color: #3d4657; margin: 0 0 10px 0; }
+  .vocab-card { background: #ffffff; border-radius: 5px; padding: 8px 10px; border: 1px solid #e3e7ee; }
+  .vocab-title { font-size: 11.5px; font-weight: 700; color: #1a2b4a; margin-bottom: 6px; }
+  .vocab-item { display: inline-block; font-size: 11.5px; background: #eef1f6; color: #3d4657; padding: 3px 8px; border-radius: 10px; margin: 0 5px 5px 0; }
+  .vocab-item b { color: #1a2b4a; }
+  .deepdive { background: #fbfbfd; border: 1px solid #e3e7ee; border-radius: 6px; padding: 10px 14px; margin-bottom: 10px; }
+  .deepdive summary { cursor: pointer; font-size: 13px; font-weight: 700; color: #1a2b4a; }
+  .deepdive-content { margin-top: 10px; }
+  .dl { font-size: 13px; margin: 0 0 8px 0; }
+  .dl-label { font-weight: 700; color: #1a2b4a; }
+  .dl-what { border-left: 3px solid #1a4fa0; padding-left: 8px; }
+  .dl-prospect { border-left: 3px solid #1e6b3a; padding-left: 8px; }
+  .dl-vision { border-left: 3px solid #9a6700; padding-left: 8px; }
+  .item-source { font-size: 11.5px; color: #6b7280; margin: 0; }
+  .item-source a { color: #1a4fa0; text-decoration: none; }
+  .compare-box { background: #ffffff; border-radius: 8px; padding: 14px; margin-bottom: 14px; border: 1px solid #e3e7ee; }
+  .compare-side { display: inline-block; vertical-align: top; width: 48%; box-sizing: border-box; padding: 10px 12px; border-radius: 6px; font-size: 12.5px; }
+  .compare-bull { background: #e6f0e9; color: #1e4d2b; margin-right: 3%; }
+  .compare-bear { background: #fde2e1; color: #7a1a12; }
+  .compare-label { font-weight: 700; font-size: 12.5px; margin-bottom: 5px; }
+  .trend-comment { background: #eef1f6; border-left: 5px solid #1a2b4a; border-radius: 6px; padding: 12px 16px; font-size: 13px; color: #2c3444; margin-top: 4px; }
+  .timeline { background: #ffffff; border-radius: 8px; padding: 16px 18px; border: 1px solid #e3e7ee; margin-bottom: 22px; }
+  .timeline h4 { margin: 0 0 12px 0; font-size: 15px; font-weight: 700; color: #1a2b4a; }
+  .timeline-item { font-size: 13px; padding: 7px 0; border-bottom: 1px dashed #e3e7ee; }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-date { display: inline-block; font-weight: 700; color: #b42318; background: #fde2e1; padding: 2px 8px; border-radius: 4px; margin-right: 10px; font-size: 12px; }
+  .footer { text-align: center; font-size: 11.5px; color: #8a93a3; padding-top: 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>全球动态每日简报</h1>
+    <p>2026-11-20 · 生命科学 / 经济金融 / 人工智能 / 硬科技 / 材料科学 / 中国政策 / 地缘政治</p>
+  </div>
+
+  <div class="overview">
+    <h3>🧠 今日综述</h3>
+    <p>今日信号集中在三条主线：材料端钙钛矿光伏实验室效率突破 <span class="num-up">33%</span>，但产业化仍卡在寿命与放大瓶颈，资本叙事与工程现实出现裂口；AI 侧中国已备案大模型达 <span class="num-key">1105 个</span>，从"百模大战"转向 Agent 落地与备案监管并行；政策端工信部"人工智能+信息通信"三年意见与"十五五"新型储能方案形成组合拳，指向算力与能源双基建。整体风向：技术乐观、产业审慎、监管前置。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">☀️ 钙钛矿33%效率</span>
+      <span class="overview-tag">🤖 1105个备案大模型</span>
+      <span class="overview-tag">🔋 十五五新型储能</span>
+      <span class="overview-tag">📡 AI+信息通信</span>
+      <span class="overview-tag">🟡 产业化落差</span>
+    </div>
+  </div>
+
+  <!-- 生命科学 -->
+  <div class="section">
+    <div class="section-title">🧬 生命科学 / 医学</div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">基因定义在 2026 年迎来"非编码时代"重写：从"编码蛋白"转向"可转录序列"</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">权威百科与基因组学机构近期统一口径，将基因定义为"被转录的 DNA 序列"，明确纳入不编码蛋白的非编码基因。这一表述变化看似学术，实则影响罕见病诊断、药物靶点筛选与基因治疗边界，全球约 <span class="num-key">98%</span> 的非编码区研究价值被重新定价。</p>
+      <div class="bilingual">
+        <p class="en-title">Gene Definition Shifts Toward a Transcript-Centric Framework</p>
+        <p class="en-summary">Leading reference sources now define a gene as any transcribed DNA sequence, explicitly including non-coding genes. The revision reframes how rare-disease diagnostics and therapeutic target discovery treat the non-coding genome, which accounts for the vast majority of disease-associated variants.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>non-coding gene</b> 非编码基因</span>
+            <span class="vocab-item"><b>transcribed sequence</b> 转录序列</span>
+            <span class="vocab-item"><b>therapeutic target</b> 治疗靶点</span>
+            <span class="vocab-item"><b>variant interpretation</b> 变异解读</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去教科书把基因等同于"编码蛋白质的片段"，好比只承认菜谱里"能端上桌的菜"。新定义承认"备菜、调味、传话"的指令也算基因，等于把厨房后台全部纳入账本。突破点在于为非编码 RNA、调控元件正名。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）全基因组测序报告中"意义不明变异"的解读率有望提升；中期（3-10年）非编码 RNA 药物、调控元件编辑进入临床前管线；长期看，基因治疗适应症将从单基因病扩展到复杂疾病易感区。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若非编码区完全可读，医学将从"修坏掉的零件"转向"调失灵的开关"，慢病与衰老干预的伦理争议随之而来——我们是否准备好编辑"不致病但决定命运"的序列？</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.genome.gov/genetics-glossary/Gene" target="_blank">NIH Genome.gov</a> · <a href="https://www.britannica.com/science/gene" target="_blank">Britannica</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Nature 刊文：全球 <span class="num-key">305 座</span>岛屿承载 <span class="num-key">20%</span> 蜜蜂多样性，岛屿成为传粉保护新前线</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">Nature 研究对全球 <span class="num-key">305 座</span>岛屿的蜜蜂物种进行系统分析，发现岛屿贡献了全球蜜蜂多样性的 <span class="num-key">20%</span>，且特有种比例显著偏高。这意味着农业传粉安全网高度依赖生态脆弱区，一旦岛屿生境退化，损失不可逆。</p>
+      <div class="bilingual">
+        <p class="en-title">Islands Host One-Fifth of Global Bee Diversity, Nature Study Finds</p>
+        <p class="en-summary">A global analysis across 305 islands shows that island ecosystems account for 20% of bee diversity worldwide, with a high share of endemic species. The findings position islands as critical but fragile nodes in agricultural pollination security.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>pollinator</b> 传粉者</span>
+            <span class="vocab-item"><b>endemic species</b> 特有种</span>
+            <span class="vocab-item"><b>biodiversity hotspot</b> 生物多样性热点</span>
+            <span class="vocab-item"><b>habitat degradation</b> 生境退化</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>把全球岛屿想象成一座座"物种保险箱"——地理隔离让物种独立演化，形成别处没有的蜜蜂。研究发现这些保险箱里装着全球五分之一的蜜蜂家底，但保险箱本身很薄。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期可推动岛屿授粉者保护纳入农业补贴与生态补偿；中期看，岛屿特有种可成为抗逆基因资源库；长期则关系到热带经济作物（咖啡、可可、芒果）的稳定授粉。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若岛屿传粉网络崩溃，全球果蔬价格将出现结构性上涨，"蜜蜂外交"或成为新的国际生态合作议题。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature Research Articles</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：生命科学今日呈现"定义重构 + 生态基线"双线——一边是分子层面的概念升级，一边是宏观层面的多样性盘点。二者共同指向同一件事：生命科学的计量单位正在从"单个基因/物种"转向"系统与网络"，这对药物研发和生态政策的估值模型都是根本性调整。</div>
+  </div>
+
+  <!-- 经济金融 -->
+  <div class="section">
+    <div class="section-title">💰 经济 / 金融</div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">人民币中间价与全球汇市进入"高频校准期"，企业与个人换汇成本敏感度上升</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">国家外汇管理局与中国银行持续发布人民币汇率中间价及现汇/现钞买卖价，市场对 <span class="num-key">USD/CNY</span> 的日内波动关注度明显提升。现汇与现钞价差被单独拆分后，个人换汇的隐性成本更透明，跨境消费与留学家庭的预算管理压力同步显性化。</p>
+      <div class="bilingual">
+        <p class="en-title">RMB Central Parity Enters a High-Frequency Calibration Phase</p>
+        <p class="en-summary">SAFE and Bank of China continue to publish daily central parity and separate cash/spot quotes for the yuan. Greater transparency around bid-ask spreads is raising cost sensitivity among corporates and households engaged in cross-border payments.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>central parity rate</b> 中间价</span>
+            <span class="vocab-item"><b>bid-ask spread</b> 买卖价差</span>
+            <span class="vocab-item"><b>spot exchange rate</b> 现汇汇率</span>
+            <span class="vocab-item"><b>cross-border settlement</b> 跨境结算</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中间价好比"官方参考秤"，现汇价是"电子转账价"，现钞价是"拿纸币的价"。把后两者拆开，等于把过去藏在总价里的"手续费"摆到台面上。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期企业套保比例将上升；中期看，跨境电商与留学支付平台会推出更细的锁汇工具；长期人民币国际化需要更透明的报价体系支撑。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若报价透明度持续提升，普通家庭换汇将像查机票一样比价，"汇率焦虑"从信息不对称问题变成纯粹的时机判断问题。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.safe.gov.cn/safe/rmbhlzjj/" target="_blank">国家外汇管理局</a> · <a href="https://www.boc.cn/sourcedb/whpj/" target="_blank">中国银行外汇牌价</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">全球股市数据平台密集更新，投资者对"实时行情 + 深度基本面"的复合需求上升</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">Yahoo Finance、Google Finance、MarketWatch 等平台同步强化实时报价与图表工具，覆盖全球超 <span class="num-key">15 万</span>只股票与基金。信息供给过剩之下，散户决策反而更依赖"筛选器"与"叙事标签"，市场情绪放大效应值得警惕。</p>
+      <div class="bilingual">
+        <p class="en-title">Retail Investors Face an Abundance of Real-Time Market Data</p>
+        <p class="en-summary">Major finance portals are expanding real-time quotes and analytics covering more than 150,000 global securities. The oversupply of data is shifting retail decision-making toward screeners and narrative labels, amplifying sentiment-driven moves.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>real-time quote</b> 实时报价</span>
+            <span class="vocab-item"><b>sentiment-driven</b> 情绪驱动的</span>
+            <span class="vocab-item"><b>screeners</b> 筛选工具</span>
+            <span class="vocab-item"><b>fundamentals</b> 基本面</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>行情软件从"看价格的仪表盘"升级为"带滤镜的望远镜"——数据越多，人越容易只看自己想看的。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期券商将加码 AI 摘要与异动提醒；中期看，监管可能要求对算法推荐标签做披露；长期看，投资者教育需从"看图"转向"读逻辑"。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当每个人都能秒级看到全球行情，真正的稀缺品不再是信息，而是"不被信息带跑"的判断力。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://stockanalysis.com/" target="_blank">StockAnalysis</a> · <a href="https://www.marketwatch.com/investing/index/djia/charts" target="_blank">MarketWatch</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：金融信息端"透明化"与"过载化"同时发生。汇率报价拆分提升了个体决策质量，但行情平台的实时化又制造了新的注意力噪音。对监管者而言，真正的挑战不是数据不够，而是数据太容易引发羊群效应。</div>
+  </div>
+
+  <!-- 人工智能 -->
+  <div class="section">
+    <div class="section-title">🤖 人工智能</div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">中国已备案大模型达 <span class="num-key">1105 个</span>、登记 AI 应用 <span class="num-key">731 个</span>，行业进入"备案即准入"阶段</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">最新统计显示，中国已备案大模型 <span class="num-key">1105 个</span>，已登记 AI 应用 <span class="num-key">731 个</span>，合计 <span class="num-key">1836 条</span>记录，支持按省份、领域、时间与企业检索。备案制实质成为市场准入门槛，头部集中与长尾出清将同步加速。</p>
+      <div class="bilingual">
+        <p class="en-title">China Registers 1,105 Large Models and 731 AI Applications</p>
+        <p class="en-summary">China's model registry now lists 1,105 filed large models and 731 registered AI applications, totaling 1,836 records searchable by province, sector and vendor. Filing has effectively become a market-access gate, likely accelerating consolidation among top players.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>model filing</b> 模型备案</span>
+            <span class="vocab-item"><b>market access</b> 市场准入</span>
+            <span class="vocab-item"><b>consolidation</b> 行业整合</span>
+            <span class="vocab-item"><b>long-tail vendors</b> 长尾厂商</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>备案就像给每个大模型发"身份证 + 营业执照"。1105 个模型意味着供给极度过剩，但真正能拿到场景与算力支持的只是少数。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期中小模型厂商将转向垂直行业与私有化部署；中期看，Agent 类应用会成为备案增长主力；长期看，备案数据本身将变成产业地图与投资风向标。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当模型像 App 一样被登记管理，AI 产业的竞争将不再是"谁的参数大"，而是"谁能在合规框架内最快跑通付费闭环"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://opckits.com/models" target="_blank">OPCKITS 中国大模型名单</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">DeepSeek V4 系列 API 平台上线，Agent 与本地文件编辑能力成主打</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">DeepSeek 开放平台推出 <span class="num-key">V4 系列</span>模型接口（含 <span class="num-key">deepseek-v4-pro</span>），并强调后台运行、本地文件编辑与长复杂任务处理。模型竞争正从"对话质量"转向"能否替用户完成一整段工作流"。</p>
+      <div class="bilingual">
+        <p class="en-title">DeepSeek Opens V4 Series API with Agent-Oriented Capabilities</p>
+        <p class="en-summary">DeepSeek's platform now exposes the V4 series, including deepseek-v4-pro, emphasizing background execution, local file editing and long-horizon task handling. The competitive frontier is shifting from conversational quality to end-to-end workflow completion.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>long-horizon task</b> 长程任务</span>
+            <span class="vocab-item"><b>workflow automation</b> 工作流自动化</span>
+            <span class="vocab-item"><b>API endpoint</b> 接口端点</span>
+            <span class="vocab-item"><b>agentic capability</b> 智能体能力</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去的模型像"随叫随到的顾问"，V4 想当"能自己动手的实习生"——不只是回答，还能在后台改文件、跑流程。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期开发者将围绕本地文件与办公自动化做集成；中期看，Agent 在企业内部审批、报表、代码维护中规模化；长期看，模型调用将从"按次"转向"按任务完成度"计费。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当 AI 能独立完成整段工作，人的角色从"执行者"变成"验收者"，组织架构与绩效体系都将被迫重写。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.deepseek.com/en/platform/" target="_blank">DeepSeek Platform</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">大模型评测转向 ARC-AGI-2、AIME 2025、SWE-bench Verified 三榜并立</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">DataLearner 等榜单平台以 <span class="num-key">ARC-AGI-2</span>、<span class="num-key">AIME 2025</span>、<span class="num-key">SWE-bench Verified</span> 为核心指标提供实时排名。单一榜单的"刷分"空间被压缩，但评测与真实生产环境之间的落差仍是行业最大争议点。</p>
+      <div class="bilingual">
+        <p class="en-title">Benchmark Landscape Shifts to a Multi-Axis Evaluation Model</p>
+        <p class="en-summary">Leaderboards now emphasize ARC-AGI-2, AIME 2025 and SWE-bench Verified as core metrics, reducing the room for single-benchmark gaming. The gap between benchmark scores and production reliability remains the industry's central dispute.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>benchmark gaming</b> 刷榜</span>
+            <span class="vocab-item"><b>leaderboard</b> 排行榜</span>
+            <span class="vocab-item"><b>production reliability</b> 生产可靠性</span>
+            <span class="vocab-item"><b>evaluation gap</b> 评测落差</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>榜单像"考试分数"，生产环境像"上岗表现"。三榜并立相当于同时考数学、推理和编程，减少"押题"空间。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期企业采购将要求厂商提供场景化评测；中期看，第三方审计式评测会兴起；长期看，评测标准可能成为类似 ISO 的行业基础设施。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当评测足够贴近真实工作，模型选型将像选员工一样看"试用期表现"，而不是看简历上的高分。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.datalearner.com/leaderboards" target="_blank">DataLearner AI 排行榜</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI 竞争从"模型能力"转向"准入 + 工作流 + 可信评测"三重门槛。备案数破千说明供给充分，V4 的 Agent 化说明需求在升级，而评测多榜并立则说明市场开始为"可信度"付费。三者叠加，2027 年前后大概率出现第一轮实质性出清。</div>
+  </div>
+
+  <!-- 硬科技 -->
+  <div class="section">
+    <div class="section-title">💻 科技 / 硬科技</div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">华为 Mate X8 及全场景新品发布会定档 <span class="num-key">11 月 24 日</span>，折叠屏旗舰节奏重启</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">官方海报确认华为 Mate X8 及全场景新品发布会定于 <span class="num-key">2026 年 11 月 24 日</span>举行，折叠屏旗舰更新节奏正式敲定。在 Mate90 系列与 Pura 90 Plus 已密集发布后，华为以"月更"节奏覆盖高端全价位，供应链与渠道备货压力同步上升。</p>
+      <div class="bilingual">
+        <p class="en-title">Huawei Sets November 24 Launch for Mate X8 Foldable Flagship</p>
+        <p class="en-summary">Huawei has scheduled a November 24 event for the Mate X8 foldable and a full-scenario product lineup. Following the Mate 90 and Pura 90 Plus launches, the company is running a near-monthly cadence across premium tiers, pressuring supply chains and channel inventory.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>foldable flagship</b> 折叠屏旗舰</span>
+            <span class="vocab-item"><b>launch cadence</b> 发布节奏</span>
+            <span class="vocab-item"><b>channel inventory</b> 渠道库存</span>
+            <span class="vocab-item"><b>supply chain</b> 供应链</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>折叠屏是手机里的"变形金刚"，铰链与屏幕是成本大头。华为把发布节奏压到月级，等于用产品密度换市场心智。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看铰链与 UTG 玻璃供应商受益；中期看折叠屏价格下探到中高端；长期看，折叠形态可能成为高端标配而非差异化卖点。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当折叠屏成为"默认形态"，手机、平板与笔记本的边界将彻底消失，移动办公的定义被重写。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://tech.ifeng.com/c/8y6C22R8RhQ" target="_blank">凤凰科技</a> · <a href="https://consumer.huawei.com/cn/press/events/" target="_blank">华为官网</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">华为 <span class="num-key">11 月 20 日</span>发布享界 V8 与全新"星芒"品牌，鸿蒙智行加速扩品</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">华为官宣鸿蒙智行享界 V8 及全新星芒品牌发布会定于 <span class="num-key">2026 年 11 月 20 日</span>。在智能汽车业务上，华为正从"技术供应商"向"多品牌矩阵运营者"演进，车型密度提升对渠道与产能提出更高要求。</p>
+      <div class="bilingual">
+        <p class="en-title">Huawei Unveils Stelvio V8 and New Xingmang Brand Under HarmonyOS Intelligent Mobility</p>
+        <p class="en-summary">Huawei held a November 20 event for the Stelvio V8 and a new Xingmang brand under its HarmonyOS Intelligent Mobility umbrella. The move signals a shift from technology supplier to multi-brand operator, raising demands on retail and manufacturing capacity.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>multi-brand matrix</b> 多品牌矩阵</span>
+            <span class="vocab-item"><b>technology supplier</b> 技术供应商</span>
+            <span class="vocab-item"><b>manufacturing capacity</b> 产能</span>
+            <span class="vocab-item"><b>smart cockpit</b> 智能座舱</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>鸿蒙智行像一个"汽车品牌孵化器"，把华为的智驾、座舱、渠道打包输出，合作方负责制造。星芒是又一个新"壳"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看车型密度提升带来销量弹性；中期看多品牌如何避免内耗是关键；长期看，华为可能成为中国智能车"操作系统层"的事实标准。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若鸿蒙智行生态成型，买车将像选手机一样"选系统"，传统车企的品牌溢价被大幅压缩。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://news.qq.com/rain/a/20261111A0565Q00" target="_blank">腾讯新闻</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">宁德时代推进"超充 + 换电"一体站，对打比亚迪闪充路线</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">宁德时代宣布建设超充与换电一体站，在动力电池装机量大幅领先的背景下，补能路线之争从"电池性能"升级为"基础设施标准"。超充与换电并行，意味着资本开支与土地资源竞争将进一步加剧。</p>
+      <div class="bilingual">
+        <p class="en-title">CATL Pushes Integrated Ultra-Fast Charging and Battery-Swap Stations</p>
+        <p class="en-summary">CATL is building combined ultra-fast charging and battery-swap stations, escalating the infrastructure standards race with BYD's flash-charging approach. Running both models in parallel will intensify capex and land-resource competition.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>battery swap</b> 换电</span>
+            <span class="vocab-item"><b>ultra-fast charging</b> 超充</span>
+            <span class="vocab-item"><b>capex</b> 资本开支</span>
+            <span class="vocab-item"><b>infrastructure standard</b> 基础设施标准</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>超充像"手机快充"，换电像"换电池"。一体站等于把两条路修在同一个服务区，赌的是用户不愿被单一补能方式绑定。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看高速服务区与城市枢纽站率先落地；中期看换电标准能否跨车企统一；长期看，补能网络将成为车企护城河而非电池厂专属。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若补能像加油一样 5 分钟完成，电动车的最后一道心理门槛消失，油价与电价的博弈将重塑整个能源零售业。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.caixin.com/2026-04-22/102436588.html" target="_blank">财新网</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">印度 Aadhaar 数字身份门户持续扩容，全球最大生物识别身份系统进入服务化阶段</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">印度 UIDAI 的 myAadhaar 门户整合全部在线身份服务，覆盖超 <span class="num-key">13 亿</span>人口的数字身份体系进入"平台化服务"阶段。数字身份与福利发放、金融开户深度绑定，效率提升与隐私争议同步放大。</p>
+      <div class="bilingual">
+        <p class="en-title">India's Aadhaar Portal Expands into a Full Digital-Identity Service Platform</p>
+        <p class="en-summary">UIDAI's myAadhaar portal now consolidates all online identity services for a population exceeding 1.3 billion. As digital identity becomes tightly coupled with welfare delivery and financial onboarding, efficiency gains are matched by privacy concerns.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>digital identity</b> 数字身份</span>
+            <span class="vocab-item"><b>biometric authentication</b> 生物识别认证</span>
+            <span class="vocab-item"><b>welfare delivery</b> 福利发放</span>
+            <span class="vocab-item"><b>data privacy</b> 数据隐私</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Aadhaar 相当于给 13 亿人发一张"全国通用的数字身份证"，指纹和人脸就是密码。门户化等于把所有办事窗口搬到线上。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看金融普惠覆盖提升；中期看跨境身份互认可能试点；长期看，数字身份将成为国家治理的基础设施，也是地缘数据博弈的焦点。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当身份完全数字化，"证明你是你"的成本趋近于零，但一旦系统出错，个人将面临"数字性死亡"的风险。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://myaadhaar.uidai.gov.in/" target="_blank">UIDAI myAadhaar</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技今日呈现"终端 + 补能 + 身份"三层基础设施化——手机与汽车是消费端入口，补能网络是能源端入口，数字身份是治理端入口。三者共同特征是：单点技术不再稀缺，谁能把标准与网络铺开，谁就掌握定价权。</div>
+  </div>
+
+  <!-- 材料科学 -->
+  <div class="section">
+    <div class="section-title">🔬 材料科学</div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">钙钛矿光伏实验室效率突破 <span class="num-up">33%</span>，首次在实验室条件超越硅基</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">2026 年多份报告显示，钙钛矿太阳能电池在实验室条件下效率已超 <span class="num-up">33%</span>，高于主流硅基电池。但 Nature 系列研究同时指出，结晶控制、器件寿命与规模化放大仍是三大硬约束，产业化时间线并未同步前移。</p>
+      <div class="bilingual">
+        <p class="en-title">Perovskite Solar Cells Exceed 33% Lab Efficiency, Surpassing Silicon</p>
+        <p class="en-summary">Perovskite photovoltaics have surpassed 33% efficiency under lab conditions, exceeding mainstream silicon cells. However, recent Nature studies stress that crystallization control, device lifetime and scale-up remain binding constraints, keeping commercialization timelines uncertain.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>power conversion efficiency</b> 光电转换效率</span>
+            <span class="vocab-item"><b>crystallization control</b> 结晶控制</span>
+            <span class="vocab-item"><b>device lifetime</b> 器件寿命</span>
+            <span class="vocab-item"><b>scale-up</b> 规模化放大</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>钙钛矿像"能被印刷出来的晶体"，成本低、效率高，但怕水怕热怕紫外，好比一位天赋极高但体质脆弱的运动员。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）叠层电池率先在高端分布式场景落地；中期（3-10年）封装与钝化技术决定能否进入地面电站；长期看，若寿命突破 25 年，晶硅产线将面临系统性重估。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若钙钛矿全面铺开，光伏度电成本可能再降一个台阶，建筑外墙、车窗、背包都能发电，"能源民主化"从口号变成日常。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.greenfueljournal.com/post/perovskite-solar-cell-revolution-2026-part-i" target="_blank">Green Fuel Journal</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Nature 综述：钙钛矿进入"稳定性转向"，分子接触与纳米异质界面成关键抓手</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">Nature 系列综述指出，钙钛矿研究重心已从"追效率"转向"保稳定"，体相纳米异质界面可固定分子接触、提升反式器件性能。这意味着下一阶段的竞争点是封装、界面工程与量产良率，而非单点效率纪录。</p>
+      <div class="bilingual">
+        <p class="en-title">Perovskite Research Enters a Stability-First Phase</p>
+        <p class="en-summary">Nature reviews indicate that perovskite research has pivoted from efficiency chasing to stability engineering. Bulk nano-heterointerfaces that secure molecular contacts are emerging as a key lever for inverted devices, shifting competition toward encapsulation and yield.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>stability turn</b> 稳定性转向</span>
+            <span class="vocab-item"><b>nano-heterointerface</b> 纳米异质界面</span>
+            <span class="vocab-item"><b>inverted device</b> 反式器件</span>
+            <span class="vocab-item"><b>yield rate</b> 良率</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>界面工程像给两块材料"焊一层分子胶水"，既导电又不让它们互相腐蚀。反式器件则是电池结构的一种"倒装"设计，稳定性更好。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看封装材料与界面分子供应商受益；中期看反式叠层成为主流路线之一；长期看，稳定性标准将取代效率成为行业准入门槛。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当"稳定"成为第一指标，材料科学将从"破纪录竞赛"回归"工程可靠性竞赛"，这对整个新能源投资逻辑是一次校准。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/articles/s41578-026-00917-3" target="_blank">Nature Reviews Materials</a> · <a href="https://www.nature.com/articles/s41563-026-02546-1" target="_blank">Nature Materials</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">哈佛科学评论：钙钛矿结晶研究改善 LED 与电池，但 <span class="num-key">2026</span> 年结果仍指向寿命与放大瓶颈</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <p class="item-summary">哈佛科学评论指出，钙钛矿结晶研究虽同时改善了 LED 与太阳能电池性能，但 <span class="num-key">2026</span> 年的实验结果仍显示寿命与规模化放大存在硬限制。资本叙事与工程现实之间的落差，是本轮钙钛矿热潮最需要警惕的风险点。</p>
+      <div class="bilingual">
+        <p class="en-title">Crystallization Gains Mask Persistent Lifetime and Scale-Up Limits</p>
+        <p class="en-summary">Harvard Science Review notes that advances in perovskite crystallization have improved both LEDs and solar cells, yet 2026 results still reveal hard limits in lifetime and scale-up. The gap between capital narratives and engineering reality is the sector's key risk.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>hard limit</b> 硬性限制</span>
+            <span class="vocab-item"><b>capital narrative</b> 资本叙事</span>
+            <span class="vocab-item"><b>engineering reality</b> 工程现实</span>
+            <span class="vocab-item"><b>degradation</b> 衰减</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>实验室里"小样品跑出高分"和工厂里"大片良率稳定"是两回事，好比厨师在家做一道菜很好吃，开连锁店却难保证每家都一样。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期需警惕概念股过热；中期看，能解决封装与良率的设备商才是真受益者；长期看，行业将出现"技术路线分化 + 产能出清"。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>如果产业界能诚实区分"实验室纪录"与"量产指标"，新能源投资将少走很多弯路——这本身就是一种稀缺能力。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://harvardsciencereview.org/2026/11/19/perovskite-crystallization-efficiency/" target="_blank">Harvard Science Review</a></p>
+    </div>
+
+    <div class="compare-box">
+      <div class="compare-side compare-bull">
+        <div class="compare-label">📈 乐观方</div>
+        钙钛矿实验室效率已超 <span class="num-up">33%</span>，成本低、可印刷，叠层路线有望在分布式场景率先商业化，是光伏下一个十年的确定性方向。
+      </div>
+      <div class="compare-side compare-bear">
+        <div class="compare-label">📉 悲观方</div>
+        Nature 与哈佛评论均强调寿命、结晶控制与放大瓶颈未解，<span class="num-key">2026</span> 年结果仍指向产业化时间线后移，当前热度存在叙事透支风险。
+      </div>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学今日的核心矛盾是"效率纪录"与"工程可靠性"的赛跑。钙钛矿的 33% 是真实的科学进展，但产业价值取决于封装、界面与良率三条工程曲线。投资者应把注意力从"又破了多少"转向"能稳定跑多久"。</div>
+  </div>
+
+  <!-- 中国政策 -->
+  <div class="section">
+    <div class="section-title">🇨🇳 中国政策与监管</div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">工信部印发《"人工智能+信息通信"创新发展实施意见（2026—2028年）》</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">工信部发布工信部通信〔2026〕<span class="num-key">121 号</span>文件，部署 <span class="num-key">2026—2028 年</span>"人工智能+信息通信"创新发展。政策把 AI 与网络基础设施绑定，意味着算力调度、网络自治与智能运维将成为运营商与设备商的新考核项。</p>
+      <div class="bilingual">
+        <p class="en-title">MIIT Issues Three-Year Plan for AI-Integrated ICT Development</p>
+        <p class="en-summary">China's MIIT released a 2026–2028 implementation guideline coupling AI with information and communications infrastructure. The plan positions compute scheduling, autonomous networks and intelligent operations as new priorities for carriers and equipment vendors.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>implementation guideline</b> 实施意见</span>
+            <span class="vocab-item"><b>autonomous network</b> 自治网络</span>
+            <span class="vocab-item"><b>compute scheduling</b> 算力调度</span>
+            <span class="vocab-item"><b>intelligent operations</b> 智能运维</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>把 AI 装进通信网络的"神经系统"，让基站、光缆、数据中心能自己诊断、自己调度，好比给高速公路装上会思考的信号灯。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期运营商将启动 AI 运维招标；中期看，算力网络与 6G 预研形成合力；长期看，通信网络将从"管道"升级为"可编程的算力服务层"。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若网络真正自治，断网将像停电一样罕见，而算力会像水电一样按需流动，数字经济的"基础设施税"大幅下降。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_c864f8e08d7a4120bacae79260add934.html" target="_blank">工业和信息化部</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">发改委印发《"十五五"新型储能实施方案》，储能进入五年规划主航道</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">国家发改委 <span class="num-key">2026 年 11 月 13 日</span>印发《"十五五"新型储能实施方案》，将储能纳入五年规划主航道。政策与 AI 算力、新能源消纳形成闭环，储能从"配套"升级为"独立基础设施"。</p>
+      <div class="bilingual">
+        <p class="en-title">NDRC Releases 15th Five-Year Plan for New-Type Energy Storage</p>
+        <p class="en-summary">The NDRC issued its 15th Five-Year Plan implementation scheme for new-type energy storage on November 13, 2026, elevating storage from ancillary equipment to standalone infrastructure. The plan dovetails with AI compute demand and renewable integration.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>new-type energy storage</b> 新型储能</span>
+            <span class="vocab-item"><b>renewable integration</b> 新能源消纳</span>
+            <span class="vocab-item"><b>five-year plan</b> 五年规划</span>
+            <span class="vocab-item"><b>ancillary service</b> 辅助服务</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>储能是电网的"充电宝 + 稳压器"。过去它像附赠配件，现在被写进五年规划，等于承认它是电力系统的"第二块主板"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看独立储能电站与容量电价机制落地；中期看长时储能技术（液流、压缩空气）获得政策倾斜；长期看，储能将与算力中心形成"源网荷储算"一体化。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当储能足够便宜，风光电的"看天吃饭"问题被抹平，电价将出现"时空套利"新玩法，能源市场变成真正的金融化市场。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.ndrc.gov.cn/" target="_blank">国家发展和改革委员会</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">2026 年"两新"政策优化：汽车补贴改为按车价比例，家电以旧换新聚焦 <span class="num-key">1 级</span>能效</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">发改委解读 2026 年"两新"政策：汽车补贴上限不变但由定额改为按车价比例，家电以旧换新调整为补贴 <span class="num-key">1 级</span>能效或水效产品。补贴从"普惠"转向"导向"，对高能效与中高端车型更友好。</p>
+      <div class="bilingual">
+        <p class="en-title">China Refines 2026 Trade-In Subsidies Toward Efficiency and Price Ratios</p>
+        <p class="en-summary">NDRC's 2026 trade-in policy keeps the vehicle subsidy cap but shifts to price-proportional grants, while home-appliance subsidies now target tier-1 energy-efficiency products. The shift moves subsidies from broad-based to directional incentives.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>trade-in subsidy</b> 以旧换新补贴</span>
+            <span class="vocab-item"><b>price-proportional</b> 按比例</span>
+            <span class="vocab-item"><b>energy-efficiency tier</b> 能效等级</span>
+            <span class="vocab-item"><b>directional incentive</b> 导向性激励</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去补贴像"人人有份的红包"，现在像"按成绩发的奖学金"——买得越贵补得越多（有上限），家电越省电越优先。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期中高端车型与一级能效家电销量弹性最大；中期看，低能效产品加速出清；长期看，补贴工具将更多服务于"双碳"与产业升级目标。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当补贴与能效挂钩，消费者的"省钱"与国家的"减碳"第一次指向同一方向，绿色消费从道德选择变成经济理性。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.ndrc.gov.cn/wsdwhfz/202602/t20260214_1403822.html" target="_blank">国家发展改革委</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策今日呈现"AI + 能源 + 消费"三线协同——AI 政策管算力与网络，储能方案管电力底座，两新政策管终端需求。三者共同构成"新质生产力"的政策闭环，落点都在基础设施与标准，而非单点补贴。</div>
+  </div>
+
+  <!-- 地缘政治 -->
+  <div class="section">
+    <div class="section-title">🌍 地缘政治与国际关系</div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">美中在"全球紧张"中各取所需，欧洲在恐惧中团结、在民族主义中分裂</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <p class="item-summary">《经济学人》地缘专栏指出，美中两国均从"让世界保持紧张"中获取战略收益，而欧洲一方面因恐惧而团结，另一方面又被民族主义撕扯。全球秩序正从"规则约束"滑向"风险定价"，企业与国家都需为长期不确定性付费。</p>
+      <div class="bilingual">
+        <p class="en-title">Washington and Beijing Find Utility in Sustained Global Tension</p>
+        <p class="en-summary">The Economist argues that both Washington and Beijing derive strategic benefit from keeping the world on edge, while Europe oscillates between fear-driven unity and nationalist fragmentation. The global order is shifting from rule-bound to risk-priced.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>strategic ambiguity</b> 战略模糊</span>
+            <span class="vocab-item"><b>risk-priced</b> 风险定价</span>
+            <span class="vocab-item"><b>nationalist fragmentation</b> 民族主义撕裂</span>
+            <span class="vocab-item"><b>rule-bound order</b> 规则约束秩序</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>把国际秩序想象成一场牌局：过去大家按规则出牌，现在有人靠"制造紧张"让对手分心，从而在别的牌桌多拿筹码。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期企业将增加供应链冗余与政治风险对冲；中期看，区域化贸易集团加速成形；长期看，全球治理可能进入"多中心、低信任"的长期状态。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若紧张成为常态，和平红利将被"安全溢价"取代，每个国家的经济增长都要先扣掉一笔"不确定性税"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.economist.com/topics/geopolitics" target="_blank">The Economist</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">QUAD Plus 构想升温：以情报、技术与海上合作扩展"自由开放的印太"</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+<footer><p>每日全球重要动态简报 · 由 DeepSeek AI 自动生成 · v2 深度解读版</p></footer>
+</body>
+</html>
