@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球动态每日简报 · 2026-11-25</title>
+<style>
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, sans-serif;
+    background: #f4f5f7;
+    color: #1f2328;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 20px 16px 60px 16px;
+  }
+  .header {
+    background: #1a2740;
+    color: #ffffff;
+    padding: 26px 24px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+  }
+  .header h1 {
+    margin: 0 0 6px 0;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .header p {
+    margin: 0;
+    font-size: 13px;
+    color: #b8c4d9;
+  }
+  .overview {
+    background: #ffffff;
+    border-left: 5px solid #2f6fed;
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .overview h3 {
+    margin: 0 0 10px 0;
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a2740;
+  }
+  .overview p {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    color: #333a44;
+  }
+  .overview-tags {
+    margin: 0;
+  }
+  .overview-tag {
+    display: inline-block;
+    background: #eaf0fd;
+    color: #2f6fed;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin: 0 8px 6px 0;
+  }
+  .section {
+    margin-bottom: 26px;
+  }
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a2740;
+    padding: 8px 0 10px 0;
+    border-bottom: 2px solid #d9dee7;
+    margin-bottom: 14px;
+  }
+  .item {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+  .item-header {
+    margin-bottom: 10px;
+  }
+  .item-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #14181d;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .stars {
+    color: #f0a020;
+    font-size: 13px;
+    margin-right: 8px;
+  }
+  .impact {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .impact-high {
+    background: #fde8e8;
+    color: #c0392b;
+  }
+  .impact-med {
+    background: #fdf3e0;
+    color: #b9770e;
+  }
+  .impact-low {
+    background: #e8f4ea;
+    color: #2e7d32;
+  }
+  .risk-red {
+    display: inline-block;
+    background: #fde8e8;
+    color: #c0392b;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .risk-yellow {
+    display: inline-block;
+    background: #fdf6e0;
+    color: #a17c0a;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .item-summary {
+    font-size: 14px;
+    color: #333a44;
+    margin: 0 0 12px 0;
+  }
+  .num-up {
+    color: #1e8e3e;
+    font-weight: 700;
+  }
+  .num-down {
+    color: #d93025;
+    font-weight: 700;
+  }
+  .num-key {
+    color: #1a5fd0;
+    font-weight: 700;
+  }
+  .bilingual {
+    background: #f6f8fb;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+  }
+  .en-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a2740;
+    margin: 0 0 6px 0;
+  }
+  .en-summary {
+    font-size: 13px;
+    color: #4a5260;
+    margin: 0 0 10px 0;
+    line-height: 1.6;
+  }
+  .vocab-card {
+    border-top: 1px dashed #ccd4e0;
+    padding-top: 8px;
+  }
+  .vocab-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #5a6472;
+    margin-bottom: 6px;
+  }
+  .vocab-list {
+    margin: 0;
+  }
+  .vocab-item {
+    display: inline-block;
+    font-size: 12px;
+    color: #333a44;
+    background: #ffffff;
+    border: 1px solid #dde3ec;
+    border-radius: 4px;
+    padding: 3px 8px;
+    margin: 0 6px 6px 0;
+  }
+  .vocab-item b {
+    color: #1a5fd0;
+    font-weight: 700;
+  }
+  .compare-box {
+    background: #ffffff;
+    border: 1px solid #dde3ec;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 14px;
+  }
+  .compare-side {
+    display: inline-block;
+    width: 47%;
+    vertical-align: top;
+    font-size: 13px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+  .compare-bull {
+    background: #eef7ef;
+    color: #23602c;
+    margin-right: 3%;
+  }
+  .compare-bear {
+    background: #fbeeee;
+    color: #7d2525;
+  }
+  .compare-label {
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  .deepdive {
+    background: #fbfaf5;
+    border: 1px solid #e8e2cf;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+  }
+  .deepdive summary {
+    font-size: 13px;
+    font-weight: 700;
+    color: #7a6220;
+    cursor: pointer;
+    outline: none;
+  }
+  .deepdive-content {
+    padding-top: 10px;
+  }
+  .dl {
+    font-size: 13px;
+    color: #3d3a30;
+    margin: 0 0 10px 0;
+    line-height: 1.7;
+  }
+  .dl-label {
+    font-weight: 700;
+    color: #7a6220;
+  }
+  .item-source {
+    font-size: 12px;
+    color: #8a929e;
+    margin: 0;
+  }
+  .item-source a {
+    color: #2f6fed;
+    text-decoration: none;
+  }
+  .trend-comment {
+    background: #eef2f8;
+    border-left: 4px solid #5a7fc0;
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #2c3a52;
+    margin-top: 6px;
+  }
+  .timeline {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-top: 26px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    border-top: 4px solid #f0a020;
+  }
+  .timeline h4 {
+    margin: 0 0 12px 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a2740;
+  }
+  .timeline-item {
+    font-size: 13px;
+    color: #333a44;
+    padding: 8px 0;
+    border-bottom: 1px dashed #e2e6ee;
+  }
+  .timeline-item:last-child {
+    border-bottom: none;
+  }
+  .timeline-date {
+    display: inline-block;
+    background: #fdf3e0;
+    color: #b9770e;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: #9aa2ae;
+    margin-top: 34px;
+    padding-top: 16px;
+    border-top: 1px solid #e2e6ee;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>🌐 全球动态每日简报</h1>
+    <p>2026年11月25日 · 高密度信息 · 七板块精选 · 中英双语</p>
+  </div>
+
+  <div class="overview">
+    <h3>🧠 今日综述</h3>
+    <p>今日信号集中于三条主线：晶圆代工正式进入 <span class="num-key">2nm</span> 量产竞速，台积电、三星、英特尔三线并进，AI 算力供给格局面临重构；中国 AI 厂商以极致性价比切入 API 市场，DeepSeek 将百万 tokens 输入缓存命中价压至 <span class="num-key">0.025 元</span>，价格战向基础设施层蔓延；金融端，台湾央行预告稳定币准备金新规，数字货币监管从"沙盒"走向"立规"。整体风向：硬科技偏进取，监管端趋严，地缘与供应链风险持续积累。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🔬 2nm 量产竞速</span>
+      <span class="overview-tag">🤖 AI 价格战</span>
+      <span class="overview-tag">💱 稳定币立规</span>
+      <span class="overview-tag">🧬 岛屿生物多样性</span>
+      <span class="overview-tag">🟡 供应链观察</span>
+    </div>
+  </div>
+
+  <!-- ============ 板块一：生命科学/医学 ============ -->
+  <div class="section">
+    <div class="section-title">🧬 生命科学 / 医学</div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">岛屿承载全球 20% 蜂类多样性，Nature 发布全球尺度分析</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">Nature 刊发覆盖 <span class="num-key">305 座岛屿</span>的全球蜂类物种分析，确认岛屿贡献全球蜂类多样性约 <span class="num-key">20%</span>，且特有种比例显著偏高。该结论将岛屿从"生态边缘"重新定位为授粉者保护的核心单元，对全球生物多样性保护优先级排序构成直接冲击。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Islands Host 20% of Global Bee Diversity, Nature Study Finds</p>
+        <p class="en-summary">A global analysis spanning 305 islands reveals that island ecosystems account for roughly one-fifth of worldwide bee diversity, with a disproportionately high share of endemic species. The findings reposition islands as priority conservation units for pollinator protection and challenge existing biodiversity ranking frameworks.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>endemic species</b> 特有种</span>
+            <span class="vocab-item"><b>pollinator</b> 授粉者</span>
+            <span class="vocab-item"><b>biodiversity hotspot</b> 生物多样性热点</span>
+            <span class="vocab-item"><b>conservation priority</b> 保护优先级</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>把全球 305 座岛屿的蜂类物种清单汇总比对，相当于给岛屿做了一次"物种人口普查"。结果发现岛屿虽面积小，却是蜂类特有演化的重要"实验室"，贡献了全球约五分之一的多样性。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）将直接影响 IUCN 红色名录与各国保护区划设的资金流向；中期（3-10年）可支撑岛屿生态修复、外来物种入侵防控与农业授粉服务定价。落地关键在于岛屿国家是否将结论纳入国土规划。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若保护到位，岛屿将成为气候难民物种的"避难所"与天然基因库；若失守，特有蜂类灭绝将连带冲击岛屿农业与本土植物繁衍，形成不可逆的生态债务。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature · Research Articles</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Nature 创刊逾 150 年，仍是多学科顶刊风向标</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">Nature 自 <span class="num-key">1869 年</span>创刊至今，持续作为全球领先的多学科科学期刊发布同行评审研究，覆盖生命科学、物理、化学与地球科学。其研究论文板块仍是判断全球基础科研热点的首要信源，本周生态学与生物多样性方向权重明显上升。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Nature Continues to Set the Benchmark After 150+ Years</p>
+        <p class="en-summary">First published in 1869, Nature remains the world's leading multidisciplinary science journal, publishing peer-reviewed research across the natural sciences. Its research-article section is still the primary reference for tracking global basic-research hotspots.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>peer-reviewed</b> 同行评审的</span>
+            <span class="vocab-item"><b>multidisciplinary</b> 多学科的</span>
+            <span class="vocab-item"><b>benchmark</b> 基准/标杆</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Nature 相当于科学界的"头版头条"，一篇论文登上其研究板块，往往意味着该方向将获得资本、政策与人才的集中关注。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，其选题偏好会引导各国科研经费投向；中长期看，开放获取与预印本平台的崛起正在分流其首发优势，期刊影响力评估体系或面临重塑。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若同行评审全面走向开放与可复现，科学传播将从"期刊中心"转向"数据与代码中心"，知识生产周期有望从年缩短至月。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/" target="_blank">Nature</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：生命科学今日的主线是"生态尺度的重估"——岛屿蜂类研究把保护议题从物种层面拉到全球网络层面，意味着生物多样性治理正从"抢救式"转向"系统规划式"。基础科研的信源集中度依然极高，顶刊选题对资源配置的引导作用短期难以替代。</div>
+  </div>
+
+  <!-- ============ 板块二：经济/金融 ============ -->
+  <div class="section">
+    <div class="section-title">💰 经济 / 金融</div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">台湾央行预告稳定币发行准备金缴存与查核办法</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">台湾中央银行于 <span class="num-key">2026-11-24</span> 预告订定《稳定币发行准备金缴存及查核办法》，同步公布 10 月消费者贷款及建筑贷款余额统计。此举标志稳定币监管从原则宣示进入"准备金 + 查核"的操作细则阶段，对发行机构的资本占用与合规成本构成实质约束。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Taiwan Central Bank Proposes Reserve Requirements for Stablecoin Issuers</p>
+        <p class="en-summary">Taiwan's central bank unveiled draft rules on reserve deposits and audits for stablecoin issuers, moving digital-asset oversight from principle to operational detail. The proposal imposes concrete capital and compliance burdens on issuers and signals a tightening regulatory posture across the region.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>reserve requirement</b> 准备金要求</span>
+            <span class="vocab-item"><b>stablecoin issuer</b> 稳定币发行方</span>
+            <span class="vocab-item"><b>regulatory compliance</b> 合规监管</span>
+            <span class="vocab-item"><b>draft rules</b> 草案规则</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>稳定币号称"1:1 锚定法币"，但若储备不足就是空头支票。准备金缴存制度相当于要求发行方把"押金"存进央行可见的账户，查核办法则是定期"查账"，防止挪用。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）中小发行商或因资本门槛退出，市场向合规头部集中；中期（3-10年）稳定币有望接入跨境支付与代币化债券结算，成为法币的"数字延伸层"。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若全球主要司法辖区同步立规，稳定币将从"影子美元"变为受监管的支付基础设施，跨境汇款成本或下降一个数量级；但货币主权与资本流动管理的矛盾也将同步放大。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.cbc.gov.tw/tw/sp-news-list-1.html" target="_blank">中央银行全球资讯网 · 最新消息</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">人民币汇率与外汇牌价体系持续更新，离岸产品创新提速</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">国家外汇管理局持续发布人民币汇率中间价，中国银行外汇牌价系统维持现汇/现钞卖出价分列机制；市场端华夏基金（香港）推出追踪离岸人民币的基金产品。汇率形成机制保持稳定，离岸人民币产品线扩容反映跨境资金配置需求仍在上升。</p>
+
+      <div class="bilingual">
+        <p class="en-title">RMB Central Parity Stays on Track as Offshore Products Expand</p>
+        <p class="en-summary">China's foreign exchange regulator continues to publish the RMB central parity rate, while Bank of China maintains separate cash and spot selling rates. Offshore RMB product innovation is accelerating, reflecting sustained cross-border allocation demand.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>central parity rate</b> 中间价</span>
+            <span class="vocab-item"><b>offshore RMB</b> 离岸人民币</span>
+            <span class="vocab-item"><b>foreign exchange quotation</b> 外汇牌价</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中间价是每日人民币汇率的"官方参考锚"，现汇与现钞卖出价分列则是银行对"账面外汇"和"实体钞票"的区别定价，后者通常更贵，因为现钞调运成本更高。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，离岸产品扩容有助于提升人民币在跨境理财与贸易结算中的使用频次；中长期看，若离岸与在岸价差持续收窄，人民币资产的国际定价权将稳步提升。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若资本项目开放与离岸市场深度同步推进，人民币有望在多极货币体系中占据更稳定的第三极位置，企业汇率风险管理工具也将更丰富。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.safe.gov.cn/safe/rmbhlzjj/index.html" target="_blank">国家外汇管理局</a> · <a href="https://www.boc.cn/sourcedb/whpj/" target="_blank">中国银行外汇牌价</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">全球市场数据平台密集更新，投资者信息获取趋于实时化</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">Yahoo Finance、Google Finance、CNN Markets、MarketWatch 与 StockAnalysis 等平台持续提供实时报价与财务数据，StockAnalysis 覆盖全球超 <span class="num-key">15 万</span>只股票与基金。信息基础设施的实时化降低了散户与机构的信息差，但也放大了短期波动传导速度。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Real-Time Market Data Platforms Narrow the Information Gap</p>
+        <p class="en-summary">Major financial data platforms continue to deliver real-time quotes and fundamentals, with StockAnalysis covering more than 150,000 global stocks and funds. Real-time infrastructure reduces information asymmetry but also accelerates short-term volatility transmission.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>real-time quote</b> 实时报价</span>
+            <span class="vocab-item"><b>information asymmetry</b> 信息不对称</span>
+            <span class="vocab-item"><b>volatility transmission</b> 波动传导</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去看行情要付费终端，现在免费网页就能看全球报价。信息平权的另一面，是所有人同时看到坏消息、同时按下卖出键。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，数据平台将向 AI 摘要与情绪指标延伸；中期看，监管或要求对自动化交易信号加强披露，防止"算法共振"引发闪崩。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若信息完全实时且人人可得，超额收益将更多来自"解读能力"而非"信息渠道"，投资研究的价值重心将从获取转向判断。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://stockanalysis.com/" target="_blank">StockAnalysis.com</a> · <a href="https://finance.yahoo.com/" target="_blank">Yahoo Finance</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：金融端今日呈现"监管细化 + 信息实时化"双轨并进。稳定币准备金规则代表监管从口号走向可执行条款，而行情平台的实时化则让市场对政策的反应窗口从"天"压缩到"分钟"。两者叠加，意味着未来政策的"预告期"本身就是市场波动源。</div>
+  </div>
+
+  <!-- ============ 板块三：人工智能 ============ -->
+  <div class="section">
+    <div class="section-title">🤖 人工智能</div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">DeepSeek 上线 V4-Pro，百万 tokens 缓存命中价低至 0.025 元</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">DeepSeek API 平台显示 V4-Pro 支持 <span class="num-key">1M</span> 上下文，百万 tokens 输入缓存命中价 <span class="num-key">0.025 元</span>、未命中 <span class="num-key">3 元</span>、输出 <span class="num-key">6 元</span>，并支持自动缓存。缓存命中与未命中之间约 <span class="num-key">120 倍</span>价差，实质是把"重复上下文"变成近乎免费的资源，对长文档与 Agent 类应用成本结构形成重估。</p>
+
+      <div class="bilingual">
+        <p class="en-title">DeepSeek V4-Pro Slashes Cached-Input Pricing to 0.025 Yuan per Million Tokens</p>
+        <p class="en-summary">DeepSeek's V4-Pro model supports a one-million-token context window and prices cached input at 0.025 yuan per million tokens, versus 3 yuan for uncached input and 6 yuan for output. The roughly 120x spread between cached and uncached input effectively makes repeated context nearly free, reshaping cost structures for long-document and agent workloads.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>context window</b> 上下文窗口</span>
+            <span class="vocab-item"><b>cache hit</b> 缓存命中</span>
+            <span class="vocab-item"><b>token pricing</b> token 定价</span>
+            <span class="vocab-item"><b>inference cost</b> 推理成本</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>大模型按 token 计费，就像按字收费的翻译。缓存命中相当于"这段话我之前翻过，直接调档"，价格因此暴跌。0.025 元对 3 元的价差，是在鼓励用户把固定知识库"喂一次、用千次"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）企业知识库问答、代码助手、客服机器人成本可降一个数量级；中期（3-10年）Agent 长期记忆与多轮任务将因缓存机制而经济可行，AI 应用从"单次问答"走向"持续陪伴"。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若缓存与长上下文成为标配，每个企业都能以极低成本运行"专属大脑"，模型厂商的竞争焦点将从"参数规模"转向"记忆效率与单位智能成本"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.deepseek.com/platform/" target="_blank">DeepSeek · API 开放平台</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">OpenAI 将防御经验产品化，周四举办 Cyber at the Frontier 活动</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">OpenAI 表示正把自身防御经验转化为面向客户的安全工具，并将于本周四举办 Cyber at the Frontier 活动。此举标志头部 AI 实验室从"模型提供方"向"安全能力输出方"延伸，AI 安全正从内部成本项变为可售卖的产品线。</p>
+
+      <div class="bilingual">
+        <p class="en-title">OpenAI Productizes Its Defense Playbook with Cyber at the Frontier</p>
+        <p class="en-summary">OpenAI is converting lessons from defending its own infrastructure into practical security tools for customers, with a Cyber at the Frontier event scheduled for Thursday. The move signals a shift from model provider to security-capability vendor, turning AI safety from an internal cost center into a product line.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>threat defense</b> 威胁防御</span>
+            <span class="vocab-item"><b>productize</b> 产品化</span>
+            <span class="vocab-item"><b>security posture</b> 安全态势</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于把"自家防盗经验"做成安防套装卖给邻居。OpenAI 在抵御提示注入、模型滥用中积累的攻防知识，正被打包成企业可部署的安全能力。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，AI 安全工具将成为企业采购的独立预算项；中期看，安全能力或成为模型选型的硬指标，"安全即服务"与模型 API 捆绑销售。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若 AI 安全形成标准化市场，攻防对抗将演化为"模型对模型"的自动化博弈，人类安全团队的角色转向制定规则与审计结果。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://x.com/OpenAI" target="_blank">OpenAI · X</a> · <a href="https://openai.com/" target="_blank">OpenAI</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">机器之心文章库持续追踪 SOTA 模型与 AI 应用落地</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">机器之心文章库近期持续更新 SOTA 模型榜单、AI 应用评测与行业通讯，覆盖 2026 云程奖相关内容。中文 AI 媒体正从"翻译海外进展"转向"建立本土评测基准"，对国内模型选型与产业落地具有参考价值。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Chinese AI Media Shift Toward Homegrown Benchmarks</p>
+        <p class="en-summary">Machine Heart continues to publish SOTA model rankings, application reviews, and industry newsletters. Chinese AI media are moving from translating overseas progress to building domestic evaluation benchmarks, adding practical value for model selection and industrial deployment.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>benchmark</b> 基准测试</span>
+            <span class="vocab-item"><b>state of the art (SOTA)</b> 当前最优</span>
+            <span class="vocab-item"><b>deployment</b> 部署落地</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>评测榜单相当于 AI 界的"汽车碰撞测试"，谁定标准，谁就影响消费者的选择与厂商的优化方向。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，本土基准将更贴合中文场景与合规要求；中期看，评测机构或与监管标准对接，成为模型备案的参考依据。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若评测体系实现公开可复现，模型竞争将从"发布会话术"回归"实测分数"，产业采购决策的透明度将显著提升。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.jiqizhixin.com/articles/2026-11-21" target="_blank">机器之心 · 文章库</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI 竞争重心正从"模型能力"转向"单位智能成本 + 安全可信"。DeepSeek 用缓存定价把长上下文变成廉价资源，OpenAI 把安全经验变成产品，两者共同指向一个判断：2026 年的胜负手不在参数，而在"谁能以更低成本、更高可信度把智能嵌入业务流程"。</div>
+  </div>
+
+  <!-- ============ 板块四：科技/硬科技 ============ -->
+  <div class="section">
+    <div class="section-title">💻 科技 / 硬科技</div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">晶圆代工 2nm 三强竞速：台积电、三星、英特尔同步推进</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <p class="item-summary">全球晶圆代工市场规模约 <span class="num-key">1000 亿美元/年</span>，2026 年台积电 <span class="num-key">2nm</span>、三星 GAA、英特尔 <span class="num-key">18A</span> 三条路线同步进入量产关键期。三强并进意味着 AI 与 HPC 芯片的供给来源多元化，但良率、产能爬坡与客户认证仍是决定份额的实际变量。</p>
+
+      <div class="bilingual">
+        <p class="en-title">TSMC, Samsung and Intel Race Into 2nm-Class Mass Production</p>
+        <p class="en-summary">The global foundry market, worth roughly $100 billion annually, is entering a critical phase as TSMC's 2nm, Samsung's GAA, and Intel's 18A processes all approach mass production in 2026. Diversified supply is positive for AI and HPC chip buyers, but yield, ramp-up, and customer qualification remain the decisive variables.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>foundry</b> 晶圆代工</span>
+            <span class="vocab-item"><b>gate-all-around (GAA)</b> 环绕栅极</span>
+            <span class="vocab-item"><b>yield ramp</b> 良率爬坡</span>
+            <span class="vocab-item"><b>mass production</b> 量产</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>2nm 不是"数字越小越好"的营销，而是晶体管结构从 FinFET 转向 GAA 的物理代际切换，相当于把水管的"三面闸门"改成"四面环绕"，漏电更少、能效更高。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）2nm 产能将优先供给手机 SoC 与 AI 加速器，先进封装（CoWoS 类）成为新瓶颈；中期（3-10年）18A/2nm 的成熟将推动边缘 AI 与数据中心能效比再上一个台阶。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若三强良率均达预期，芯片供给将从"单极依赖"走向"多极冗余"，地缘断供的杀伤力下降；但资本开支门槛抬升，也可能让中小设计公司更难负担先进节点。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://semiwiki.com/semiconductor-manufacturers/tsmc/366523-tsmc-vs-intel-foundry-vs-samsung-foundry-2026/" target="_blank">SemiWiki</a> · <a href="https://www.semiconductor-digest.com/the-2nm-race-begins-foundries-battle-for-ai-and-hpc-leadership/" target="_blank">Semiconductor Digest</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">量子计算定位为"确定的未来算力"，产业化路径仍待收敛</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">业界普遍将量子计算视为突破经典算力瓶颈的长期路径，IBM 等机构将其定义为利用量子力学特性解决经典计算机无法应对的问题。当前共识是"先进半导体是过去、AI 是当下、量子是确定的未来"，但纠错规模与工程化时间表仍存分歧。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Quantum Computing: A Certain Future, an Uncertain Timeline</p>
+        <p class="en-summary">Quantum computing is widely framed as the long-term answer to classical computing bottlenecks, leveraging quantum mechanical properties to solve problems intractable for even the most powerful classical machines. Consensus on its eventual importance is broad, but timelines for error correction and engineering remain contested.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>quantum supremacy</b> 量子优越性</span>
+            <span class="vocab-item"><b>error correction</b> 纠错</span>
+            <span class="vocab-item"><b>qubit</b> 量子比特</span>
+            <span class="vocab-item"><b>intractable</b> 难以处理的</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>经典计算机像逐条走迷宫的蚂蚁，量子计算机像同时探索所有岔路的"分身术"，但分身极易被环境干扰而"退相干"，纠错就是维持分身稳定的关键。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）量子优势主要体现在化学模拟与优化问题的实验性演示；中期（3-10年）若逻辑量子比特数突破数百量级，材料发现与密码学将首当其冲。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若容错量子计算落地，新药与新材料研发周期或从十年压缩至数年；同时现有公钥密码体系需全面迁移，安全产业将迎来一次"重装系统"级改造。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.ibm.com/cn-zh/think/topics/quantum-computing" target="_blank">IBM · 什么是量子计算</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">华为持续构建"全连接、智能化"ICT 基础设施</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">华为官网定位为全球领先的 ICT 基础设施与智能终端提供商，业务覆盖通信网络、计算、云与终端全场景。在先进制程受限背景下，华为的竞争力更多来自"连接 + 计算 + 终端"的系统级整合能力，而非单一芯片指标。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Huawei Doubles Down on Fully Connected, Intelligent ICT Infrastructure</p>
+        <p class="en-summary">Huawei positions itself as a leading global provider of ICT infrastructure and smart devices, spanning telecom networks, computing, cloud, and consumer terminals. Constrained by advanced-node access, its competitiveness increasingly rests on system-level integration rather than single-chip metrics.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>ICT infrastructure</b> ICT 基础设施</span>
+            <span class="vocab-item"><b>system-level integration</b> 系统级整合</span>
+            <span class="vocab-item"><b>smart devices</b> 智能终端</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于一家既修高速公路（网络）、又造汽车（终端）、还建加油站（云）的公司，单看某一环未必最强，但整条链路能自己闭环。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，政企数字化与算力网络订单是主要增量；中期看，若国产供应链在成熟制程与封装上持续突破，系统级优势可部分对冲先进节点短板。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若"连接+计算"深度融合成为行业标准，未来工厂与城市的底座将由少数具备全栈能力的厂商提供，产业集中度进一步提升。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.huawei.com/cn/" target="_blank">华为官网</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">比亚迪以新能源整车为核心，横跨汽车、电子、新能源与轨交</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">比亚迪定位"新能源汽车世界冠军"，业务横跨汽车、电子、新能源与轨道交通四大板块，在港深两地上市。其垂直整合模式在成本控制与供应链韧性上具备优势，但也使其对整车价格战与海外市场准入高度敏感。</p>
+
+      <div class="bilingual">
+        <p class="en-title">BYD's Vertical Integration Spans Autos, Electronics, Energy and Rail</p>
+        <p class="en-summary">BYD, positioning itself as a global NEV leader, operates across automobiles, electronics, new energy, and rail transit, and is listed in both Hong Kong and Shenzhen. Its vertical integration supports cost control and supply-chain resilience but leaves it highly exposed to price wars and overseas market access.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>vertical integration</b> 垂直整合</span>
+            <span class="vocab-item"><b>NEV (new energy vehicle)</b> 新能源汽车</span>
+            <span class="vocab-item"><b>price war</b> 价格战</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>垂直整合就是"从挖矿到卖车"都自己做，省掉中间商差价，但也要自己承担每个环节的技术风险与资本开支。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，海外建厂与本地化生产是绕开关税的关键；中期看，电池、电机、电控的自研优势能否延伸到智能驾驶，决定其品牌溢价上限。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若新能源车全面转向"软件定义"，整车厂的价值将更多体现在操作系统与数据闭环，垂直整合的硬件优势需与软件生态嫁接才能持续。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.bydglobal.com/" target="_blank">比亚迪集团官网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技今日的主轴是"代际切换 + 系统整合"。2nm 三强竞速决定未来三年 AI 算力的物理上限，而华为、比亚迪的案例说明：在单点受限的环境下，系统级整合与垂直协同正成为另一种竞争力范式。风险在于，先进节点的资本门槛与地缘限制同步抬升，供应链的"冗余度"比"先进性"更值得关注。</div>
+  </div>
+
+  <!-- ============ 板块五：材料科学 ============ -->
+  <div class="section">
+    <div class="section-title">🔬 材料科学</div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">中国科学院东莞材料科学与技术研究所成立，材料科学布局加速</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">由中国科学院、广东省人民政府、东莞市人民政府共同筹建的中国科学院东莞材料科学与技术研究所成立，聚焦材料科学与技术前沿。该布局将材料研发与珠三角制造集群直接对接，有望缩短"实验室—中试—量产"的转化链条。</p>
+
+      <div class="bilingual">
+        <p class="en-title">CAS Establishes Dongguan Institute of Materials Science and Technology</p>
+        <p class="en-summary">The Chinese Academy of Sciences, Guangdong Province, and Dongguan City have jointly established the CAS Dongguan Institute of Materials Science and Technology. The institute links frontier materials research directly to the Pearl River Delta manufacturing cluster, aiming to shorten the lab-to-pilot-to-production pipeline.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>materials science</b> 材料科学</span>
+            <span class="vocab-item"><b>pilot-scale production</b> 中试生产</span>
+            <span class="vocab-item"><b>technology transfer</b> 技术转化</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>材料是所有硬科技的"面粉"，没有好面粉做不出好面包。把研究所设在制造重镇，等于让"面粉厂"紧挨"面包房"，研发与量产不再两张皮。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）将在电子材料、新能源材料方向形成中试能力；中期（3-10年）若与本地企业形成联合攻关机制，国产高端材料的验证周期有望明显缩短。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若"院所+集群"模式跑通，材料创新将从"论文导向"转向"产线导向"，国产替代的瓶颈有望从设计端移向材料端的根本性突破。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.cas.cn/" target="_blank">中国科学院</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">北大材料科学与工程学院多项教学与科研荣誉入选全球前 2% 科学家榜单</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">北京大学材料科学与工程学院近期在教學荣誉与科研榜单上双线收获，多位教师入选 <span class="num-key">2026 全球前 2%</span> 顶尖科学家榜单。材料学科的人才集聚效应持续强化，但高校成果向产业转化的"最后一公里"仍是主要瓶颈。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Peking University Materials Faculty Named Among Top 2% Scientists Globally</p>
+        <p class="en-summary">Peking University's School of Materials Science and Engineering has earned both teaching honors and research recognition, with multiple faculty members listed among the top 2% of scientists worldwide in 2026. Talent concentration in materials science keeps strengthening, though translating academic results into industrial products remains the key bottleneck.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>top 2% scientists</b> 前 2% 科学家</span>
+            <span class="vocab-item"><b>talent concentration</b> 人才集聚</span>
+            <span class="vocab-item"><b>industrial translation</b> 产业转化</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>全球前 2% 科学家榜单基于论文引用等指标，相当于学术界的"信用评分"，反映的是影响力而非直接的产业价值。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，榜单有助于高校争取经费与国际合作；中期看，评价体系或将更多纳入专利转化、企业联合项目等"产业指标"。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若学术评价从"引用数"转向"落地数"，材料科研的选题将更贴近产业痛点，论文与产线之间的鸿沟有望被制度性填平。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.mse.pku.edu.cn/" target="_blank">北京大学材料科学与工程学院</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学今日呈现"机构下沉 + 人才集聚"两条线。东莞研究所把国家级科研力量直接嵌入制造集群，北大则体现顶尖高校的人才厚度。共同指向一个判断：材料创新的竞争，正在从"谁发得出论文"转向"谁能把论文变成产线上的稳定良率"。</div>
+  </div>
+
+  <!-- ============ 板块六：中国政策与监管 ============ -->
+  <div class="section">
+    <div class="section-title">🇨🇳 中国政策与监管</div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">中国科学院推进"抢占科技制高点"重大科技任务第八次工作会</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">中国科学院召开抢占科技制高点重大科技任务第八次工作推进会，并举行学习贯彻党的二十届五中全会精神宣讲报告会。信号明确：国家战略科技力量正以"任务制"方式集中攻关，资源配置向制高点领域倾斜，基础研究与关键核心技术攻关的统筹力度进一步加大。</p>
+
+      <div class="bilingual">
+        <p class="en-title">CAS Presses Ahead on "Science and Technology High Ground" Missions</p>
+        <p class="en-summary">The Chinese Academy of Sciences convened its eighth working meeting on major science and technology missions aimed at seizing strategic high ground, alongside a briefing on the Fifth Plenary Session of the 20th CPC Central Committee. The signal is clear: national strategic scientific forces are concentrating resources through a mission-oriented approach.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>strategic high ground</b> 战略制高点</span>
+            <span class="vocab-item"><b>mission-oriented</b> 任务导向的</span>
+            <span class="vocab-item"><b>key core technologies</b> 关键核心技术</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>"任务制"相当于把科研从"各自选题"改成"组团攻坚"，像工程指挥部一样明确目标、节点与责任，避免资源分散。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，集成电路、人工智能、生物医药、新材料等方向将获得更集中的经费与平台支持；中期看，任务制与市场机制的衔接方式，决定成果能否顺利产业化。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若任务制与揭榜挂帅、企业出题等机制结合，国家科研力量有望在"卡脖子"环节形成突破，但也需警惕重复布局与评价僵化。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.cas.cn/" target="_blank">中国科学院</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">中国科学院与深圳、香港深化合作，湾区科创协同再进一步</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">中国科学院与深圳市人民政府、香港相关机构推进合作，聚焦科研平台共建与人才交流。大湾区"科研—转化—资本"闭环正在成形，跨境要素流动的制度性障碍仍是关键变量。</p>
+
+      <div class="bilingual">
+        <p class="en-title">CAS Deepens Cooperation with Shenzhen and Hong Kong</p>
+        <p class="en-summary">The Chinese Academy of Sciences is advancing cooperation with the Shenzhen municipal government and Hong Kong institutions, focusing on joint research platforms and talent exchange. A research-to-translation-to-capital loop is taking shape in the Greater Bay Area, though institutional barriers to cross-border flows remain pivotal.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>Greater Bay Area</b> 大湾区</span>
+            <span class="vocab-item"><b>cross-border flows</b> 跨境流动</span>
+            <span class="vocab-item"><b>joint research platform</b> 联合科研平台</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于把"实验室（深圳）—国际窗口（香港）—资本（湾区基金）"串成一条线，让科研成果不出湾区就能完成从想法到产品的旅程。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，联合实验室与人才签证便利化是抓手；中期看，若数据、样本、资金跨境流动规则进一步明确，湾区有望成为国际科研合作枢纽。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若湾区形成"一国两制"下的科研共同体，其制度创新价值可能超过单个技术突破，为跨境科技治理提供可复制样本。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.cas.cn/?c=0" target="_blank">中国科学院</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">"一带一路"坚持多边主义，六廊六路多国多港架构基本成型</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">求是网指出，在部分国家推行"脱钩断链"背景下，共建"一带一路"坚持真正的多边主义，"六廊六路多国多港"架构基本成型。这意味着中国对外经济合作正以基础设施互联互通对冲供应链碎片化风险，但项目融资可持续性仍需观察。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Belt and Road Framework Takes Shape Amid Decoupling Pressures</p>
+        <p class="en-summary">Qstheory notes that the Belt and Road Initiative continues to uphold genuine multilateralism as some countries pursue decoupling, with the "six corridors, six routes, multiple countries and ports" framework largely in place. Infrastructure connectivity is being used to hedge against supply-chain fragmentation, though financing sustainability remains a question.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>multilateralism</b> 多边主义</span>
+            <span class="vocab-item"><b>decoupling</b> 脱钩</span>
+            <span class="vocab-item"><b>connectivity</b> 互联互通</span>
+            <span class="vocab-item"><b>debt sustainability</b> 债务可持续性</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>"六廊六路多国多港"是把陆上经济走廊、海上港口节点串成网络，像给欧亚大陆装一套"物流骨架"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，绿色能源与数字丝绸之路项目占比上升；中期看，项目融资模式或从主权贷款转向多边银团与市场化融资，以缓解债务压力。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若互联互通网络与当地产业形成深度绑定，全球贸易格局将从"中心—外围"转向"多节点网络"，中小国家的话语权有望提升。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.qstheory.cn/20260804/aa8f07728ee240baaa17b45e54e13a03/c.html" target="_blank">求是网</a> · <a href="https://www.yidaiyilu.gov.cn/" target="_blank">中国一带一路网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策端今日呈现"内攻制高点、外拓互联互通"的双向布局。对内以任务制集中攻关关键核心技术，对外以多边主义对冲脱钩压力。两条线共同指向一个逻辑：在外部约束长期化的假设下，把资源集中到不可替代的环节，同时用网络化合作降低单点依赖。</div>
+  </div>
+
+  <!-- ============ 板块七：地缘政治与国际关系 ============ -->
+  <div class="section">
+    <div class="section-title">🌍 地缘政治与国际关系</div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">半导体成为地缘博弈核心变量，供应链安全议题持续升温</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <p class="item-summary">半导体作为电导率介于导体与绝缘体之间的关键材料，已成为现代技术体系的基础，其产业链（设计、制造、封测）成为地缘竞争焦点。围绕先进节点的出口管制与产能本土化，正在重塑全球分工格局，供应链"去风险"与"效率优先"的矛盾持续激化。</p>
+
+      <div class="bilingual">
+        <p class="en-title">Semiconductors at the Heart of Geopolitical Competition</p>
+        <p class="en-summary">Semiconductors, materials with conductivity between conductors and insulators, underpin modern technology, and their design-fabrication-packaging chain has become a focal point of geopolitical rivalry. Export controls on advanced nodes and capacity localization are reshaping the global division of labor, sharpening the tension between de-risking and efficiency.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>export control</b> 出口管制</span>
+            <span class="vocab-item"><b>de-risking</b> 去风险</span>
+            <span class="vocab-item"><b>localization</b> 本土化</span>
+            <span class="vocab-item"><b>division of labor</b> 分工</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>半导体是"现代工业的粮食"，谁控制粮食加工链，谁就握有产业话语权。出口管制相当于限制"关键厨具"外流，本土化则是自己建厨房。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）管制清单与豁免机制将反复调整，企业合规成本上升；中期（3-10年）全球或形成"多套并行"的供应链体系，效率损失由终端消费者分摊。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若供应链彻底阵营化，技术创新速度可能因重复研发而放缓；反之，若形成"竞争中共存"的规则框架，全球算力普及仍有望持续推进。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://en.wikipedia.org/wiki/Semiconductor_industry" target="_blank">Semiconductor Industry · Wikipedia</a> · <a href="https://www.ibm.com/think/topics/semiconductors" target="_blank">IBM</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">CSIS 聚焦地缘与外交政策交叉议题，智库研判权重上升</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">CSIS 地缘政治与外交政策部门持续研判政治、经济、安全与社会趋势，为政策圈提供分析框架。在信息过载环境下，头部智库的"议题设定"能力正影响各国政策议程，但其立场倾向也需交叉验证。</p>
+
+      <div class="bilingual">
+        <p class="en-title">CSIS Shapes the Geopolitics and Foreign Policy Agenda</p>
+<footer><p>每日全球重要动态简报 · 由 DeepSeek AI 自动生成 · v2 深度解读版</p></footer>
+</body>
+</html>
