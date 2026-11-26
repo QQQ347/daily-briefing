@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球动态每日简报 · 2026-11-26</title>
+<style>
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f4f5f7; margin: 0; padding: 16px; color: #1f2329; line-height: 1.7; }
+  .container { max-width: 860px; margin: 0 auto; }
+  .header { background: #1a2b4c; color: #ffffff; padding: 22px 24px; border-radius: 10px; margin-bottom: 18px; }
+  .header h1 { margin: 0 0 6px 0; font-size: 22px; font-weight: 700; }
+  .header p { margin: 0; font-size: 13px; color: #b9c6dd; }
+  .overview { background: #ffffff; border-left: 6px solid #2f6fed; border-radius: 8px; padding: 18px 22px; margin-bottom: 22px; }
+  .overview h3 { margin: 0 0 10px 0; font-size: 17px; font-weight: 700; color: #1a2b4c; }
+  .overview p { margin: 0 0 12px 0; font-size: 14px; }
+  .overview-tags { }
+  .overview-tag { display: inline-block; background: #eaf1ff; color: #2f6fed; font-size: 12px; padding: 4px 10px; border-radius: 12px; margin: 0 6px 6px 0; font-weight: 600; }
+  .section { background: #ffffff; border-radius: 10px; padding: 18px 22px; margin-bottom: 20px; }
+  .section-title { font-size: 18px; font-weight: 700; margin: 0 0 16px 0; padding-bottom: 10px; border-bottom: 2px solid #eef0f3; color: #1a2b4c; }
+  .item { padding: 14px 0; border-bottom: 1px dashed #e3e6ea; }
+  .item:last-of-type { border-bottom: none; }
+  .item-header { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+  .stars { color: #f5a623; font-size: 12px; margin-left: 6px; }
+  .impact { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+  .impact-high { background: #fde8e8; color: #c62828; }
+  .impact-med { background: #fff4e0; color: #b26a00; }
+  .impact-low { background: #e8f5e9; color: #2e7d32; }
+  .risk-red { display: inline-block; font-size: 11px; background: #fde8e8; color: #c62828; padding: 2px 8px; border-radius: 4px; margin-left: 6px; font-weight: 600; }
+  .risk-yellow { display: inline-block; font-size: 11px; background: #fff8e0; color: #9a6b00; padding: 2px 8px; border-radius: 4px; margin-left: 6px; font-weight: 600; }
+  .item-summary { font-size: 14px; margin: 0 0 10px 0; }
+  .num-up { color: #2e7d32; font-weight: 700; }
+  .num-down { color: #c62828; font-weight: 700; }
+  .num-key { color: #2f6fed; font-weight: 700; }
+  .bilingual { background: #f7f9fc; border-radius: 8px; padding: 12px 14px; margin: 10px 0; }
+  .en-title { font-size: 13px; font-weight: 700; color: #1a2b4c; margin: 0 0 6px 0; }
+  .en-summary { font-size: 13px; color: #4a5568; margin: 0 0 10px 0; }
+  .vocab-card { background: #ffffff; border-radius: 6px; padding: 10px 12px; }
+  .vocab-title { font-size: 12px; font-weight: 700; color: #2f6fed; margin-bottom: 6px; }
+  .vocab-item { display: inline-block; font-size: 12px; background: #eef3fb; color: #33475b; padding: 3px 8px; border-radius: 4px; margin: 0 6px 6px 0; }
+  .vocab-item b { color: #1a2b4c; }
+  .deepdive { background: #fbfbf8; border: 1px solid #ece9dd; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .deepdive summary { font-size: 13px; font-weight: 700; color: #8a6d1f; cursor: pointer; }
+  .deepdive-content { margin-top: 10px; }
+  .dl { font-size: 13px; margin: 0 0 8px 0; color: #3d3d3d; }
+  .dl-label { font-weight: 700; color: #1a2b4c; }
+  .item-source { font-size: 12px; color: #8a94a6; margin: 6px 0 0 0; }
+  .item-source a { color: #2f6fed; text-decoration: none; }
+  .trend-comment { background: #eef4ff; border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #24406e; margin-top: 14px; font-weight: 600; }
+  .compare-box { margin: 14px 0; }
+  .compare-side { display: inline-block; width: 47%; vertical-align: top; border-radius: 8px; padding: 12px 14px; font-size: 13px; box-sizing: border-box; }
+  .compare-bull { background: #eaf7ee; border-left: 4px solid #2e7d32; margin-right: 3%; }
+  .compare-bear { background: #fdecec; border-left: 4px solid #c62828; }
+  .compare-label { font-weight: 700; font-size: 13px; margin-bottom: 6px; }
+  .timeline { background: #fffaf0; border: 1px solid #f0e2c0; border-radius: 10px; padding: 18px 22px; margin-bottom: 20px; }
+  .timeline h4 { margin: 0 0 14px 0; font-size: 16px; color: #8a6d1f; }
+  .timeline-item { font-size: 13px; padding: 8px 0; border-bottom: 1px dashed #ecdfc2; }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-date { display: inline-block; background: #f0e2c0; color: #7a5c10; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 4px; margin-right: 10px; }
+  .footer { text-align: center; font-size: 12px; color: #8a94a6; padding: 18px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>🌐 全球动态每日简报</h1>
+    <p>2026年11月26日 · 生命科学 / 经济金融 / 人工智能 / 硬科技 / 材料科学 / 中国政策 / 地缘政治</p>
+  </div>
+
+  <div class="overview">
+    <h3>🧠 今日综述</h3>
+    <p>今日信号集中于三条主线：基因编辑完成从"实验室技术"向"临床标准疗法"的转身，全球超<span class="num-key">70项</span>CRISPR试验同步推进；中国流动性操作转为净回笼，<span class="num-key">1.25%</span>逆回购利率维持低位，宽松边际收敛；华为Mate X8与折叠PC同步落地，硬科技终端竞争向形态创新倾斜。地缘端美方投资环境报告仍将中国列为最封闭主要经济体之一，供应链重组压力未减。整体风向：科技端进取，金融端审慎，地缘端僵持。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🧬 CRISPR临床化</span>
+      <span class="overview-tag">💧 流动性净回笼</span>
+      <span class="overview-tag">📱 折叠终端战</span>
+      <span class="overview-tag">🔋 固态电池量产元年</span>
+      <span class="overview-tag">🌍 中美投资审查</span>
+    </div>
+  </div>
+
+  <!-- 生命科学 -->
+  <div class="section">
+    <h2 class="section-title">🧬 生命科学 / 医学</h2>
+
+    <div class="item">
+      <div class="item-header">全球CRISPR临床试验突破<span class="num-key">70项</span>，体内编辑首证"治愈级"疗效<span class="stars">⭐⭐⭐⭐</span><span class="impact impact-high">冲击：High</span><span class="risk-yellow">🟡 值得观察</span></div>
+      <p class="item-summary">截至2026年中，全球超过<span class="num-key">70项</span>CRISPR相关临床试验在推进，上半年完成"临床化"与"智能化"两个关键转身。体内基因编辑首次大规模证明可达"治愈级"疗效，标志着基因编辑从个案突破走向平台化标准疗法，监管与支付体系面临同步重构压力。</p>
+      <div class="bilingual">
+        <p class="en-title">CRISPR Trials Surpass 70 Globally as In Vivo Editing Reaches Curative Threshold</p>
+        <p class="en-summary">More than 70 CRISPR-based clinical trials are now underway worldwide, with in vivo editing demonstrating curative-level efficacy at scale for the first time. The field is shifting from isolated case reports toward platform-based standard-of-care therapies, forcing regulators and payers to redesign approval and reimbursement pathways.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>in vivo editing</b> 体内编辑</span>
+            <span class="vocab-item"><b>curative efficacy</b> 治愈级疗效</span>
+            <span class="vocab-item"><b>standard of care</b> 标准疗法</span>
+            <span class="vocab-item"><b>reimbursement</b> 报销/支付</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>CRISPR像一把"分子剪刀"，能精准找到DNA上的错字并改写。过去它主要在体外修改细胞再回输，如今"体内编辑"意味着直接注射进人体、在器官内原位修复——难度更高，但可及性大幅提升。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）血液病、遗传性眼病、转甲状腺素蛋白淀粉样变将率先获批；中期（3-10年）心血管降脂、慢性乙肝功能性治愈进入三期临床。落地关键不再是科学，而是递送载体（AAV/LNP）的器官靶向性与单次治疗定价。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若一次性治愈成为常态，医疗体系将从"长期服药"转向"一次性高额支付"，保险精算模型、药企商业模式乃至罕见病经济学都将被重写；伦理上，"可遗传编辑"的红线监管将更为紧迫。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://zhuanlan.zhihu.com/p/2063977233555927076" target="_blank">知乎 · 2026年CRISPR临床试验的8个关键突破</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">沙利文发布《2026全球基因疗法行业蓝皮书》，商业化落地成主线<span class="stars">⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span></div>
+      <p class="item-summary">沙利文9月发布蓝皮书，系统梳理全球基因治疗在技术突破、监管完善、资本投入与商业化落地四轮驱动下的现状。报告核心判断：行业已从"技术验证期"进入"支付与产能验证期"，商业模式创新成为决定产业可持续性的关键变量。</p>
+      <div class="bilingual">
+        <p class="en-title">Frost & Sullivan Bluebook: Gene Therapy Enters Commercialization Validation Phase</p>
+        <p class="en-summary">Frost & Sullivan's 2026 global gene therapy bluebook argues the industry has moved beyond technical proof-of-concept into a phase defined by reimbursement models and manufacturing capacity. Business-model innovation, rather than scientific novelty, is now the binding constraint on sustainable growth.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>commercialization</b> 商业化</span>
+            <span class="vocab-item"><b>manufacturing capacity</b> 产能</span>
+            <span class="vocab-item"><b>business model</b> 商业模式</span>
+            <span class="vocab-item"><b>capital deployment</b> 资本投入</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>蓝皮书就是行业的"体检报告+路线图"。它指出基因疗法真正的瓶颈已不是"能不能治"，而是"谁来付钱、能不能量产"。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看分期付款、按疗效付费（outcome-based）合同在欧美落地；中期看CDMO产能扩张与成本下降曲线。中国市场的关键变量是医保准入与本土CDMO成熟度。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当"一次性治愈+分期付款"成为标准合约，医疗支付将从药品逻辑转向"资产化"逻辑，患者、保险、药企形成三方长期共担结构。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.drugtimes.cn/2026/09/16/177852/" target="_blank">药时代 · 沙利文《2026年全球基因疗法行业发展蓝皮书》</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">中国基因治疗技术突破与临床转化提速，体内编辑与AAV形成互补<span class="stars">⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span><span class="risk-yellow">🟡 值得观察</span></div>
+      <p class="item-summary">国内研究报告指出，随着体内基因编辑技术成熟，慢病毒载体有望在特定器官局部递送中与AAV形成互补，共同推动基因治疗向更广适应症拓展。中国在载体工艺与临床资源上的积累，正成为全球基因治疗版图的重要一极。</p>
+      <div class="bilingual">
+        <p class="en-title">China's Gene Therapy Pipeline Advances as Lentiviral and AAV Vectors Converge</p>
+        <p class="en-summary">Chinese research reports indicate that maturing in vivo editing technologies are positioning lentiviral vectors as complements to AAV for organ-specific local delivery. Combined with domestic manufacturing and clinical resources, China is consolidating its role as a major node in the global gene therapy landscape.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>vector</b> 载体</span>
+            <span class="vocab-item"><b>local delivery</b> 局部递送</span>
+            <span class="vocab-item"><b>indication expansion</b> 适应症拓展</span>
+            <span class="vocab-item"><b>clinical translation</b> 临床转化</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>载体就是"送快递的车"。AAV像小包裹车，安全但装载量小；慢病毒像大卡车，装得多但需谨慎控制。两者互补，意味着不同疾病可以用不同"车型"精准投递。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期肝脏、眼科、神经系统局部递送率先突破；中期中国本土CDMO与载体工艺标准化将决定成本竞争力。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>载体工具箱成熟后，基因治疗将从罕见病扩展到常见慢病，形成"一次注射、终身管理"的新医疗范式。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://max.book118.com/html/2026/0505/6050023231012131.shtm" target="_blank">2026中国基因治疗技术突破与临床转化研究报告</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：基因治疗正经历"科学突破→临床验证→支付验证"的三级跳。2026年的关键词不再是"能不能编辑"，而是"谁来买单、能否量产"。中国在载体工艺与临床资源上的补位，正在改变全球产业分工格局，但支付体系与监管框架的滞后仍是最大不确定性。</div>
+  </div>
+
+  <!-- 经济金融 -->
+  <div class="section">
+    <h2 class="section-title">💰 经济 / 金融</h2>
+
+    <div class="item">
+      <div class="item-header">央行<span class="num-key">6170亿元</span>隔夜逆回购，利率维持<span class="num-key">1.25%</span>，中期流动性转为净回笼<span class="stars">⭐⭐⭐⭐</span><span class="impact impact-high">冲击：High</span><span class="risk-yellow">🟡 值得观察</span></div>
+      <p class="item-summary">11月25日央行开展<span class="num-key">6170亿元</span>隔夜逆回购操作，操作利率<span class="num-key">1.25%</span>。值得注意的信号是：11月中期流动性操作转为净回笼，短期呵护与中期收敛并行，显示货币政策在"稳增长"与"防空转"之间精细腾挪。</p>
+      <div class="bilingual">
+        <p class="en-title">PBOC Injects RMB 617bn via Overnight Repo at 1.25% as Medium-Term Liquidity Turns Net Draining</p>
+        <p class="en-summary">The People's Bank of China conducted RMB 617 billion in overnight reverse repos at a 1.25% rate on November 25. While short-term liquidity remains supported, medium-term operations shifted to net draining in November, signaling a delicate balance between growth support and curbing idle capital.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>reverse repo</b> 逆回购</span>
+            <span class="vocab-item"><b>net draining</b> 净回笼</span>
+            <span class="vocab-item"><b>liquidity</b> 流动性</span>
+            <span class="vocab-item"><b>idle capital</b> 资金空转</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>逆回购就是央行把钱"借"给银行，到期收回。隔夜操作是"日结短钱"，用于平抑月末资金波动；中期操作净回笼则意味着央行在悄悄"收水"。一放一收，是精准调控的手艺活。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看跨月、跨年资金面仍将获呵护；中期若净回笼延续，债市杠杆与短端利率将承压，需关注12月MLF与降准窗口。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当流动性管理从"总量宽松"转向"结构精准"，市场对央行信号的解读能力将成为机构核心竞争力，"读懂央行"本身就是一门生意。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.cls.cn/subject/1350" target="_blank">财联社 · 中国央行动态</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">人民币汇率中间价与外汇牌价体系持续更新，跨境资金监测趋严<span class="stars">⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span></div>
+      <p class="item-summary">国家外汇管理局持续发布人民币汇率中间价，覆盖澳门元、林吉特、卢布、兰特、韩元、迪拉姆、里亚尔等<span class="num-key">十余种</span>货币。中间价机制的稳定运行，为跨境贸易结算与企业汇率风险管理提供了锚定基准，也反映监管对跨境资金流动的持续监测。</p>
+      <div class="bilingual">
+        <p class="en-title">SAFE Publishes Daily RMB Central Parity Against a Dozen-Plus Currencies</p>
+        <p class="en-summary">China's State Administration of Foreign Exchange continues to publish daily RMB central parity rates covering more than a dozen currencies, including the Macanese pataca, ringgit, ruble and rand. The mechanism anchors cross-border trade settlement and corporate FX risk management while supporting ongoing monitoring of capital flows.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>central parity</b> 中间价</span>
+            <span class="vocab-item"><b>cross-border settlement</b> 跨境结算</span>
+            <span class="vocab-item"><b>FX risk management</b> 汇率风险管理</span>
+            <span class="vocab-item"><b>capital flow</b> 资金流动</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中间价就是每天早上的"官方参考汇率"，像菜市场的"指导价"，实际成交围绕它浮动。它是企业报价、银行结售汇的基准锚。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看中间价将继续发挥"稳预期"作用；中期人民币国际化推进将扩大双边本币结算规模，降低对美元中介的依赖。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若更多贸易伙伴采用本币结算，全球货币体系的"美元中介层"将被逐步稀释，汇率风险管理工具的需求将爆发式增长。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.safe.gov.cn/safe/rmbhlzjj/" target="_blank">国家外汇管理局 · 人民币汇率中间价</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：货币政策进入"精细化操作"阶段——短期呵护、中期收敛并行，考验市场对信号的解读能力。汇率端中间价机制稳定运行，为跨境贸易提供锚点。整体看，金融端呈现"审慎观望"基调，宽松边际收敛但不会急转弯。</div>
+  </div>
+
+  <!-- 人工智能 -->
+  <div class="section">
+    <h2 class="section-title">🤖 人工智能</h2>
+
+    <div class="item">
+      <div class="item-header">DeepSeek-V4-Pro 定价公布：缓存命中输入<span class="num-key">0.025元</span>/百万tokens，未命中<span class="num-key">3元</span>、输出<span class="num-key">6元</span><span class="stars">⭐⭐⭐⭐</span><span class="impact impact-high">冲击：High</span><span class="risk-yellow">🟡 值得观察</span></div>
+      <p class="item-summary">DeepSeek开放平台公布V4-Pro定价：百万tokens缓存命中输入仅<span class="num-key">0.025元</span>，未命中输入<span class="num-key">3元</span>，输出<span class="num-key">6元</span>，并支持自动缓存。缓存命中价格较未命中低<span class="num-key">约120倍</span>，将显著改变高频调用场景的成本结构，对Agent与长上下文应用构成直接利好。</p>
+      <div class="bilingual">
+        <p class="en-title">DeepSeek V4-Pro Pricing: Cached Input at RMB 0.025 per Million Tokens</p>
+        <p class="en-summary">DeepSeek published V4-Pro API pricing with cached input at just RMB 0.025 per million tokens versus RMB 3 for uncached input and RMB 6 for output. The roughly 120x discount for cache hits reshapes cost structures for high-frequency agent and long-context workloads.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>cache hit</b> 缓存命中</span>
+            <span class="vocab-item"><b>token pricing</b> tokens定价</span>
+            <span class="vocab-item"><b>long-context</b> 长上下文</span>
+            <span class="vocab-item"><b>cost structure</b> 成本结构</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>缓存就像"预先背好的答案"。如果一段提示词反复使用，模型直接调用缓存结果，不必重算，成本骤降。0.025元对3元，相当于"复用"比"重算"便宜两个数量级。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看Agent、RAG、客服系统成本大幅下降；中期看"缓存友好型"提示工程成为新技能，长文档分析、代码库问答等场景将爆发。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当复用成本趋近于零，"每个企业一个常驻AI大脑"成为可能——AI不再是按次付费的工具，而是持续在线的组织记忆。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.deepseek.com/platform/" target="_blank">DeepSeek · API 开放平台</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">实时大模型排行榜：Gemini 4 Carbon 登顶文本对话维度，在榜<span class="num-key">100个</span>模型<span class="stars">⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span></div>
+      <p class="item-summary">实时大模型排行榜显示，当前榜首为 Gemini 4 Carbon（High）（Google），文本对话维度在榜<span class="num-key">100个</span>模型，榜单每<span class="num-key">4小时</span>更新一次。评测已从单一对话扩展至数学、编程、ARC-AGI-2、HLE、SWE-bench Verified 等多维基准，竞争进入"全能力"比拼阶段。</p>
+      <div class="bilingual">
+        <p class="en-title">Gemini 4 Carbon Tops Real-Time LLM Leaderboard Across 100 Models</p>
+        <p class="en-summary">Google's Gemini 4 Carbon (High) leads the real-time LLM leaderboard, which tracks 100 models and refreshes every four hours. Evaluation has expanded from conversational quality to multi-dimensional benchmarks including math, coding, ARC-AGI-2, HLE and SWE-bench Verified, signaling an all-capability contest.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>leaderboard</b> 排行榜</span>
+            <span class="vocab-item"><b>benchmark</b> 基准测试</span>
+            <span class="vocab-item"><b>multi-dimensional</b> 多维度的</span>
+            <span class="vocab-item"><b>capability frontier</b> 能力前沿</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>排行榜就像"AI奥运会"，不同项目（数学、编程、推理）分开计分。每4小时更新，意味着模型迭代速度已快到"月度榜单"失去意义。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看榜单将向Agent任务、多模态、真实工作流评测演进；中期看"跑分"与"实际体验"的鸿沟仍是选型核心痛点。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当评测频率超过人类决策频率，企业选型将从"看榜单"转向"看场景回放"，评测本身成为一门独立的产业基础设施。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.ai-club.cn/rank/arena" target="_blank">AI Club · 实时大模型排行榜</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI竞争从"参数军备"转向"成本工程"与"全能力覆盖"双轨。DeepSeek以缓存定价重构成本曲线，Google以综合能力守住榜首，中国厂商在性价比维度形成差异化优势。下一阶段胜负手在于Agent真实工作流落地，而非榜单分数。</div>
+  </div>
+
+  <!-- 硬科技 -->
+  <div class="section">
+    <h2 class="section-title">💻 科技 / 硬科技</h2>
+
+    <div class="item">
+      <div class="item-header">华为Mate X8及全场景新品发布，折叠屏+折叠PC+连续血糖监测齐发<span class="stars">⭐⭐⭐⭐</span><span class="impact impact-high">冲击：High</span></div>
+      <p class="item-summary">11月24日华为在上海举办全场景新品发布会，核心产品包括Mate X8折叠屏手机、Mate 90 Air直板旗舰、MateBook折叠电脑及智能手表，并首次将连续葡萄糖监测（CGM）纳入健康穿戴体系。产品线从"终端"向"健康管理"延伸，折叠形态成为高端差异化主战场。</p>
+      <div class="bilingual">
+        <p class="en-title">Huawei Unveils Mate X8, Foldable PC and CGM-Enabled Wearables in Shanghai</p>
+        <p class="en-summary">Huawei launched the Mate X8 foldable, Mate 90 Air flagship, a foldable MateBook and smartwatches at its November 24 Shanghai event, while introducing continuous glucose monitoring into its health wearable lineup. The portfolio extends from devices toward health management, with foldable form factors as the premium differentiation battleground.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>foldable form factor</b> 折叠形态</span>
+            <span class="vocab-item"><b>continuous glucose monitoring</b> 连续血糖监测</span>
+            <span class="vocab-item"><b>flagship</b> 旗舰</span>
+            <span class="vocab-item"><b>ecosystem</b> 生态</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>折叠屏是把"平板塞进口袋"，折叠PC是把"笔记本折成平板"。CGM则是贴在手臂上的小圆片，实时监测血糖，把手机变成健康仪表盘。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期折叠屏铰链与UTG玻璃良率决定价格下探速度；中期CGM与手表联动将切入慢病管理，形成"硬件+订阅"模式。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当终端成为健康数据入口，手机厂商将与医疗机构、保险形成新三角，"卖设备"变成"卖健康服务"。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://news.qq.com/rain/a/20261124A0DIXG00" target="_blank">腾讯新闻 · 华为多款新品集中亮相</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">半导体产业定义与产业链重构持续，先进制程与封装成焦点<span class="stars">⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span></div>
+      <p class="item-summary">半导体作为导电性介于导体与绝缘体之间的材料，是集成电路的基础。当前产业竞争焦点已从单纯制程微缩转向"先进制程+先进封装"双轮驱动，Chiplet与2.5D/3D封装成为绕开制程限制的关键路径，产业链分工面临重组。</p>
+      <div class="bilingual">
+        <p class="en-title">Semiconductor Industry Shifts Focus to Advanced Packaging and Chiplet Architectures</p>
+        <p class="en-summary">As the semiconductor industry moves beyond pure node scaling, advanced packaging and chiplet architectures are emerging as parallel drivers. 2.5D and 3D packaging offer a path around lithography constraints, reshaping supply chain division of labor across design, foundry and packaging.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>advanced packaging</b> 先进封装</span>
+            <span class="vocab-item"><b>chiplet</b> 芯粒</span>
+            <span class="vocab-item"><b>node scaling</b> 制程微缩</span>
+            <span class="vocab-item"><b>supply chain</b> 供应链</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>Chiplet就像"乐高积木"——不再追求一整块超大芯片，而是把小芯片拼起来。先进封装则是"拼装工艺"，决定拼得好不好、快不快。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看先进封装产能成为瓶颈；中期看中国在封装环节的既有优势有望放大，形成"成熟制程+先进封装"的组合拳。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当"拼装"取代"微缩"成为主流，半导体竞争将从单点工艺转向系统集成能力，产业话语权重新分配。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://en.wikipedia.org/wiki/Semiconductor_industry" target="_blank">Wikipedia · Semiconductor industry</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">量子计算从实验室走向存储与网络应用，商业化路径渐清晰<span class="stars">⭐⭐⭐</span><span class="impact impact-low">冲击：Low</span><span class="risk-yellow">🟡 值得观察</span></div>
+      <p class="item-summary">量子技术正从基础物理概念向数据存储、网络传输等应用层延伸，多家厂商推出面向性能与保护的多层存储平台。尽管通用量子计算商用仍远，但量子安全加密、量子传感等"近邻应用"已开始形成早期市场。</p>
+      <div class="bilingual">
+        <p class="en-title">Quantum Tech Extends from Lab to Storage and Networking Applications</p>
+        <p class="en-summary">Quantum technologies are extending from fundamental physics toward storage and networking applications, with vendors launching multi-tier platforms targeting performance and data protection. While general-purpose quantum computing remains distant, adjacent markets such as quantum-safe encryption and sensing are forming.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>quantum-safe encryption</b> 量子安全加密</span>
+            <span class="vocab-item"><b>quantum sensing</b> 量子传感</span>
+            <span class="vocab-item"><b>adjacent market</b> 邻近市场</span>
+            <span class="vocab-item"><b>multi-tier storage</b> 多层存储</span>
+          </div>
+        </div>
+      </details>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>量子不是"更快的电脑"，而是利用量子叠加与纠缠处理信息。当前落地最现实的不是通用量子计算机，而是"抗量子加密"和"量子传感"这类近邻应用。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看金融、政务系统的抗量子加密迁移启动；中期量子传感在医疗成像、导航领域形成产品。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当现有加密体系面临量子威胁，"抗量子迁移"将成为一场全球性的基础设施升级运动。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.quantum.com/" target="_blank">Quantum · Data Storage Platform</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技竞争从"单点突破"转向"系统集成"——华为以折叠形态+健康生态构建终端壁垒，半导体以先进封装绕开制程限制，量子以近邻应用先行商业化。三条路径共同指向一个判断：集成能力比单点参数更能定义下一代竞争力。</div>
+  </div>
+
+  <!-- 材料科学 -->
+  <div class="section">
+    <h2 class="section-title">🔬 材料科学</h2>
+
+    <div class="item">
+      <div class="item-header">西安交大梁超团队《Science》发文：分子压印退火实现高稳定性钙钛矿电池<span class="stars">⭐⭐⭐⭐⭐</span><span class="impact impact-high">冲击：High</span></div>
+      <p class="item-summary">西安交大梁超教授团队在《Science》发表《分子压印退火实现高稳定性钙钛矿太阳能电池》，通过分子压印退火工艺显著提升钙钛矿电池稳定性。该成果直击钙钛矿商业化最大痛点——长期稳定性不足，为量产化扫清关键障碍。</p>
+      <div class="bilingual">
+        <p class="en-title">Xi'an Jiaotong University Team Publishes Perovskite Stability Breakthrough in Science</p>
+        <p class="en-summary">Professor Liang Chao's team at Xi'an Jiaotong University published in Science a molecular press annealing strategy that substantially improves perovskite solar cell stability. The work directly addresses the key commercialization bottleneck—long-term degradation—clearing a critical hurdle for mass production.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>perovskite</b> 钙钛矿</span>
+            <span class="vocab-item"><b>molecular press annealing</b> 分子压印退火</span>
+            <span class="vocab-item"><b>stability</b> 稳定性</span>
+            <span class="vocab-item"><b>mass production</b> 量产</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>钙钛矿电池像"印刷出来的太阳能板"，成本低、效率高，但怕湿怕热、容易衰减。分子压印退火相当于在结晶时"压一层保护膜"，让晶体更致密、更耐老化。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看中试线稳定性数据验证；中期叠层电池（钙钛矿+晶硅）效率突破30%后进入电站级应用。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若钙钛矿稳定性彻底解决，光伏度电成本将再降一个台阶，建筑光伏一体化、柔性可穿戴电源等场景全面打开。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://news.qq.com/rain/a/20260109A026Q600" target="_blank">腾讯新闻 · 西安交大梁超团队《科学》发文</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">固态电池产业化提速，2026年成半固态量产元年<span class="stars">⭐⭐⭐⭐</span><span class="impact impact-high">冲击：High</span><span class="risk-yellow">🟡 值得观察</span></div>
+      <p class="item-summary">2026年3月起固态电池领域密集突破，奇瑞等车企举行"电池之夜"发布量产计划。业界普遍将2026年定位为半固态电池量产元年，全固态仍处工程验证阶段。高能量密度、高安全性、长循环寿命三重优势，使其成为破解液态锂电瓶颈的关键路线。</p>
+      <div class="bilingual">
+        <p class="en-title">2026 Marked as Mass-Production Year for Semi-Solid-State Batteries</p>
+        <p class="en-summary">A wave of breakthroughs since March 2026, including automaker battery events, has positioned this year as the mass-production milestone for semi-solid-state batteries. All-solid-state cells remain in engineering validation, while semi-solid designs offer higher energy density, safety and cycle life as a bridge beyond liquid lithium-ion limits.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>solid-state battery</b> 固态电池</span>
+            <span class="vocab-item"><b>energy density</b> 能量密度</span>
+            <span class="vocab-item"><b>cycle life</b> 循环寿命</span>
+            <span class="vocab-item"><b>engineering validation</b> 工程验证</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>液态锂电池像"装水的袋子"，有泄漏与起火风险；固态电池把电解液换成固体，像"果冻"，更安全、能量更密。半固态是过渡方案，先落地。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期半固态在高端车型小批量上车；中期全固态成本与界面阻抗问题解决后，2028-2030年进入规模化。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>固态电池成熟后，电动车续航焦虑与安全焦虑同时缓解，储能电站寿命大幅延长，能源结构转型再获加速。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://news.qq.com/rain/a/20260319A04VNP00" target="_blank">腾讯新闻 · 固态电池产业化提速</a></p>
+    </div>
+
+    <div class="compare-box">
+      <div class="compare-side compare-bull">
+        <div class="compare-label">📈 乐观方</div>
+        半固态2026年量产元年已至，车企密集上车，产业链订单可见度提升，固态路线确定性增强。
+      </div>
+      <div class="compare-side compare-bear">
+        <div class="compare-label">📉 悲观方</div>
+        全固态仍处工程验证，界面阻抗与成本难题未解，"神话破灭"论调认为量产时间表被高估。
+      </div>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学呈现"论文突破+产业落地"双轮共振。钙钛矿稳定性突破与固态电池半固态量产同步推进，中国团队在顶刊与产业链两端均有存在感。但需警惕"量产时间表"与"工程现实"之间的落差，半固态先行、全固态后至的节奏判断更为稳妥。</div>
+  </div>
+
+  <!-- 中国政策 -->
+  <div class="section">
+    <h2 class="section-title">🇨🇳 中国政策与监管</h2>
+
+    <div class="item">
+      <div class="item-header">央行流动性管理精细化，11月中期操作转净回笼释放审慎信号<span class="stars">⭐⭐⭐⭐</span><span class="impact impact-high">冲击：High</span><span class="risk-yellow">🟡 值得观察</span></div>
+      <p class="item-summary">11月央行中期流动性操作转为净回笼，与隔夜逆回购的短期呵护形成"一收一放"组合。政策意图在于平衡稳增长与防空转，避免资金淤积金融体系。市场需关注后续MLF续作与降准窗口，判断政策边际方向。</p>
+      <div class="bilingual">
+        <p class="en-title">PBOC's November Medium-Term Operations Turn to Net Draining, Signaling Prudent Stance</p>
+        <p class="en-summary">The PBOC's medium-term liquidity operations shifted to net draining in November, contrasting with short-term overnight support. The combined stance aims to balance growth support against idle capital, with markets watching MLF rollovers and reserve requirement cuts for directional cues.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>prudent stance</b> 审慎立场</span>
+            <span class="vocab-item"><b>MLF rollover</b> 中期借贷便利续作</span>
+            <span class="vocab-item"><b>reserve requirement</b> 存款准备金率</span>
+            <span class="vocab-item"><b>policy margin</b> 政策边际</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>"净回笼"就是央行收回的钱比投放的多。中期操作收水，意味着政策不想让资金在金融体系里"空转套利"，而是要引导流向实体。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期跨年资金面仍有呵护；中期若经济数据企稳，降准降息节奏将更趋谨慎，结构性工具重要性上升。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>货币政策从"总量宽松"转向"精准滴灌"，考验的是金融机构的资产配置能力与对政策信号的解读速度。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.cls.cn/subject/1350" target="_blank">财联社 · 中国央行动态</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">国务院组织架构稳定运行，国家政务服务平台持续优化<span class="stars">⭐⭐⭐</span><span class="impact impact-low">冲击：Low</span></div>
+      <p class="item-summary">第十四届国务院（李强政府，2023年3月至2028年3月任期）组织架构稳定运行，国家政务服务平台持续整合国务院部门服务窗口。政务服务数字化与"一网通办"推进，反映治理效能提升的政策取向。</p>
+      <div class="bilingual">
+        <p class="en-title">State Council Structure Stable as National Government Service Platform Expands</p>
+        <p class="en-summary">The 14th State Council continues to operate with a stable organizational structure through its 2023-2028 term, while the national government service platform consolidates departmental service windows. The digitalization push reflects a policy emphasis on governance efficiency and one-stop administrative services.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>State Council</b> 国务院</span>
+            <span class="vocab-item"><b>governance efficiency</b> 治理效能</span>
+            <span class="vocab-item"><b>one-stop service</b> 一站式服务</span>
+            <span class="vocab-item"><b>digitalization</b> 数字化</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>政务服务平台就是"政府的网上办事大厅"，把分散在各部委的窗口整合到一个入口，减少跑腿。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看跨省通办、数据共享范围扩大；中期看AI客服与智能审批嵌入政务服务。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当政务服务全面数字化，"办事"将像"网购"一样便捷，治理透明度与响应速度同步提升。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.gov.cn/" target="_blank">中国政府网</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策呈现"货币精细化+治理数字化"双线推进。流动性管理从总量转向结构，考验市场解读能力；政务服务数字化则持续降低制度性交易成本。政策基调审慎但不失进取，稳增长与防风险的平衡术是核心看点。</div>
+  </div>
+
+  <!-- 地缘政治 -->
+  <div class="section">
+    <h2 class="section-title">🌍 地缘政治与国际关系</h2>
+
+    <div class="item">
+      <div class="item-header">美方投资环境报告将中国列为"最封闭主要经济体之一"，投资审查趋严<span class="stars">⭐⭐⭐⭐</span><span class="impact impact-high">冲击：High</span><span class="risk-red">🔴 重大风险</span></div>
+      <p class="item-summary">美国国务院2026年投资环境报告称，中国仍是全球最封闭的主要经济体之一，限制程度排名第<span class="num-key">17</span>位。报告聚焦市场准入、数据跨境与产业政策，预示美方对华投资审查与合规要求将进一步收紧，跨国企业供应链决策面临更大不确定性。</p>
+      <div class="bilingual">
+        <p class="en-title">US Report Ranks China Among Most Restrictive Major Economies for Investment</p>
+        <p class="en-summary">The US State Department's 2026 investment climate report describes China as one of the world's most closed major economies, ranking 17th in restrictiveness. Highlighting market access, cross-border data and industrial policy, the report signals tighter investment screening and compliance requirements for multinationals.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>investment climate</b> 投资环境</span>
+            <span class="vocab-item"><b>market access</b> 市场准入</span>
+            <span class="vocab-item"><b>cross-border data</b> 数据跨境</span>
+            <span class="vocab-item"><b>compliance</b> 合规</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>投资环境报告就像一份"开店难度评分表"，评估外资进入某国市场的门槛高低。排名越靠后，意味着限制越多、审批越复杂。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看跨国企业将加速"中国+1"供应链布局；中期看合规成本上升倒逼企业重构数据与投资架构。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若投资审查持续加码，全球资本流动将呈现"阵营化"特征，跨国企业的合规部门将比销售部门更重要。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.state.gov/reports/2026-investment-climate-statements/china/" target="_blank">US Department of State · 2026 Investment Climate Statements: China</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">麦肯锡全球贸易几何报告：新供应商替代中国进口，关税冲击集中显现<span class="stars">⭐⭐⭐⭐</span><span class="impact impact-high">冲击：High</span><span class="risk-yellow">🟡 值得观察</span></div>
+      <p class="item-summary">麦肯锡全球研究院2026年更新报告指出，美国关税与贸易限制对中国冲击最大，新供应商正逐步替代来自中国的进口。全球贸易"几何结构"正在重绘，供应链区域化、友岸外包趋势加速，贸易流向的重组对各国产业政策构成持续压力。</p>
+      <div class="bilingual">
+        <p class="en-title">McKinsey: New Suppliers Replace Chinese Imports as Tariffs Hit Hardest</p>
+        <p class="en-summary">McKinsey Global Institute's 2026 update finds that US tariffs and trade restrictions have hit China hardest, with new suppliers progressively replacing Chinese imports. The "geometry" of global trade is being redrawn as regionalization and friend-shoring accelerate, pressuring industrial policy worldwide.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>friend-shoring</b> 友岸外包</span>
+            <span class="vocab-item"><b>regionalization</b> 区域化</span>
+            <span class="vocab-item"><b>trade restriction</b> 贸易限制</span>
+            <span class="vocab-item"><b>supply chain reconfiguration</b> 供应链重构</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>"贸易几何"就是全球买卖关系的形状。过去是"中国制造、全球消费"的单中心结构，现在正在变成多个区域中心拼成的多边形。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看越南、墨西哥、印度承接转移订单；中期看中国向高附加值环节升级，低端产能外迁不可逆。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>当供应链彻底区域化，全球通胀中枢可能上移，"效率优先"让位于"安全优先"，消费者将为韧性买单。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.mckinsey.com/~/media/mckinsey/mckinsey+global+institute/our+research/geopolitics+and+the+geometry+of+global+trade+2026+update/geopolitics-and-the-geometry-of-global-trade-2026-update.pdf" target="_blank">McKinsey Global Institute · Geopolitics and the Geometry of Global Trade 2026 Update</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">CSIS专家调查：2026年中美关系进入"竞争管控"新阶段<span class="stars">⭐⭐⭐⭐</span><span class="impact impact-med">冲击：Med</span><span class="risk-yellow">🟡 值得观察</span></div>
+      <p class="item-summary">CSIS对数十位前美国政府官员与专家的调查显示，2026年中美关系进入"竞争管控"阶段——竞争仍是主线，但双方均有意建立护栏避免失控。专家普遍认为，科技与供应链将是摩擦最集中领域，而气候、公共卫生等领域仍存合作空间。</p>
+      <div class="bilingual">
+        <p class="en-title">CSIS Survey: US-China Relations Enter "Managed Competition" Phase in 2026</p>
+        <p class="en-summary">A CSIS survey of dozens of former US officials and experts finds that US-China relations in 2026 have entered a phase of managed competition, with guardrails sought to prevent escalation. Technology and supply chains remain the most contentious domains, while climate and public health retain room for cooperation.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>managed competition</b> 竞争管控</span>
+            <span class="vocab-item"><b>guardrail</b> 护栏</span>
+            <span class="vocab-item"><b>escalation</b> 升级</span>
+            <span class="vocab-item"><b>contentious domain</b> 争议领域</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>"竞争管控"就像两个对手在擂台上打拳，但约定好不许打要害、不许下擂台——竞争照旧，但要有规则防止失控。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看高层沟通渠道维持、关税与出口管制边际调整；中期看科技脱钩与气候合作并行的"双轨结构"固化。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若"竞争管控"成为长期稳态，全球治理将呈现"竞争性共存"格局，企业需同时适应两套规则体系。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://chinapower.csis.org/survey-experts-us-china-relations-2026/" target="_blank">CSIS · Surveying the Experts: US-China Relations Entering 2026</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘格局呈现"竞争管控+供应链重构"双主线。美方投资审查趋严与麦肯锡的贸易几何重绘相互印证，供应链区域化不可逆；CSIS调查则显示双方均有意维持护栏。整体判断：摩擦常态化，但失控风险可控，企业需为"两套规则"做好准备。</div>
+  </div>
+
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-11-30</span>
+      <span>月末跨月资金面窗口，央行隔夜逆回购操作力度受关注</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-12</span>
+      <span>MLF续作与降准窗口观察期，市场关注中期流动性是否延续净回笼</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-12-31</span>
+      <span>跨年资金面关键节点，短期流动性呵护预期升温</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2028-03</span>
+      <span>第十四届国务院任期届满，政策连续性观察窗口</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    📬 本简报由全球动态分析系统自动生成 · 数据截至 2026-11-26 · 仅供信息参考，不构成投资建议
+  </div>
+
+</div>
+</body>
+</html>
