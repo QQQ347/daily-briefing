@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球动态简报 · 2026-11-28</title>
+<style>
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f4f5f7; color: #1f2328; margin: 0; padding: 16px; line-height: 1.65; }
+  .container { max-width: 820px; margin: 0 auto; }
+  .header { background: #1a2b4c; color: #ffffff; padding: 20px 22px; border-radius: 10px; margin-bottom: 16px; }
+  .header h1 { margin: 0 0 6px 0; font-size: 22px; font-weight: 700; }
+  .header p { margin: 0; font-size: 13px; color: #c3cede; }
+  .overview { background: #ffffff; border-left: 5px solid #1a2b4c; padding: 16px 18px; border-radius: 8px; margin-bottom: 20px; }
+  .overview h3 { margin: 0 0 10px 0; font-size: 17px; font-weight: 700; }
+  .overview p { margin: 0 0 12px 0; font-size: 14px; }
+  .overview-tags { }
+  .overview-tag { display: inline-block; background: #e8edf5; color: #1a2b4c; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 12px; margin: 0 6px 6px 0; }
+  .section { background: #ffffff; border-radius: 10px; padding: 18px; margin-bottom: 18px; }
+  .section-title { font-size: 18px; font-weight: 700; margin: 0 0 14px 0; padding-bottom: 8px; border-bottom: 2px solid #e8edf5; }
+  .item { border: 1px solid #e3e6ea; border-radius: 8px; padding: 14px; margin-bottom: 14px; background: #fcfcfd; }
+  .item-header { margin-bottom: 8px; }
+  .item-title { font-size: 15px; font-weight: 700; display: inline; }
+  .stars { font-size: 12px; margin-left: 6px; }
+  .impact { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 6px; vertical-align: middle; }
+  .impact-high { background: #fde2e1; color: #b3261e; }
+  .impact-med { background: #fff1d6; color: #8a5a00; }
+  .impact-low { background: #e3f2e6; color: #1e6b32; }
+  .risk-red { display: inline-block; font-size: 11px; font-weight: 600; background: #fde2e1; color: #b3261e; padding: 2px 8px; border-radius: 4px; margin-left: 6px; }
+  .risk-yellow { display: inline-block; font-size: 11px; font-weight: 600; background: #fff6d9; color: #7a5a00; padding: 2px 8px; border-radius: 4px; margin-left: 6px; }
+  .item-summary { font-size: 14px; margin: 8px 0; }
+  .num-up { color: #1e8e3e; font-weight: 700; }
+  .num-down { color: #d93025; font-weight: 700; }
+  .num-key { color: #1a5fb4; font-weight: 700; }
+  .bilingual { background: #f2f6fb; border-radius: 6px; padding: 10px 12px; margin: 10px 0; }
+  .en-title { font-size: 13px; font-weight: 700; margin: 0 0 4px 0; color: #1a2b4c; }
+  .en-summary { font-size: 12px; margin: 0 0 8px 0; color: #3a4552; }
+  .vocab-card { background: #ffffff; border-radius: 5px; padding: 8px 10px; }
+  .vocab-title { font-size: 12px; font-weight: 700; margin-bottom: 6px; }
+  .vocab-item { display: inline-block; font-size: 11px; background: #e8edf5; border-radius: 4px; padding: 3px 8px; margin: 0 5px 5px 0; }
+  .vocab-item b { color: #1a2b4c; }
+  .deepdive { background: #fffdf5; border: 1px solid #ece3c8; border-radius: 6px; padding: 8px 12px; margin: 10px 0; }
+  .deepdive summary { font-size: 13px; font-weight: 700; cursor: pointer; color: #7a5a00; }
+  .deepdive-content { margin-top: 8px; }
+  .dl { font-size: 13px; margin: 0 0 8px 0; }
+  .dl-label { font-weight: 700; }
+  .item-source { font-size: 11px; color: #6b7480; margin: 8px 0 0 0; }
+  .item-source a { color: #1a5fb4; text-decoration: none; }
+  .compare-box { margin: 12px 0; }
+  .compare-side { display: inline-block; width: 47%; vertical-align: top; font-size: 12px; padding: 10px; border-radius: 6px; box-sizing: border-box; margin-bottom: 6px; }
+  .compare-bull { background: #e6f4ea; border-left: 4px solid #1e8e3e; margin-right: 2%; }
+  .compare-bear { background: #fdeaea; border-left: 4px solid #d93025; }
+  .compare-label { font-weight: 700; margin-bottom: 4px; }
+  .trend-comment { background: #eef2f7; border-radius: 6px; padding: 10px 12px; font-size: 13px; margin-top: 6px; }
+  .timeline { background: #ffffff; border-radius: 10px; padding: 16px 18px; margin-bottom: 18px; }
+  .timeline h4 { margin: 0 0 12px 0; font-size: 16px; font-weight: 700; }
+  .timeline-item { font-size: 13px; padding: 8px 0; border-bottom: 1px dashed #e3e6ea; }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-date { display: inline-block; font-weight: 700; color: #1a2b4c; background: #e8edf5; border-radius: 4px; padding: 2px 8px; margin-right: 8px; font-size: 12px; }
+  .footer { text-align: center; font-size: 11px; color: #8a929c; padding: 12px 0 24px 0; }
+  .notice { background: #fff6d9; border: 1px solid #ecdba0; border-radius: 6px; padding: 10px 12px; font-size: 12px; color: #7a5a00; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>📰 全球动态简报</h1>
+    <p>2026年11月28日 · 生命科学 / 经济金融 / 人工智能 / 硬科技 / 材料科学 / 中国政策 / 地缘政治</p>
+  </div>
+
+  <div class="overview">
+    <h3>🧠 今日综述</h3>
+    <p>今日信息流呈现明显的“信号稀疏、噪声密集”特征：权威信源中可确认的硬新闻有限，但几条线索仍值得锁定。外汇端人民币中间价报 <span class="num-key">6.7096</span>，小幅下调 <span class="num-down">8点</span>，显示外部压力温和；能源端布伦特原油升至约 <span class="num-key">96美元/桶</span>，通胀黏性风险重新抬头。AI 领域 OpenAI 与 DeepSeek 双线推进，安全与开源成为新竞争维度。整体风向：宏观偏谨慎，科技端仍在扩张，地缘与监管不确定性持续积累。</p>
+    <div class="overview-tags">
+      <span class="overview-tag">🛢️ 油价重返96美元</span>
+      <span class="overview-tag">💱 人民币温和承压</span>
+      <span class="overview-tag">🤖 AI安全成新战场</span>
+      <span class="overview-tag">🔓 开源模型加速</span>
+      <span class="overview-tag">🟡 信源质量偏弱</span>
+    </div>
+  </div>
+
+  <div class="notice">⚠️ 信源说明：今日抓取的原始条目中大量为百科词条、门户首页与无关论坛内容，本简报仅对可辨识的有效信号进行提炼，并对信息确定性作保守标注。</div>
+
+  <!-- 板块1 生命科学 -->
+  <div class="section">
+    <h2 class="section-title">🧬 生命科学 / 医学</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">基因定义与基因组学基础框架持续更新，遗传信息单元认知趋于统一</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">权威百科与基因组学机构近期同步更新“基因”条目，明确将基因定义为“被转录的 DNA 序列”，涵盖非编码蛋白基因，反映学界对遗传信息单元的认知已从“蛋白编码中心”转向“转录组中心”。这一表述统一对下游基因治疗、非编码 RNA 药物研发具有基础性指导意义。</p>
+      <div class="bilingual">
+        <p class="en-title">Gene Definition Shifts Toward Transcript-Centric Framework</p>
+        <p class="en-summary">Reference sources have converged on defining a gene as any transcribed DNA sequence, explicitly including non-protein-coding regions. This transcript-centric framing underpins the growing pipeline of non-coding RNA therapeutics and precision gene editing.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>transcribed sequence</b> 转录序列</span>
+            <span class="vocab-item"><b>non-coding RNA</b> 非编码RNA</span>
+            <span class="vocab-item"><b>locus</b> 基因座</span>
+            <span class="vocab-item"><b>hereditary unit</b> 遗传单元</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去教科书画基因像“一张只写菜谱的卡片”，只算能翻译成蛋白质的片段；新定义则像“整本笔记都算”，只要被细胞抄录下来就算基因。突破点在于把占人类基因组 <span class="num-key">98%</span> 的非编码区域正式纳入视野。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）推动非编码 RNA 诊断标志物进入临床验证；中期（3-10年）为 siRNA、反义寡核苷酸药物提供更清晰的靶点地图，并改善基因编辑脱靶评估标准。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若调控性基因组被彻底解码，医学将从“修零件”转向“调开关”，许多无药可治的调控类疾病可能迎来全新疗法，但也会带来基因隐私与增强伦理的新争议。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.genome.gov/genetics-glossary/Gene" target="_blank">NIH Genome.gov</a> · <a href="https://www.britannica.com/science/gene" target="_blank">Britannica</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Nature 研究聚焦气候变化驱动的树木丰度动态，生态监测进入机制化阶段</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">Nature 最新研究指出，气候变化与自然扰动是树木丰度动态的关键驱动因素，升温正系统性改变树种分布格局。该结论强化了“森林碳汇并非稳定常量”的判断，对全球碳核算模型与林业资产估值构成中期修正压力。</p>
+      <div class="bilingual">
+        <p class="en-title">Climate Change Identified as Key Driver of Tree Abundance Dynamics</p>
+        <p class="en-summary">New research in Nature shows warming and natural disturbances are reshaping tree abundance and species distribution. The findings challenge assumptions of stable forest carbon sinks and imply upward revisions to carbon-accounting risk.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>abundance dynamics</b> 丰度动态</span>
+            <span class="vocab-item"><b>carbon sink</b> 碳汇</span>
+            <span class="vocab-item"><b>natural disturbance</b> 自然扰动</span>
+            <span class="vocab-item"><b>species distribution</b> 物种分布</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>把森林想象成一个“会搬家的仓库”，温度一升，树种就往高纬度、高海拔迁移，仓库位置变了，储存碳的能力也随之波动。研究的关键在于把“搬家”量化成可预测的动态模型。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期用于修正国家温室气体清单与碳交易项目基线；中期影响林业投资、保险定价与生态补偿机制设计，可能催生“碳汇稳定性”新型金融产品。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若森林动态可被精准预测，人类或能像管理电网一样“调度”生态系统，但这也意味着自然将被更深地纳入工程化治理，引发保护伦理讨论。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature Research Articles</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：生命科学今日信号偏“基础层”，基因定义统一与生态机制研究均属长周期铺垫型进展，短期难见临床或产业爆点，但为基因治疗靶点扩展与碳汇风险定价提供了底层依据。</div>
+  </div>
+
+  <!-- 板块2 经济金融 -->
+  <div class="section">
+    <h2 class="section-title">💰 经济 / 金融</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">人民币兑美元中间价报 6.7096，小幅下调 8 点</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">人民币兑美元中间价报 <span class="num-key">6.7096</span>，较前值下调 <span class="num-down">8点</span>，幅度温和。同期韩国央行加息 <span class="num-key">25个基点</span>以遏制通胀，欧洲央行据悉正评估对冲基金风险敞口。亚洲货币政策同步趋紧，人民币短期或维持区间震荡。</p>
+      <div class="bilingual">
+        <p class="en-title">PBOC Sets Yuan Midpoint at 6.7096, Down 8 Pips</p>
+        <p class="en-summary">The central parity rate for the yuan was fixed at 6.7096 against the dollar, a marginal 8-pip decline. With the Bank of Korea hiking 25 basis points and the ECB reviewing hedge-fund exposure, Asian monetary policy is tilting tighter.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>central parity rate</b> 中间价</span>
+            <span class="vocab-item"><b>basis point</b> 基点</span>
+            <span class="vocab-item"><b>hedge fund exposure</b> 对冲基金敞口</span>
+            <span class="vocab-item"><b>range-bound</b> 区间震荡</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>中间价好比每天开市前的“官方参考价”，8 点的下调相当于在 6.7 元附近微调不到万分之一，属于“呼吸级”波动，更多是信号意义而非趋势意义。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，若韩、欧同步收紧，美元相对走弱可能缓解人民币压力；中期需关注出口结汇意愿与跨境资本流动，企业套保需求预计上升。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若亚洲形成更协调的汇率与利率框架，区域金融稳定性将提升，但政策协同也意味着各国在通胀与增长之间的腾挪空间被压缩。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://finance.sina.com.cn/money/forex/hq/USDCNY.shtml" target="_blank">新浪财经</a> · <a href="https://www.safe.gov.cn/safe/rmbhlzjj/" target="_blank">国家外汇管理局</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">布伦特原油升至约 96 美元/桶，创阶段新高</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-red">🔴 重大风险</span>
+      </div>
+      <p class="item-summary">1月交割布伦特原油期货本周升至约 <span class="num-key">96美元/桶</span>，周四结算价为近期最高。油价重返高位将直接推升运输与化工成本，对全球通胀回落路径构成实质威胁，并压缩主要央行降息空间。</p>
+      <div class="bilingual">
+        <p class="en-title">Brent Crude Climbs to Around $96 a Barrel</p>
+        <p class="en-summary">Brent futures for January delivery rose to roughly $96 per barrel this week, settling at a recent high on Thursday. The move threatens to reignite cost-push inflation and narrow the room for central-bank easing.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>futures contract</b> 期货合约</span>
+            <span class="vocab-item"><b>cost-push inflation</b> 成本推动型通胀</span>
+            <span class="vocab-item"><b>settlement price</b> 结算价</span>
+            <span class="vocab-item"><b>delivery month</b> 交割月</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>油价就像全球经济的“快递费”，涨到 96 美元意味着每桶运输、塑料、化肥的成本都在往上抬，最终会渗进超市货架价格。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期若维持 90 美元以上，欧美通胀回落将放缓 1-2 个季度；中期关注 OPEC+ 产量纪律与地缘扰动，航空、物流、化工行业利润率承压最明显。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若高油价成为常态，将加速电动车与热泵的经济性拐点，但也可能让发展中国家承受输入型通胀之痛，全球能源公平问题再度凸显。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.cnn.com/" target="_blank">CNN Business</a></p>
+    </div>
+
+    <div class="compare-box">
+      <div class="compare-side compare-bull">
+        <div class="compare-label">📈 乐观方</div>
+        人民币仅微调 <span class="num-down">8点</span>，显示汇率韧性充足；亚洲加息潮反映区域经济基本面稳健，资本回流可期。
+      </div>
+      <div class="compare-side compare-bear">
+        <div class="compare-label">📉 悲观方</div>
+        油价逼近 <span class="num-key">96美元</span>推升通胀，央行降息空间被压缩，风险资产估值面临重估压力。
+      </div>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：汇率与油价形成“一稳一紧”的剪刀差——汇率端温和可控，能源端风险抬头。若油价持续高位，亚洲央行的紧缩倾向可能强于市场预期，需警惕股债双杀式调整。</div>
+  </div>
+
+  <!-- 板块3 人工智能 -->
+  <div class="section">
+    <h2 class="section-title">🤖 人工智能</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">OpenAI 将“防御经验”产品化，AI 安全从内部实践转向对外工具</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-high">冲击：High</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">OpenAI 表示正把“防御 OpenAI 自身”的经验转化为面向客户的实用工具，并将于周四举办 Cyber at the Frontier 活动。这标志着头部 AI 公司正把安全能力从成本中心转为产品线，AI 安全赛道竞争进入商业化阶段。</p>
+      <div class="bilingual">
+        <p class="en-title">OpenAI Productizes Its Defensive Playbook Into Customer Tools</p>
+        <p class="en-summary">OpenAI is converting lessons from defending its own infrastructure into practical tools for enterprise customers, with a Cyber at the Frontier event scheduled for Thursday. The move signals that AI security is shifting from internal cost center to commercial product line.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>defensive playbook</b> 防御手册</span>
+            <span class="vocab-item"><b>threat model</b> 威胁模型</span>
+            <span class="vocab-item"><b>cost center</b> 成本中心</span>
+            <span class="vocab-item"><b>red teaming</b> 红队测试</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>相当于把“自家防盗经验”做成保险柜卖给邻居。AI 公司过去只在自己模型上做红队测试，现在把提示注入防御、越狱检测等能力打包成企业服务。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期（1-3年）企业级 AI 安全采购预算将快速上升；中期形成“模型厂商 + 安全厂商”双层生态，合规审计、模型溯源成为标准配置。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若 AI 安全像网络安全一样形成独立产业，未来每家企业都会配备“AI 安全官”，但也可能出现安全能力集中于少数巨头的新型权力结构。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://openai.com/" target="_blank">OpenAI</a> · <a href="https://x.com/OpenAI" target="_blank">OpenAI on X</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">DeepSeek 持续开源路线，GitHub 已积累 47 个公开仓库</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">DeepSeek 官网与 GitHub 显示其坚持“研究 + 开源”双轮驱动，已公开 <span class="num-key">47</span> 个仓库，并提供 API 平台与 iOS/Android 应用。中国开源大模型正以工程化速度缩小与闭源前沿的差距，对全球模型定价形成持续下压。</p>
+      <div class="bilingual">
+        <p class="en-title">DeepSeek Sustains Open-Source Push With 47 Public Repositories</p>
+        <p class="en-summary">DeepSeek continues a research-plus-open-source strategy, maintaining 47 public repositories alongside an API platform and mobile apps. Chinese open-weight models are narrowing the gap with closed frontier systems and exerting downward pressure on inference pricing.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>open-weight model</b> 开放权重模型</span>
+            <span class="vocab-item"><b>inference pricing</b> 推理定价</span>
+            <span class="vocab-item"><b>repository</b> 代码仓库</span>
+            <span class="vocab-item"><b>general artificial intelligence</b> 通用人工智能</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>开源模型好比“公开配方”，任何人都能下载、改造、部署；闭源模型则是“秘方餐厅”。DeepSeek 走的是前者，靠生态换影响力。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期推动中小企业与开发者低成本部署；中期可能改变云厂商的模型采购结构，形成“开源底座 + 商业微调”的主流范式。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若开源模型追平闭源，AI 能力将更像水电一样普及，但滥用门槛同步降低，全球治理协调的紧迫性将显著上升。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://github.com/deepseek-ai" target="_blank">DeepSeek GitHub</a> · <a href="https://www.deepseek.com/" target="_blank">DeepSeek</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：AI 竞争正从“参数规模”转向“安全能力 + 开源生态”两条新战线。OpenAI 把安全产品化，DeepSeek 把开源工程化，二者共同指向一个结论：模型能力趋同后，差异化将来自信任与成本。</div>
+  </div>
+
+  <!-- 板块4 硬科技 -->
+  <div class="section">
+    <h2 class="section-title">💻 科技 / 硬科技</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">半导体基础研究获 NIST 等机构持续加码，材料与计量成关键瓶颈</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">NIST 与 IBM 等机构近期集中更新半导体技术框架，强调可调电导率材料是绝大多数电子器件的基础，计量与标准能力正成为先进制程的隐性瓶颈。随着制程逼近 <span class="num-key">2nm</span> 及以下，材料表征精度对良率的影响权重显著上升。</p>
+      <div class="bilingual">
+        <p class="en-title">Metrology Emerges as Hidden Bottleneck in Advanced Semiconductors</p>
+        <p class="en-summary">NIST and industry players are reframing semiconductor progress around materials with tunable conductivity, with metrology and standards increasingly seen as hidden constraints. As nodes push toward 2nm and below, characterization precision weighs more heavily on yield.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>tunable conductivity</b> 可调电导率</span>
+            <span class="vocab-item"><b>metrology</b> 计量学</span>
+            <span class="vocab-item"><b>yield</b> 良率</span>
+            <span class="vocab-item"><b>process node</b> 制程节点</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>芯片制造像在头发丝万分之一的宽度上盖楼，计量就是“尺子”。尺子不准，楼就歪，良率就掉。制程越先进，这把尺子的精度越决定成败。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期利好计量设备与量测软件厂商；中期标准制定权将成为地缘科技竞争的关键筹码，材料表征人才需求快速上升。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若计量能力实现原子级实时反馈，芯片制造或走向“自校准工厂”，但这也意味着先进制造的门槛进一步向少数国家集中。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nist.gov/semiconductors" target="_blank">NIST</a> · <a href="https://www.ibm.com/think/topics/semiconductors" target="_blank">IBM Think</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">量子计算基础概念热度回升，产业化仍处早期验证阶段</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">量子力学与量子计算相关条目近期更新频繁，反映公众与产业界关注度回升。但需清醒认识：当前量子计算仍处含噪中等规模（NISQ）阶段，距离容错通用量子计算仍有较长路径，短期商业化以专用模拟与量子安全为主。</p>
+      <div class="bilingual">
+        <p class="en-title">Quantum Computing Hype Rises, Industrialization Still Early-Stage</p>
+        <p class="en-summary">Renewed attention around quantum mechanics and quantum computing reflects growing interest, yet the field remains in the noisy intermediate-scale quantum era. Near-term commercialization centers on specialized simulation and quantum-safe cryptography rather than general-purpose machines.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>NISQ</b> 含噪中等规模量子</span>
+            <span class="vocab-item"><b>fault-tolerant</b> 容错的</span>
+            <span class="vocab-item"><b>quantum-safe cryptography</b> 抗量子密码</span>
+            <span class="vocab-item"><b>qubit</b> 量子比特</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>经典计算机像“一枚硬币只能正面或反面”，量子比特则像“旋转中的硬币”，能同时处于两种状态，因此在特定问题上具备指数级潜力，但极不稳定。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期聚焦药物分子模拟、材料筛选等专用场景；中期量子安全加密迁移将成为金融与政务的刚性需求，时间窗口约 3-5 年。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若容错量子计算实现，现有公钥密码体系将被颠覆，全球需提前完成“密码大迁移”，这是一场静悄悄但影响深远的安全革命。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://en.wikipedia.org/wiki/Quantum_mechanics" target="_blank">Wikipedia · Quantum Mechanics</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">低光成像技术受关注，AI 降噪成为消费级影像新标配</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">多份技术指南集中讨论低光摄影，强调通过亮度、边缘、纹理、色彩、运动与上下文多信号联合判读，并结合 AI 降噪提升成像质量。这反映计算摄影正从“硬件堆料”转向“算法 + 传感器”协同，手机与安防影像受益最直接。</p>
+      <div class="bilingual">
+        <p class="en-title">AI Denoising Becomes Standard in Low-Light Imaging</p>
+        <p class="en-summary">Technical guides increasingly emphasize multi-signal interpretation—brightness, edges, texture, color, motion and context—combined with AI denoising. Computational photography is shifting from hardware stacking to algorithm-sensor co-design, benefiting smartphones and surveillance systems.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>computational photography</b> 计算摄影</span>
+            <span class="vocab-item"><b>denoising</b> 降噪</span>
+            <span class="vocab-item"><b>signal-to-noise ratio</b> 信噪比</span>
+            <span class="vocab-item"><b>sensor co-design</b> 传感器协同设计</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>低光拍照好比“在昏暗房间里看清人脸”，过去靠大光圈硬扛，现在靠算法“猜”出缺失细节，AI 降噪就是那个会推理的助手。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期手机夜景、车载夜视、安防监控全面普及；中期与事件相机、单光子探测结合，推动极端光照下的机器视觉突破。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若机器在近乎全黑环境下仍能清晰感知，夜间经济、自动驾驶与救援场景将被重新定义，但也带来隐私监控的隐忧。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://photographylife.com/low-light-digital-photography-tips" target="_blank">Photography Life</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：硬科技今日呈现“底层紧、应用松”格局——半导体计量与量子计算属长周期硬骨头，低光成像则是算法驱动的快速落地场景。资金与人才正同时押注两端。</div>
+  </div>
+
+  <!-- 板块5 材料科学 -->
+  <div class="section">
+    <h2 class="section-title">🔬 材料科学</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">半导体材料可调电导率特性再获强调，材料工程成为器件创新核心</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">多家权威机构重申，半导体作为电导率介于导体与绝缘体之间、且可外部调控的晶体固体，是绝大多数电子器件的材料基础。随着器件微缩逼近物理极限，材料工程——而非单纯制程微缩——正成为性能提升的主要来源。</p>
+      <div class="bilingual">
+        <p class="en-title">Tunable Conductivity Reframed as Core of Semiconductor Innovation</p>
+        <p class="en-summary">Authorities reiterate that semiconductors are crystalline solids whose conductivity sits between conductors and insulators and can be externally tuned. As device scaling approaches physical limits, materials engineering rather than pure node shrinkage is becoming the primary source of performance gains.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>crystalline solid</b> 晶体固体</span>
+            <span class="vocab-item"><b>doping</b> 掺杂</span>
+            <span class="vocab-item"><b>bandgap</b> 带隙</span>
+            <span class="vocab-item"><b>device scaling</b> 器件微缩</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>半导体像“可调亮度的灯泡”，通过掺杂和电场就能控制导电强弱。当灯泡越做越小，靠调材料配方比靠缩小尺寸更有效。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看第三代半导体（碳化硅、氮化镓）在功率器件放量；中期二维材料、氧化物半导体有望进入逻辑器件验证，材料专利争夺加剧。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若材料创新接过摩尔定律的接力棒，芯片性能提升将不再依赖单一制程路线，全球半导体格局可能从“制程垄断”转向“材料多元”。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.britannica.com/science/semiconductor" target="_blank">Britannica · Semiconductor</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">碳汇与生态材料交叉议题升温，自然基材料进入碳核算视野</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">结合 Nature 关于树木丰度动态的研究，自然基材料（木材、竹材、生物炭）的碳封存稳定性正被重新评估。材料科学界开始将“碳汇持久性”纳入材料生命周期评价，这对绿色建材认证标准构成潜在修订压力。</p>
+      <div class="bilingual">
+        <p class="en-title">Nature-Based Materials Reassessed Through Carbon-Sink Durability Lens</p>
+        <p class="en-summary">In light of new research on tree abundance dynamics, the carbon-sequestration durability of nature-based materials such as timber, bamboo and biochar is being reassessed. Materials science is beginning to embed sink persistence into life-cycle assessment, pressuring green-building certification standards.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>biochar</b> 生物炭</span>
+            <span class="vocab-item"><b>life-cycle assessment</b> 生命周期评价</span>
+            <span class="vocab-item"><b>sequestration durability</b> 封存持久性</span>
+            <span class="vocab-item"><b>green building certification</b> 绿色建筑认证</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>用木头盖楼不只是“环保情怀”，而是把碳锁在建筑里几十年。但如果森林本身因气候迁移而退化，这笔“碳存款”就可能缩水。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期推动木结构建筑碳核算方法更新；中期生物炭在土壤改良与建材中的复合应用扩大，认证机构将要求更严格的持久性证据。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若城市本身成为“碳仓库”，建筑将从排放大户变为固碳载体，但需要跨代际的责任伦理——今天的楼，要为百年后的碳账负责。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.nature.com/nature/research-articles" target="_blank">Nature</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：材料科学今日与半导体、生态两条主线交叉，呈现“硬材料保性能、软材料保碳账”的双轨格局。材料正从幕后走向产业与政策的前台。</div>
+  </div>
+
+  <!-- 板块6 中国政策 -->
+  <div class="section">
+    <h2 class="section-title">🇨🇳 中国政策与监管</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">国家外汇管理局持续发布人民币汇率中间价，汇率管理透明度提升</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+      </div>
+      <p class="item-summary">国家外汇管理局门户网站持续公布人民币对多币种中间价，涵盖澳门元、林吉特、卢布、兰特、韩元、迪拉姆、里亚尔、福林、兹罗提、丹麦克朗等。多币种报价体系的完善，反映中国跨境贸易结算多元化与汇率风险管理工具的制度化推进。</p>
+      <div class="bilingual">
+        <p class="en-title">SAFE Expands Multi-Currency Midpoint Publication</p>
+        <p class="en-summary">China's foreign-exchange regulator continues to publish central parity rates against a broad basket including the pataca, ringgit, ruble, rand, won and dirham. The broader basket reflects diversification in cross-border settlement and institutionalized FX risk-management tools.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>central parity</b> 中间价</span>
+            <span class="vocab-item"><b>currency basket</b> 货币篮子</span>
+            <span class="vocab-item"><b>cross-border settlement</b> 跨境结算</span>
+            <span class="vocab-item"><b>FX risk management</b> 汇率风险管理</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>过去企业做外贸主要盯美元，现在官方每天公布十几种货币参考价，相当于给“一带一路”贸易配了多把尺子，减少对单一货币的依赖。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期利好中小外贸企业套保；中期推动人民币在区域贸易中的计价功能，跨境支付系统与离岸市场联动增强。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若多币种直接结算普及，全球贸易的“美元中介”环节将被压缩，国际货币体系的多极化将从口号变为日常操作。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.safe.gov.cn/safe/rmbhlzjj/" target="_blank">国家外汇管理局</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">中国银行外汇牌价体系细化“现汇/现钞卖出价”，服务实体更精细</span>
+        <span class="stars">⭐⭐⭐</span>
+        <span class="impact impact-low">冲击：Low</span>
+      </div>
+      <p class="item-summary">中国银行外汇牌价系统自 2011 年升级后，将原“卖出价”细分为“现汇卖出价”与“现钞卖出价”，并持续优化报价机制。这一细节反映中国外汇服务体系正从“统一报价”走向“场景化定价”，对个人购汇与企业结算成本核算更精准。</p>
+      <div class="bilingual">
+        <p class="en-title">Bank of China Refines FX Quote Structure for Spot and Cash</p>
+        <p class="en-summary">Bank of China's FX quotation system splits the former selling rate into spot-exchange and cash selling rates, with ongoing refinements. The detail reflects a shift from unified quoting to scenario-based pricing, improving cost accuracy for individuals and corporates.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>spot exchange rate</b> 现汇汇率</span>
+            <span class="vocab-item"><b>cash selling rate</b> 现钞卖出价</span>
+            <span class="vocab-item"><b>scenario-based pricing</b> 场景化定价</span>
+            <span class="vocab-item"><b>quotation system</b> 报价系统</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“现汇”是账户里的数字外汇，“现钞”是手里的纸币。银行处理纸币成本更高，所以分开报价，就像快递寄文件和寄实物收费不同。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期提升个人换汇透明度；中期推动银行外汇服务数字化，牌价 API 化可能成为企业财资管理标配。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若报价全面实时化、场景化，外汇市场的信息不对称将大幅下降，普通用户也能像专业交易员一样看懂成本结构。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.boc.cn/sourcedb/whpj/index.html" target="_blank">中国银行</a></p>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：中国政策今日信号集中在“汇率基础设施”层面——多币种报价与精细化定价并行，体现监管从“管价格”向“管透明、管服务”转型。短期无强刺激信号，重在制度打磨。</div>
+  </div>
+
+  <!-- 板块7 地缘政治 -->
+  <div class="section">
+    <h2 class="section-title">🌍 地缘政治与国际关系</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">G20 外长会发布主席声明，全球治理协调机制持续运转</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">美国国务院披露 G20 外长会于 10 月 31 日举行并发布主席声明，共列 11 项地缘政治议题。声明本身多为共识性表述，但机制持续运转本身即是信号：在分歧加剧背景下，主要经济体仍维持对话渠道，避免完全脱钩。</p>
+      <div class="bilingual">
+        <p class="en-title">G20 Foreign Ministers Issue Chair's Statement With 11 Geopolitical Items</p>
+        <p class="en-summary">The U.S. State Department disclosed that G20 foreign ministers met on October 31 and issued a chair's statement covering 11 geopolitical items. While largely consensus language, the mechanism's continuity signals that major economies still keep channels open amid deepening divergence.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>chair's statement</b> 主席声明</span>
+            <span class="vocab-item"><b>consensus language</b> 共识性表述</span>
+            <span class="vocab-item"><b>de-risking</b> 去风险</span>
+            <span class="vocab-item"><b>multilateral mechanism</b> 多边机制</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>G20 像“全球经济董事会”，外长会是董事们的碰头会。声明用词温和，但能坐下来开会本身就是防止关系失控的安全阀。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期关注声明中涉供应链、能源安全的落地表述；中期 G20 能否在 AI 治理、债务重组上形成实质框架，将决定其机制价值。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若多边机制从“发声明”走向“定规则”，全球治理或迎来再平衡；若持续空转，区域小多边将加速替代，世界更碎片化。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.state.gov/policy-issues/geopolitics/" target="_blank">U.S. Department of State</a></p>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">《经济学人》聚焦供应链重构与深圳博弈，去风险叙事仍在演化</span>
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="impact impact-med">冲击：Med</span>
+        <span class="risk-yellow">🟡 值得观察</span>
+      </div>
+      <p class="item-summary">《经济学人》地缘政治专栏讨论美国供应链是否真正更具韧性，并对相关方在深圳的博弈预期提出质疑。核心判断是：供应链“去风险”已从口号进入成本核算阶段，但完全脱钩既不现实也不经济，企业正以“中国 + 1”方式分散布局。</p>
+      <div class="bilingual">
+        <p class="en-title">Supply-Chain De-Risking Enters Cost-Accounting Phase</p>
+        <p class="en-summary">The Economist questions whether U.S. supply chains are genuinely more resilient and casts doubt on expectations of progress in Shenzhen. The core judgment: de-risking has moved from rhetoric to cost accounting, yet full decoupling remains neither realistic nor economical, pushing firms toward "China plus one" diversification.</p>
+        <div class="vocab-card">
+          <div class="vocab-title">📖 Key Vocabulary</div>
+          <div class="vocab-list">
+            <span class="vocab-item"><b>supply-chain resilience</b> 供应链韧性</span>
+            <span class="vocab-item"><b>decoupling</b> 脱钩</span>
+            <span class="vocab-item"><b>China plus one</b> 中国+1</span>
+            <span class="vocab-item"><b>nearshoring</b> 近岸外包</span>
+          </div>
+        </div>
+      </div>
+      <details class="deepdive">
+        <summary>📖 深度解读</summary>
+        <div class="deepdive-content">
+          <p class="dl dl-what"><span class="dl-label">📌 是什么：</span>“去风险”不是把工厂全搬走，而是“别把鸡蛋放一个篮子”。企业一边保留中国产能，一边在越南、墨西哥加设备份线，成本上升但韧性增强。</p>
+          <p class="dl dl-prospect"><span class="dl-label">📈 前景：</span>短期看，电子、汽车零部件转移最明显；中期区域化生产网络成形，物流与关税成本将成为企业选址的核心变量。</p>
+          <p class="dl dl-vision"><span class="dl-label">🔮 畅想：</span>若供应链彻底区域化，全球化红利将部分逆转，商品价格中枢上移；但也可能催生更多本地创新与就业，形成“效率换安全”的新均衡。</p>
+        </div>
+      </details>
+      <p class="item-source">来源：<a href="https://www.economist.com/topics/geopolitics" target="_blank">The Economist</a></p>
+    </div>
+
+    <div class="compare-box">
+      <div class="compare-side compare-bull">
+        <div class="compare-label">📈 乐观方</div>
+        G20 机制持续运转，对话渠道畅通，供应链“去风险”而非“脱钩”，全球贸易仍具韧性。
+      </div>
+      <div class="compare-side compare-bear">
+        <div class="compare-label">📉 悲观方</div>
+        油价逼近 <span class="num-key">96美元</span>、区域加息潮与供应链重构叠加，全球增长与通胀的平衡正变得脆弱。
+      </div>
+    </div>
+
+    <div class="trend-comment">📊 板块趋势：地缘主线从“对抗叙事”转向“成本叙事”——各方都在算账，而非单纯站队。G20 的对话延续与供应链的成本重估，共同指向一个更务实但也更碎片化的国际环境。</div>
+  </div>
+
+  <div class="timeline">
+    <h4>⏰ 近期关键时间节点</h4>
+    <div class="timeline-item">
+      <span class="timeline-date">2026-12-03（周四）</span>
+      <span>OpenAI 举办 Cyber at the Frontier 活动，预计发布 AI 安全相关客户工具</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2027-01</span>
+      <span>布伦特原油 1 月合约进入交割窗口，油价高位能否延续将接受检验</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">未来 1-2 个季度</span>
+      <span>亚洲央行紧缩节奏与通胀数据将决定人民币汇率区间是否被打破</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    全球动态简报 · 2026-11-28 · 本简报基于公开信息整理，不构成投资建议
+  </div>
+
+</div>
+</body>
+</html>
